@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-05-14",
+  "sourceRepo": "GetDutchie/Armageddon",
+  "commitSha": "e30364a847db138510992b4a7ca27184aecccf40",
+  "tests": [
+    {
+      "file": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb",
+      "name": "populates country by address",
+      "testRailId": "N/A",
+      "skipReason": "N/A",
+      "skippedAt": "2023-01-09",
+      "author": "Michael Hunter",
+      "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by address",
+      "daysSkipped": 1221
+    },
+    {
+      "file": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb",
+      "name": "populates country by state",
+      "testRailId": "N/A",
+      "skipReason": "N/A",
+      "skippedAt": "2023-01-09",
+      "author": "Michael Hunter",
+      "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by state",
+      "daysSkipped": 1221
+    },
+    {
+      "file": "spec/requests/rest/dispensary_billings_spec.rb",
+      "name": "DispensaryBillings Controller #create",
+      "testRailId": "N/A",
+      "skipReason": "Currently unused",
+      "skippedAt": "2020-06-11",
+      "author": "matt-dutchie",
+      "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #create",
+      "daysSkipped": 2163
+    },
+    {
+      "file": "spec/requests/rest/dispensary_billings_spec.rb",
+      "name": "DispensaryBillings Controller #update",
+      "testRailId": "N/A",
+      "skipReason": "Currently unused",
+      "skippedAt": "2020-06-11",
+      "author": "matt-dutchie",
+      "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #update",
+      "daysSkipped": 2163
+    },
+    {
+      "file": "spec/spawners/database_trimmer_spawner_spec.rb",
+      "name": "creates jobs for all relevant models",
+      "testRailId": "N/A",
+      "skipReason": "N/A",
+      "skippedAt": "2024-04-26",
+      "author": "Taylor Piccarreto",
+      "id": "spec/spawners/database_trimmer_spawner_spec.rb::creates jobs for all relevant models",
+      "daysSkipped": 748
+    },
+    {
+      "file": "spec/workers/menu_integration/menu_worker_spec.rb",
+      "name": "MenuIntegration::Workers::MenuWorker",
+      "testRailId": "N/A",
+      "skipReason": "MenuIntegration::Adapters not yet ported (P3)",
+      "skippedAt": "2026-04-29",
+      "author": "Michael Hunter",
+      "id": "spec/workers/menu_integration/menu_worker_spec.rb::MenuIntegration::Workers::MenuWorker",
+      "daysSkipped": 15
+    },
+    {
+      "file": "spec/workers/menu_integration/vend_pos_data_worker_spec.rb",
+      "name": "MenuIntegration::Workers::VendPosDataWorker",
+      "testRailId": "N/A",
+      "skipReason": "VendConnector not yet ported (P3)",
+      "skippedAt": "2026-04-29",
+      "author": "Michael Hunter",
+      "id": "spec/workers/menu_integration/vend_pos_data_worker_spec.rb::MenuIntegration::Workers::VendPosDataWorker",
+      "daysSkipped": 15
+    }
+  ]
+}
