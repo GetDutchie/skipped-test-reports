@@ -484,16 +484,6 @@
       "daysSkipped": 385
     },
     {
-      "id": "apps/register/src/store/reducers/ProductsReducer.test.ts::req-1",
-      "file": "apps/register/src/store/reducers/ProductsReducer.test.ts",
-      "name": "req-1",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-07",
-      "author": "Scott Dietrich",
-      "daysSkipped": 18
-    },
-    {
       "id": "apps/register/src/util/hardwareLibrary/hardware-library-manager.test.ts::HardwareManager - setDefaultReceiptPrinters",
       "file": "apps/register/src/util/hardwareLibrary/hardware-library-manager.test.ts",
       "name": "HardwareManager - setDefaultReceiptPrinters",
