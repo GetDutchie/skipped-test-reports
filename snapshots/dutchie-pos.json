@@ -4,16 +4,6 @@
   "commitSha": "a8cb157c16a382f14afd0266cba3708064b730c1",
   "tests": [
     {
-      "id": "apps/mobile-checkout/e2e/tests/checkout/skip-delivery.test.ts::skip annotation at line 44",
-      "file": "apps/mobile-checkout/e2e/tests/checkout/skip-delivery.test.ts",
-      "name": "skip annotation at line 44",
-      "testRailId": "N/A",
-      "skipReason": "Skipped annotation",
-      "skippedAt": "2024-05-08",
-      "author": "Jordan Woods",
-      "daysSkipped": 747
-    },
-    {
       "id": "apps/register/e2e/tests/cart/anon-guest-birthdate-present-in-cart.test.ts::[194395] Checking in an anonymous guest with their birthday present in the cart",
       "file": "apps/register/e2e/tests/cart/anon-guest-birthdate-present-in-cart.test.ts",
       "name": "[194395] Checking in an anonymous guest with their birthday present in the cart",
@@ -492,96 +482,6 @@
       "skippedAt": "2025-05-05",
       "author": "Jordan Woods",
       "daysSkipped": 385
-    },
-    {
-      "id": "apps/register/src/pages/EditCustomerPage/tabs/MedicalTab.test.tsx::pending annotation at line 334",
-      "file": "apps/register/src/pages/EditCustomerPage/tabs/MedicalTab.test.tsx",
-      "name": "pending annotation at line 334",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-02",
-      "author": "Chris Ostrowski",
-      "daysSkipped": 23
-    },
-    {
-      "id": "apps/register/src/pages/EditCustomerPage/tabs/PreferencesTab.test.tsx::pending annotation at line 205",
-      "file": "apps/register/src/pages/EditCustomerPage/tabs/PreferencesTab.test.tsx",
-      "name": "pending annotation at line 205",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-03-26",
-      "author": "DESKTOP-2AV8PS5\\jakeb",
-      "daysSkipped": 60
-    },
-    {
-      "id": "apps/register/src/pages/GuestListPage/components/kanban/OrderKanbanCard/components/CustomerInfo.test.tsx::pending annotation at line 30",
-      "file": "apps/register/src/pages/GuestListPage/components/kanban/OrderKanbanCard/components/CustomerInfo.test.tsx",
-      "name": "pending annotation at line 30",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2025-11-17",
-      "author": "John Mahlan",
-      "daysSkipped": 189
-    },
-    {
-      "id": "apps/register/src/pages/GuestListPage/components/kanban/OrderKanbanCard/components/CustomerInfo.test.tsx::pending annotation at line 282",
-      "file": "apps/register/src/pages/GuestListPage/components/kanban/OrderKanbanCard/components/CustomerInfo.test.tsx",
-      "name": "pending annotation at line 282",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2025-11-17",
-      "author": "John Mahlan",
-      "daysSkipped": 189
-    },
-    {
-      "id": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts::dispatches invalidManagerPin and errorNotification when UserId is 0",
-      "file": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts",
-      "name": "dispatches invalidManagerPin and errorNotification when UserId is 0",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-04",
-      "author": "Ben Versluis",
-      "daysSkipped": 21
-    },
-    {
-      "id": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts::\"Cart is missing payment, please reload\" triggers loadMissingPayments + refetchCartDetails",
-      "file": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts",
-      "name": "\"Cart is missing payment, please reload\" triggers loadMissingPayments + refetchCartDetails",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-04",
-      "author": "Ben Versluis",
-      "daysSkipped": 21
-    },
-    {
-      "id": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts::pending annotation at line 597",
-      "file": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts",
-      "name": "pending annotation at line 597",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-04",
-      "author": "Ben Versluis",
-      "daysSkipped": 21
-    },
-    {
-      "id": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts::pending annotation at line 1046",
-      "file": "apps/register/src/store/actions/__tests__/CheckoutActions.test.ts",
-      "name": "pending annotation at line 1046",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-04",
-      "author": "Ben Versluis",
-      "daysSkipped": 21
-    },
-    {
-      "id": "apps/register/src/store/reducers/ProductsReducer.test.ts::pending annotation at line 15",
-      "file": "apps/register/src/store/reducers/ProductsReducer.test.ts",
-      "name": "pending annotation at line 15",
-      "testRailId": "N/A",
-      "skipReason": "Pending annotation",
-      "skippedAt": "2026-05-07",
-      "author": "Scott Dietrich",
-      "daysSkipped": 18
     },
     {
       "id": "apps/register/src/store/reducers/ProductsReducer.test.ts::req-1",
