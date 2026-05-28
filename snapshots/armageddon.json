@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-21",
+  "generatedAt": "2026-05-28",
   "sourceRepo": "GetDutchie/Armageddon",
-  "commitSha": "fd818a3f59db51f5b3df5ff567d9164f1f175379",
+  "commitSha": "44556fc52729fe8c832723a84d8c447c27fd9e27",
   "tests": [
     {
       "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by address",
@@ -11,7 +11,7 @@
       "skipReason": "N/A",
       "skippedAt": "2023-01-09",
       "author": "Michael Hunter",
-      "daysSkipped": 1228
+      "daysSkipped": 1235
     },
     {
       "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by state",
@@ -21,7 +21,7 @@
       "skipReason": "N/A",
       "skippedAt": "2023-01-09",
       "author": "Michael Hunter",
-      "daysSkipped": 1228
+      "daysSkipped": 1235
     },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #create",
@@ -29,9 +29,9 @@
       "name": "DispensaryBillings Controller #create",
       "testRailId": "N/A",
       "skipReason": "Currently unused",
-      "skippedAt": "2020-06-11",
-      "author": "matt-dutchie",
-      "daysSkipped": 2170
+      "skippedAt": "2020-06-12",
+      "author": "Peter Jackson",
+      "daysSkipped": 2176
     },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #update",
@@ -39,9 +39,9 @@
       "name": "DispensaryBillings Controller #update",
       "testRailId": "N/A",
       "skipReason": "Currently unused",
-      "skippedAt": "2020-06-11",
-      "author": "matt-dutchie",
-      "daysSkipped": 2170
+      "skippedAt": "2020-06-12",
+      "author": "Peter Jackson",
+      "daysSkipped": 2176
     },
     {
       "id": "spec/spawners/database_trimmer_spawner_spec.rb::creates jobs for all relevant models",
@@ -51,7 +51,7 @@
       "skipReason": "N/A",
       "skippedAt": "2024-04-26",
       "author": "Taylor Piccarreto",
-      "daysSkipped": 755
+      "daysSkipped": 762
     },
     {
       "id": "spec/workers/menu_integration/menu_worker_spec.rb::MenuIntegration::Workers::MenuWorker",
@@ -61,7 +61,7 @@
       "skipReason": "MenuIntegration::Adapters not yet ported (P3)",
       "skippedAt": "2026-04-29",
       "author": "Michael Hunter",
-      "daysSkipped": 22
+      "daysSkipped": 29
     },
     {
       "id": "spec/workers/menu_integration/vend_pos_data_worker_spec.rb::MenuIntegration::Workers::VendPosDataWorker",
@@ -71,7 +71,7 @@
       "skipReason": "VendConnector not yet ported (P3)",
       "skippedAt": "2026-04-29",
       "author": "Michael Hunter",
-      "daysSkipped": 22
+      "daysSkipped": 29
     }
   ]
 }
