@@ -1,0 +1,23 @@
+{
+  "runs": [
+    {
+      "date": "2026-06-02",
+      "back_office": {
+        "flaky": null,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-02T07:54:26Z"
+      },
+      "pos": {
+        "flaky": 11,
+        "failed": 0,
+        "total": 441,
+        "branch": "develop",
+        "commit": "4df437b",
+        "run_timestamp": "2026-06-02T08:47:08Z"
+      }
+    }
+  ]
+}
