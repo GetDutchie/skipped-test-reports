@@ -37,6 +37,25 @@
         "commit": "6648911",
         "run_timestamp": "2026-06-03T08:54:03.000Z"
       }
+    },
+    {
+      "date": "2026-06-04",
+      "back_office": {
+        "flaky": 9,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-04T07:52:25.000Z"
+      },
+      "pos": {
+        "flaky": 8,
+        "failed": 0,
+        "total": 441,
+        "branch": "develop",
+        "commit": "5a555fb",
+        "run_timestamp": "2026-06-04T08:39:31.000Z"
+      }
     }
   ]
 }
