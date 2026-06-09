@@ -54,7 +54,7 @@
         "total": 441,
         "branch": "develop",
         "commit": "5a555fb",
-        "run_timestamp": "2026-06-04T08:39:31.000Z"
+        "run_timestamp": "2026-06-08T08:39:31.000Z"
       }
     },
     {
@@ -93,6 +93,25 @@
         "branch": "develop",
         "commit": "ae08aba",
         "run_timestamp": "2026-06-08T08:49:05.300069Z"
+      }
+    },
+    {
+      "date": "2026-06-09",
+      "back_office": {
+        "flaky": 2,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-09T07:32:03.000Z"
+      },
+      "pos": {
+        "flaky": 19,
+        "failed": 0,
+        "total": 441,
+        "branch": "develop",
+        "commit": "ae08aba",
+        "run_timestamp": "2026-06-08T08:49:05.000Z"
       }
     }
   ]
