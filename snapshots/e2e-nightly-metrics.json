@@ -189,6 +189,25 @@
         "commit": "b642929",
         "run_timestamp": "2026-06-14T08:37:01Z"
       }
+    },
+    {
+      "date": "2026-06-16",
+      "back_office": {
+        "flaky": 1,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-16T08:15:00.000Z"
+      },
+      "pos": {
+        "flaky": 16,
+        "failed": 0,
+        "total": 440,
+        "branch": "develop",
+        "commit": "b642929",
+        "run_timestamp": "2026-06-14T08:37:01.000Z"
+      }
     }
   ]
 }
