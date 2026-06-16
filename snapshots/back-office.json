@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-09",
+  "generatedAt": "2026-06-16",
   "sourceRepo": "GetDutchie/back-office",
-  "commitSha": "9872f1949eb5a490f8dff7a8d93943e5bb5e5e95",
+  "commitSha": "5cf42ba9c49da4fbc820a2a8db32b4e032d18275",
   "tests": [
     {
       "file": "e2e/tests/cultivation/plants-v2/actions/retire-plant-variations.spec.ts",
@@ -9,9 +9,9 @@
       "testRailId": "654481",
       "skipReason": "skip annotation",
       "id": "e2e/tests/cultivation/plants-v2/actions/retire-plant-variations.spec.ts::[654481] Verify the Reason Note can be filled out when retiring a plant",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2026-05-15",
-      "daysSkipped": 25
+      "daysSkipped": 32
     },
     {
       "file": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts",
@@ -21,7 +21,7 @@
       "id": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts::[654488] Verify the user can distribute trim weight across multiple plants",
       "author": "Ben Versluis",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts",
@@ -31,7 +31,7 @@
       "id": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts::[654494] Verify the user can clear all trim weights",
       "author": "Ben Versluis",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/customers/customers/customer-view-products.spec.ts",
@@ -41,7 +41,7 @@
       "id": "e2e/tests/customers/customers/customer-view-products.spec.ts::[364269] Product History (keyset pagination)",
       "author": "Evan LaHurd",
       "skippedAt": "2026-03-05",
-      "daysSkipped": 96
+      "daysSkipped": 103
     },
     {
       "file": "e2e/tests/customers/customers/customer-view-transactions.spec.ts",
@@ -51,7 +51,7 @@
       "id": "e2e/tests/customers/customers/customer-view-transactions.spec.ts::[364270] Transaction History (keyset pagination)",
       "author": "Evan LaHurd",
       "skippedAt": "2026-03-05",
-      "daysSkipped": 96
+      "daysSkipped": 103
     },
     {
       "file": "e2e/tests/customers/segments/segment-overview.spec.ts",
@@ -61,7 +61,7 @@
       "id": "e2e/tests/customers/segments/segment-overview.spec.ts::[657312] Verify that the selected reports overview page has the correct inputs",
       "author": "DouglasLongnecker",
       "skippedAt": "2024-12-30",
-      "daysSkipped": 526
+      "daysSkipped": 533
     },
     {
       "file": "e2e/tests/delivery/car.spec.ts",
@@ -71,27 +71,7 @@
       "id": "e2e/tests/delivery/car.spec.ts::Delivery feature",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
-    },
-    {
-      "file": "e2e/tests/delivery/car.spec.ts",
-      "name": "[654140] Should not update if mandatory fields are not populated",
-      "testRailId": "654140",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/delivery/car.spec.ts::[654140] Should not update if mandatory fields are not populated",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2024-07-09",
-      "daysSkipped": 700
-    },
-    {
-      "file": "e2e/tests/delivery/car.spec.ts",
-      "name": "[543838] Enable mobile checkout",
-      "testRailId": "543838",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/delivery/car.spec.ts::[543838] Enable mobile checkout",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2024-07-19",
-      "daysSkipped": 690
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/delivery/car.spec.ts",
@@ -99,9 +79,29 @@
       "testRailId": "335798",
       "skipReason": "skip annotation",
       "id": "e2e/tests/delivery/car.spec.ts::[335798] Delete car",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
+    },
+    {
+      "file": "e2e/tests/delivery/car.spec.ts",
+      "name": "[543838] Enable mobile checkout",
+      "testRailId": "543838",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/delivery/car.spec.ts::[543838] Enable mobile checkout",
+      "author": "Ervīns Patmalnieks",
+      "skippedAt": "2024-07-19",
+      "daysSkipped": 697
+    },
+    {
+      "file": "e2e/tests/delivery/car.spec.ts",
+      "name": "[654140] Should not update if mandatory fields are not populated",
+      "testRailId": "654140",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/delivery/car.spec.ts::[654140] Should not update if mandatory fields are not populated",
+      "author": "Ervīns Patmalnieks",
+      "skippedAt": "2024-07-09",
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/delivery/driver.spec.ts",
@@ -111,7 +111,7 @@
       "id": "e2e/tests/delivery/driver.spec.ts::[339088] Add new driver",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/delivery/driver.spec.ts",
@@ -119,9 +119,9 @@
       "testRailId": "339089",
       "skipReason": "skip annotation",
       "id": "e2e/tests/delivery/driver.spec.ts::[339089] Edit a driver",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/delivery/driver.spec.ts",
@@ -129,9 +129,9 @@
       "testRailId": "339090",
       "skipReason": "skip annotation",
       "id": "e2e/tests/delivery/driver.spec.ts::[339090] Delete a driver",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-09",
-      "daysSkipped": 700
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/delivery/zones-radius.spec.ts",
@@ -139,9 +139,9 @@
       "testRailId": "335824",
       "skipReason": "skip annotation",
       "id": "e2e/tests/delivery/zones-radius.spec.ts::[335824] Delete a delivery zone",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-09",
-      "daysSkipped": 700
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/delivery/zones.spec.ts",
@@ -149,9 +149,9 @@
       "testRailId": "335823",
       "skipReason": "skip annotation",
       "id": "e2e/tests/delivery/zones.spec.ts::[335823] Edit a delivery zone",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-09",
-      "daysSkipped": 700
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/features/cultivation-tax.spec.ts",
@@ -161,7 +161,7 @@
       "id": "e2e/tests/features/cultivation-tax.spec.ts::[405521] Verify that we can convert mixed product that has cultivation tax with other products that does not have it",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/features/cultivation-tax.spec.ts",
@@ -169,19 +169,9 @@
       "testRailId": "405522",
       "skipReason": "skip annotation",
       "id": "e2e/tests/features/cultivation-tax.spec.ts::[405522] Verify that after convert two or more products automatic calculation for cultivation tax is done correctly",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-11-01",
-      "daysSkipped": 585
-    },
-    {
-      "file": "e2e/tests/financials/overview.spec.ts",
-      "name": "[1] Overview page displays data for last year",
-      "testRailId": "1",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/financials/overview.spec.ts::[1] Overview page displays data for last year",
-      "author": "bklochko",
-      "skippedAt": "2024-07-16",
-      "daysSkipped": 693
+      "daysSkipped": 592
     },
     {
       "file": "e2e/tests/manufacturing/add-processing-job.spec.ts",
@@ -191,7 +181,7 @@
       "id": "e2e/tests/manufacturing/add-processing-job.spec.ts::[657358] Add Bill of Material Processing Job",
       "author": "ColinMcCullough",
       "skippedAt": "2024-12-30",
-      "daysSkipped": 526
+      "daysSkipped": 533
     },
     {
       "file": "e2e/tests/products/audits-v2/advanced-workflow/review-stage.spec.ts",
@@ -199,9 +189,9 @@
       "testRailId": "657187",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/audits-v2/advanced-workflow/review-stage.spec.ts::[657187] User can review and close an advanced audit",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/products/audits-v2/filters/filter-location-audit.spec.ts",
@@ -209,9 +199,9 @@
       "testRailId": "657072",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/audits-v2/filters/filter-location-audit.spec.ts::[657072] Location column should appear when user selects more than one location",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/products/audits-v2/filters/status.spec.ts",
@@ -219,9 +209,9 @@
       "testRailId": "656711",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/audits-v2/filters/status.spec.ts::[656711] Verify audit list page filters by status",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-03-20",
-      "daysSkipped": 811
+      "daysSkipped": 818
     },
     {
       "file": "e2e/tests/products/audits-v2/simple-workflow/blind-audit.spec.ts",
@@ -231,7 +221,7 @@
       "id": "e2e/tests/products/audits-v2/simple-workflow/blind-audit.spec.ts::[656716] Simple Blind Full Audit Workflow",
       "author": "brock ross",
       "skippedAt": "2024-04-01",
-      "daysSkipped": 799
+      "daysSkipped": 806
     },
     {
       "file": "e2e/tests/products/audits-v2/simple-workflow/empty-states.spec.ts",
@@ -241,7 +231,7 @@
       "id": "e2e/tests/products/audits-v2/simple-workflow/empty-states.spec.ts::[657096] Audit empty tab states when matching on package(s) in inactive tab",
       "author": "brock ross",
       "skippedAt": "2024-04-01",
-      "daysSkipped": 799
+      "daysSkipped": 806
     },
     {
       "file": "e2e/tests/products/audits-v2/simple-workflow/non-blind-audit.spec.ts",
@@ -251,7 +241,7 @@
       "id": "e2e/tests/products/audits-v2/simple-workflow/non-blind-audit.spec.ts::[656715] Simple Non-Blind Full Audit Workflow",
       "author": "brock ross",
       "skippedAt": "2024-04-01",
-      "daysSkipped": 799
+      "daysSkipped": 806
     },
     {
       "file": "e2e/tests/products/catalog/create-product-with-location.spec.ts",
@@ -261,7 +251,7 @@
       "id": "e2e/tests/products/catalog/create-product-with-location.spec.ts::[380342] Verify adding a new product with location details",
       "author": "John Robert Mahlan",
       "skippedAt": "2024-03-27",
-      "daysSkipped": 804
+      "daysSkipped": 811
     },
     {
       "file": "e2e/tests/products/catalog/customer-type-restrctions.spec.ts",
@@ -271,7 +261,7 @@
       "id": "e2e/tests/products/catalog/customer-type-restrctions.spec.ts::[657314] Product inherits category level customer type restrictions",
       "author": "Jamey Gronewald",
       "skippedAt": "2024-08-16",
-      "daysSkipped": 662
+      "daysSkipped": 669
     },
     {
       "file": "e2e/tests/products/catalog/edit-product-metrc-fields.spec.ts",
@@ -279,19 +269,9 @@
       "testRailId": "654320",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/catalog/edit-product-metrc-fields.spec.ts::[654320] Edit metrc fields on a product",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2026-05-15",
-      "daysSkipped": 25
-    },
-    {
-      "file": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts",
-      "name": "Catalog Product Details - Taxed price preview tests",
-      "testRailId": "N/A",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts::Catalog Product Details - Taxed price preview tests",
-      "author": "Sarah Kiesel-Nield",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 32
     },
     {
       "file": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts",
@@ -301,7 +281,7 @@
       "id": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts::[656722] Catalog - Product Detail Tax Preview Tests - Tax-Inclusive - Save Taxed Price",
       "author": "Demondre Livingston",
       "skippedAt": "2024-04-04",
-      "daysSkipped": 796
+      "daysSkipped": 803
     },
     {
       "file": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts",
@@ -311,7 +291,7 @@
       "id": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts::[656725] Catalog - Location Product Detail Tax Preview Tests - Standard Taxation - Save Base Price",
       "author": "John Robert Mahlan",
       "skippedAt": "2024-03-27",
-      "daysSkipped": 804
+      "daysSkipped": 811
     },
     {
       "file": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts",
@@ -321,17 +301,7 @@
       "id": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts::[656726] Catalog - Location Product Detail Tax Preview Tests - Tax-Inclusive - Save Taxed Price",
       "author": "John Robert Mahlan",
       "skippedAt": "2024-03-27",
-      "daysSkipped": 804
-    },
-    {
-      "file": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts",
-      "name": "[656728] Catalog - Location Dual Pricing - Product Detail Tax Preview Tests - Tax-Inclusive - Save Taxed Med & Rec Price",
-      "testRailId": "656728",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts::[656728] Catalog - Location Dual Pricing - Product Detail Tax Preview Tests - Tax-Inclusive - Save Taxed Med & Rec Price",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2026-06-03",
-      "daysSkipped": 6
+      "daysSkipped": 811
     },
     {
       "file": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts",
@@ -341,7 +311,7 @@
       "id": "e2e/tests/products/catalog/product-detail-tax-preview.spec.ts::[657144] Catalog - Location Dual Pricing - Product Detail Tax Preview Dropdown Tests - Tax-Inclusive - Save Taxed Med & Rec Price",
       "author": "burns47",
       "skippedAt": "2024-06-05",
-      "daysSkipped": 734
+      "daysSkipped": 741
     },
     {
       "file": "e2e/tests/products/catalog/product-labels.spec.ts",
@@ -349,9 +319,9 @@
       "testRailId": "405577",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/catalog/product-labels.spec.ts::[405577] Verify that Default Label Settings details can be updated through Bulk edit labels from the Bulk Actions dropdown",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-11-01",
-      "daysSkipped": 585
+      "daysSkipped": 592
     },
     {
       "file": "e2e/tests/products/catalog/required-fields.spec.ts",
@@ -359,9 +329,9 @@
       "testRailId": "654487",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/catalog/required-fields.spec.ts::[654487] Verify that external category in the catalog detail is on for a cannabis product when the field is required for cannabis",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-09",
-      "daysSkipped": 700
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/products/configure/categories.spec.ts",
@@ -371,7 +341,7 @@
       "id": "e2e/tests/products/configure/categories.spec.ts::[657309] User can edit the customer type restrictions for a category",
       "author": "Jamey Gronewald",
       "skippedAt": "2024-08-16",
-      "daysSkipped": 662
+      "daysSkipped": 669
     },
     {
       "file": "e2e/tests/products/configure/categories.spec.ts",
@@ -381,7 +351,7 @@
       "id": "e2e/tests/products/configure/categories.spec.ts::[657315] If a product has a parent category, updating the customer type restrictions for this category will update downstream product restrictions",
       "author": "Jamey Gronewald",
       "skippedAt": "2024-07-11",
-      "daysSkipped": 698
+      "daysSkipped": 705
     },
     {
       "file": "e2e/tests/products/configure/categories.spec.ts",
@@ -391,7 +361,7 @@
       "id": "e2e/tests/products/configure/categories.spec.ts::[657316] Updating customer type restrictions for a category updates package restrictions for a package whose parent product is of that category",
       "author": "Jamey Gronewald",
       "skippedAt": "2024-07-11",
-      "daysSkipped": 698
+      "daysSkipped": 705
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/adjust-inventory.spec.ts",
@@ -399,9 +369,9 @@
       "testRailId": "654237",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/adjust-inventory.spec.ts::[654237] User can adjust package quantity",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-03-20",
-      "daysSkipped": 811
+      "daysSkipped": 818
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/assign-status.spec.ts",
@@ -409,9 +379,9 @@
       "testRailId": "654194",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/assign-status.spec.ts::[654194] User can assign a status to a package",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/assign-to-batch.spec.ts",
@@ -419,9 +389,9 @@
       "testRailId": "654223",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/assign-to-batch.spec.ts::[654223] User can assign a package to a batch",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/change-product.spec.ts",
@@ -429,9 +399,9 @@
       "testRailId": "654211",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/change-product.spec.ts::[654211] Verify that it's possible to change the product to another from a package",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/change-vendor.spec.ts",
@@ -439,9 +409,9 @@
       "testRailId": "654184",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/change-vendor.spec.ts::[654184] User can change the vendor of one or more packages",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-11-01",
-      "daysSkipped": 585
+      "daysSkipped": 592
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/combine-packages.spec.ts",
@@ -449,39 +419,9 @@
       "testRailId": "654197",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/combine-packages.spec.ts::[654197] Verify that is possible combine two packages",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-09-26",
-      "daysSkipped": 621
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
-      "name": "[654230] Verify that is possible convert a item of type weight to quantity",
-      "testRailId": "654230",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654230] Verify that is possible convert a item of type weight to quantity",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2024-07-19",
-      "daysSkipped": 690
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
-      "name": "[654235] Verify that is possible convert a item of type quantity to weight",
-      "testRailId": "654235",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654235] Verify that is possible convert a item of type quantity to weight",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2024-08-09",
-      "daysSkipped": 669
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
-      "name": "[654236] Verify Product Conversion using Catalog Cost",
-      "testRailId": "654236",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654236] Verify Product Conversion using Catalog Cost",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2024-09-11",
-      "daysSkipped": 636
+      "daysSkipped": 628
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
@@ -489,9 +429,39 @@
       "testRailId": "654183",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654183] User should be able to bulk convert and adjust room",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-11-01",
-      "daysSkipped": 585
+      "daysSkipped": 592
+    },
+    {
+      "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
+      "name": "[654230] Verify that is possible convert a item of type weight to quantity",
+      "testRailId": "654230",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654230] Verify that is possible convert a item of type weight to quantity",
+      "author": "Ervīns Patmalnieks",
+      "skippedAt": "2024-07-19",
+      "daysSkipped": 697
+    },
+    {
+      "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
+      "name": "[654235] Verify that is possible convert a item of type quantity to weight",
+      "testRailId": "654235",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654235] Verify that is possible convert a item of type quantity to weight",
+      "author": "Ervīns Patmalnieks",
+      "skippedAt": "2024-08-09",
+      "daysSkipped": 676
+    },
+    {
+      "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
+      "name": "[654236] Verify Product Conversion using Catalog Cost",
+      "testRailId": "654236",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[654236] Verify Product Conversion using Catalog Cost",
+      "author": "Ervīns Patmalnieks",
+      "skippedAt": "2024-09-11",
+      "daysSkipped": 643
     },
     {
       "file": "e2e/tests/products/inventory-v2/actions/convert.spec.ts",
@@ -499,9 +469,9 @@
       "testRailId": "657120",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/actions/convert.spec.ts::[657120] Validate prepopulated date fields in convert modal are saved correctly on the inventory list page",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/products/inventory-v2/date-consistency-across-inventory.spec.ts",
@@ -509,9 +479,9 @@
       "testRailId": "657064",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/date-consistency-across-inventory.spec.ts::[657064] User should see the same date in inventory page when it receives a pending transfer that automatically puts in the date associated with the product",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2026-05-15",
-      "daysSkipped": 25
+      "daysSkipped": 32
     },
     {
       "file": "e2e/tests/products/inventory-v2/detail/autopopulate-prices.spec.ts",
@@ -521,7 +491,7 @@
       "id": "e2e/tests/products/inventory-v2/detail/autopopulate-prices.spec.ts::[657143] Validate autopopulate functionality",
       "author": "Matthew Smith",
       "skippedAt": "2024-04-30",
-      "daysSkipped": 770
+      "daysSkipped": 777
     },
     {
       "file": "e2e/tests/products/inventory-v2/detail/medical-and-recreational-pricing.spec.ts",
@@ -531,67 +501,7 @@
       "id": "e2e/tests/products/inventory-v2/detail/medical-and-recreational-pricing.spec.ts::[654212] Verify a user can enter both medical and recreational pricing for an inventory item when the dual pricing feature flag is enabled",
       "author": "John Robert Mahlan",
       "skippedAt": "2024-03-27",
-      "daysSkipped": 804
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts",
-      "name": "[657095] Inventory - Product Detail Tax Preview Tests - Non-Tax-Inclusive - All prices the same",
-      "testRailId": "657095",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts::[657095] Inventory - Product Detail Tax Preview Tests - Non-Tax-Inclusive - All prices the same",
-      "author": "Ben Versluis",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts",
-      "name": "[657273] Inventory - Dual Product Detail Tax Preview Tests - Tax-Inclusive -Non applicable Taxes present - All prices the same",
-      "testRailId": "657273",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts::[657273] Inventory - Dual Product Detail Tax Preview Tests - Tax-Inclusive -Non applicable Taxes present - All prices the same",
-      "author": "Ben Versluis",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts",
-      "name": "[657091] Inventory - Product Detail Tax Preview Tests - Not Tax-Inclusive - Save base Price",
-      "testRailId": "657091",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts::[657091] Inventory - Product Detail Tax Preview Tests - Not Tax-Inclusive - Save base Price",
-      "author": "burns47",
-      "skippedAt": "2024-06-05",
-      "daysSkipped": 734
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts",
-      "name": "[657092] Inventory - Dual Product Detail Tax Preview Tests - Tax-Inclusive - Save Taxed Price",
-      "testRailId": "657092",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts::[657092] Inventory - Dual Product Detail Tax Preview Tests - Tax-Inclusive - Save Taxed Price",
-      "author": "burns47",
-      "skippedAt": "2024-06-05",
-      "daysSkipped": 734
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts",
-      "name": "[657093] Inventory - Dual Product Detail Tax Preview Tests - Non-Tax-Inclusive - Dual Pricing - Save Base Prices",
-      "testRailId": "657093",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts::[657093] Inventory - Dual Product Detail Tax Preview Tests - Non-Tax-Inclusive - Dual Pricing - Save Base Prices",
-      "author": "Ben Versluis",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
-    },
-    {
-      "file": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts",
-      "name": "[657094] Inventory - Dual Product Detail Tax Preview Tests - Tax-Inclusive - Dual Pricing - Save Taxed Prices",
-      "testRailId": "657094",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/products/inventory-v2/detail/package-detail-tax-preview-v2.spec.ts::[657094] Inventory - Dual Product Detail Tax Preview Tests - Tax-Inclusive - Dual Pricing - Save Taxed Prices",
-      "author": "Ben Versluis",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 811
     },
     {
       "file": "e2e/tests/products/inventory-v2/filters/rooms.spec.ts",
@@ -599,59 +509,49 @@
       "testRailId": "657059",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/inventory-v2/filters/rooms.spec.ts::[657059] Verify room filter can toggle between hide empty rooms and show all rooms",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-09-11",
-      "daysSkipped": 636
+      "daysSkipped": 643
     },
     {
       "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
       "name": "[POS-18217] Async path: User should be able to manually receive inventory",
-      "testRailId": "N/A",
+      "testRailId": "POS-18217",
       "skipReason": "fixme annotation",
       "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: User should be able to manually receive inventory",
       "author": "Christopher Thomas",
       "skippedAt": "2026-06-02",
-      "daysSkipped": 7
-    },
-    {
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: Verify that the package is received in correct room",
-      "testRailId": "N/A",
-      "skipReason": "fixme annotation",
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the package is received in correct room",
-      "author": "Christopher Thomas",
-      "skippedAt": "2026-06-02",
-      "daysSkipped": 7
-    },
-    {
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: Verify that the package is received to the correct vendor",
-      "testRailId": "N/A",
-      "skipReason": "fixme annotation",
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the package is received to the correct vendor",
-      "author": "Christopher Thomas",
-      "skippedAt": "2026-06-02",
-      "daysSkipped": 7
+      "daysSkipped": 14
     },
     {
       "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
       "name": "[POS-18217] Async path: Verify that the Note can be added to the Receiving details",
-      "testRailId": "N/A",
+      "testRailId": "POS-18217",
       "skipReason": "fixme annotation",
       "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the Note can be added to the Receiving details",
       "author": "Christopher Thomas",
       "skippedAt": "2026-06-02",
-      "daysSkipped": 7
+      "daysSkipped": 14
     },
     {
       "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: receive endpoint returns 202 and page stays on receive form",
-      "testRailId": "N/A",
+      "name": "[POS-18217] Async path: Verify that the package is received in correct room",
+      "testRailId": "POS-18217",
       "skipReason": "fixme annotation",
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: receive endpoint returns 202 and page stays on receive form",
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the package is received in correct room",
       "author": "Christopher Thomas",
       "skippedAt": "2026-06-02",
-      "daysSkipped": 7
+      "daysSkipped": 14
+    },
+    {
+      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
+      "name": "[POS-18217] Async path: Verify that the package is received to the correct vendor",
+      "testRailId": "POS-18217",
+      "skipReason": "fixme annotation",
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the package is received to the correct vendor",
+      "author": "Christopher Thomas",
+      "skippedAt": "2026-06-02",
+      "daysSkipped": 14
     },
     {
       "file": "e2e/tests/products/manifests/add-wholesale-multi-stop-manifest.spec.ts",
@@ -659,9 +559,9 @@
       "testRailId": "342316",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/add-wholesale-multi-stop-manifest.spec.ts::[342316] Verify that it is possible create/complete a multistop manifest of type order",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-19",
-      "daysSkipped": 690
+      "daysSkipped": 697
     },
     {
       "file": "e2e/tests/products/manifests/add-wholesale-multi-stop-manifest.spec.ts",
@@ -669,9 +569,9 @@
       "testRailId": "342317",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/add-wholesale-multi-stop-manifest.spec.ts::[342317] Verify that it is possible create/complete a multistop manifest of type transfer",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-19",
-      "daysSkipped": 690
+      "daysSkipped": 697
     },
     {
       "file": "e2e/tests/products/manifests/edit-driver-wholesale-manifest.spec.ts",
@@ -679,9 +579,9 @@
       "testRailId": "342313",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/edit-driver-wholesale-manifest.spec.ts::[342313] Verify that is possible update and save \"Edit Driver\" into some wholesale order",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-11-01",
-      "daysSkipped": 585
+      "daysSkipped": 592
     },
     {
       "file": "e2e/tests/products/manifests/edit-driver-wholesale-manifest.spec.ts",
@@ -689,9 +589,9 @@
       "testRailId": "405590",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/edit-driver-wholesale-manifest.spec.ts::[405590] Verify that Driver is the same for all stops for a multi-stop manifest, and once edited it is synced",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-08-09",
-      "daysSkipped": 669
+      "daysSkipped": 676
     },
     {
       "file": "e2e/tests/products/manifests/edit-wholesale-multi-stop-manifest-details.spec.ts",
@@ -701,7 +601,7 @@
       "id": "e2e/tests/products/manifests/edit-wholesale-multi-stop-manifest-details.spec.ts::[405592] Verify edit Details just affect individual manifest inside a super manifest.",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/products/manifests/expiration-date-with-carry-over-flag.spec.ts",
@@ -709,9 +609,9 @@
       "testRailId": "405584",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/expiration-date-with-carry-over-flag.spec.ts::[405584] Verify that packages expiration date is carried over when receiving transfers manifests if ff \"Expiration Date Carry Over\" is on.",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-09-26",
-      "daysSkipped": 621
+      "daysSkipped": 628
     },
     {
       "file": "e2e/tests/products/manifests/expiration-date-without-carry-over-flag.spec.ts",
@@ -719,9 +619,9 @@
       "testRailId": "405585",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/expiration-date-without-carry-over-flag.spec.ts::[405585] Verify that packages expiration date is recalculated from Catalog when receiving transfers manifests if ff \"Expiration Date Carry Over\" is off.",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-11-01",
-      "daysSkipped": 585
+      "daysSkipped": 592
     },
     {
       "file": "e2e/tests/products/manifests/print-selected-multi-stop-manifest.spec.ts",
@@ -729,9 +629,9 @@
       "testRailId": "405595",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/print-selected-multi-stop-manifest.spec.ts::[405595] Print a super manifest with type - CA Sales Invoice / Shipping Manifest",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-09",
-      "daysSkipped": 700
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/products/manifests/retail-manifest-reopen-directions.spec.ts",
@@ -739,9 +639,9 @@
       "testRailId": "405615",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/retail-manifest-reopen-directions.spec.ts::[405615] Verify that it is not possible to reopen sold retail manifest",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-09-05",
-      "daysSkipped": 642
+      "daysSkipped": 649
     },
     {
       "file": "e2e/tests/products/manifests/retail-manifest.spec.ts",
@@ -749,19 +649,9 @@
       "testRailId": "405606",
       "skipReason": "skip annotation",
       "id": "e2e/tests/products/manifests/retail-manifest.spec.ts::[405606] Verify that is not possible to reopen sold Manifest > Retail",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-09-05",
-      "daysSkipped": 642
-    },
-    {
-      "file": "e2e/tests/registers/transactions/by-register/close-out-register.spec.ts",
-      "name": "[654263] Confirm close out modal displayed calculations",
-      "testRailId": "654263",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/registers/transactions/by-register/close-out-register.spec.ts::[654263] Confirm close out modal displayed calculations",
-      "author": "cnochez",
-      "skippedAt": "2026-06-02",
-      "daysSkipped": 7
+      "daysSkipped": 649
     },
     {
       "file": "e2e/tests/reports-v2/async-reports/async-report-auth.spec.ts",
@@ -769,9 +659,9 @@
       "testRailId": "654509",
       "skipReason": "skip annotation",
       "id": "e2e/tests/reports-v2/async-reports/async-report-auth.spec.ts::[654509] User can only see report jobs they personally enqueued",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/reports-v2/closing-report/payments/manual-payments.spec.ts",
@@ -781,7 +671,7 @@
       "id": "e2e/tests/reports-v2/closing-report/payments/manual-payments.spec.ts::[657058] Payments data grid should have accurate Manual Payment data",
       "author": "Gregory Ray",
       "skippedAt": "2024-04-01",
-      "daysSkipped": 799
+      "daysSkipped": 806
     },
     {
       "file": "e2e/tests/reports-v2/closing-report/payments/manual-payments.spec.ts",
@@ -791,7 +681,7 @@
       "id": "e2e/tests/reports-v2/closing-report/payments/manual-payments.spec.ts::[657105] When Manual Payments is disabled, the manual payments columns should not display.",
       "author": "Gregory Ray",
       "skippedAt": "2024-04-01",
-      "daysSkipped": 799
+      "daysSkipped": 806
     },
     {
       "file": "e2e/tests/reports-v2/closing-report/payments/manual-payments.spec.ts",
@@ -799,9 +689,9 @@
       "testRailId": "657274",
       "skipReason": "skip annotation",
       "id": "e2e/tests/reports-v2/closing-report/payments/manual-payments.spec.ts::[657274] When Manual Payments LD Flag is off, payments data grid should not show manual payments columns",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-06-04",
-      "daysSkipped": 735
+      "daysSkipped": 742
     },
     {
       "file": "e2e/tests/reports-v2/closing-report/registers.spec.ts",
@@ -809,9 +699,9 @@
       "testRailId": "654401",
       "skipReason": "skip annotation",
       "id": "e2e/tests/reports-v2/closing-report/registers.spec.ts::[654401] User should be able to export closing report",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/reports-v2/configure/reports-scheduler.spec.ts",
@@ -819,9 +709,9 @@
       "testRailId": "654353",
       "skipReason": "skip annotation",
       "id": "e2e/tests/reports-v2/configure/reports-scheduler.spec.ts::[654353] email recipients can be added and deleted",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-09",
-      "daysSkipped": 700
+      "daysSkipped": 707
     },
     {
       "file": "e2e/tests/reports-v2/overview/products.spec.ts",
@@ -831,7 +721,7 @@
       "id": "e2e/tests/reports-v2/overview/products.spec.ts::[654365] User should be able see transactions for specific dates",
       "author": "brock ross",
       "skippedAt": "2024-02-21",
-      "daysSkipped": 839
+      "daysSkipped": 846
     },
     {
       "file": "e2e/tests/reports-v2/overview/products.spec.ts",
@@ -841,7 +731,7 @@
       "id": "e2e/tests/reports-v2/overview/products.spec.ts::[657056] User without ViewCogsData permission should be unable to see certain columns",
       "author": "brock ross",
       "skippedAt": "2024-02-21",
-      "daysSkipped": 839
+      "daysSkipped": 846
     },
     {
       "file": "e2e/tests/reports-v2/overview/products.spec.ts",
@@ -851,7 +741,7 @@
       "id": "e2e/tests/reports-v2/overview/products.spec.ts::[657057] User with ViewCogsData permission should be able to see certain columns",
       "author": "brock ross",
       "skippedAt": "2024-02-21",
-      "daysSkipped": 839
+      "daysSkipped": 846
     },
     {
       "file": "e2e/tests/reports-v2/report-pages/pos-transactions.spec.ts",
@@ -861,7 +751,7 @@
       "id": "e2e/tests/reports-v2/report-pages/pos-transactions.spec.ts::[654372] Void report can be created",
       "author": "brock ross",
       "skippedAt": "2024-04-01",
-      "daysSkipped": 799
+      "daysSkipped": 806
     },
     {
       "file": "e2e/tests/settings/fees-and-donations-v2/automatic-fee-min-max.spec.ts",
@@ -869,19 +759,9 @@
       "testRailId": "653966",
       "skipReason": "skip annotation",
       "id": "e2e/tests/settings/fees-and-donations-v2/automatic-fee-min-max.spec.ts::[653966] Confirm automatic fees and donations allow null dollar min/max values",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-08",
-      "daysSkipped": 701
-    },
-    {
-      "file": "e2e/tests/settings/integrations/biotrack/settings.spec.ts",
-      "name": "[C657297] Verify settings show/hide correctly based on the selected state",
-      "testRailId": "C657297",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/biotrack/settings.spec.ts::[C657297] Verify settings show/hide correctly based on the selected state",
-      "author": "Sarah Kiesel-Nield",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 708
     },
     {
       "file": "e2e/tests/settings/integrations/biotrack/settings.spec.ts",
@@ -891,7 +771,17 @@
       "id": "e2e/tests/settings/integrations/biotrack/settings.spec.ts::[654464] Verify that the user can create a template for the Biotrack > Settings tab",
       "author": "dutchiebot-releases[bot]",
       "skippedAt": "2024-05-10",
-      "daysSkipped": 760
+      "daysSkipped": 767
+    },
+    {
+      "file": "e2e/tests/settings/integrations/biotrack/settings.spec.ts",
+      "name": "[C657297] Verify settings show/hide correctly based on the selected state",
+      "testRailId": "N/A",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/settings/integrations/biotrack/settings.spec.ts::[C657297] Verify settings show/hide correctly based on the selected state",
+      "author": "Sarah Kiesel-Nield",
+      "skippedAt": "2026-06-01",
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts",
@@ -901,7 +791,7 @@
       "id": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts::[657178] Generipay Devices tab display a searchable list of devices",
       "author": "Susie Rennick",
       "skippedAt": "2024-05-02",
-      "daysSkipped": 768
+      "daysSkipped": 775
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts",
@@ -911,7 +801,7 @@
       "id": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts::[657179] Generipay Devices tab has an add device button that opens the add/edit device modal",
       "author": "Susie Rennick",
       "skippedAt": "2024-05-02",
-      "daysSkipped": 768
+      "daysSkipped": 775
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts",
@@ -921,7 +811,7 @@
       "id": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts::[657180] Generipay Devices tab clicking on row should open the edit device modal",
       "author": "Susie Rennick",
       "skippedAt": "2024-05-02",
-      "daysSkipped": 768
+      "daysSkipped": 775
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts",
@@ -931,7 +821,7 @@
       "id": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts::[657181] Generipay Devices tab clicking on row action edit menu item should show edit modal",
       "author": "Susie Rennick",
       "skippedAt": "2024-05-02",
-      "daysSkipped": 768
+      "daysSkipped": 775
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts",
@@ -941,7 +831,7 @@
       "id": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts::[657182] Generipay Devices tab clicking on row action delete menu item should show delete confirmation modal",
       "author": "Susie Rennick",
       "skippedAt": "2024-05-02",
-      "daysSkipped": 768
+      "daysSkipped": 775
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts",
@@ -951,7 +841,7 @@
       "id": "e2e/tests/settings/integrations/generipay/devices-list.spec.ts::[657183] Generipay Devices tab should show a placeholder when no devices are present",
       "author": "Susie Rennick",
       "skippedAt": "2024-05-02",
-      "daysSkipped": 768
+      "daysSkipped": 775
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/generipay-settings.spec.ts",
@@ -959,9 +849,9 @@
       "testRailId": "657188",
       "skipReason": "skip annotation",
       "id": "e2e/tests/settings/integrations/generipay/generipay-settings.spec.ts::[657188] GeneriPay settings page save settings",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-19",
-      "daysSkipped": 690
+      "daysSkipped": 697
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/registers-tab.spec.ts",
@@ -971,7 +861,7 @@
       "id": "e2e/tests/settings/integrations/generipay/registers-tab.spec.ts::[657205] GeneriPay Registers Tab should display a searchable list of registers and associated generipay devices",
       "author": "Dorian Holmes",
       "skippedAt": "2024-05-03",
-      "daysSkipped": 767
+      "daysSkipped": 774
     },
     {
       "file": "e2e/tests/settings/integrations/generipay/registers-tab.spec.ts",
@@ -981,67 +871,7 @@
       "id": "e2e/tests/settings/integrations/generipay/registers-tab.spec.ts::[657209] GeneriPay Registers Tab should allow updating a register successfully",
       "author": "Dorian Holmes",
       "skippedAt": "2024-05-03",
-      "daysSkipped": 767
-    },
-    {
-      "file": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts",
-      "name": "[656939] SuperUser should be able to view/edit the non-integrated payments settings page, and configure processors.",
-      "testRailId": "656939",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts::[656939] SuperUser should be able to view/edit the non-integrated payments settings page, and configure processors.",
-      "author": "John Robert Mahlan",
-      "skippedAt": "2024-01-19",
-      "daysSkipped": 872
-    },
-    {
-      "file": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts",
-      "name": "[656973] SuperUser should be able to add a payment processor",
-      "testRailId": "656973",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts::[656973] SuperUser should be able to add a payment processor",
-      "author": "John Robert Mahlan",
-      "skippedAt": "2024-01-19",
-      "daysSkipped": 872
-    },
-    {
-      "file": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts",
-      "name": "[656978] Superuser cannot configure a processor that has already been added",
-      "testRailId": "656978",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts::[656978] Superuser cannot configure a processor that has already been added",
-      "author": "John Robert Mahlan",
-      "skippedAt": "2024-01-19",
-      "daysSkipped": 872
-    },
-    {
-      "file": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts",
-      "name": "[656963] Superuser successfully deletes a payment processor",
-      "testRailId": "656963",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/non-integrated-payments/non-integrated-payments.spec.ts::[656963] Superuser successfully deletes a payment processor",
-      "author": "John Robert Mahlan",
-      "skippedAt": "2024-01-19",
-      "daysSkipped": 872
-    },
-    {
-      "file": "e2e/tests/settings/integrations/payments-hub/hub-settings-page.spec.ts",
-      "name": "[654476] Verify that PaymentsHub settings can be updated and success notification appears",
-      "testRailId": "654476",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/payments-hub/hub-settings-page.spec.ts::[654476] Verify that PaymentsHub settings can be updated and success notification appears",
-      "author": "Ben Versluis",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
-    },
-    {
-      "file": "e2e/tests/settings/integrations/payments-hub/hub-settings-page.spec.ts",
-      "name": "[LEISUREPAY-003] LeisurePay settings can be updated and saved successfully",
-      "testRailId": "N/A",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/integrations/payments-hub/hub-settings-page.spec.ts::[LEISUREPAY-003] LeisurePay settings can be updated and saved successfully",
-      "author": "Ben Versluis",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 774
     },
     {
       "file": "e2e/tests/settings/receipts/email-settings.spec.ts",
@@ -1049,39 +879,9 @@
       "testRailId": "654070",
       "skipReason": "skip annotation",
       "id": "e2e/tests/settings/receipts/email-settings.spec.ts::[654070] \"Email receipt from:\" field should be disabled for standard user",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-07-19",
-      "daysSkipped": 690
-    },
-    {
-      "file": "e2e/tests/settings/users/permissions.spec.ts",
-      "name": "[654178], Delete Metrc Pending Transfer",
-      "testRailId": "654178",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/users/permissions.spec.ts::[654178], Delete Metrc Pending Transfer",
-      "author": "ericharddutchie",
-      "skippedAt": "2026-05-30",
-      "daysSkipped": 10
-    },
-    {
-      "file": "e2e/tests/settings/users/permissions.spec.ts",
-      "name": "[405822] Validate that \"Change Permissions\" is logged on table [UserToPermissionAudit]",
-      "testRailId": "405822",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/users/permissions.spec.ts::[405822] Validate that \"Change Permissions\" is logged on table [UserToPermissionAudit]",
-      "author": "Cole Mendes",
-      "skippedAt": "2023-12-15",
-      "daysSkipped": 907
-    },
-    {
-      "file": "e2e/tests/settings/users/permissions.spec.ts",
-      "name": "[405823] Validate that \"Assign group\" is logged on table [UserToUserGroupAudit]",
-      "testRailId": "405823",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/settings/users/permissions.spec.ts::[405823] Validate that \"Assign group\" is logged on table [UserToUserGroupAudit]",
-      "author": "Erv\u012bns Patmalnieks",
-      "skippedAt": "2024-03-20",
-      "daysSkipped": 811
+      "daysSkipped": 697
     },
     {
       "file": "e2e/tests/settings/users/permissions.spec.ts",
@@ -1091,7 +891,37 @@
       "id": "e2e/tests/settings/users/permissions.spec.ts::[375553] Administrator Permission",
       "author": "Jasmine Lopez",
       "skippedAt": "2024-01-23",
-      "daysSkipped": 868
+      "daysSkipped": 875
+    },
+    {
+      "file": "e2e/tests/settings/users/permissions.spec.ts",
+      "name": "[405822] Validate that \"Change Permissions\" is logged on table [UserToPermissionAudit]",
+      "testRailId": "405822",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/settings/users/permissions.spec.ts::[405822] Validate that \"Change Permissions\" is logged on table [UserToPermissionAudit]",
+      "author": "Cole Mendes",
+      "skippedAt": "2023-12-15",
+      "daysSkipped": 914
+    },
+    {
+      "file": "e2e/tests/settings/users/permissions.spec.ts",
+      "name": "[405823] Validate that \"Assign group\" is logged on table [UserToUserGroupAudit]",
+      "testRailId": "405823",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/settings/users/permissions.spec.ts::[405823] Validate that \"Assign group\" is logged on table [UserToUserGroupAudit]",
+      "author": "Ervīns Patmalnieks",
+      "skippedAt": "2024-03-20",
+      "daysSkipped": 818
+    },
+    {
+      "file": "e2e/tests/settings/users/permissions.spec.ts",
+      "name": "[654178], Delete Metrc Pending Transfer",
+      "testRailId": "654178",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/settings/users/permissions.spec.ts::[654178], Delete Metrc Pending Transfer",
+      "author": "ericharddutchie",
+      "skippedAt": "2026-05-30",
+      "daysSkipped": 17
     },
     {
       "file": "e2e/tests/smoke/receive_inventory.spec.ts",
@@ -1099,9 +929,9 @@
       "testRailId": "0009",
       "skipReason": "skip annotation",
       "id": "e2e/tests/smoke/receive_inventory.spec.ts::[0009] @smoke Manually receive a inventory",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2026-05-15",
-      "daysSkipped": 25
+      "daysSkipped": 32
     },
     {
       "file": "e2e/tests/superuser/bulk-update/bulk-update-loyalty-points.spec.ts",
@@ -1109,9 +939,9 @@
       "testRailId": "654391",
       "skipReason": "skip annotation",
       "id": "e2e/tests/superuser/bulk-update/bulk-update-loyalty-points.spec.ts::[654391] Verify the update file data is shown in the preview table after choosing a file",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-09-11",
-      "daysSkipped": 636
+      "daysSkipped": 643
     },
     {
       "file": "e2e/tests/superuser/bulk-update/bulk-update-loyalty-points.spec.ts",
@@ -1119,19 +949,9 @@
       "testRailId": "654453",
       "skipReason": "skip annotation",
       "id": "e2e/tests/superuser/bulk-update/bulk-update-loyalty-points.spec.ts::[654453] Verify the file name is shown and the choose file button is not rendered when a file is chosen",
-      "author": "Erv\u012bns Patmalnieks",
+      "author": "Ervīns Patmalnieks",
       "skippedAt": "2024-08-09",
-      "daysSkipped": 669
-    },
-    {
-      "file": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts",
-      "name": "[657131] Verify that the MMUR Form columns appear in the bulk product updater table",
-      "testRailId": "657131",
-      "skipReason": "skip annotation",
-      "id": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts::[657131] Verify that the MMUR Form columns appear in the bulk product updater table",
-      "author": "Sarah Kiesel-Nield",
-      "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 676
     },
     {
       "file": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts",
@@ -1141,7 +961,7 @@
       "id": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts::[654293] Verify that the Regulatory Name, THC, CBD, and External Id columns appear in the bulk product updater table",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts",
@@ -1151,7 +971,17 @@
       "id": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts::[654541] Verify that the Location_RecPrice column is in the bulk product updater table and can be updated",
       "author": "jordan castillo",
       "skippedAt": "2023-10-06",
-      "daysSkipped": 977
+      "daysSkipped": 984
+    },
+    {
+      "file": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts",
+      "name": "[657131] Verify that the MMUR Form columns appear in the bulk product updater table",
+      "testRailId": "657131",
+      "skipReason": "skip annotation",
+      "id": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts::[657131] Verify that the MMUR Form columns appear in the bulk product updater table",
+      "author": "Sarah Kiesel-Nield",
+      "skippedAt": "2026-06-01",
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts",
@@ -1161,7 +991,7 @@
       "id": "e2e/tests/superuser/bulk-update/products/bulk-update-products-additional-columns.spec.ts::[657321] Verify that the is MMUR delivery device column appear in the bulk product updater table",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/superuser/create-edit-lsp/create-loc-with-feature-flags-state-pack-template.spec.ts",
@@ -1171,7 +1001,7 @@
       "id": "e2e/tests/superuser/create-edit-lsp/create-loc-with-feature-flags-state-pack-template.spec.ts::[656958] Create a new location with feature flags template",
       "author": "dutchiebot-releases[bot]",
       "skippedAt": "2024-05-10",
-      "daysSkipped": 760
+      "daysSkipped": 767
     },
     {
       "file": "e2e/tests/superuser/data-wipe/data-wipe-registers.spec.ts",
@@ -1181,7 +1011,7 @@
       "id": "e2e/tests/superuser/data-wipe/data-wipe-registers.spec.ts::[654145] Verify that Wipe registers button is disabled if Transactions have not been purged yet.",
       "author": "Heather McManigal",
       "skippedAt": "2024-05-10",
-      "daysSkipped": 760
+      "daysSkipped": 767
     },
     {
       "file": "e2e/tests/superuser/dataloader/data-loader-biotrack-product-tab.spec.ts",
@@ -1191,7 +1021,7 @@
       "id": "e2e/tests/superuser/dataloader/data-loader-biotrack-product-tab.spec.ts::[657130] Verify that the new biotrack Product tab option is visible with new columns visible",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/superuser/dataloader/data-loader-customers-tab.spec.ts",
@@ -1201,7 +1031,7 @@
       "id": "e2e/tests/superuser/dataloader/data-loader-customers-tab.spec.ts::[657382] Verify that the Customers tab option is visible with new columns visible",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "e2e/tests/superuser/dataloader/data-loader-doctor-validation.spec.ts",
@@ -1211,7 +1041,7 @@
       "id": "e2e/tests/superuser/dataloader/data-loader-doctor-validation.spec.ts::[657212] Verify the data loader shows the missing data and validation errors info when confirming import for doctors",
       "author": "Heather McManigal",
       "skippedAt": "2024-06-07",
-      "daysSkipped": 732
+      "daysSkipped": 739
     },
     {
       "file": "src/app/hooks/biotrack/use-arrive-manifest.test.tsx",
@@ -1221,7 +1051,7 @@
       "id": "src/app/hooks/biotrack/use-arrive-manifest.test.tsx::useArriveManifest",
       "author": "Cole Mendes",
       "skippedAt": "2025-07-07",
-      "daysSkipped": 337
+      "daysSkipped": 344
     },
     {
       "file": "src/app/hooks/biotrack/use-manifest-status.test.tsx",
@@ -1231,7 +1061,7 @@
       "id": "src/app/hooks/biotrack/use-manifest-status.test.tsx::useManifestStatus",
       "author": "Cole Mendes",
       "skippedAt": "2025-07-07",
-      "daysSkipped": 337
+      "daysSkipped": 344
     },
     {
       "file": "src/app/hooks/biotrack/use-void-manifest-test.test.tsx",
@@ -1241,7 +1071,7 @@
       "id": "src/app/hooks/biotrack/use-void-manifest-test.test.tsx::useVoidManifest",
       "author": "Cole Mendes",
       "skippedAt": "2025-07-07",
-      "daysSkipped": 337
+      "daysSkipped": 344
     },
     {
       "file": "src/app/pages/customers/segments/details/segment-query-builder/form-elements/shared/multiselects.test.tsx",
@@ -1251,7 +1081,7 @@
       "id": "src/app/pages/customers/segments/details/segment-query-builder/form-elements/shared/multiselects.test.tsx::It can render the customer group multi select dropdown label",
       "author": "Jasmine Lopez",
       "skippedAt": "2025-12-22",
-      "daysSkipped": 169
+      "daysSkipped": 176
     },
     {
       "file": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx",
@@ -1261,7 +1091,7 @@
       "id": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx::displays email details section",
       "author": "Jasmine Lopez",
       "skippedAt": "2025-04-28",
-      "daysSkipped": 407
+      "daysSkipped": 414
     },
     {
       "file": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx",
@@ -1271,17 +1101,7 @@
       "id": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx::shows audience size when feature flag is enabled",
       "author": "Jasmine Lopez",
       "skippedAt": "2025-04-28",
-      "daysSkipped": 407
-    },
-    {
-      "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
-      "name": "Recurrence Start Time is invalid.",
-      "testRailId": "N/A",
-      "skipReason": "skip annotation",
-      "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence Start Time is invalid.",
-      "author": "Alex Marmon",
-      "skippedAt": "2022-04-13",
-      "daysSkipped": 1518
+      "daysSkipped": 414
     },
     {
       "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
@@ -1291,7 +1111,17 @@
       "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence End Time is invalid.",
       "author": "Alex Marmon",
       "skippedAt": "2022-04-13",
-      "daysSkipped": 1518
+      "daysSkipped": 1525
+    },
+    {
+      "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
+      "name": "Recurrence Start Time is invalid.",
+      "testRailId": "N/A",
+      "skipReason": "skip annotation",
+      "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence Start Time is invalid.",
+      "author": "Alex Marmon",
+      "skippedAt": "2022-04-13",
+      "daysSkipped": 1525
     },
     {
       "file": "src/app/pages/products/inventory-v2/detail/tests/detail-fields/detail-fields-radios.test.tsx",
@@ -1301,7 +1131,7 @@
       "id": "src/app/pages/products/inventory-v2/detail/tests/detail-fields/detail-fields-radios.test.tsx::Inventory Detail Form",
       "author": "Jamey Gronewald",
       "skippedAt": "2025-05-21",
-      "daysSkipped": 384
+      "daysSkipped": 391
     },
     {
       "file": "src/app/pages/products/inventory/label-printer/use-label-printer.test.tsx",
@@ -1311,7 +1141,7 @@
       "id": "src/app/pages/products/inventory/label-printer/use-label-printer.test.tsx::calls the print endpoint",
       "author": "Marc Gray",
       "skippedAt": "2026-03-30",
-      "daysSkipped": 71
+      "daysSkipped": 78
     },
     {
       "file": "src/app/pages/products/inventory/receive-history.test.tsx",
@@ -1321,7 +1151,7 @@
       "id": "src/app/pages/products/inventory/receive-history.test.tsx::ReceiveInventoryHistory",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "src/app/pages/products/inventory/receive-history.test.tsx",
@@ -1331,7 +1161,7 @@
       "id": "src/app/pages/products/inventory/receive-history.test.tsx::should gracefully handle missing StateTransmissionDate",
       "author": "Sarah Kiesel-Nield",
       "skippedAt": "2026-06-01",
-      "daysSkipped": 8
+      "daysSkipped": 15
     },
     {
       "file": "src/app/pages/products/invoices/invoice-payment.test.tsx",
@@ -1341,7 +1171,7 @@
       "id": "src/app/pages/products/invoices/invoice-payment.test.tsx::handles a lot of payments",
       "author": "ian-barker-dutchie",
       "skippedAt": "2025-07-25",
-      "daysSkipped": 319
+      "daysSkipped": 326
     },
     {
       "file": "src/app/pages/products/manifests/biotrack/manifest-arrive-button.test.tsx",
@@ -1351,7 +1181,7 @@
       "id": "src/app/pages/products/manifests/biotrack/manifest-arrive-button.test.tsx::ManifestArriveButton",
       "author": "Cole Mendes",
       "skippedAt": "2025-07-07",
-      "daysSkipped": 337
+      "daysSkipped": 344
     },
     {
       "file": "src/app/pages/products/manifests/non-multi-stop/index.test.tsx",
@@ -1361,7 +1191,7 @@
       "id": "src/app/pages/products/manifests/non-multi-stop/index.test.tsx::(flag: %s) should be able to void manifest when state transmission id is present",
       "author": "Matthew McQuinn",
       "skippedAt": "2026-01-05",
-      "daysSkipped": 155
+      "daysSkipped": 162
     },
     {
       "file": "src/app/pages/reports-v2/inventory/inventory-dashboard.test.tsx",
@@ -1371,7 +1201,7 @@
       "id": "src/app/pages/reports-v2/inventory/inventory-dashboard.test.tsx::should show -- on error",
       "author": "Marc Gray",
       "skippedAt": "2026-03-30",
-      "daysSkipped": 71
+      "daysSkipped": 78
     },
     {
       "file": "src/app/pages/settings/integrations/metrc/settings.test.tsx",
@@ -1381,7 +1211,7 @@
       "id": "src/app/pages/settings/integrations/metrc/settings.test.tsx::maintain patient allotment available to colorado",
       "author": "Jonathan Frankel",
       "skippedAt": "2025-04-01",
-      "daysSkipped": 434
+      "daysSkipped": 441
     },
     {
       "file": "src/app/pages/settings/integrations/metrc/settings.test.tsx",
@@ -1391,7 +1221,7 @@
       "id": "src/app/pages/settings/integrations/metrc/settings.test.tsx::maintain patient allotment available to louisiana",
       "author": "ian-barker-dutchie",
       "skippedAt": "2025-05-29",
-      "daysSkipped": 376
+      "daysSkipped": 383
     }
   ]
 }
