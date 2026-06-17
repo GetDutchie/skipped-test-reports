@@ -234,11 +234,11 @@
       "daysSkipped": 113
     },
     {
-      "id": "playwright/tests/marketplace/ads/checkout-telemetry.test.ts::Ads Checkout - Telemetry Events",
+      "id": "playwright/tests/marketplace/ads/checkout-telemetry.test.ts::[TBD] placedOrder event fires with library_product_id after checkout",
       "file": "playwright/tests/marketplace/ads/checkout-telemetry.test.ts",
-      "name": "Ads Checkout - Telemetry Events",
+      "name": "[TBD] placedOrder event fires with library_product_id after checkout",
       "testRailId": "N/A",
-      "skipReason": "@mobile",
+      "skipReason": "skip",
       "skippedAt": "2026-06-11",
       "author": "Marc Gray",
       "daysSkipped": 6
