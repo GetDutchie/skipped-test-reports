@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-11",
+  "generatedAt": "2026-06-18",
   "sourceRepo": "GetDutchie/Armageddon",
-  "commitSha": "8b167bc041a4a0f9bf7e62704135f603ea95612e",
+  "commitSha": "40cd3d4a722f89b806f66347f28afafebc8e80eb",
   "tests": [
     {
       "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by address",
@@ -11,7 +11,7 @@
       "skipReason": "N/A",
       "skippedAt": "2023-01-09",
       "author": "Michael Hunter",
-      "daysSkipped": 1249
+      "daysSkipped": 1256
     },
     {
       "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by state",
@@ -21,7 +21,7 @@
       "skipReason": "N/A",
       "skippedAt": "2023-01-09",
       "author": "Michael Hunter",
-      "daysSkipped": 1249
+      "daysSkipped": 1256
     },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #create",
@@ -31,7 +31,7 @@
       "skipReason": "Currently unused",
       "skippedAt": "2020-06-11",
       "author": "matt-dutchie",
-      "daysSkipped": 2191
+      "daysSkipped": 2198
     },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #update",
@@ -41,7 +41,7 @@
       "skipReason": "Currently unused",
       "skippedAt": "2020-06-11",
       "author": "matt-dutchie",
-      "daysSkipped": 2191
+      "daysSkipped": 2198
     },
     {
       "id": "spec/spawners/database_trimmer_spawner_spec.rb::creates jobs for all relevant models",
@@ -51,7 +51,7 @@
       "skipReason": "N/A",
       "skippedAt": "2024-04-26",
       "author": "Taylor Piccarreto",
-      "daysSkipped": 776
+      "daysSkipped": 783
     },
     {
       "id": "spec/workers/menu_integration/menu_worker_spec.rb::MenuIntegration::Workers::MenuWorker",
@@ -61,7 +61,7 @@
       "skipReason": "MenuIntegration::Adapters not yet ported (P3)",
       "skippedAt": "2026-04-29",
       "author": "Michael Hunter",
-      "daysSkipped": 43
+      "daysSkipped": 50
     }
   ]
 }
