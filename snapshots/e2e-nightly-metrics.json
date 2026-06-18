@@ -227,6 +227,25 @@
         "commit": "b7962f6",
         "run_timestamp": "2026-06-17T08:57:48.000Z"
       }
+    },
+    {
+      "date": "2026-06-18",
+      "back_office": {
+        "flaky": 7,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-18T07:51:22Z"
+      },
+      "pos": {
+        "flaky": 8,
+        "failed": 0,
+        "total": 440,
+        "branch": "develop",
+        "commit": "b56dbfb",
+        "run_timestamp": "2026-06-18T08:47:54Z"
+      }
     }
   ],
   "thrash_candidates": [
@@ -247,7 +266,7 @@
     },
     {
       "test_id": "654240",
-      "test_name": "discount-amount — Amount off discounts show as $amount off",
+      "test_name": "discount-amount \u2014 Amount off discounts show as $amount off",
       "suite": "pos",
       "times_fixed": 4,
       "last_flaked": "2026-06-17",
@@ -260,7 +279,7 @@
     },
     {
       "test_id": "656954",
-      "test_name": "change-payment-type — starts with cash, finishes with manual payment via AeroPay",
+      "test_name": "change-payment-type \u2014 starts with cash, finishes with manual payment via AeroPay",
       "suite": "pos",
       "times_fixed": 4,
       "last_flaked": "2026-06-17",
@@ -274,7 +293,7 @@
     },
     {
       "test_id": "654242",
-      "test_name": "discount-amount — Price to cost plus percent discounts show as dollar amount",
+      "test_name": "discount-amount \u2014 Price to cost plus percent discounts show as dollar amount",
       "suite": "pos",
       "times_fixed": 3,
       "last_flaked": "2026-06-17",
@@ -287,7 +306,7 @@
     },
     {
       "test_id": "657067",
-      "test_name": "inventory-tag-filtering — Shows correct filters and fetches inventory tags when LD flag is ON",
+      "test_name": "inventory-tag-filtering \u2014 Shows correct filters and fetches inventory tags when LD flag is ON",
       "suite": "pos",
       "times_fixed": 3,
       "last_flaked": "2026-06-14",
@@ -312,7 +331,7 @@
     },
     {
       "test_id": "657159",
-      "test_name": "change-customer-type — can change the customer type when location setting is enabled",
+      "test_name": "change-customer-type \u2014 can change the customer type when location setting is enabled",
       "suite": "pos",
       "times_fixed": 3,
       "last_flaked": "2026-06-17",
@@ -325,7 +344,7 @@
     },
     {
       "test_id": "657161",
-      "test_name": "change-customer-type — can change customer type without warning when cart is empty",
+      "test_name": "change-customer-type \u2014 can change customer type without warning when cart is empty",
       "suite": "pos",
       "times_fixed": 3,
       "last_flaked": "2026-06-17",
@@ -338,7 +357,7 @@
     },
     {
       "test_id": "654010",
-      "test_name": "loyalty fixture — Apply entered points only accepts valid input",
+      "test_name": "loyalty fixture \u2014 Apply entered points only accepts valid input",
       "suite": "pos",
       "times_fixed": 3,
       "last_flaked": "2026-06-11",
@@ -362,7 +381,7 @@
     },
     {
       "test_id": "654118",
-      "test_name": "Configured fields for package detail page — save state pack template",
+      "test_name": "Configured fields for package detail page \u2014 save state pack template",
       "suite": "back_office",
       "times_fixed": 2,
       "last_flaked": "2026-06-09",
@@ -373,7 +392,7 @@
     },
     {
       "test_id": "544724",
-      "test_name": "Bulk closeout — User should be able to close out registers via bulk closeout",
+      "test_name": "Bulk closeout \u2014 User should be able to close out registers via bulk closeout",
       "suite": "back_office",
       "times_fixed": 2,
       "last_flaked": "2026-06-08",
@@ -395,7 +414,7 @@
     },
     {
       "test_id": "654241",
-      "test_name": "discount-amount — category restriction discounts show as dollar amount",
+      "test_name": "discount-amount \u2014 category restriction discounts show as dollar amount",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-06-17",
@@ -406,7 +425,7 @@
     },
     {
       "test_id": "657160",
-      "test_name": "change-customer-type — cannot change the customer type when location setting is disabled",
+      "test_name": "change-customer-type \u2014 cannot change the customer type when location setting is disabled",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-06-17",
