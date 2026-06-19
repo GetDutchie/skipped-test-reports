@@ -274,7 +274,7 @@
       "suite": "back_office",
       "times_fixed": 5,
       "last_flaked": "2026-06-17",
-      "recommendation": "ESCALATE",
+      "recommendation": "REDESIGN",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/6821",
         "https://github.com/GetDutchie/back-office/pull/6843",
@@ -284,115 +284,12 @@
       ]
     },
     {
-      "test_id": "654240",
-      "test_name": "discount-amount \u2014 Amount off discounts show as $amount off",
-      "suite": "pos",
-      "times_fixed": 4,
-      "last_flaked": "2026-06-17",
-      "recommendation": "ESCALATE",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1354",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1387",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
-      ]
-    },
-    {
-      "test_id": "656954",
-      "test_name": "change-payment-type \u2014 starts with cash, finishes with manual payment via AeroPay",
-      "suite": "pos",
-      "times_fixed": 4,
-      "last_flaked": "2026-06-17",
-      "recommendation": "ESCALATE",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1354",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1415",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
-      ]
-    },
-    {
-      "test_id": "654242",
-      "test_name": "discount-amount \u2014 Price to cost plus percent discounts show as dollar amount",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-06-17",
-      "recommendation": "ESCALATE",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1354",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1387",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
-      ]
-    },
-    {
-      "test_id": "657067",
-      "test_name": "inventory-tag-filtering \u2014 Shows correct filters and fetches inventory tags when LD flag is ON",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-06-14",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1354",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1380",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1423"
-      ]
-    },
-    {
-      "test_id": "654168",
-      "test_name": "Manager can assign hardware from advanced settings",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-06-05",
-      "recommendation": "ESCALATE",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1354",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1380"
-      ]
-    },
-    {
-      "test_id": "657159",
-      "test_name": "change-customer-type \u2014 can change the customer type when location setting is enabled",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-06-17",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1384",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
-      ]
-    },
-    {
-      "test_id": "657161",
-      "test_name": "change-customer-type \u2014 can change customer type without warning when cart is empty",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-06-17",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1384",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
-      ]
-    },
-    {
-      "test_id": "654010",
-      "test_name": "loyalty fixture \u2014 Apply entered points only accepts valid input",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-06-11",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1384",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1415"
-      ]
-    },
-    {
       "test_id": "248894",
-      "test_name": "Filtering and sorting All Transactions table",
+      "test_name": "Filtering and sorting \"All Transactions\" table",
       "suite": "back_office",
       "times_fixed": 2,
       "last_flaked": "2026-06-17",
-      "recommendation": "REDESIGN",
+      "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/6797",
         "https://github.com/GetDutchie/back-office/pull/6936"
@@ -400,7 +297,7 @@
     },
     {
       "test_id": "654118",
-      "test_name": "Configured fields for package detail page \u2014 save state pack template",
+      "test_name": "Configured fields for package detail page are and save state pack template",
       "suite": "back_office",
       "times_fixed": 2,
       "last_flaked": "2026-06-09",
@@ -411,18 +308,128 @@
     },
     {
       "test_id": "544724",
-      "test_name": "Bulk closeout \u2014 User should be able to close out registers via bulk closeout",
+      "test_name": "User should be able to close out registers via bulk closeout",
       "suite": "back_office",
       "times_fixed": 2,
       "last_flaked": "2026-06-08",
-      "recommendation": "REDESIGN",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/6766"
       ]
     },
     {
+      "test_id": "654240",
+      "test_name": "Amount off discounts show as dollar amount in cart UI",
+      "suite": "pos",
+      "times_fixed": 4,
+      "last_flaked": "2026-06-17",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1384",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1430",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "654242",
+      "test_name": "Price to amount discounts show as dollar amount in cart UI",
+      "suite": "pos",
+      "times_fixed": 4,
+      "last_flaked": "2026-06-17",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1384",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1430",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "654241",
+      "test_name": "Percent off discounts show as percent% off in cart UI",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-06-18",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1430",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "656954",
+      "test_name": "starts with transaction paid in cash and finishes with manual payment via AeroPay",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-06-17",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1415",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "654010",
+      "test_name": "Apply entered points only accepts valid input",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-06-11",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1384",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1415"
+      ]
+    },
+    {
+      "test_id": "657159",
+      "test_name": "can change the customer type when location setting is enabled",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-06-17",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "657160",
+      "test_name": "can not change the customer type when location setting is disabled",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-06-17",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "657161",
+      "test_name": "can change customer type without warning when cart is empty",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-06-17",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+      ]
+    },
+    {
+      "test_id": "657067",
+      "test_name": "Shows correct filters and fetches inventory tags when LD flag is ON",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-06-18",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1430"
+      ]
+    },
+    {
       "test_id": "160119",
-      "test_name": "review-transaction-history",
+      "test_name": "Review transaction history",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-06-17",
@@ -432,31 +439,19 @@
       ]
     },
     {
-      "test_id": "654241",
-      "test_name": "discount-amount \u2014 category restriction discounts show as dollar amount",
+      "test_id": "431183",
+      "test_name": "Verify that void button is disabled for voided transactions on Transaction Product Details screen",
       "suite": "pos",
       "times_fixed": 2,
-      "last_flaked": "2026-06-17",
-      "recommendation": "ESCALATE",
+      "last_flaked": "2026-06-18",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
-      ]
-    },
-    {
-      "test_id": "657160",
-      "test_name": "change-customer-type \u2014 cannot change the customer type when location setting is disabled",
-      "suite": "pos",
-      "times_fixed": 2,
-      "last_flaked": "2026-06-17",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1423",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1438"
+        "https://github.com/GetDutchie/dutchie-pos/pull/1384"
       ]
     },
     {
       "test_id": "654267",
-      "test_name": "filter-by-time-window",
+      "test_name": "Filter Delivery page by Delivery Status",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-06-17",
