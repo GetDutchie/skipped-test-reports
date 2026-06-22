@@ -1,367 +1,367 @@
 {
-  "generatedAt": "2026-06-15",
+  "generatedAt": "2026-06-22",
   "sourceRepo": "GetDutchie/dutchie-pos",
-  "commitSha": "6241f93c0b0983fb64f52aef0ae070dbbc0199d4",
+  "commitSha": "8491afcdd1874a39d381f87d264846f4573b8084",
   "tests": [
     {
-      "id": "apps/register/e2e/tests/cart/anon-guest-birthdate-present-in-cart.test.ts::[194395] Checking in an anonymous guest with their birthday present in the cart",
+      "id": "apps/register/e2e/tests/cart/anon-guest-birthdate-present-in-cart.test.ts::Checking in an anonymous guest with their birthday present in the cart",
       "file": "apps/register/e2e/tests/cart/anon-guest-birthdate-present-in-cart.test.ts",
-      "name": "[194395] Checking in an anonymous guest with their birthday present in the cart",
-      "testRailId": "194395",
-      "skipReason": "anonymousBirthdayCheckTest.skip",
+      "name": "Checking in an anonymous guest with their birthday present in the cart",
+      "testRailId": "[194395]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-04-19",
       "author": "Jamey Gronewald",
-      "daysSkipped": 787
+      "daysSkipped": 794
     },
     {
-      "id": "apps/register/e2e/tests/cart/cancelled-transactions-appear-in-closing-report.test.ts::[299629] Cancel a transaction that appears in the closing report",
+      "id": "apps/register/e2e/tests/cart/cancelled-transactions-appear-in-closing-report.test.ts::Cancel a transaction that appears in the closing report",
       "file": "apps/register/e2e/tests/cart/cancelled-transactions-appear-in-closing-report.test.ts",
-      "name": "[299629] Cancel a transaction that appears in the closing report",
-      "testRailId": "299629",
-      "skipReason": "cancelTransactionTest.skip",
+      "name": "Cancel a transaction that appears in the closing report",
+      "testRailId": "[299629]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-05-04",
       "author": "Payton Boxleitner",
-      "daysSkipped": 1138
+      "daysSkipped": 1145
     },
     {
-      "id": "apps/register/e2e/tests/cart/consistent-transactions-over-twenty-four-hours.test.ts::[431335] Review transaction history",
+      "id": "apps/register/e2e/tests/cart/consistent-transactions-over-twenty-four-hours.test.ts::Review transaction history",
       "file": "apps/register/e2e/tests/cart/consistent-transactions-over-twenty-four-hours.test.ts",
-      "name": "[431335] Review transaction history",
-      "testRailId": "431335",
-      "skipReason": "consistentTransactionRecordsTest.skip",
+      "name": "Review transaction history",
+      "testRailId": "[431335]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-07-12",
       "author": "Josh DePonte",
-      "daysSkipped": 703
+      "daysSkipped": 710
     },
     {
-      "id": "apps/register/e2e/tests/cart/discounts/discount-description-char-limit.test.ts::[654005] is not successful in applying the discount if the name is over 100 characters",
+      "id": "apps/register/e2e/tests/cart/discounts/discount-description-char-limit.test.ts::is not successful in applying the discount if the name is over 100 characters",
       "file": "apps/register/e2e/tests/cart/discounts/discount-description-char-limit.test.ts",
-      "name": "[654005] is not successful in applying the discount if the name is over 100 characters",
-      "testRailId": "654005",
-      "skipReason": "baseDiscountTest.skip",
+      "name": "is not successful in applying the discount if the name is over 100 characters",
+      "testRailId": "[654005]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-02-10",
       "author": "Cole Mendes",
-      "daysSkipped": 856
+      "daysSkipped": 863
     },
     {
-      "id": "apps/register/e2e/tests/cart/discounts/discount-restriction-group.test.ts::[405518] Verify that the discount needs to be set with at least one discount group assigned to the customer in order to apply",
+      "id": "apps/register/e2e/tests/cart/discounts/discount-restriction-group.test.ts::Verify that if a Discount is set to `No Groups Assigned`, then the customer must not be a member of any group in order for the discount to apply",
       "file": "apps/register/e2e/tests/cart/discounts/discount-restriction-group.test.ts",
-      "name": "[405518] Verify that the discount needs to be set with at least one discount group assigned to the customer in order to apply",
-      "testRailId": "405518",
-      "skipReason": "discountGroupTest.skip",
+      "name": "Verify that if a Discount is set to `No Groups Assigned`, then the customer must not be a member of any group in order for the discount to apply",
+      "testRailId": "[405519]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-05-04",
       "author": "Payton Boxleitner",
-      "daysSkipped": 1138
+      "daysSkipped": 1145
     },
     {
-      "id": "apps/register/e2e/tests/cart/discounts/discount-restriction-group.test.ts::[405519] Verify that if a Discount is set to `No Groups Assigned`, then the customer must not be a member of any group in order for the discount to apply",
+      "id": "apps/register/e2e/tests/cart/discounts/discount-restriction-group.test.ts::Verify that the discount needs to be set with at least one discount group assigned to the customer in order to apply",
       "file": "apps/register/e2e/tests/cart/discounts/discount-restriction-group.test.ts",
-      "name": "[405519] Verify that if a Discount is set to `No Groups Assigned`, then the customer must not be a member of any group in order for the discount to apply",
-      "testRailId": "405519",
-      "skipReason": "discountNoGroupTest.skip",
+      "name": "Verify that the discount needs to be set with at least one discount group assigned to the customer in order to apply",
+      "testRailId": "[405518]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-05-04",
       "author": "Payton Boxleitner",
-      "daysSkipped": 1138
+      "daysSkipped": 1145
     },
     {
-      "id": "apps/register/e2e/tests/cart/discounts/override_discounts.test.ts::[274257] successfully",
+      "id": "apps/register/e2e/tests/cart/discounts/override_discounts.test.ts::is not successful",
       "file": "apps/register/e2e/tests/cart/discounts/override_discounts.test.ts",
-      "name": "[274257] successfully",
-      "testRailId": "274257",
-      "skipReason": "overrideDiscount.skip",
+      "name": "is not successful",
+      "testRailId": "[654130]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-04-12",
       "author": "Jordan Paz",
-      "daysSkipped": 1160
+      "daysSkipped": 1167
     },
     {
-      "id": "apps/register/e2e/tests/cart/discounts/override_discounts.test.ts::[654130] is not successful",
+      "id": "apps/register/e2e/tests/cart/discounts/override_discounts.test.ts::successfully",
       "file": "apps/register/e2e/tests/cart/discounts/override_discounts.test.ts",
-      "name": "[654130] is not successful",
-      "testRailId": "654130",
-      "skipReason": "overrideDiscount.skip",
+      "name": "successfully",
+      "testRailId": "[274257]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-04-12",
       "author": "Jordan Paz",
-      "daysSkipped": 1160
+      "daysSkipped": 1167
     },
     {
-      "id": "apps/register/e2e/tests/cart/loyalty/apply-loyalty-and-discount.test.ts::[656692] Can't violate loyalty point totals by applying discounts - Loyalty as Cash",
+      "id": "apps/register/e2e/tests/cart/loyalty/apply-loyalty-and-discount.test.ts::Can't violate loyalty point totals by applying discounts - Loyalty as Cash",
       "file": "apps/register/e2e/tests/cart/loyalty/apply-loyalty-and-discount.test.ts",
-      "name": "[656692] Can't violate loyalty point totals by applying discounts - Loyalty as Cash",
-      "testRailId": "656692",
-      "skipReason": "loyaltyAsCashFixture.skip",
+      "name": "Can't violate loyalty point totals by applying discounts - Loyalty as Cash",
+      "testRailId": "[656692]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-10-09",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 614
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 621
     },
     {
-      "id": "apps/register/e2e/tests/cart/loyalty/apply-loyalty-and-discount.test.ts::[656693] Can't violate loyalty point totals by applying discounts - Loyalty as Discount",
+      "id": "apps/register/e2e/tests/cart/loyalty/apply-loyalty-and-discount.test.ts::Can't violate loyalty point totals by applying discounts - Loyalty as Discount",
       "file": "apps/register/e2e/tests/cart/loyalty/apply-loyalty-and-discount.test.ts",
-      "name": "[656693] Can't violate loyalty point totals by applying discounts - Loyalty as Discount",
-      "testRailId": "656693",
-      "skipReason": "loyaltyAsDiscountFixture.skip",
+      "name": "Can't violate loyalty point totals by applying discounts - Loyalty as Discount",
+      "testRailId": "[656693]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 38
+      "daysSkipped": 45
     },
     {
-      "id": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts::[654019] Enabled",
+      "id": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts::Disabled",
       "file": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts",
-      "name": "[654019] Enabled",
-      "testRailId": "654019",
-      "skipReason": "recFlowerEquivalentEnabled.skip",
-      "skippedAt": "2024-09-19",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 634
-    },
-    {
-      "id": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts::[654020] Disabled",
-      "file": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts",
-      "name": "[654020] Disabled",
-      "testRailId": "654020",
-      "skipReason": "recFlowerEquivalentDisabled.skip",
+      "name": "Disabled",
+      "testRailId": "[654020]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-10-09",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 614
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 621
     },
     {
-      "id": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment.test.ts::[572503] Verify that the allotment \"used\" and \"remaining\" amounts update correctly for fulfillment orders",
+      "id": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts::Enabled",
+      "file": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment-with-rec-flower-equivalent.test.ts",
+      "name": "Enabled",
+      "testRailId": "[654019]",
+      "skipReason": "Playwright/Jest skip annotation",
+      "skippedAt": "2024-09-19",
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 641
+    },
+    {
+      "id": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment.test.ts::Verify that the allotment \"used\" and \"remaining\" amounts update correctly for fulfillment orders",
       "file": "apps/register/e2e/tests/cart/purchase-limits/preorder-allotment.test.ts",
-      "name": "[572503] Verify that the allotment \"used\" and \"remaining\" amounts update correctly for fulfillment orders",
-      "testRailId": "572503",
-      "skipReason": "preorderAllotmentTest.skip",
+      "name": "Verify that the allotment \"used\" and \"remaining\" amounts update correctly for fulfillment orders",
+      "testRailId": "[572503]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-11-01",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 591
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 598
     },
     {
-      "id": "apps/register/e2e/tests/cart/purchase-limits/skip-purchase-limits-check-for-non-cannabis-carts.test.ts::[654021] Skip purchase limits check for carts with only non-cannabis products",
+      "id": "apps/register/e2e/tests/cart/purchase-limits/skip-purchase-limits-check-for-non-cannabis-carts.test.ts::Skip purchase limits check for carts with only non-cannabis products",
       "file": "apps/register/e2e/tests/cart/purchase-limits/skip-purchase-limits-check-for-non-cannabis-carts.test.ts",
-      "name": "[654021] Skip purchase limits check for carts with only non-cannabis products",
-      "testRailId": "654021",
-      "skipReason": "skipLimitsCheckonNonCannabisCarts.skip",
+      "name": "Skip purchase limits check for carts with only non-cannabis products",
+      "testRailId": "[654021]",
+      "skipReason": "this test is irrelevant and fails.  We CAN rebuild this option back into the new purchase limit system but that seems unnecessary at this time.  Leaving this test intact in case we want to re-use parts of it for future tests related to purchase limits (cannabis or non-cannabis); @jon-frankel 10/2/2023",
       "skippedAt": "2024-06-10",
       "author": "Josh DePonte",
-      "daysSkipped": 735
+      "daysSkipped": 742
     },
     {
-      "id": "apps/register/e2e/tests/cart/return-zero-dollar-transaction.test.ts::[653930] return zero dollar transaction",
+      "id": "apps/register/e2e/tests/cart/return-zero-dollar-transaction.test.ts::return zero dollar transaction",
       "file": "apps/register/e2e/tests/cart/return-zero-dollar-transaction.test.ts",
-      "name": "[653930] return zero dollar transaction",
-      "testRailId": "653930",
-      "skipReason": "returnZeroDollarTransactionTest.skip",
+      "name": "return zero dollar transaction",
+      "testRailId": "[653930]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-05-04",
       "author": "Payton Boxleitner",
-      "daysSkipped": 1138
+      "daysSkipped": 1145
     },
     {
-      "id": "apps/register/e2e/tests/cashManagement/closeout/closeout-notes.test.ts::[654131] Close out notes are saved",
+      "id": "apps/register/e2e/tests/cashManagement/closeout/closeout-notes.test.ts::Close out notes are saved",
       "file": "apps/register/e2e/tests/cashManagement/closeout/closeout-notes.test.ts",
-      "name": "[654131] Close out notes are saved",
-      "testRailId": "654131",
-      "skipReason": "closeOutNotesTest.skip",
+      "name": "Close out notes are saved",
+      "testRailId": "[654131]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-07-12",
       "author": "Josh DePonte",
-      "daysSkipped": 703
+      "daysSkipped": 710
     },
     {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::[] Can complete checkout flow with account on file button",
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::Can complete checkout flow with account on file button",
       "file": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts",
-      "name": "[] Can complete checkout flow with account on file button",
+      "name": "Can complete checkout flow with account on file button",
       "testRailId": "N/A",
-      "skipReason": "testPayByBankScanToPay.skip",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 38
+      "daysSkipped": 45
     },
     {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::[] Shows account on file payment button when scan-to-pay rollout is enabled",
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::Shows account on file payment button when scan-to-pay rollout is enabled",
       "file": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts",
-      "name": "[] Shows account on file payment button when scan-to-pay rollout is enabled",
+      "name": "Shows account on file payment button when scan-to-pay rollout is enabled",
       "testRailId": "N/A",
-      "skipReason": "testPayByBankScanToPay.skip",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 38
+      "daysSkipped": 45
     },
     {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::[] Shows loyalty pass scanning interface when scan-to-pay rollout is enabled",
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::Shows loyalty pass scanning interface when scan-to-pay rollout is enabled",
       "file": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts",
-      "name": "[] Shows loyalty pass scanning interface when scan-to-pay rollout is enabled",
+      "name": "Shows loyalty pass scanning interface when scan-to-pay rollout is enabled",
       "testRailId": "N/A",
-      "skipReason": "testPayByBankScanToPay.skip",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 38
+      "daysSkipped": 45
     },
     {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::[654032] when payment is split between debit and cash",
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::When the payment is declined, the adjustment is removed.",
       "file": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts",
-      "name": "[654032] when payment is split between debit and cash",
-      "testRailId": "654032",
-      "skipReason": "pinDebitNCAFeeTest.skip",
-      "skippedAt": "2025-05-30",
-      "author": "Ben Versluis",
-      "daysSkipped": 381
+      "name": "When the payment is declined, the adjustment is removed.",
+      "testRailId": "[654034]",
+      "skipReason": "TODO: this test fails, so let's skip it for now",
+      "skippedAt": "2023-04-12",
+      "author": "Susie Rennick",
+      "daysSkipped": 1167
     },
     {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::[654033] when debit payment pane is closed without adding payment, then the non-cash adjustment fee should be removed",
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::error message content uses default message when not in the error message library",
       "file": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts",
-      "name": "[654033] when debit payment pane is closed without adding payment, then the non-cash adjustment fee should be removed",
-      "testRailId": "654033",
-      "skipReason": "pinDebitNCAFeeTest.skip",
-      "skippedAt": "2025-05-30",
-      "author": "Ben Versluis",
-      "daysSkipped": 381
-    },
-    {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::[654034] When the payment is declined, the adjustment is removed.",
-      "file": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts",
-      "name": "[654034] When the payment is declined, the adjustment is removed.",
-      "testRailId": "654034",
-      "skipReason": "pinDebitNCAFeeTest.skip",
-      "skippedAt": "2025-05-30",
-      "author": "Ben Versluis",
-      "daysSkipped": 381
-    },
-    {
-      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::[654035] error message content uses default message when not in the error message library",
-      "file": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts",
-      "name": "[654035] error message content uses default message when not in the error message library",
-      "testRailId": "654035",
-      "skipReason": "pinDebitTest.skip",
+      "name": "error message content uses default message when not in the error message library",
+      "testRailId": "[654035]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2026-01-22",
       "author": "Chris Campbell",
-      "daysSkipped": 144
+      "daysSkipped": 151
     },
     {
-      "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts::[654040] GeneriPay debit: checkout with tip",
-      "file": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts",
-      "name": "[654040] GeneriPay debit: checkout with tip",
-      "testRailId": "654040",
-      "skipReason": "generiPayDebitTipTest.skip",
-      "skippedAt": "2026-05-08",
-      "author": "Ervins Patmalnieks",
-      "daysSkipped": 38
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::when debit payment pane is closed without adding payment, then the non-cash adjustment fee should be removed",
+      "file": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts",
+      "name": "when debit payment pane is closed without adding payment, then the non-cash adjustment fee should be removed",
+      "testRailId": "[654033]",
+      "skipReason": "TODO: the expected behavior isn't happening, so let's skip this for now",
+      "skippedAt": "2023-04-12",
+      "author": "Susie Rennick",
+      "daysSkipped": 1167
     },
     {
-      "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts::[654041] GeneriPay debit: split payment with tip",
-      "file": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts",
-      "name": "[654041] GeneriPay debit: split payment with tip",
-      "testRailId": "654041",
-      "skipReason": "generiPayDebitTipSplitTest.skip",
-      "skippedAt": "2026-05-08",
-      "author": "Ervins Patmalnieks",
-      "daysSkipped": 38
+      "id": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts::when payment is split between debit and cash",
+      "file": "apps/register/e2e/tests/checkout/checkout-with-pin-debit.test.ts",
+      "name": "when payment is split between debit and cash",
+      "testRailId": "[654032]",
+      "skipReason": "Playwright/Jest skip annotation",
+      "skippedAt": "2023-04-12",
+      "author": "Susie Rennick",
+      "daysSkipped": 1167
     },
     {
       "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generiPay.test.ts::Button should appear",
       "file": "apps/register/e2e/tests/checkout/generipay/checkout-with-generiPay.test.ts",
       "name": "Button should appear",
       "testRailId": "N/A",
-      "skipReason": "checkoutWithGeneriPayTestLDFlagOn.skip",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-12-13",
       "author": "Susie Rennick",
-      "daysSkipped": 549
+      "daysSkipped": 556
     },
     {
-      "id": "apps/register/e2e/tests/customer-checkout/non-integrated-debit.test.ts::[654047] Customer checkout with non-integrated debit",
+      "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts::GeneriPay debit: checkout with tip",
+      "file": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts",
+      "name": "GeneriPay debit: checkout with tip",
+      "testRailId": "[654040]",
+      "skipReason": "Playwright/Jest skip annotation",
+      "skippedAt": "2026-05-08",
+      "author": "Ervins Patmalnieks",
+      "daysSkipped": 45
+    },
+    {
+      "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts::GeneriPay debit: split payment with tip",
+      "file": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts",
+      "name": "GeneriPay debit: split payment with tip",
+      "testRailId": "[654041]",
+      "skipReason": "Playwright/Jest skip annotation",
+      "skippedAt": "2026-05-08",
+      "author": "Ervins Patmalnieks",
+      "daysSkipped": 45
+    },
+    {
+      "id": "apps/register/e2e/tests/customer-checkout/non-integrated-debit.test.ts::Customer checkout with non-integrated debit",
       "file": "apps/register/e2e/tests/customer-checkout/non-integrated-debit.test.ts",
-      "name": "[654047] Customer checkout with non-integrated debit",
-      "testRailId": "654047",
-      "skipReason": "nonInegratedDebitTest.skip",
+      "name": "Customer checkout with non-integrated debit",
+      "testRailId": "[654047]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2023-03-27",
       "author": "Payton Boxleitner",
-      "daysSkipped": 1176
+      "daysSkipped": 1183
     },
     {
-      "id": "apps/register/e2e/tests/customer-checkout/refund-pin-debit-purchase.test.ts::[654132] Complete a basic refund to the customers card",
+      "id": "apps/register/e2e/tests/customer-checkout/refund-pin-debit-purchase.test.ts::Complete a basic refund to the customers card",
       "file": "apps/register/e2e/tests/customer-checkout/refund-pin-debit-purchase.test.ts",
-      "name": "[654132] Complete a basic refund to the customers card",
-      "testRailId": "654132",
-      "skipReason": "refundPinDebitPurchase.skip",
+      "name": "Complete a basic refund to the customers card",
+      "testRailId": "[654132]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-10-09",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 614
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 621
     },
     {
-      "id": "apps/register/e2e/tests/customer-checkout/refund-pin-debit-purchase.test.ts::[657360] Refund tender options should be cash-only when \"EnableIntegratedRefunds\" FF is disabled",
+      "id": "apps/register/e2e/tests/customer-checkout/refund-pin-debit-purchase.test.ts::Refund tender options should be cash-only when \"EnableIntegratedRefunds\" FF is disabled",
       "file": "apps/register/e2e/tests/customer-checkout/refund-pin-debit-purchase.test.ts",
-      "name": "[657360] Refund tender options should be cash-only when \"EnableIntegratedRefunds\" FF is disabled",
-      "testRailId": "657360",
-      "skipReason": "refundPinDebitIntegratedRefundsDisabled.skip",
+      "name": "Refund tender options should be cash-only when \"EnableIntegratedRefunds\" FF is disabled",
+      "testRailId": "[657360]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-11-01",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 591
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 598
     },
     {
-      "id": "apps/register/e2e/tests/customers/configure-days-supply.test.ts::[530570] Configure \"Days Supply\" for a returning customer",
+      "id": "apps/register/e2e/tests/customers/configure-days-supply.test.ts::Configure \"Days Supply\" for a returning customer",
       "file": "apps/register/e2e/tests/customers/configure-days-supply.test.ts",
-      "name": "[530570] Configure \"Days Supply\" for a returning customer",
-      "testRailId": "530570",
-      "skipReason": "configureDaysSupplyTest.skip",
+      "name": "Configure \"Days Supply\" for a returning customer",
+      "testRailId": "[530570]",
+      "skipReason": "The Days Supply Calculator feature is no longer required by regulators and is turned off for all customers (ShowDaysSupplyCalculator feature flag is disabled everywhere), so this scenario is no longer exercised in production.",
       "skippedAt": "2026-05-29",
       "author": "Bubriski",
-      "daysSkipped": 17
+      "daysSkipped": 24
     },
     {
-      "id": "apps/register/e2e/tests/customers/minor-medical-customers/minor-can-checkin-without-dob-check.test.ts::[654048] Minor medical patient can check in from customers page without DOB check",
+      "id": "apps/register/e2e/tests/customers/minor-medical-customers/minor-can-checkin-without-dob-check.test.ts::Minor medical patient can check in from customers page without DOB check",
       "file": "apps/register/e2e/tests/customers/minor-medical-customers/minor-can-checkin-without-dob-check.test.ts",
-      "name": "[654048] Minor medical patient can check in from customers page without DOB check",
-      "testRailId": "654048",
-      "skipReason": "baseMinorMedicalFixture.skip",
+      "name": "Minor medical patient can check in from customers page without DOB check",
+      "testRailId": "[654048]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-10-09",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 614
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 621
     },
     {
-      "id": "apps/register/e2e/tests/customers/minor-medical-customers/minor-can-checkout-without-dob-check.test.ts::[654050] Minor medical patient can check out on cart page without DOB check",
+      "id": "apps/register/e2e/tests/customers/minor-medical-customers/minor-can-checkout-without-dob-check.test.ts::Minor medical patient can check out on cart page without DOB check",
       "file": "apps/register/e2e/tests/customers/minor-medical-customers/minor-can-checkout-without-dob-check.test.ts",
-      "name": "[654050] Minor medical patient can check out on cart page without DOB check",
-      "testRailId": "654050",
-      "skipReason": "baseMinorMedicalFixture.skip",
+      "name": "Minor medical patient can check out on cart page without DOB check",
+      "testRailId": "[654050]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-01-17",
       "author": "Matthew Smith",
-      "daysSkipped": 880
+      "daysSkipped": 887
     },
     {
-      "id": "apps/register/e2e/tests/sales-history/printing-from-transaction-details.test.ts::[653989] Print receipt from transaction history table for customer",
+      "id": "apps/register/e2e/tests/sales-history/printing-from-transaction-details.test.ts::Print labels from transaction history table for customer",
       "file": "apps/register/e2e/tests/sales-history/printing-from-transaction-details.test.ts",
-      "name": "[653989] Print receipt from transaction history table for customer",
-      "testRailId": "653989",
-      "skipReason": "printingFromTransactionDetails.skip",
-      "skippedAt": "2025-04-17",
-      "author": "Alex Marmon",
-      "daysSkipped": 424
+      "name": "Print labels from transaction history table for customer",
+      "testRailId": "[654252]",
+      "skipReason": "These Tests are flaking because the items for the transaction are not always showing up",
+      "skippedAt": "2024-07-24",
+      "author": "Josh DePonte",
+      "daysSkipped": 698
     },
     {
-      "id": "apps/register/e2e/tests/sales-history/printing-from-transaction-details.test.ts::[654252] Print labels from transaction history table for customer",
+      "id": "apps/register/e2e/tests/sales-history/printing-from-transaction-details.test.ts::Print receipt from transaction history table for customer",
       "file": "apps/register/e2e/tests/sales-history/printing-from-transaction-details.test.ts",
-      "name": "[654252] Print labels from transaction history table for customer",
-      "testRailId": "654252",
-      "skipReason": "printingFromTransactionDetails.skip",
-      "skippedAt": "2025-04-17",
-      "author": "Alex Marmon",
-      "daysSkipped": 424
+      "name": "Print receipt from transaction history table for customer",
+      "testRailId": "[653989]",
+      "skipReason": "These Tests are flaking because the items for the transaction are not always showing up",
+      "skippedAt": "2024-07-24",
+      "author": "Josh DePonte",
+      "daysSkipped": 698
     },
     {
-      "id": "apps/register/e2e/tests/sales-history/sales-history-options.test.ts::[654100] void transaction",
+      "id": "apps/register/e2e/tests/sales-history/sales-history-options.test.ts::void transaction",
       "file": "apps/register/e2e/tests/sales-history/sales-history-options.test.ts",
-      "name": "[654100] void transaction",
-      "testRailId": "654100",
-      "skipReason": "voidSalesHistoryTest.skip",
+      "name": "void transaction",
+      "testRailId": "[654100]",
+      "skipReason": "Playwright/Jest skip annotation",
       "skippedAt": "2024-10-09",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 614
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 621
     },
     {
       "id": "apps/register/e2e/tests/sample-test-to-demonstrate-feature-flag-mocking.test.ts::This should fail if line 6 runs",
       "file": "apps/register/e2e/tests/sample-test-to-demonstrate-feature-flag-mocking.test.ts",
       "name": "This should fail if line 6 runs",
       "testRailId": "N/A",
-      "skipReason": "test.skip",
+      "skipReason": "comment line 6 in and see the test fail bc anonymous guest button disappears when rec use flag is off test.use({ featureFlagsToAlter: [{ name: 'RecreationalFlag', enabled: false }] });",
       "skippedAt": "2023-03-27",
       "author": "Payton Boxleitner",
-      "daysSkipped": 1176
+      "daysSkipped": 1183
     }
   ]
 }
