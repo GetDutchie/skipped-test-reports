@@ -284,6 +284,25 @@
         "commit": "ffd0e93",
         "run_timestamp": "2026-06-22T09:17:32Z"
       }
+    },
+    {
+      "date": "2026-06-23",
+      "back_office": {
+        "flaky": 9,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-23T07:24:47.000Z"
+      },
+      "pos": {
+        "flaky": 21,
+        "failed": 0,
+        "total": 440,
+        "branch": "develop",
+        "commit": "5bf086f",
+        "run_timestamp": "2026-06-23T08:26:53.000Z"
+      }
     }
   ],
   "thrash_candidates": [
