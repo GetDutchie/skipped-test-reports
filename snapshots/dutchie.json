@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-17",
+  "generatedAt": "2026-06-24",
   "sourceRepo": "GetDutchie/Dutchie",
-  "commitSha": "e423272fa62893b41a61174f7823730a4cde6de1",
+  "commitSha": "f37fdd8b8b32992975f731653d11b857d3e0da2c",
   "tests": [
     {
       "id": "apps/admin/src/dispensary-admin/promote/utils/enterprise-specials.test.js::cipher products should contain brand keys",
@@ -11,7 +11,7 @@
       "skipReason": "brands",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/admin/src/printed-menu/index.test.tsx::should clear previous debounce timer when new changes occur rapidly",
@@ -21,7 +21,7 @@
       "skipReason": "skip",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/admin/src/printed-menu/index.test.tsx::should ignore messages from terminated workers",
@@ -31,7 +31,7 @@
       "skipReason": "skip",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/api/src/calculations/tests/computations_regression.test.js::illinois cannabis tax based on potency - one penny off",
@@ -41,7 +41,7 @@
       "skipReason": "Flower with high potency",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/api/src/calculations/tests/computations_regression.test.js::reward and coupon on cart with some products that are on special and some are not",
@@ -51,7 +51,7 @@
       "skipReason": "Flower on special",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/api/src/calculations/tests/discount-settings/taxless-scenario-f.test.js::BOGO + BOGO: Same item is part of two different BOGO rewards",
@@ -61,7 +61,7 @@
       "skipReason": "compounding stacking",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/api/src/calculations/tests/integrated-specials/leaf-logix-offers.test.js::Offer A18 - min and NO MAX quantity threshold with IFAD.limit across mult. product",
@@ -71,7 +71,7 @@
       "skipReason": "5fc73fdd1e68137b58c80c3c",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/api/src/calculations/tests/items-for-a-price/taxless-scenario-c.test.js::BOGO Using Items for a Price plus standard BOGO",
@@ -81,7 +81,7 @@
       "skipReason": "compounding stacking",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/api/src/graphql/resolvers/product/serializer/stages/taxes.test.js::rec, no taxes pos everything menu compound",
@@ -91,7 +91,7 @@
       "skipReason": "Flower",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/hooks/use-switch-menu-type.test.jsx::fails unless type is defined",
@@ -101,7 +101,7 @@
       "skipReason": "xit",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/hooks/use-switch-menu-type.test.jsx::fails unless type is valid menu type",
@@ -111,7 +111,7 @@
       "skipReason": "xit",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/payments/dutchie-pay/signup/views/terms/terms-form.test.tsx::call onAuthorize handler when AUTHORIZE BUTTON is clicked",
@@ -121,7 +121,7 @@
       "skipReason": "skip",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/payments/hooks/use-payments-error/use-payments-error.test.ts::useDutchiePayError",
@@ -131,7 +131,7 @@
       "skipReason": "useDutchiePayError",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/payments/instore-cart/components/instore-cart-items/instore-cart-item.test.tsx::<InstoreCartItem />",
@@ -141,7 +141,7 @@
       "skipReason": "should render",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/payments/signup/views/signup-form/sign-up-modal.test.tsx::renders a Back link",
@@ -151,7 +151,7 @@
       "skipReason": "common.back",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/payments/utils/use-create-mx-enrollment.test.ts::useCreateMXEnrollment",
@@ -161,7 +161,7 @@
       "skipReason": "skip",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/theme/provider/commerce-components/remote-theme.test.tsx::should handle component errors with ErrorBoundary",
@@ -171,7 +171,7 @@
       "skipReason": "error",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/utils/analytics/Scripts.test.tsx::loads the Sift client tag",
@@ -181,7 +181,7 @@
       "skipReason": "xit",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "apps/marketplace/src/utils/get-locations-from-coordinates.test.ts::should return locations when API call is successful",
@@ -191,7 +191,7 @@
       "skipReason": "Location 1",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "packages/shared/core/helpers/dispensaries/dispensaries.test.js::same time zone closed",
@@ -201,7 +201,7 @@
       "skipReason": "2018-08-15 11:00",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "packages/shared/core/helpers/dispensaries/dispensaries.test.js::same time different zone closed",
@@ -211,7 +211,7 @@
       "skipReason": "2018-08-15 14:00",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "packages/shared/core/helpers/dispensaries/dispensaries.test.js::Detroit dispensary, detroit user closed",
@@ -221,7 +221,7 @@
       "skipReason": "America/Detroit",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "packages/shared/core/helpers/dispensaries/dispensaries.test.js::Detroit dispensary, west coast user closed",
@@ -231,7 +231,7 @@
       "skipReason": "America/Detroit",
       "skippedAt": "2026-02-24",
       "author": "Chris Ostrowski",
-      "daysSkipped": 113
+      "daysSkipped": 120
     },
     {
       "id": "playwright/tests/marketplace/ads/checkout-telemetry.test.ts::[TBD] placedOrder event fires with library_product_id after checkout",
@@ -241,7 +241,7 @@
       "skipReason": "skip",
       "skippedAt": "2026-06-11",
       "author": "Marc Gray",
-      "daysSkipped": 6
+      "daysSkipped": 13
     },
     {
       "id": "playwright/tests/marketplace/commerce-components/commerce-components-data-bridge.test.ts::StoreFront data bridge [${theme.name}]",
@@ -251,7 +251,7 @@
       "skipReason": "CDN unreachable: ${theme.manifestUrl}",
       "skippedAt": "2026-03-30",
       "author": "Ben Versluis",
-      "daysSkipped": 79
+      "daysSkipped": 86
     },
     {
       "id": "playwright/tests/marketplace/commerce-components/commerce-components-hero.test.ts::StoreFront hero [${theme.name}]",
@@ -261,7 +261,7 @@
       "skipReason": "CDN unreachable: ${theme.manifestUrl}",
       "skippedAt": "2026-03-30",
       "author": "Ben Versluis",
-      "daysSkipped": 79
+      "daysSkipped": 86
     },
     {
       "id": "playwright/tests/marketplace/commerce-components/commerce-components-layout.test.ts::StoreFront layout [${theme.name}]",
@@ -271,7 +271,7 @@
       "skipReason": "CDN unreachable: ${theme.manifestUrl}",
       "skippedAt": "2026-03-30",
       "author": "Ben Versluis",
-      "daysSkipped": 79
+      "daysSkipped": 86
     },
     {
       "id": "playwright/tests/marketplace/commerce-components/commerce-components-layout.test.ts::StoreFront footer renders from remote theme",
@@ -281,7 +281,7 @@
       "skipReason": "${theme.name} does not render a footer",
       "skippedAt": "2026-04-01",
       "author": "Ben Versluis",
-      "daysSkipped": 77
+      "daysSkipped": 84
     },
     {
       "id": "playwright/tests/marketplace/commerce-components/commerce-components-product.test.ts::StoreFront product [${theme.name}]",
@@ -291,7 +291,17 @@
       "skipReason": "CDN unreachable: ${theme.manifestUrl}",
       "skippedAt": "2026-03-30",
       "author": "Ben Versluis",
-      "daysSkipped": 79
+      "daysSkipped": 86
+    },
+    {
+      "id": "playwright/tests/admin/custom-categories/custom-categories.test.ts::Status toggle for Custom Category: active to inactive and back",
+      "file": "playwright/tests/admin/custom-categories/custom-categories.test.ts",
+      "name": "Status toggle for Custom Category: active to inactive and back",
+      "testRailId": "657454",
+      "skipReason": "skip",
+      "skippedAt": "2026-01-28",
+      "author": "Mateusz Czuchryta",
+      "daysSkipped": 147
     }
   ]
 }
