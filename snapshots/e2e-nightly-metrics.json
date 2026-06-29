@@ -360,6 +360,25 @@
         "commit": "daf42d8",
         "run_timestamp": "2026-06-26T08:26:25Z"
       }
+    },
+    {
+      "date": "2026-06-29",
+      "back_office": {
+        "flaky": 6,
+        "failed": 1,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-06-29T07:50:52Z"
+      },
+      "pos": {
+        "flaky": 17,
+        "failed": 0,
+        "total": 398,
+        "branch": "develop",
+        "commit": "8df06e0",
+        "run_timestamp": "2026-06-29T08:53:36Z"
+      }
     }
   ],
   "thrash_candidates": [
@@ -616,7 +635,7 @@
     },
     {
       "test_id": "656698",
-      "test_name": "Setting on — Starts a new cart when done button is pressed",
+      "test_name": "Setting on \u2014 Starts a new cart when done button is pressed",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-06-26",
