@@ -493,6 +493,25 @@
         "commit": "f31dae2",
         "run_timestamp": "2026-07-07T08:20:34.000Z"
       }
+    },
+    {
+      "date": "2026-07-08",
+      "back_office": {
+        "flaky": 10,
+        "failed": 1,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-07-08T07:01:08.000Z"
+      },
+      "pos": {
+        "flaky": 13,
+        "failed": 0,
+        "total": 400,
+        "branch": "QA-391/prepare-tilt-cleanup",
+        "commit": "de2105c",
+        "run_timestamp": "2026-07-08T09:16:38.000Z"
+      }
     }
   ],
   "thrash_candidates": [
