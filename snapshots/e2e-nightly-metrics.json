@@ -512,6 +512,25 @@
         "commit": "de2105c",
         "run_timestamp": "2026-07-08T09:16:38.000Z"
       }
+    },
+    {
+      "date": "2026-07-09",
+      "back_office": {
+        "flaky": 9,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-07-09T07:24:59.000Z"
+      },
+      "pos": {
+        "flaky": 13,
+        "failed": 0,
+        "total": 400,
+        "branch": "develop",
+        "commit": "568f3c3",
+        "run_timestamp": "2026-07-09T08:29:44.000Z"
+      }
     }
   ],
   "thrash_candidates": [
