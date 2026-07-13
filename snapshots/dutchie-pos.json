@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06",
+  "generatedAt": "2026-07-13",
   "sourceRepo": "GetDutchie/dutchie-pos",
-  "commitSha": "4a528749607c0cc531210bc1a8161673593c7cff",
+  "commitSha": "13d45ab881465eccb6dcce0da3af60ae41d5a9d3",
   "tests": [
     {
       "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::Can complete checkout flow with account on file button",
@@ -11,7 +11,7 @@
       "skipReason": "testPayByBankScanToPay.skip",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 59
+      "daysSkipped": 66
     },
     {
       "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::Shows account on file payment button when scan-to-pay rollout is enabled",
@@ -21,7 +21,7 @@
       "skipReason": "testPayByBankScanToPay.skip",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 59
+      "daysSkipped": 66
     },
     {
       "id": "apps/register/e2e/tests/checkout/checkout-with-pay-by-bank-scan-to-pay.test.ts::Shows loyalty pass scanning interface when scan-to-pay rollout is enabled",
@@ -31,7 +31,7 @@
       "skipReason": "testPayByBankScanToPay.skip",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 59
+      "daysSkipped": 66
     },
     {
       "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts::GeneriPay debit: checkout with tip",
@@ -41,7 +41,7 @@
       "skipReason": "generiPayDebitTipTest.skip",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 59
+      "daysSkipped": 66
     },
     {
       "id": "apps/register/e2e/tests/checkout/generipay/checkout-with-generipay-debit.test.ts::GeneriPay debit: split payment with tip",
@@ -51,7 +51,7 @@
       "skipReason": "generiPayDebitTipSplitTest.skip",
       "skippedAt": "2026-05-08",
       "author": "Ervins Patmalnieks",
-      "daysSkipped": 59
+      "daysSkipped": 66
     },
     {
       "id": "apps/register/e2e/tests/customers/configure-days-supply.test.ts::Configure \"Days Supply\" for a returning customer",
@@ -61,7 +61,7 @@
       "skipReason": "configureDaysSupplyTest.skip",
       "skippedAt": "2026-05-29",
       "author": "Bubriski",
-      "daysSkipped": 38
+      "daysSkipped": 45
     }
   ]
 }
