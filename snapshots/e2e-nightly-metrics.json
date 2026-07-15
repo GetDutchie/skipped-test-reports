@@ -550,6 +550,25 @@
         "commit": "568f3c3",
         "run_timestamp": "2026-07-09T08:29:44.000Z"
       }
+    },
+    {
+      "date": "2026-07-15",
+      "back_office": {
+        "flaky": 5,
+        "failed": 2,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-07-15T06:57:50.000Z"
+      },
+      "pos": {
+        "flaky": 16,
+        "failed": 0,
+        "total": 400,
+        "branch": "develop",
+        "commit": "153c4a5",
+        "run_timestamp": "2026-07-14T07:48:49.000Z"
+      }
     }
   ],
   "thrash_candidates": [
