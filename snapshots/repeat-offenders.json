@@ -13,7 +13,7 @@
         {
           "date": "2026-07-21",
           "jira_key": "QA-865",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1609",
           "outcome": "fixed",
           "hypothesis": "applyDiscount.click() triggers cart load_v2 reload that intermittently errors and raises an 'Error loading cart' notification blocking pointer events on the close button",
           "fix_applied": "manual-discount.test.ts: add appliedDiscounts.container.waitFor + clearBlockingNotifications + toPass pattern for close.click(), mirroring sibling tests 654006/654007",
