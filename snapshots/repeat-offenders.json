@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "tests": {
+    "656955": {
+      "test_name": "[656955] can enter a decimal-based percent discount amount",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-21",
+          "jira_key": "QA-865",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "applyDiscount.click() triggers cart load_v2 reload that intermittently errors and raises an 'Error loading cart' notification blocking pointer events on the close button",
+          "fix_applied": "manual-discount.test.ts: add appliedDiscounts.container.waitFor + clearBlockingNotifications + toPass pattern for close.click(), mirroring sibling tests 654006/654007",
+          "result": "20/20 Vape isolation ✅ · load-realistic run (4-worker parallel, full Manual Discount spec) ✅"
+        }
+      ]
+    },
+    "654416": {
+      "test_name": "[654416] Single match, auto checkin on, drivers license, checks pass, customer is checked in and guest list page is updated",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-21",
+          "jira_key": "QA-865",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "simulateScan types keystrokes that trigger checkin/barcode-scan-entry API; ScanPopup overlay remains mounted until response resolves and handleAutoCheckin fires; refresh.click() raced this dismissal",
+          "fix_applied": "id-scan.test.ts: wrap simulateScan in Promise.all with waitForResponse('checkin/barcode-scan-entry'); add not.toBeVisible assertions on ScanPopup 'Return to guest list' button and scan-details-popup before refresh.click()",
+          "result": "20/20 Vape isolation ✅ · load-realistic run (4-worker parallel, full id-scan.test.ts — 654416 passed; 5 pre-existing unrelated id-scan flakes not touched by this fix) ✅"
+        }
+      ]
+    },
+    "657501": {
+      "test_name": "[657501] IGC stacking: apply two Birchmount gift cards to cover the full order amount",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-21",
+          "jira_key": "QA-865",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "TOCTOU race: after Select_Guest_To_Register Promise.all resolves, app fires load_v2 synchronously; load_v2 could complete before standalone waitForResponse at line 88 attached its listener",
+          "fix_applied": "customers-page.ts: merge load_v2 waitForResponse into the same Promise.all as Select_Guest_To_Register so both listeners are registered atomically before the click",
+          "result": "20/20 Vape isolation ✅ · load-realistic run (4-worker parallel, IGC stacking + loyalty + weight tests — 657501 passed) ✅"
+        }
+      ]
+    }
+  }
+}
