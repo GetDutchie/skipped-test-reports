@@ -73,7 +73,7 @@
         {
           "date": "2026-07-22",
           "jira_key": "QA-870",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1617",
           "outcome": "fixed",
           "hypothesis": "customerRow.click() fires the caregiver-checkin-enablement fetch (v2/guest/details-light) fire-and-forget; clicking the Caregiver button before it resolves can leave it disabled indefinitely if the click races ahead of fresh customer data",
           "fix_applied": "caregiver-can-purchase-med.test.ts: added Promise.all(waitForResponse(v2/guest/details-light), customerRow.click()), matching the already-fixed sibling test caregiver-can-purchase-non-med.test.ts",
