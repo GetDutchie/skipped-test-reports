@@ -13,7 +13,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "MultiFilterSelect.searchAndSelectOption's retry() wrapper unconditionally re-clicks the dropdown toggle button on every attempt; if a prior attempt already opened the menu and only failed on the later searchInput wait, the retry's open() call closes the already-open menu (toggle behavior), guaranteeing every subsequent attempt fails at the same line.",
           "fix_applied": "multi-filter-select.ts: check whether a menu is already visible before deciding to call dropdown.open() (click) vs dropdown.setMenu() (re-resolve reference only).",
@@ -33,7 +33,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "Same multi-filter-select.ts toggle-reopen bug as 654203.",
           "fix_applied": "Same fix as 654203 (shared POM: multi-filter-select.ts).",
@@ -53,7 +53,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "Same multi-filter-select.ts toggle-reopen bug as 654203.",
           "fix_applied": "Same fix as 654203 (shared POM: multi-filter-select.ts).",
@@ -73,7 +73,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "Test used the DataGrid's own @deprecated waitForLoadingToOccurAndComplete() helper, documented as 'shown to introduce flakes' because it can resolve on stale rows still present from before the filter re-render.",
           "fix_applied": "Swapped to cellWithTextInColumn({dataField:'serialNumber', text: SerialNumber}) + expect().toBeVisible(), waiting for the specific filtered row.",
@@ -93,7 +93,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "30s toPass budget for the reload-and-poll loop was too tight: each retry cycle costs a full page reload, and the just-created package/location data isn't guaranteed indexed immediately.",
           "fix_applied": "Bumped toPass timeout from 30000 to 60000, matching the 60s budget already used a few lines later in the same test for a comparable first-row-render wait.",
@@ -113,7 +113,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "findCellsByText's default 15s timeout was too tight for a grid lookup that follows a multi-step register close-out workflow; other DataGrid waits in the same file allow 60-90s for comparable post-workflow renders.",
           "fix_applied": "Passed timeout: 45000 at this specific call site only (not the shared default, since most callers query immediately after goto()).",
@@ -133,7 +133,7 @@
         {
           "date": "2026-07-23",
           "jira_key": "QA-877",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7710",
           "outcome": "fixed",
           "hypothesis": "ControlSearchInput.search() races waitForTotalCountToChange() against noDataAvailable.waitFor() via Promise.race -- a transient 'No data available' re-render right after creating the discount can win that race before the real 1-row result appears, letting clickRow proceed against a row that doesn't exist yet. Reproduced directly: error-context.md showed the search box populated with the discount name while the grid displayed 'No data available'.",
           "fix_applied": "Wrapped the reopen-discount search + row-presence check in an expect().toPass() retry (idempotent action+assertion pair) instead of editing the shared ControlSearchInput.search() helper (too broad a blast radius for this run).",
