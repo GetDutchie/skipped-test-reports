@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "tests": {
+    "tests/products/inventory-v2/actions/move-subroom.spec.ts::[654203] Move amount to sub room": {
+      "test_name": "[654203] Move amount to sub room",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "MultiFilterSelect.searchAndSelectOption's retry() wrapper unconditionally re-clicks the dropdown toggle button on every attempt; if a prior attempt already opened the menu and only failed on the later searchInput wait, the retry's open() call closes the already-open menu (toggle behavior), guaranteeing every subsequent attempt fails at the same line.",
+          "fix_applied": "multi-filter-select.ts: check whether a menu is already visible before deciding to call dropdown.open() (click) vs dropdown.setMenu() (re-resolve reference only).",
+          "result": "red-green-revert not independently re-provable per-attempt (shared fix with 654214/654202); 20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, inventory-v2/actions + inventory dir)"
+        }
+      ]
+    },
+    "tests/products/inventory-v2/actions/sublot.spec.ts::[654214] Verify Sublot using Calculated Cost": {
+      "test_name": "[654214] Verify Sublot using Calculated Cost",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same multi-filter-select.ts toggle-reopen bug as 654203.",
+          "fix_applied": "Same fix as 654203 (shared POM: multi-filter-select.ts).",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, inventory-v2/actions + inventory dir)"
+        }
+      ]
+    },
+    "tests/products/inventory-v2/bulk-select.spec.ts::[654202] Verify Select Page selects rows as expected": {
+      "test_name": "[654202] Verify Select Page selects rows as expected",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same multi-filter-select.ts toggle-reopen bug as 654203.",
+          "fix_applied": "Same fix as 654203 (shared POM: multi-filter-select.ts).",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, inventory-v2/actions + inventory dir)"
+        }
+      ]
+    },
+    "tests/products/inventory-v2/actions/print-inventory.spec.ts::[654204] Verify inventory print action is triggered": {
+      "test_name": "[654204] Verify inventory print action is triggered",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Test used the DataGrid's own @deprecated waitForLoadingToOccurAndComplete() helper, documented as 'shown to introduce flakes' because it can resolve on stale rows still present from before the filter re-render.",
+          "fix_applied": "Swapped to cellWithTextInColumn({dataField:'serialNumber', text: SerialNumber}) + expect().toBeVisible(), waiting for the specific filtered row.",
+          "result": "red-green-revert PASS; 20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, inventory-v2/actions + inventory dir)"
+        }
+      ]
+    },
+    "tests/products/inventory/update-on-location-change.spec.ts::[654103] Verify that dropdown selected state is preserved when location changes": {
+      "test_name": "[654103] Verify that dropdown selected state is preserved when location changes",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "30s toPass budget for the reload-and-poll loop was too tight: each retry cycle costs a full page reload, and the just-created package/location data isn't guaranteed indexed immediately.",
+          "fix_applied": "Bumped toPass timeout from 30000 to 60000, matching the 60s budget already used a few lines later in the same test for a comparable first-row-render wait.",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, inventory-v2/actions + inventory dir). NOTE: this is a timeout bump, flagged in PR for human timeout-discipline sign-off per anti-flake rules."
+        }
+      ]
+    },
+    "tests/registers/transactions/by-register/close-out-register.spec.ts::[656960] Close out of register with negative deposit should remove deposit amount from vault register": {
+      "test_name": "[656960] Close out of register with negative deposit should remove deposit amount from vault register",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "findCellsByText's default 15s timeout was too tight for a grid lookup that follows a multi-step register close-out workflow; other DataGrid waits in the same file allow 60-90s for comparable post-workflow renders.",
+          "fix_applied": "Passed timeout: 45000 at this specific call site only (not the shared default, since most callers query immediately after goto()).",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, registers/transactions/by-register dir). NOTE: this is a timeout bump, flagged in PR for human timeout-discipline sign-off per anti-flake rules."
+        }
+      ]
+    },
+    "tests/marketing/discounts/restrict-discount.spec.ts::[405475] Verify that one or more vendors can be excluded from the Discount": {
+      "test_name": "[405475] Verify that one or more vendors can be excluded from the Discount",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-23",
+          "jira_key": "QA-877",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "ControlSearchInput.search() races waitForTotalCountToChange() against noDataAvailable.waitFor() via Promise.race -- a transient 'No data available' re-render right after creating the discount can win that race before the real 1-row result appears, letting clickRow proceed against a row that doesn't exist yet. Reproduced directly: error-context.md showed the search box populated with the discount name while the grid displayed 'No data available'.",
+          "fix_applied": "Wrapped the reopen-discount search + row-presence check in an expect().toPass() retry (idempotent action+assertion pair) instead of editing the shared ControlSearchInput.search() helper (too broad a blast radius for this run).",
+          "result": "Red reproduced directly (No data available race, isolation run before fix); green with fix (isolation pass); revert-rerun did not re-reproduce red on demand (consistent with the race's inherent intermittency -- matches its nightly behavior of failing only sometimes); 20/20 Vape isolation PASS; load-realistic 3/3 clean PASS (8-worker parallel, marketing/discounts dir; one of four load runs surfaced an unrelated pre-existing flake in a different test in the same file, [405511], out of scope for this fix)"
+        }
+      ]
+    }
+  }
+}
