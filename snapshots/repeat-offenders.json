@@ -24,7 +24,7 @@
     "654416": {
       "test_name": "[654416] Single match, auto checkin on, drivers license, checks pass, customer is checked in and guest list page is updated",
       "suite": "pos",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -38,6 +38,15 @@
           "hypothesis": "simulateScan types keystrokes that trigger checkin/barcode-scan-entry API; ScanPopup overlay remains mounted until response resolves and handleAutoCheckin fires; refresh.click() raced this dismissal",
           "fix_applied": "id-scan.test.ts: wrap simulateScan in Promise.all with waitForResponse('checkin/barcode-scan-entry'); add not.toBeVisible assertions on ScanPopup 'Return to guest list' button and scan-details-popup before refresh.click()",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, full id-scan.test.ts \u2014 654416 passed; 5 pre-existing unrelated id-scan flakes not touched by this fix) \u2705"
+        },
+        {
+          "date": "2026-07-24",
+          "jira_key": "QA-880",
+          "pr_url": null,
+          "outcome": "parked-3-strikes",
+          "hypothesis": "Cherry-picked the 2026-07-21 fix (PR #1609, commits 2b73779d3+9c35d9146): gate refresh.click() on checkin/barcode-scan-entry response + not.toBeVisible(scanDetailsPopup) before proceeding.",
+          "fix_applied": "Cherry-picked PR #1609's diff verbatim into id-scan.test.ts for [654416].",
+          "result": "20/20 Vape isolation PASS, but 8-worker load-realistic lane (id-scan.test.ts, full file) FAILED 654416 in 2 of 5 runs, alongside 10+ unrelated id-scan tests failing intermittently in the same runs (654401,654409,654410,654413,654414,654415,654419,654421-654424,654433). This is suite-wide backend contention on shared customer-creation/checkin endpoints under parallel load, not a defect the wait-based fix can address. Reverted the edit; reclassified to infra/backend-slow. Recommend closing PR #1609 rather than merging \u2014 its fix does not survive real load either."
         }
       ]
     },
@@ -78,6 +87,66 @@
           "hypothesis": "customerRow.click() fires the caregiver-checkin-enablement fetch (v2/guest/details-light) fire-and-forget; clicking the Caregiver button before it resolves can leave it disabled indefinitely if the click races ahead of fresh customer data",
           "fix_applied": "caregiver-can-purchase-med.test.ts: added Promise.all(waitForResponse(v2/guest/details-light), customerRow.click()), matching the already-fixed sibling test caregiver-can-purchase-non-med.test.ts",
           "result": "15/15 isolation pass, 0 failures (load-realistic 8-worker lane not run this session due to time constraints)"
+        }
+      ]
+    },
+    "654406": {
+      "test_name": "[654406] No match, auto create on, 2D medical id, under recreational age, customer is not created and modal is presented",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-24",
+          "jira_key": "QA-880",
+          "pr_url": null,
+          "outcome": "parked-3-strikes",
+          "hypothesis": "Same race class as 654416: scan-details-popup mount races the checkin/barcode-scan-entry response under parallel load. Applied analogous gate.",
+          "fix_applied": "Wrapped simulateScan in Promise.all with waitForResponse('checkin/barcode-scan-entry') before asserting scanDetailsPopup visibility.",
+          "result": "20/20 Vape isolation PASS, but reverted alongside 654416 after the load-realistic lane exposed suite-wide id-scan.test.ts backend contention under 8-worker load (see 654416 entry same date). Reclassified to infra/backend-slow."
+        }
+      ]
+    },
+    "657074": {
+      "test_name": "[657074] Can return to cart from product history",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-24",
+          "jira_key": "QA-880",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Test gated cart-readiness on a bare load_v2 waitForResponse instead of the confirmed Select_Guest_To_Register -> load_v2 signal; load_v2 resolves on the pre-assignment response and does not prove the cart is ready.",
+          "fix_applied": "can-return-to-cart-from-history.test.ts: replaced inline showCustomerPreview + Promise.all(load_v2) with customersPage.setup.selectCustomerAndCreateOrder(customerData.id) for both 657073 and 657074.",
+          "result": "20/20 Vape isolation \u2705 (both 657073 and 657074) \u00b7 load-realistic run (8-worker parallel across 7 spec files sharing selectCustomerAndCreateOrder, 3/3, both target tests passed all 3) \u2705"
+        }
+      ]
+    },
+    "cart/loyalty-multipliers/loyalty-multiplier.test.ts::A loyalty multiplier is automatically applied to the cart and can be manually removed": {
+      "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-24",
+          "jira_key": "QA-880",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "AutomaticDiscountConfigsCache is keyed per-LSP and shared across all parallel e2e workers; concurrent discount create/delete expires the shared entry, and the backend's ~1s FusionCache soft-timeout can serve a stale snapshot instead of a fresh one, producing intermittent 0/1/2 multiplier-badge counts. Already traced to source (DiscountRepository.cs) by open draft PR #1619.",
+          "fix_applied": "Cherry-picked commit 6038c9bc6 from PR #1619: adds expectLoyaltyEarningCount self-healing retry (page.reload() + toPass) to helpers.ts, applied to loyalty-multiplier.test.ts and loyalty-point-boost.test.ts.",
+          "result": "20/20 Vape isolation \u2705 (both loyalty-multiplier and loyalty-point-boost tests) \u00b7 load-realistic run (8-worker parallel, both spec files sharing helpers.ts, 3/3) \u2705"
         }
       ]
     }
