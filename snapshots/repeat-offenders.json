@@ -122,7 +122,7 @@
         {
           "date": "2026-07-24",
           "jira_key": "QA-880",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1635",
           "outcome": "fixed",
           "hypothesis": "Test gated cart-readiness on a bare load_v2 waitForResponse instead of the confirmed Select_Guest_To_Register -> load_v2 signal; load_v2 resolves on the pre-assignment response and does not prove the cart is ready.",
           "fix_applied": "can-return-to-cart-from-history.test.ts: replaced inline showCustomerPreview + Promise.all(load_v2) with customersPage.setup.selectCustomerAndCreateOrder(customerData.id) for both 657073 and 657074.",
@@ -142,7 +142,7 @@
         {
           "date": "2026-07-24",
           "jira_key": "QA-880",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1635",
           "outcome": "fixed",
           "hypothesis": "AutomaticDiscountConfigsCache is keyed per-LSP and shared across all parallel e2e workers; concurrent discount create/delete expires the shared entry, and the backend's ~1s FusionCache soft-timeout can serve a stale snapshot instead of a fresh one, producing intermittent 0/1/2 multiplier-badge counts. Already traced to source (DiscountRepository.cs) by open draft PR #1619.",
           "fix_applied": "Cherry-picked commit 6038c9bc6 from PR #1619: adds expectLoyaltyEarningCount self-healing retry (page.reload() + toPass) to helpers.ts, applied to loyalty-multiplier.test.ts and loyalty-point-boost.test.ts.",
