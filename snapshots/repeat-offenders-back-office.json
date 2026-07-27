@@ -140,6 +140,46 @@
           "result": "Red reproduced directly (No data available race, isolation run before fix); green with fix (isolation pass); revert-rerun did not re-reproduce red on demand (consistent with the race's inherent intermittency -- matches its nightly behavior of failing only sometimes); 20/20 Vape isolation PASS; load-realistic 3/3 clean PASS (8-worker parallel, marketing/discounts dir; one of four load runs surfaced an unrelated pre-existing flake in a different test in the same file, [405511], out of scope for this fix)"
         }
       ]
+    },
+    "e2e/tests/products/manifests/add-wholesale-manifest.spec.ts::[544715] User should be able to manually add a wholesale manifest": {
+      "test_name": "[544715] User should be able to manually add a wholesale manifest",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-27",
+          "jira_key": "QA-889",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Button.click() waited on an explicit waitForResponse for GET_MANIFESTS, a network call the app fires as an un-awaited (fire-and-forget) refresh that isn't guaranteed to produce an observable new response (can be deduped/cached), causing an intermittent 60s timeout.",
+          "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list, keeping only ADD_TO_ORDER; relies on the existing packageIdCell visibility assertion and Playwright's built-in actionability check on the later Complete Order click for the two conditions actually needed.",
+          "result": "red-green-revert: fails when reverted to original two-endpoint wait under an artificially delayed-GET_MANIFESTS check (evidence corroborated by code comment + prior similar fix in same file, PR #7687/QA-871); 20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, pos-e2e constellation, matching nightly's 8x8 matrix, 3/3) \u2705"
+        }
+      ]
+    },
+    "e2e/tests/products/inventory/receive-inventory.spec.ts::[547854] Verify that the Note can be added to the Receiving details": {
+      "test_name": "[547854] Verify that the Note can be added to the Receiving details",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-27",
+          "jira_key": "QA-889",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Test used the bare ControlSearchInput.fill(packageId) instead of the repo's .search(value, dataGrid) helper before clickFirstRow(); fill() does not wait for the grid to re-filter, so clickFirstRow() can click a stale row from before the search applied, exactly matching the observed empty-Notes-field symptom.",
+          "fix_applied": "receive-inventory.spec.ts: swapped searchInput.fill(packageId) for searchInput.search(packageId, receiveHistoryListPage.receiveHistoryDatagrid), matching every other search-then-read-row call in the same file.",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, pos-e2e constellation, 3/3) \u2705. Note: a sibling async-path twin test with the identical fill()+clickFirstRow() pattern was already pulled via .fixme(), corroborating this as a known-bad pattern."
+        }
+      ]
     }
   }
 }
