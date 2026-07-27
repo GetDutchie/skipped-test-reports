@@ -162,7 +162,7 @@
         {
           "date": "2026-07-27",
           "jira_key": "QA-887",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1649",
           "outcome": "fixed",
           "hypothesis": "Unguarded close.click() on discount modal races transient 'Error loading cart' toast from load_v2 reload after apply -- identical to already-fixed siblings 654006/654007/656955 in same file, but this test was missed",
           "fix_applied": "manual-discount.test.ts: added appliedDiscounts.container.waitFor + clearBlockingNotifications + toPass-wrapped close.click(), mirroring sibling fix pattern",
@@ -182,7 +182,7 @@
         {
           "date": "2026-07-27",
           "jira_key": "QA-887",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1649",
           "outcome": "fixed",
           "hypothesis": "Guest-list post-cancellation assertion relies on passive refresh cadence (10s floor) racing the test's own 10s default assertion timeout, with no forced refetch trigger",
           "fix_applied": "cart-page-cancellation.test.ts: added explicit guest-list refresh click gated on v2/guest/checked-in response before asserting guest card hidden",
@@ -202,7 +202,7 @@
         {
           "date": "2026-07-27",
           "jira_key": "QA-887",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1649",
           "outcome": "fixed",
           "hypothesis": "Shared auto-fixture's bare searchForCustomer->showCustomerPreview->createOrder.click() setup returns before guest-assignment (Select_Guest_To_Register/load_v2) completes, racing callers that immediately interact with the cart -- identical to the race already fixed elsewhere in the suite via QA-850 (87ca5e1ff) but this file was missed from that consolidation",
           "fix_applied": "prevent-changes-to-customer-type.test.ts: replaced fixture's inline steps with canonical customersPage.setup.findCustomerAndCreateOrder helper, matching QA-850 pattern. Also benefits siblings 657146/657148 sharing the same fixture.",
