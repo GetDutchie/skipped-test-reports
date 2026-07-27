@@ -153,7 +153,7 @@
         {
           "date": "2026-07-27",
           "jira_key": "QA-889",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7815",
           "outcome": "fixed",
           "hypothesis": "Button.click() waited on an explicit waitForResponse for GET_MANIFESTS, a network call the app fires as an un-awaited (fire-and-forget) refresh that isn't guaranteed to produce an observable new response (can be deduped/cached), causing an intermittent 60s timeout.",
           "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list, keeping only ADD_TO_ORDER; relies on the existing packageIdCell visibility assertion and Playwright's built-in actionability check on the later Complete Order click for the two conditions actually needed.",
@@ -173,7 +173,7 @@
         {
           "date": "2026-07-27",
           "jira_key": "QA-889",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7815",
           "outcome": "fixed",
           "hypothesis": "Test used the bare ControlSearchInput.fill(packageId) instead of the repo's .search(value, dataGrid) helper before clickFirstRow(); fill() does not wait for the grid to re-filter, so clickFirstRow() can click a stale row from before the search applied, exactly matching the observed empty-Notes-field symptom.",
           "fix_applied": "receive-inventory.spec.ts: swapped searchInput.fill(packageId) for searchInput.search(packageId, receiveHistoryListPage.receiveHistoryDatagrid), matching every other search-then-read-row call in the same file.",
