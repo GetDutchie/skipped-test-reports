@@ -149,6 +149,66 @@
           "result": "20/20 Vape isolation \u2705 (both loyalty-multiplier and loyalty-point-boost tests) \u00b7 load-realistic run (8-worker parallel, both spec files sharing helpers.ts, 3/3) \u2705"
         }
       ]
+    },
+    "cart/discounts/manual-discount.test.ts::[656956] unable to enter a decimal-based percent discount amount": {
+      "test_name": "[656956] unable to enter a decimal-based percent discount amount",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-27",
+          "jira_key": "QA-887",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Unguarded close.click() on discount modal races transient 'Error loading cart' toast from load_v2 reload after apply -- identical to already-fixed siblings 654006/654007/656955 in same file, but this test was missed",
+          "fix_applied": "manual-discount.test.ts: added appliedDiscounts.container.waitFor + clearBlockingNotifications + toPass-wrapped close.click(), mirroring sibling fix pattern",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, full manual-discount.test.ts, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "cart/cart-page-cancellation.test.ts::[276351] Cart page cancellation": {
+      "test_name": "[276351] Cart page cancellation",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-27",
+          "jira_key": "QA-887",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Guest-list post-cancellation assertion relies on passive refresh cadence (10s floor) racing the test's own 10s default assertion timeout, with no forced refetch trigger",
+          "fix_applied": "cart-page-cancellation.test.ts: added explicit guest-list refresh click gated on v2/guest/checked-in response before asserting guest card hidden",
+          "result": "20/20 Vape isolation \u2705. Load-realistic lane: 1 failure in 4 total load-lane attempts, but at a separate PRE-EXISTING shared setup helper (customers-page.ts selectCustomerAndCreateOrder, Select_Guest_To_Register/load_v2) unrelated to this fix's own code path (never reached in the failing run) -- matches known suite-wide backend-contention pattern from test 654416/QA-880. Not a defect in this fix; flagged as infra risk in QA-887."
+        }
+      ]
+    },
+    "customer-profile/prevent-changes-to-customer-type.test.ts::[657147] prevents changes to customer type from profile when cart is in progress": {
+      "test_name": "[657147] prevents changes to customer type from profile when cart is in progress",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-27",
+          "jira_key": "QA-887",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Shared auto-fixture's bare searchForCustomer->showCustomerPreview->createOrder.click() setup returns before guest-assignment (Select_Guest_To_Register/load_v2) completes, racing callers that immediately interact with the cart -- identical to the race already fixed elsewhere in the suite via QA-850 (87ca5e1ff) but this file was missed from that consolidation",
+          "fix_applied": "prevent-changes-to-customer-type.test.ts: replaced fixture's inline steps with canonical customersPage.setup.findCustomerAndCreateOrder helper, matching QA-850 pattern. Also benefits siblings 657146/657148 sharing the same fixture.",
+          "result": "20/20 Vape isolation \u2705 for 657146, 657147, 657148 (each independently). Load-realistic lane: same unrelated shared-helper contention noted for 276351 observed once for 657147 in an extra confirmatory run -- not a defect in this fix."
+        }
+      ]
     }
   }
 }
