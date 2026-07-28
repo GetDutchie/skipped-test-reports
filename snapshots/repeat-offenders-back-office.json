@@ -162,7 +162,7 @@
         {
           "date": "2026-07-28",
           "jira_key": "QA-891",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7849",
           "outcome": "fixed",
           "hypothesis": "DISPROVEN PRIOR ATTEMPT: the 2026-07-27 fix in PR #7815 (still open/unmerged) reordered wait registration around the same GET_MANIFESTS wait (registering both waits before the click, asserting ADD_TO_ORDER's Result field) but did NOT change which network calls were waited on \u2014 it flaked TWICE on PR #7815's own CI runs (2026-07-27 13:05 and 2026-07-28 00:33), proving wait-ordering was never the real root cause. GET_MANIFESTS itself is fundamentally unreliable to wait on: it's a fire-and-forget refresh fired from ADD_TO_ORDER's success handler, not a response the click's own success depends on, and the app gives no guarantee it fires observably every time.",
           "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list entirely (kept only ADD_TO_ORDER), same net code shape as the 2026-07-27 attempt but arrived at independently as the correct mechanism (the 07-27 PR never actually removed the GET_MANIFESTS wait \u2014 it only reordered around it); relies on the existing packageIdCell visibility assertion as the real condition-based check that the add succeeded and the grid updated. Recommend closing/superseding PR #7815's [544715] hunk rather than merging it, since its fix does not work; its [547854] hunk (receive-inventory.spec.ts) is unrelated and can be merged separately.",
@@ -202,7 +202,7 @@
         {
           "date": "2026-07-28",
           "jira_key": "QA-891",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7849",
           "outcome": "fixed",
           "hypothesis": "The register fixture POSTs a new register then the test does a single 15s findCellsByText lookup for it in the register list grid via a goto() already awaited in a dependent fixture; this is an eventual-consistency race between register creation and the list-read indexing \u2014 the row can be briefly absent from the grid's data source before the backend has fully indexed it.",
           "fix_applied": "withdraw.spec.ts: wrapped the register lookup in an expect().toPass({timeout: 60000}) retry that re-issues transactionsByRegisterPage.goto([endPoints.GET_LIST_OF_REGISTERS]) on each retry attempt after the first, mirroring the reload-and-poll pattern used for [654103] (update-on-location-change.spec.ts).",
@@ -222,7 +222,7 @@
         {
           "date": "2026-07-28",
           "jira_key": "QA-891",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7849",
           "outcome": "fixed",
           "hypothesis": "ControlSearchInput.search() short-circuits its own wait when the grid already reports totalCount === '1' before the new filter text is applied via fill(), skipping the wait for the just-received package's inventory to index for that filter; the next assertion can catch the query mid-flight (0 rows) before the real 1-row result renders.",
           "fix_applied": "export-inventory.spec.ts: extended the row-count assertion from toHaveCount(1) to toHaveCount(1, { timeout: 60000 }) at this specific call site only, rather than editing the shared ControlSearchInput.search() helper used broadly across the suite (too wide a blast radius for this run).",
