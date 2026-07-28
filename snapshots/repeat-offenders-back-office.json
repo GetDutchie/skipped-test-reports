@@ -144,7 +144,7 @@
     "e2e/tests/products/manifests/add-wholesale-manifest.spec.ts::[544715] User should be able to manually add a wholesale manifest": {
       "test_name": "[544715] User should be able to manually add a wholesale manifest",
       "suite": "back-office",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -158,6 +158,15 @@
           "hypothesis": "Button.click() waited on an explicit waitForResponse for GET_MANIFESTS, a network call the app fires as an un-awaited (fire-and-forget) refresh that isn't guaranteed to produce an observable new response (can be deduped/cached), causing an intermittent 60s timeout.",
           "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list, keeping only ADD_TO_ORDER; relies on the existing packageIdCell visibility assertion and Playwright's built-in actionability check on the later Complete Order click for the two conditions actually needed.",
           "result": "red-green-revert: fails when reverted to original two-endpoint wait under an artificially delayed-GET_MANIFESTS check (evidence corroborated by code comment + prior similar fix in same file, PR #7687/QA-871); 20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, pos-e2e constellation, matching nightly's 8x8 matrix, 3/3) \u2705"
+        },
+        {
+          "date": "2026-07-28",
+          "jira_key": "QA-891",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "DISPROVEN PRIOR ATTEMPT: the 2026-07-27 fix in PR #7815 (still open/unmerged) reordered wait registration around the same GET_MANIFESTS wait (registering both waits before the click, asserting ADD_TO_ORDER's Result field) but did NOT change which network calls were waited on \u2014 it flaked TWICE on PR #7815's own CI runs (2026-07-27 13:05 and 2026-07-28 00:33), proving wait-ordering was never the real root cause. GET_MANIFESTS itself is fundamentally unreliable to wait on: it's a fire-and-forget refresh fired from ADD_TO_ORDER's success handler, not a response the click's own success depends on, and the app gives no guarantee it fires observably every time.",
+          "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list entirely (kept only ADD_TO_ORDER), same net code shape as the 2026-07-27 attempt but arrived at independently as the correct mechanism (the 07-27 PR never actually removed the GET_MANIFESTS wait \u2014 it only reordered around it); relies on the existing packageIdCell visibility assertion as the real condition-based check that the add succeeded and the grid updated. Recommend closing/superseding PR #7815's [544715] hunk rather than merging it, since its fix does not work; its [547854] hunk (receive-inventory.spec.ts) is unrelated and can be merged separately.",
+          "result": "red-green-revert: reproduced the exact original nightly failure (TimeoutError: page.waitForResponse Timeout 60000ms for **/api/v2/manifest/get-manifests at button.ts:38) by temporarily restoring the original two-endpoint wait and injecting a scoped route abort on GET_MANIFESTS for just that click; reverted the repro and reapplied the fix cleanly. 20/20 Vape isolation \u2705. Load-realistic (8-worker parallel, manifests dir, matching nightly's 8x8 matrix): 4/5 runs clean; 1 of 5 runs (first attempt) showed a failure whose diagnostic detail was lost (test-results overwritten before capture) alongside an unrelated test ([405603]) failing in that same run \u2014 4 subsequent runs (incl. one with full log capture) passed cleanly with no recurrence. Flagged honestly per verification discipline rather than certifying an unqualified clean 3/3."
         }
       ]
     },
@@ -178,6 +187,46 @@
           "hypothesis": "Test used the bare ControlSearchInput.fill(packageId) instead of the repo's .search(value, dataGrid) helper before clickFirstRow(); fill() does not wait for the grid to re-filter, so clickFirstRow() can click a stale row from before the search applied, exactly matching the observed empty-Notes-field symptom.",
           "fix_applied": "receive-inventory.spec.ts: swapped searchInput.fill(packageId) for searchInput.search(packageId, receiveHistoryListPage.receiveHistoryDatagrid), matching every other search-then-read-row call in the same file.",
           "result": "20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, pos-e2e constellation, 3/3) \u2705. Note: a sibling async-path twin test with the identical fill()+clickFirstRow() pattern was already pulled via .fixme(), corroborating this as a known-bad pattern."
+        }
+      ]
+    },
+    "e2e/tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
+      "test_name": "[384643] User should be able to withdraw",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-28",
+          "jira_key": "QA-891",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "The register fixture POSTs a new register then the test does a single 15s findCellsByText lookup for it in the register list grid via a goto() already awaited in a dependent fixture; this is an eventual-consistency race between register creation and the list-read indexing \u2014 the row can be briefly absent from the grid's data source before the backend has fully indexed it.",
+          "fix_applied": "withdraw.spec.ts: wrapped the register lookup in an expect().toPass({timeout: 60000}) retry that re-issues transactionsByRegisterPage.goto([endPoints.GET_LIST_OF_REGISTERS]) on each retry attempt after the first, mirroring the reload-and-poll pattern used for [654103] (update-on-location-change.spec.ts).",
+          "result": "structural red-green-revert (git stash confirmed revert restores the exact original single-wait lines; race is inherently intermittent so not deterministically reproducible on demand). 20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705"
+        }
+      ]
+    },
+    "e2e/tests/products/inventory-v2/actions/export-inventory.spec.ts::[654215] Verify inventory data can be exported": {
+      "test_name": "[654215] Verify inventory data can be exported",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-28",
+          "jira_key": "QA-891",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "ControlSearchInput.search() short-circuits its own wait when the grid already reports totalCount === '1' before the new filter text is applied via fill(), skipping the wait for the just-received package's inventory to index for that filter; the next assertion can catch the query mid-flight (0 rows) before the real 1-row result renders.",
+          "fix_applied": "export-inventory.spec.ts: extended the row-count assertion from toHaveCount(1) to toHaveCount(1, { timeout: 60000 }) at this specific call site only, rather than editing the shared ControlSearchInput.search() helper used broadly across the suite (too wide a blast radius for this run).",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, inventory-v2/actions dir, matching nightly's 8x8 matrix, 3/3) \u2705. NOTE: this is a timeout bump, flagged in PR for human timeout-discipline sign-off per anti-flake rules."
         }
       ]
     }
