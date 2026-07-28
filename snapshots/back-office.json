@@ -1,287 +1,67 @@
 {
-  "generatedAt": "2026-07-21",
+  "generatedAt": "2026-07-28",
   "sourceRepo": "GetDutchie/back-office",
-  "commitSha": "2390ab89280836553424da5b4e24bf31c56612e9",
+  "commitSha": "05852195746cfd25997277b623cb713b05dff944",
   "tests": [
     {
-      "id": "e2e/tests/cultivation/plants-v2/actions/retire-plant-variations.spec.ts::[654481] Verify the Reason Note can be filled out when retiring a plant",
-      "file": "e2e/tests/cultivation/plants-v2/actions/retire-plant-variations.spec.ts",
-      "name": "[654481] Verify the Reason Note can be filled out when retiring a plant",
-      "testRailId": "654481",
-      "skipReason": "skip",
-      "skippedAt": "2026-05-15",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 67
-    },
-    {
-      "id": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts::[654488] Verify the user can distribute trim weight across multiple plants",
-      "file": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts",
-      "name": "[654488] Verify the user can distribute trim weight across multiple plants",
-      "testRailId": "654488",
-      "skipReason": "skip",
-      "skippedAt": "2026-06-01",
-      "author": "Ben Versluis",
-      "daysSkipped": 50
-    },
-    {
-      "id": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts::[654494] Verify the user can clear all trim weights",
-      "file": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts",
-      "name": "[654494] Verify the user can clear all trim weights",
-      "testRailId": "654494",
-      "skipReason": "skip",
-      "skippedAt": "2026-06-01",
-      "author": "Ben Versluis",
-      "daysSkipped": 50
-    },
-    {
-      "id": "e2e/tests/cultivation/rooms/add-subroom.spec.ts::a newly added subroom appears in the list without a manual reload",
-      "file": "e2e/tests/cultivation/rooms/add-subroom.spec.ts",
-      "name": "a newly added subroom appears in the list without a manual reload",
+      "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence End Time is invalid.",
+      "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
+      "name": "Recurrence End Time is invalid.",
       "testRailId": "N/A",
-      "skipReason": "Blocked on leaflogix #19764 (GetSubroomSummaries zero-plant-subroom fix).",
-      "skippedAt": "2026-07-13",
-      "author": "ericharddutchie",
-      "daysSkipped": 8
+      "skipReason": "invalid end time",
+      "skippedAt": "2022-04-13",
+      "author": "Alex Marmon",
+      "daysSkipped": 1567
     },
     {
-      "id": "e2e/tests/cultivation/rooms/delete-subroom.spec.ts::deleting a subroom removes it from the list without a manual reload",
-      "file": "e2e/tests/cultivation/rooms/delete-subroom.spec.ts",
-      "name": "deleting a subroom removes it from the list without a manual reload",
+      "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence Start Time is invalid.",
+      "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
+      "name": "Recurrence Start Time is invalid.",
       "testRailId": "N/A",
-      "skipReason": "Blocked on leaflogix #19764 (GetSubroomSummaries zero-plant-subroom fix).",
-      "skippedAt": "2026-07-13",
-      "author": "ericharddutchie",
-      "daysSkipped": 8
-    },
-    {
-      "id": "e2e/tests/cultivation/rooms/journal.spec.ts::adding a journal entry shows it in the history without a manual reload",
-      "file": "e2e/tests/cultivation/rooms/journal.spec.ts",
-      "name": "adding a journal entry shows it in the history without a manual reload",
-      "testRailId": "N/A",
-      "skipReason": "Blocked on GoldDb DacPac deploy for Cultivation.RoomObservation.SubroomId (leaflogix #19725).",
-      "skippedAt": "2026-07-13",
-      "author": "ericharddutchie",
-      "daysSkipped": 8
-    },
-    {
-      "id": "e2e/tests/cultivation/rooms/move-subroom.spec.ts::moving a subroom removes it from the source room and adds it to the destination room",
-      "file": "e2e/tests/cultivation/rooms/move-subroom.spec.ts",
-      "name": "moving a subroom removes it from the source room and adds it to the destination room",
-      "testRailId": "N/A",
-      "skipReason": "Blocked on leaflogix #19764 (GetSubroomSummaries zero-plant-subroom fix).",
-      "skippedAt": "2026-07-13",
-      "author": "ericharddutchie",
-      "daysSkipped": 8
-    },
-    {
-      "id": "e2e/tests/customers/customers/customer-view-products.spec.ts::[364269] Product History (keyset pagination)",
-      "file": "e2e/tests/customers/customers/customer-view-products.spec.ts",
-      "name": "[364269] Product History (keyset pagination)",
-      "testRailId": "364269",
-      "skipReason": "skip",
-      "skippedAt": "2026-03-05",
-      "author": "Evan LaHurd",
-      "daysSkipped": 138
-    },
-    {
-      "id": "e2e/tests/customers/customers/customer-view-transactions.spec.ts::[364270] Transaction History (keyset pagination)",
-      "file": "e2e/tests/customers/customers/customer-view-transactions.spec.ts",
-      "name": "[364270] Transaction History (keyset pagination)",
-      "testRailId": "364270",
-      "skipReason": "skip",
-      "skippedAt": "2026-03-05",
-      "author": "Evan LaHurd",
-      "daysSkipped": 138
+      "skipReason": "invalid start time",
+      "skippedAt": "2022-04-13",
+      "author": "Alex Marmon",
+      "daysSkipped": 1567
     },
     {
       "id": "e2e/tests/customers/segments/segment-overview.spec.ts::[657312] Verify that the selected reports overview page has the correct inputs",
       "file": "e2e/tests/customers/segments/segment-overview.spec.ts",
       "name": "[657312] Verify that the selected reports overview page has the correct inputs",
       "testRailId": "657312",
-      "skipReason": "skip",
+      "skipReason": "Last 7 Days",
       "skippedAt": "2024-12-30",
       "author": "DouglasLongnecker",
-      "daysSkipped": 568
-    },
-    {
-      "id": "e2e/tests/delivery/car.spec.ts::Delivery feature",
-      "file": "e2e/tests/delivery/car.spec.ts",
-      "name": "Delivery feature",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2026-06-01",
-      "author": "Sarah Kiesel-Nield",
-      "daysSkipped": 50
-    },
-    {
-      "id": "e2e/tests/delivery/driver.spec.ts::[339088] Add new driver",
-      "file": "e2e/tests/delivery/driver.spec.ts",
-      "name": "[339088] Add new driver",
-      "testRailId": "339088",
-      "skipReason": "skipping due to biotrack failure",
-      "skippedAt": "2026-06-01",
-      "author": "Sarah Kiesel-Nield",
-      "daysSkipped": 50
+      "daysSkipped": 575
     },
     {
       "id": "e2e/tests/manufacturing/add-processing-job.spec.ts::[657358] Add Bill of Material Processing Job",
       "file": "e2e/tests/manufacturing/add-processing-job.spec.ts",
       "name": "[657358] Add Bill of Material Processing Job",
       "testRailId": "657358",
-      "skipReason": "skip",
+      "skipReason": "Test Description",
       "skippedAt": "2024-12-30",
       "author": "ColinMcCullough",
-      "daysSkipped": 568
+      "daysSkipped": 575
     },
     {
-      "id": "e2e/tests/products/catalog/edit-product-metrc-fields.spec.ts::[654320] Edit metrc fields on a product",
-      "file": "e2e/tests/products/catalog/edit-product-metrc-fields.spec.ts",
-      "name": "[654320] Edit metrc fields on a product",
-      "testRailId": "654320",
-      "skipReason": "skip",
-      "skippedAt": "2026-05-15",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 67
-    },
-    {
-      "id": "e2e/tests/products/inventory-v2/date-consistency-across-inventory.spec.ts::[657064] User should see the same date in inventory page when it receives a pending transfer that automatically puts in the date associated with the product",
-      "file": "e2e/tests/products/inventory-v2/date-consistency-across-inventory.spec.ts",
-      "name": "[657064] User should see the same date in inventory page when it receives a pending transfer that automatically puts in the date associated with the product",
-      "testRailId": "657064",
-      "skipReason": "skip",
-      "skippedAt": "2026-05-15",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 67
-    },
-    {
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: User should be able to manually receive inventory",
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: User should be able to manually receive inventory",
-      "testRailId": "POS-18217",
-      "skipReason": "fixme",
-      "skippedAt": "2026-06-02",
-      "author": "Christopher Thomas",
-      "daysSkipped": 49
-    },
-    {
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the Note can be added to the Receiving details",
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: Verify that the Note can be added to the Receiving details",
-      "testRailId": "POS-18217",
-      "skipReason": "fixme",
-      "skippedAt": "2026-06-02",
-      "author": "Christopher Thomas",
-      "daysSkipped": 49
-    },
-    {
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the package is received in correct room",
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: Verify that the package is received in correct room",
-      "testRailId": "POS-18217",
-      "skipReason": "fixme",
-      "skippedAt": "2026-06-02",
-      "author": "Christopher Thomas",
-      "daysSkipped": 49
-    },
-    {
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-18217] Async path: Verify that the package is received to the correct vendor",
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-18217] Async path: Verify that the package is received to the correct vendor",
-      "testRailId": "POS-18217",
-      "skipReason": "fixme",
-      "skippedAt": "2026-06-02",
-      "author": "Christopher Thomas",
-      "daysSkipped": 49
-    },
-    {
-      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[POS-19491] Async path: Multiple packages can be received in one session",
-      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
-      "name": "[POS-19491] Async path: Multiple packages can be received in one session",
-      "testRailId": "POS-19491",
-      "skipReason": "fixme",
-      "skippedAt": "2026-06-24",
-      "author": "Ben Versluis",
-      "daysSkipped": 27
-    },
-    {
-      "id": "e2e/tests/settings/users/permissions.spec.ts::[654178], Delete Metrc Pending Transfer",
-      "file": "e2e/tests/settings/users/permissions.spec.ts",
-      "name": "[654178], Delete Metrc Pending Transfer",
-      "testRailId": "654178",
-      "skipReason": "TODO(QA-397): Skipped — setLocationFeatures({ UseMETRC }) stopped working after 7a1d183aa4 added X-Dutchie-LD-Default-On to all backend API requests (May 8 2026). The backend now silently ignores the UseMETRC write via set_loc_features when the default-on header is present. Multiple route-mock worka",
-      "skippedAt": "2026-05-30",
-      "author": "ericharddutchie",
-      "daysSkipped": 52
-    },
-    {
-      "id": "e2e/tests/smoke/pricing_tier.spec.ts::@smoke_pricing_tier_new Catalog pricing tier (new UI)",
-      "file": "e2e/tests/smoke/pricing_tier.spec.ts",
-      "name": "@smoke_pricing_tier_new Catalog pricing tier (new UI)",
+      "id": "src/app/pages/settings/integrations/metrc/settings.test.tsx::maintain patient allotment available to colorado",
+      "file": "src/app/pages/settings/integrations/metrc/settings.test.tsx",
+      "name": "maintain patient allotment available to colorado",
       "testRailId": "N/A",
-      "skipReason": "Quarantined until the new pricing-tier backend APIs from GetDutchie/leaflogix#18853 are deployed to the e2e webapi image.",
-      "skippedAt": "2026-06-03",
-      "author": "Alexander Korchagin",
-      "daysSkipped": 48
-    },
-    {
-      "id": "e2e/tests/smoke/receive_inventory.spec.ts::[0009] @smoke Manually receive a inventory",
-      "file": "e2e/tests/smoke/receive_inventory.spec.ts",
-      "name": "[0009] @smoke Manually receive a inventory",
-      "testRailId": "0009",
-      "skipReason": "skip",
-      "skippedAt": "2026-05-15",
-      "author": "Ervīns Patmalnieks",
-      "daysSkipped": 67
-    },
-    {
-      "id": "src/app/hooks/biotrack/use-arrive-manifest.test.tsx::useArriveManifest",
-      "file": "src/app/hooks/biotrack/use-arrive-manifest.test.tsx",
-      "name": "useArriveManifest",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2025-07-07",
-      "author": "Cole Mendes",
-      "daysSkipped": 379
-    },
-    {
-      "id": "src/app/hooks/biotrack/use-manifest-status.test.tsx::useManifestStatus",
-      "file": "src/app/hooks/biotrack/use-manifest-status.test.tsx",
-      "name": "useManifestStatus",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2025-07-07",
-      "author": "Cole Mendes",
-      "daysSkipped": 379
-    },
-    {
-      "id": "src/app/hooks/biotrack/use-void-manifest-test.test.tsx::useVoidManifest",
-      "file": "src/app/hooks/biotrack/use-void-manifest-test.test.tsx",
-      "name": "useVoidManifest",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2025-07-07",
-      "author": "Cole Mendes",
-      "daysSkipped": 379
-    },
-    {
-      "id": "src/app/pages/customers/segments/details/segment-query-builder/form-elements/shared/multiselects.test.tsx::It can render the customer group multi select dropdown label",
-      "file": "src/app/pages/customers/segments/details/segment-query-builder/form-elements/shared/multiselects.test.tsx",
-      "name": "It can render the customer group multi select dropdown label",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2025-12-22",
-      "author": "Jasmine Lopez",
-      "daysSkipped": 211
+      "skipReason": "state-selector",
+      "skippedAt": "2025-04-01",
+      "author": "Jonathan Frankel",
+      "daysSkipped": 483
     },
     {
       "id": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx::displays email details section",
       "file": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx",
       "name": "displays email details section",
       "testRailId": "N/A",
-      "skipReason": "skip",
+      "skipReason": "Email details",
       "skippedAt": "2025-04-28",
       "author": "Jasmine Lopez",
-      "daysSkipped": 449
+      "daysSkipped": 456
     },
     {
       "id": "src/app/pages/marketing/campaigns/marketing-campaign-builder/shared-slides/final-review/final-review.test.tsx::shows audience size when feature flag is enabled",
@@ -291,127 +71,357 @@
       "skipReason": "skip",
       "skippedAt": "2025-04-28",
       "author": "Jasmine Lopez",
-      "daysSkipped": 449
-    },
-    {
-      "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence End Time is invalid.",
-      "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
-      "name": "Recurrence End Time is invalid.",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2022-04-13",
-      "author": "Alex Marmon",
-      "daysSkipped": 1560
-    },
-    {
-      "id": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx::Recurrence Start Time is invalid.",
-      "file": "src/app/pages/marketing/discounts/__tests__/discount-validator.test.tsx",
-      "name": "Recurrence Start Time is invalid.",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2022-04-13",
-      "author": "Alex Marmon",
-      "daysSkipped": 1560
+      "daysSkipped": 456
     },
     {
       "id": "src/app/pages/products/inventory-v2/detail/tests/detail-fields/detail-fields-radios.test.tsx::Inventory Detail Form",
       "file": "src/app/pages/products/inventory-v2/detail/tests/detail-fields/detail-fields-radios.test.tsx",
       "name": "Inventory Detail Form",
       "testRailId": "N/A",
-      "skipReason": "Skipping these tests as they are outdated BUT they do show a good example of how to test the radio fields so don't wanna delete this whole file",
+      "skipReason": "Radio Fields",
       "skippedAt": "2025-05-21",
       "author": "Jamey Gronewald",
-      "daysSkipped": 426
-    },
-    {
-      "id": "src/app/pages/products/inventory/label-printer/use-label-printer.test.tsx::calls the print endpoint",
-      "file": "src/app/pages/products/inventory/label-printer/use-label-printer.test.tsx",
-      "name": "calls the print endpoint",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2026-03-30",
-      "author": "Marc Gray",
-      "daysSkipped": 113
-    },
-    {
-      "id": "src/app/pages/products/inventory/receive-history.test.tsx::ReceiveInventoryHistory",
-      "file": "src/app/pages/products/inventory/receive-history.test.tsx",
-      "name": "ReceiveInventoryHistory",
-      "testRailId": "N/A",
-      "skipReason": "Skipped: the DataGrid does not render row text under jsdom, so assertions like `getByText('Test Receive')` can't find grid rows. Pre-existing and unrelated to the refresh/debounce fix (POS-19291).",
-      "skippedAt": "2026-06-01",
-      "author": "Sarah Kiesel-Nield",
-      "daysSkipped": 50
-    },
-    {
-      "id": "src/app/pages/products/inventory/receive-history.test.tsx::should gracefully handle missing StateTransmissionDate",
-      "file": "src/app/pages/products/inventory/receive-history.test.tsx",
-      "name": "should gracefully handle missing StateTransmissionDate",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2026-06-01",
-      "author": "Sarah Kiesel-Nield",
-      "daysSkipped": 50
-    },
-    {
-      "id": "src/app/pages/products/invoices/invoice-payment.test.tsx::handles a lot of payments",
-      "file": "src/app/pages/products/invoices/invoice-payment.test.tsx",
-      "name": "handles a lot of payments",
-      "testRailId": "N/A",
-      "skipReason": "back office tests with a DataGrid only displays 3 rows and I don't know why",
-      "skippedAt": "2025-07-25",
-      "author": "ian-barker-dutchie",
-      "daysSkipped": 361
-    },
-    {
-      "id": "src/app/pages/products/manifests/biotrack/manifest-arrive-button.test.tsx::ManifestArriveButton",
-      "file": "src/app/pages/products/manifests/biotrack/manifest-arrive-button.test.tsx",
-      "name": "ManifestArriveButton",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2025-07-07",
-      "author": "Cole Mendes",
-      "daysSkipped": 379
-    },
-    {
-      "id": "src/app/pages/products/manifests/non-multi-stop/index.test.tsx::(flag: %s) should be able to void manifest when state transmission id is present",
-      "file": "src/app/pages/products/manifests/non-multi-stop/index.test.tsx",
-      "name": "(flag: %s) should be able to void manifest when state transmission id is present",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2026-01-05",
-      "author": "Matthew McQuinn",
-      "daysSkipped": 197
-    },
-    {
-      "id": "src/app/pages/reports-v2/inventory/inventory-dashboard.test.tsx::should show -- on error",
-      "file": "src/app/pages/reports-v2/inventory/inventory-dashboard.test.tsx",
-      "name": "should show -- on error",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2026-03-30",
-      "author": "Marc Gray",
-      "daysSkipped": 113
-    },
-    {
-      "id": "src/app/pages/settings/integrations/metrc/settings.test.tsx::maintain patient allotment available to colorado",
-      "file": "src/app/pages/settings/integrations/metrc/settings.test.tsx",
-      "name": "maintain patient allotment available to colorado",
-      "testRailId": "N/A",
-      "skipReason": "skip",
-      "skippedAt": "2025-04-01",
-      "author": "Jonathan Frankel",
-      "daysSkipped": 476
+      "daysSkipped": 433
     },
     {
       "id": "src/app/pages/settings/integrations/metrc/settings.test.tsx::maintain patient allotment available to louisiana",
       "file": "src/app/pages/settings/integrations/metrc/settings.test.tsx",
       "name": "maintain patient allotment available to louisiana",
       "testRailId": "N/A",
-      "skipReason": "skip",
+      "skipReason": "state-selector",
       "skippedAt": "2025-05-29",
       "author": "ian-barker-dutchie",
-      "daysSkipped": 418
+      "daysSkipped": 425
+    },
+    {
+      "id": "src/app/hooks/biotrack/use-arrive-manifest.test.tsx::useArriveManifest",
+      "file": "src/app/hooks/biotrack/use-arrive-manifest.test.tsx",
+      "name": "useArriveManifest",
+      "testRailId": "N/A",
+      "skipReason": "should call the correct endpoint to mark a manifest as arrived",
+      "skippedAt": "2025-07-07",
+      "author": "Cole Mendes",
+      "daysSkipped": 386
+    },
+    {
+      "id": "src/app/hooks/biotrack/use-manifest-status.test.tsx::useManifestStatus",
+      "file": "src/app/hooks/biotrack/use-manifest-status.test.tsx",
+      "name": "useManifestStatus",
+      "testRailId": "N/A",
+      "skipReason": "ext-123",
+      "skippedAt": "2025-07-07",
+      "author": "Cole Mendes",
+      "daysSkipped": 386
+    },
+    {
+      "id": "src/app/hooks/biotrack/use-void-manifest-test.test.tsx::useVoidManifest",
+      "file": "src/app/hooks/biotrack/use-void-manifest-test.test.tsx",
+      "name": "useVoidManifest",
+      "testRailId": "N/A",
+      "skipReason": "should call the void manifest API and invalidate queries on success",
+      "skippedAt": "2025-07-07",
+      "author": "Cole Mendes",
+      "daysSkipped": 386
+    },
+    {
+      "id": "src/app/pages/products/manifests/biotrack/manifest-arrive-button.test.tsx::ManifestArriveButton",
+      "file": "src/app/pages/products/manifests/biotrack/manifest-arrive-button.test.tsx",
+      "name": "ManifestArriveButton",
+      "testRailId": "N/A",
+      "skipReason": "should render with the \"Arrive\" label when isArrived is false",
+      "skippedAt": "2025-07-07",
+      "author": "Cole Mendes",
+      "daysSkipped": 386
+    },
+    {
+      "id": "src/app/pages/products/invoices/invoice-payment.test.tsx::handles a lot of payments",
+      "file": "src/app/pages/products/invoices/invoice-payment.test.tsx",
+      "name": "handles a lot of payments",
+      "testRailId": "N/A",
+      "skipReason": "$47.00",
+      "skippedAt": "2025-07-25",
+      "author": "ian-barker-dutchie",
+      "daysSkipped": 368
+    },
+    {
+      "id": "src/app/pages/products/inventory/converter.test.tsx::user completes full conversion workflow for $name",
+      "file": "src/app/pages/products/inventory/converter.test.tsx",
+      "name": "user completes full conversion workflow for $name",
+      "testRailId": "N/A",
+      "skipReason": "Re-enable once intermittent timeout issue is sorted out",
+      "skippedAt": "2025-10-08",
+      "author": "Ashley Long",
+      "daysSkipped": 293
+    },
+    {
+      "id": "src/app/pages/customers/segments/details/segment-query-builder/form-elements/shared/multiselects.test.tsx::It can render the customer group multi select dropdown label",
+      "file": "src/app/pages/customers/segments/details/segment-query-builder/form-elements/shared/multiselects.test.tsx",
+      "name": "It can render the customer group multi select dropdown label",
+      "testRailId": "N/A",
+      "skipReason": "1,2,3,4",
+      "skippedAt": "2025-12-22",
+      "author": "Jasmine Lopez",
+      "daysSkipped": 218
+    },
+    {
+      "id": "src/app/pages/products/manifests/non-multi-stop/index.test.tsx::(flag: %s) should be able to void manifest when state transmission id is present",
+      "file": "src/app/pages/products/manifests/non-multi-stop/index.test.tsx",
+      "name": "(flag: %s) should be able to void manifest when state transmission id is present",
+      "testRailId": "N/A",
+      "skipReason": "user-row-actions-button",
+      "skippedAt": "2026-01-05",
+      "author": "Matthew McQuinn",
+      "daysSkipped": 204
+    },
+    {
+      "id": "e2e/tests/customers/customers/customer-view-products.spec.ts::[364269] Product History (keyset pagination)",
+      "file": "e2e/tests/customers/customers/customer-view-products.spec.ts",
+      "name": "[364269] Product History (keyset pagination)",
+      "testRailId": "364269",
+      "skipReason": "Medical",
+      "skippedAt": "2026-03-05",
+      "author": "Evan LaHurd",
+      "daysSkipped": 145
+    },
+    {
+      "id": "e2e/tests/customers/customers/customer-view-transactions.spec.ts::[364270] Transaction History (keyset pagination)",
+      "file": "e2e/tests/customers/customers/customer-view-transactions.spec.ts",
+      "name": "[364270] Transaction History (keyset pagination)",
+      "testRailId": "364270",
+      "skipReason": "Medical",
+      "skippedAt": "2026-03-05",
+      "author": "Evan LaHurd",
+      "daysSkipped": 145
+    },
+    {
+      "id": "src/app/pages/products/inventory/label-printer/use-label-printer.test.tsx::calls the print endpoint",
+      "file": "src/app/pages/products/inventory/label-printer/use-label-printer.test.tsx",
+      "name": "calls the print endpoint",
+      "testRailId": "N/A",
+      "skipReason": "success",
+      "skippedAt": "2026-03-30",
+      "author": "Marc Gray",
+      "daysSkipped": 120
+    },
+    {
+      "id": "src/app/pages/reports-v2/inventory/inventory-dashboard.test.tsx::should show -- on error",
+      "file": "src/app/pages/reports-v2/inventory/inventory-dashboard.test.tsx",
+      "name": "should show -- on error",
+      "testRailId": "N/A",
+      "skipReason": "/api/posv3/reports/inventory/v1/overview",
+      "skippedAt": "2026-03-30",
+      "author": "Marc Gray",
+      "daysSkipped": 120
+    },
+    {
+      "id": "e2e/tests/cultivation/plants-v2/actions/retire-plant-variations.spec.ts::[654481] Verify the Reason Note can be filled out when retiring a plant",
+      "file": "e2e/tests/cultivation/plants-v2/actions/retire-plant-variations.spec.ts",
+      "name": "[654481] Verify the Reason Note can be filled out when retiring a plant",
+      "testRailId": "654481",
+      "skipReason": "Active",
+      "skippedAt": "2026-05-15",
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 74
+    },
+    {
+      "id": "e2e/tests/products/catalog/edit-product-metrc-fields.spec.ts::[654320] Edit metrc fields on a product",
+      "file": "e2e/tests/products/catalog/edit-product-metrc-fields.spec.ts",
+      "name": "[654320] Edit metrc fields on a product",
+      "testRailId": "654320",
+      "skipReason": "Name",
+      "skippedAt": "2026-05-15",
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 74
+    },
+    {
+      "id": "e2e/tests/products/inventory-v2/date-consistency-across-inventory.spec.ts::[657064] User should see the same date in inventory page when it receives a pending transfer that automatically puts in the date associated with the product",
+      "file": "e2e/tests/products/inventory-v2/date-consistency-across-inventory.spec.ts",
+      "name": "[657064] User should see the same date in inventory page when it receives a pending transfer that automatically puts in the date associated with the product",
+      "testRailId": "657064",
+      "skipReason": "MM-dd-yyyy",
+      "skippedAt": "2026-05-15",
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 74
+    },
+    {
+      "id": "e2e/tests/smoke/receive_inventory.spec.ts::[0009] @smoke Manually receive a inventory",
+      "file": "e2e/tests/smoke/receive_inventory.spec.ts",
+      "name": "[0009] @smoke Manually receive a inventory",
+      "testRailId": "0009",
+      "skipReason": "serialNumber",
+      "skippedAt": "2026-05-15",
+      "author": "Erv\u012bns Patmalnieks",
+      "daysSkipped": 74
+    },
+    {
+      "id": "e2e/tests/settings/users/permissions.spec.ts::[654178], Delete Metrc Pending Transfer",
+      "file": "e2e/tests/settings/users/permissions.spec.ts",
+      "name": "[654178], Delete Metrc Pending Transfer",
+      "testRailId": "654178",
+      "skipReason": "networkidle",
+      "skippedAt": "2026-05-30",
+      "author": "ericharddutchie",
+      "daysSkipped": 59
+    },
+    {
+      "id": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts::[654488] Verify the user can distribute trim weight across multiple plants",
+      "file": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts",
+      "name": "[654488] Verify the user can distribute trim weight across multiple plants",
+      "testRailId": "654488",
+      "skipReason": "Active",
+      "skippedAt": "2026-06-01",
+      "author": "Ben Versluis",
+      "daysSkipped": 57
+    },
+    {
+      "id": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts::[654494] Verify the user can clear all trim weights",
+      "file": "e2e/tests/cultivation/plants-v2/actions/trim-plants.spec.ts",
+      "name": "[654494] Verify the user can clear all trim weights",
+      "testRailId": "654494",
+      "skipReason": "Active",
+      "skippedAt": "2026-06-01",
+      "author": "Ben Versluis",
+      "daysSkipped": 57
+    },
+    {
+      "id": "e2e/tests/delivery/car.spec.ts::Delivery feature",
+      "file": "e2e/tests/delivery/car.spec.ts",
+      "name": "Delivery feature",
+      "testRailId": "N/A",
+      "skipReason": "[335796] Add new car",
+      "skippedAt": "2026-06-01",
+      "author": "Sarah Kiesel-Nield",
+      "daysSkipped": 57
+    },
+    {
+      "id": "e2e/tests/delivery/driver.spec.ts::[339088] Add new driver",
+      "file": "e2e/tests/delivery/driver.spec.ts",
+      "name": "[339088] Add new driver",
+      "testRailId": "339088",
+      "skipReason": "123321",
+      "skippedAt": "2026-06-01",
+      "author": "Sarah Kiesel-Nield",
+      "daysSkipped": 57
+    },
+    {
+      "id": "src/app/pages/products/inventory/receive-history.test.tsx::ReceiveInventoryHistory",
+      "file": "src/app/pages/products/inventory/receive-history.test.tsx",
+      "name": "ReceiveInventoryHistory",
+      "testRailId": "N/A",
+      "skipReason": "should render the receive history page",
+      "skippedAt": "2026-06-01",
+      "author": "Sarah Kiesel-Nield",
+      "daysSkipped": 57
+    },
+    {
+      "id": "src/app/pages/products/inventory/receive-history.test.tsx::should gracefully handle missing StateTransmissionDate",
+      "file": "src/app/pages/products/inventory/receive-history.test.tsx",
+      "name": "should gracefully handle missing StateTransmissionDate",
+      "testRailId": "N/A",
+      "skipReason": "Test Vendor",
+      "skippedAt": "2026-06-01",
+      "author": "Sarah Kiesel-Nield",
+      "daysSkipped": 57
+    },
+    {
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[111264] Async path: User should be able to manually receive inventory",
+      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
+      "name": "[111264] Async path: User should be able to manually receive inventory",
+      "testRailId": "111264",
+      "skipReason": "serialNumber",
+      "skippedAt": "2026-06-02",
+      "author": "Christopher Thomas",
+      "daysSkipped": 56
+    },
+    {
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[114033] Async path: Verify that the package is received to the correct vendor",
+      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
+      "name": "[114033] Async path: Verify that the package is received to the correct vendor",
+      "testRailId": "114033",
+      "skipReason": "vendor.vendorName",
+      "skippedAt": "2026-06-02",
+      "author": "Christopher Thomas",
+      "daysSkipped": 56
+    },
+    {
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[124708] Async path: Verify that the package is received in correct room",
+      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
+      "name": "[124708] Async path: Verify that the package is received in correct room",
+      "testRailId": "124708",
+      "skipReason": "room.roomNo",
+      "skippedAt": "2026-06-02",
+      "author": "Christopher Thomas",
+      "daysSkipped": 56
+    },
+    {
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[131260] Async path: Verify that the Note can be added to the Receiving details",
+      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
+      "name": "[131260] Async path: Verify that the Note can be added to the Receiving details",
+      "testRailId": "131260",
+      "skipReason": "Here is my note ;D",
+      "skippedAt": "2026-06-02",
+      "author": "Christopher Thomas",
+      "daysSkipped": 56
+    },
+    {
+      "id": "e2e/tests/smoke/pricing_tier.spec.ts::@smoke_pricing_tier_new Catalog pricing tier (new UI)",
+      "file": "e2e/tests/smoke/pricing_tier.spec.ts",
+      "name": "@smoke_pricing_tier_new Catalog pricing tier (new UI)",
+      "testRailId": "N/A",
+      "skipReason": "[0006] @smoke Create pricing tier (new UI)",
+      "skippedAt": "2026-06-03",
+      "author": "Alexander Korchagin",
+      "daysSkipped": 55
+    },
+    {
+      "id": "e2e/tests/products/inventory/receive-inventory.spec.ts::[100230] Async path: Multiple packages can be received in one session",
+      "file": "e2e/tests/products/inventory/receive-inventory.spec.ts",
+      "name": "[100230] Async path: Multiple packages can be received in one session",
+      "testRailId": "100230",
+      "skipReason": "serialNumber",
+      "skippedAt": "2026-06-24",
+      "author": "Ben Versluis",
+      "daysSkipped": 34
+    },
+    {
+      "id": "e2e/tests/cultivation/rooms/add-subroom.spec.ts::[109309] a newly added subroom appears in the list without a manual reload",
+      "file": "e2e/tests/cultivation/rooms/add-subroom.spec.ts",
+      "name": "[109309] a newly added subroom appears in the list without a manual reload",
+      "testRailId": "109309",
+      "skipReason": "Blocked on leaflogix #19764 (GetSubroomSummaries zero-plant-subroom fix) \u2014 see file header.",
+      "skippedAt": "2026-07-13",
+      "author": "ericharddutchie",
+      "daysSkipped": 15
+    },
+    {
+      "id": "e2e/tests/cultivation/rooms/delete-subroom.spec.ts::[102154] deleting a subroom removes it from the list without a manual reload",
+      "file": "e2e/tests/cultivation/rooms/delete-subroom.spec.ts",
+      "name": "[102154] deleting a subroom removes it from the list without a manual reload",
+      "testRailId": "102154",
+      "skipReason": "Blocked on leaflogix #19764 (GetSubroomSummaries zero-plant-subroom fix) \u2014 see file header.",
+      "skippedAt": "2026-07-13",
+      "author": "ericharddutchie",
+      "daysSkipped": 15
+    },
+    {
+      "id": "e2e/tests/cultivation/rooms/journal.spec.ts::[111564] adding a journal entry shows it in the history without a manual reload",
+      "file": "e2e/tests/cultivation/rooms/journal.spec.ts",
+      "name": "[111564] adding a journal entry shows it in the history without a manual reload",
+      "testRailId": "111564",
+      "skipReason": "Blocked on GoldDb DacPac deploy for Cultivation.RoomObservation.SubroomId (leaflogix #19725) \u2014 see file header.",
+      "skippedAt": "2026-07-13",
+      "author": "ericharddutchie",
+      "daysSkipped": 15
+    },
+    {
+      "id": "e2e/tests/cultivation/rooms/move-subroom.spec.ts::[117128] moving a subroom removes it from the source room and adds it to the destination room",
+      "file": "e2e/tests/cultivation/rooms/move-subroom.spec.ts",
+      "name": "[117128] moving a subroom removes it from the source room and adds it to the destination room",
+      "testRailId": "117128",
+      "skipReason": "Blocked on leaflogix #19764 (GetSubroomSummaries zero-plant-subroom fix) \u2014 see file header.",
+      "skippedAt": "2026-07-13",
+      "author": "ericharddutchie",
+      "daysSkipped": 15
     }
   ]
 }
