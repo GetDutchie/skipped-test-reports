@@ -251,7 +251,7 @@
         {
           "date": "2026-07-29",
           "jira_key": "QA-897",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7900",
           "outcome": "fixed",
           "hypothesis": "root.tsx re-runs ldClient.identify() in a useEffect keyed on selectedLocation/selectedCompany, an async network round trip kicked off by the ctxUserLocIdPage fixture's setCompanyAndLocation() UI location switch. Until identify() resolves, flags['pos.backoffice.e2e-suite.operational'] still reflects the previous context, so router.tsx's flag-gated <Route path={E2EOnlyPage.Route}> doesn't match and its catch-all (<Route path='*' element={<Navigate to={routes.home}/>}/>) client-side-redirects to home before identify() finishes -- the header check then polls a page the SPA has already navigated away from and will not return to on its own.",
           "fix_applied": "launch-darkly.spec.ts: overrode goto() in the local E2EPage class (scoped to this file only) to retry the full navigation up to 3 times on failure, mirroring the existing blank-page retry precedent already in BasePage.goto() (same 3-attempt count, same 120000ms per-attempt header timeout already established for this exact check -- no new invented bound).",
@@ -271,7 +271,7 @@
         {
           "date": "2026-07-29",
           "jira_key": "QA-897",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/7900",
           "outcome": "fixed",
           "hypothesis": "The page's Save button onClick (updateListSortOrder -> saveSettings, src/app/pages/registers/configure/guestlist-status/index.tsx) fires the UPDATE_DEFAULT_STATUS POST fire-and-forget (`void AjaxPromises.POST(...)`, never awaited by the click handler or returned to the caller). The test's buttons.save.click() call passed no endpoint wait list, so the immediately-following goto()-based reload could race ahead of the clear actually persisting server-side, reading back the stale pre-clear dropdown value ('New' instead of '').",
           "fix_applied": "guestlist-status.spec.ts: passed endPoints.UPDATE_DEFAULT_STATUS into the existing save.click([...]) wait-list mechanism (Button.click() already supports this), matching the pattern sibling test [251973] in the same file already uses for its own save call.",
