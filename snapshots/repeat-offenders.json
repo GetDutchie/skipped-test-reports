@@ -209,6 +209,35 @@
           "result": "20/20 Vape isolation \u2705 for 657146, 657147, 657148 (each independently). Load-realistic lane: same unrelated shared-helper contention noted for 276351 observed once for 657147 in an extra confirmatory run -- not a defect in this fix."
         }
       ]
+    },
+    "apps/register/e2e/tests/cart/anonymous-workflow/anonymous-cart-done-button.test.ts::[656698] Setting on - Starts a new cart after clicking done": {
+      "test_name": "[656698] Setting on - Starts a new cart after clicking done",
+      "suite": "pos",
+      "attempt_count": 2,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-06-26",
+          "jira_key": "QA-755",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1482",
+          "outcome": "fixed",
+          "hypothesis": "toHaveText(customer-name) races an intermediate cart-not-ready state after Done click; needed to wait for addItems button before asserting",
+          "fix_applied": "anonymous-cart-done-button.test.ts: added await cartPage.buttons.addItems.waitFor() before the customer-name assertion",
+          "result": "reported fixed at the time; not durable (see 2026-07-01 reversal)"
+        },
+        {
+          "date": "2026-07-01",
+          "jira_key": "QA-775",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1502",
+          "outcome": "parked-3-strikes",
+          "hypothesis": "The 2026-06-26 addItems.waitFor() wait itself was the problem, causing 60s timeouts in CI; toHaveText retry-ability alone should be sufficient",
+          "fix_applied": "Removed the addItems.waitFor() added by PR #1482; left a comment claiming no intermediate readiness wait is needed",
+          "result": "Removed the prior fix rather than confirming a new root cause; test resumed flaking under the same assertion a month later (2026-07-30 nightly, tests [656698] re-flaked, see QA-898). Backfilled into ledger retroactively on 2026-07-30 after this history was discovered during that nightly triage investigation."
+        }
+      ]
     }
   }
 }
