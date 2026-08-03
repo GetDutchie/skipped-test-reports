@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "tests": {
+    "admin/settings/copy-setting-to-locations.test.ts::Admin can copy an individual checkout setting to another location in the chain": {
+      "test_name": "Admin can copy an individual checkout setting to another location in the chain",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-03",
+          "jira_key": "QA-908",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "PublishToLocationsModalComponent.deselectAll() reads the Select All/Deselect All toggle text before the modal's chain-location list finishes loading and auto-selecting everything, so the read can land on the pre-load state and skip its click.",
+          "fix_applied": "deselectAll() now waits for the toggle to settle into its guaranteed post-load 'Deselect All' state before reading/clicking it.",
+          "result": "red-green-revert-restore proven; 20/20 Vape isolation; load-realistic 3/3 (workers=6, dutchie-e2e constellation)"
+        }
+      ]
+    },
+    "admin/settings/copy-setting-to-locations.test.ts::Admin can copy a legacy ordering toggle (Curbside Arrivals) to another location": {
+      "test_name": "Admin can copy a legacy ordering toggle (Curbside Arrivals) to another location",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-03",
+          "jira_key": "QA-908",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same shared-helper race as the checkout-setting test: deselectAll() reads the toggle before the chain-location auto-select effect settles.",
+          "fix_applied": "deselectAll() now waits for the toggle to settle into its guaranteed post-load 'Deselect All' state before reading/clicking it.",
+          "result": "red-green-revert-restore proven; 20/20 Vape isolation; load-realistic 3/3 (workers=6, dutchie-e2e constellation)"
+        }
+      ]
+    },
+    "admin/settings/copy-setting-to-locations.test.ts::Admin can copy a per-order-type setting (checkout message) to another location": {
+      "test_name": "Admin can copy a per-order-type setting (checkout message) to another location",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-03",
+          "jira_key": "QA-908",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same shared-helper race as the other two copy-setting tests: deselectAll() reads the toggle before the chain-location auto-select effect settles.",
+          "fix_applied": "deselectAll() now waits for the toggle to settle into its guaranteed post-load 'Deselect All' state before reading/clicking it.",
+          "result": "red-green-revert-restore proven; 20/20 Vape isolation; load-realistic 3/3 (workers=6, dutchie-e2e constellation)"
+        }
+      ]
+    }
+  }
+}
