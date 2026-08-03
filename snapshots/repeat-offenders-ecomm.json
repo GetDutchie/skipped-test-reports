@@ -13,7 +13,7 @@
         {
           "date": "2026-08-03",
           "jira_key": "QA-908",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21568",
           "outcome": "fixed",
           "hypothesis": "PublishToLocationsModalComponent.deselectAll() reads the Select All/Deselect All toggle text before the modal's chain-location list finishes loading and auto-selecting everything, so the read can land on the pre-load state and skip its click.",
           "fix_applied": "deselectAll() now waits for the toggle to settle into its guaranteed post-load 'Deselect All' state before reading/clicking it.",
@@ -33,7 +33,7 @@
         {
           "date": "2026-08-03",
           "jira_key": "QA-908",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21568",
           "outcome": "fixed",
           "hypothesis": "Same shared-helper race as the checkout-setting test: deselectAll() reads the toggle before the chain-location auto-select effect settles.",
           "fix_applied": "deselectAll() now waits for the toggle to settle into its guaranteed post-load 'Deselect All' state before reading/clicking it.",
@@ -53,7 +53,7 @@
         {
           "date": "2026-08-03",
           "jira_key": "QA-908",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21568",
           "outcome": "fixed",
           "hypothesis": "Same shared-helper race as the other two copy-setting tests: deselectAll() reads the toggle before the chain-location auto-select effect settles.",
           "fix_applied": "deselectAll() now waits for the toggle to settle into its guaranteed post-load 'Deselect All' state before reading/clicking it.",
