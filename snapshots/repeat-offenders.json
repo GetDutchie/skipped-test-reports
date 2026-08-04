@@ -210,14 +210,34 @@
         }
       ]
     },
-    "apps/register/e2e/tests/cart/anonymous-workflow/anonymous-cart-done-button.test.ts::[656698] Setting on - Starts a new cart after clicking done": {
-      "test_name": "[656698] Setting on - Starts a new cart after clicking done",
+    "654500": {
+      "test_name": "[654500] User should have to enter serial number to add/remove cart item when Last4 feature flag is enabled and removing via ellipsis",
       "suite": "pos",
-      "attempt_count": 2,
+      "attempt_count": 1,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-07-31",
+          "jira_key": "QA-903",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1695",
+          "outcome": "fixed",
+          "hypothesis": "Verify Last 4 popup's fill() relied solely on Playwright's own actionability wait with no explicit wait for the modal to mount; under nightly worker contention the modal can take longer to render than fill()'s implicit wait tolerates.",
+          "fix_applied": "last-4-feature-flag.test.ts: added cartPage.modals.verifyLast4.waitFor() before the fill, matching the existing convention used by other cart modals (allotmentDetails, bulkCalculator).",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (8-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "cart/anonymous-workflow/anonymous-cart-done-button.test.ts::[656698] Setting on - Starts a new cart after clicking done": {
+      "test_name": "[656698] Setting on - Starts a new cart after clicking done",
+      "suite": "pos",
+      "attempt_count": 3,
+      "escalated": true,
+      "escalated_at": "2026-08-04",
+      "escalated_owner": "Ben Versluis",
+      "escalated_jira_key": "QA-911",
       "attempts": [
         {
           "date": "2026-06-26",
@@ -236,18 +256,7 @@
           "hypothesis": "The 2026-06-26 addItems.waitFor() wait itself was the problem, causing 60s timeouts in CI; toHaveText retry-ability alone should be sufficient",
           "fix_applied": "Removed the addItems.waitFor() added by PR #1482; left a comment claiming no intermediate readiness wait is needed",
           "result": "Removed the prior fix rather than confirming a new root cause; test resumed flaking under the same assertion a month later (2026-07-30 nightly, tests [656698] re-flaked, see QA-898). Backfilled into ledger retroactively on 2026-07-30 after this history was discovered during that nightly triage investigation."
-        }
-      ]
-    },
-    "656698": {
-      "test_name": "[656698] Setting on - Starts a new cart after clicking done",
-      "suite": "pos",
-      "attempt_count": 1,
-      "escalated": false,
-      "escalated_at": null,
-      "escalated_owner": null,
-      "escalated_jira_key": null,
-      "attempts": [
+        },
         {
           "date": "2026-07-31",
           "jira_key": "QA-903",
@@ -256,26 +265,6 @@
           "hypothesis": "Clicking 'done' with StartNewCartAfterCheckout clears the transaction client-side and navigates back to a bare /cart with no network call gating the new 'Guest' cart-header state; toHaveText('Guest') could race the post-navigation render settling.",
           "fix_applied": "cart-page.ts: added CartPage.clickDoneAndWaitForNewCart() that waits for the URL to settle back to bare /cart (waitForURL) before the toHaveText assertion in anonymous-cart-done-button.test.ts.",
           "result": "20/20 Vape isolation \u2705 (iPad mini landscape + Desktop). Load-realistic (8-worker, pos-e2e constellation) lane NOT clean 3/3 \u2014 surfaced a separate pre-existing test-isolation issue (StartNewCartAfterCheckout feature flag appears contaminated across concurrently-running workers sharing a location/LSP, also intermittently affecting unmodified sibling 656697). Flagged as follow-up, not caused by or fixable via this change."
-        }
-      ]
-    },
-    "654500": {
-      "test_name": "[654500] User should have to enter serial number to add/remove cart item when Last4 feature flag is enabled and removing via ellipsis",
-      "suite": "pos",
-      "attempt_count": 1,
-      "escalated": false,
-      "escalated_at": null,
-      "escalated_owner": null,
-      "escalated_jira_key": null,
-      "attempts": [
-        {
-          "date": "2026-07-31",
-          "jira_key": "QA-903",
-          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1695",
-          "outcome": "fixed",
-          "hypothesis": "Verify Last 4 popup's fill() relied solely on Playwright's own actionability wait with no explicit wait for the modal to mount; under nightly worker contention the modal can take longer to render than fill()'s implicit wait tolerates.",
-          "fix_applied": "last-4-feature-flag.test.ts: added cartPage.modals.verifyLast4.waitFor() before the fill, matching the existing convention used by other cart modals (allotmentDetails, bulkCalculator).",
-          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (8-worker parallel, pos-e2e constellation, 3/3) \u2705"
         }
       ]
     }
