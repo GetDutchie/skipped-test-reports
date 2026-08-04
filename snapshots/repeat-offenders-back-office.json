@@ -220,7 +220,7 @@
         {
           "date": "2026-08-04",
           "jira_key": "QA-913",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8010",
           "outcome": "fixed",
           "hypothesis": "Fixture navigated to the register list immediately after createRegister's POST resolved; backend read-model lag is an eventual-consistency race identical in class to QA-802.",
           "fix_applied": "First attempt: wrapped register lookup in expect.poll(reload+inspect-response-json) mirroring undo-close-out-register.spec.ts/transfer.spec.ts (QA-802 precedent) -- passed 20/20 isolation but FAILED 2/3 load-realistic (8-worker) because these tests use the shared default location, whose ever-growing register list races the poll under real query latency (same mechanism QA-802 diagnosed for transfer.spec.ts). Amended: added auto isolatedLocation fixture (switchUserLspAndLoc) matching transfer.spec.ts/undo-close-out-register.spec.ts precedent, on top of the poll fix.",
@@ -300,7 +300,7 @@
         {
           "date": "2026-08-04",
           "jira_key": "QA-913",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8010",
           "outcome": "fixed",
           "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
           "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
@@ -320,7 +320,7 @@
         {
           "date": "2026-08-04",
           "jira_key": "QA-913",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8010",
           "outcome": "fixed",
           "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
           "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
