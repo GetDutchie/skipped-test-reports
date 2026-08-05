@@ -144,7 +144,7 @@
     "e2e/tests/products/manifests/add-wholesale-manifest.spec.ts::[544715] User should be able to manually add a wholesale manifest": {
       "test_name": "[544715] User should be able to manually add a wholesale manifest",
       "suite": "back-office",
-      "attempt_count": 3,
+      "attempt_count": 4,
       "escalated": true,
       "escalated_at": "2026-07-29",
       "escalated_owner": "Ben Versluis",
@@ -176,6 +176,15 @@
           "hypothesis": "Narrower variant of the 07-28 mechanism: remove GET_MANIFESTS ONLY from the Complete-order confirm click's wait list (line ~205), leaving the Add-item click's wait (the exact site PR #7849's blocking review finding was about, since it gates completeOrder()'s TotalItems guard) completely untouched. The confirm click's own GET_MANIFESTS wait doesn't gate anything by the time it's registered (the guard already evaluated against state established earlier by the Add-item click), and the test's own follow-up assertions (findCellsByText + toBeVisible) are already proper web-first assertions that wait out the app's async refresh regardless of whether the test observes the network response.",
           "fix_applied": "add-wholesale-manifest.spec.ts: dropped endPoints.GET_MANIFESTS from the Complete-order confirm click's wait array only (line ~205-207), kept endPoints.COMPLETE_ORDER; Add-item click's wait list (~line 189-197) left unmodified.",
           "result": "20/20 Vape isolation PASS. Load-realistic (8-worker parallel, taskset 0-7, retries=2, shard 5/8 -- matches nightly's actual matrix confirmed via .github/workflows/playwright-tilt.yml): 2/3 runs clean. The 3rd run's failure was a DIFFERENT mechanism than the one targeted: a real backend validation error surfaced in the UI ('Order could not be completed: Package(s) C8Vekx2DTeVI are still in stock or allocated on another manifest, you must manifest the entire package.') -- the app never left the manifest detail page (Complete order button still active in the error-context.md page snapshot), so the downstream wholesale-manifests-grid assertion timed out for an unrelated reason (business-rule rejection, not a client-side network-wait race). This closely resembles a flake NOTED BUT NEVER TICKETED in this same test's 2026-07-28 attempt record above ('a DIFFERENT, unrelated latent flake in shared DataGrid component code (TimeoutError: locator.evaluate in DataGrid.isIntersectingViewport, base-component.ts:51) ... recommend a separate ticket') -- same isIntersectingViewport call site, now with the causal notification banner captured. Per the attempt-cap policy (this is attempt #3, cap=3, already reached), no 4th variant was attempted. This fix was EXCLUDED from the PR (reverted before commit) and the test is ESCALATED for human review rather than merged as verified. Recommend backend investigation into a possible package-inventory-availability race under concurrent DB load (8 parallel workers), or quarantining pending that investigation. Filed under QA-897."
+        },
+        {
+          "date": "2026-08-05",
+          "jira_key": "QA-918",
+          "pr_url": null,
+          "outcome": "process_gap_quarantine_applied",
+          "hypothesis": "N/A -- no new fix attempt (attempt cap already reached on 2026-07-29 under QA-897). This test resurfaced as flaky in this run's nightly, which is the process-gap symptom described in the triage prompt: escalated:true recurring in FAILED/FLAKEY means quarantine didn't take, not a fresh case.",
+          "fix_applied": "Applied the test.fixme() quarantine that should have landed with the 07-29 QA-897 escalation but never did. No behavior change; comment documents the QA-897 mechanism/evidence and the un-skip condition (backend investigation into the concurrent-load package-availability race).",
+          "result": "N/A -- quarantine-only change, no fix to verify. Test remains escalated; this attempts-log entry documents the process-gap correction, not a new fix hypothesis."
         }
       ]
     },
@@ -202,7 +211,7 @@
     "e2e/tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
       "test_name": "[384643] User should be able to withdraw",
       "suite": "back-office",
-      "attempt_count": 2,
+      "attempt_count": 3,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -225,6 +234,15 @@
           "hypothesis": "Fixture navigated to the register list immediately after createRegister's POST resolved; backend read-model lag is an eventual-consistency race identical in class to QA-802.",
           "fix_applied": "First attempt: wrapped register lookup in expect.poll(reload+inspect-response-json) mirroring undo-close-out-register.spec.ts/transfer.spec.ts (QA-802 precedent) -- passed 20/20 isolation but FAILED 2/3 load-realistic (8-worker) because these tests use the shared default location, whose ever-growing register list races the poll under real query latency (same mechanism QA-802 diagnosed for transfer.spec.ts). Amended: added auto isolatedLocation fixture (switchUserLspAndLoc) matching transfer.spec.ts/undo-close-out-register.spec.ts precedent, on top of the poll fix.",
           "result": "red-green-revert: reproduced exact nightly failure signature via a scoped route stub stripping the new register from the first GetRegisters response, confirmed fix passes under the same injected race, reverted repro cleanly. 20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, e2e/tests/registers/transactions/by-register dir, matching nightly's actual 8-shard/8-worker/2-retries matrix per .github/workflows/playwright-tilt.yml, 3/3) \u2705. One unrelated pre-existing drop-cash.spec.ts flake observed once during the load lane -- untouched by this diff, disclosed transparently, not treated as invalidating this fix."
+        },
+        {
+          "date": "2026-08-05",
+          "jira_key": "QA-918",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Identical mechanism to [384642] -- a 3rd, distinct race from the two already fixed on this test (QA-891 register-list toPass retry; QA-913 isolatedLocation). This is now attempt #3 on this test -- AT the attempt cap.",
+          "fix_applied": "Same fix as [384642]: Button-based buttons.withdraw waits on endPoints.REGISTER_WITHDRAWAL; searchInput.search() replaces raw fill().",
+          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642]). NOTE: attempt cap reached -- any future recurrence on this test must be quarantined and escalated, not given a 4th fix attempt."
         }
       ]
     },
@@ -291,7 +309,7 @@
     "e2e/tests/registers/transactions/by-register/deposit.spec.ts::[383676] User should be able to deposit": {
       "test_name": "[383676] User should be able to deposit",
       "suite": "back-office",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -305,11 +323,49 @@
           "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
           "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
           "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705."
+        },
+        {
+          "date": "2026-08-05",
+          "jira_key": "QA-918",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Identical mechanism to [384642] (sibling-pattern fix, same file family) -- distinct from the QA-913 register-list-lookup race already fixed on this test.",
+          "fix_applied": "Same fix as [384642]: Button-based buttons.deposit waits on endPoints.REGISTER_DEPOSIT; searchInput.search() replaces raw fill().",
+          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
         }
       ]
     },
     "e2e/tests/registers/transactions/by-register/adjust-balance.spec.ts::[384642] User should be able to adjust balance": {
       "test_name": "[384642] User should be able to adjust balance",
+      "suite": "back-office",
+      "attempt_count": 2,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-04",
+          "jira_key": "QA-913",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8010",
+          "outcome": "fixed",
+          "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
+          "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
+          "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705."
+        },
+        {
+          "date": "2026-08-05",
+          "jira_key": "QA-918",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Modal.save() only clicked Save with no wait for UPDATE_REGISTER_TRANSACTION to resolve; the subsequent transaction-grid search is a client-side filter over data already fetched by showAllTransactions()'s GET_REGISTER_TRANSACTIONS call, so under load that GET could win the race and the new transaction would never be in the fetched dataset. Distinct from the QA-913 (08-04) fix, which targeted the earlier register-list lookup race, not this transaction-grid race.",
+          "fix_applied": "adjust-balance-modal.ts: added a dedicated Button-based `buttons.save`; adjust-balance.spec.ts: click waits on endPoints.UPDATE_REGISTER_TRANSACTION; replaced raw searchInput.fill() with the existing searchInput.search() helper (same convention as transfer.spec.ts/QA-802).",
+          "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, e2e/tests/registers/transactions/by-register dir, matching nightly's 8-shard/8-worker matrix, 3/3) \u2705."
+        }
+      ]
+    },
+    "e2e/tests/registers/transactions/by-register/drop-cash.spec.ts::[393889] User should be able to drop cash without manager pin": {
+      "test_name": "[393889] User should be able to drop cash without manager pin",
       "suite": "back-office",
       "attempt_count": 1,
       "escalated": false,
@@ -318,13 +374,33 @@
       "escalated_jira_key": null,
       "attempts": [
         {
-          "date": "2026-08-04",
-          "jira_key": "QA-913",
-          "pr_url": "https://github.com/GetDutchie/back-office/pull/8010",
+          "date": "2026-08-05",
+          "jira_key": "QA-918",
+          "pr_url": null,
           "outcome": "fixed",
-          "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
-          "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
-          "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705."
+          "hypothesis": "Identical bug pattern to [384642]/[383676]/[384643], found via sibling-pattern check of the same directory (not itself in this run's flaky list).",
+          "fix_applied": "drop-cash.spec.ts: wrapped the existing dblclick() in Promise.all with page.waitForResponse(REGISTER_DROP_CASH); searchInput.search() replaces raw fill(). drop-cash-modal.ts's save button kept as a raw Locator (not Button) to preserve dblclick() support.",
+          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
+        }
+      ]
+    },
+    "e2e/tests/registers/transactions/by-register/drop-cash.spec.ts::[656705] User should be able to drop cash with manager pin": {
+      "test_name": "[656705] User should be able to drop cash with manager pin",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-05",
+          "jira_key": "QA-918",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same file, same fix as [393889].",
+          "fix_applied": "Same fix as [393889].",
+          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
         }
       ]
     }
