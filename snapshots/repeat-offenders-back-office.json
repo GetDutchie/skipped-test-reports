@@ -180,7 +180,7 @@
         {
           "date": "2026-08-05",
           "jira_key": "QA-918",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8060",
           "outcome": "process_gap_quarantine_applied",
           "hypothesis": "N/A -- no new fix attempt (attempt cap already reached on 2026-07-29 under QA-897). This test resurfaced as flaky in this run's nightly, which is the process-gap symptom described in the triage prompt: escalated:true recurring in FAILED/FLAKEY means quarantine didn't take, not a fresh case.",
           "fix_applied": "Applied the test.fixme() quarantine that should have landed with the 07-29 QA-897 escalation but never did. No behavior change; comment documents the QA-897 mechanism/evidence and the un-skip condition (backend investigation into the concurrent-load package-availability race).",
@@ -238,7 +238,7 @@
         {
           "date": "2026-08-05",
           "jira_key": "QA-918",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8060",
           "outcome": "fixed",
           "hypothesis": "Identical mechanism to [384642] -- a 3rd, distinct race from the two already fixed on this test (QA-891 register-list toPass retry; QA-913 isolatedLocation). This is now attempt #3 on this test -- AT the attempt cap.",
           "fix_applied": "Same fix as [384642]: Button-based buttons.withdraw waits on endPoints.REGISTER_WITHDRAWAL; searchInput.search() replaces raw fill().",
@@ -327,7 +327,7 @@
         {
           "date": "2026-08-05",
           "jira_key": "QA-918",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8060",
           "outcome": "fixed",
           "hypothesis": "Identical mechanism to [384642] (sibling-pattern fix, same file family) -- distinct from the QA-913 register-list-lookup race already fixed on this test.",
           "fix_applied": "Same fix as [384642]: Button-based buttons.deposit waits on endPoints.REGISTER_DEPOSIT; searchInput.search() replaces raw fill().",
@@ -356,7 +356,7 @@
         {
           "date": "2026-08-05",
           "jira_key": "QA-918",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8060",
           "outcome": "fixed",
           "hypothesis": "Modal.save() only clicked Save with no wait for UPDATE_REGISTER_TRANSACTION to resolve; the subsequent transaction-grid search is a client-side filter over data already fetched by showAllTransactions()'s GET_REGISTER_TRANSACTIONS call, so under load that GET could win the race and the new transaction would never be in the fetched dataset. Distinct from the QA-913 (08-04) fix, which targeted the earlier register-list lookup race, not this transaction-grid race.",
           "fix_applied": "adjust-balance-modal.ts: added a dedicated Button-based `buttons.save`; adjust-balance.spec.ts: click waits on endPoints.UPDATE_REGISTER_TRANSACTION; replaced raw searchInput.fill() with the existing searchInput.search() helper (same convention as transfer.spec.ts/QA-802).",
@@ -376,7 +376,7 @@
         {
           "date": "2026-08-05",
           "jira_key": "QA-918",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8060",
           "outcome": "fixed",
           "hypothesis": "Identical bug pattern to [384642]/[383676]/[384643], found via sibling-pattern check of the same directory (not itself in this run's flaky list).",
           "fix_applied": "drop-cash.spec.ts: wrapped the existing dblclick() in Promise.all with page.waitForResponse(REGISTER_DROP_CASH); searchInput.search() replaces raw fill(). drop-cash-modal.ts's save button kept as a raw Locator (not Button) to preserve dblclick() support.",
@@ -396,7 +396,7 @@
         {
           "date": "2026-08-05",
           "jira_key": "QA-918",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8060",
           "outcome": "fixed",
           "hypothesis": "Same file, same fix as [393889].",
           "fix_applied": "Same fix as [393889].",
