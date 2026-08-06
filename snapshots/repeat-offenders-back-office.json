@@ -144,7 +144,7 @@
     "e2e/tests/products/manifests/add-wholesale-manifest.spec.ts::[544715] User should be able to manually add a wholesale manifest": {
       "test_name": "[544715] User should be able to manually add a wholesale manifest",
       "suite": "back-office",
-      "attempt_count": 4,
+      "attempt_count": 5,
       "escalated": true,
       "escalated_at": "2026-07-29",
       "escalated_owner": "Ben Versluis",
@@ -185,6 +185,15 @@
           "hypothesis": "N/A -- no new fix attempt (attempt cap already reached on 2026-07-29 under QA-897). This test resurfaced as flaky in this run's nightly, which is the process-gap symptom described in the triage prompt: escalated:true recurring in FAILED/FLAKEY means quarantine didn't take, not a fresh case.",
           "fix_applied": "Applied the test.fixme() quarantine that should have landed with the 07-29 QA-897 escalation but never did. No behavior change; comment documents the QA-897 mechanism/evidence and the un-skip condition (backend investigation into the concurrent-load package-availability race).",
           "result": "N/A -- quarantine-only change, no fix to verify. Test remains escalated; this attempts-log entry documents the process-gap correction, not a new fix hypothesis."
+        },
+        {
+          "date": "2026-08-06",
+          "jira_key": "QA-948",
+          "pr_url": null,
+          "outcome": "process_gap_quarantine_applied",
+          "hypothesis": "N/A -- no new fix attempt (attempt cap already reached under QA-897). Test resurfaced as flaky again because the 2026-08-05 quarantine (PR #8060, QA-918) was drafted but that PR was left in DRAFT and never merged -- the tag never reached develop. Same process-gap symptom, recurring.",
+          "fix_applied": "Landed the same quarantine tag directly on develop in a new, minimal, dedicated PR (not touching PR #8060's other unrelated hunks), so recurrence stops regardless of #8060's fate.",
+          "result": "N/A -- quarantine-only change, no fix to verify. Test remains escalated under QA-897. PR #8060 flagged separately for maintainer decision (merge/close) on its other hunks."
         }
       ]
     },
