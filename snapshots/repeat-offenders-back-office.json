@@ -189,7 +189,7 @@
         {
           "date": "2026-08-06",
           "jira_key": "QA-948",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8104",
           "outcome": "process_gap_quarantine_applied",
           "hypothesis": "N/A -- no new fix attempt (attempt cap already reached under QA-897). Test resurfaced as flaky again because the 2026-08-05 quarantine (PR #8060, QA-918) was drafted but that PR was left in DRAFT and never merged -- the tag never reached develop. Same process-gap symptom, recurring.",
           "fix_applied": "Landed the same quarantine tag directly on develop in a new, minimal, dedicated PR (not touching PR #8060's other unrelated hunks), so recurrence stops regardless of #8060's fate.",
