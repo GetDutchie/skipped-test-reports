@@ -1,28 +1,8 @@
 {
-  "generatedAt": "2026-07-30",
+  "generatedAt": "2026-08-06",
   "sourceRepo": "GetDutchie/Armageddon",
-  "commitSha": "8a98c80a02e3831c2ad03f9758a8284fa3a25d49",
+  "commitSha": "404c76f5b35b511cb6606358fa49db1afe070e66",
   "tests": [
-    {
-      "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by address",
-      "file": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb",
-      "name": "populates country by address",
-      "testRailId": "N/A",
-      "skipReason": "N/A",
-      "skippedAt": "2023-01-09",
-      "author": "Michael Hunter",
-      "daysSkipped": 1298
-    },
-    {
-      "id": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb::populates country by state",
-      "file": "spec/lib/data_migrators/backfill_dispensary_locations_spec.rb",
-      "name": "populates country by state",
-      "testRailId": "N/A",
-      "skipReason": "N/A",
-      "skippedAt": "2023-01-09",
-      "author": "Michael Hunter",
-      "daysSkipped": 1298
-    },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #create",
       "file": "spec/requests/rest/dispensary_billings_spec.rb",
@@ -31,7 +11,7 @@
       "skipReason": "Currently unused",
       "skippedAt": "2020-06-11",
       "author": "matt-dutchie",
-      "daysSkipped": 2240
+      "daysSkipped": 2247
     },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #update",
@@ -41,7 +21,7 @@
       "skipReason": "Currently unused",
       "skippedAt": "2020-06-11",
       "author": "matt-dutchie",
-      "daysSkipped": 2240
+      "daysSkipped": 2247
     },
     {
       "id": "spec/spawners/database_trimmer_spawner_spec.rb::creates jobs for all relevant models",
@@ -51,7 +31,7 @@
       "skipReason": "N/A",
       "skippedAt": "2024-04-26",
       "author": "Taylor Piccarreto",
-      "daysSkipped": 825
+      "daysSkipped": 832
     },
     {
       "id": "spec/workers/menu_integration/menu_worker_spec.rb::MenuIntegration::Workers::MenuWorker",
@@ -61,7 +41,7 @@
       "skipReason": "MenuIntegration::Adapters not yet ported (P3)",
       "skippedAt": "2026-04-29",
       "author": "Michael Hunter",
-      "daysSkipped": 92
+      "daysSkipped": 99
     }
   ]
 }
