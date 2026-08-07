@@ -702,6 +702,25 @@
         "commit": "743517b",
         "run_timestamp": "2026-08-05T08:11:10Z"
       }
+    },
+    {
+      "date": "2026-08-06",
+      "back_office": {
+        "flaky": 2,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-08-06T07:08:55.000Z"
+      },
+      "pos": {
+        "flaky": null,
+        "failed": null,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": null
+      }
     }
   ],
   "thrash_candidates": [
