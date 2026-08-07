@@ -144,7 +144,7 @@
     "e2e/tests/products/manifests/add-wholesale-manifest.spec.ts::[544715] User should be able to manually add a wholesale manifest": {
       "test_name": "[544715] User should be able to manually add a wholesale manifest",
       "suite": "back-office",
-      "attempt_count": 5,
+      "attempt_count": 6,
       "escalated": true,
       "escalated_at": "2026-07-29",
       "escalated_owner": "Ben Versluis",
@@ -194,6 +194,15 @@
           "hypothesis": "N/A -- no new fix attempt (attempt cap already reached under QA-897). Test resurfaced as flaky again because the 2026-08-05 quarantine (PR #8060, QA-918) was drafted but that PR was left in DRAFT and never merged -- the tag never reached develop. Same process-gap symptom, recurring.",
           "fix_applied": "Landed the same quarantine tag directly on develop in a new, minimal, dedicated PR (not touching PR #8060's other unrelated hunks), so recurrence stops regardless of #8060's fate.",
           "result": "N/A -- quarantine-only change, no fix to verify. Test remains escalated under QA-897. PR #8060 flagged separately for maintainer decision (merge/close) on its other hunks."
+        },
+        {
+          "date": "2026-08-07",
+          "jira_key": "QA-953",
+          "pr_url": null,
+          "outcome": "process_gap_quarantine_applied",
+          "hypothesis": "N/A -- no new fix attempt (attempt cap reached under QA-897, 2026-07-29). Recurred again because both prior quarantine attempts (PR #8060 2026-08-05, PR #8104 2026-08-06) were left open/draft and never merged to develop.",
+          "fix_applied": "Landed the same quarantine tag directly on develop via a merged (non-draft) PR this time; closed #8060 and #8104 without merging to avoid stale/conflicting hunks.",
+          "result": "N/A -- quarantine-only change, no fix to verify. Test remains escalated under QA-897."
         }
       ]
     },
@@ -220,11 +229,11 @@
     "e2e/tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
       "test_name": "[384643] User should be able to withdraw",
       "suite": "back-office",
-      "attempt_count": 3,
-      "escalated": false,
-      "escalated_at": null,
-      "escalated_owner": null,
-      "escalated_jira_key": null,
+      "attempt_count": 4,
+      "escalated": true,
+      "escalated_at": "2026-08-07",
+      "escalated_owner": "Ben Versluis",
+      "escalated_jira_key": "QA-953",
       "attempts": [
         {
           "date": "2026-07-28",
@@ -252,6 +261,15 @@
           "hypothesis": "Identical mechanism to [384642] -- a 3rd, distinct race from the two already fixed on this test (QA-891 register-list toPass retry; QA-913 isolatedLocation). This is now attempt #3 on this test -- AT the attempt cap.",
           "fix_applied": "Same fix as [384642]: Button-based buttons.withdraw waits on endPoints.REGISTER_WITHDRAWAL; searchInput.search() replaces raw fill().",
           "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642]). NOTE: attempt cap reached -- any future recurrence on this test must be quarantined and escalated, not given a 4th fix attempt."
+        },
+        {
+          "date": "2026-08-07",
+          "jira_key": "QA-953",
+          "pr_url": null,
+          "outcome": "quarantine_applied_cap_reached_recurrence",
+          "hypothesis": "N/A -- no new fix attempt; attempt cap already reached under QA-918 (2026-08-05). Recurred tonight with the same findCellsByText/firstDataRowLocator grid-readiness symptom shared with adjust-balance/deposit/close-out-register siblings, none of which have a concrete non-timing root cause per the anti-flake doc.",
+          "fix_applied": "withdraw.spec.ts: applied test.fixme() quarantine (was never previously applied on this test despite reaching the cap on 08-05 -- no quarantine had landed yet for this specific test, only for [544715] in prior runs).",
+          "result": "N/A -- quarantine-only change, no fix to verify. Escalated for human review of a possible app-level DataGrid-readiness race."
         }
       ]
     },
