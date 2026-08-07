@@ -198,7 +198,7 @@
         {
           "date": "2026-08-07",
           "jira_key": "QA-953",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8161",
           "outcome": "process_gap_quarantine_applied",
           "hypothesis": "N/A -- no new fix attempt (attempt cap reached under QA-897, 2026-07-29). Recurred again because both prior quarantine attempts (PR #8060 2026-08-05, PR #8104 2026-08-06) were left open/draft and never merged to develop.",
           "fix_applied": "Landed the same quarantine tag directly on develop via a merged (non-draft) PR this time; closed #8060 and #8104 without merging to avoid stale/conflicting hunks.",
@@ -265,7 +265,7 @@
         {
           "date": "2026-08-07",
           "jira_key": "QA-953",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8161",
           "outcome": "quarantine_applied_cap_reached_recurrence",
           "hypothesis": "N/A -- no new fix attempt; attempt cap already reached under QA-918 (2026-08-05). Recurred tonight with the same findCellsByText/firstDataRowLocator grid-readiness symptom shared with adjust-balance/deposit/close-out-register siblings, none of which have a concrete non-timing root cause per the anti-flake doc.",
           "fix_applied": "withdraw.spec.ts: applied test.fixme() quarantine (was never previously applied on this test despite reaching the cap on 08-05 -- no quarantine had landed yet for this specific test, only for [544715] in prior runs).",
