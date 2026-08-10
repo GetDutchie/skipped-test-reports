@@ -73,7 +73,7 @@
         {
           "date": "2026-08-10",
           "jira_key": "QA-957",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21784",
           "outcome": "fixed",
           "hypothesis": "ScheduledOrdersSection.openTimeDropdown() never interacts with the checkout's day-select dropdown and assumes the default day (\"Today\") always has time slots; when the earliest bookable slot rolls past midnight into a different day-of-week bucket, the time list is permanently empty and the 30s toPass retry can never succeed.",
           "fix_applied": "openTimeDropdown() now detects the empty-slot-list state (noSlotsMessage) and falls back to selecting the next day in the day-select before retrying, mirroring real shopper behavior.",
@@ -93,7 +93,7 @@
         {
           "date": "2026-08-10",
           "jira_key": "QA-957",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21784",
           "outcome": "fixed",
           "hypothesis": "Same shared ScheduledOrdersSection.selectFirstAvailableScheduledSlot() helper and same day-rollover root cause as [657464].",
           "fix_applied": "Same day-select fallback fix in scheduled-orders-section.ts (shared helper) as [657464]. Note: this test was already quarantined in Datadog Test Management with no prior ledger entry \u2014 process gap, flagged in this run's Jira ticket.",
