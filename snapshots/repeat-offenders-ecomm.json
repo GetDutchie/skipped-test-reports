@@ -60,6 +60,46 @@
           "result": "red-green-revert-restore proven; 20/20 Vape isolation; load-realistic 3/3 (workers=6, dutchie-e2e constellation)"
         }
       ]
+    },
+    "marketplace/checkout-page/scheduled-order-checkout.test.ts::Scheduled Order Checkout [657464] Select a time slot and save": {
+      "test_name": "Scheduled Order Checkout [657464] Select a time slot and save",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-10",
+          "jira_key": "QA-957",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "ScheduledOrdersSection.openTimeDropdown() never interacts with the checkout's day-select dropdown and assumes the default day (\"Today\") always has time slots; when the earliest bookable slot rolls past midnight into a different day-of-week bucket, the time list is permanently empty and the 30s toPass retry can never succeed.",
+          "fix_applied": "openTimeDropdown() now detects the empty-slot-list state (noSlotsMessage) and falls back to selecting the next day in the day-select before retrying, mirroring real shopper behavior.",
+          "result": "red (reverted fix reproduces exact nightly error) / green / revert / restore proven via temporary repro fixture forcing today's bucket empty; 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "marketplace/checkout-page/scheduled-order-checkout.test.ts::Scheduled Order Checkout [657465] Complete scheduled pickup order as guest": {
+      "test_name": "Scheduled Order Checkout [657465] Complete scheduled pickup order as guest",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-10",
+          "jira_key": "QA-957",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same shared ScheduledOrdersSection.selectFirstAvailableScheduledSlot() helper and same day-rollover root cause as [657464].",
+          "fix_applied": "Same day-select fallback fix in scheduled-orders-section.ts (shared helper) as [657464]. Note: this test was already quarantined in Datadog Test Management with no prior ledger entry \u2014 process gap, flagged in this run's Jira ticket.",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
