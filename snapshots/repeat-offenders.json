@@ -267,6 +267,26 @@
           "result": "20/20 Vape isolation \u2705 (iPad mini landscape + Desktop). Load-realistic (8-worker, pos-e2e constellation) lane NOT clean 3/3 \u2014 surfaced a separate pre-existing test-isolation issue (StartNewCartAfterCheckout feature flag appears contaminated across concurrently-running workers sharing a location/LSP, also intermittently affecting unmodified sibling 656697). Flagged as follow-up, not caused by or fixable via this change."
         }
       ]
+    },
+    "552301": {
+      "test_name": "[552301] Days Supply: Weight-based flower product",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-11",
+          "jira_key": "QA-962",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Missed sibling of [530571]/[552302] race fix (PR #1668): ungated inline customer search + toast-only cart readiness racing the load_v2-carried Days Supply values.",
+          "fix_applied": "verify-days-supply.test.ts: applied findCustomerAndCreateOrder + gate assertions on load_v2 refetch, matching sibling pattern. Also fixed a TOCTOU race in shared customers-page.ts selectCustomerAndCreateOrder (sequential Select_Guest_To_Register/load_v2 awaits merged into one Promise.all), previously reviewed in closed-unmerged PR #1609.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, full verify-days-supply.test.ts, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
