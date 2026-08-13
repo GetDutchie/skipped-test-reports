@@ -430,6 +430,86 @@
           "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
         }
       ]
+    },
+    "tests/registers/transactions/by-register/adjust-balance.spec.ts::[384642] User should be able to adjust balance": {
+      "test_name": "[384642] User should be able to adjust balance",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-972",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8442",
+          "outcome": "fixed",
+          "hypothesis": "searchInput.fill(comment) fires the filtered-list query but doesn't wait for it to resolve, so the immediate grid read below races the async query under load.",
+          "fix_applied": "Replaced searchInput.fill(comment) with the already-established searchInput.search(comment, transactionDataGrid) helper (same pattern as transfer.spec.ts).",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, registers/transactions/by-register dir, pos-e2e constellation)."
+        }
+      ]
+    },
+    "tests/registers/transactions/by-register/deposit.spec.ts::[383676] User should be able to deposit": {
+      "test_name": "[383676] User should be able to deposit",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-972",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8442",
+          "outcome": "fixed",
+          "hypothesis": "Same searchInput.fill() race as adjust-balance.",
+          "fix_applied": "Same fix as adjust-balance: searchInput.search(comment, transactionDataGrid).",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, registers/transactions/by-register dir, pos-e2e constellation)."
+        }
+      ]
+    },
+    "tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
+      "test_name": "[384643] User should be able to withdraw",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-972",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8442",
+          "outcome": "fixed",
+          "hypothesis": "Same searchInput.fill() race as adjust-balance/deposit.",
+          "fix_applied": "Same fix as adjust-balance/deposit: searchInput.search(comment, transactionDataGrid).",
+          "result": "20/20 Vape isolation PASS; load-realistic 3/3 PASS (8-worker parallel, registers/transactions/by-register dir, pos-e2e constellation)."
+        }
+      ]
+    },
+    "tests/marketing/discounts/create-discount-with-limits.spec.ts::[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.": {
+      "test_name": "[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-972",
+          "pr_url": null,
+          "outcome": "not-fixed",
+          "hypothesis": "DebouncedInput (wait=500ms) commits to parent form state 500ms after fill; the existing wait was exactly 500ms with zero margin, racing under CPU scheduling jitter.",
+          "fix_applied": "Widened wait to 1000ms, matching the identical component's existing precedent in save-discount.ts:285. Reverted after load-realistic verification failed (1 of 3 8-worker runs).",
+          "result": "NOT fixed: 1 of 3 load-realistic runs failed (once on the debounce race itself, once on an unrelated data-grid timeout). Reverted rather than ship an unverified fix. Needs an app-level sync signal for a deterministic fix, not another timing guess."
+        }
+      ]
     }
   }
 }
