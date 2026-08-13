@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-06",
+  "generatedAt": "2026-08-13",
   "sourceRepo": "GetDutchie/Armageddon",
-  "commitSha": "404c76f5b35b511cb6606358fa49db1afe070e66",
+  "commitSha": "a62ea14959e74801eac72b3366dc19f34c6d6a75",
   "tests": [
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #create",
@@ -11,7 +11,7 @@
       "skipReason": "Currently unused",
       "skippedAt": "2020-06-11",
       "author": "matt-dutchie",
-      "daysSkipped": 2247
+      "daysSkipped": 2254
     },
     {
       "id": "spec/requests/rest/dispensary_billings_spec.rb::DispensaryBillings Controller #update",
@@ -21,7 +21,7 @@
       "skipReason": "Currently unused",
       "skippedAt": "2020-06-11",
       "author": "matt-dutchie",
-      "daysSkipped": 2247
+      "daysSkipped": 2254
     },
     {
       "id": "spec/spawners/database_trimmer_spawner_spec.rb::creates jobs for all relevant models",
@@ -31,7 +31,7 @@
       "skipReason": "N/A",
       "skippedAt": "2024-04-26",
       "author": "Taylor Piccarreto",
-      "daysSkipped": 832
+      "daysSkipped": 839
     },
     {
       "id": "spec/workers/menu_integration/menu_worker_spec.rb::MenuIntegration::Workers::MenuWorker",
@@ -41,7 +41,27 @@
       "skipReason": "MenuIntegration::Adapters not yet ported (P3)",
       "skippedAt": "2026-04-29",
       "author": "Michael Hunter",
-      "daysSkipped": 99
+      "daysSkipped": 106
+    },
+    {
+      "id": "spec/lib/menu_integration/comparator_spec.rb::still writes the full sum across all sources",
+      "file": "spec/lib/menu_integration/comparator_spec.rb",
+      "name": "still writes the full sum across all sources",
+      "testRailId": "N/A",
+      "skipReason": "CALLER contract: supply a total for every source, not only the changed product",
+      "skippedAt": "2026-08-12",
+      "author": "im-mike-ae",
+      "daysSkipped": 1
+    },
+    {
+      "id": "spec/lib/menu_integration/comparator_spec.rb::does not silently undercount to the single known source",
+      "file": "spec/lib/menu_integration/comparator_spec.rb",
+      "name": "does not silently undercount to the single known source",
+      "testRailId": "N/A",
+      "skipReason": "CALLER contract: an absent source contributes 0 -- now warned + metered, not silent",
+      "skippedAt": "2026-08-12",
+      "author": "im-mike-ae",
+      "daysSkipped": 1
     }
   ]
 }
