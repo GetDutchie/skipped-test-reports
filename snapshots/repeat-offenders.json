@@ -300,7 +300,7 @@
         {
           "date": "2026-08-13",
           "jira_key": "QA-974",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1784",
           "outcome": "fixed",
           "hypothesis": "TOCTOU race in CustomersPage.setup.selectCustomerAndCreateOrder: load_v2 wait registered as a standalone await after the Select_Guest_To_Register Promise.all resolves, so load_v2 can fire and resolve in the gap before the listener attaches.",
           "fix_applied": "customers-page.ts: merged load_v2 waitForResponse into the same Promise.all as Select_Guest_To_Register + click. Re-lands a fix previously verified but never merged (PR #1609 closed unmerged 2026-07-21; commit 2b73779d3 on an unmerged branch).",
@@ -320,7 +320,7 @@
         {
           "date": "2026-08-13",
           "jira_key": "QA-974",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1784",
           "outcome": "fixed",
           "hypothesis": "Same shared-helper TOCTOU race as 654016 (also calls selectCustomerAndCreateOrder).",
           "fix_applied": "Same customers-page.ts fix as 654016 (shared helper).",
@@ -340,7 +340,7 @@
         {
           "date": "2026-08-13",
           "jira_key": "QA-974",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1784",
           "outcome": "fixed",
           "hypothesis": "productRestrictionTest never overrides the shared discounts fixture, so createDiscountData's auto-fixture creates a broad automaticDiscount() scoped to ALL of the test's products (including productB), conflicting with the test's own productA-only discount. Whether that broader discount had propagated through AutomaticDiscountConfigsCache by the time productB was added determined pass/fail.",
           "fix_applied": "product-restriction-discount.test.ts: added discounts: async ({}, use) => { await use([]); } override, matching the QA-394 precedent already used by sibling discount test files.",
@@ -360,7 +360,7 @@
         {
           "date": "2026-08-13",
           "jira_key": "QA-974",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1784",
           "outcome": "fixed",
           "hypothesis": "Sibling-pattern discovery (not in tonight's flakey list): pricing-tier-helpers.ts independently duplicated the same sequential-await TOCTOU pattern as 654016/654038.",
           "fix_applied": "pricing-tier-helpers.ts: same Promise.all merge fix as customers-page.ts.",
@@ -380,7 +380,7 @@
         {
           "date": "2026-08-13",
           "jira_key": "QA-974",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1784",
           "outcome": "fixed",
           "hypothesis": "Sibling-pattern discovery (not in tonight's flakey list): pricing-tier-helpers.ts independently duplicated the same sequential-await TOCTOU pattern as 654016/654038.",
           "fix_applied": "pricing-tier-helpers.ts: same Promise.all merge fix as customers-page.ts.",
@@ -400,7 +400,7 @@
         {
           "date": "2026-08-13",
           "jira_key": "QA-974",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1784",
           "outcome": "fixed",
           "hypothesis": "Sibling-pattern discovery (not in tonight's flakey list): pricing-tier-helpers.ts independently duplicated the same sequential-await TOCTOU pattern as 654016/654038.",
           "fix_applied": "pricing-tier-helpers.ts: same Promise.all merge fix as customers-page.ts.",
