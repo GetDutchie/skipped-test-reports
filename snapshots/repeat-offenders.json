@@ -287,6 +287,126 @@
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, full verify-days-supply.test.ts, 3/3) \u2705"
         }
       ]
+    },
+    "654016": {
+      "test_name": "[654016] Can apply loyalty as a cash value to cart",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-974",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "TOCTOU race in CustomersPage.setup.selectCustomerAndCreateOrder: load_v2 wait registered as a standalone await after the Select_Guest_To_Register Promise.all resolves, so load_v2 can fire and resolve in the gap before the listener attaches.",
+          "fix_applied": "customers-page.ts: merged load_v2 waitForResponse into the same Promise.all as Select_Guest_To_Register + click. Re-lands a fix previously verified but never merged (PR #1609 closed unmerged 2026-07-21; commit 2b73779d3 on an unmerged branch).",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "654038": {
+      "test_name": "[654038] GeneriPay debit: exact amount checkout",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-974",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same shared-helper TOCTOU race as 654016 (also calls selectCustomerAndCreateOrder).",
+          "fix_applied": "Same customers-page.ts fix as 654016 (shared helper).",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "654091": {
+      "test_name": "[654091] An automatic discount is applied to the cart when the conditions are met",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-974",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "productRestrictionTest never overrides the shared discounts fixture, so createDiscountData's auto-fixture creates a broad automaticDiscount() scoped to ALL of the test's products (including productB), conflicting with the test's own productA-only discount. Whether that broader discount had propagated through AutomaticDiscountConfigsCache by the time productB was added determined pass/fail.",
+          "fix_applied": "product-restriction-discount.test.ts: added discounts: async ({}, use) => { await use([]); } override, matching the QA-394 precedent already used by sibling discount test files.",
+          "result": "red-green-revert confirmed (3/6 failed on revert vs 0/8 with fix) \u00b7 20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "132064": {
+      "test_name": "[132064] Pricing Tier lookup by tag resolves the lowest price across multiple matching tiers",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-974",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Sibling-pattern discovery (not in tonight's flakey list): pricing-tier-helpers.ts independently duplicated the same sequential-await TOCTOU pattern as 654016/654038.",
+          "fix_applied": "pricing-tier-helpers.ts: same Promise.all merge fix as customers-page.ts.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "132065": {
+      "test_name": "[132065] Pricing Tier lookup excludes AND-combinator tier when product is missing a required tag",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-974",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Sibling-pattern discovery (not in tonight's flakey list): pricing-tier-helpers.ts independently duplicated the same sequential-await TOCTOU pattern as 654016/654038.",
+          "fix_applied": "pricing-tier-helpers.ts: same Promise.all merge fix as customers-page.ts.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "132066": {
+      "test_name": "[132066] Pricing Tier lookup respects AND combinator when product has both required tags",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-13",
+          "jira_key": "QA-974",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Sibling-pattern discovery (not in tonight's flakey list): pricing-tier-helpers.ts independently duplicated the same sequential-await TOCTOU pattern as 654016/654038.",
+          "fix_applied": "pricing-tier-helpers.ts: same Promise.all merge fix as customers-page.ts.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
