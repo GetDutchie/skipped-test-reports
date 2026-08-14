@@ -420,7 +420,7 @@
         {
           "date": "2026-08-14",
           "jira_key": "QA-979",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1793",
           "outcome": "fixed",
           "hypothesis": "testSetup used a raw showCustomerPreview + createOrder.click() with no cart-readiness gate at all (unlike the confirmed Select_Guest_To_Register -> load_v2 signal used elsewhere), leaving only Playwright's default 10s assertion retry to cover cart-render latency",
           "fix_applied": "external-loyalty.test.ts: replaced raw showCustomerPreview + createOrder.click() with the existing customersPage.setup.findCustomerAndCreateOrder(customerId, guestListPage) helper, which gates on Select_Guest_To_Register and load_v2 before returning",
