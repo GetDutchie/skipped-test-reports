@@ -64,7 +64,7 @@
     "marketplace/checkout-page/scheduled-order-checkout.test.ts::Scheduled Order Checkout [657464] Select a time slot and save": {
       "test_name": "Scheduled Order Checkout [657464] Select a time slot and save",
       "suite": "ecomm",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -78,13 +78,22 @@
           "hypothesis": "ScheduledOrdersSection.openTimeDropdown() never interacts with the checkout's day-select dropdown and assumes the default day (\"Today\") always has time slots; when the earliest bookable slot rolls past midnight into a different day-of-week bucket, the time list is permanently empty and the 30s toPass retry can never succeed.",
           "fix_applied": "openTimeDropdown() now detects the empty-slot-list state (noSlotsMessage) and falls back to selecting the next day in the day-select before retrying, mirroring real shopper behavior.",
           "result": "red (reverted fix reproduces exact nightly error) / green / revert / restore proven via temporary repro fixture forcing today's bucket empty; 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) \u2705"
+        },
+        {
+          "date": "2026-08-14",
+          "jira_key": "QA-980",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Relapse of QA-957's diagnosis (day-rollover, today has zero bookable slots); the 2026-08-10 fix (PR #21784) was never merged (stuck in review) and the reviewer flagged a real Correctness defect in it: the day-select fallback clicks the day option with no ArrowDown to open react-select's menu first, unlike the documented time-select pattern two lines above.",
+          "fix_applied": "Re-applied the QA-957 day-rollover fallback in openTimeDropdown() and fixed the flagged missing-ArrowDown defect before landing it.",
+          "result": "60/60 (20x each of 3 tests in file) Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, Desktop+Mobile Main, 3/3) \u2705. PR #21784 (prior unmerged attempt) should be closed as superseded."
         }
       ]
     },
     "marketplace/checkout-page/scheduled-order-checkout.test.ts::Scheduled Order Checkout [657465] Complete scheduled pickup order as guest": {
       "test_name": "Scheduled Order Checkout [657465] Complete scheduled pickup order as guest",
       "suite": "ecomm",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -98,6 +107,55 @@
           "hypothesis": "Same shared ScheduledOrdersSection.selectFirstAvailableScheduledSlot() helper and same day-rollover root cause as [657464].",
           "fix_applied": "Same day-select fallback fix in scheduled-orders-section.ts (shared helper) as [657464]. Note: this test was already quarantined in Datadog Test Management with no prior ledger entry \u2014 process gap, flagged in this run's Jira ticket.",
           "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) \u2705"
+        },
+        {
+          "date": "2026-08-14",
+          "jira_key": "QA-980",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same shared ScheduledOrdersSection.openTimeDropdown() mechanism and root cause as [657464].",
+          "fix_applied": "Same fix as [657464] (shared helper).",
+          "result": "60/60 (20x each of 3 tests in file) Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, Desktop+Mobile Main, 3/3) \u2705."
+        }
+      ]
+    },
+    "marketplace/checkout-page/blocked-address.test.ts::Blocked delivery addresses at checkout [800121] An order to a blocked address cannot be placed": {
+      "test_name": "Blocked delivery addresses at checkout [800121] An order to a blocked address cannot be placed",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-14",
+          "jira_key": "QA-980",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "dismissErnie() is best-effort (100ms click, swallows failures) and doesn't confirm the toast actually cleared before placeOrderButton is clicked; the stale 'outside the delivery area' ernie can still be visible when the test then expects the 'missing information' error \u2014 confirmed directly in the CI failure's error-context.md.",
+          "fix_applied": "Added ernie.waitFor({state:'hidden'}) after dismissErnie(), matching the identical pattern already used in photo-id-checkout.test.ts.",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, Mobile Main, 3/3) \u2705. Could not force the race to reproduce locally pre-fix after 25 additional repeat-each runs \u2014 root cause anchored on the CI artifact, not a local repro."
+        }
+      ]
+    },
+    "marketplace/checkout-page/guest-checkout.test.ts::Complete orders with guest checkout functionality [55432] Complete pickup order with user login (simulating disabled guest checkout)": {
+      "test_name": "Complete orders with guest checkout functionality [55432] Complete pickup order with user login (simulating disabled guest checkout)",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-14",
+          "jira_key": "QA-980",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "The birthdate field is a Cleave.js-masked DateInput; handleGuestCheckout() filled it with .fill(), which can leave the mask's internal state empty on Mobile Storefront \u2014 confirmed in the CI failure's error-context.md (phone field filled correctly, birthdate field empty with 'Please enter a valid birthdate').",
+          "fix_applied": "guest-customer-section.ts's fillFields()/fillGuestInfo() now use .click()+.pressSequentially() for the birthdate field, matching the identical pattern already used in page-objects/marketplace/pages/instore-enrollment/index.ts. Also consolidated checkout-helpers.ts's duplicate fill logic to call the shared fillFields() helper.",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, guest-checkout.test.ts + photo-id-checkout.test.ts, Mobile Storefront+Mobile Main, 3/3) \u2705. Could not force the race to reproduce locally pre-fix after 15 additional repeat-each runs \u2014 same caveat as above."
         }
       ]
     }
