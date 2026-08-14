@@ -407,6 +407,26 @@
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, 3/3) \u2705"
         }
       ]
+    },
+    "cart/loyalty/external-loyalty.test.ts::[656925] Loyalty tier should display correctly on cart page for external loyalty members": {
+      "test_name": "[656925] Loyalty tier should display correctly on cart page for external loyalty members",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-14",
+          "jira_key": "QA-979",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "testSetup used a raw showCustomerPreview + createOrder.click() with no cart-readiness gate at all (unlike the confirmed Select_Guest_To_Register -> load_v2 signal used elsewhere), leaving only Playwright's default 10s assertion retry to cover cart-render latency",
+          "fix_applied": "external-loyalty.test.ts: replaced raw showCustomerPreview + createOrder.click() with the existing customersPage.setup.findCustomerAndCreateOrder(customerId, guestListPage) helper, which gates on Select_Guest_To_Register and load_v2 before returning",
+          "result": "Disproven attempt 1 (independent auto-fixture ordering) ruled out via forced-delay repro \u2014 Playwright serialized auto fixtures in declaration order regardless. Attempt 2 (missing readiness gate) reproduced the exact CI failure signature via a forced 15s delay on Select_Guest_To_Register, confirmed green with the fix applied, then reverted the delay. 20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, cart/loyalty directory sharing findCustomerAndCreateOrder, 3/3 target test passed; unrelated pre-existing backend contention on 5 sibling tests sharing the same helper, matching known QA-880/887 pattern, not caused by this fix) \u2705"
+        }
+      ]
     }
   }
 }
