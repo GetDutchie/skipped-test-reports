@@ -82,7 +82,7 @@
         {
           "date": "2026-08-14",
           "jira_key": "QA-980",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21899",
           "outcome": "fixed",
           "hypothesis": "Relapse of QA-957's diagnosis (day-rollover, today has zero bookable slots); the 2026-08-10 fix (PR #21784) was never merged (stuck in review) and the reviewer flagged a real Correctness defect in it: the day-select fallback clicks the day option with no ArrowDown to open react-select's menu first, unlike the documented time-select pattern two lines above.",
           "fix_applied": "Re-applied the QA-957 day-rollover fallback in openTimeDropdown() and fixed the flagged missing-ArrowDown defect before landing it.",
@@ -111,7 +111,7 @@
         {
           "date": "2026-08-14",
           "jira_key": "QA-980",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21899",
           "outcome": "fixed",
           "hypothesis": "Same shared ScheduledOrdersSection.openTimeDropdown() mechanism and root cause as [657464].",
           "fix_applied": "Same fix as [657464] (shared helper).",
@@ -131,7 +131,7 @@
         {
           "date": "2026-08-14",
           "jira_key": "QA-980",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21899",
           "outcome": "fixed",
           "hypothesis": "dismissErnie() is best-effort (100ms click, swallows failures) and doesn't confirm the toast actually cleared before placeOrderButton is clicked; the stale 'outside the delivery area' ernie can still be visible when the test then expects the 'missing information' error \u2014 confirmed directly in the CI failure's error-context.md.",
           "fix_applied": "Added ernie.waitFor({state:'hidden'}) after dismissErnie(), matching the identical pattern already used in photo-id-checkout.test.ts.",
@@ -151,7 +151,7 @@
         {
           "date": "2026-08-14",
           "jira_key": "QA-980",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21899",
           "outcome": "fixed",
           "hypothesis": "The birthdate field is a Cleave.js-masked DateInput; handleGuestCheckout() filled it with .fill(), which can leave the mask's internal state empty on Mobile Storefront \u2014 confirmed in the CI failure's error-context.md (phone field filled correctly, birthdate field empty with 'Please enter a valid birthdate').",
           "fix_applied": "guest-customer-section.ts's fillFields()/fillGuestInfo() now use .click()+.pressSequentially() for the birthdate field, matching the identical pattern already used in page-objects/marketplace/pages/instore-enrollment/index.ts. Also consolidated checkout-helpers.ts's duplicate fill logic to call the shared fillFields() helper.",
