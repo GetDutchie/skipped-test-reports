@@ -158,6 +158,44 @@
           "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, guest-checkout.test.ts + photo-id-checkout.test.ts, Mobile Storefront+Mobile Main, 3/3) \u2705. Could not force the race to reproduce locally pre-fix after 15 additional repeat-each runs \u2014 same caveat as above."
         }
       ]
+    },
+    "marketplace/checkout-page/photo-id-checkout.test.ts::Attempt completing delivery order with photo ID required for deliveries w/ no ID": {
+      "test_name": "[55437] Attempt completing delivery order with photo ID required for deliveries w/ no ID",
+      "suite": "ecomm",
+      "attempt_count": 3,
+      "escalated": true,
+      "escalated_at": "2026-08-17",
+      "escalated_owner": "Ben Versluis",
+      "escalated_jira_key": "QA-989",
+      "attempts": [
+        {
+          "date": "2026-06-30",
+          "jira_key": "QA-747",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/20756",
+          "outcome": "fixed",
+          "hypothesis": "selectOrderType('Delivery', address) shows a success ernie that is still visible when placeOrder() fires, so expectErnieWithMessage matches the stale success text instead of the photo-ID error.",
+          "fix_applied": "Added a single dismissErnie() call between selectOrderType and placeOrder to clear the address-success ernie.",
+          "result": "Merged as fixed; recurred in a later nightly run \u2014 the blind dismiss did not guarantee the toast was actually gone."
+        },
+        {
+          "date": "2026-07-01",
+          "jira_key": "QA-776",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/20860",
+          "outcome": "fixed",
+          "hypothesis": "Relapse of QA-747's diagnosis: dismissErnie() is a best-effort 100ms click that swallows failures and never confirms the toast disappeared, so the stale success ernie could still be visible when the photo-ID check runs.",
+          "fix_applied": "Replaced the redundant blind dismissErnie() call with checkoutPage.ernie.waitFor({state:'hidden', timeout:10000}).catch(()=>{}).",
+          "result": "20/20 Vape (12.4 min run); recurred again in the 2026-08-17 nightly run \u2014 isolation-only evidence did not catch the real trigger condition."
+        },
+        {
+          "date": "2026-08-17",
+          "jira_key": "QA-989",
+          "pr_url": null,
+          "outcome": "parked-3-strikes",
+          "hypothesis": "Suspect apps/marketplace/src/checkout/context.js addErrors() \u2014 this.errors = _.unionBy(sortedErrors, this.errors, e => e.path) never clears stale errors from a prior validation pass; showErrorAlert() always ernies this.errors[0], so a leftover error could suppress the photo-ID ernie entirely. Unconfirmed \u2014 could not reproduce to prove it.",
+          "fix_applied": "No code fix attempted \u2014 reproduced current (attempt-2) code 11/11 (1 isolated + 10 under 4-worker parallel load in dutchie-e2e Vape) with no failure, so no red-green-revert proof was possible for a 3rd guess. Quarantined via test.fixme() instead per the 3-strikes/architecture rule.",
+          "result": "Could not reproduce; 2 prior distinct hypotheses (ernie-dismiss timing) already falsified by recurrence. Escalated for human investigation of the suspected production error-stacking defect."
+        }
+      ]
     }
   }
 }
