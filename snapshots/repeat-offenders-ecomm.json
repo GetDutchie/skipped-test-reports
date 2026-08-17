@@ -189,7 +189,7 @@
         {
           "date": "2026-08-17",
           "jira_key": "QA-989",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21942",
           "outcome": "parked-3-strikes",
           "hypothesis": "Suspect apps/marketplace/src/checkout/context.js addErrors() \u2014 this.errors = _.unionBy(sortedErrors, this.errors, e => e.path) never clears stale errors from a prior validation pass; showErrorAlert() always ernies this.errors[0], so a leftover error could suppress the photo-ID ernie entirely. Unconfirmed \u2014 could not reproduce to prove it.",
           "fix_applied": "No code fix attempted \u2014 reproduced current (attempt-2) code 11/11 (1 isolated + 10 under 4-worker parallel load in dutchie-e2e Vape) with no failure, so no red-green-revert proof was possible for a 3rd guess. Quarantined via test.fixme() instead per the 3-strikes/architecture rule.",
