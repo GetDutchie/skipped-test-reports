@@ -778,6 +778,25 @@
         "commit": "2cb20b2",
         "run_timestamp": "2026-08-13T07:46:45.000Z"
       }
+    },
+    {
+      "date": "2026-08-19",
+      "back_office": {
+        "flaky": 6,
+        "failed": 3,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-08-19T06:23:50.000Z"
+      },
+      "pos": {
+        "flaky": 3,
+        "failed": 0,
+        "total": 408,
+        "branch": "develop",
+        "commit": "c4bfbc0",
+        "run_timestamp": "2026-08-19T07:32:58.000Z"
+      }
     }
   ],
   "thrash_candidates": [
