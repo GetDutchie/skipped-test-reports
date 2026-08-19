@@ -427,6 +427,46 @@
           "result": "Disproven attempt 1 (independent auto-fixture ordering) ruled out via forced-delay repro \u2014 Playwright serialized auto fixtures in declaration order regardless. Attempt 2 (missing readiness gate) reproduced the exact CI failure signature via a forced 15s delay on Select_Guest_To_Register, confirmed green with the fix applied, then reverted the delay. 20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, cart/loyalty directory sharing findCustomerAndCreateOrder, 3/3 target test passed; unrelated pre-existing backend contention on 5 sibling tests sharing the same helper, matching known QA-880/887 pattern, not caused by this fix) \u2705"
         }
       ]
+    },
+    "656677": {
+      "test_name": "[656677] If the error is not related to Pay By Bank, shows default Pay By Bank error message",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-19",
+          "jira_key": "QA-999",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "connectAccount success toast still visible when complete.click() fires, intercepting the click (identical to already-fixed sibling [68530] from QA-850/PR #1600, which this test was missed by)",
+          "fix_applied": "checkout-with-pay-by-bank.test.ts: added clearBlockingNotifications(page) before complete.click(), mirroring [68530]'s already-merged fix exactly",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, register suite, 3 independent fresh pos-e2e instances, 3/3) \u2705"
+        }
+      ]
+    },
+    "656679": {
+      "test_name": "[656679] If the error is not related to Pay By Bank, shows a different error message",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-19",
+          "jira_key": "QA-999",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "connectAccount success toast still visible when complete.click() fires, intercepting the click (identical to already-fixed sibling [68530] from QA-850/PR #1600, which this test was missed by)",
+          "fix_applied": "checkout-with-pay-by-bank.test.ts: added clearBlockingNotifications(page) before complete.click(), mirroring [68530]'s already-merged fix exactly",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, register suite, 3 independent fresh pos-e2e instances, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
