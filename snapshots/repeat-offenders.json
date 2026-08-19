@@ -440,7 +440,7 @@
         {
           "date": "2026-08-19",
           "jira_key": "QA-999",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1816",
           "outcome": "fixed",
           "hypothesis": "connectAccount success toast still visible when complete.click() fires, intercepting the click (identical to already-fixed sibling [68530] from QA-850/PR #1600, which this test was missed by)",
           "fix_applied": "checkout-with-pay-by-bank.test.ts: added clearBlockingNotifications(page) before complete.click(), mirroring [68530]'s already-merged fix exactly",
@@ -460,7 +460,7 @@
         {
           "date": "2026-08-19",
           "jira_key": "QA-999",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/1816",
           "outcome": "fixed",
           "hypothesis": "connectAccount success toast still visible when complete.click() fires, intercepting the click (identical to already-fixed sibling [68530] from QA-850/PR #1600, which this test was missed by)",
           "fix_applied": "checkout-with-pay-by-bank.test.ts: added clearBlockingNotifications(page) before complete.click(), mirroring [68530]'s already-merged fix exactly",
