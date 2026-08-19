@@ -209,7 +209,7 @@
         {
           "date": "2026-08-19",
           "jira_key": "QA-997",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22006",
           "outcome": "fixed",
           "hypothesis": "EmbeddedDesktopSpecialsPage.getProductListItems() waits for the first product-list-item visible then calls .all(), but the special's eligibility-filtered list can re-render empty in between, leaving productListItems[0] undefined.",
           "fix_applied": "getProductListItems() now retries (.all() + count>0 assertion) inside toPass() instead of a single first()-visible snapshot.",
@@ -229,7 +229,7 @@
         {
           "date": "2026-08-19",
           "jira_key": "QA-997",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22006",
           "outcome": "fixed",
           "hypothesis": "OrderingPage.navigateToSubPage() returns before ReservationSlotsByOrderType resolves and the subpage's react-hook-form reset() applies real defaults, so isChecked() on scheduledOrdering can read pre-hydration state and skip the >=15min time-slot guard before publish.",
           "fix_applied": "navigateToSubPage() now awaits Promise.all([waitForResponse('ReservationSlotsByOrderType'), tab.click()]) before returning.",
