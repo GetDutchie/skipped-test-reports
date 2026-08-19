@@ -196,6 +196,46 @@
           "result": "Could not reproduce; 2 prior distinct hypotheses (ernie-dismiss timing) already falsified by recurrence. Escalated for human investigation of the suspected production error-stacking defect."
         }
       ]
+    },
+    "admin/promotions/special-conditions.test.ts::[115968] Total spend conditions hides discount message when restrictSalesLanguage is enabled": {
+      "test_name": "[115968] Total spend conditions hides discount message when restrictSalesLanguage is enabled",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-19",
+          "jira_key": "QA-997",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "EmbeddedDesktopSpecialsPage.getProductListItems() waits for the first product-list-item visible then calls .all(), but the special's eligibility-filtered list can re-render empty in between, leaving productListItems[0] undefined.",
+          "fix_applied": "getProductListItems() now retries (.all() + count>0 assertion) inside toPass() instead of a single first()-visible snapshot.",
+          "result": "red = original CI TypeError at embedded-desktop.ts:40; 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, whole spec file 8 tests, 3/3) \u2705"
+        }
+      ]
+    },
+    "admin/settings/ordering/payment-options.test.ts::[85038] Payment options are correctly configured and populated in checkout (Delivery only)": {
+      "test_name": "[85038] Payment options are correctly configured and populated in checkout (Delivery only)",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-08-19",
+          "jira_key": "QA-997",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "OrderingPage.navigateToSubPage() returns before ReservationSlotsByOrderType resolves and the subpage's react-hook-form reset() applies real defaults, so isChecked() on scheduledOrdering can read pre-hydration state and skip the >=15min time-slot guard before publish.",
+          "fix_applied": "navigateToSubPage() now awaits Promise.all([waitForResponse('ReservationSlotsByOrderType'), tab.click()]) before returning.",
+          "result": "red = original CI ernie mismatch ('Time slots must be at least 15 minutes.'); 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, payment-options.test.ts + dutchie-pay.test.ts 16 tests, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
