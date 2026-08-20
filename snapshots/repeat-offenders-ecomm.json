@@ -236,6 +236,28 @@
           "result": "red = original CI ernie mismatch ('Time slots must be at least 15 minutes.'); 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, payment-options.test.ts + dutchie-pay.test.ts 16 tests, 3/3) \u2705"
         }
       ]
+    },
+    "marketplace/checkout-page/blocked-address.test.ts::Blocked delivery addresses at checkout [800122] An unblocked address in the delivery area is still accepted": {
+      "test_name": "Blocked delivery addresses at checkout [800122] An unblocked address in the delivery area is still accepted",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toContainText failed; Locator: getByTestId('ernie-message').and(locator(':visible')); Error: element(s) not found; Timeout 60000ms exceeded while waiting on the predicate at base-page.ts:53",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-08-20",
+          "jira_key": "QA-1003",
+          "pr_url": null,
+          "outcome": "parked-3-strikes",
+          "hypothesis": "expectErnieWithMessage() (base-page.ts, 39 call sites) reads ernie-message from a page-wide locator independent of the container it just confirmed visible, so a container-visible/message-not-found race on this test's one-shot success toast times out the 60s toPass before the toast fully settles.",
+          "fix_applied": "Attempted: scope the message check to the same top-most :visible ernie container already used for the type read (topErnie.getByTestId('ernie-message')) instead of a page-wide getByTestId('ernie-message').and(':visible') query.",
+          "result": "Fix made [800122] pass in isolation (confirmed via real trace evidence matching the hypothesis exactly), but broke the already-passing sibling [800121] (QA-980/PR #21899's fix) when the full spec file was re-run: topErnie's 'last visible container' selection resolved to a node with an empty ernie-message in 800121's dismiss-then-recheck flow. Reverted rather than ship a fix that regresses a sibling on a 39-call-site shared helper. Needs human review of the helper's ernie-selection strategy before a 2nd attempt."
+        }
+      ]
     }
   }
 }
