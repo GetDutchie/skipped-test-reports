@@ -163,7 +163,7 @@
       "test_name": "[55437] Attempt completing delivery order with photo ID required for deliveries w/ no ID",
       "suite": "ecomm",
       "attempt_count": 3,
-      "escalated": true,
+      "escalated": false,
       "escalated_at": "2026-08-17",
       "escalated_owner": "Ben Versluis",
       "escalated_jira_key": "QA-989",
@@ -195,7 +195,9 @@
           "fix_applied": "No code fix attempted — reproduced current (attempt-2) code 11/11 (1 isolated + 10 under 4-worker parallel load in dutchie-e2e Vape) with no failure, so no red-green-revert proof was possible for a 3rd guess. Quarantined via test.fixme() instead per the 3-strikes/architecture rule.",
           "result": "Could not reproduce; 2 prior distinct hypotheses (ernie-dismiss timing) already falsified by recurrence. Escalated for human investigation of the suspected production error-stacking defect."
         }
-      ]
+      ],
+      "resolved_at": "2026-08-21",
+      "resolved_note": "Did not appear in FAILED/FLAKEY on 2026-08-21 nightly run (single clean night); escalated_jira_key QA-989 retained for history. Not yet confirmed stable over multiple nights."
     },
     "admin/promotions/special-conditions.test.ts::[115968] Total spend conditions hides discount message when restrictSalesLanguage is enabled": {
       "test_name": "[115968] Total spend conditions hides discount message when restrictSalesLanguage is enabled",
