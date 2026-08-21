@@ -273,7 +273,7 @@
         {
           "date": "2026-08-21",
           "jira_key": "QA-1007",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22064",
           "outcome": "fixed",
           "hypothesis": "Admin page's post-UpdateProduct client-side render/navigation can still be in flight when productPage.goto() fires (same race documented in PR #19803 and PR #21395, neither of which fully closed it), causing net::ERR_ABORTED.",
           "fix_applied": "Wrapped productPage.goto() + a visibility assertion in expect(...).toPass() so the idempotent navigation retries with real Playwright retry semantics instead of relying solely on the shared base page's single hand-rolled waitForTimeout(2000) retry.",
