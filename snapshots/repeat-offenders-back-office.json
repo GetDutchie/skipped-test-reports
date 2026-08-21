@@ -443,7 +443,7 @@
     "tests/registers/transactions/by-register/adjust-balance.spec.ts::[384642] User should be able to adjust balance": {
       "test_name": "[384642] User should be able to adjust balance",
       "suite": "back-office",
-      "attempt_count": 2,
+      "attempt_count": 3,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -466,13 +466,24 @@
           "hypothesis": "Raw searchInput.fill(comment) with no wait before findCellsByText races the grid's debounce/refetch under load.",
           "fix_applied": "Swapped to ControlSearchInput.search() helper (deterministic totalCount poll); also fixed EndingBalance assertion which was reading the EntryAmount field twice.",
           "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+        },
+        {
+          "date": "2026-08-21",
+          "jira_key": "QA-1008",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "GET_REGISTER_TRANSACTIONS can 200 before the just-created write is indexed; the client-side search filter has no retry of the underlying fetch, only of the DOM text poll, so it can never surface the new transaction.",
+          "fix_applied": "individual-register.ts: added findTransactionByComment() wrapping re-fetch (showAllTransactions) + search + row-find in expect().toPass({timeout:90000}), reusing DataGrid's existing 90000ms constant.",
+          "result": "red-green-revert (structural) \u2705; 20/20 Vape isolation \u2705; load-realistic (8-worker parallel, taskset 0-7, by-register + fields.spec.ts, pos-e2e constellation, 3/3) \u2705"
         }
-      ]
+      ],
+      "failure_signature": null,
+      "real_app_bug": null
     },
     "tests/registers/transactions/by-register/deposit.spec.ts::[383676] User should be able to deposit": {
       "test_name": "[383676] User should be able to deposit",
       "suite": "back-office",
-      "attempt_count": 2,
+      "attempt_count": 3,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -495,13 +506,24 @@
           "hypothesis": "Same searchInput.fill() race as adjust-balance.",
           "fix_applied": "Same fix as adjust-balance: search() helper + EndingBalance field correction.",
           "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+        },
+        {
+          "date": "2026-08-21",
+          "jira_key": "QA-1008",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same read-after-write race as [384642] (sibling pattern, same file family).",
+          "fix_applied": "Same fix as [384642]: findTransactionByComment() shared POM helper.",
+          "result": "20/20 Vape isolation \u2705; load-realistic 3/3 \u2705 (same lane as [384642])"
         }
-      ]
+      ],
+      "failure_signature": null,
+      "real_app_bug": null
     },
     "tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
       "test_name": "[384643] User should be able to withdraw",
       "suite": "back-office",
-      "attempt_count": 2,
+      "attempt_count": 3,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -524,8 +546,19 @@
           "hypothesis": "Same searchInput.fill() race as adjust-balance/deposit; test was previously escalated (see e2e/tests/... legacy key, QA-953) after 4 attempts under an old path-prefix ledger key, but no quarantine tag ever actually reached develop for it, so it kept recurring nightly as if fresh.",
           "fix_applied": "Same fix as adjust-balance/deposit: search() helper.",
           "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+        },
+        {
+          "date": "2026-08-21",
+          "jira_key": "QA-1008",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same read-after-write race as [384642] (sibling pattern, same file family). This was the 3rd/final attempt at the ledger cap; forced reclassification (3.5) confirmed test-code-bug with this genuinely new hypothesis (prior two attempts targeted the search-input fill race and an EndingBalance field bug, both already fixed/unrelated to this recurrence).",
+          "fix_applied": "Same fix as [384642]: findTransactionByComment() shared POM helper.",
+          "result": "20/20 Vape isolation \u2705; load-realistic 3/3 \u2705 (same lane as [384642])"
         }
-      ]
+      ],
+      "failure_signature": null,
+      "real_app_bug": null
     },
     "tests/marketing/discounts/create-discount-with-limits.spec.ts::[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.": {
       "test_name": "[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.",
@@ -566,6 +599,60 @@
           "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
         }
       ]
+    },
+    "tests/products/configure/fields/fields.spec.ts::[654118] Configured fields for package detail page are and save state pack template ": {
+      "test_name": "[654118] Configured fields for package detail page are and save state pack template ",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-08-21",
+          "jira_key": "QA-1008",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "receivedPackage fixture's poll only confirms inventory-LIST readiness; the detail route reads a separate, sometimes-lagging index, and goto()'s header wait has no retry of the navigation itself.",
+          "fix_applied": "fields.spec.ts: wrapped the first packageDetailPage.goto() in expect().toPass({timeout:120000}) (matching BasePage's own header-wait default), 20000ms per-attempt header probe inside the loop.",
+          "result": "red-green-revert (structural) \u2705; 20/20 Vape isolation \u2705; load-realistic 3/3 \u2705 (same lane as above)"
+        }
+      ]
+    },
+    "tests/marketing/discounts/restrict-discount.spec.ts::[405469] Verify that a Discount can be restricted to one or more vendors": {
+      "test_name": "[405469] Verify that a Discount can be restricted to one or more vendors",
+      "suite": "back-office",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then 60000ms Button.click timeout on Save",
+      "real_app_bug": {
+        "ticket_key": "POS-21910",
+        "filed_at": "2026-08-21",
+        "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then 60000ms Button.click timeout on Save"
+      },
+      "attempts": []
+    },
+    "tests/marketing/discounts/restrict-discount.spec.ts::[405473] Verify that one or more categories can be excluded from the Discount": {
+      "test_name": "[405473] Verify that one or more categories can be excluded from the Discount",
+      "suite": "back-office",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then 60000ms Button.click timeout on Save",
+      "real_app_bug": {
+        "ticket_key": "POS-21910",
+        "filed_at": "2026-08-21",
+        "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then 60000ms Button.click timeout on Save"
+      },
+      "attempts": []
     }
   }
 }
