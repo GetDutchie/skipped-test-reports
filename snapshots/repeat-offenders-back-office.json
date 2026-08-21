@@ -470,7 +470,7 @@
         {
           "date": "2026-08-21",
           "jira_key": "QA-1008",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8747",
           "outcome": "fixed",
           "hypothesis": "GET_REGISTER_TRANSACTIONS can 200 before the just-created write is indexed; the client-side search filter has no retry of the underlying fetch, only of the DOM text poll, so it can never surface the new transaction.",
           "fix_applied": "individual-register.ts: added findTransactionByComment() wrapping re-fetch (showAllTransactions) + search + row-find in expect().toPass({timeout:90000}), reusing DataGrid's existing 90000ms constant.",
@@ -510,7 +510,7 @@
         {
           "date": "2026-08-21",
           "jira_key": "QA-1008",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8747",
           "outcome": "fixed",
           "hypothesis": "Same read-after-write race as [384642] (sibling pattern, same file family).",
           "fix_applied": "Same fix as [384642]: findTransactionByComment() shared POM helper.",
@@ -550,7 +550,7 @@
         {
           "date": "2026-08-21",
           "jira_key": "QA-1008",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8747",
           "outcome": "fixed",
           "hypothesis": "Same read-after-write race as [384642] (sibling pattern, same file family). This was the 3rd/final attempt at the ledger cap; forced reclassification (3.5) confirmed test-code-bug with this genuinely new hypothesis (prior two attempts targeted the search-input fill race and an EndingBalance field bug, both already fixed/unrelated to this recurrence).",
           "fix_applied": "Same fix as [384642]: findTransactionByComment() shared POM helper.",
@@ -614,7 +614,7 @@
         {
           "date": "2026-08-21",
           "jira_key": "QA-1008",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8747",
           "outcome": "fixed",
           "hypothesis": "receivedPackage fixture's poll only confirms inventory-LIST readiness; the detail route reads a separate, sometimes-lagging index, and goto()'s header wait has no retry of the navigation itself.",
           "fix_applied": "fields.spec.ts: wrapped the first packageDetailPage.goto() in expect().toPass({timeout:120000}) (matching BasePage's own header-wait default), 20000ms per-attempt header probe inside the loop.",
