@@ -126,7 +126,7 @@
           "outcome": "fixed",
           "hypothesis": "Heavy UI-level vault-ledger check (2nd register nav + DataGrid scroll/search for a -$50.00 row) asserted the wrong-tier signal and raced the DataGrid render under load.",
           "fix_applied": "Trimmed to the UI-only concern (close-out warning/success signals); split the cross-register vault-ledger assertion into a new close-out-register-vault-api.spec.ts ([656960-api]) that polls getRegisterTransactions directly instead of the DataGrid.",
-          "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+          "result": "20/20 Vape isolation ✅ (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) ✅. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
         }
       ]
     },
@@ -166,16 +166,16 @@
           "outcome": "fixed",
           "hypothesis": "Button.click() waited on an explicit waitForResponse for GET_MANIFESTS, a network call the app fires as an un-awaited (fire-and-forget) refresh that isn't guaranteed to produce an observable new response (can be deduped/cached), causing an intermittent 60s timeout.",
           "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list, keeping only ADD_TO_ORDER; relies on the existing packageIdCell visibility assertion and Playwright's built-in actionability check on the later Complete Order click for the two conditions actually needed.",
-          "result": "red-green-revert: fails when reverted to original two-endpoint wait under an artificially delayed-GET_MANIFESTS check (evidence corroborated by code comment + prior similar fix in same file, PR #7687/QA-871); 20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, pos-e2e constellation, matching nightly's 8x8 matrix, 3/3) \u2705"
+          "result": "red-green-revert: fails when reverted to original two-endpoint wait under an artificially delayed-GET_MANIFESTS check (evidence corroborated by code comment + prior similar fix in same file, PR #7687/QA-871); 20/20 Vape isolation ✅; load-realistic run (8-worker parallel, pos-e2e constellation, matching nightly's 8x8 matrix, 3/3) ✅"
         },
         {
           "date": "2026-07-28",
           "jira_key": "QA-891",
           "pr_url": "https://github.com/GetDutchie/back-office/pull/7849",
           "outcome": "fixed",
-          "hypothesis": "DISPROVEN PRIOR ATTEMPT: the 2026-07-27 fix in PR #7815 (still open/unmerged) reordered wait registration around the same GET_MANIFESTS wait (registering both waits before the click, asserting ADD_TO_ORDER's Result field) but did NOT change which network calls were waited on \u2014 it flaked TWICE on PR #7815's own CI runs (2026-07-27 13:05 and 2026-07-28 00:33), proving wait-ordering was never the real root cause. GET_MANIFESTS itself is fundamentally unreliable to wait on: it's a fire-and-forget refresh fired from ADD_TO_ORDER's success handler, not a response the click's own success depends on, and the app gives no guarantee it fires observably every time.",
-          "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list entirely (kept only ADD_TO_ORDER), same net code shape as the 2026-07-27 attempt but arrived at independently as the correct mechanism (the 07-27 PR never actually removed the GET_MANIFESTS wait \u2014 it only reordered around it); relies on the existing packageIdCell visibility assertion as the real condition-based check that the add succeeded and the grid updated. Recommend closing/superseding PR #7815's [544715] hunk rather than merging it, since its fix does not work; its [547854] hunk (receive-inventory.spec.ts) is unrelated and can be merged separately. AMENDED after direct CI evidence: this PR's own CI run showed the identical GET_MANIFESTS timeout recurring at a second call site (Complete Order confirm click, line ~198) that the original fix plan left untouched; extended the same fix there too (removed GET_MANIFESTS from that click's wait list, kept COMPLETE_ORDER, relies on the existing findCellsByText + Sold-visibility assertions).",
-          "result": "red-green-revert: reproduced the exact original nightly failure (TimeoutError: page.waitForResponse Timeout 60000ms for **/api/v2/manifest/get-manifests at button.ts:38) by temporarily restoring the original two-endpoint wait and injecting a scoped route abort on GET_MANIFESTS for just that click; reverted the repro and reapplied the fix cleanly. 20/20 Vape isolation \u2705. Load-realistic (8-worker parallel, manifests dir, matching nightly's 8x8 matrix): 4/5 runs clean; 1 of 5 runs (first attempt) showed a failure whose diagnostic detail was lost (test-results overwritten before capture) alongside an unrelated test ([405603]) failing in that same run \u2014 4 subsequent runs (incl. one with full log capture) passed cleanly with no recurrence. Flagged honestly per verification discipline rather than certifying an unqualified clean 3/3. POST-FIX CI TRANSPARENCY: two subsequent PR CI runs (fresh environment each time) showed the GET_MANIFESTS failure mode has NOT recurred at either call site since the amended fix. However, a follow-up CI run surfaced (1) a DIFFERENT, unrelated latent flake in shared DataGrid component code (TimeoutError: locator.evaluate in DataGrid.isIntersectingViewport, base-component.ts:51) at this same test, passing on retry -- out of scope for this fix, recommend a separate ticket; and (2) the withdraw.spec.ts [384643] toPass retry exhausting its full 60s budget once under real GH Actions 8-way parallel load before passing on the test-level retry -- same underlying eventual-consistency race the fix targets, a rare long-tail case not indicative of a defect in the retry mechanism. Both are disclosed transparently in PR #7849's body rather than treated as invalidating the verified fixes."
+          "hypothesis": "DISPROVEN PRIOR ATTEMPT: the 2026-07-27 fix in PR #7815 (still open/unmerged) reordered wait registration around the same GET_MANIFESTS wait (registering both waits before the click, asserting ADD_TO_ORDER's Result field) but did NOT change which network calls were waited on — it flaked TWICE on PR #7815's own CI runs (2026-07-27 13:05 and 2026-07-28 00:33), proving wait-ordering was never the real root cause. GET_MANIFESTS itself is fundamentally unreliable to wait on: it's a fire-and-forget refresh fired from ADD_TO_ORDER's success handler, not a response the click's own success depends on, and the app gives no guarantee it fires observably every time.",
+          "fix_applied": "add-wholesale-manifest.spec.ts: removed endPoints.GET_MANIFESTS from the addItem modal's Add button click wait list entirely (kept only ADD_TO_ORDER), same net code shape as the 2026-07-27 attempt but arrived at independently as the correct mechanism (the 07-27 PR never actually removed the GET_MANIFESTS wait — it only reordered around it); relies on the existing packageIdCell visibility assertion as the real condition-based check that the add succeeded and the grid updated. Recommend closing/superseding PR #7815's [544715] hunk rather than merging it, since its fix does not work; its [547854] hunk (receive-inventory.spec.ts) is unrelated and can be merged separately. AMENDED after direct CI evidence: this PR's own CI run showed the identical GET_MANIFESTS timeout recurring at a second call site (Complete Order confirm click, line ~198) that the original fix plan left untouched; extended the same fix there too (removed GET_MANIFESTS from that click's wait list, kept COMPLETE_ORDER, relies on the existing findCellsByText + Sold-visibility assertions).",
+          "result": "red-green-revert: reproduced the exact original nightly failure (TimeoutError: page.waitForResponse Timeout 60000ms for **/api/v2/manifest/get-manifests at button.ts:38) by temporarily restoring the original two-endpoint wait and injecting a scoped route abort on GET_MANIFESTS for just that click; reverted the repro and reapplied the fix cleanly. 20/20 Vape isolation ✅. Load-realistic (8-worker parallel, manifests dir, matching nightly's 8x8 matrix): 4/5 runs clean; 1 of 5 runs (first attempt) showed a failure whose diagnostic detail was lost (test-results overwritten before capture) alongside an unrelated test ([405603]) failing in that same run — 4 subsequent runs (incl. one with full log capture) passed cleanly with no recurrence. Flagged honestly per verification discipline rather than certifying an unqualified clean 3/3. POST-FIX CI TRANSPARENCY: two subsequent PR CI runs (fresh environment each time) showed the GET_MANIFESTS failure mode has NOT recurred at either call site since the amended fix. However, a follow-up CI run surfaced (1) a DIFFERENT, unrelated latent flake in shared DataGrid component code (TimeoutError: locator.evaluate in DataGrid.isIntersectingViewport, base-component.ts:51) at this same test, passing on retry -- out of scope for this fix, recommend a separate ticket; and (2) the withdraw.spec.ts [384643] toPass retry exhausting its full 60s budget once under real GH Actions 8-way parallel load before passing on the test-level retry -- same underlying eventual-consistency race the fix targets, a rare long-tail case not indicative of a defect in the retry mechanism. Both are disclosed transparently in PR #7849's body rather than treated as invalidating the verified fixes."
         },
         {
           "date": "2026-07-29",
@@ -231,7 +231,7 @@
           "outcome": "fixed",
           "hypothesis": "Test used the bare ControlSearchInput.fill(packageId) instead of the repo's .search(value, dataGrid) helper before clickFirstRow(); fill() does not wait for the grid to re-filter, so clickFirstRow() can click a stale row from before the search applied, exactly matching the observed empty-Notes-field symptom.",
           "fix_applied": "receive-inventory.spec.ts: swapped searchInput.fill(packageId) for searchInput.search(packageId, receiveHistoryListPage.receiveHistoryDatagrid), matching every other search-then-read-row call in the same file.",
-          "result": "20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, pos-e2e constellation, 3/3) \u2705. Note: a sibling async-path twin test with the identical fill()+clickFirstRow() pattern was already pulled via .fixme(), corroborating this as a known-bad pattern."
+          "result": "20/20 Vape isolation ✅; load-realistic run (8-worker parallel, pos-e2e constellation, 3/3) ✅. Note: a sibling async-path twin test with the identical fill()+clickFirstRow() pattern was already pulled via .fixme(), corroborating this as a known-bad pattern."
         }
       ]
     },
@@ -249,9 +249,9 @@
           "jira_key": "QA-891",
           "pr_url": "https://github.com/GetDutchie/back-office/pull/7849",
           "outcome": "fixed",
-          "hypothesis": "The register fixture POSTs a new register then the test does a single 15s findCellsByText lookup for it in the register list grid via a goto() already awaited in a dependent fixture; this is an eventual-consistency race between register creation and the list-read indexing \u2014 the row can be briefly absent from the grid's data source before the backend has fully indexed it.",
+          "hypothesis": "The register fixture POSTs a new register then the test does a single 15s findCellsByText lookup for it in the register list grid via a goto() already awaited in a dependent fixture; this is an eventual-consistency race between register creation and the list-read indexing — the row can be briefly absent from the grid's data source before the backend has fully indexed it.",
           "fix_applied": "withdraw.spec.ts: wrapped the register lookup in an expect().toPass({timeout: 60000}) retry that re-issues transactionsByRegisterPage.goto([endPoints.GET_LIST_OF_REGISTERS]) on each retry attempt after the first, mirroring the reload-and-poll pattern used for [654103] (update-on-location-change.spec.ts).",
-          "result": "structural red-green-revert (git stash confirmed revert restores the exact original single-wait lines; race is inherently intermittent so not deterministically reproducible on demand). 20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705"
+          "result": "structural red-green-revert (git stash confirmed revert restores the exact original single-wait lines; race is inherently intermittent so not deterministically reproducible on demand). 20/20 Vape isolation ✅; load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir, matching nightly's 8x8 matrix, 3/3) ✅"
         },
         {
           "date": "2026-08-04",
@@ -260,7 +260,7 @@
           "outcome": "fixed",
           "hypothesis": "Fixture navigated to the register list immediately after createRegister's POST resolved; backend read-model lag is an eventual-consistency race identical in class to QA-802.",
           "fix_applied": "First attempt: wrapped register lookup in expect.poll(reload+inspect-response-json) mirroring undo-close-out-register.spec.ts/transfer.spec.ts (QA-802 precedent) -- passed 20/20 isolation but FAILED 2/3 load-realistic (8-worker) because these tests use the shared default location, whose ever-growing register list races the poll under real query latency (same mechanism QA-802 diagnosed for transfer.spec.ts). Amended: added auto isolatedLocation fixture (switchUserLspAndLoc) matching transfer.spec.ts/undo-close-out-register.spec.ts precedent, on top of the poll fix.",
-          "result": "red-green-revert: reproduced exact nightly failure signature via a scoped route stub stripping the new register from the first GetRegisters response, confirmed fix passes under the same injected race, reverted repro cleanly. 20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, e2e/tests/registers/transactions/by-register dir, matching nightly's actual 8-shard/8-worker/2-retries matrix per .github/workflows/playwright-tilt.yml, 3/3) \u2705. One unrelated pre-existing drop-cash.spec.ts flake observed once during the load lane -- untouched by this diff, disclosed transparently, not treated as invalidating this fix."
+          "result": "red-green-revert: reproduced exact nightly failure signature via a scoped route stub stripping the new register from the first GetRegisters response, confirmed fix passes under the same injected race, reverted repro cleanly. 20/20 Vape isolation ✅. Load-realistic run (8-worker parallel, taskset 0-7, e2e/tests/registers/transactions/by-register dir, matching nightly's actual 8-shard/8-worker/2-retries matrix per .github/workflows/playwright-tilt.yml, 3/3) ✅. One unrelated pre-existing drop-cash.spec.ts flake observed once during the load lane -- untouched by this diff, disclosed transparently, not treated as invalidating this fix."
         },
         {
           "date": "2026-08-05",
@@ -269,7 +269,7 @@
           "outcome": "fixed",
           "hypothesis": "Identical mechanism to [384642] -- a 3rd, distinct race from the two already fixed on this test (QA-891 register-list toPass retry; QA-913 isolatedLocation). This is now attempt #3 on this test -- AT the attempt cap.",
           "fix_applied": "Same fix as [384642]: Button-based buttons.withdraw waits on endPoints.REGISTER_WITHDRAWAL; searchInput.search() replaces raw fill().",
-          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642]). NOTE: attempt cap reached -- any future recurrence on this test must be quarantined and escalated, not given a 4th fix attempt."
+          "result": "20/20 Vape isolation ✅. Load-realistic 3/3 ✅ (same lane as [384642]). NOTE: attempt cap reached -- any future recurrence on this test must be quarantined and escalated, not given a 4th fix attempt."
         },
         {
           "date": "2026-08-07",
@@ -298,7 +298,7 @@
           "outcome": "fixed",
           "hypothesis": "ControlSearchInput.search() short-circuits its own wait when the grid already reports totalCount === '1' before the new filter text is applied via fill(), skipping the wait for the just-received package's inventory to index for that filter; the next assertion can catch the query mid-flight (0 rows) before the real 1-row result renders.",
           "fix_applied": "export-inventory.spec.ts: extended the row-count assertion from toHaveCount(1) to toHaveCount(1, { timeout: 60000 }) at this specific call site only, rather than editing the shared ControlSearchInput.search() helper used broadly across the suite (too wide a blast radius for this run).",
-          "result": "20/20 Vape isolation \u2705; load-realistic run (8-worker parallel, inventory-v2/actions dir, matching nightly's 8x8 matrix, 3/3) \u2705. NOTE: this is a timeout bump, flagged in PR for human timeout-discipline sign-off per anti-flake rules."
+          "result": "20/20 Vape isolation ✅; load-realistic run (8-worker parallel, inventory-v2/actions dir, matching nightly's 8x8 matrix, 3/3) ✅. NOTE: this is a timeout bump, flagged in PR for human timeout-discipline sign-off per anti-flake rules."
         }
       ]
     },
@@ -358,7 +358,7 @@
           "outcome": "fixed",
           "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
           "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
-          "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705."
+          "result": "20/20 Vape isolation ✅. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) ✅."
         },
         {
           "date": "2026-08-05",
@@ -367,7 +367,7 @@
           "outcome": "fixed",
           "hypothesis": "Identical mechanism to [384642] (sibling-pattern fix, same file family) -- distinct from the QA-913 register-list-lookup race already fixed on this test.",
           "fix_applied": "Same fix as [384642]: Button-based buttons.deposit waits on endPoints.REGISTER_DEPOSIT; searchInput.search() replaces raw fill().",
-          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
+          "result": "20/20 Vape isolation ✅. Load-realistic 3/3 ✅ (same lane as [384642])."
         }
       ]
     },
@@ -387,7 +387,7 @@
           "outcome": "fixed",
           "hypothesis": "Identical fixture pattern and bug as [384643] (sibling-pattern fix, same file family).",
           "fix_applied": "Same fix as [384643]: poll-by-reload + isolatedLocation fixture.",
-          "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) \u2705."
+          "result": "20/20 Vape isolation ✅. Load-realistic run (8-worker parallel, taskset 0-7, by-register dir, matching nightly's 8x8 matrix, 3/3) ✅."
         },
         {
           "date": "2026-08-05",
@@ -396,7 +396,7 @@
           "outcome": "fixed",
           "hypothesis": "Modal.save() only clicked Save with no wait for UPDATE_REGISTER_TRANSACTION to resolve; the subsequent transaction-grid search is a client-side filter over data already fetched by showAllTransactions()'s GET_REGISTER_TRANSACTIONS call, so under load that GET could win the race and the new transaction would never be in the fetched dataset. Distinct from the QA-913 (08-04) fix, which targeted the earlier register-list lookup race, not this transaction-grid race.",
           "fix_applied": "adjust-balance-modal.ts: added a dedicated Button-based `buttons.save`; adjust-balance.spec.ts: click waits on endPoints.UPDATE_REGISTER_TRANSACTION; replaced raw searchInput.fill() with the existing searchInput.search() helper (same convention as transfer.spec.ts/QA-802).",
-          "result": "20/20 Vape isolation \u2705. Load-realistic run (8-worker parallel, taskset 0-7, e2e/tests/registers/transactions/by-register dir, matching nightly's 8-shard/8-worker matrix, 3/3) \u2705."
+          "result": "20/20 Vape isolation ✅. Load-realistic run (8-worker parallel, taskset 0-7, e2e/tests/registers/transactions/by-register dir, matching nightly's 8-shard/8-worker matrix, 3/3) ✅."
         }
       ]
     },
@@ -416,7 +416,7 @@
           "outcome": "fixed",
           "hypothesis": "Identical bug pattern to [384642]/[383676]/[384643], found via sibling-pattern check of the same directory (not itself in this run's flaky list).",
           "fix_applied": "drop-cash.spec.ts: wrapped the existing dblclick() in Promise.all with page.waitForResponse(REGISTER_DROP_CASH); searchInput.search() replaces raw fill(). drop-cash-modal.ts's save button kept as a raw Locator (not Button) to preserve dblclick() support.",
-          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
+          "result": "20/20 Vape isolation ✅. Load-realistic 3/3 ✅ (same lane as [384642])."
         }
       ]
     },
@@ -436,7 +436,7 @@
           "outcome": "fixed",
           "hypothesis": "Same file, same fix as [393889].",
           "fix_applied": "Same fix as [393889].",
-          "result": "20/20 Vape isolation \u2705. Load-realistic 3/3 \u2705 (same lane as [384642])."
+          "result": "20/20 Vape isolation ✅. Load-realistic 3/3 ✅ (same lane as [384642])."
         }
       ]
     },
@@ -465,7 +465,7 @@
           "outcome": "fixed",
           "hypothesis": "Raw searchInput.fill(comment) with no wait before findCellsByText races the grid's debounce/refetch under load.",
           "fix_applied": "Swapped to ControlSearchInput.search() helper (deterministic totalCount poll); also fixed EndingBalance assertion which was reading the EntryAmount field twice.",
-          "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+          "result": "20/20 Vape isolation ✅ (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) ✅. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
         },
         {
           "date": "2026-08-21",
@@ -474,11 +474,18 @@
           "outcome": "fixed",
           "hypothesis": "GET_REGISTER_TRANSACTIONS can 200 before the just-created write is indexed; the client-side search filter has no retry of the underlying fetch, only of the DOM text poll, so it can never surface the new transaction.",
           "fix_applied": "individual-register.ts: added findTransactionByComment() wrapping re-fetch (showAllTransactions) + search + row-find in expect().toPass({timeout:90000}), reusing DataGrid's existing 90000ms constant.",
-          "result": "red-green-revert (structural) \u2705; 20/20 Vape isolation \u2705; load-realistic (8-worker parallel, taskset 0-7, by-register + fields.spec.ts, pos-e2e constellation, 3/3) \u2705"
+          "result": "red-green-revert (structural) ✅; 20/20 Vape isolation ✅; load-realistic (8-worker parallel, taskset 0-7, by-register + fields.spec.ts, pos-e2e constellation, 3/3) ✅"
         }
       ],
       "failure_signature": null,
-      "real_app_bug": null
+      "real_app_bug": null,
+      "process_gap_notes": [
+        {
+          "date": "2026-08-24",
+          "note": "Recurred in nightly because attempt #3's fix (QA-1008, PR #8747) was never merged to develop -- process gap, not a new bug. Landed tonight via QA-1009 with an added Quality Bot polish (findCellsByText per-attempt timeout). Re-verified 20/20 isolation + 3/3 load-realistic.",
+          "jira_key": "QA-1009"
+        }
+      ]
     },
     "tests/registers/transactions/by-register/deposit.spec.ts::[383676] User should be able to deposit": {
       "test_name": "[383676] User should be able to deposit",
@@ -505,7 +512,7 @@
           "outcome": "fixed",
           "hypothesis": "Same searchInput.fill() race as adjust-balance.",
           "fix_applied": "Same fix as adjust-balance: search() helper + EndingBalance field correction.",
-          "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+          "result": "20/20 Vape isolation ✅ (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) ✅. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
         },
         {
           "date": "2026-08-21",
@@ -514,11 +521,18 @@
           "outcome": "fixed",
           "hypothesis": "Same read-after-write race as [384642] (sibling pattern, same file family).",
           "fix_applied": "Same fix as [384642]: findTransactionByComment() shared POM helper.",
-          "result": "20/20 Vape isolation \u2705; load-realistic 3/3 \u2705 (same lane as [384642])"
+          "result": "20/20 Vape isolation ✅; load-realistic 3/3 ✅ (same lane as [384642])"
         }
       ],
       "failure_signature": null,
-      "real_app_bug": null
+      "real_app_bug": null,
+      "process_gap_notes": [
+        {
+          "date": "2026-08-24",
+          "note": "Recurred in nightly because attempt #3's fix (QA-1008, PR #8747) was never merged to develop -- process gap, not a new bug. Landed tonight via QA-1009 with an added Quality Bot polish (findCellsByText per-attempt timeout). Re-verified 20/20 isolation + 3/3 load-realistic.",
+          "jira_key": "QA-1009"
+        }
+      ]
     },
     "tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
       "test_name": "[384643] User should be able to withdraw",
@@ -545,7 +559,7 @@
           "outcome": "fixed",
           "hypothesis": "Same searchInput.fill() race as adjust-balance/deposit; test was previously escalated (see e2e/tests/... legacy key, QA-953) after 4 attempts under an old path-prefix ledger key, but no quarantine tag ever actually reached develop for it, so it kept recurring nightly as if fresh.",
           "fix_applied": "Same fix as adjust-balance/deposit: search() helper.",
-          "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+          "result": "20/20 Vape isolation ✅ (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) ✅. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
         },
         {
           "date": "2026-08-21",
@@ -554,11 +568,18 @@
           "outcome": "fixed",
           "hypothesis": "Same read-after-write race as [384642] (sibling pattern, same file family). This was the 3rd/final attempt at the ledger cap; forced reclassification (3.5) confirmed test-code-bug with this genuinely new hypothesis (prior two attempts targeted the search-input fill race and an EndingBalance field bug, both already fixed/unrelated to this recurrence).",
           "fix_applied": "Same fix as [384642]: findTransactionByComment() shared POM helper.",
-          "result": "20/20 Vape isolation \u2705; load-realistic 3/3 \u2705 (same lane as [384642])"
+          "result": "20/20 Vape isolation ✅; load-realistic 3/3 ✅ (same lane as [384642])"
         }
       ],
       "failure_signature": null,
-      "real_app_bug": null
+      "real_app_bug": null,
+      "process_gap_notes": [
+        {
+          "date": "2026-08-24",
+          "note": "Recurred in nightly because attempt #3's fix (QA-1008, PR #8747) was never merged to develop -- process gap, not a new bug. Landed tonight via QA-1009 with an added Quality Bot polish (findCellsByText per-attempt timeout). Re-verified 20/20 isolation + 3/3 load-realistic.",
+          "jira_key": "QA-1009"
+        }
+      ]
     },
     "tests/marketing/discounts/create-discount-with-limits.spec.ts::[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.": {
       "test_name": "[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.",
@@ -596,7 +617,7 @@
           "outcome": "fixed",
           "hypothesis": "Redundant heavy DataGrid search+render assertion after transfer, on top of an already-existing deterministic API-level check in transfer-api.spec.ts ([103760]).",
           "fix_applied": "Removed the DataGrid search/assertion; test now only confirms the transfer modal closes after the API call succeeds, relying on [103760] for data-correctness coverage.",
-          "result": "20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) \u2705. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
+          "result": "20/20 Vape isolation ✅ (each test independently, --repeat-each=20, workers=1); load-realistic run (8-worker parallel, taskset 0-7, registers/transactions/by-register dir + transactions-navigation.spec.ts, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) ✅. Fix originated from a pre-existing PR (#8394, POS-21413) that had passed review+CI but sat unmerged since 2026-08-12 (process gap: DutchieBot Releases check blocked merge on the linked Jira ticket's Backlog status). Unblocked by transitioning POS-21413 to In Development -> Code Review, retriggering CI, then merging; no new fix code authored this run."
         }
       ]
     },
@@ -618,7 +639,14 @@
           "outcome": "fixed",
           "hypothesis": "receivedPackage fixture's poll only confirms inventory-LIST readiness; the detail route reads a separate, sometimes-lagging index, and goto()'s header wait has no retry of the navigation itself.",
           "fix_applied": "fields.spec.ts: wrapped the first packageDetailPage.goto() in expect().toPass({timeout:120000}) (matching BasePage's own header-wait default), 20000ms per-attempt header probe inside the loop.",
-          "result": "red-green-revert (structural) \u2705; 20/20 Vape isolation \u2705; load-realistic 3/3 \u2705 (same lane as above)"
+          "result": "red-green-revert (structural) ✅; 20/20 Vape isolation ✅; load-realistic 3/3 ✅ (same lane as above)"
+        }
+      ],
+      "process_gap_notes": [
+        {
+          "date": "2026-08-24",
+          "note": "Recurred because PR #8747 (containing this fix) was never merged. Landed tonight via QA-1009. Re-verified 20/20 isolation + 3/3 load-realistic.",
+          "jira_key": "QA-1009"
         }
       ]
     },
@@ -651,6 +679,44 @@
         "ticket_key": "POS-21910",
         "filed_at": "2026-08-21",
         "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then 60000ms Button.click timeout on Save"
+      },
+      "attempts": []
+    },
+    "tests/settings/users/edit-user.spec.ts::[544734] Deprovisioning a user": {
+      "test_name": "[544734] Deprovisioning a user",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-08-24",
+          "jira_key": "QA-1009",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8747",
+          "outcome": "fixed",
+          "hypothesis": "Save click passed no endpoint wait list, so the following searchAndViewUserDetails() could re-open before GET_USERS refreshed the list-level row the detail panel re-seeds Status from at mount -- identical mechanism to sibling [544732]'s already-fixed PIN race in the same file.",
+          "fix_applied": "edit-user.spec.ts: added SET_USERS + GET_USERS to the Save button's endpoint wait list, matching [544732]'s precedent exactly.",
+          "result": "red reproduced the exact original failure signature (1/8 repeat-each runs, fix reverted); green restored. 20/20 Vape isolation ✅; load-realistic run (8-worker parallel, taskset 0-7, retries=2, matching nightly's actual 8-shard/8-worker matrix, pos-e2e constellation, 3/3) ✅."
+        }
+      ]
+    },
+    "tests/customers/segments/segment-details-discounts.spec.ts::[2991648] Verify that the selected details page has correct row count": {
+      "test_name": "[2991648] Verify that the selected details page has correct row count",
+      "suite": "back-office",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then test timeout at save-discount.ts:281",
+      "real_app_bug": {
+        "ticket_key": "POS-21910",
+        "filed_at": "2026-08-21",
+        "failure_signature": "expect(locator).toBeHidden() failed on getByText('name is required') inside SaveDiscountPage.createDiscount toPass, then test timeout at save-discount.ts:281"
       },
       "attempts": []
     }
