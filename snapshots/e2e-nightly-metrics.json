@@ -854,6 +854,25 @@
         "commit": "408d3d1",
         "run_timestamp": "2026-08-25T07:36:15.000Z"
       }
+    },
+    {
+      "date": "2026-08-26",
+      "back_office": {
+        "flaky": 2,
+        "failed": 3,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-08-26T06:26:36.000Z"
+      },
+      "pos": {
+        "flaky": 12,
+        "failed": 0,
+        "total": 408,
+        "branch": "develop",
+        "commit": "5fdc199",
+        "run_timestamp": "2026-08-26T07:37:04.000Z"
+      }
     }
   ]
 }
