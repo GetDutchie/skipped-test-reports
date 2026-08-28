@@ -874,5 +874,421 @@
         "run_timestamp": "2026-08-26T07:37:04.000Z"
       }
     }
+  ],
+  "thrash_candidates": [
+    {
+      "test_id": "384643",
+      "test_name": "User should be able to withdraw",
+      "suite": "back_office",
+      "times_fixed": 6,
+      "last_flaked": "2026-08-21",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7687",
+        "https://github.com/GetDutchie/back-office/pull/8010",
+        "https://github.com/GetDutchie/back-office/pull/8394",
+        "https://github.com/GetDutchie/back-office/pull/8747"
+      ]
+    },
+    {
+      "test_id": "656960",
+      "test_name": "Close out of register with negative deposit should remove deposit amount from vault register",
+      "suite": "back_office",
+      "times_fixed": 6,
+      "last_flaked": "2026-08-14",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7634",
+        "https://github.com/GetDutchie/back-office/pull/7710",
+        "https://github.com/GetDutchie/back-office/pull/8394"
+      ]
+    },
+    {
+      "test_id": "654086",
+      "test_name": "User should be able to transfer",
+      "suite": "back_office",
+      "times_fixed": 5,
+      "last_flaked": "2026-08-14",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7141",
+        "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7634",
+        "https://github.com/GetDutchie/back-office/pull/8394"
+      ]
+    },
+    {
+      "test_id": "383676",
+      "test_name": "User should be able to deposit",
+      "suite": "back_office",
+      "times_fixed": 4,
+      "last_flaked": "2026-08-21",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/8010",
+        "https://github.com/GetDutchie/back-office/pull/8394",
+        "https://github.com/GetDutchie/back-office/pull/8747"
+      ]
+    },
+    {
+      "test_id": "384642",
+      "test_name": "User should be able to adjust balance",
+      "suite": "back_office",
+      "times_fixed": 4,
+      "last_flaked": "2026-08-21",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/8010",
+        "https://github.com/GetDutchie/back-office/pull/8394",
+        "https://github.com/GetDutchie/back-office/pull/8747"
+      ]
+    },
+    {
+      "test_id": "248894",
+      "test_name": "Filtering and sorting 'All Transactions' table",
+      "suite": "back_office",
+      "times_fixed": 3,
+      "last_flaked": "2026-08-14",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7141",
+        "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/8394"
+      ]
+    },
+    {
+      "test_id": "249154",
+      "test_name": "Change transaction status and filter by product",
+      "suite": "back_office",
+      "times_fixed": 3,
+      "last_flaked": "2026-08-14",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7141",
+        "https://github.com/GetDutchie/back-office/pull/7294",
+        "https://github.com/GetDutchie/back-office/pull/8394"
+      ]
+    },
+    {
+      "test_id": "276351",
+      "test_name": "cart-page-cancellation.test.ts",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-07-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1540",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "654012",
+      "test_name": "Can apply loyalty as a discount to the cart (via fixture fix)",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-07-16",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1502",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "656954",
+      "test_name": "starts with transaction paid in cash and finishes with manual payment via AeroPay",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-07-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1540",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "160119",
+      "test_name": "Review transaction history",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1521",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "405475",
+      "test_name": "Verify that one or more vendors can be excluded from the Discount",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-23",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7710"
+      ]
+    },
+    {
+      "test_id": "405512",
+      "test_name": "Verify that the summary tab has the products to which a discount can be applied",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-22",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7687"
+      ]
+    },
+    {
+      "test_id": "544715",
+      "test_name": "User should be able to manually add a wholesale manifest",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-22",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7273",
+        "https://github.com/GetDutchie/back-office/pull/7687"
+      ]
+    },
+    {
+      "test_id": "544734",
+      "test_name": "Deprovisioning a user",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-08-24",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7223",
+        "https://github.com/GetDutchie/back-office/pull/8747"
+      ]
+    },
+    {
+      "test_id": "578894",
+      "test_name": "Scan package with special characters",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-01",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1488",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1502"
+      ]
+    },
+    {
+      "test_id": "653998",
+      "test_name": "Caregiver can purchase non-medical product",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1515",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "654004",
+      "test_name": "Loyalty point boost",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-01",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1488",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1502"
+      ]
+    },
+    {
+      "test_id": "654006",
+      "test_name": "Manual discount can be added to cart",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-01",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1488",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1502"
+      ]
+    },
+    {
+      "test_id": "654009",
+      "test_name": "Apply all available points button behaves as expected",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "654011",
+      "test_name": "Can apply loyalty as a cash value to cart",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "654015",
+      "test_name": "Can apply loyalty from payment panel",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-01",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1488",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1502"
+      ]
+    },
+    {
+      "test_id": "654025",
+      "test_name": "Attempt to pay more MMAP than cart total",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "654053",
+      "test_name": "Guest card shows correct last purchase date",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-09",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1515",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1540"
+      ]
+    },
+    {
+      "test_id": "654103",
+      "test_name": "Verify that dropdown selected state is preserved when location changes",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-23",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7710"
+      ]
+    },
+    {
+      "test_id": "654202",
+      "test_name": "Verify Select Page selects rows as expected",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-23",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7710"
+      ]
+    },
+    {
+      "test_id": "654203",
+      "test_name": "Move amount to sub room",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-23",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7710"
+      ]
+    },
+    {
+      "test_id": "654204",
+      "test_name": "Verify inventory print action is triggered",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-23",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7710"
+      ]
+    },
+    {
+      "test_id": "654214",
+      "test_name": "Verify Sublot using Calculated Cost",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-23",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7710"
+      ]
+    },
+    {
+      "test_id": "654418",
+      "test_name": "Single match, auto checkin on, 2D medical id, under medical age",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1521",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "657060",
+      "test_name": "Customer profile blocks minors from check in",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-01",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1488",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1502"
+      ]
+    },
+    {
+      "test_id": "657073",
+      "test_name": "can-return-to-cart-from-history.test.ts",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-24",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1635"
+      ]
+    },
+    {
+      "test_id": "657074",
+      "test_name": "can-return-to-cart-from-history.test.ts",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-24",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1635"
+      ]
+    },
+    {
+      "test_id": "657418",
+      "test_name": "Second cart for the same customer should show correct allotment used and remaining",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    }
   ]
 }
