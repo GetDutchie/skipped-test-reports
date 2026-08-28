@@ -736,7 +736,7 @@
         {
           "date": "2026-08-27",
           "jira_key": "QA-1022",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8937",
           "outcome": "fixed",
           "hypothesis": "The negative helper checked for any Upcoming-status row instead of the named discount and could observe stale pre-filter rows.",
           "fix_applied": "Wait for the searched grid's No data available state and assert the named DiscountDescription row count is zero; apply the same helper to sibling negative tests [657039]/[657040]/[657042].",
@@ -747,7 +747,7 @@
     "tests/products/manifests/packageId-retained-in-new-location.spec.ts::[405608] Verify that External Package ID is retain when is send to another location": {
       "test_name": "[405608] Verify that External Package ID is retain when is send to another location",
       "suite": "back-office",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -758,11 +758,20 @@
         {
           "date": "2026-08-27",
           "jira_key": "QA-1022",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8937",
           "outcome": "fixed",
           "hypothesis": "Shared LocId 1141 could carry BioTrack integration requirements while the manifest fixture supplied no controlled transport configuration, producing the exact missing-car 400.",
           "fix_applied": "Add an auto isolatedLocation fixture using the existing switchUserLspAndLoc workflow before product and manifest setup.",
           "result": "Nightly CI supplied the exact 400 red signal; local revert did not deterministically reproduce. 20/20 VAPE isolation; load-realistic 3/3 PASS (CI=true, 6-worker parallel, full discount spec + manifest spec)."
+        },
+        {
+          "date": "2026-08-28",
+          "jira_key": "QA-1024",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/8937",
+          "outcome": "fixed",
+          "hypothesis": "The unmerged isolated-location fix did not explicitly order data-writing fixtures after the location switch, so Playwright could still create manifest data at shared LocId 1141.",
+          "fix_applied": "Made room, vendor, category, strain, and manifest fixtures explicitly depend on isolatedLocation before reusing their existing fixture helpers.",
+          "result": "Nightly red: completeOrder 400 missing valid BioTrack car at LocId 1141. Fresh VAPE isolation 20/20; load-realistic 3/3 PASS (CI=true, 6-worker parallel, full discount + manifest specs; 28/28 each run)."
         }
       ]
     }
