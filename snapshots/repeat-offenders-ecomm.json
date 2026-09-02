@@ -77,7 +77,7 @@
           "outcome": "fixed",
           "hypothesis": "ScheduledOrdersSection.openTimeDropdown() never interacts with the checkout's day-select dropdown and assumes the default day (\"Today\") always has time slots; when the earliest bookable slot rolls past midnight into a different day-of-week bucket, the time list is permanently empty and the 30s toPass retry can never succeed.",
           "fix_applied": "openTimeDropdown() now detects the empty-slot-list state (noSlotsMessage) and falls back to selecting the next day in the day-select before retrying, mirroring real shopper behavior.",
-          "result": "red (reverted fix reproduces exact nightly error) / green / revert / restore proven via temporary repro fixture forcing today's bucket empty; 20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) ✅"
+          "result": "red (reverted fix reproduces exact nightly error) / green / revert / restore proven via temporary repro fixture forcing today's bucket empty; 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) \u2705"
         },
         {
           "date": "2026-08-14",
@@ -86,7 +86,7 @@
           "outcome": "fixed",
           "hypothesis": "Relapse of QA-957's diagnosis (day-rollover, today has zero bookable slots); the 2026-08-10 fix (PR #21784) was never merged (stuck in review) and the reviewer flagged a real Correctness defect in it: the day-select fallback clicks the day option with no ArrowDown to open react-select's menu first, unlike the documented time-select pattern two lines above.",
           "fix_applied": "Re-applied the QA-957 day-rollover fallback in openTimeDropdown() and fixed the flagged missing-ArrowDown defect before landing it.",
-          "result": "60/60 (20x each of 3 tests in file) Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, Desktop+Mobile Main, 3/3) ✅. PR #21784 (prior unmerged attempt) should be closed as superseded."
+          "result": "60/60 (20x each of 3 tests in file) Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, Desktop+Mobile Main, 3/3) \u2705. PR #21784 (prior unmerged attempt) should be closed as superseded."
         }
       ]
     },
@@ -105,8 +105,8 @@
           "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21784",
           "outcome": "fixed",
           "hypothesis": "Same shared ScheduledOrdersSection.selectFirstAvailableScheduledSlot() helper and same day-rollover root cause as [657464].",
-          "fix_applied": "Same day-select fallback fix in scheduled-orders-section.ts (shared helper) as [657464]. Note: this test was already quarantined in Datadog Test Management with no prior ledger entry — process gap, flagged in this run's Jira ticket.",
-          "result": "20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) ✅"
+          "fix_applied": "Same day-select fallback fix in scheduled-orders-section.ts (shared helper) as [657464]. Note: this test was already quarantined in Datadog Test Management with no prior ledger entry \u2014 process gap, flagged in this run's Jira ticket.",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, 3/3) \u2705"
         },
         {
           "date": "2026-08-14",
@@ -115,7 +115,7 @@
           "outcome": "fixed",
           "hypothesis": "Same shared ScheduledOrdersSection.openTimeDropdown() mechanism and root cause as [657464].",
           "fix_applied": "Same fix as [657464] (shared helper).",
-          "result": "60/60 (20x each of 3 tests in file) Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, Desktop+Mobile Main, 3/3) ✅."
+          "result": "60/60 (20x each of 3 tests in file) Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, Desktop+Mobile Main, 3/3) \u2705."
         }
       ]
     },
@@ -133,9 +133,9 @@
           "jira_key": "QA-980",
           "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21899",
           "outcome": "fixed",
-          "hypothesis": "dismissErnie() is best-effort (100ms click, swallows failures) and doesn't confirm the toast actually cleared before placeOrderButton is clicked; the stale 'outside the delivery area' ernie can still be visible when the test then expects the 'missing information' error — confirmed directly in the CI failure's error-context.md.",
+          "hypothesis": "dismissErnie() is best-effort (100ms click, swallows failures) and doesn't confirm the toast actually cleared before placeOrderButton is clicked; the stale 'outside the delivery area' ernie can still be visible when the test then expects the 'missing information' error \u2014 confirmed directly in the CI failure's error-context.md.",
           "fix_applied": "Added ernie.waitFor({state:'hidden'}) after dismissErnie(), matching the identical pattern already used in photo-id-checkout.test.ts.",
-          "result": "20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, Mobile Main, 3/3) ✅. Could not force the race to reproduce locally pre-fix after 25 additional repeat-each runs — root cause anchored on the CI artifact, not a local repro."
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, Mobile Main, 3/3) \u2705. Could not force the race to reproduce locally pre-fix after 25 additional repeat-each runs \u2014 root cause anchored on the CI artifact, not a local repro."
         }
       ]
     },
@@ -153,9 +153,9 @@
           "jira_key": "QA-980",
           "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21899",
           "outcome": "fixed",
-          "hypothesis": "The birthdate field is a Cleave.js-masked DateInput; handleGuestCheckout() filled it with .fill(), which can leave the mask's internal state empty on Mobile Storefront — confirmed in the CI failure's error-context.md (phone field filled correctly, birthdate field empty with 'Please enter a valid birthdate').",
+          "hypothesis": "The birthdate field is a Cleave.js-masked DateInput; handleGuestCheckout() filled it with .fill(), which can leave the mask's internal state empty on Mobile Storefront \u2014 confirmed in the CI failure's error-context.md (phone field filled correctly, birthdate field empty with 'Please enter a valid birthdate').",
           "fix_applied": "guest-customer-section.ts's fillFields()/fillGuestInfo() now use .click()+.pressSequentially() for the birthdate field, matching the identical pattern already used in page-objects/marketplace/pages/instore-enrollment/index.ts. Also consolidated checkout-helpers.ts's duplicate fill logic to call the shared fillFields() helper.",
-          "result": "20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, guest-checkout.test.ts + photo-id-checkout.test.ts, Mobile Storefront+Mobile Main, 3/3) ✅. Could not force the race to reproduce locally pre-fix after 15 additional repeat-each runs — same caveat as above."
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, guest-checkout.test.ts + photo-id-checkout.test.ts, Mobile Storefront+Mobile Main, 3/3) \u2705. Could not force the race to reproduce locally pre-fix after 15 additional repeat-each runs \u2014 same caveat as above."
         }
       ]
     },
@@ -175,7 +175,7 @@
           "outcome": "fixed",
           "hypothesis": "selectOrderType('Delivery', address) shows a success ernie that is still visible when placeOrder() fires, so expectErnieWithMessage matches the stale success text instead of the photo-ID error.",
           "fix_applied": "Added a single dismissErnie() call between selectOrderType and placeOrder to clear the address-success ernie.",
-          "result": "Merged as fixed; recurred in a later nightly run — the blind dismiss did not guarantee the toast was actually gone."
+          "result": "Merged as fixed; recurred in a later nightly run \u2014 the blind dismiss did not guarantee the toast was actually gone."
         },
         {
           "date": "2026-07-01",
@@ -184,15 +184,15 @@
           "outcome": "fixed",
           "hypothesis": "Relapse of QA-747's diagnosis: dismissErnie() is a best-effort 100ms click that swallows failures and never confirms the toast disappeared, so the stale success ernie could still be visible when the photo-ID check runs.",
           "fix_applied": "Replaced the redundant blind dismissErnie() call with checkoutPage.ernie.waitFor({state:'hidden', timeout:10000}).catch(()=>{}).",
-          "result": "20/20 Vape (12.4 min run); recurred again in the 2026-08-17 nightly run — isolation-only evidence did not catch the real trigger condition."
+          "result": "20/20 Vape (12.4 min run); recurred again in the 2026-08-17 nightly run \u2014 isolation-only evidence did not catch the real trigger condition."
         },
         {
           "date": "2026-08-17",
           "jira_key": "QA-989",
           "pr_url": "https://github.com/GetDutchie/Dutchie/pull/21942",
           "outcome": "parked-3-strikes",
-          "hypothesis": "Suspect apps/marketplace/src/checkout/context.js addErrors() — this.errors = _.unionBy(sortedErrors, this.errors, e => e.path) never clears stale errors from a prior validation pass; showErrorAlert() always ernies this.errors[0], so a leftover error could suppress the photo-ID ernie entirely. Unconfirmed — could not reproduce to prove it.",
-          "fix_applied": "No code fix attempted — reproduced current (attempt-2) code 11/11 (1 isolated + 10 under 4-worker parallel load in dutchie-e2e Vape) with no failure, so no red-green-revert proof was possible for a 3rd guess. Quarantined via test.fixme() instead per the 3-strikes/architecture rule.",
+          "hypothesis": "Suspect apps/marketplace/src/checkout/context.js addErrors() \u2014 this.errors = _.unionBy(sortedErrors, this.errors, e => e.path) never clears stale errors from a prior validation pass; showErrorAlert() always ernies this.errors[0], so a leftover error could suppress the photo-ID ernie entirely. Unconfirmed \u2014 could not reproduce to prove it.",
+          "fix_applied": "No code fix attempted \u2014 reproduced current (attempt-2) code 11/11 (1 isolated + 10 under 4-worker parallel load in dutchie-e2e Vape) with no failure, so no red-green-revert proof was possible for a 3rd guess. Quarantined via test.fixme() instead per the 3-strikes/architecture rule.",
           "result": "Could not reproduce; 2 prior distinct hypotheses (ernie-dismiss timing) already falsified by recurrence. Escalated for human investigation of the suspected production error-stacking defect."
         }
       ],
@@ -215,7 +215,7 @@
           "outcome": "fixed",
           "hypothesis": "EmbeddedDesktopSpecialsPage.getProductListItems() waits for the first product-list-item visible then calls .all(), but the special's eligibility-filtered list can re-render empty in between, leaving productListItems[0] undefined.",
           "fix_applied": "getProductListItems() now retries (.all() + count>0 assertion) inside toPass() instead of a single first()-visible snapshot.",
-          "result": "red = original CI TypeError at embedded-desktop.ts:40; 20/20 Vape isolation ✅; load-realistic run (4-worker parallel, dutchie-e2e constellation, whole spec file 8 tests, 3/3) ✅"
+          "result": "red = original CI TypeError at embedded-desktop.ts:40; 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, whole spec file 8 tests, 3/3) \u2705"
         }
       ]
     },
@@ -235,7 +235,7 @@
           "outcome": "fixed",
           "hypothesis": "OrderingPage.navigateToSubPage() returns before ReservationSlotsByOrderType resolves and the subpage's react-hook-form reset() applies real defaults, so isChecked() on scheduledOrdering can read pre-hydration state and skip the >=15min time-slot guard before publish.",
           "fix_applied": "navigateToSubPage() now awaits Promise.all([waitForResponse('ReservationSlotsByOrderType'), tab.click()]) before returning.",
-          "result": "red = original CI ernie mismatch ('Time slots must be at least 15 minutes.'); 20/20 Vape isolation ✅; load-realistic run (4-worker parallel, dutchie-e2e constellation, payment-options.test.ts + dutchie-pay.test.ts 16 tests, 3/3) ✅"
+          "result": "red = original CI ernie mismatch ('Time slots must be at least 15 minutes.'); 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, payment-options.test.ts + dutchie-pay.test.ts 16 tests, 3/3) \u2705"
         }
       ]
     },
@@ -279,11 +279,11 @@
           "outcome": "fixed",
           "hypothesis": "Admin page's post-UpdateProduct client-side render/navigation can still be in flight when productPage.goto() fires (same race documented in PR #19803 and PR #21395, neither of which fully closed it), causing net::ERR_ABORTED.",
           "fix_applied": "Wrapped productPage.goto() + a visibility assertion in expect(...).toPass() so the idempotent navigation retries with real Playwright retry semantics instead of relying solely on the shared base page's single hand-rolled waitForTimeout(2000) retry.",
-          "result": "Reproduced exact CI failure signature by disabling the base page's internal retry (5/5 failed net::ERR_ABORTED, matching CI verbatim); fix applied → 5/5 passed with internal retry still disabled; restored temp change, clean diff. 20/20 Vape isolation ✅; load-realistic run (4-worker parallel, dutchie-e2e constellation, 3/3) ✅."
+          "result": "Reproduced exact CI failure signature by disabling the base page's internal retry (5/5 failed net::ERR_ABORTED, matching CI verbatim); fix applied \u2192 5/5 passed with internal retry still disabled; restored temp change, clean diff. 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, 3/3) \u2705."
         }
       ]
     },
-    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow › [2991625] full happy path: signup, med intake, join loyalty, complete pay by bank": {
+    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow \u203a [2991625] full happy path: signup, med intake, join loyalty, complete pay by bank": {
       "test_name": "[2991625] full happy path: signup, med intake, join loyalty, complete pay by bank",
       "suite": "ecomm",
       "attempt_count": 1,
@@ -297,15 +297,15 @@
         {
           "date": "2026-09-02",
           "jira_key": "QA-1038",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22400",
           "outcome": "fixed",
           "hypothesis": "completeMedIntake() waits only on UploadSecureImage's network response, not on onPhotoUploaded's value committing into react-hook-form state, before clicking 'Looks Good'; a stale/empty driversLicensePhoto fails onSubmit validation and disables the button with no visible error (onSubmit-only validation mode never re-fires without a field onChange).",
           "fix_applied": "completeMedIntake() now waits for PhotoIdUpload's own 'successfully uploaded' label (a different, already-rendered element) before clicking 'Looks Good', in page-objects/marketplace/pages/instore-enrollment/index.ts.",
-          "result": "red (reproduced exact CI signature via a temporary 1.5s artificial upload-commit delay) / green (fix passes even with the delay) / revert (temp delay fully removed) proven; 20/20 Vape isolation ✅ (100/100 total across all 5 tests in file via verify:20x); load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) ✅"
+          "result": "red (reproduced exact CI signature via a temporary 1.5s artificial upload-commit delay) / green (fix passes even with the delay) / revert (temp delay fully removed) proven; 20/20 Vape isolation \u2705 (100/100 total across all 5 tests in file via verify:20x); load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
         }
       ]
     },
-    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow › [2991627] existing loyalty user completes pay by bank": {
+    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow \u203a [2991627] existing loyalty user completes pay by bank": {
       "test_name": "[2991627] existing loyalty user completes pay by bank",
       "suite": "ecomm",
       "attempt_count": 1,
@@ -319,15 +319,15 @@
         {
           "date": "2026-09-02",
           "jira_key": "QA-1038",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22400",
           "outcome": "fixed",
           "hypothesis": "Same shared completeMedIntake() race as [2991625].",
           "fix_applied": "Same fix as [2991625] (shared page-object method).",
-          "result": "Same evidence as [2991625] (shared fix); 20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) ✅"
+          "result": "Same evidence as [2991625] (shared fix); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
         }
       ]
     },
-    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow › [2991626] skip loyalty and pay by bank after med intake": {
+    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow \u203a [2991626] skip loyalty and pay by bank after med intake": {
       "test_name": "[2991626] skip loyalty and pay by bank after med intake",
       "suite": "ecomm",
       "attempt_count": 1,
@@ -341,15 +341,15 @@
         {
           "date": "2026-09-02",
           "jira_key": "QA-1038",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22400",
           "outcome": "fixed",
           "hypothesis": "Same shared completeMedIntake() race as [2991625].",
           "fix_applied": "Same fix as [2991625] (shared page-object method).",
-          "result": "Same evidence as [2991625] (shared fix); 20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) ✅"
+          "result": "Same evidence as [2991625] (shared fix); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
         }
       ]
     },
-    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow › [2991628] existing loyalty user skips pay by bank": {
+    "marketplace/payments/instore-enrollment/instore-enrollment-flow.test.ts::Instore Enrollment Flow \u203a [2991628] existing loyalty user skips pay by bank": {
       "test_name": "[2991628] existing loyalty user skips pay by bank",
       "suite": "ecomm",
       "attempt_count": 1,
@@ -363,15 +363,15 @@
         {
           "date": "2026-09-02",
           "jira_key": "QA-1038",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22400",
           "outcome": "fixed",
           "hypothesis": "Same shared completeMedIntake() race as [2991625].",
           "fix_applied": "Same fix as [2991625] (shared page-object method).",
-          "result": "Same evidence as [2991625] (shared fix); 20/20 Vape isolation ✅; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) ✅"
+          "result": "Same evidence as [2991625] (shared fix); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
         }
       ]
     },
-    "marketplace/payments/instore-enrollment/kiosk-enrollment.test.ts::Instore Checkout From Kiosk › [657411] enroll a consumer in Dutchie Pay from kiosk and checkout": {
+    "marketplace/payments/instore-enrollment/kiosk-enrollment.test.ts::Instore Checkout From Kiosk \u203a [657411] enroll a consumer in Dutchie Pay from kiosk and checkout": {
       "test_name": "[657411] enroll a consumer in Dutchie Pay from kiosk and checkout",
       "suite": "ecomm",
       "attempt_count": 0,
