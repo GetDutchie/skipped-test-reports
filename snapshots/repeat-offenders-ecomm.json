@@ -382,6 +382,40 @@
       "failure_signature": "Ernie 'Pay by Bank is unavailable. Please use a different method of payment.' shown after enrollUser()/terms-of-service continue; ActivatePaymentMethodV2/ShowEnrollment activation chain returns no active payment method on first attempt",
       "real_app_bug": null,
       "attempts": []
+    },
+    "checkout-page/checkout-customer-section.test.ts::[55406] enters user info and saves user for next time with delivery": {
+      "test_name": "[55406] enters user info and saves user for next time with delivery",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "TimeoutError waiting for getByTestId('guest-customer-section').getByTestId('account-email').getByLabel('Email') - saveGuestInfo checkbox force-click race on checkout navigation",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-03",
+          "jira_key": "QA-1041",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22448",
+          "outcome": "fixed",
+          "hypothesis": "goToCheckoutButton navigates client-side to /checkout; force-clicking saveGuestInfoCheckbox before the guest form hydrates can land on a stale pre-hydration node whose click never registers, leaving Cart.saveGuestInfo false and the email/password fields never rendering.",
+          "fix_applied": "Wait for guestCustomerSection.firstNameInput (different, already-rendered element) to be visible before force-clicking saveGuestInfoCheckbox.",
+          "result": "red-green-revert-restore proven (5/10 failed with exact CI symptom when reverted); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
+        }
+      ]
+    },
+    "payments/ecomm-enrollment/change-bank-account.test.ts::[657405] logged in enrolled consumer can change their bank account": {
+      "test_name": "[657405] logged in enrolled consumer can change their bank account",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "isolation/false-positive - failed once in CI with no code-level trace evidence; 5/5 isolation + 3/3 load-realistic clean, confirmed by independent falsification pass",
+      "real_app_bug": null,
+      "attempts": []
     }
   }
 }
