@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "last_processed_ts": "1788441032.931839",
+  "entries": {
+    "1419-unnamed-rest-nexus-scope-cluster-remainder": {
+      "classification": "unclear",
+      "description": "PR #1419 report says the scope-assertion blind spot affects approximately 15 additional webapi-client/src/rest/nexus files but does not enumerate all of them.",
+      "blocker": "The report names examples but not the complete affected file list; this agent cannot safely infer the unnamed remainder.",
+      "first_seen": "2026-09-03",
+      "last_seen": "2026-09-03",
+      "times_seen": 1,
+      "last_notified": null
+    }
+  }
+}
