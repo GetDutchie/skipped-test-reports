@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "last_processed_ts": "1788452416.337349",
+  "entries": {
+    "781-e2e/tests/intelligence/data-sharing-obfuscation.test.ts": {
+      "classification": "needs-production-change",
+      "description": "The non-sharing intelligence detail path has no running E2E guard; its test is unconditionally skipped and the other data specs are gated on SNOWFLAKE_E2E_SEEDED.",
+      "blocker": "Armageddon VapeSnowflakeSeed hardcodes effective_data_sharing_enabled=true, so no fixture exercises the deny path; this dry-run environment also returned HTTP 404 from /__test_command__, so the E2E spec cannot be validated or unskipped with test-only changes.",
+      "first_seen": "2026-09-03",
+      "last_seen": "2026-09-03",
+      "times_seen": 1,
+      "last_notified": null
+    }
+  }
+}
