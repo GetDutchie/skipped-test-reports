@@ -416,6 +416,28 @@
       "failure_signature": "isolation/false-positive - failed once in CI with no code-level trace evidence; 5/5 isolation + 3/3 load-realistic clean, confirmed by independent falsification pass",
       "real_app_bug": null,
       "attempts": []
+    },
+    "marketplace/kiosk-pro/kiosk-pro-search.test.ts::[657443] Search functionality finds products": {
+      "test_name": "[657443] Search functionality finds products",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "getByText('Purple Haze', { exact: true }) not found, 60s timeout after search \u2014 filteredProducts' $search (Atlas Search) hasn't indexed the just-created product yet",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-04",
+          "jira_key": "QA-1042",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22476",
+          "outcome": "fixed",
+          "hypothesis": "createTestProduct returns before the product is guaranteed indexed by MongoDB Atlas Search, which filteredProducts' $search stage queries; retrying the search action alone doesn't help because router.push onto an unchanged ?search= URL is a Next.js no-op and never re-fires the query.",
+          "fix_applied": "Wrapped the product-visibility assertion in expect(...).toPass(), reloading the page each retry to force a fresh filteredProducts fetch, matching collections-consumer.test.ts's existing Atlas Search wait pattern.",
+          "result": "red (reverted fix reproduced exact CI failure signature) / green / revert / restore proven; 20/20 Vape isolation \u2705 (verify:20x); load-realistic run (5-worker parallel, full kiosk-pro/ directory, dutchie-e2e constellation, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
