@@ -899,14 +899,17 @@
       "test_id": "384643",
       "test_name": "User should be able to withdraw",
       "suite": "back_office",
-      "times_fixed": 6,
+      "times_fixed": 9,
       "last_flaked": "2026-08-21",
       "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7412",
         "https://github.com/GetDutchie/back-office/pull/7687",
+        "https://github.com/GetDutchie/back-office/pull/7849",
         "https://github.com/GetDutchie/back-office/pull/8010",
         "https://github.com/GetDutchie/back-office/pull/8394",
+        "https://github.com/GetDutchie/back-office/pull/8442",
         "https://github.com/GetDutchie/back-office/pull/8747"
       ]
     },
@@ -914,14 +917,34 @@
       "test_id": "656960",
       "test_name": "Close out of register with negative deposit should remove deposit amount from vault register",
       "suite": "back_office",
-      "times_fixed": 6,
+      "times_fixed": 8,
       "last_flaked": "2026-08-14",
       "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7412",
+        "https://github.com/GetDutchie/back-office/pull/7445",
+        "https://github.com/GetDutchie/back-office/pull/7478",
         "https://github.com/GetDutchie/back-office/pull/7634",
+        "https://github.com/GetDutchie/back-office/pull/7687",
         "https://github.com/GetDutchie/back-office/pull/7710",
         "https://github.com/GetDutchie/back-office/pull/8394"
+      ]
+    },
+    {
+      "test_id": "544715",
+      "test_name": "User should be able to manually add a wholesale manifest",
+      "suite": "back_office",
+      "times_fixed": 8,
+      "last_flaked": "2026-07-28",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7273",
+        "https://github.com/GetDutchie/back-office/pull/7412",
+        "https://github.com/GetDutchie/back-office/pull/7478",
+        "https://github.com/GetDutchie/back-office/pull/7575",
+        "https://github.com/GetDutchie/back-office/pull/7687",
+        "https://github.com/GetDutchie/back-office/pull/7849"
       ]
     },
     {
@@ -934,7 +957,9 @@
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/7141",
         "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7445",
         "https://github.com/GetDutchie/back-office/pull/7634",
+        "https://github.com/GetDutchie/back-office/pull/7687",
         "https://github.com/GetDutchie/back-office/pull/8394"
       ]
     },
@@ -942,12 +967,13 @@
       "test_id": "383676",
       "test_name": "User should be able to deposit",
       "suite": "back_office",
-      "times_fixed": 4,
+      "times_fixed": 5,
       "last_flaked": "2026-08-21",
       "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/8010",
         "https://github.com/GetDutchie/back-office/pull/8394",
+        "https://github.com/GetDutchie/back-office/pull/8442",
         "https://github.com/GetDutchie/back-office/pull/8747"
       ]
     },
@@ -955,13 +981,53 @@
       "test_id": "384642",
       "test_name": "User should be able to adjust balance",
       "suite": "back_office",
-      "times_fixed": 4,
+      "times_fixed": 5,
       "last_flaked": "2026-08-21",
       "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/8010",
         "https://github.com/GetDutchie/back-office/pull/8394",
+        "https://github.com/GetDutchie/back-office/pull/8442",
         "https://github.com/GetDutchie/back-office/pull/8747"
+      ]
+    },
+    {
+      "test_id": "547854",
+      "test_name": "Verify that the Note can be added to the Receiving details",
+      "suite": "back_office",
+      "times_fixed": 5,
+      "last_flaked": "2026-07-27",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7273",
+        "https://github.com/GetDutchie/back-office/pull/7412",
+        "https://github.com/GetDutchie/back-office/pull/7575"
+      ]
+    },
+    {
+      "test_id": "405608",
+      "test_name": "Verify that External Package ID is retain when is send to another location",
+      "suite": "back_office",
+      "times_fixed": 5,
+      "last_flaked": "2026-08-28",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7380",
+        "https://github.com/GetDutchie/back-office/pull/7478",
+        "https://github.com/GetDutchie/back-office/pull/8937"
+      ]
+    },
+    {
+      "test_id": "276351",
+      "test_name": "Cart page cancellation",
+      "suite": "pos",
+      "times_fixed": 4,
+      "last_flaked": "2026-07-27",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1540",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
+        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
       ]
     },
     {
@@ -991,19 +1057,6 @@
       ]
     },
     {
-      "test_id": "276351",
-      "test_name": "cart-page-cancellation.test.ts",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-07-16",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1540",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1561",
-        "https://github.com/GetDutchie/dutchie-pos/pull/1582"
-      ]
-    },
-    {
       "test_id": "654012",
       "test_name": "Can apply loyalty as a discount to the cart (via fixture fix)",
       "suite": "pos",
@@ -1030,12 +1083,25 @@
       ]
     },
     {
+      "test_id": "657321",
+      "test_name": "Verify that the is MMUR delivery device column appear in the bulk product updater table",
+      "suite": "back_office",
+      "times_fixed": 3,
+      "last_flaked": "2026-07-21",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7445",
+        "https://github.com/GetDutchie/back-office/pull/7478",
+        "https://github.com/GetDutchie/back-office/pull/7634"
+      ]
+    },
+    {
       "test_id": "160119",
       "test_name": "Review transaction history",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-07-16",
-      "recommendation": "ESCALATE",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/1521",
         "https://github.com/GetDutchie/dutchie-pos/pull/1582"
@@ -1054,25 +1120,13 @@
     },
     {
       "test_id": "405512",
-      "test_name": "Verify that the summary tab has the products to which a discount can be applied",
-      "suite": "back_office",
-      "times_fixed": 2,
-      "last_flaked": "2026-07-22",
-      "recommendation": "INVESTIGATE",
-      "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/7380",
-        "https://github.com/GetDutchie/back-office/pull/7687"
-      ]
-    },
-    {
-      "test_id": "544715",
-      "test_name": "User should be able to manually add a wholesale manifest",
+      "test_name": "Verify that the summary tab has products to which a discount can be applied (Exclude option)",
       "suite": "back_office",
       "times_fixed": 2,
       "last_flaked": "2026-07-22",
       "recommendation": "REDESIGN",
       "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/7273",
+        "https://github.com/GetDutchie/back-office/pull/7380",
         "https://github.com/GetDutchie/back-office/pull/7687"
       ]
     },
@@ -1106,7 +1160,7 @@
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-07-16",
-      "recommendation": "REDESIGN",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/1515",
         "https://github.com/GetDutchie/dutchie-pos/pull/1582"
@@ -1178,7 +1232,7 @@
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-07-16",
-      "recommendation": "ESCALATE",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/1561",
         "https://github.com/GetDutchie/dutchie-pos/pull/1582"
@@ -1189,8 +1243,8 @@
       "test_name": "Guest card shows correct last purchase date",
       "suite": "pos",
       "times_fixed": 2,
-      "last_flaked": "2026-07-09",
-      "recommendation": "ESCALATE",
+      "last_flaked": "2026-07-10",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/1515",
         "https://github.com/GetDutchie/dutchie-pos/pull/1540"
@@ -1253,7 +1307,7 @@
     },
     {
       "test_id": "654418",
-      "test_name": "Single match, auto checkin on, 2D medical id, under medical age",
+      "test_name": "Single match auto checkin on 2D medical id under medical age",
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-07-16",
@@ -1303,10 +1357,57 @@
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-07-16",
-      "recommendation": "REDESIGN",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/1561",
         "https://github.com/GetDutchie/dutchie-pos/pull/1582"
+      ]
+    },
+    {
+      "test_id": "656698",
+      "test_name": "Setting on - Starts a new cart after clicking done",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-31",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1598"
+      ]
+    },
+    {
+      "test_id": "656957",
+      "test_name": "Verify that users are warned when creating a discount with a duplicate external id",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-17",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7412",
+        "https://github.com/GetDutchie/back-office/pull/7478"
+      ]
+    },
+    {
+      "test_id": "656699",
+      "test_name": "Verify history modal",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-22",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7478",
+        "https://github.com/GetDutchie/back-office/pull/7687"
+      ]
+    },
+    {
+      "test_id": "656700",
+      "test_name": "Verify history modal navigates to journal",
+      "suite": "back_office",
+      "times_fixed": 2,
+      "last_flaked": "2026-07-22",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/back-office/pull/7478",
+        "https://github.com/GetDutchie/back-office/pull/7687"
       ]
     }
   ]
