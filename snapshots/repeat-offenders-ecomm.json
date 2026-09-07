@@ -417,6 +417,28 @@
       "real_app_bug": null,
       "attempts": []
     },
+    "marketplace/ads/category-page-ads.test.ts::[131901] Click tracker fires when quick-add is clicked on sponsored product": {
+      "test_name": "[131901] Click tracker fires when quick-add is clicked on sponsored product",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "[GraphQL] CreateBrand failed after 1 attempts: API request failed: Validation errors (code UNPROCESSABLE_ENTITY) on createBrandV2",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-07",
+          "jira_key": "QA-1046",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22555",
+          "outcome": "fixed",
+          "hypothesis": "fixtures/ads-fixture.ts hardcoded 3 literal brand names ('Acme Cannabis', 'Bloom Gardens', 'Cedar Wellness') reused by every test in the file; Armageddon's BrandMatchSignature keys off a name's first letter with a non-atomic find_or_initialize_by+save! upsert, so identical names created concurrently by parallel workers race and one createBrandV2 call fails with a generic 'Validation errors' 422.",
+          "fix_applied": "Replaced the 3 hardcoded names in ads-fixture.ts, and the shared fixtures/brands/create.ts defaultTestBrand literal default, with faker.commerce.productName(), matching the existing brands-page.test.ts pattern.",
+          "result": "red-green-revert proven (reverting restores the literal names); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, matching real GHA shard concurrency, dutchie-e2e constellation, whole category-page-ads.test.ts file, 3 runs / 174 executions) \u2705 \u2014 target test passed in all 3 runs"
+        }
+      ]
+    },
     "marketplace/kiosk-pro/kiosk-pro-search.test.ts::[657443] Search functionality finds products": {
       "test_name": "[657443] Search functionality finds products",
       "suite": "ecomm",
