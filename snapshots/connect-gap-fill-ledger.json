@@ -1,5 +1,24 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1788970868.681679",
-  "entries": {}
+  "last_processed_ts": "1789057217.562079",
+  "entries": {
+    "770-e2e/tests/promotions/": {
+      "classification": "e2e-out-of-scope",
+      "description": "New brand-facing approve/decline write path (reviewRibfd) in the RIBFD inbox has no Playwright spec; unit-only today.",
+      "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live, matches e2e/COVERAGE-GAPS.md's own documented blocker).",
+      "first_seen": "2026-09-10",
+      "last_seen": "2026-09-10",
+      "times_seen": 1,
+      "last_notified": "2026-09-10"
+    },
+    "821-e2e/tests/intelligence/inventory-intelligence.test.ts": {
+      "classification": "e2e-out-of-scope",
+      "description": "New createBrandPoke Request button in the connection-status column is not exercised end-to-end; existing spec untouched.",
+      "blocker": "Same e2e-execution blocker as the #770 entry above — RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
+      "first_seen": "2026-09-10",
+      "last_seen": "2026-09-10",
+      "times_seen": 1,
+      "last_notified": "2026-09-10"
+    }
+  }
 }
