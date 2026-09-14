@@ -460,6 +460,52 @@
           "result": "red (reverted fix reproduced exact CI failure signature) / green / revert / restore proven; 20/20 Vape isolation \u2705 (verify:20x); load-realistic run (5-worker parallel, full kiosk-pro/ directory, dutchie-e2e constellation, 3/3) \u2705"
         }
       ]
+    },
+    "marketplace/embedded/loyalty-signup/loyalty-signup-embed.test.ts::[657915] existing loyalty member success path fires loyalty:success with the enterprise landing payload": {
+      "test_name": "Embedded Loyalty Signup Script (POS-20505) [657915] existing loyalty member success path fires loyalty:success with the enterprise landing payload",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "PG::UniqueViolation duplicate key value violates unique constraint \"index_regions_on_code\" (US-OR) in createRegion at fixtures/enterprise-loyalty-embed-fixture.ts:49",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-14",
+          "jira_key": "QA-1063",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "createRegion()'s existing fallback (catch the PG::UniqueViolation from parallel workers seeding the same subdivision, fetch the winner's row) is a single-shot fetch that can race ahead of the winning transaction's commit visibility and legitimately find nothing, re-throwing the original error.",
+          "fix_applied": "Wrapped the fallback fetch in expect.poll(...).toBeTruthy() (utils/db/index.ts) instead of a single attempt, using the framework's own default expect timeout.",
+          "result": "Reproduced the exact CI PG::UniqueViolation locally via concurrent createRegion() calls against running armageddon-web; isolated the exact miss-then-recover mechanism with a red/green harness (old single-shot fallback returns null on a simulated miss = RED matching CI symptom; new poll-based fallback recovers = GREEN); 20/20 Vape isolation (verify:20x, single worker) \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
+        }
+      ]
+    },
+    "admin/dispensary-admin/settings/store-info.test.ts::[249] Other store information can be changed and published": {
+      "test_name": "[249] Other store information can be changed and published",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "infra/backend-slow - page hung on infinite loading spinner for full test duration despite condition-based waits already in goto(); passed on retry with fresh worker; independent falsification pass traced to stalled lazy webpack-chunk fetch under shard resource contention",
+      "real_app_bug": null,
+      "attempts": []
+    },
+    "admin/promotions/special-conditions.test.ts::[126480] Weight-based flower sale hides discount language when restrictSalesLanguage is enabled": {
+      "test_name": "[126480] Weight-based flower sale hides discount language when restrictSalesLanguage is enabled",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "infra/backend-slow - page froze on special-creation Conditions step after Continue click (button enabled/focused, click dispatched) for 30+s in same CI shard as [249]; passed on retry; independent falsification pass confirmed no network call in that transition (pure synchronous MobX state), pointing to browser-renderer stall under shard contention",
+      "real_app_bug": null,
+      "attempts": []
     }
   }
 }
