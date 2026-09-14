@@ -475,7 +475,7 @@
         {
           "date": "2026-09-14",
           "jira_key": "QA-1063",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22848",
           "outcome": "fixed",
           "hypothesis": "createRegion()'s existing fallback (catch the PG::UniqueViolation from parallel workers seeding the same subdivision, fetch the winner's row) is a single-shot fetch that can race ahead of the winning transaction's commit visibility and legitimately find nothing, re-throwing the original error.",
           "fix_applied": "Wrapped the fallback fetch in expect.poll(...).toBeTruthy() (utils/db/index.ts) instead of a single attempt, using the framework's own default expect timeout.",
