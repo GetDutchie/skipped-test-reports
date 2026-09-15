@@ -1,33 +1,33 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789384597.290939",
+  "last_processed_ts": "1789471027.908289",
   "entries": {
-    "770-e2e/tests/promotions/": {
+    "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
       "classification": "e2e-out-of-scope",
-      "description": "New brand-facing approve/decline write path (reviewRibfd) in the RIBFD inbox has no Playwright spec; unit-only today.",
-      "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live, matches e2e/COVERAGE-GAPS.md's own documented blocker).",
-      "first_seen": "2026-09-10",
-      "last_seen": "2026-09-10",
+      "description": "Capability-session write path (invite exchange \u2192 cookie \u2192 menu fetch) is unit-tested via index.test.tsx (confirmed: StrictMode dedup, no re-exchange on refetch, unauthorized/unavailable states all covered), but has no e2e spec exercising the real cross-origin credentials:'include' contract.",
+      "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live again this run, matches e2e/COVERAGE-GAPS.md's own documented blocker). armageddon-web was also still in 'waiting' proc status at run time.",
+      "first_seen": "2026-09-15",
+      "last_seen": "2026-09-15",
       "times_seen": 1,
-      "last_notified": "2026-09-10"
+      "last_notified": "2026-09-15"
     },
-    "821-e2e/tests/intelligence/inventory-intelligence.test.ts": {
+    "847-src/pages/ad-exclusions/index.tsx": {
       "classification": "e2e-out-of-scope",
-      "description": "New createBrandPoke Request button in the connection-status column is not exercised end-to-end; existing spec untouched.",
-      "blocker": "Same e2e-execution blocker as the #770 entry above — RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
-      "first_seen": "2026-09-10",
-      "last_seen": "2026-09-10",
+      "description": "New Ad Exclusions list page has solid unit coverage (index.test.tsx, use-ad-exclusions-data.test.ts, use-columns.test.tsx) but no e2e spec or page object.",
+      "blocker": "Same e2e-execution blocker as the #888 entry above \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
+      "first_seen": "2026-09-15",
+      "last_seen": "2026-09-15",
       "times_seen": 1,
-      "last_notified": "2026-09-10"
+      "last_notified": "2026-09-15"
     },
-    "868-e2e/page-objects/campaign-detail-page.ts": {
-      "classification": "e2e-out-of-scope",
-      "description": "e2e/page-objects/campaign-detail-page.ts + e2e/tests/promotions/ not touched by #868 (owner-scoping fix, BRAND-3475) — the campaign-detail page object predates the owner-scoping change and may still assume selected-brand scoping.",
-      "blocker": "Same e2e-execution blocker as the #770/#821 entries above — e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live again this run, matches e2e/COVERAGE-GAPS.md's own documented blocker).",
-      "first_seen": "2026-09-14",
-      "last_seen": "2026-09-14",
+    "888-rsbuild.config.ts": {
+      "classification": "unclear",
+      "description": "New /api/v2/rest/public proxy rule in rsbuild.config.ts is config-only and unverified by any test.",
+      "blocker": "rsbuild.config.ts cannot be imported under Jest at all \u2014 confirmed live: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module, because its internals rely on import.meta.url handling that Jest's CJS transform doesn't support. A real behavioral test isn't feasible without larger test-infra work (e.g. a dedicated transform/mock for @rsbuild/core), and a text/regex-based assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment.",
+      "first_seen": "2026-09-15",
+      "last_seen": "2026-09-15",
       "times_seen": 1,
-      "last_notified": "2026-09-14"
+      "last_notified": "2026-09-15"
     }
   }
 }
