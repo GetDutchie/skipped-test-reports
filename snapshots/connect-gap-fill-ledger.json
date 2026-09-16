@@ -1,7 +1,16 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789471027.908289",
+  "last_processed_ts": "1789557401.065479",
   "entries": {
+    "862-src/auth/use-assume-role-exit.ts": {
+      "classification": "e2e-out-of-scope",
+      "description": "Assume-role banner/exit flow has thorough unit coverage (397-line use-assume-role-exit.test.ts: token swap + apolloClient.clearStore(), fail-closed on missing/expired/unparseable expiresAt, re-entrant exit() guard, countdown/auto-exit timers), but the real token swap + window.location.href redirect has no Playwright spec; e2e/tests/settings/users.test.ts was not extended.",
+      "blocker": "Same e2e-execution blocker as the #888/#847 entries below \u2014 confirmed again this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed'), and e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
+      "first_seen": "2026-09-16",
+      "last_seen": "2026-09-16",
+      "times_seen": 1,
+      "last_notified": "2026-09-16"
+    },
     "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
       "classification": "e2e-out-of-scope",
       "description": "Capability-session write path (invite exchange \u2192 cookie \u2192 menu fetch) is unit-tested via index.test.tsx (confirmed: StrictMode dedup, no re-exchange on refetch, unauthorized/unavailable states all covered), but has no e2e spec exercising the real cross-origin credentials:'include' contract.",
