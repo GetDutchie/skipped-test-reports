@@ -391,7 +391,7 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "TimeoutError waiting for getByTestId('guest-customer-section').getByTestId('account-email').getByLabel('Email') - saveGuestInfo checkbox force-click race on checkout navigation",
+      "failure_signature": "email/password fields never render after selectOrderType('Delivery') because save-guest-info checkbox reads unchecked in the failure screenshot; isolation/false-positive this run (2026-09-16) - two hypotheses disproven, could not reproduce, falsification pass confirmed",
       "real_app_bug": null,
       "attempts": [
         {
@@ -506,6 +506,50 @@
       "failure_signature": "infra/backend-slow - page froze on special-creation Conditions step after Continue click (button enabled/focused, click dispatched) for 30+s in same CI shard as [249]; passed on retry; independent falsification pass confirmed no network call in that transition (pure synchronous MobX state), pointing to browser-renderer stall under shard contention",
       "real_app_bug": null,
       "attempts": []
+    },
+    "admin/settings/store-settings-page.test.ts::[654478] Super admin can change dispensary type from recreational to medical dispensary": {
+      "test_name": "[654478] Super admin can change dispensary type from recreational to medical dispensary",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-16",
+          "jira_key": "QA-1066",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22943",
+          "outcome": "fixed",
+          "hypothesis": "saveDispensaryInfo() does mutate -> await fetchDispensary() -> success -> toast, in that order; asserting the checkbox immediately after the Publish click races that refetch under load.",
+          "fix_applied": "Wait for storeInfoPage.successMessage to be visible (existing locator, same pattern as sibling store-info.test.ts) before asserting the checkbox.",
+          "result": "root cause confirmed via source trace (apps/admin/src/state/ui.ts); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, tests/admin/settings/, dutchie-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "marketplace/checkout-page/place-order.test.ts::[657199] Complete delivery order with guest user": {
+      "test_name": "[657199] Complete delivery order with guest user",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-16",
+          "jira_key": "QA-1066",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/22943",
+          "outcome": "fixed",
+          "hypothesis": "Address selection can trigger an async AddressResidentialCheck query that opens a residence-verification modal; the existing fixed 2000ms UI-visibility window for the modal wasn't always long enough under nightly CI load, letting the modal appear late and intercept the Place Order click.",
+          "fix_applied": "order-type-section.ts (shared checkout POM): wait for the actual AddressResidentialCheck request/response via gqlRequest/gqlResponse helpers instead of guessing a fixed UI-visibility timeout.",
+          "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, tests/marketplace/checkout-page/, Desktop Storefront + Mobile Embedded, dutchie-e2e constellation, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
