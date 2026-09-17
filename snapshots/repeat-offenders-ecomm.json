@@ -264,12 +264,12 @@
     "admin/cannabinoids/cannabinoids.test.ts::[133611] Add cannabinoid to admin menu item and view it from the consumer menu": {
       "test_name": "[133611] Add cannabinoid to admin menu item and view it from the consumer menu",
       "suite": "ecomm",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "page.goto: net::ERR_ABORTED at .../embedded-menu/<cName>/product/green-crack (base-marketplace-page.ts:85)",
+      "failure_signature": "FullPageSpinner shown for the full ~60s expect timeout after editProductPage.login(); CI api.logs show layout queries fired but AdminIndividualFilteredProduct (edit.jsx componentDidMount -> getProduct) never reached the API on the first attempt.",
       "real_app_bug": null,
       "attempts": [
         {
@@ -280,6 +280,15 @@
           "hypothesis": "Admin page's post-UpdateProduct client-side render/navigation can still be in flight when productPage.goto() fires (same race documented in PR #19803 and PR #21395, neither of which fully closed it), causing net::ERR_ABORTED.",
           "fix_applied": "Wrapped productPage.goto() + a visibility assertion in expect(...).toPass() so the idempotent navigation retries with real Playwright retry semantics instead of relying solely on the shared base page's single hand-rolled waitForTimeout(2000) retry.",
           "result": "Reproduced exact CI failure signature by disabling the base page's internal retry (5/5 failed net::ERR_ABORTED, matching CI verbatim); fix applied \u2192 5/5 passed with internal retry still disabled; restored temp change, clean diff. 20/20 Vape isolation \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, 3/3) \u2705."
+        },
+        {
+          "date": "2026-09-17",
+          "jira_key": "QA-1071",
+          "pr_url": null,
+          "outcome": "not-attempted",
+          "hypothesis": "Relapse with a NEW failure signature vs the 2026-08-21 fix (PR #22064, which addressed a productPage.goto() net::ERR_ABORTED race, not this mechanism). Independent falsification pass: edit.jsx's getProduct() destructures UI.dispensary.id before its try/catch, so a not-yet-populated mobx UI store on a fast deep-link mount can throw before setState({loading:false}), leaving the spinner up with zero requests fired.",
+          "fix_applied": null,
+          "result": "Root cause hypothesis identified via CI log + source trace by an independent falsification-pass agent; NOT YET attempted -- ran out of session time to safely implement + red-green-revert-verify a fix. Carries forward as attempt 2/3 for the next run."
         }
       ]
     },
@@ -464,12 +473,12 @@
     "marketplace/embedded/loyalty-signup/loyalty-signup-embed.test.ts::[657915] existing loyalty member success path fires loyalty:success with the enterprise landing payload": {
       "test_name": "Embedded Loyalty Signup Script (POS-20505) [657915] existing loyalty member success path fires loyalty:success with the enterprise landing payload",
       "suite": "ecomm",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "PG::UniqueViolation duplicate key value violates unique constraint \"index_regions_on_code\" (US-OR) in createRegion at fixtures/enterprise-loyalty-embed-fixture.ts:49",
+      "failure_signature": "shopNowButton 15s timeout; iframe stuck on the logged-out 'Almost there! Set up your account' (Google/Apple/email) screen instead of the existing-member success path.",
       "real_app_bug": null,
       "attempts": [
         {
@@ -480,6 +489,15 @@
           "hypothesis": "createRegion()'s existing fallback (catch the PG::UniqueViolation from parallel workers seeding the same subdivision, fetch the winner's row) is a single-shot fetch that can race ahead of the winning transaction's commit visibility and legitimately find nothing, re-throwing the original error.",
           "fix_applied": "Wrapped the fallback fetch in expect.poll(...).toBeTruthy() (utils/db/index.ts) instead of a single attempt, using the framework's own default expect timeout.",
           "result": "Reproduced the exact CI PG::UniqueViolation locally via concurrent createRegion() calls against running armageddon-web; isolated the exact miss-then-recover mechanism with a red/green harness (old single-shot fallback returns null on a simulated miss = RED matching CI symptom; new poll-based fallback recovers = GREEN); 20/20 Vape isolation (verify:20x, single worker) \u2705; load-realistic run (4-worker parallel, dutchie-e2e constellation, whole spec file, 3/3) \u2705"
+        },
+        {
+          "date": "2026-09-17",
+          "jira_key": "QA-1071",
+          "pr_url": null,
+          "outcome": "not-attempted",
+          "hypothesis": "Relapse with a NEW failure signature vs the 2026-09-14 fix (PR #22848, which addressed a PG::UniqueViolation createRegion fixture race, not this mechanism). Independent falsification pass: apps/marketplace/src/enterprise/signup/index.tsx handleStartEarningRewards() branches on isLoggedIn without checking userLoading, and showLoadingState deliberately excludes userLoading, so the button is clickable while the MeConsumer auth query is still in flight; a slow-enough MeConsumer response misroutes to the logged-out flow.",
+          "fix_applied": null,
+          "result": "Root cause hypothesis identified via CI screenshot + source trace by an independent falsification-pass agent; NOT YET attempted -- ran out of session time. Carries forward as attempt 2/3 for the next run."
         }
       ]
     },
@@ -548,6 +566,50 @@
           "hypothesis": "Address selection can trigger an async AddressResidentialCheck query that opens a residence-verification modal; the existing fixed 2000ms UI-visibility window for the modal wasn't always long enough under nightly CI load, letting the modal appear late and intercept the Place Order click.",
           "fix_applied": "order-type-section.ts (shared checkout POM): wait for the actual AddressResidentialCheck request/response via gqlRequest/gqlResponse helpers instead of guessing a fixed UI-visibility timeout.",
           "result": "20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, tests/marketplace/checkout-page/, Desktop Storefront + Mobile Embedded, dutchie-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "marketplace/embedded/ice-cream-truck/ice-cream-truck.test.ts::Ice Cream Truck Model (embedded multi-location delivery modal) [62149] from within the zip_code delivery area": {
+      "test_name": "Ice Cream Truck Model (embedded multi-location delivery modal) [62149] from within the zip_code delivery area",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(page).toHaveURL timeout 60000ms -- page never navigates off the multilocation search page after selecting the first address suggestion; the other 4 tests in this describe.serial block ([62150]-[62153]) are NOT independent flakes -- they only show as flaky because Playwright's serial-mode retry restarts the whole group when test 1 fails.",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-17",
+          "jira_key": "QA-1071",
+          "pr_url": null,
+          "outcome": "parked-3-strikes",
+          "hypothesis": "useLocations.handleChangeAddress (apps/marketplace/src/dispensary/core-menu/locations/use-locations.js) silently no-ops (`if (!location || !dispensary) return;`) if the ConsumerDispensaries query for the current dispensary context hasn't resolved yet, and MultilocationPage.searchForAddress() fills+clicks immediately after goto() with no readiness wait.",
+          "fix_applied": "Wrapped MultilocationPage.goto() in Promise.all with waitForResponse(gqlResponse('ConsumerDispensaries')).",
+          "result": "Regressed under --repeat-each=8: test 1 failed consistently from the 2nd repeat onward with the URL stuck on the PREVIOUS repeat's dispensary (address-autocomplete/session bleed across repeats), a new and worse failure mode than the original single nightly flake. Reverted -- 1 of 3 attempts spent, root cause narrowed but fix not proven safe. Needs a human/deeper pass distinguishing the readiness race from repeat-each's own address-autocomplete caching interaction before a 2nd attempt."
+        }
+      ]
+    },
+    "admin/settings/ordering/delivery-zones-drawn.test.ts::[TODO] draws, saves, edits, and deletes a drawn delivery zone via the Mapbox editor": {
+      "test_name": "[TODO] draws, saves, edits, and deletes a drawn delivery zone via the Mapbox editor",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "Failure ~20.6s after the edit+publish step, with the success toast already showing and the zone still present -- the load-bearing expect(geometryAfterEdit).not.toEqual(geometryAfterDraw) fails.",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-17",
+          "jira_key": "QA-1071",
+          "pr_url": null,
+          "outcome": "not-attempted",
+          "hypothesis": "Test is <7 days old (PR #22947). Independent falsification pass: dragWorkingZoneBody()'s own-canvas pixel-diff verification (already documented in the file as a workaround for a different race) can false-pass on map-tile load-in alone -- CI video shows the edit modal's canvas still blank/tiles-not-loaded at drag time, so a no-op drag can still register as 'pixels changed'.",
+          "fix_applied": null,
+          "result": "Root cause hypothesis identified via CI video + source trace by an independent falsification-pass agent; NOT YET attempted -- ran out of session time. Carries forward as attempt 1/3 for the next run."
         }
       ]
     }
