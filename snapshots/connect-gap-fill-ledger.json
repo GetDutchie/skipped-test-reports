@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789557401.065479",
+  "last_processed_ts": "1789643735.888779",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -37,6 +37,24 @@
       "last_seen": "2026-09-15",
       "times_seen": 1,
       "last_notified": "2026-09-15"
+    },
+    "912-e2e/tests/": {
+      "classification": "e2e-out-of-scope",
+      "description": "The whole alpha public-menu ordering flow (cart \u2192 checkout \u2192 review, spanning #890/#912/#913/#916) shipped with unit tests only; no Playwright spec exists for this new user-facing purchase path.",
+      "blocker": "Confirmed live this run: armageddon-web proc status is 'waiting' (on armageddon-dev-accounts-seed, armageddon-search-indexes), and even once healthy, e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker \u2014 this constellation runs development, so global setup would 404 before any new spec could run regardless of proc health.",
+      "first_seen": "2026-09-17",
+      "last_seen": "2026-09-17",
+      "times_seen": 1,
+      "last_notified": "2026-09-17"
+    },
+    "907-src/constants/env.ts": {
+      "classification": "needs-production-change",
+      "description": "New PUBLIC_BRAND_OPS_API_URL plus the requiredEnvVars validation path (throws on any missing required var) has no env.test.ts anywhere in src/constants/, so a missing-var failure is unasserted.",
+      "blocker": "src/constants/env.ts reads import.meta.env directly and is unconditionally jest.mock()'d in jest/jest.setup.ts (`jest.mock('../src/constants/env', () => require('./mocks/env'))`) specifically to dodge this: confirmed live that unmocking and requiring the real module under Jest throws `SyntaxError: Cannot use 'import.meta' outside a module` from inside @swc/jest's CommonJS transform (same root cause as this ledger's existing 888-rsbuild.config.ts entry). Testing the real requiredEnvVars validation path needs either a Jest/SWC transform capable of handling import.meta syntax, or refactoring env.ts to accept an injectable env source \u2014 both are production/test-infra changes out of scope for a test-file-only PR.",
+      "first_seen": "2026-09-17",
+      "last_seen": "2026-09-17",
+      "times_seen": 1,
+      "last_notified": "2026-09-17"
     }
   }
 }
