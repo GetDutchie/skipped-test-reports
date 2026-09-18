@@ -614,7 +614,7 @@
         {
           "date": "2026-09-18",
           "jira_key": "QA-1077",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/23050",
           "outcome": "fixed",
           "hypothesis": "dragWorkingZoneBody()'s pixel-diff verification took its 'before' screenshot before selecting the shape; selecting alone repaints the canvas (vertex handles), so that repaint alone could satisfy the diff without the drag itself ever moving the shape.",
           "fix_applied": "Added waitForCanvasIdle() (expect.poll on consecutive canvas-screenshot equality) and moved the drag's 'before' screenshot to after the selection click instead of before it, so the diff only reflects the drag gesture.",
