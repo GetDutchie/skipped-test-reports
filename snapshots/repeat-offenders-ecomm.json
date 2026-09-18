@@ -594,7 +594,7 @@
     "admin/settings/ordering/delivery-zones-drawn.test.ts::[TODO] draws, saves, edits, and deletes a drawn delivery zone via the Mapbox editor": {
       "test_name": "[TODO] draws, saves, edits, and deletes a drawn delivery zone via the Mapbox editor",
       "suite": "ecomm",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -610,6 +610,15 @@
           "hypothesis": "Test is <7 days old (PR #22947). Independent falsification pass: dragWorkingZoneBody()'s own-canvas pixel-diff verification (already documented in the file as a workaround for a different race) can false-pass on map-tile load-in alone -- CI video shows the edit modal's canvas still blank/tiles-not-loaded at drag time, so a no-op drag can still register as 'pixels changed'.",
           "fix_applied": null,
           "result": "Root cause hypothesis identified via CI video + source trace by an independent falsification-pass agent; NOT YET attempted -- ran out of session time. Carries forward as attempt 1/3 for the next run."
+        },
+        {
+          "date": "2026-09-18",
+          "jira_key": "QA-1077",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "dragWorkingZoneBody()'s pixel-diff verification took its 'before' screenshot before selecting the shape; selecting alone repaints the canvas (vertex handles), so that repaint alone could satisfy the diff without the drag itself ever moving the shape.",
+          "fix_applied": "Added waitForCanvasIdle() (expect.poll on consecutive canvas-screenshot equality) and moved the drag's 'before' screenshot to after the selection click instead of before it, so the diff only reflects the drag gesture.",
+          "result": "red-green-revert-restore proven (reverting fix reproduced exact CI assertion failure in 2/3 local runs; restoring passed 8/8 local); 20/20 Vape isolation \u2705 (verify:20x); load-realistic run (6-worker parallel, matching real GHA shard concurrency, dutchie-e2e constellation, tests/admin/settings/ordering/ whole directory, 3/3) \u2705"
         }
       ]
     }
