@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789643156.544299",
+  "last_processed_ts": "1789729661.912069",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -59,15 +59,48 @@
     },
     "1095-apps/gtm/account-360/api/src/routes/accounts.ts::similarAccounts": {
       "classification": "unclear",
-      "reason": "In-scope (account-360, PR #1095's own View-As migration), part of the [Medium] gap entry's 'similarAccounts sub-scope' bullet — genuinely closeable in principle (accounts.ts already calls resolveFgaScopeUser(c) for similarScope), but this suite has no deterministic way to seed real pgvector embedding similarity for a live test, so a human should decide whether a synthetic-embedding fixture is worth building versus leaving this uncovered. NOT silently dropped from the report bullet it was part of — see PR #1099's own body for the same note. The rest of the same [Medium] bullet (product-stats, :id, :id/family, :id/family/tickets, :id/family/gong-calls, :id/family/products, :id/family/product-arr) and the [High] requireObjectRelation-divergence gap were both closed by PR #1099.",
+      "reason": "In-scope (account-360, PR #1095's own View-As migration), part of the [Medium] gap entry's 'similarAccounts sub-scope' bullet — genuinely closeable in principle (accounts.ts already calls resolveFgaScopeUser(c) for similarScope), but this suite has no deterministic way to seed real pgvector embedding similarity for a live test, so a human should decide whether a synthetic-embedding fixture is worth building versus leaving this uncovered. NOT silently dropped from the report bullet it was part of — see PR #1099's own body for the same note. The rest of the same [Medium] bullet (product-stats, :id, :id/family, :id/family/tickets, :id/family/gong-calls, :id/family/products, :id/family/product-arr) and the [High] requireObjectRelation-divergence gap were both closed by PR #1099. RESURFACED 2026-09-18 in the 2026-09-18 report under source PR #1107 (a merge-forward of develop into pida/sandbox-merge-candidate, 16 already-merged commits, no net-new code) — same underlying gap, still unresolved, no new information; not re-notified since last_notified is <7 days old.",
       "severity": "Medium",
       "entry_type": "gap (partial)",
       "source_pr": 1095,
       "pr_opened": "https://github.com/GetDutchie/alchemy/pull/1099",
       "first_seen": "2026-09-17",
-      "last_seen": "2026-09-17",
-      "times_seen": 1,
+      "last_seen": "2026-09-18",
+      "times_seen": 2,
       "last_notified": "2026-09-17T13:38:10Z"
+    },
+    "1107-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts::expansion-candidates": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/** — out of this pilot's scope, and confirmed intentional/expected per the source PR's own workflow-file diff (test-coverage-audit-account-360.yml's scope was deliberately widened to also cover gtm-pipeline in the same PR, with an explicit code comment noting the fill agent still only acts on account-360). Report entry: [Medium] gap, PR #1107 (merge-forward, no net-new code) — GET /pipeline/expansion-candidates (and GET /pipeline/:id) deliberately read the raw admin authUser during the phased View-As rollout, but unlike account-360's own pinned requireObjectRelation divergence, deals-reads.live.test.ts has zero tests pinning this — the intentional divergence is unpinned.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 1107,
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18T11:07:41Z"
+    },
+    "1107-cross-app-view-as-e2e-flow": {
+      "classification": "unclear",
+      "reason": "Mixed-app entry: bundles apps/gtm/account-360/web/src/PersistedCache.tsx (in-scope) with apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx (out-of-scope, pipeline) as ONE gap describing the end-to-end View-As flow (enter View-As -> list re-scopes -> exit -> admin's own cache bucket restored) across both apps. Per Hard Gate 5, a gap entry naming any file outside apps/gtm/account-360/** is unclear/no-action, full stop -- not split into an actionable account-360 half. Independently also e2e-out-of-scope on its own terms: report entry [Medium], PR #1107, confirms no e2e spec exists for gtm-account-360 or gtm-pipeline today (e2e/ only has api-auth, fga-scoped, guardian-oauth, persona-login-ui, rnd-* specs) -- currently only unit-tested layer-by-layer with useViewAs/viewAsTarget mocked.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 1107,
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18T11:07:41Z"
+    },
+    "1107-apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/** -- out of this pilot's scope (same file previously flagged under source PR #1094; this is a separate report cycle/source PR, tracked as its own key per convention). Covers both the [Low] gap entry (computeFacetCounts gained bdrOwnerCounts, fetchEnrichedOpps gained bdrOwnerEmail, neither deals.helpers.test.ts nor deals.helpers.live.test.ts touched -- covered only transitively via /pipeline/stats route tests) and the matching stale-coverage-risk entry (deals.helpers.test.ts/deals.helpers.live.test.ts not found in PR #1107's diff) -- same file+PR, one ledger entry.",
+      "severity": "Low",
+      "entry_type": "gap+stale",
+      "source_pr": 1107,
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18T11:07:41Z"
     }
   }
 }
