@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789643735.888779",
+  "last_processed_ts": "1789730057.548859",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -55,6 +55,60 @@
       "last_seen": "2026-09-17",
       "times_seen": 1,
       "last_notified": "2026-09-17"
+    },
+    "914-src/pages/public-brand-menu/public-order-submission.ts": {
+      "classification": "e2e-out-of-scope",
+      "description": "New GraphQL write path for a public, unauthenticated purchase-order submission flow (#914); unit coverage is thorough but mocks the mutation, and there is no Playwright spec anywhere under e2e/tests/ for the public brand menu.",
+      "blocker": "Same e2e-execution blocker as this ledger's existing #912/#888/#847/#862 entries \u2014 e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy. COVERAGE-GAPS.md additionally documents the Playwright suite as \"currently red on every branch\" because pnpm codegen fails against a drifted Armageddon schema, independent of the RAILS_ENV gate.",
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18"
+    },
+    "863-src/pages/settings/users/use-columns.tsx-e2e": {
+      "classification": "e2e-out-of-scope",
+      "description": "New assume-role row action on an auth/permission path (#863); strong unit coverage added, but e2e/tests/settings/users.test.ts was not updated, so there is no end-to-end assertion that assuming a role actually works.",
+      "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode, and the suite is documented red on every branch regardless (e2e/COVERAGE-GAPS.md).",
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18"
+    },
+    "930-src/pages/catalog/product-details/product-form-helpers.ts": {
+      "classification": "needs-production-change",
+      "description": "Stale coverage risk: src/pages/catalog/product-details/product-form-helpers.ts changed in #930; test product-form-helpers.test.ts not updated. getWholesaleUomSingularLabel lost its last app-code caller in #930 and is now kept alive only by its own test, which still asserts the superseded label format.",
+      "blocker": "Confirmed live: grep of the whole src/ tree shows getWholesaleUomSingularLabel has zero remaining callers outside its own definition and test \u2014 the function is dead app code. The only way to close this gap is to delete the orphaned function (and its test), which is a production-code change, not something a test-file-only PR can do.",
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18"
+    },
+    "923-src/pages/orders/list/use-columns.tsx-e2e": {
+      "classification": "e2e-out-of-scope",
+      "description": "Stale coverage risk: src/pages/orders/list/use-columns.tsx changed in #923; test e2e/tests/smoke/orders.test.ts not updated. The smoke spec asserts status/purchaseOrderNumber/sourceDposLspName column headers by data-field and has no entry for the new sourceChannel column, so the flag-gated Source column is invisible to e2e. (Distinct from the #923 unit-level gap on src/pages/orders/list/index.tsx closed this cycle by PR #934 \u2014 that PR closed the flag\u2192column unit-level plumbing gap; this entry is specifically about the e2e smoke spec.)",
+      "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries.",
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18"
+    },
+    "863-src/pages/settings/users/index.tsx+use-columns.tsx-e2e": {
+      "classification": "e2e-out-of-scope",
+      "description": "Stale coverage risk: src/pages/settings/users/index.tsx + use-columns.tsx changed in #863; e2e/tests/settings/users.test.ts last updated outside this report's lookback window. A new row-actions column and assume-role modal were added to the Users grid; the e2e spec still only covers list render and the create-user form. Kept as its own ledger entry, distinct from the 863-...-e2e gap entry above (same PR, but a stale-coverage-risk on an existing e2e spec is a different fix shape than a missing unit test, per this prompt's granularity rule that a stale entry never merges with a gap entry).",
+      "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries.",
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18"
+    },
+    "914-src/pages/public-brand-menu/public-order-context.tsx": {
+      "classification": "unclear",
+      "description": "Stale coverage risk (from the report's continuation message): src/pages/public-brand-menu/public-order-context.tsx changed in #914 (+90 lines of submission/cart state) \u2014 test public-wholesale-menu-route.test.tsx not updated; the route consumes this provider and its expectations predate the new submission state shape.",
+      "blocker": "Not a hard blocker \u2014 genuinely unclear on inspection, not deferred for lack of trying. public-order-context.tsx (413 lines) and public-wholesale-menu-route.test.tsx (302 lines) are both large, and #914's real diff (checked via `gh pr diff 914`) touches many adjacent files (App.test.tsx, a new public-order-confirmation-route.test.tsx, etc.) in ways that make it hard to state precisely, within this run's remaining budget, exactly which new submission/cart-state assertions the route test is missing versus which behavior is already covered elsewhere (e.g. the new confirmation-route test added in the same PR). Needs a human to read the #914 diff in full and decide what (if anything) belongs in public-wholesale-menu-route.test.tsx specifically, rather than a guess from this run.",
+      "first_seen": "2026-09-18",
+      "last_seen": "2026-09-18",
+      "times_seen": 1,
+      "last_notified": "2026-09-18"
     }
   }
 }
