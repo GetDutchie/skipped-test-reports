@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789730057.548859",
+  "last_processed_ts": "1789989272.461439",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -109,6 +109,15 @@
       "last_seen": "2026-09-18",
       "times_seen": 1,
       "last_notified": "2026-09-18"
+    },
+    "924-e2e/tests/orders/": {
+      "classification": "e2e-out-of-scope",
+      "description": "feat(orders): make public menu POs read-only BRAND-3595 (#924) ships a new user-facing read-only order-detail flow with zero Playwright coverage; there is no e2e/tests/orders/ directory at all (existing suites: catalog, intelligence, promotions, settings, smoke). Unit coverage for this same PR was closed this cycle via PRs #940/#941/#942.",
+      "blocker": "Confirmed live this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed', which itself failed with exit status 1), and dutchie-api/brands-portal procs are failed too. Even with those healthy, e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21"
     }
   }
 }
