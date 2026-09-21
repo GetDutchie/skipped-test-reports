@@ -497,6 +497,11 @@
           "date": "2026-09-08",
           "note": "Recurred at attempt_count=3 (ATTEMPT_CAP). Two independent investigation passes disagreed (infra/backend-slow vs test-code-bug); fresh investigation confirmed test-code-bug (nested toPass timeout composition bug in ControlSearchInput.search(), same class fixed in [654118]/clear-cache tonight). Escalated per attempt-cap policy rather than spending a 4th attempt -- diagnostic writeup filed in QA-1051 for the eventual fix.",
           "jira_key": "QA-1051"
+        },
+        {
+          "date": "2026-09-21",
+          "note": "Reconfirmed steady state: recurred FAILED tonight with identical failure_signature. No fresh Step 2 investigation per policy (escalated:true, same signature). No quarantine applied -- test remains active.",
+          "jira_key": "QA-1079"
         }
       ]
     },
@@ -549,6 +554,11 @@
           "date": "2026-09-08",
           "note": "Recurred at attempt_count=3 (ATTEMPT_CAP). Two independent investigation passes disagreed (infra/backend-slow vs test-code-bug); fresh investigation confirmed test-code-bug (nested toPass timeout composition bug in ControlSearchInput.search(), same class fixed in [654118]/clear-cache tonight). Escalated per attempt-cap policy rather than spending a 4th attempt -- diagnostic writeup filed in QA-1051 for the eventual fix.",
           "jira_key": "QA-1051"
+        },
+        {
+          "date": "2026-09-21",
+          "note": "Reconfirmed steady state: recurred FAILED tonight with identical failure_signature. No fresh Step 2 investigation per policy (escalated:true, same signature). No quarantine applied -- test remains active.",
+          "jira_key": "QA-1079"
         }
       ]
     },
@@ -601,6 +611,11 @@
           "date": "2026-09-08",
           "note": "Recurred at attempt_count=3 (ATTEMPT_CAP). Two independent investigation passes disagreed (infra/backend-slow vs test-code-bug); fresh investigation confirmed test-code-bug (nested toPass timeout composition bug in ControlSearchInput.search(), same class fixed in [654118]/clear-cache tonight). Escalated per attempt-cap policy rather than spending a 4th attempt -- diagnostic writeup filed in QA-1051 for the eventual fix.",
           "jira_key": "QA-1051"
+        },
+        {
+          "date": "2026-09-21",
+          "note": "Reconfirmed steady state: recurred FAILED tonight with identical failure_signature. No fresh Step 2 investigation per policy (escalated:true, same signature). No quarantine applied -- test remains active.",
+          "jira_key": "QA-1079"
         }
       ]
     },
