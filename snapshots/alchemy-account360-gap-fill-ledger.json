@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789729661.912069",
+  "last_processed_ts": "1789988781.986509",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -101,6 +101,72 @@
       "last_seen": "2026-09-18",
       "times_seen": 1,
       "last_notified": "2026-09-18T11:07:41Z"
+    },
+    "1113-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/**. Report entry: [Medium] gap, PR #1113 ('feat(pipeline): New Sale badge/filter includes Prospect-account opportunities') — the New_Sale branch ORs in a Prospect-account FGA-scoped id list but all 7 new live cases stub OpenFGA as full-access; no restricted-persona case, empty-prospectAccountIds branch never exercised.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 1113,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21T13:08:45Z"
+    },
+    "1113-apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/**. Report entry: [Medium] gap, PR #1113 — the click-New-Sale-filter-chip -> Prospect-account Renewal card shows New Sale badge user flow has zero coverage (e2e-shaped; confirmed gtm-pipeline has no e2e/*.spec.ts today either — only api-auth, fga-scoped, guardian-oauth, persona-login-ui, rnd-* specs).",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 1113,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21T13:08:45Z"
+    },
+    "1113-apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/** -- out of this pilot's scope (same file previously flagged under source PRs #1094/#1107; separate report cycle/source PR, tracked as its own key per convention). Covers both the [Low] gap entry (fetchAccountFieldsByIds's new status return-cast field, fetchEnrichedOpps's accountStatus mapping have no test at their own level, only one route-level assertion) and the matching stale-coverage-risk entry (deals.helpers.live.test.ts / deals.helpers.test.ts last updated: not found, shallow checkout) -- same file+PR, one ledger entry.",
+      "severity": "Low",
+      "entry_type": "gap+stale",
+      "source_pr": 1113,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21T13:08:45Z"
+    },
+    "1113-apps/gtm/pipeline/api/smoke.json": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/**. Report entry: [Low] gap, PR #1113 — GET /pipeline and /pipeline/stats changed behavior for type=New_Sale (extra account lookup + inArray) but the only smoke probes are the bare paths, no probe covers the distinct query per AGENTS.md's per-distinct-GET rule.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 1113,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21T13:08:45Z"
+    },
+    "1113-apps/gtm/pipeline/web/src/features/pipeline/DealDetailPanel.tsx": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/**. Report entry: [Low] gap, PR #1113 — Kanban card now reads 'New Sale' for a Prospect-account Renewal while DealDetailPanel's 'Record Type' field still renders the raw 'Renewal'; plausibly intentional (literal SFDC field) but no test pins the divergence.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 1113,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21T13:08:45Z"
+    },
+    "1113-libs/contracts/pipeline/src/pipeline.ts": {
+      "classification": "unclear",
+      "reason": "Scope gate: libs/** file (not itself under apps/gtm/account-360/**). Verified via `gh pr view 1113 --json files`: source PR #1113 ('feat(pipeline): New Sale badge/filter includes Prospect-account opportunities') touched only apps/gtm/pipeline/**, libs/contracts/pipeline/**, and libs/ui/** — it did NOT touch any apps/gtm/account-360/** file, despite the report's own 'in scope — shared lib changed alongside pipeline code' annotation (that annotation is for the detector's wider account-360+pipeline scope, not this pilot's narrower account-360-only carve-out rule, which requires the SAME source PR to touch an apps/gtm/account-360/** file — confirmed it does not). Out of this pilot's scope. Report entry: stale-coverage-risk — pipeline.test.ts has accept/reject cases for sibling row schemas but none pinning that enrichedOppRowSchema now rejects a row omitting accountStatus (nullable, not optional — confirmed added in #1113 via `git log -p`).",
+      "severity": null,
+      "entry_type": "stale",
+      "source_pr": 1113,
+      "first_seen": "2026-09-21",
+      "last_seen": "2026-09-21",
+      "times_seen": 1,
+      "last_notified": "2026-09-21T13:08:45Z"
     }
   }
 }
