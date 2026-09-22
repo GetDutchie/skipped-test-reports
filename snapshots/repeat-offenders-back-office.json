@@ -841,7 +841,7 @@
         {
           "date": "2026-09-22",
           "jira_key": "QA-1083",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/9916",
           "outcome": "fixed",
           "hypothesis": "RegisterBulkCloseOutPage notification locators used unscoped text= selectors; app's notification system never dedupes, so a repeated validation trigger can leave 2 identical toasts mounted, causing a Playwright strict-mode violation.",
           "fix_applied": "index.ts: scoped successNotification/newBalanceGreaterErrorNotification/invalidRegisterInputsNotification to .last().",
@@ -863,7 +863,7 @@
         {
           "date": "2026-09-22",
           "jira_key": "QA-1083",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/9916",
           "outcome": "fixed",
           "hypothesis": "MultiFilterSelect.searchAndSelectOption used a hand-rolled retry() loop (e2e/utils/retry.ts) with a manual attempt counter wrapping a 60s waitFor 3x; hides retries from Playwright's reporting and can silently exceed the global test timeout.",
           "fix_applied": "multi-filter-select.ts: replaced retry() with expect().toPass({timeout:180000}), same total budget (3x60s+2x1s), proper Playwright retry semantics/reporting.",
@@ -885,7 +885,7 @@
         {
           "date": "2026-09-22",
           "jira_key": "QA-1083",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/9916",
           "outcome": "fixed",
           "hypothesis": "enableOnboarding() updates a setting via API then the test immediately navigates; metrcConfig async parent query can still serve a pre-update cached value on first render (documented in clear-cache.tsx componentDidUpdate comment), so syncEntity select isn't rendered yet.",
           "fix_applied": "clear-cache.spec.ts: wrapped goto+visibility-check in expect().toPass({timeout:60000}) reloading each retry, matching the established History-refresh pattern already in this file. Sibling-pattern fix also applied to '[TODO] should set sync start date...' (same file, same race).",
@@ -907,7 +907,7 @@
         {
           "date": "2026-09-22",
           "jira_key": "QA-1083",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/9916",
           "outcome": "fixed",
           "hypothesis": "Identical enableOnboarding->goto race as '[TODO] should show sync entity fields' (sibling-pattern fix, same file, same shared helper) -- not itself in tonight's FAILED/FLAKEY list.",
           "fix_applied": "Same fix as sibling: wrapped goto+visibility-check in expect().toPass({timeout:60000}).",
