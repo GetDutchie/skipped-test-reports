@@ -1,0 +1,451 @@
+{
+  "GetDutchie/dutchie-nexus#1695": {
+    "title": "feat: migrate products/manufacturers to Nexus at full capability parity NEXUS-491",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/api/products/manufacturers.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/_migrated/back-office/manufacturers/components/manufacturer-list.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-columns.test.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-filter.test.ts",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-filter.ts",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-form-dialog.test.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-form-dialog.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/page.test.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/page.tsx",
+      "apps/nexus/src/api/products/manufacturers.test.ts",
+      "apps/nexus/src/api/products/manufacturers.ts",
+      "apps/nexus/src/pages/products/page.test.tsx",
+      "apps/nexus/src/pages/products/tabs.ts",
+      "apps/nexus/src/routes.tsx",
+      "docs/phase2-bo-migration/bo-page-migration-playbook.md",
+      "docs/phase2-bo-migration/ds-foundation-backlog.md",
+      "docs/phase2-bo-migration/rollout-batches.md",
+      "docs/phase2-bo-migration/tracker.md",
+      "packages/webapi-client/package.json",
+      "packages/webapi-client/src/rest/nexus/permissions.test.ts",
+      "packages/webapi-client/src/rest/nexus/permissions.ts",
+      "packages/webapi-client/src/rest/producers.test.ts",
+      "packages/webapi-client/src/rest/producers.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:23.031Z"
+  },
+  "GetDutchie/dutchie-nexus#1694": {
+    "title": "feat: migrate products/strains to Nexus NEXUS-482",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/api/products/strains.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/_migrated/back-office/strains/components/strain-list.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/_migrated/back-office/strains/components/strain-list.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/_migrated/back-office/strains/components/strain-form.test.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/components/strain-form.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/components/strain-list.test.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/components/strain-list.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/detail-page.test.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/page.test.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/page.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/strain-columns.test.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/strain-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/strain-filter.test.ts",
+      "apps/nexus/src/_migrated/back-office/strains/strain-filter.ts",
+      "apps/nexus/src/_migrated/back-office/strains/strain-form-schema.test.ts",
+      "apps/nexus/src/_migrated/back-office/strains/strain-form-schema.ts",
+      "apps/nexus/src/api/products/strains.test.ts",
+      "apps/nexus/src/api/products/strains.ts",
+      "apps/nexus/src/design-system/icon-inventory.ts",
+      "apps/nexus/src/pages/products/page.test.tsx",
+      "apps/nexus/src/pages/products/tabs.ts",
+      "apps/nexus/src/routes.tsx",
+      "apps/nexus/src/stores/pinnable-icons.tsx",
+      "docs/phase2-bo-migration/bo-page-migration-playbook.md",
+      "docs/phase2-bo-migration/ds-foundation-backlog.md",
+      "docs/phase2-bo-migration/rollout-batches.md",
+      "docs/phase2-bo-migration/tracker.md",
+      "packages/webapi-client/src/rest/nexus/index.ts",
+      "packages/webapi-client/src/rest/nexus/products.test.ts",
+      "packages/webapi-client/src/rest/nexus/products.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:23.770Z"
+  },
+  "GetDutchie/dutchie-nexus#1680": {
+    "title": "feat(audits): add product verification panel NEXUS-452",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/components/audit-detail-header.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/product-details/audit-product-details-content.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/api/inventory/audits.test.tsx",
+      "apps/nexus/src/api/inventory/audits.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/components/audit-detail-header.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/audit-detail-header.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/audit-detail-screen.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/audit-detail-screen.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/audit-detail-panels.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/audit-detail-panels.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/counting-workspace.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/standard-count-sheet.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/standard-count-sheet.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/count-side-panel.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/count-side-panel.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/page.test-data.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/page.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/audit-product-details-content.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/audit-product-details-content.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/other-packages-section.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/other-packages-section.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/product-details-side-panel.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/product-details-side-panel.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/product-verification-details.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/product-details/product-verification-details.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/quick-entry/quick-entry-grid.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/quick-entry/quick-entry-grid.tsx",
+      "packages/webapi-client/src/rest/nexus/audits.test.ts",
+      "packages/webapi-client/src/rest/nexus/audits.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:24.513Z"
+  },
+  "GetDutchie/dutchie-nexus#1671": {
+    "title": "fix(audits): show resolved rows correctly NEXUS-447",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/domain/scan-command.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/columns/audit-count-sheet-cells.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/columns/audit-count-sheet-cells.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/domain/audit-row-policy.test.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/domain/audit-row-policy.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/domain/scan-command.test.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/domain/scan-command.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-scan-session.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-scan-session.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/packages-tab.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/packages-tab.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/page.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/quick-entry/quick-entry-grid.test.tsx",
+      "packages/webapi-client/src/rest/nexus/audits.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:25.221Z"
+  },
+  "GetDutchie/brands-portal#928": {
+    "title": "feat(orders): [3/3] order detail items table alignment and substitute modal BRAND-3043",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/detail/items-table/styled.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-columns.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/detail/catalog-select-modal/index.tsx",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/styled.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/catalog-select-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/catalog-select-modal/columns.tsx",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-item-actions.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/detail/catalog-select-modal/columns.tsx",
+      "src/pages/orders/detail/catalog-select-modal/index.tsx",
+      "src/pages/orders/detail/catalog-select-modal/styled.ts",
+      "src/pages/orders/detail/items-table/rows.test.ts",
+      "src/pages/orders/detail/items-table/rows.ts",
+      "src/pages/orders/detail/items-table/styled.test.ts",
+      "src/pages/orders/detail/items-table/styled.ts",
+      "src/pages/orders/detail/items-table/use-columns.tsx",
+      "src/pages/orders/detail/items-table/use-item-actions.ts",
+      "src/pages/orders/detail/items-table/utils/format.ts",
+      "src/pages/orders/detail/items-table/utils/index.test.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:25.936Z"
+  },
+  "GetDutchie/brands-portal#939": {
+    "title": "feat(menu): add Dutchie POS ordering guidance BRAND-3663",
+    "qualityComments": [
+      {
+        "path": "src/pages/public-brand-menu/public-wholesale-menu-route.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-pos-guidance-route.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/App.test.tsx",
+      "src/App.tsx",
+      "src/pages/public-brand-menu/index.tsx",
+      "src/pages/public-brand-menu/public-menu-guidance-context.ts",
+      "src/pages/public-brand-menu/public-pos-guidance-route.tsx",
+      "src/pages/public-brand-menu/public-retailer-commerce-shell.tsx",
+      "src/pages/public-brand-menu/public-wholesale-menu-route.tsx",
+      "src/pages/public-brand-menu/styled.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:26.724Z"
+  },
+  "GetDutchie/brands-portal#931": {
+    "title": "feat(menu): build public PO editor and Add items modal BRAND-3661",
+    "qualityComments": [
+      {
+        "path": "src/pages/public-brand-menu/use-public-order-submission.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/public-brand-menu/use-public-order-submission.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.test.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-order-context.tsx",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/public-brand-menu/use-public-order-submission.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-menu-search-input.tsx",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-wholesale-product-grid.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-order-editor-stage.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/public-brand-menu/public-order-lines.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/public-brand-menu/public-add-items-modal.tsx",
+      "src/pages/public-brand-menu/public-menu-search-input.test.tsx",
+      "src/pages/public-brand-menu/public-menu-search-input.tsx",
+      "src/pages/public-brand-menu/public-order-context.test.tsx",
+      "src/pages/public-brand-menu/public-order-context.tsx",
+      "src/pages/public-brand-menu/public-order-editor-stage.tsx",
+      "src/pages/public-brand-menu/public-order-lines.test.tsx",
+      "src/pages/public-brand-menu/public-order-lines.tsx",
+      "src/pages/public-brand-menu/public-order-review-route.test.tsx",
+      "src/pages/public-brand-menu/public-order-review-route.tsx",
+      "src/pages/public-brand-menu/public-order-summary.tsx",
+      "src/pages/public-brand-menu/public-retailer-checkout-route.test.tsx",
+      "src/pages/public-brand-menu/public-retailer-checkout-route.tsx",
+      "src/pages/public-brand-menu/public-wholesale-menu-route.test.tsx",
+      "src/pages/public-brand-menu/public-wholesale-menu-route.tsx",
+      "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.test.ts",
+      "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.ts",
+      "src/pages/public-brand-menu/public-wholesale-product-grid.test.tsx",
+      "src/pages/public-brand-menu/public-wholesale-product-grid.tsx",
+      "src/pages/public-brand-menu/styled.ts",
+      "src/pages/public-brand-menu/use-public-order-submission.test.tsx",
+      "src/pages/public-brand-menu/use-public-order-submission.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:27.446Z"
+  },
+  "GetDutchie/brands-portal#927": {
+    "title": "feat(orders): [2/3] multi-offer catalog modal and order create items table BRAND-3043",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/create/catalog-select-modal/use-catalog-data.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/styled.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/qty-cell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/styled.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/qty-cell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/catalog-select-modal/columns.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/qty-cell.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/create/create-products-card.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/use-create-order-form.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/orders/create/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/utils.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/create/catalog-select-modal/columns.test.tsx",
+      "src/pages/orders/create/catalog-select-modal/columns.tsx",
+      "src/pages/orders/create/catalog-select-modal/index.test.tsx",
+      "src/pages/orders/create/catalog-select-modal/index.tsx",
+      "src/pages/orders/create/catalog-select-modal/styled.ts",
+      "src/pages/orders/create/catalog-select-modal/use-catalog-data.test.ts",
+      "src/pages/orders/create/catalog-select-modal/use-catalog-data.ts",
+      "src/pages/orders/create/create-order-body.test.tsx",
+      "src/pages/orders/create/create-products-card.test.tsx",
+      "src/pages/orders/create/create-products-card.tsx",
+      "src/pages/orders/create/index.test.tsx",
+      "src/pages/orders/create/index.tsx",
+      "src/pages/orders/create/nudge-utils.test.ts",
+      "src/pages/orders/create/nudge-utils.ts",
+      "src/pages/orders/create/price-cell.tsx",
+      "src/pages/orders/create/qty-cell.test.tsx",
+      "src/pages/orders/create/qty-cell.tsx",
+      "src/pages/orders/create/styled.test.ts",
+      "src/pages/orders/create/styled.ts",
+      "src/pages/orders/create/types.ts",
+      "src/pages/orders/create/use-columns.tsx",
+      "src/pages/orders/create/use-create-order-form.test.ts",
+      "src/pages/orders/create/use-create-order-form.ts",
+      "src/pages/orders/create/utils.test.ts",
+      "src/pages/orders/create/utils.ts",
+      "src/pages/orders/utils.test.ts",
+      "src/pages/orders/utils.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:28.230Z"
+  },
+  "GetDutchie/brands-portal#926": {
+    "title": "feat(orders): [1/3] wholesale variants GraphQL ops, contracts, and shared utils BRAND-3043",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/contracts/purchase-orders.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/orders/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/utils.ts",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "jest/jest.setup.ts",
+      "src/api/operations/mutations/orders/save-draft-purchase-order.gql",
+      "src/api/operations/queries/orders/get-purchase-order.gql",
+      "src/api/operations/queries/products/search-library-products.gql",
+      "src/contracts/purchase-orders.test.ts",
+      "src/contracts/purchase-orders.ts",
+      "src/pages/orders/create/types.ts",
+      "src/pages/orders/utils.test.ts",
+      "src/pages/orders/utils.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:28.946Z"
+  },
+  "GetDutchie/alchemy#1113": {
+    "title": "feat(pipeline): New Sale badge/filter includes Prospect-account opportunities regardless of type",
+    "qualityComments": [
+      {
+        "path": "apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.live.test.ts",
+      "apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts",
+      "apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts",
+      "apps/gtm/pipeline/web/src/features/pipeline/DealDetailPanel.test.tsx",
+      "apps/gtm/pipeline/web/src/features/pipeline/PipelineView.helpers.test.ts",
+      "apps/gtm/pipeline/web/src/features/pipeline/TodaysFocus.test.tsx",
+      "libs/contracts/pipeline/src/pipeline.ts",
+      "libs/ui/src/components/sales/DealCard.test.tsx",
+      "libs/ui/src/components/sales/DealCard.tsx",
+      "libs/ui/src/components/sales/types.ts"
+    ],
+    "fetchedAt": "2026-09-22T22:44:29.669Z"
+  }
+}
