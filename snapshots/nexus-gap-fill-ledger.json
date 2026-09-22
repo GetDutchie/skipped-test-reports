@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1789995929.144629",
+  "last_processed_ts": "1790082315.429459",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
-      "description": "HIGH \u2014 PR #1646 + PR #1647: both create/extend audit-form-sheet.tsx, a new 660-line shared sheet driving both the Create Audit flow and the Create/Edit Schedule flow. Zero unit tests across either PR; report itself frames this as a new user-facing flow with no coverage and recommends a JIRA follow-up.",
+      "description": "HIGH — PR #1646 + PR #1647: both create/extend audit-form-sheet.tsx, a new 660-line shared sheet driving both the Create Audit flow and the Create/Edit Schedule flow. Zero unit tests across either PR; report itself frames this as a new user-facing flow with no coverage and recommends a JIRA follow-up.",
       "blocker": "Multi-step form-sheet component driving two distinct user flows (Create Audit / Create-Edit Schedule) with no existing test scaffolding; Nexus has no e2e/Playwright CI hook to fall back on, and meaningful unit coverage at this scale is out of proportion for one one-gap-one-PR candidate. Needs human prioritization (report's own suggestion: file a JIRA ticket) rather than an automated gap-fill attempt.",
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
@@ -13,8 +13,8 @@
     },
     "1583-analytics-semantic-view-descriptions": {
       "classification": "unclear",
-      "description": "Stale coverage risk \u2014 PR #1583: describe-semantic-view.ts, run-semantic-query.ts, and webapi-client/rest/nexus/semantic.ts all have existing *.test.ts files that weren't updated when sv_applied_discount was onboarded as the 4th semantic view. Report: \"worth confirming the new view name is actually asserted somewhere, not just described in prose.\"",
-      "blocker": "On inspection, every changed line across all 3 files is Zod .describe()/doc-comment prose only \u2014 no FE-side logic or hardcoded view-name allowlist exists to assert against. The actual acceptance of sv_applied_discount as a valid view name is validated server-side (webapi/leaflogix C# allowlist, a different repo), which this repo's Vitest suite can't exercise. Writing a test that merely re-asserts the changed prose string would be vacuous (fails the red-green-revert bar). Needs a human call: either accept as already-covered (no FE behavior changed) or file a cross-repo integration-test follow-up against webapi/leaflogix.",
+      "description": "Stale coverage risk — PR #1583: describe-semantic-view.ts, run-semantic-query.ts, and webapi-client/rest/nexus/semantic.ts all have existing *.test.ts files that weren't updated when sv_applied_discount was onboarded as the 4th semantic view. Report: \"worth confirming the new view name is actually asserted somewhere, not just described in prose.\"",
+      "blocker": "On inspection, every changed line across all 3 files is Zod .describe()/doc-comment prose only — no FE-side logic or hardcoded view-name allowlist exists to assert against. The actual acceptance of sv_applied_discount as a valid view name is validated server-side (webapi/leaflogix C# allowlist, a different repo), which this repo's Vitest suite can't exercise. Writing a test that merely re-asserts the changed prose string would be vacuous (fails the red-green-revert bar). Needs a human call: either accept as already-covered (no FE behavior changed) or file a cross-repo integration-test follow-up against webapi/leaflogix.",
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
