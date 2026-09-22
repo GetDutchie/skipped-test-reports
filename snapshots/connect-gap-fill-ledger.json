@@ -1,123 +1,150 @@
 {
-  "schema_version": 1,
-  "last_processed_ts": "1789989272.461439",
-  "entries": {
-    "862-src/auth/use-assume-role-exit.ts": {
-      "classification": "e2e-out-of-scope",
-      "description": "Assume-role banner/exit flow has thorough unit coverage (397-line use-assume-role-exit.test.ts: token swap + apolloClient.clearStore(), fail-closed on missing/expired/unparseable expiresAt, re-entrant exit() guard, countdown/auto-exit timers), but the real token swap + window.location.href redirect has no Playwright spec; e2e/tests/settings/users.test.ts was not extended.",
-      "blocker": "Same e2e-execution blocker as the #888/#847 entries below \u2014 confirmed again this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed'), and e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
-      "first_seen": "2026-09-16",
-      "last_seen": "2026-09-16",
-      "times_seen": 1,
-      "last_notified": "2026-09-16"
-    },
-    "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
-      "classification": "e2e-out-of-scope",
-      "description": "Capability-session write path (invite exchange \u2192 cookie \u2192 menu fetch) is unit-tested via index.test.tsx (confirmed: StrictMode dedup, no re-exchange on refetch, unauthorized/unavailable states all covered), but has no e2e spec exercising the real cross-origin credentials:'include' contract.",
-      "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live again this run, matches e2e/COVERAGE-GAPS.md's own documented blocker). armageddon-web was also still in 'waiting' proc status at run time.",
-      "first_seen": "2026-09-15",
-      "last_seen": "2026-09-15",
-      "times_seen": 1,
-      "last_notified": "2026-09-15"
-    },
-    "847-src/pages/ad-exclusions/index.tsx": {
-      "classification": "e2e-out-of-scope",
-      "description": "New Ad Exclusions list page has solid unit coverage (index.test.tsx, use-ad-exclusions-data.test.ts, use-columns.test.tsx) but no e2e spec or page object.",
-      "blocker": "Same e2e-execution blocker as the #888 entry above \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
-      "first_seen": "2026-09-15",
-      "last_seen": "2026-09-15",
-      "times_seen": 1,
-      "last_notified": "2026-09-15"
-    },
-    "888-rsbuild.config.ts": {
-      "classification": "unclear",
-      "description": "New /api/v2/rest/public proxy rule in rsbuild.config.ts is config-only and unverified by any test.",
-      "blocker": "rsbuild.config.ts cannot be imported under Jest at all \u2014 confirmed live: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module, because its internals rely on import.meta.url handling that Jest's CJS transform doesn't support. A real behavioral test isn't feasible without larger test-infra work (e.g. a dedicated transform/mock for @rsbuild/core), and a text/regex-based assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment.",
-      "first_seen": "2026-09-15",
-      "last_seen": "2026-09-15",
-      "times_seen": 1,
-      "last_notified": "2026-09-15"
-    },
-    "912-e2e/tests/": {
-      "classification": "e2e-out-of-scope",
-      "description": "The whole alpha public-menu ordering flow (cart \u2192 checkout \u2192 review, spanning #890/#912/#913/#916) shipped with unit tests only; no Playwright spec exists for this new user-facing purchase path.",
-      "blocker": "Confirmed live this run: armageddon-web proc status is 'waiting' (on armageddon-dev-accounts-seed, armageddon-search-indexes), and even once healthy, e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker \u2014 this constellation runs development, so global setup would 404 before any new spec could run regardless of proc health.",
-      "first_seen": "2026-09-17",
-      "last_seen": "2026-09-17",
-      "times_seen": 1,
-      "last_notified": "2026-09-17"
-    },
-    "907-src/constants/env.ts": {
-      "classification": "needs-production-change",
-      "description": "New PUBLIC_BRAND_OPS_API_URL plus the requiredEnvVars validation path (throws on any missing required var) has no env.test.ts anywhere in src/constants/, so a missing-var failure is unasserted.",
-      "blocker": "src/constants/env.ts reads import.meta.env directly and is unconditionally jest.mock()'d in jest/jest.setup.ts (`jest.mock('../src/constants/env', () => require('./mocks/env'))`) specifically to dodge this: confirmed live that unmocking and requiring the real module under Jest throws `SyntaxError: Cannot use 'import.meta' outside a module` from inside @swc/jest's CommonJS transform (same root cause as this ledger's existing 888-rsbuild.config.ts entry). Testing the real requiredEnvVars validation path needs either a Jest/SWC transform capable of handling import.meta syntax, or refactoring env.ts to accept an injectable env source \u2014 both are production/test-infra changes out of scope for a test-file-only PR.",
-      "first_seen": "2026-09-17",
-      "last_seen": "2026-09-17",
-      "times_seen": 1,
-      "last_notified": "2026-09-17"
-    },
-    "914-src/pages/public-brand-menu/public-order-submission.ts": {
-      "classification": "e2e-out-of-scope",
-      "description": "New GraphQL write path for a public, unauthenticated purchase-order submission flow (#914); unit coverage is thorough but mocks the mutation, and there is no Playwright spec anywhere under e2e/tests/ for the public brand menu.",
-      "blocker": "Same e2e-execution blocker as this ledger's existing #912/#888/#847/#862 entries \u2014 e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy. COVERAGE-GAPS.md additionally documents the Playwright suite as \"currently red on every branch\" because pnpm codegen fails against a drifted Armageddon schema, independent of the RAILS_ENV gate.",
-      "first_seen": "2026-09-18",
-      "last_seen": "2026-09-18",
-      "times_seen": 1,
-      "last_notified": "2026-09-18"
-    },
-    "863-src/pages/settings/users/use-columns.tsx-e2e": {
-      "classification": "e2e-out-of-scope",
-      "description": "New assume-role row action on an auth/permission path (#863); strong unit coverage added, but e2e/tests/settings/users.test.ts was not updated, so there is no end-to-end assertion that assuming a role actually works.",
-      "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode, and the suite is documented red on every branch regardless (e2e/COVERAGE-GAPS.md).",
-      "first_seen": "2026-09-18",
-      "last_seen": "2026-09-18",
-      "times_seen": 1,
-      "last_notified": "2026-09-18"
-    },
-    "930-src/pages/catalog/product-details/product-form-helpers.ts": {
-      "classification": "needs-production-change",
-      "description": "Stale coverage risk: src/pages/catalog/product-details/product-form-helpers.ts changed in #930; test product-form-helpers.test.ts not updated. getWholesaleUomSingularLabel lost its last app-code caller in #930 and is now kept alive only by its own test, which still asserts the superseded label format.",
-      "blocker": "Confirmed live: grep of the whole src/ tree shows getWholesaleUomSingularLabel has zero remaining callers outside its own definition and test \u2014 the function is dead app code. The only way to close this gap is to delete the orphaned function (and its test), which is a production-code change, not something a test-file-only PR can do.",
-      "first_seen": "2026-09-18",
-      "last_seen": "2026-09-18",
-      "times_seen": 1,
-      "last_notified": "2026-09-18"
-    },
-    "923-src/pages/orders/list/use-columns.tsx-e2e": {
-      "classification": "e2e-out-of-scope",
-      "description": "Stale coverage risk: src/pages/orders/list/use-columns.tsx changed in #923; test e2e/tests/smoke/orders.test.ts not updated. The smoke spec asserts status/purchaseOrderNumber/sourceDposLspName column headers by data-field and has no entry for the new sourceChannel column, so the flag-gated Source column is invisible to e2e. (Distinct from the #923 unit-level gap on src/pages/orders/list/index.tsx closed this cycle by PR #934 \u2014 that PR closed the flag\u2192column unit-level plumbing gap; this entry is specifically about the e2e smoke spec.)",
-      "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries.",
-      "first_seen": "2026-09-18",
-      "last_seen": "2026-09-18",
-      "times_seen": 1,
-      "last_notified": "2026-09-18"
-    },
-    "863-src/pages/settings/users/index.tsx+use-columns.tsx-e2e": {
-      "classification": "e2e-out-of-scope",
-      "description": "Stale coverage risk: src/pages/settings/users/index.tsx + use-columns.tsx changed in #863; e2e/tests/settings/users.test.ts last updated outside this report's lookback window. A new row-actions column and assume-role modal were added to the Users grid; the e2e spec still only covers list render and the create-user form. Kept as its own ledger entry, distinct from the 863-...-e2e gap entry above (same PR, but a stale-coverage-risk on an existing e2e spec is a different fix shape than a missing unit test, per this prompt's granularity rule that a stale entry never merges with a gap entry).",
-      "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries.",
-      "first_seen": "2026-09-18",
-      "last_seen": "2026-09-18",
-      "times_seen": 1,
-      "last_notified": "2026-09-18"
-    },
-    "914-src/pages/public-brand-menu/public-order-context.tsx": {
-      "classification": "unclear",
-      "description": "Stale coverage risk (from the report's continuation message): src/pages/public-brand-menu/public-order-context.tsx changed in #914 (+90 lines of submission/cart state) \u2014 test public-wholesale-menu-route.test.tsx not updated; the route consumes this provider and its expectations predate the new submission state shape.",
-      "blocker": "Not a hard blocker \u2014 genuinely unclear on inspection, not deferred for lack of trying. public-order-context.tsx (413 lines) and public-wholesale-menu-route.test.tsx (302 lines) are both large, and #914's real diff (checked via `gh pr diff 914`) touches many adjacent files (App.test.tsx, a new public-order-confirmation-route.test.tsx, etc.) in ways that make it hard to state precisely, within this run's remaining budget, exactly which new submission/cart-state assertions the route test is missing versus which behavior is already covered elsewhere (e.g. the new confirmation-route test added in the same PR). Needs a human to read the #914 diff in full and decide what (if anything) belongs in public-wholesale-menu-route.test.tsx specifically, rather than a guess from this run.",
-      "first_seen": "2026-09-18",
-      "last_seen": "2026-09-18",
-      "times_seen": 1,
-      "last_notified": "2026-09-18"
-    },
-    "924-e2e/tests/orders/": {
-      "classification": "e2e-out-of-scope",
-      "description": "feat(orders): make public menu POs read-only BRAND-3595 (#924) ships a new user-facing read-only order-detail flow with zero Playwright coverage; there is no e2e/tests/orders/ directory at all (existing suites: catalog, intelligence, promotions, settings, smoke). Unit coverage for this same PR was closed this cycle via PRs #940/#941/#942.",
-      "blocker": "Confirmed live this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed', which itself failed with exit status 1), and dutchie-api/brands-portal procs are failed too. Even with those healthy, e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
-      "first_seen": "2026-09-21",
-      "last_seen": "2026-09-21",
-      "times_seen": 1,
-      "last_notified": "2026-09-21"
+    "schema_version": 1,
+    "last_processed_ts": "1790075720.167739",
+    "entries": {
+        "862-src/auth/use-assume-role-exit.ts": {
+            "classification": "e2e-out-of-scope",
+            "description": "Assume-role banner/exit flow has thorough unit coverage (397-line use-assume-role-exit.test.ts: token swap + apolloClient.clearStore(), fail-closed on missing/expired/unparseable expiresAt, re-entrant exit() guard, countdown/auto-exit timers), but the real token swap + window.location.href redirect has no Playwright spec; e2e/tests/settings/users.test.ts was not extended.",
+            "blocker": "Same e2e-execution blocker as the #888/#847 entries below \u2014 confirmed again this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed'), and e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
+            "first_seen": "2026-09-16",
+            "last_seen": "2026-09-16",
+            "times_seen": 1,
+            "last_notified": "2026-09-16"
+        },
+        "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
+            "classification": "e2e-out-of-scope",
+            "description": "Capability-session write path (invite exchange \u2192 cookie \u2192 menu fetch) is unit-tested via index.test.tsx (confirmed: StrictMode dedup, no re-exchange on refetch, unauthorized/unavailable states all covered), but has no e2e spec exercising the real cross-origin credentials:'include' contract.",
+            "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live again this run, matches e2e/COVERAGE-GAPS.md's own documented blocker). armageddon-web was also still in 'waiting' proc status at run time.",
+            "first_seen": "2026-09-15",
+            "last_seen": "2026-09-15",
+            "times_seen": 1,
+            "last_notified": "2026-09-15"
+        },
+        "847-src/pages/ad-exclusions/index.tsx": {
+            "classification": "e2e-out-of-scope",
+            "description": "New Ad Exclusions list page has solid unit coverage (index.test.tsx, use-ad-exclusions-data.test.ts, use-columns.test.tsx) but no e2e spec or page object.",
+            "blocker": "Same e2e-execution blocker as the #888 entry above \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
+            "first_seen": "2026-09-15",
+            "last_seen": "2026-09-15",
+            "times_seen": 1,
+            "last_notified": "2026-09-15"
+        },
+        "888-rsbuild.config.ts": {
+            "classification": "unclear",
+            "description": "New /api/v2/rest/public proxy rule in rsbuild.config.ts is config-only and unverified by any test.",
+            "blocker": "rsbuild.config.ts cannot be imported under Jest at all \u2014 confirmed live: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module, because its internals rely on import.meta.url handling that Jest's CJS transform doesn't support. A real behavioral test isn't feasible without larger test-infra work (e.g. a dedicated transform/mock for @rsbuild/core), and a text/regex-based assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment.",
+            "first_seen": "2026-09-15",
+            "last_seen": "2026-09-15",
+            "times_seen": 1,
+            "last_notified": "2026-09-15"
+        },
+        "912-e2e/tests/": {
+            "classification": "e2e-out-of-scope",
+            "description": "The whole alpha public-menu ordering flow (cart \u2192 checkout \u2192 review, spanning #890/#912/#913/#916) shipped with unit tests only; no Playwright spec exists for this new user-facing purchase path.",
+            "blocker": "Confirmed live this run: armageddon-web proc status is 'waiting' (on armageddon-dev-accounts-seed, armageddon-search-indexes), and even once healthy, e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker \u2014 this constellation runs development, so global setup would 404 before any new spec could run regardless of proc health.",
+            "first_seen": "2026-09-17",
+            "last_seen": "2026-09-17",
+            "times_seen": 1,
+            "last_notified": "2026-09-17"
+        },
+        "907-src/constants/env.ts": {
+            "classification": "needs-production-change",
+            "description": "New PUBLIC_BRAND_OPS_API_URL plus the requiredEnvVars validation path (throws on any missing required var) has no env.test.ts anywhere in src/constants/, so a missing-var failure is unasserted.",
+            "blocker": "src/constants/env.ts reads import.meta.env directly and is unconditionally jest.mock()'d in jest/jest.setup.ts (`jest.mock('../src/constants/env', () => require('./mocks/env'))`) specifically to dodge this: confirmed live that unmocking and requiring the real module under Jest throws `SyntaxError: Cannot use 'import.meta' outside a module` from inside @swc/jest's CommonJS transform (same root cause as this ledger's existing 888-rsbuild.config.ts entry). Testing the real requiredEnvVars validation path needs either a Jest/SWC transform capable of handling import.meta syntax, or refactoring env.ts to accept an injectable env source \u2014 both are production/test-infra changes out of scope for a test-file-only PR.",
+            "first_seen": "2026-09-17",
+            "last_seen": "2026-09-17",
+            "times_seen": 1,
+            "last_notified": "2026-09-17"
+        },
+        "914-src/pages/public-brand-menu/public-order-submission.ts": {
+            "classification": "e2e-out-of-scope",
+            "description": "New GraphQL write path for a public, unauthenticated purchase-order submission flow (#914); unit coverage is thorough but mocks the mutation, and there is no Playwright spec anywhere under e2e/tests/ for the public brand menu.",
+            "blocker": "Same e2e-execution blocker as this ledger's existing #912/#888/#847/#862 entries \u2014 e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy. COVERAGE-GAPS.md additionally documents the Playwright suite as \"currently red on every branch\" because pnpm codegen fails against a drifted Armageddon schema, independent of the RAILS_ENV gate.",
+            "first_seen": "2026-09-18",
+            "last_seen": "2026-09-18",
+            "times_seen": 1,
+            "last_notified": "2026-09-18"
+        },
+        "863-src/pages/settings/users/use-columns.tsx-e2e": {
+            "classification": "e2e-out-of-scope",
+            "description": "New assume-role row action on an auth/permission path (#863); strong unit coverage added, but e2e/tests/settings/users.test.ts was not updated, so there is no end-to-end assertion that assuming a role actually works.",
+            "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode, and the suite is documented red on every branch regardless (e2e/COVERAGE-GAPS.md).",
+            "first_seen": "2026-09-18",
+            "last_seen": "2026-09-18",
+            "times_seen": 1,
+            "last_notified": "2026-09-18"
+        },
+        "930-src/pages/catalog/product-details/product-form-helpers.ts": {
+            "classification": "needs-production-change",
+            "description": "Stale coverage risk: src/pages/catalog/product-details/product-form-helpers.ts changed in #930; test product-form-helpers.test.ts not updated. getWholesaleUomSingularLabel lost its last app-code caller in #930 and is now kept alive only by its own test, which still asserts the superseded label format.",
+            "blocker": "Confirmed live: grep of the whole src/ tree shows getWholesaleUomSingularLabel has zero remaining callers outside its own definition and test \u2014 the function is dead app code. The only way to close this gap is to delete the orphaned function (and its test), which is a production-code change, not something a test-file-only PR can do.",
+            "first_seen": "2026-09-18",
+            "last_seen": "2026-09-18",
+            "times_seen": 1,
+            "last_notified": "2026-09-18"
+        },
+        "923-src/pages/orders/list/use-columns.tsx-e2e": {
+            "classification": "e2e-out-of-scope",
+            "description": "Stale coverage risk: src/pages/orders/list/use-columns.tsx changed in #923; test e2e/tests/smoke/orders.test.ts not updated. The smoke spec asserts status/purchaseOrderNumber/sourceDposLspName column headers by data-field and has no entry for the new sourceChannel column, so the flag-gated Source column is invisible to e2e. (Distinct from the #923 unit-level gap on src/pages/orders/list/index.tsx closed this cycle by PR #934 \u2014 that PR closed the flag\u2192column unit-level plumbing gap; this entry is specifically about the e2e smoke spec.)",
+            "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries.",
+            "first_seen": "2026-09-18",
+            "last_seen": "2026-09-18",
+            "times_seen": 1,
+            "last_notified": "2026-09-18"
+        },
+        "863-src/pages/settings/users/index.tsx+use-columns.tsx-e2e": {
+            "classification": "e2e-out-of-scope",
+            "description": "Stale coverage risk: src/pages/settings/users/index.tsx + use-columns.tsx changed in #863; e2e/tests/settings/users.test.ts last updated outside this report's lookback window. A new row-actions column and assume-role modal were added to the Users grid; the e2e spec still only covers list render and the create-user form. Kept as its own ledger entry, distinct from the 863-...-e2e gap entry above (same PR, but a stale-coverage-risk on an existing e2e spec is a different fix shape than a missing unit test, per this prompt's granularity rule that a stale entry never merges with a gap entry).",
+            "blocker": "Same e2e-execution blocker as this ledger's other e2e-out-of-scope entries.",
+            "first_seen": "2026-09-18",
+            "last_seen": "2026-09-18",
+            "times_seen": 1,
+            "last_notified": "2026-09-18"
+        },
+        "914-src/pages/public-brand-menu/public-order-context.tsx": {
+            "classification": "unclear",
+            "description": "Stale coverage risk (from the report's continuation message): src/pages/public-brand-menu/public-order-context.tsx changed in #914 (+90 lines of submission/cart state) \u2014 test public-wholesale-menu-route.test.tsx not updated; the route consumes this provider and its expectations predate the new submission state shape.",
+            "blocker": "Not a hard blocker \u2014 genuinely unclear on inspection, not deferred for lack of trying. public-order-context.tsx (413 lines) and public-wholesale-menu-route.test.tsx (302 lines) are both large, and #914's real diff (checked via `gh pr diff 914`) touches many adjacent files (App.test.tsx, a new public-order-confirmation-route.test.tsx, etc.) in ways that make it hard to state precisely, within this run's remaining budget, exactly which new submission/cart-state assertions the route test is missing versus which behavior is already covered elsewhere (e.g. the new confirmation-route test added in the same PR). Needs a human to read the #914 diff in full and decide what (if anything) belongs in public-wholesale-menu-route.test.tsx specifically, rather than a guess from this run.",
+            "first_seen": "2026-09-18",
+            "last_seen": "2026-09-18",
+            "times_seen": 1,
+            "last_notified": "2026-09-18"
+        },
+        "924-e2e/tests/orders/": {
+            "classification": "e2e-out-of-scope",
+            "description": "feat(orders): make public menu POs read-only BRAND-3595 (#924) ships a new user-facing read-only order-detail flow with zero Playwright coverage; there is no e2e/tests/orders/ directory at all (existing suites: catalog, intelligence, promotions, settings, smoke). Unit coverage for this same PR was closed this cycle via PRs #940/#941/#942.",
+            "blocker": "Confirmed live this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed', which itself failed with exit status 1), and dutchie-api/brands-portal procs are failed too. Even with those healthy, e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
+            "first_seen": "2026-09-21",
+            "last_seen": "2026-09-21",
+            "times_seen": 1,
+            "last_notified": "2026-09-21"
+        },
+        "931-e2e/tests/": {
+            "classification": "e2e-out-of-scope",
+            "description": "Two new public-facing wholesale PO flows (public PO editor/Add-items modal from #931, Dutchie POS ordering guidance from #939) shipped with no Playwright spec; e2e/tests/ still only holds catalog, intelligence, promotions, settings, smoke \u2014 no public-menu e2e directory exists at all.",
+            "blocker": "Confirmed live this run: armageddon-web proc status is 'waiting' (on armageddon-vape-seed/armageddon-dev-accounts-seed/armageddon-search-indexes, all still 'working' at run time), and e2e/global-setup.ts's seed step is gated on RAILS_ENV=test per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
+            "first_seen": "2026-09-22",
+            "last_seen": "2026-09-22",
+            "times_seen": 1,
+            "last_notified": "2026-09-22"
+        },
+        "927-src/pages/orders/create/price-cell.tsx": {
+            "classification": "unclear",
+            "description": "Stale coverage risk: price-cell.tsx's unit-label source was swapped from uomLabel to the variant-aware getItemUnitLabel helper in #927; price-cell.test.tsx never asserts the rendered per-unit label text, only cents formatting/parsing.",
+            "blocker": "Not a real blocker on the gap itself \u2014 confirmed closeable (render PriceCell with two row shapes producing different getItemUnitLabel outputs and assert the rendered label). This run's fan-out worker for this candidate ran out of its 1-hour budget before opening a PR (a workflow-orchestration limit, not a repo/test-infra blocker). Safe for the next run (or a human) to pick up directly; no open PR exists for it yet, so Step 3.5's collision check will not find it.",
+            "first_seen": "2026-09-22",
+            "last_seen": "2026-09-22",
+            "times_seen": 1,
+            "last_notified": "2026-09-22"
+        },
+        "939-src/pages/public-brand-menu/index.tsx": {
+            "classification": "unclear",
+            "description": "Stale coverage risk: PublicBrandMenuAdmission (index.tsx) now owns guidanceAccepted state and passes an acceptGuidance/guidanceAccepted outletContext memo to PublicRetailerCommerceShell in #939; index.test.tsx never asserts the accept\u2192persist transition (starts false, flips true via acceptGuidance(), stays true across nested route renders).",
+            "blocker": "Not a real blocker on the gap itself \u2014 confirmed closeable (render PublicBrandMenuRoute with nested probe routes reading useOutletContext() and assert the transition). This run's fan-out worker for this candidate ran out of its 1-hour budget before opening a PR (a workflow-orchestration limit, not a repo/test-infra blocker). Safe for the next run (or a human) to pick up directly; no open PR exists for it yet, so Step 3.5's collision check will not find it.",
+            "first_seen": "2026-09-22",
+            "last_seen": "2026-09-22",
+            "times_seen": 1,
+            "last_notified": "2026-09-22"
+        }
     }
-  }
 }
