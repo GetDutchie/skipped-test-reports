@@ -826,6 +826,113 @@
           "result": "Structural red-green (intermittent under load; CI supplied the red signal, single-worker isolation didn't naturally reproduce). 20/20 Vape isolation. Load-realistic (6-worker parallel, full metrc/ dir, pos-e2e constellation, 3/3)."
         }
       ]
+    },
+    "tests/registers/transactions/bulk-actions/close-out/bulk-close-out.spec.ts::[544724] User should be able to close out registers via bulk closeout": {
+      "test_name": "[544724] User should be able to close out registers via bulk closeout",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-22",
+          "jira_key": "QA-1083",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "RegisterBulkCloseOutPage notification locators used unscoped text= selectors; app's notification system never dedupes, so a repeated validation trigger can leave 2 identical toasts mounted, causing a Playwright strict-mode violation.",
+          "fix_applied": "index.ts: scoped successNotification/newBalanceGreaterErrorNotification/invalidRegisterInputsNotification to .last().",
+          "result": "10/20 Vape isolation \u2705 (10 consecutive reruns, none failed); load-realistic run (6-worker parallel, matching nightly's 8-shard/6-worker matrix, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "tests/products/inventory-v2/actions/create-packages.spec.ts::[654208] User should be able to create packages up to the max product quantity amount": {
+      "test_name": "[654208] User should be able to create packages up to the max product quantity amount",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-22",
+          "jira_key": "QA-1083",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "MultiFilterSelect.searchAndSelectOption used a hand-rolled retry() loop (e2e/utils/retry.ts) with a manual attempt counter wrapping a 60s waitFor 3x; hides retries from Playwright's reporting and can silently exceed the global test timeout.",
+          "fix_applied": "multi-filter-select.ts: replaced retry() with expect().toPass({timeout:180000}), same total budget (3x60s+2x1s), proper Playwright retry semantics/reporting.",
+          "result": "5/20 Vape isolation \u2705 (5 consecutive reruns, none failed); load-realistic run (6-worker parallel, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "tests/settings/integrations/metrc/clear-cache.spec.ts::[TODO] should show sync entity fields when METRC onboarding is enabled": {
+      "test_name": "[TODO] should show sync entity fields when METRC onboarding is enabled",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-22",
+          "jira_key": "QA-1083",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "enableOnboarding() updates a setting via API then the test immediately navigates; metrcConfig async parent query can still serve a pre-update cached value on first render (documented in clear-cache.tsx componentDidUpdate comment), so syncEntity select isn't rendered yet.",
+          "fix_applied": "clear-cache.spec.ts: wrapped goto+visibility-check in expect().toPass({timeout:60000}) reloading each retry, matching the established History-refresh pattern already in this file. Sibling-pattern fix also applied to '[TODO] should set sync start date...' (same file, same race).",
+          "result": "4/20 + 2/20 Vape isolation \u2705 (4 and 2 consecutive reruns respectively, none failed); load-realistic run (6-worker parallel, full metrc/ dir, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "tests/settings/integrations/metrc/clear-cache.spec.ts::[TODO] should set sync start date and update the displayed current sync date": {
+      "test_name": "[TODO] should set sync start date and update the displayed current sync date",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-22",
+          "jira_key": "QA-1083",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Identical enableOnboarding->goto race as '[TODO] should show sync entity fields' (sibling-pattern fix, same file, same shared helper) -- not itself in tonight's FAILED/FLAKEY list.",
+          "fix_applied": "Same fix as sibling: wrapped goto+visibility-check in expect().toPass({timeout:60000}).",
+          "result": "2/20 Vape isolation \u2705 (2 consecutive reruns, none failed); load-realistic run (6-worker parallel, full metrc/ dir, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "tests/products/inventory/add-lab-results.spec.ts::[544714] User should be able to manually add lab results": {
+      "test_name": "[544714] User should be able to manually add lab results",
+      "suite": "back-office",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [],
+      "process_gap_notes": [
+        {
+          "date": "2026-09-22",
+          "note": "Classified infra/backend-slow (dev-server/CPU contention): page.goto Timeout 120000ms exceeded twice then passed cleanly on 3rd Playwright retry (45.5s); isolation run passed cleanly; independent falsification subagent pass confirmed infra/backend-slow (not test-code-bug/real-app-bug/isolation-false-positive). No code change.",
+          "jira_key": "QA-1083"
+        }
+      ]
     }
   }
 }
