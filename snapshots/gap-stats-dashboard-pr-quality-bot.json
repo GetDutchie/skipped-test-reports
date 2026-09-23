@@ -447,5 +447,406 @@
       "libs/ui/src/components/sales/types.ts"
     ],
     "fetchedAt": "2026-09-22T22:44:29.669Z"
+  },
+  "GetDutchie/dutchie-nexus#1715": {
+    "title": "feat: migrate back-office /help/incidents to Nexus NEXUS-481",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/_migrated/back-office/incidents/page.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/_migrated/back-office/incidents/components/incident-card.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "PLAN.md",
+      "STATUS.md",
+      "apps/nexus/src/_migrated/back-office/incidents/__fixtures__/summary-no-incidents.json",
+      "apps/nexus/src/_migrated/back-office/incidents/__fixtures__/summary-response.json",
+      "apps/nexus/src/_migrated/back-office/incidents/__fixtures__/summary-sample-from-docs.json",
+      "apps/nexus/src/_migrated/back-office/incidents/__fixtures__/summary-with-active-impacts.json",
+      "apps/nexus/src/_migrated/back-office/incidents/components/component-filter.stories.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/components/component-filter.test.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/components/component-filter.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/components/fixtures.ts",
+      "apps/nexus/src/_migrated/back-office/incidents/components/incident-card.stories.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/components/incident-card.test.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/components/incident-card.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/page.test.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/page.tsx",
+      "apps/nexus/src/api/help/incidents.test.ts",
+      "apps/nexus/src/api/help/incidents.ts",
+      "apps/nexus/src/routes.tsx",
+      "docs/phase2-bo-migration/bo-page-migration-playbook.md",
+      "docs/phase2-bo-migration/ds-foundation-backlog.md",
+      "docs/phase2-bo-migration/rollout-batches.md",
+      "docs/phase2-bo-migration/tracker.md"
+    ],
+    "fetchedAt": "2026-09-23T19:17:41.334Z"
+  },
+  "GetDutchie/brands-portal#959": {
+    "title": "feat(link desk): add read-only bucket detail BRAND-3699",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/bucket-detail/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/use-bucket-ownership.ts",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/pages/link-desk/bucket-detail/index.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/App.test.tsx",
+      "src/App.tsx",
+      "src/pages/link-desk/bucket-detail/index.test.tsx",
+      "src/pages/link-desk/bucket-detail/index.tsx",
+      "src/pages/link-desk/bucket-detail/styled.ts",
+      "src/pages/link-desk/bucket-detail/utils.test.ts",
+      "src/pages/link-desk/bucket-detail/utils.ts",
+      "src/pages/link-desk/home/bucket-list.test.tsx",
+      "src/pages/link-desk/home/bucket-list.tsx",
+      "src/pages/link-desk/home/utils.test.ts",
+      "src/pages/link-desk/home/utils.ts",
+      "src/pages/link-desk/index.test.tsx",
+      "src/pages/link-desk/index.tsx",
+      "src/pages/link-desk/navigation.test.ts",
+      "src/pages/link-desk/navigation.ts",
+      "src/pages/link-desk/use-bucket-ownership.ts",
+      "src/routes/index.ts"
+    ],
+    "fetchedAt": "2026-09-23T19:17:42.112Z"
+  },
+  "GetDutchie/brands-portal#963": {
+    "title": "feat(link desk): add bucket product read adapters BRAND-3703",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/api/use-product-decisions.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/api/bucket-products.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/api/utils.ts",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/bucket-products.test.ts",
+      "src/pages/link-desk/api/bucket-products.ts",
+      "src/pages/link-desk/api/use-bucket-products.test.tsx",
+      "src/pages/link-desk/api/use-bucket-products.ts",
+      "src/pages/link-desk/api/use-product-decisions.ts",
+      "src/pages/link-desk/api/utils.ts"
+    ],
+    "fetchedAt": "2026-09-23T19:17:42.889Z"
+  },
+  "GetDutchie/brands-portal#958": {
+    "title": "feat(catalog): add unsaved changes warning on wholesale offers tab BRAND-3689",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/use-edit-product-form.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-details.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-details.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-details.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-details.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/contexts/navigation-blocker-context.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/shell/nexus-sidebar/nexus-sidebar.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-details.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-details.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/shell/nexus-sidebar/nexus-sidebar.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/contexts/navigation-blocker-context.test.tsx",
+      "src/contexts/navigation-blocker-context.tsx",
+      "src/pages/catalog/product-details/components/edit-product-header.test.tsx",
+      "src/pages/catalog/product-details/components/edit-product-header.tsx",
+      "src/pages/catalog/product-details/components/modals/styled.tsx",
+      "src/pages/catalog/product-details/components/modals/unsaved-changes-modal.test.tsx",
+      "src/pages/catalog/product-details/components/modals/unsaved-changes-modal.tsx",
+      "src/pages/catalog/product-details/components/styled.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+      "src/pages/catalog/product-details/product-details.test.tsx",
+      "src/pages/catalog/product-details/product-details.tsx",
+      "src/pages/catalog/product-details/use-edit-product-form.test.ts",
+      "src/pages/catalog/product-details/use-edit-product-form.ts",
+      "src/shell/index.tsx",
+      "src/shell/nexus-sidebar/nexus-sidebar.test.tsx",
+      "src/shell/nexus-sidebar/nexus-sidebar.tsx"
+    ],
+    "fetchedAt": "2026-09-23T19:17:43.696Z"
+  },
+  "GetDutchie/brands-portal#948": {
+    "title": "feat(link desk): activate real bucket list BRAND-3697",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/home/bucket-list.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/home/bucket-list.test.tsx",
+      "src/pages/link-desk/home/bucket-list.tsx",
+      "src/pages/link-desk/home/use-columns.tsx",
+      "src/pages/link-desk/index.test.tsx",
+      "src/pages/link-desk/index.tsx",
+      "src/pages/link-desk/styled.ts"
+    ],
+    "fetchedAt": "2026-09-23T19:17:44.465Z"
+  },
+  "GetDutchie/brands-portal#897": {
+    "title": "feat: show all RIBFD filter criteria + broaden eligible-items caveat BRAND-3597",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/detail/conditions-content.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/detail/product-filter-bullets.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/detail/product-filter-bullets.test.tsx",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/promotions/detail/product-filter-bullets.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/detail/index.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/promotions/get-brand-funded-discount.gql",
+      "src/pages/promotions/detail/conditions-content.test.tsx",
+      "src/pages/promotions/detail/conditions-content.tsx",
+      "src/pages/promotions/detail/conditions-info-box.test.tsx",
+      "src/pages/promotions/detail/conditions-info-box.tsx",
+      "src/pages/promotions/detail/index.test.tsx",
+      "src/pages/promotions/detail/index.tsx",
+      "src/pages/promotions/detail/product-filter-bullets.test.tsx",
+      "src/pages/promotions/detail/product-filter-bullets.tsx",
+      "src/pages/promotions/detail/retailer-products-placeholder.test.tsx",
+      "src/pages/promotions/detail/retailer-products-placeholder.tsx",
+      "src/pages/promotions/detail/retailer-products-tab.test.tsx",
+      "src/pages/promotions/detail/retailer-products-tab.tsx",
+      "src/pages/promotions/detail/styled.ts",
+      "src/pages/promotions/ribfd-inbox/index.test.tsx",
+      "src/pages/promotions/ribfd-inbox/index.tsx",
+      "src/pages/promotions/ribfd-inbox/ribfd-tile.tsx",
+      "src/pages/promotions/ribfd-inbox/use-ribfd-inbox-query.test.ts",
+      "src/pages/promotions/ribfd-inbox/use-ribfd-inbox-query.ts"
+    ],
+    "fetchedAt": "2026-09-23T19:17:45.244Z"
+  },
+  "GetDutchie/brands-portal#960": {
+    "title": "feat(link desk): add unified product decision adapter BRAND-3701",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/api/use-product-decisions.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/client.test.ts",
+      "src/pages/link-desk/api/client.ts",
+      "src/pages/link-desk/api/product-decisions.test.ts",
+      "src/pages/link-desk/api/product-decisions.ts",
+      "src/pages/link-desk/api/use-product-decisions.test.tsx",
+      "src/pages/link-desk/api/use-product-decisions.ts",
+      "src/pages/link-desk/api/utils.ts"
+    ],
+    "fetchedAt": "2026-09-23T19:17:46.079Z"
+  },
+  "GetDutchie/brands-portal#946": {
+    "title": "fix(link desk): bound auth diagnostic requests BRAND-3693",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/api/client.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/api/utils.ts",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/client.test.ts",
+      "src/pages/link-desk/api/client.ts",
+      "src/pages/link-desk/api/token-provider.test.ts",
+      "src/pages/link-desk/api/token-provider.ts",
+      "src/pages/link-desk/api/utils.test.ts",
+      "src/pages/link-desk/api/utils.ts",
+      "src/pages/link-desk/home/auth-diagnostic-modal/index.test.tsx",
+      "src/pages/link-desk/home/auth-diagnostic-modal/index.tsx"
+    ],
+    "fetchedAt": "2026-09-23T19:17:46.844Z"
+  },
+  "GetDutchie/brands-portal#967": {
+    "title": "feat(catalog): add feature-flagged health prototype BRAND-3710",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/health/index.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/App.tsx",
+      "src/pages/catalog/health/catalog-health-route-guard.test.tsx",
+      "src/pages/catalog/health/catalog-health-route-guard.tsx",
+      "src/pages/catalog/health/index.test.tsx",
+      "src/pages/catalog/health/index.tsx",
+      "src/pages/catalog/health/styled.ts",
+      "src/routes/index.ts",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-is-catalog-health-enabled.test.ts",
+      "src/services/launch-darkly/use-is-catalog-health-enabled.ts",
+      "src/shell/index.test.tsx",
+      "src/shell/index.tsx"
+    ],
+    "fetchedAt": "2026-09-23T19:17:47.581Z"
+  },
+  "GetDutchie/alchemy#875": {
+    "title": "PF-9718: cog-based column ordering with durable user preferences",
+    "qualityComments": [
+      {
+        "path": "libs/ui/src/components/data-display/ManageColumnsDialog.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "libs/ui/src/components/data-display/ManageColumnsDialog.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "libs/ui/src/components/data-display/useColumnOrderStorage.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/routes/preferences.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/ui/src/components/data-display/DataTable.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/routes/preferences.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/useAccountTableColumnOrder.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "libs/ui/src/components/data-display/ColumnOrderWidget.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/ui/src/components/data-display/useColumnOrderStorage.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/useAccountTableColumnOrder.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/routes/preferences.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/routes/preferences.live.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/api/smoke.json",
+      "apps/gtm/account-360/api/src/index.ts",
+      "apps/gtm/account-360/api/src/routes/accounts.live.test.ts",
+      "apps/gtm/account-360/api/src/routes/preferences.live.test.ts",
+      "apps/gtm/account-360/api/src/routes/preferences.test.ts",
+      "apps/gtm/account-360/api/src/routes/preferences.ts",
+      "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.helpers.test.ts",
+      "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.helpers.ts",
+      "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.tsx",
+      "apps/gtm/account-360/web/src/features/account360/AccountListView.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/AccountListView.tsx",
+      "apps/gtm/account-360/web/src/features/account360/useAccountTableColumnOrder.test.ts",
+      "apps/gtm/account-360/web/src/features/account360/useAccountTableColumnOrder.ts",
+      "apps/rnd/demand-intelligence/web/src/features/aperture/VibeStrategyView.test.tsx",
+      "drizzle/fleet/0011_flimsy_blockbuster.sql",
+      "drizzle/fleet/meta/0011_snapshot.json",
+      "drizzle/fleet/meta/_journal.json",
+      "libs/identity/CLAUDE.md",
+      "libs/identity/src/index.ts",
+      "libs/identity/src/schema.ts",
+      "libs/ui/package.json",
+      "libs/ui/src/components/data-display/ColumnOrderWidget.test.tsx",
+      "libs/ui/src/components/data-display/ColumnOrderWidget.tsx",
+      "libs/ui/src/components/data-display/DataTable.test.tsx",
+      "libs/ui/src/components/data-display/DataTable.tsx",
+      "libs/ui/src/components/data-display/useColumnOrderStorage.test.ts",
+      "libs/ui/src/components/data-display/useColumnOrderStorage.ts",
+      "libs/ui/src/index.ts",
+      "libs/web-core/src/fetch.test.ts",
+      "libs/web-core/src/fetch.ts",
+      "package-lock.json",
+      "validation/fleet-routes.conf",
+      "validation/fleet-routes.host.conf"
+    ],
+    "fetchedAt": "2026-09-23T19:17:48.474Z"
   }
 }
