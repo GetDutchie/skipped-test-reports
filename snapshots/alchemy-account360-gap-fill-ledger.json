@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1790074949.000000",
+  "last_processed_ts": "1790161605.857969",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -167,6 +167,28 @@
       "last_seen": "2026-09-21",
       "times_seen": 1,
       "last_notified": "2026-09-21T13:08:45Z"
+    },
+    "875-libs/ui/src/components/data-display/useAccountTableColumnOrder-round-trip": {
+      "classification": "unclear",
+      "reason": "[Medium] gap, PR #875 (apps/gtm/account-360/web/src/features/account360/useAccountTableColumnOrder.ts) -- full drag->PUT->reload->restore round trip crosses the browser<->API boundary; report itself says route it to a unit/live pairing rather than Playwright (no e2e suite exists). Inspected: the hook's 9 unit tests mock apiFetch/mutateApi, preferences.live.test.ts calls the route directly -- there is no established harness pattern in this repo for a test that runs BOTH the real hook code and a real live API without a browser. Attempting one would risk a vacuous or over-engineered proof (Hard Gate 3) without new test-harness machinery beyond what a small test-only PR should add. Flagging for human judgment rather than guessing at a new cross-boundary harness.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 875,
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-09-23",
+      "times_seen": 1,
+      "last_notified": "2026-09-23T13:17:10Z"
+    },
+    "875-libs/ui/src/components/data-display/DataTable-groupBy-columnOrder-hazard": {
+      "classification": "unclear",
+      "reason": "[Low] gap, PR #875 (libs/ui/src/components/data-display/DataTable.tsx) -- groupBy + columnOrder tree-indenting hazard, documented in the component's own doc comment, no test. Passes the literal same-source-PR scope-check text (PR #875 also touched apps/gtm/account-360/**), but the report entry itself states this 'affects neither app directly (account-360 flattens its family tree in AccountListView and passes no groupBy)' -- account-360 doesn't exercise this interaction at all today. Orchestrator judgment call: treated conservatively as outside this pilot's deliberately-capped blast radius (a generic ~25-consumer libs/ui hazard unrelated to account-360's own PF-9718 change), rather than opening a PR for a libs/ui improvement with no account-360-specific tie-in. Noting the discrepancy per the operating prompt's instruction to trust live-repo judgment over a stale literal rule and flag it rather than silently deviate.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 875,
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-09-23",
+      "times_seen": 1,
+      "last_notified": "2026-09-23T13:17:10Z"
     }
   }
 }
