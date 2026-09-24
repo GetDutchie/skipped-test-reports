@@ -848,5 +848,482 @@
       "validation/fleet-routes.host.conf"
     ],
     "fetchedAt": "2026-09-23T19:17:48.474Z"
+  },
+  "GetDutchie/brands-portal#968": {
+    "title": "feat(link desk): create real product buckets BRAND-3711",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/api/buckets.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/create-bucket/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/create-bucket/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/create-bucket/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/create-bucket/sections/where-section.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/create-bucket/use-lsp-options.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/buckets.test.ts",
+      "src/pages/link-desk/api/buckets.ts",
+      "src/pages/link-desk/api/lsps.test.ts",
+      "src/pages/link-desk/api/lsps.ts",
+      "src/pages/link-desk/api/use-buckets.test.tsx",
+      "src/pages/link-desk/api/use-buckets.ts",
+      "src/pages/link-desk/api/use-lsps.test.tsx",
+      "src/pages/link-desk/api/use-lsps.ts",
+      "src/pages/link-desk/api/utils.test.ts",
+      "src/pages/link-desk/api/utils.ts",
+      "src/pages/link-desk/create-bucket/constants.ts",
+      "src/pages/link-desk/create-bucket/index.test.tsx",
+      "src/pages/link-desk/create-bucket/index.tsx",
+      "src/pages/link-desk/create-bucket/sections/connection-section.tsx",
+      "src/pages/link-desk/create-bucket/sections/what-section.test.tsx",
+      "src/pages/link-desk/create-bucket/sections/what-section.tsx",
+      "src/pages/link-desk/create-bucket/sections/where-section.test.tsx",
+      "src/pages/link-desk/create-bucket/sections/where-section.tsx",
+      "src/pages/link-desk/create-bucket/use-lsp-options.test.ts",
+      "src/pages/link-desk/create-bucket/use-lsp-options.ts",
+      "src/pages/link-desk/create-bucket/utils.test.ts",
+      "src/pages/link-desk/create-bucket/utils.ts",
+      "src/pages/link-desk/index.test.tsx",
+      "src/pages/link-desk/index.tsx",
+      "src/pages/link-desk/shared/bucket-confirmation-modal/index.test.tsx",
+      "src/pages/link-desk/shared/bucket-confirmation-modal/index.tsx",
+      "src/pages/link-desk/shared/bucket-form-styled.ts",
+      "src/pages/link-desk/types.ts"
+    ],
+    "fetchedAt": "2026-09-24T19:07:17.425Z"
+  },
+  "GetDutchie/brands-portal#929": {
+    "title": "feat(promotions): add campaign report download button BRAND-2962",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/use-presigned-report-download.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/discount-campaigns/download-discount-campaign-report.gql",
+      "src/api/operations/queries/discount-campaigns/get-discount-campaign.gql",
+      "src/pages/promotions/campaign-detail/build-campaign-detail.test.ts",
+      "src/pages/promotions/campaign-detail/build-campaign-detail.ts",
+      "src/pages/promotions/campaign-detail/components/campaign-header.test.tsx",
+      "src/pages/promotions/campaign-detail/components/campaign-header.tsx",
+      "src/pages/promotions/campaign-detail/index.test.tsx",
+      "src/pages/promotions/campaign-detail/use-campaign-report-download.test.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-report-download.ts",
+      "src/pages/promotions/detail/use-report-download.ts",
+      "src/pages/promotions/use-presigned-report-download.test.ts",
+      "src/pages/promotions/use-presigned-report-download.ts",
+      "src/services/launch-darkly/use-is-campaign-report-download-enabled.test.ts",
+      "src/services/launch-darkly/use-is-campaign-report-download-enabled.ts"
+    ],
+    "fetchedAt": "2026-09-24T19:07:18.283Z"
+  },
+  "GetDutchie/brands-portal#966": {
+    "title": "feat(link desk): render hydrated bucket products BRAND-3708",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/bucket-detail/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/bucket-detail/bucket-products-section.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/bucket-product-detail/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/bucket-product-detail/index.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/App.tsx",
+      "src/pages/link-desk/bucket-detail/bucket-products-section.test.tsx",
+      "src/pages/link-desk/bucket-detail/bucket-products-section.tsx",
+      "src/pages/link-desk/bucket-detail/index.test.tsx",
+      "src/pages/link-desk/bucket-detail/index.tsx",
+      "src/pages/link-desk/bucket-detail/styled.ts",
+      "src/pages/link-desk/bucket-product-detail/index.test.tsx",
+      "src/pages/link-desk/bucket-product-detail/index.tsx",
+      "src/pages/link-desk/navigation.test.ts",
+      "src/pages/link-desk/navigation.ts",
+      "src/routes/index.ts"
+    ],
+    "fetchedAt": "2026-09-24T19:07:19.076Z"
+  },
+  "GetDutchie/brands-portal#977": {
+    "title": "fix(link desk): address hydration follow-ups BRAND-3716",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/bucket-product-detail/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/bucket-detail/index.tsx",
+      "src/pages/link-desk/bucket-product-detail/index.test.tsx",
+      "src/pages/link-desk/bucket-product-detail/index.tsx",
+      "src/pages/link-desk/shared/bucket-product-ownership-notice.tsx"
+    ],
+    "fetchedAt": "2026-09-24T19:07:19.815Z"
+  },
+  "GetDutchie/alchemy#1154": {
+    "title": "feat(implementation): wire Salesforce-status-driven intake/close for Implementation projects",
+    "qualityComments": [
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/implementation-repository-pg.live.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/implementation-repository-pg.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/routes/implementation-routes.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/gtm-db/src/account-read.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/salesforce-sync/api/src/sfdc/ops.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/web/src/features/implementation-views/ProjectsView.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/routes/intelligence.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/gtm-db/src/account-read.live.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/implementation-repository-pg.live.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/api/src/routes/brief.sql-fragments.test.ts",
+      "apps/gtm/account-360/api/src/routes/brief.ts",
+      "apps/gtm/account-360/api/src/routes/intelligence.sql-fragments.test.ts",
+      "apps/gtm/account-360/api/src/routes/intelligence.ts",
+      "apps/gtm/account-360/web/src/features/account360/ImplementationStatus.helpers.test.ts",
+      "apps/gtm/account-360/web/src/features/account360/ImplementationStatus.helpers.ts",
+      "apps/gtm/account-360/web/src/features/account360/ImplementationStatus.test.tsx",
+      "apps/gtm/salesforce-sync/api/src/lib/impl-normalize.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/impl-normalize.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/data-ops.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/ops.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/ops.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/client.ts",
+      "apps/gtm/salesforce-sync/web/src/features/sync/DataOpsView.tsx",
+      "apps/implementation/home/api/src/lib/account-360-reader.ts",
+      "apps/implementation/home/api/src/lib/implementation-repository-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-repository-pg.ts",
+      "apps/implementation/home/api/src/lib/implementation-repository.ts",
+      "apps/implementation/home/api/src/lib/sync-run-ledger.ts",
+      "apps/implementation/home/api/src/routes/implementation-routes.test.ts",
+      "apps/implementation/home/api/src/routes/implementation-routes.ts",
+      "apps/implementation/home/api/src/temporal/activities.ts",
+      "apps/implementation/home/api/src/temporal/provision.mts",
+      "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.test.ts",
+      "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+      "apps/implementation/home/api/src/temporal/schedules.ts",
+      "apps/implementation/home/api/src/temporal/sync-run-ledger.live.test.ts",
+      "apps/implementation/home/api/src/temporal/worker-activities.test.ts",
+      "apps/implementation/home/api/src/temporal/worker-activities.ts",
+      "apps/implementation/home/api/src/temporal/workflows.ts",
+      "apps/implementation/home/web/src/data-access/implementation-workspace.ts",
+      "apps/implementation/home/web/src/data-access/wire.gen.ts",
+      "apps/implementation/home/web/src/features/implementation-views/ProjectsView.test.tsx",
+      "apps/implementation/home/web/src/features/implementation-views/ProjectsView.tsx",
+      "libs/gtm-db/src/account-read.live.test.ts",
+      "libs/gtm-db/src/account-read.test.ts",
+      "libs/gtm-db/src/account-read.ts",
+      "libs/gtm-db/src/index.ts",
+      "libs/web-core/src/utils.test.ts",
+      "libs/web-core/src/utils.ts",
+      "package.json",
+      "validation/temporal-setup.sh"
+    ],
+    "fetchedAt": "2026-09-24T19:07:20.721Z"
+  },
+  "GetDutchie/alchemy#1057": {
+    "title": "chore: sandbox merge integration into develop",
+    "qualityComments": [
+      {
+        "path": "apps/implementation/home/web/src/data-access/implementation-workspace-query-keys.test.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "apps/implementation/home/web/src/data-access/implementation-workspace-query-keys.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/web/src/data-access/implementation-workspace-query-keys.test.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "libs/node-runtime/src/serve.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/supplied-playbook-bootstrap.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/supplied-playbook-bootstrap.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/implementation/home/web/src/ImplementationShowcase.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/routes/implementation-routes.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "apps/implementation/home/web/src/features/implementation-workspace/tech-task-types.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "libs/gtm-db/src/sync-run-ledger.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/web/src/features/implementation-workspace/JobRow.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/salesforce-sync/api/src/lib/implementation-project-upsert.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/gtm-db/src/account-read.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/gtm-db/src/account-read.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/routes/implementation-routes.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/shared-alchemy-db.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/gtm-db/src/account-read.test.ts",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/workflows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/gtm/salesforce-sync/api/src/temporal/client.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/lib/authorization-policy.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/implementation/home/api/src/temporal/salesforce-status-reconciliation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/products/src/deploy-envs-drift.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "libs/shell/src/shell-data.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "libs/products/src/deploy-envs-drift.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "AGENTS.md",
+      "CATCHUP.md",
+      "PLAN.md",
+      "Tiltfile",
+      "apps/fleet/home/web/src/DirectoryPage.tsx",
+      "apps/fleet/home/web/src/render-smoke.test.tsx",
+      "apps/gtm/account-360/api/src/routes/brief.sql-fragments.test.ts",
+      "apps/gtm/account-360/api/src/routes/brief.ts",
+      "apps/gtm/account-360/api/src/routes/intelligence.sql-fragments.test.ts",
+      "apps/gtm/account-360/api/src/routes/intelligence.ts",
+      "apps/gtm/account-360/web/src/features/account360/Account360View.tsx",
+      "apps/gtm/account-360/web/src/features/account360/ImplementationStatus.helpers.test.ts",
+      "apps/gtm/account-360/web/src/features/account360/ImplementationStatus.helpers.ts",
+      "apps/gtm/account-360/web/src/features/account360/ImplementationStatus.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LocationsPanel.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LocationsPanel.tsx",
+      "apps/gtm/account-360/web/src/main.tsx",
+      "apps/gtm/salesforce-sync/api/src/lib/amc-map.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/amc-map.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/amc.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/delivery-projection-contracts.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/delivery-projection-contracts.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/delivery-related-reader.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/delivery-related-reader.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/delivery-source-reader.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/delivery-source-reader.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/impl-normalize.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/impl-normalize.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/implementation-project-upsert.live.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/implementation-project-upsert.ts",
+      "apps/gtm/salesforce-sync/api/src/load-implementations.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/data-ops.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/delivery-source-persistence.live.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/delivery-source-persistence.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/delivery-source-persistence.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/ops.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/ops.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/activities.delivery-source-sync.test.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/activities.implementation-project-sync.test.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/activities.sync-run-completed.test.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/activities.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/client.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/provision.mts",
+      "apps/gtm/salesforce-sync/api/src/temporal/watermark.test.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/watermark.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/workflows.test.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/workflows.ts",
+      "apps/gtm/salesforce-sync/web/src/features/sync/DataOpsView.test.tsx",
+      "apps/gtm/salesforce-sync/web/src/features/sync/DataOpsView.tsx",
+      "apps/gtm/team-admin/api/src/temporal/workflows.ts",
+      "apps/implementation/home/CLAUDE.md",
+      "apps/implementation/home/api/smoke.json",
+      "apps/implementation/home/api/src/bootstrap-authorization.test.ts",
+      "apps/implementation/home/api/src/bootstrap-real-policy-fga.test.ts",
+      "apps/implementation/home/api/src/bootstrap.test.ts",
+      "apps/implementation/home/api/src/env.ts",
+      "apps/implementation/home/api/src/index.ts",
+      "apps/implementation/home/api/src/lib/.gitkeep",
+      "apps/implementation/home/api/src/lib/account-360-reader.ts",
+      "apps/implementation/home/api/src/lib/authorization-policy.test.ts",
+      "apps/implementation/home/api/src/lib/authorization-policy.ts",
+      "apps/implementation/home/api/src/lib/db.ts",
+      "apps/implementation/home/api/src/lib/implementation-bulk-contract.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-bulk-contract.ts",
+      "apps/implementation/home/api/src/lib/implementation-capabilities.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-capabilities.ts",
+      "apps/implementation/home/api/src/lib/implementation-domain.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-domain.ts",
+      "apps/implementation/home/api/src/lib/implementation-fixtures.ts",
+      "apps/implementation/home/api/src/lib/implementation-instance-repository-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-instance-repository-pg.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-instance-repository-pg.ts",
+      "apps/implementation/home/api/src/lib/implementation-progress-repository-pg.bulk.live.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-progress-repository-pg.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-progress-repository-pg.ts",
+      "apps/implementation/home/api/src/lib/implementation-progress-service.ts",
+      "apps/implementation/home/api/src/lib/implementation-repository-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/implementation-repository-pg.ts",
+      "apps/implementation/home/api/src/lib/implementation-repository.ts",
+      "apps/implementation/home/api/src/lib/implementation-tech-tasks-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/milestone-library-defaults.test.ts",
+      "apps/implementation/home/api/src/lib/milestone-library-repository-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/milestone-library-repository-pg.ts",
+      "apps/implementation/home/api/src/lib/milestone-library.ts",
+      "apps/implementation/home/api/src/lib/principal-directory.ts",
+      "apps/implementation/home/api/src/lib/salesforce-attestation-race.live.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-binding-writer-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-binding-writer-pg.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-binding-writer-pg.ts",
+      "apps/implementation/home/api/src/lib/salesforce-delivery-contracts.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-delivery-contracts.ts",
+      "apps/implementation/home/api/src/lib/salesforce-event-processor.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-event-processor.ts",
+      "apps/implementation/home/api/src/lib/salesforce-handoff-ports.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-handoff-ports.ts",
+      "apps/implementation/home/api/src/lib/salesforce-handoff-repository-pg.live.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-handoff-repository-pg.ts",
+      "apps/implementation/home/api/src/lib/salesforce-handoff-service.test.ts",
+      "apps/implementation/home/api/src/lib/salesforce-handoff-service.ts",
+      "apps/implementation/home/api/src/lib/salesforce-source-lifecycle-reader.test.ts"
+    ],
+    "fetchedAt": "2026-09-24T19:07:21.896Z"
+  },
+  "GetDutchie/alchemy#1158": {
+    "title": "fix(pipeline): improve kanban scrolling",
+    "qualityComments": [
+      {
+        "path": "apps/gtm/pipeline/web/src/features/pipeline/PipelineView.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/pipeline/web/src/features/pipeline/PipelineView.test.tsx",
+      "apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx"
+    ],
+    "fetchedAt": "2026-09-24T19:07:22.830Z"
   }
 }
