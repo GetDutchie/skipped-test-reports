@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "last_processed_ts": "1790162124.339139",
+    "last_processed_ts": "1790248414.513819",
     "entries": {
         "862-src/auth/use-assume-role-exit.ts": {
             "classification": "e2e-out-of-scope",
@@ -9,7 +9,7 @@
             "first_seen": "2026-09-16",
             "last_seen": "2026-09-16",
             "times_seen": 1,
-            "last_notified": "2026-09-16"
+            "last_notified": "2026-09-24"
         },
         "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
             "classification": "e2e-out-of-scope",
@@ -18,7 +18,7 @@
             "first_seen": "2026-09-15",
             "last_seen": "2026-09-15",
             "times_seen": 1,
-            "last_notified": "2026-09-15"
+            "last_notified": "2026-09-24"
         },
         "847-src/pages/ad-exclusions/index.tsx": {
             "classification": "e2e-out-of-scope",
@@ -27,7 +27,7 @@
             "first_seen": "2026-09-15",
             "last_seen": "2026-09-15",
             "times_seen": 1,
-            "last_notified": "2026-09-15"
+            "last_notified": "2026-09-24"
         },
         "888-rsbuild.config.ts": {
             "classification": "unclear",
@@ -36,7 +36,7 @@
             "first_seen": "2026-09-15",
             "last_seen": "2026-09-15",
             "times_seen": 1,
-            "last_notified": "2026-09-15"
+            "last_notified": "2026-09-24"
         },
         "912-e2e/tests/": {
             "classification": "e2e-out-of-scope",
