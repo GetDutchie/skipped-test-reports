@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1790161605.857969",
+  "last_processed_ts": "1790247871.619359",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -189,6 +189,28 @@
       "last_seen": "2026-09-23",
       "times_seen": 1,
       "last_notified": "2026-09-23T13:17:10Z"
+    },
+    "1158-apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx": {
+      "classification": "unclear",
+      "reason": "Scope gate: file is under apps/gtm/pipeline/**, not apps/gtm/account-360/** -- out of this pilot's scope. Report entry: [Low] gap, PR #1158 ('fix(pipeline): improve kanban scrolling') -- layout/CSS-only change (viewport-height Kanban board with per-stage overflow-y-auto, sticky thead offset); the existing tests only assert class names, real scroll behavior can't be checked in jsdom and pipeline has no e2e spec today either.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 1158,
+      "first_seen": "2026-09-24",
+      "last_seen": "2026-09-24",
+      "times_seen": 1,
+      "last_notified": "2026-09-24T13:40:00Z"
+    },
+    "1057-apps/gtm/account-360/web/src/main.tsx": {
+      "classification": "needs-production-change",
+      "reason": "In scope (account-360, main.tsx). Report entry: [Medium] gap + matching stale-coverage-risk (same file/PR, one ledger entry), PR #1057 -- the new `?locationId=` deep-link param wired into Account360Route's focusLocationId prop has no test. The report itself suggested a 'MemoryRouter deep-link hydration test' fallback (and this app's own CLAUDE.md documents exactly that convention for URL state elsewhere), but Account360Route is a non-exported closure defined inline inside main.tsx, and main.tsx's module top level calls `ReactDOM.createRoot(document.getElementById('root')!).render(...)` as a real side effect on import -- there is no way to render/test Account360Route in isolation via MemoryRouter without either (a) exporting it from main.tsx (a production-code change, forbidden by Hard Gate 1) or (b) importing the whole main.tsx module in a test, which would trigger the real createRoot().render() side effect against a nonexistent #root element. No established test harness pattern exists elsewhere in this app/fleet for testing an un-exported route component defined inside a side-effecting entry-point file (checked: no main.test.tsx exists anywhere in the fleet). The actual downstream behavior (does focusLocationId propagate through and do the right thing once it reaches Account360View) IS now covered by this run's PR #1161 (Account360View's own focusLocationId effect test) -- what remains untested is only the one-line `searchParams.get('locationId') ?? undefined` -> prop plumbing inside main.tsx itself, which would need main.tsx restructured (e.g. extracting routes into an importable, testable module) to close without a production change. Flagging for a human to decide whether that refactor is worth doing.",
+      "severity": "Medium",
+      "entry_type": "gap+stale",
+      "source_pr": 1057,
+      "first_seen": "2026-09-24",
+      "last_seen": "2026-09-24",
+      "times_seen": 1,
+      "last_notified": "2026-09-24T13:40:00Z"
     }
   }
 }
