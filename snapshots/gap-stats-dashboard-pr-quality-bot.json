@@ -1325,5 +1325,287 @@
       "apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx"
     ],
     "fetchedAt": "2026-09-24T19:07:22.830Z"
+  },
+  "GetDutchie/brands-portal#979": {
+    "title": "eng(preview tooling): adopt prototyping and phasing workflows",
+    "qualityComments": [
+      {
+        "path": "src/preview/store.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/preview-status-banner/preview-status-banner.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/shell/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/preview/use-enforce-preview-modes.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/components/preview-modes-menu/preview-modes-menu.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/preview-modes-menu/preview-modes-menu.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/shell/index.test.tsx",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/components/preview-modes-menu/preview-modes-menu.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/preview/prototype-routes.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/routes/links.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/theme/nexus-mui-theme.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/theme/tokens.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      ".agents/README.md",
+      ".agents/skills/agent-browser/SKILL.md",
+      ".agents/skills/brands-deferred/SKILL.md",
+      ".agents/skills/brands-design-system/SKILL.md",
+      ".agents/skills/brands-phase-audit/SKILL.md",
+      ".agents/skills/brands-prototype-audit/SKILL.md",
+      ".agents/skills/brands-prototype-graduate/SKILL.md",
+      ".agents/skills/brands-prototype/SKILL.md",
+      ".agents/skills/brands-refine/SKILL.md",
+      ".agents/skills/pr-conventions/SKILL.md",
+      ".pi/agents/design-system-advisor.md",
+      ".pi/prompts/brands-deferred.md",
+      ".pi/prompts/brands-phase-audit.md",
+      ".pi/prompts/brands-prototype-audit.md",
+      ".pi/prompts/brands-prototype-graduate.md",
+      ".pi/prompts/brands-prototype.md",
+      ".pi/prompts/brands-refine.md",
+      "AGENTS.md",
+      "CLAUDE.md",
+      "docs/adrs/0001-in-app-prototyping-behind-preview-modes.md",
+      "docs/adrs/README.md",
+      "docs/context-files.md",
+      "docs/design-system/README.md",
+      "docs/design-system/tokens.md",
+      "docs/phases/STATUS.md",
+      "docs/preview-modes.md",
+      "docs/prototypes/INVENTORY.md",
+      "docs/prototypes/README.md",
+      "docs/refinements/DEFERRED.md",
+      "docs/refinements/README.md",
+      "docs/refinements/preview-tooling-examples/refinement.md",
+      "llms.txt",
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/App.tsx",
+      "src/components/obfuscate-toggle.tsx",
+      "src/components/preview-modes-menu/preview-modes-menu.test.tsx",
+      "src/components/preview-modes-menu/preview-modes-menu.tsx",
+      "src/components/preview-modes-menu/styled.ts",
+      "src/components/preview-route-outlet.test.tsx",
+      "src/components/preview-route-outlet.tsx",
+      "src/components/prototype-frame/prototype-frame.test.tsx",
+      "src/components/prototype-frame/prototype-frame.tsx",
+      "src/components/prototype-frame/styled.ts",
+      "src/pages/preview-examples/preview-examples.tsx",
+      "src/preview/AGENTS.md",
+      "src/preview/prototype-routes.test.ts",
+      "src/preview/prototype-routes.ts",
+      "src/preview/store.test.ts",
+      "src/preview/store.ts",
+      "src/preview/use-effective-prototype-mode.test.ts",
+      "src/preview/use-effective-prototype-mode.ts",
+      "src/preview/use-enforce-preview-modes.test.ts",
+      "src/preview/use-enforce-preview-modes.ts",
+      "src/routes/index.ts",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-preview-modes-enabled.test.ts",
+      "src/services/launch-darkly/use-preview-modes-enabled.ts",
+      "src/shell/index.test.tsx",
+      "src/shell/index.tsx",
+      "src/shell/nexus-sidebar/nexus-sidebar.tsx",
+      "src/theme/nexus-mui-theme.test.tsx",
+      "src/theme/nexus-mui-theme.tsx",
+      "src/theme/tokens.test.ts",
+      "src/theme/tokens.ts"
+    ],
+    "fetchedAt": "2026-09-25T19:28:10.285Z"
+  },
+  "GetDutchie/brands-portal#1013": {
+    "title": "feat(link desk): hydrate Product Connect rows BRAND-3759",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/api/bucket-products.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-product-connect-hydration.ts",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-product-connect-hydration.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-product-connect-hydration.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-product-connect-hydration.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/bucket-products.test.ts",
+      "src/pages/link-desk/api/bucket-products.ts",
+      "src/pages/link-desk/api/use-bucket-products.test.tsx",
+      "src/pages/link-desk/api/use-bucket-products.ts",
+      "src/pages/link-desk/api/utils.ts",
+      "src/pages/link-desk/docs/PLAN.md",
+      "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+      "src/pages/link-desk/product-connect/index.test.tsx",
+      "src/pages/link-desk/product-connect/index.tsx",
+      "src/pages/link-desk/product-connect/state-page.tsx",
+      "src/pages/link-desk/product-connect/use-bucket-review.test.ts",
+      "src/pages/link-desk/product-connect/use-bucket-review.ts",
+      "src/pages/link-desk/product-connect/use-product-connect-hydration.test.tsx",
+      "src/pages/link-desk/product-connect/use-product-connect-hydration.ts",
+      "src/pages/link-desk/product-connect/utils.test.ts",
+      "src/pages/link-desk/product-connect/utils.ts",
+      "src/pages/link-desk/types.ts"
+    ],
+    "fetchedAt": "2026-09-25T19:28:11.049Z"
+  },
+  "GetDutchie/brands-portal#1007": {
+    "title": "feat(link desk): polish bucket confirmation BRAND-3754",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/link-desk/home/status-chip.tsx",
+      "src/pages/link-desk/home/styled.ts",
+      "src/pages/link-desk/shared/bucket-confirmation-modal/index.tsx",
+      "src/pages/link-desk/shared/bucket-confirmation-modal/styled.ts"
+    ],
+    "fetchedAt": "2026-09-25T19:28:11.674Z"
+  },
+  "GetDutchie/brands-portal#980": {
+    "title": "fix(catalog): fix drag-and-drop reordering on wholesale offers grid BRAND-3704",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/use-edit-product-form.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/product-details/use-edit-product-form.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/use-edit-product-form.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/use-edit-product-form.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/components/wholesale-menu-preview/wholesale-menu-preview.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-menu-preview/wholesale-menu-preview.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/sortable-wholesale-offer-tile.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/styled.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+      "src/pages/catalog/product-details/use-edit-product-form.test.ts",
+      "src/pages/catalog/product-details/use-edit-product-form.ts",
+      "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.ts",
+      "src/pages/public-brand-menu/public-wholesale-product-grid.test.tsx",
+      "src/utils/wholesale-offer-presentation.test.ts",
+      "src/utils/wholesale-offer-presentation.ts"
+    ],
+    "fetchedAt": "2026-09-25T19:28:12.457Z"
+  },
+  "GetDutchie/brands-portal#944": {
+    "title": "fix(catalog): remove Offer featured BRAND-3682",
+    "qualityComments": [
+      {
+        "path": "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/products/get-library-product.gql",
+      "src/api/operations/queries/products/search-library-products.gql",
+      "src/pages/catalog/product-details/components/fields/wholesale-offers-fields.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-menu-preview/wholesale-menu-preview.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-form.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-form.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+      "src/pages/catalog/product-details/product-form-helpers.test.ts",
+      "src/pages/catalog/product-details/product-form-helpers.ts",
+      "src/pages/catalog/product-details/product-form-schema.test.ts",
+      "src/pages/catalog/product-details/types.ts",
+      "src/pages/catalog/product-details/use-edit-product-form.test.ts",
+      "src/pages/orders/create/catalog-select-modal/use-catalog-data.test.ts",
+      "src/pages/orders/create/nudge-utils.test.ts",
+      "src/pages/public-brand-menu/public-brand-menu-api.ts",
+      "src/pages/public-brand-menu/public-wholesale-menu-route.test.tsx",
+      "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.test.ts",
+      "src/pages/public-brand-menu/public-wholesale-product-grid-helpers.ts",
+      "src/pages/public-brand-menu/public-wholesale-product-grid.test.tsx"
+    ],
+    "fetchedAt": "2026-09-25T19:28:13.376Z"
   }
 }
