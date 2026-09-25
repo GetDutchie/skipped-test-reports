@@ -622,7 +622,7 @@
     "tests/marketing/discounts/create-discount-with-limits.spec.ts::[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.": {
       "test_name": "[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.",
       "suite": "back-office",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -636,6 +636,15 @@
           "hypothesis": "DebouncedInput (wait=500ms) commits to parent form state 500ms after fill; the existing wait was exactly 500ms with zero margin, racing under CPU scheduling jitter.",
           "fix_applied": "Widened wait to 1000ms, matching the identical component's existing precedent in save-discount.ts:285. Reverted after load-realistic verification failed (1 of 3 8-worker runs).",
           "result": "NOT fixed: 1 of 3 load-realistic runs failed (once on the debounce race itself, once on an unrelated data-grid timeout). Reverted rather than ship an unverified fix. Needs an app-level sync signal for a deterministic fix, not another timing guess."
+        },
+        {
+          "date": "2026-09-25",
+          "jira_key": "QA-1097",
+          "pr_url": null,
+          "outcome": "not-fixed",
+          "hypothesis": "DebouncedInput's useMemo depends on the inline onChange identity passed by every caller; any parent re-render inside the 500ms debounce window recreates the debounced fn, and the useEffect cleanup cancels the pending commit permanently (confirmed via independent blind investigation of debounced-input.tsx).",
+          "fix_applied": "None shipped this run. Correct fix is a production-code change to DebouncedInput (hold onChange in a ref, exclude it from the useMemo deps) which is out of scope for an E2E-only PR; a test-only mitigation (wait on a concrete signal instead of a timeout) was not implemented due to time constraints.",
+          "result": "Not fixed. New root-cause hypothesis recorded for the next attempt; do not re-try the already-disproven raw-timeout-widen approach (QA-972, 2026-08-13)."
         }
       ]
     },
@@ -931,6 +940,72 @@
           "date": "2026-09-22",
           "note": "Classified infra/backend-slow (dev-server/CPU contention): page.goto Timeout 120000ms exceeded twice then passed cleanly on 3rd Playwright retry (45.5s); isolation run passed cleanly; independent falsification subagent pass confirmed infra/backend-slow (not test-code-bug/real-app-bug/isolation-false-positive). No code change.",
           "jira_key": "QA-1083"
+        }
+      ]
+    },
+    "tests/cultivation/plants-v2/actions/destroy-clone.spec.ts::[657102] Destroy Clone waste reason flag on": {
+      "test_name": "[657102] Destroy Clone waste reason flag on",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "jira_key": "QA-1097",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10012",
+          "outcome": "fixed",
+          "hypothesis": "DataGrid rows can render behind the total-count badge under nightly shard load; the row-count assertion right after search()/a grid-mutating action used the global 15s expect timeout, not enough for the row DOM to catch up.",
+          "fix_applied": "Passed explicit { timeout: 90_000 } to the affected rows.toHaveCount() assertions, matching the existing 90s precedent already established in data-grid.ts's own waitForTotalCountToChange poll. Sibling-pattern fix also applied to 3 other toHaveCount(1) call sites in destroy-clone.spec.ts and a 2nd call site (post-unretire) in retire-plant.spec.ts not in tonight's FAILED/FLAKEY list.",
+          "result": "red reproduced directly under 6-worker load with fix reverted (retire-plant.spec.ts got 1 row instead of expected 0); 20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel, matching nightly's actual 9-shard/6-worker matrix, full plants-v2/actions dir, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "tests/cultivation/plants-v2/actions/adjust-immature-plant-count.spec.ts::[657331] Plants V2 list page can adjust immature plant count": {
+      "test_name": "[657331] Plants V2 list page can adjust immature plant count",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "jira_key": "QA-1097",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10012",
+          "outcome": "fixed",
+          "hypothesis": "DataGrid rows can render behind the total-count badge under nightly shard load; the row-count assertion right after search()/a grid-mutating action used the global 15s expect timeout, not enough for the row DOM to catch up.",
+          "fix_applied": "Passed explicit { timeout: 90_000 } to the affected rows.toHaveCount() assertions, matching the existing 90s precedent already established in data-grid.ts's own waitForTotalCountToChange poll. Sibling-pattern fix also applied to 3 other toHaveCount(1) call sites in destroy-clone.spec.ts and a 2nd call site (post-unretire) in retire-plant.spec.ts not in tonight's FAILED/FLAKEY list.",
+          "result": "red reproduced directly under 6-worker load with fix reverted (retire-plant.spec.ts got 1 row instead of expected 0); 20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel, matching nightly's actual 9-shard/6-worker matrix, full plants-v2/actions dir, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "tests/cultivation/plants-v2/actions/retire-plant.spec.ts::[656981] Plants V2 list page retire and unretire plant": {
+      "test_name": "[656981] Plants V2 list page retire and unretire plant",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-09-25",
+          "jira_key": "QA-1097",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10012",
+          "outcome": "fixed",
+          "hypothesis": "DataGrid rows can render behind the total-count badge under nightly shard load; the row-count assertion right after search()/a grid-mutating action used the global 15s expect timeout, not enough for the row DOM to catch up.",
+          "fix_applied": "Passed explicit { timeout: 90_000 } to the affected rows.toHaveCount() assertions, matching the existing 90s precedent already established in data-grid.ts's own waitForTotalCountToChange poll. Sibling-pattern fix also applied to 3 other toHaveCount(1) call sites in destroy-clone.spec.ts and a 2nd call site (post-unretire) in retire-plant.spec.ts not in tonight's FAILED/FLAKEY list.",
+          "result": "red reproduced directly under 6-worker load with fix reverted (retire-plant.spec.ts got 1 row instead of expected 0); 20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel, matching nightly's actual 9-shard/6-worker matrix, full plants-v2/actions dir, pos-e2e constellation, 3/3) \u2705"
         }
       ]
     }
