@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1790254992.363439",
+  "last_processed_ts": "1790341715.647389",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
-      "description": "HIGH — PR #1646 + PR #1647: both create/extend audit-form-sheet.tsx, a new 660-line shared sheet driving both the Create Audit flow and the Create/Edit Schedule flow. Zero unit tests across either PR; report itself frames this as a new user-facing flow with no coverage and recommends a JIRA follow-up.",
+      "description": "HIGH \u2014 PR #1646 + PR #1647: both create/extend audit-form-sheet.tsx, a new 660-line shared sheet driving both the Create Audit flow and the Create/Edit Schedule flow. Zero unit tests across either PR; report itself frames this as a new user-facing flow with no coverage and recommends a JIRA follow-up.",
       "blocker": "Multi-step form-sheet component driving two distinct user flows (Create Audit / Create-Edit Schedule) with no existing test scaffolding; Nexus has no e2e/Playwright CI hook to fall back on, and meaningful unit coverage at this scale is out of proportion for one one-gap-one-PR candidate. Needs human prioritization (report's own suggestion: file a JIRA ticket) rather than an automated gap-fill attempt.",
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
@@ -13,12 +13,21 @@
     },
     "1583-analytics-semantic-view-descriptions": {
       "classification": "unclear",
-      "description": "Stale coverage risk — PR #1583: describe-semantic-view.ts, run-semantic-query.ts, and webapi-client/rest/nexus/semantic.ts all have existing *.test.ts files that weren't updated when sv_applied_discount was onboarded as the 4th semantic view. Report: \"worth confirming the new view name is actually asserted somewhere, not just described in prose.\"",
-      "blocker": "On inspection, every changed line across all 3 files is Zod .describe()/doc-comment prose only — no FE-side logic or hardcoded view-name allowlist exists to assert against. The actual acceptance of sv_applied_discount as a valid view name is validated server-side (webapi/leaflogix C# allowlist, a different repo), which this repo's Vitest suite can't exercise. Writing a test that merely re-asserts the changed prose string would be vacuous (fails the red-green-revert bar). Needs a human call: either accept as already-covered (no FE behavior changed) or file a cross-repo integration-test follow-up against webapi/leaflogix.",
+      "description": "Stale coverage risk \u2014 PR #1583: describe-semantic-view.ts, run-semantic-query.ts, and webapi-client/rest/nexus/semantic.ts all have existing *.test.ts files that weren't updated when sv_applied_discount was onboarded as the 4th semantic view. Report: \"worth confirming the new view name is actually asserted somewhere, not just described in prose.\"",
+      "blocker": "On inspection, every changed line across all 3 files is Zod .describe()/doc-comment prose only \u2014 no FE-side logic or hardcoded view-name allowlist exists to assert against. The actual acceptance of sv_applied_discount as a valid view name is validated server-side (webapi/leaflogix C# allowlist, a different repo), which this repo's Vitest suite can't exercise. Writing a test that merely re-asserts the changed prose string would be vacuous (fails the red-green-revert bar). Needs a human call: either accept as already-covered (no FE behavior changed) or file a cross-repo integration-test follow-up against webapi/leaflogix.",
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
       "last_notified": "2026-09-17"
+    },
+    "1762-packages/webapi-client/src/rest/nexus/audit-count-conflict-error.ts": {
+      "classification": "unclear",
+      "description": "Gap (Medium) \u2014 PR #1762 added `audit-count-conflict-error.ts` (AuditCountConflictError, a typed 409 for stale-version count submissions) with no test file.",
+      "blocker": "On inspection this file DOES NOT EXIST on current origin/main, and `AuditCountConflictError` is not referenced anywhere in the repo at all \u2014 not as a class, not as an import. `git show` confirms PR #1762's merge commit (98193ddb) added the file, but a later merge to main, PR #1724 (\"add Counted item details panel\", 35ab370f), landed changes to the SAME directory (packages/webapi-client/src/rest/nexus/) that appear to have dropped it \u2014 there is no explicit deletion commit for the file's path, which suggests a rebase/merge artifact rather than a deliberate removal. This is not a test-coverage gap this agent can close (there is nothing to test); it looks like an accidental code-loss/regression that needs a human engineer to confirm intent and, if unintended, restore the class and its consumers. Flagged prominently in this cycle's Slack report per the operator's discrepancy-reporting instruction.",
+      "first_seen": "2026-09-25",
+      "last_seen": "2026-09-25",
+      "times_seen": 1,
+      "last_notified": "2026-09-25"
     }
   }
 }
