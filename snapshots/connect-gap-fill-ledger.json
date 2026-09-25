@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "last_processed_ts": "1790248414.513819",
+    "last_processed_ts": "1790334821.966699",
     "entries": {
         "862-src/auth/use-assume-role-exit.ts": {
             "classification": "e2e-out-of-scope",
@@ -45,7 +45,7 @@
             "first_seen": "2026-09-17",
             "last_seen": "2026-09-17",
             "times_seen": 1,
-            "last_notified": "2026-09-17"
+            "last_notified": "2026-09-25"
         },
         "907-src/constants/env.ts": {
             "classification": "needs-production-change",
@@ -54,7 +54,7 @@
             "first_seen": "2026-09-17",
             "last_seen": "2026-09-17",
             "times_seen": 1,
-            "last_notified": "2026-09-17"
+            "last_notified": "2026-09-25"
         },
         "914-src/pages/public-brand-menu/public-order-submission.ts": {
             "classification": "e2e-out-of-scope",
