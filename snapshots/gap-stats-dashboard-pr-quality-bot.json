@@ -1607,5 +1607,178 @@
       "src/pages/public-brand-menu/public-wholesale-product-grid.test.tsx"
     ],
     "fetchedAt": "2026-09-25T19:28:13.376Z"
+  },
+  "GetDutchie/brands-portal#1034": {
+    "title": "eng: hail mary cors fix BRAND-3770",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/services/datadog/init-datadog-rum.ts"
+    ],
+    "fetchedAt": "2026-09-28T19:04:50.777Z"
+  },
+  "GetDutchie/brands-portal#1022": {
+    "title": "eng(design system): sidebar chrome, gutters, heading scale, header height",
+    "qualityComments": [
+      {
+        "path": "src/shell/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/shell/index.tsx",
+      "src/shell/nexus-sidebar/styled.ts",
+      "src/theme/nexus-theme/nav-chrome.ts"
+    ],
+    "fetchedAt": "2026-09-28T19:04:51.654Z"
+  },
+  "GetDutchie/brands-portal#1026": {
+    "title": "eng(design system): lucide icons + semantic icon assignments",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/analytics/components/basket-section/build-basket-tiles.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/notifications/styled.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/analytics/components/basket-section/build-basket-tiles.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/import-history/detail/import-details.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/import-history/detail/import-status-icon.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/components/notifications/bell-icon.tsx",
+      "src/components/notifications/close-icon.tsx",
+      "src/components/notifications/notification-bell.tsx",
+      "src/components/notifications/notification-panel-header.tsx",
+      "src/components/notifications/styled.test.tsx",
+      "src/components/notifications/styled.ts",
+      "src/components/obfuscate-toggle.tsx",
+      "src/components/preview-modes-menu/preview-modes-menu.tsx",
+      "src/pages/advertising/campaign-insights/performance-breakdown/index.tsx",
+      "src/pages/catalog/active-products/bulk-copy-modal/index.tsx",
+      "src/pages/catalog/active-products/merge-drawer/check-icon.tsx",
+      "src/pages/catalog/active-products/merge-drawer/index.tsx",
+      "src/pages/catalog/active-products/merge-drawer/package-icon.tsx",
+      "src/pages/catalog/active-products/merge-drawer/sortable-image-check-card.tsx",
+      "src/pages/catalog/active-products/merge-source-picker-modal/instant-search-input.tsx",
+      "src/pages/catalog/export-button/index.tsx",
+      "src/pages/catalog/export-history/use-columns.tsx",
+      "src/pages/catalog/import-history/detail/import-details.tsx",
+      "src/pages/catalog/import-history/detail/import-status-icon.test.tsx",
+      "src/pages/catalog/import-history/detail/import-status-icon.tsx",
+      "src/pages/catalog/product-details/components/edit-product-header.tsx",
+      "src/pages/catalog/product-details/components/fields/image-lightbox-modal.tsx",
+      "src/pages/catalog/product-details/components/fields/potency-field.tsx",
+      "src/pages/catalog/product-details/components/modals/cannabinoids-modal.tsx",
+      "src/pages/catalog/product-details/components/modals/prices-modal.tsx",
+      "src/pages/catalog/product-details/components/modals/terpenes-modal.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/add-offer-tile.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/styled.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.tsx",
+      "src/pages/connect-welcome/shared/icons.tsx",
+      "src/pages/connect-welcome/shared/styled.ts",
+      "src/pages/insights/inventory-table/column-header-menu/index.test.tsx",
+      "src/pages/insights/inventory-table/column-header-menu/index.tsx",
+      "src/pages/insights/inventory-table/column-header-menu/styled.ts",
+      "src/pages/link-desk/home/status-chip.tsx",
+      "src/pages/orders/create/create-products-card.tsx",
+      "src/pages/orders/detail/items-table/index.tsx",
+      "src/pages/overview/markets-table/location-pin-icon.tsx",
+      "src/pages/overview/markets-table/markets-table.tsx",
+      "src/pages/overview/markets-table/use-markets-columns.tsx",
+      "src/pages/promotions/analytics/components/basket-section/build-basket-tiles.test.ts",
+      "src/pages/promotions/analytics/components/basket-section/build-basket-tiles.ts",
+      "src/pages/promotions/analytics/components/basket-section/index.tsx",
+      "src/pages/promotions/analytics/components/needle-section/index.tsx",
+      "src/pages/promotions/analytics/components/quality-breakdown/columns.tsx",
+      "src/pages/promotions/detail/conditions-info-box.tsx",
+      "src/pages/promotions/simple-wizard/configuration/cart-preview.tsx",
+      "src/pages/promotions/simple-wizard/configuration/category-tree-modal.tsx",
+      "src/pages/promotions/simple-wizard/configuration/leaf-icon.tsx",
+      "src/pages/promotions/simple-wizard/configuration/styled.ts",
+      "src/pages/promotions/simple-wizard/retailers/search-input.tsx",
+      "src/pages/promotions/simple-wizard/retailers/tree/tree-name-cell.tsx",
+      "src/pages/promotions/wizard/requirements/requirement-card.tsx",
+      "src/pages/promotions/wizard/retailers/search-input.tsx",
+      "src/pages/public-brand-menu/public-menu-search-input.tsx",
+      "src/pages/welcome-brands/content.tsx",
+      "src/pages/welcome-brands/index.tsx",
+      "src/pages/welcome-retailers/content.tsx",
+      "src/pages/welcome-retailers/index.tsx",
+      "src/routes/links.ts",
+      "src/shell/nexus-sidebar/nexus-sidebar.tsx",
+      "src/shell/nexus-sidebar/styled.ts"
+    ],
+    "fetchedAt": "2026-09-28T19:04:52.671Z"
+  },
+  "GetDutchie/brands-portal#1021": {
+    "title": "eng(design system): adopt Matter, drop RebrandFonts, sweep weight 800",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/index.tsx",
+      "src/pages/overview/overview-header/styled.ts",
+      "src/theme/nexus-theme/typography.ts"
+    ],
+    "fetchedAt": "2026-09-28T19:04:53.475Z"
+  },
+  "GetDutchie/brands-portal#1039": {
+    "title": "fix(link desk): prevent action border clipping BRAND-3777",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/link-desk/shared/styled.ts"
+    ],
+    "fetchedAt": "2026-09-28T19:04:54.188Z"
+  },
+  "GetDutchie/brands-portal#1036": {
+    "title": "fix(link desk): gate access to super admins BRAND-3774",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/link-desk/link-desk-route-guard.test.tsx",
+      "src/pages/link-desk/link-desk-route-guard.tsx",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-is-link-desk-enabled.test.ts",
+      "src/services/launch-darkly/use-is-link-desk-enabled.ts"
+    ],
+    "fetchedAt": "2026-09-28T19:04:54.950Z"
+  },
+  "GetDutchie/brands-portal#1032": {
+    "title": "feat(link desk): finish Product Connect buckets BRAND-3764",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/shared/finish-bucket-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/docs/PLAN.md",
+      "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+      "src/pages/link-desk/product-connect/index.test.tsx",
+      "src/pages/link-desk/product-connect/index.tsx",
+      "src/pages/link-desk/shared/finish-bucket-modal/index.tsx"
+    ],
+    "fetchedAt": "2026-09-28T19:04:56.089Z"
   }
 }
