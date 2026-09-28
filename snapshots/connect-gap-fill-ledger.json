@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "last_processed_ts": "1790334821.966699",
+    "last_processed_ts": "1790594107.668639",
     "entries": {
         "862-src/auth/use-assume-role-exit.ts": {
             "classification": "e2e-out-of-scope",
@@ -63,7 +63,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-18"
+            "last_notified": "2026-09-28"
         },
         "863-src/pages/settings/users/use-columns.tsx-e2e": {
             "classification": "e2e-out-of-scope",
@@ -72,7 +72,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-18"
+            "last_notified": "2026-09-28"
         },
         "930-src/pages/catalog/product-details/product-form-helpers.ts": {
             "classification": "needs-production-change",
@@ -81,7 +81,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-18"
+            "last_notified": "2026-09-28"
         },
         "923-src/pages/orders/list/use-columns.tsx-e2e": {
             "classification": "e2e-out-of-scope",
@@ -90,7 +90,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-18"
+            "last_notified": "2026-09-28"
         },
         "863-src/pages/settings/users/index.tsx+use-columns.tsx-e2e": {
             "classification": "e2e-out-of-scope",
@@ -99,7 +99,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-18"
+            "last_notified": "2026-09-28"
         },
         "914-src/pages/public-brand-menu/public-order-context.tsx": {
             "classification": "unclear",
@@ -108,7 +108,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-18"
+            "last_notified": "2026-09-28"
         },
         "924-e2e/tests/orders/": {
             "classification": "e2e-out-of-scope",
@@ -117,7 +117,7 @@
             "first_seen": "2026-09-21",
             "last_seen": "2026-09-21",
             "times_seen": 1,
-            "last_notified": "2026-09-21"
+            "last_notified": "2026-09-28"
         },
         "931-e2e/tests/": {
             "classification": "e2e-out-of-scope",
