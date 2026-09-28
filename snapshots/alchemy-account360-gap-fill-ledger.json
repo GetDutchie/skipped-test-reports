@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1790683350",
+  "last_processed_ts": "1790593350",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
