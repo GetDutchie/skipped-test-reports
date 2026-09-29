@@ -1780,5 +1780,126 @@
       "src/pages/link-desk/shared/finish-bucket-modal/index.tsx"
     ],
     "fetchedAt": "2026-09-28T19:04:56.089Z"
+  },
+  "GetDutchie/dutchie-nexus#1790": {
+    "title": "fix: Remove semantic-view analytics from Dex NEXUS-579",
+    "qualityComments": [],
+    "changedPaths": [
+      "apps/nexus-agent-server/src/agent/prompt.ts",
+      "apps/nexus/src/api/analytics/semantic.ts",
+      "apps/nexus/src/capabilities/analytics/describe-semantic-view.test.ts",
+      "apps/nexus/src/capabilities/analytics/describe-semantic-view.ts",
+      "apps/nexus/src/capabilities/analytics/run-semantic-query.test.ts",
+      "apps/nexus/src/capabilities/analytics/run-semantic-query.ts",
+      "apps/nexus/src/capabilities/reports/list-reports.ts",
+      "apps/nexus/src/capabilities/reports/run-report.ts",
+      "apps/nexus/src/feature-flags/flags.ts"
+    ],
+    "fetchedAt": "2026-09-29T19:09:25.788Z"
+  },
+  "GetDutchie/dutchie-nexus#1783": {
+    "title": "eng(audits): protect open count drafts from live updates",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/counting-workspace.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-drafts.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-actions.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-actions.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/counting-workspace.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/count-collab-banner.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-drafts.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/audit-detail-panels.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/count-collab-banner.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/count-collab-banner.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/counting-workspace.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/components/counting-workspace/counting-workspace.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/count-panel.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/count-panel.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/count-side-panel.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-actions.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-actions.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-drafts.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-drafts.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-scan-session.test.tsx"
+    ],
+    "fetchedAt": "2026-09-29T19:09:26.814Z"
+  },
+  "GetDutchie/dutchie-nexus#1757": {
+    "title": "fix: Find Back Office users for scheduled reports NEXUS-552",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/reports/scheduled/query/use-recipient-search.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/webapi-client/src/rest/nexus/users.test.ts",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/design-system/icon-inventory.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/page.test.tsx",
+      "apps/nexus/src/pages/reports/scheduled/query/use-recipient-search.test.ts",
+      "apps/nexus/src/pages/reports/scheduled/query/use-recipient-search.ts",
+      "packages/webapi-client/src/rest/nexus/users.test.ts",
+      "packages/webapi-client/src/rest/nexus/users.ts"
+    ],
+    "fetchedAt": "2026-09-29T19:09:27.636Z"
+  },
+  "GetDutchie/brands-portal#1050": {
+    "title": "fix: Route Closing Report notifications to campaigns BRAND-3747",
+    "qualityComments": [
+      {
+        "path": "src/components/notifications/__tests__/helpers.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/components/notifications/__tests__/helpers.test.ts",
+      "src/components/notifications/helpers.ts",
+      "src/components/notifications/notification-module-registry.ts"
+    ],
+    "fetchedAt": "2026-09-29T19:09:28.533Z"
+  },
+  "GetDutchie/brands-portal#1059": {
+    "title": "eng: remove growth.brands.ad-exclusions.rollout flag BRAND-3608",
+    "qualityComments": [
+      {
+        "path": "src/routes/links.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/App.test.tsx",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-is-ad-exclusions-enabled.test.ts",
+      "src/services/launch-darkly/use-is-ad-exclusions-enabled.ts",
+      "src/shell/index.test.tsx",
+      "src/shell/index.tsx"
+    ],
+    "fetchedAt": "2026-09-29T19:09:29.348Z"
   }
 }
