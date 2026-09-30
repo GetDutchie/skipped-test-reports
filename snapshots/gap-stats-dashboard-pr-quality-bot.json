@@ -1901,5 +1901,148 @@
       "src/shell/index.tsx"
     ],
     "fetchedAt": "2026-09-29T19:09:29.348Z"
+  },
+  "GetDutchie/brands-portal#1058": {
+    "title": "eng(catalog): simplify Connect product form and add field tooltips",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/components/preview/item-score-section.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/brand-tags/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/product-details/product-form-helpers.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/modals/prices-modal.tsx",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/product-form.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/components/controlled-currency-input.test.tsx",
+      "src/components/controlled-currency-input.tsx",
+      "src/components/controlled-text-input.test.tsx",
+      "src/components/controlled-text-input.tsx",
+      "src/pages/catalog/brand-tags/brand-tag-modal.tsx",
+      "src/pages/catalog/brand-tags/cannabinoid-ratio.test.ts",
+      "src/pages/catalog/brand-tags/cannabinoid-ratio.ts",
+      "src/pages/catalog/brand-tags/index.test.tsx",
+      "src/pages/catalog/brand-tags/schema.test.ts",
+      "src/pages/catalog/brand-tags/schema.ts",
+      "src/pages/catalog/product-details/components/fields/brand-field.tsx",
+      "src/pages/catalog/product-details/components/fields/cannabinoid-ratio.test.ts",
+      "src/pages/catalog/product-details/components/fields/cannabinoid-ratio.ts",
+      "src/pages/catalog/product-details/components/fields/cannabinoids-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/cannabinoids-field.tsx",
+      "src/pages/catalog/product-details/components/fields/category-field.tsx",
+      "src/pages/catalog/product-details/components/fields/description-field.tsx",
+      "src/pages/catalog/product-details/components/fields/effects-field.tsx",
+      "src/pages/catalog/product-details/components/fields/field-test-defaults.ts",
+      "src/pages/catalog/product-details/components/fields/flavor-tags-field.tsx",
+      "src/pages/catalog/product-details/components/fields/gtin-field.tsx",
+      "src/pages/catalog/product-details/components/fields/images-field.tsx",
+      "src/pages/catalog/product-details/components/fields/name-field.tsx",
+      "src/pages/catalog/product-details/components/fields/packaging-fields.test.tsx",
+      "src/pages/catalog/product-details/components/fields/packaging-fields.tsx",
+      "src/pages/catalog/product-details/components/fields/potency-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/potency-field.tsx",
+      "src/pages/catalog/product-details/components/fields/price-field.tsx",
+      "src/pages/catalog/product-details/components/fields/product-line-field.tsx",
+      "src/pages/catalog/product-details/components/fields/sku-field.tsx",
+      "src/pages/catalog/product-details/components/fields/state-field.tsx",
+      "src/pages/catalog/product-details/components/fields/strain-name-field.tsx",
+      "src/pages/catalog/product-details/components/fields/strain-type-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/strain-type-field.tsx",
+      "src/pages/catalog/product-details/components/fields/styled.ts",
+      "src/pages/catalog/product-details/components/fields/terpenes-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/terpenes-field.tsx",
+      "src/pages/catalog/product-details/components/fields/unclassified-tags-field.tsx",
+      "src/pages/catalog/product-details/components/fields/use-selectable-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/use-selectable-field.ts",
+      "src/pages/catalog/product-details/components/fields/use-suggested-strain-attributes.test.tsx",
+      "src/pages/catalog/product-details/components/fields/use-suggested-strain-attributes.ts",
+      "src/pages/catalog/product-details/components/fields/wholesale-fields.tsx",
+      "src/pages/catalog/product-details/components/modals/cannabinoids-modal.test.tsx",
+      "src/pages/catalog/product-details/components/modals/cannabinoids-modal.tsx",
+      "src/pages/catalog/product-details/components/modals/prices-modal.tsx",
+      "src/pages/catalog/product-details/components/modals/styled.tsx",
+      "src/pages/catalog/product-details/components/modals/terpenes-modal.test.tsx",
+      "src/pages/catalog/product-details/components/modals/terpenes-modal.tsx",
+      "src/pages/catalog/product-details/components/preview/__tests__/product-preview-panel.test.tsx",
+      "src/pages/catalog/product-details/components/preview/item-score-section.test.tsx",
+      "src/pages/catalog/product-details/components/preview/item-score-section.tsx",
+      "src/pages/catalog/product-details/components/product-form.test.tsx",
+      "src/pages/catalog/product-details/components/product-form.tsx",
+      "src/pages/catalog/product-details/constants.ts",
+      "src/pages/catalog/product-details/product-form-helpers.test.ts",
+      "src/pages/catalog/product-details/product-form-helpers.ts",
+      "src/pages/catalog/product-details/product-form-schema.test.ts",
+      "src/pages/catalog/product-details/product-form-schema.ts",
+      "src/pages/catalog/product-details/styled.ts",
+      "src/pages/catalog/product-details/types.ts",
+      "src/pages/catalog/product-details/use-create-product-form.test.ts",
+      "src/pages/catalog/product-details/use-product-form.ts",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.tsx"
+    ],
+    "fetchedAt": "2026-09-30T19:06:48.943Z"
+  },
+  "GetDutchie/brands-portal#1061": {
+    "title": "eng: remove growth.brands.enable-catalog-wholesale-variants.rollout LD flag BRAND-3175",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/create/catalog-select-modal/use-catalog-data.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/catalog-select-modal/index.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/constants.ts",
+      "src/pages/catalog/product-details/product-details.test.tsx",
+      "src/pages/catalog/product-details/product-details.tsx",
+      "src/pages/catalog/product-details/product-form-schema.test.ts",
+      "src/pages/catalog/product-details/product-form-schema.ts",
+      "src/pages/catalog/product-details/use-product-form.ts",
+      "src/pages/orders/create/catalog-select-modal/columns.test.tsx",
+      "src/pages/orders/create/catalog-select-modal/columns.tsx",
+      "src/pages/orders/create/catalog-select-modal/index.test.tsx",
+      "src/pages/orders/create/catalog-select-modal/index.tsx",
+      "src/pages/orders/create/catalog-select-modal/styled.ts",
+      "src/pages/orders/create/catalog-select-modal/use-catalog-data.test.ts",
+      "src/pages/orders/create/catalog-select-modal/use-catalog-data.ts",
+      "src/pages/orders/detail/catalog-select-modal/columns.test.tsx",
+      "src/pages/orders/detail/catalog-select-modal/columns.tsx",
+      "src/pages/orders/detail/catalog-select-modal/index.test.tsx",
+      "src/pages/orders/detail/catalog-select-modal/index.tsx"
+    ],
+    "fetchedAt": "2026-09-30T19:06:49.667Z"
+  },
+  "GetDutchie/brands-portal#1055": {
+    "title": "feat: display Menu Price in Inventory Intel BRAND-3767",
+    "qualityComments": [
+      {
+        "path": "src/pages/insights/inventory-details-table/use-columns.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/insights/locations/get-brand-location-products-overview.gql",
+      "src/api/operations/queries/insights/lsps/get-brand-lsp-products-overview.gql",
+      "src/api/operations/queries/insights/product-menu-price.test.ts",
+      "src/pages/insights/inventory-details-table/use-columns.test.ts",
+      "src/pages/insights/inventory-details-table/use-columns.tsx",
+      "src/pages/insights/tooltip-contents.tsx"
+    ],
+    "fetchedAt": "2026-09-30T19:06:50.591Z"
   }
 }
