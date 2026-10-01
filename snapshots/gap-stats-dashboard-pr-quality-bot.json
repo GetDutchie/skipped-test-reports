@@ -2044,5 +2044,126 @@
       "src/pages/insights/tooltip-contents.tsx"
     ],
     "fetchedAt": "2026-09-30T19:06:50.591Z"
+  },
+  "GetDutchie/brands-portal#1065": {
+    "title": "fix: move case/unit math to the qty column, fix tooltip clipping BRAND-3769",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/create/qty-cell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/use-columns.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/create-products-card.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/orders/create/qty-cell.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/create/catalog-select-modal/columns.tsx",
+      "src/pages/orders/create/catalog-select-modal/index.tsx",
+      "src/pages/orders/create/catalog-select-modal/styled.ts",
+      "src/pages/orders/create/create-products-card.test.tsx",
+      "src/pages/orders/create/qty-cell.test.tsx",
+      "src/pages/orders/create/qty-cell.tsx",
+      "src/pages/orders/create/styled.ts",
+      "src/pages/orders/create/use-columns.tsx"
+    ],
+    "fetchedAt": "2026-10-01T19:06:11.093Z"
+  },
+  "GetDutchie/brands-portal#1011": {
+    "title": "feat(catalog): wire Catalog Health API states BRAND-3715",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/health/components/verification-summary.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/health/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/health/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/health/utils.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/health/hooks/use-catalog-health.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/health/components/grouped-participation.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/health/hooks/use-catalog-health.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/health/components/grouped-participation.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/health/index.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/catalog/get-brand-catalog-health.gql",
+      "src/pages/catalog/health/components/catalog-actions.test.tsx",
+      "src/pages/catalog/health/components/catalog-actions.tsx",
+      "src/pages/catalog/health/components/content-summary.tsx",
+      "src/pages/catalog/health/components/grouped-participation.tsx",
+      "src/pages/catalog/health/components/participation-summary.tsx",
+      "src/pages/catalog/health/components/verification-summary.test.tsx",
+      "src/pages/catalog/health/components/verification-summary.tsx",
+      "src/pages/catalog/health/hooks/use-catalog-health.test.ts",
+      "src/pages/catalog/health/hooks/use-catalog-health.ts",
+      "src/pages/catalog/health/index.test.tsx",
+      "src/pages/catalog/health/index.tsx",
+      "src/pages/catalog/health/styled.ts",
+      "src/pages/catalog/health/utils.test.ts",
+      "src/pages/catalog/health/utils.ts"
+    ],
+    "fetchedAt": "2026-10-01T19:06:12.032Z"
+  },
+  "GetDutchie/brands-portal#1067": {
+    "title": "fix(link desk): surface product detail API errors BRAND-3796",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/bucket-product-detail/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/api/client.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/api/client.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/link-desk/api/client.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/client.test.ts",
+      "src/pages/link-desk/api/client.ts",
+      "src/pages/link-desk/bucket-product-detail/index.test.tsx",
+      "src/pages/link-desk/bucket-product-detail/index.tsx",
+      "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+      "src/pages/link-desk/product-connect/use-product-connect-hydration.ts"
+    ],
+    "fetchedAt": "2026-10-01T19:06:12.978Z"
   }
 }
