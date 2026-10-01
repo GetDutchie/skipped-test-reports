@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "last_processed_ts": "1790766937.328069",
+    "last_processed_ts": "1790853228.375839",
     "entries": {
         "862-src/auth/use-assume-role-exit.ts": {
             "classification": "e2e-out-of-scope",
@@ -126,7 +126,7 @@
             "first_seen": "2026-09-22",
             "last_seen": "2026-09-22",
             "times_seen": 1,
-            "last_notified": "2026-09-22"
+            "last_notified": "2026-10-01"
         },
         "927-src/pages/orders/create/price-cell.tsx": {
             "classification": "unclear",
@@ -135,7 +135,7 @@
             "first_seen": "2026-09-22",
             "last_seen": "2026-09-22",
             "times_seen": 1,
-            "last_notified": "2026-09-22"
+            "last_notified": "2026-10-01"
         },
         "939-src/pages/public-brand-menu/index.tsx": {
             "classification": "unclear",
@@ -144,7 +144,7 @@
             "first_seen": "2026-09-22",
             "last_seen": "2026-09-22",
             "times_seen": 1,
-            "last_notified": "2026-09-22"
+            "last_notified": "2026-10-01"
         }
     }
 }
