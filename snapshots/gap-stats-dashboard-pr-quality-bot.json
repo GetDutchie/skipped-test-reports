@@ -2165,5 +2165,657 @@
       "src/pages/link-desk/product-connect/use-product-connect-hydration.ts"
     ],
     "fetchedAt": "2026-10-01T19:06:12.978Z"
+  },
+  "GetDutchie/dutchie-nexus#1864": {
+    "title": "eng: connect-brands dev host and MF remote for brand settings",
+    "qualityComments": [
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/user-role-permissions.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/new/page.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/page.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/use-users-data.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/edit/page.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/edit/page.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/connect-brands/src/pages/settings/users/edit/page.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      ".agents/skills/nexus-connect-migration/SKILL.md",
+      ".agents/skills/nexus-prototype-build/SKILL.md",
+      ".agents/skills/nexus-refinement/SKILL.md",
+      ".prettierignore",
+      "AGENTS.md",
+      "apps/connect-brands/AGENTS.md",
+      "apps/connect-brands/components.json",
+      "apps/connect-brands/index.html",
+      "apps/connect-brands/package.json",
+      "apps/connect-brands/postcss.config.mjs",
+      "apps/connect-brands/rsbuild.config.ts",
+      "apps/connect-brands/src/auth/auth-guard.tsx",
+      "apps/connect-brands/src/auth/index.test.ts",
+      "apps/connect-brands/src/auth/index.ts",
+      "apps/connect-brands/src/auth/storage.test.ts",
+      "apps/connect-brands/src/auth/storage.ts",
+      "apps/connect-brands/src/components/layout/hub-layout.tsx",
+      "apps/connect-brands/src/connect-brands-app.test.tsx",
+      "apps/connect-brands/src/connect-brands-app.tsx",
+      "apps/connect-brands/src/contexts/brand-scope.test.tsx",
+      "apps/connect-brands/src/contexts/brand-scope.tsx",
+      "apps/connect-brands/src/contexts/brands-context.test.tsx",
+      "apps/connect-brands/src/contexts/brands-context.tsx",
+      "apps/connect-brands/src/contexts/host-session.tsx",
+      "apps/connect-brands/src/export-app.test.tsx",
+      "apps/connect-brands/src/export-app.tsx",
+      "apps/connect-brands/src/hooks/use-all-brands.test.ts",
+      "apps/connect-brands/src/hooks/use-all-brands.ts",
+      "apps/connect-brands/src/hooks/use-user.test.ts",
+      "apps/connect-brands/src/hooks/use-user.ts",
+      "apps/connect-brands/src/host-identity.ts",
+      "apps/connect-brands/src/import-boundary.test.ts",
+      "apps/connect-brands/src/main.tsx",
+      "apps/connect-brands/src/pages/login/page.test.tsx",
+      "apps/connect-brands/src/pages/login/page.tsx",
+      "apps/connect-brands/src/pages/login/use-login-form.test.ts",
+      "apps/connect-brands/src/pages/login/use-login-form.ts",
+      "apps/connect-brands/src/pages/settings/account/page.test.tsx",
+      "apps/connect-brands/src/pages/settings/account/page.tsx",
+      "apps/connect-brands/src/pages/settings/account/schema.test.ts",
+      "apps/connect-brands/src/pages/settings/account/schema.ts",
+      "apps/connect-brands/src/pages/settings/page.test.tsx",
+      "apps/connect-brands/src/pages/settings/page.tsx",
+      "apps/connect-brands/src/pages/settings/tabs.ts",
+      "apps/connect-brands/src/pages/settings/users/edit/page.test.tsx",
+      "apps/connect-brands/src/pages/settings/users/edit/page.tsx",
+      "apps/connect-brands/src/pages/settings/users/is-row-clickable.test.ts",
+      "apps/connect-brands/src/pages/settings/users/is-row-clickable.ts",
+      "apps/connect-brands/src/pages/settings/users/new/page.tsx",
+      "apps/connect-brands/src/pages/settings/users/page.test.tsx",
+      "apps/connect-brands/src/pages/settings/users/page.tsx",
+      "apps/connect-brands/src/pages/settings/users/row-actions-menu.tsx",
+      "apps/connect-brands/src/pages/settings/users/use-columns.tsx",
+      "apps/connect-brands/src/pages/settings/users/use-invalidate-users-cache.ts",
+      "apps/connect-brands/src/pages/settings/users/use-users-data.ts",
+      "apps/connect-brands/src/pages/settings/users/use-users-pagination.test.tsx",
+      "apps/connect-brands/src/pages/settings/users/use-users-pagination.ts",
+      "apps/connect-brands/src/pages/settings/users/user-form-fields.tsx",
+      "apps/connect-brands/src/pages/settings/users/user-role-permissions.test.ts",
+      "apps/connect-brands/src/pages/settings/users/user-role-permissions.ts",
+      "apps/connect-brands/src/pages/settings/users/user-schema.test.ts",
+      "apps/connect-brands/src/pages/settings/users/user-schema.ts",
+      "apps/connect-brands/src/query-param-adapter.tsx",
+      "apps/connect-brands/src/routes.test.tsx",
+      "apps/connect-brands/src/routes.tsx",
+      "apps/connect-brands/src/rsbuild-env.d.ts",
+      "apps/connect-brands/src/settings-routes.test.tsx",
+      "apps/connect-brands/src/settings-routes.tsx",
+      "apps/connect-brands/src/shell/app-sidebar.test.tsx",
+      "apps/connect-brands/src/shell/app-sidebar.tsx",
+      "apps/connect-brands/src/shell/brand-picker.tsx",
+      "apps/connect-brands/src/shell/connect-brands-shell.tsx",
+      "apps/connect-brands/src/shell/user-menu.tsx",
+      "apps/connect-brands/src/styles/globals.css",
+      "apps/connect-brands/src/styles/globals.test.ts",
+      "apps/connect-brands/src/utils/brands.test.ts",
+      "apps/connect-brands/src/utils/brands.ts",
+      "apps/connect-brands/tsconfig.json",
+      "apps/connect-brands/vitest.config.ts",
+      "apps/connect-brands/vitest.setup.ts",
+      "apps/connect-brands/wrangler.jsonc",
+      "apps/nexus/src/components/user-menu/get-initials.ts",
+      "apps/nexus/src/components/user-menu/user-menu.tsx",
+      "apps/nexus/src/design-system/no-duplicate-exports.test.ts",
+      "apps/nexus/src/design-system/storybook-coverage.test.ts",
+      "apps/nexus/src/preview/AGENTS.md",
+      "docs/adrs/0013-connect-brands-dev-host-and-mf-remote.md",
+      "docs/adrs/README.md",
+      "docs/design-system/components/README.md",
+      "docs/design-system/components/user-profile-menu.md",
+      "eslint.config.mjs",
+      "packages/connect-client/.gitignore",
+      "packages/connect-client/AGENTS.md",
+      "packages/connect-client/codegen.ts",
+      "packages/connect-client/package.json",
+      "packages/connect-client/schemas/dutchie-ecomm.schema.graphql",
+      "packages/connect-client/src/apollo-client.test.ts",
+      "packages/connect-client/src/apollo-client.ts",
+      "packages/connect-client/src/graphql/operations/fragments/identity-admin.gql",
+      "packages/connect-client/src/graphql/operations/mutations/assume-user-role.gql"
+    ],
+    "fetchedAt": "2026-10-02T19:06:47.995Z"
+  },
+  "GetDutchie/dutchie-nexus#1876": {
+    "title": "eng(dex): hide empty chats from history",
+    "qualityComments": [
+      {
+        "path": "apps/nexus-agent-client/src/chats/chat-api.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/chats/use-chat-index.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/dex/dex-chat/src/dex-chat.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus-agent-client/src/app/app.test.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent-tool-error-rendering.test.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent.test.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent.tsx",
+      "apps/nexus-agent-client/src/chats/chat-api.test.ts",
+      "apps/nexus-agent-client/src/chats/chat-switcher.tsx",
+      "apps/nexus-agent-client/src/chats/recents-page.test.tsx",
+      "apps/nexus-agent-client/src/chats/recents-page.tsx",
+      "apps/nexus-agent-client/src/chats/sidebar-history-source.test.tsx",
+      "apps/nexus-agent-client/src/chats/sidebar-history-source.tsx",
+      "apps/nexus-agent-client/src/chats/use-chat-index.ts",
+      "packages/dex/dex-chat/src/dex-chat.test.tsx",
+      "packages/dex/dex-chat/src/dex-chat.tsx"
+    ],
+    "fetchedAt": "2026-10-02T19:06:48.856Z"
+  },
+  "GetDutchie/dutchie-nexus#1846": {
+    "title": "eng(dex): add focused workspace shell",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/dex/workspace/dex-conversation-history.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/chats/sidebar-history-source.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/chats/recents-page.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/pages/dex/workspace/dex-sidebar.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/nexus-ui/src/side-nav/side-nav.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/nexus/src/pages/dex/workspace/dex-sidebar.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/app/app.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/scripts/prepare-host-types.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      ".agents/skills/mf/reference/bridge-check.md",
+      ".agents/skills/mf/reference/integrate.md",
+      ".agents/skills/mf/reference/type-check.md",
+      "apps/nexus-agent-client/package.json",
+      "apps/nexus-agent-client/rsbuild.config.ts",
+      "apps/nexus-agent-client/scripts/prepare-host-types.mjs",
+      "apps/nexus-agent-client/scripts/prepare-host-types.test.ts",
+      "apps/nexus-agent-client/src/app-view/app-view-app.tsx",
+      "apps/nexus-agent-client/src/app-view/dex-app-view.tsx",
+      "apps/nexus-agent-client/src/app/app.test.tsx",
+      "apps/nexus-agent-client/src/app/app.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent.test.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent.tsx",
+      "apps/nexus-agent-client/src/app/providers.tsx",
+      "apps/nexus-agent-client/src/chats/chat-switcher.tsx",
+      "apps/nexus-agent-client/src/chats/recents-app.test.tsx",
+      "apps/nexus-agent-client/src/chats/recents-app.tsx",
+      "apps/nexus-agent-client/src/chats/recents-page.test.tsx",
+      "apps/nexus-agent-client/src/chats/recents-page.tsx",
+      "apps/nexus-agent-client/src/chats/sidebar-history-source.test.tsx",
+      "apps/nexus-agent-client/src/chats/sidebar-history-source.tsx",
+      "apps/nexus-agent-client/src/export-app.test.tsx",
+      "apps/nexus-agent-client/src/export-app.tsx",
+      "apps/nexus-agent-client/src/settings/apps-tab.test.tsx",
+      "apps/nexus-agent-client/src/settings/apps-tab.tsx",
+      "apps/nexus-agent-client/src/settings/settings-app.test.tsx",
+      "apps/nexus-agent-client/src/settings/settings-app.tsx",
+      "apps/nexus-agent-client/src/settings/settings-page.test.tsx",
+      "apps/nexus-agent-client/src/settings/settings-page.tsx",
+      "apps/nexus-agent-client/src/settings/settings-sections.test.tsx",
+      "apps/nexus/package.json",
+      "apps/nexus/rsbuild.config.ts",
+      "apps/nexus/src/__mocks__/retailers/DexChatHistorySource.tsx",
+      "apps/nexus/src/__mocks__/retailers/DexRecentsApp.tsx",
+      "apps/nexus/src/__mocks__/retailers/DexRemoteApp.tsx",
+      "apps/nexus/src/__mocks__/retailers/DexSettingsApp.tsx",
+      "apps/nexus/src/__mocks__/retailers/InventoryAgentApp.tsx",
+      "apps/nexus/src/design-system/colors.stories.tsx",
+      "apps/nexus/src/design-system/icon-inventory.test.ts",
+      "apps/nexus/src/design-system/icon-inventory.ts",
+      "apps/nexus/src/design-system/sidebar-color-tokens.test.ts",
+      "apps/nexus/src/module-federation-contract.test.ts",
+      "apps/nexus/src/pages/dex/apps/[appId]/page.test.tsx",
+      "apps/nexus/src/pages/dex/apps/[appId]/page.tsx",
+      "apps/nexus/src/pages/dex/page.test.tsx",
+      "apps/nexus/src/pages/dex/page.tsx",
+      "apps/nexus/src/pages/dex/recents/page.test.tsx",
+      "apps/nexus/src/pages/dex/recents/page.tsx",
+      "apps/nexus/src/pages/dex/settings/page.test.tsx",
+      "apps/nexus/src/pages/dex/settings/page.tsx",
+      "apps/nexus/src/pages/dex/settings/section-page.test.tsx",
+      "apps/nexus/src/pages/dex/settings/section-page.tsx",
+      "apps/nexus/src/pages/dex/use-gated-dex-tools.ts",
+      "apps/nexus/src/pages/dex/workspace/dex-conversation-history.test.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-conversation-history.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-history-error-boundary.test.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-history-error-boundary.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-sidebar.test.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-sidebar.tsx",
+      "apps/nexus/src/pages/dex/workspace/is-dex-route.test.ts",
+      "apps/nexus/src/pages/dex/workspace/is-dex-route.ts",
+      "apps/nexus/src/retailers-remote.d.ts",
+      "apps/nexus/src/routes.test.tsx",
+      "apps/nexus/src/routes.tsx",
+      "apps/nexus/src/shell.test.tsx",
+      "apps/nexus/src/shell.tsx",
+      "apps/nexus/tsconfig.json",
+      "apps/nexus/vitest.config.ts",
+      "build-config/module-federation.ts",
+      "docs/design-system/components/side-nav.md",
+      "docs/design-system/tokens/colors.md",
+      "package.json",
+      "packages/dex/dex-chat/src/chat-history/delete-chat-dialog.tsx",
+      "packages/dex/dex-chat/src/chat-history/rename-chat-dialog.tsx",
+      "packages/dex/dex-chat/src/chat-history/types.ts",
+      "packages/dex/dex-chat/src/chat/chat-layout.test.tsx",
+      "packages/dex/dex-chat/src/chat/empty-state/empty-state.test.tsx",
+      "packages/dex/dex-chat/src/chat/empty-state/empty-state.tsx",
+      "packages/dex/dex-chat/src/chat/empty-state/pickup-prompts.ts",
+      "packages/dex/dex-chat/src/chat/empty-state/pickup-tile.tsx",
+      "packages/dex/dex-chat/src/chat/prompt-input/message-input.test.tsx",
+      "packages/dex/dex-chat/src/chat/prompt-input/message-input.tsx",
+      "packages/dex/dex-chat/src/dex-chat.test.tsx",
+      "packages/dex/dex-chat/src/dex-chat.tsx",
+      "packages/dex/dex-chat/src/index.ts",
+      "packages/dex/dex-chat/src/shell/split-layout.test.tsx",
+      "packages/dex/dex-chat/src/shell/split-layout.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav-collapse-control.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav-items.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav-menu-button.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav.stories.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav.test.tsx",
+      "packages/theme/tokens.css",
+      "pnpm-lock.yaml"
+    ],
+    "fetchedAt": "2026-10-02T19:06:49.912Z"
+  },
+  "GetDutchie/dutchie-nexus#1863": {
+    "title": "eng: promote shared DataTable, HubLayout, and PageTabs into nexus-ui",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/components/layout/page-tabs.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/components/layout/hub-layout.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/nexus-ui/src/no-app-aliases.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/_migrated/back-office/account/page.tsx",
+      "apps/nexus/src/_migrated/back-office/alpineiq/page.tsx",
+      "apps/nexus/src/_migrated/back-office/batches/detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/batches/detail/batch-detail.tsx",
+      "apps/nexus/src/_migrated/back-office/batches/detail/packages-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/batches/list/batch-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/batches/list/batch-list.tsx",
+      "apps/nexus/src/_migrated/back-office/batches/page.tsx",
+      "apps/nexus/src/_migrated/back-office/canpay/page.tsx",
+      "apps/nexus/src/_migrated/back-office/cultivation-integration-audit/components/plant-batch-discrepancies-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/cultivation-integration-audit/components/plant-discrepancies-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/cultivation-integration-audit/page.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/components/group-discounts.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/components/group-form.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/components/group-list.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/group-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/group-discount-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/customer-groups/page.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/doctors/doctor-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/doctors/doctor-form.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/doctors/doctors-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/fields/field-visibility-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/fields/fields-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/qualifying-conditions/qc-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/qualifying-conditions/qualifying-condition-detail.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/components/qualifying-conditions/qualifying-conditions-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-configure/page.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-directory/customer-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-directory/customer-directory.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-directory/customer-form.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-directory/detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/customers-directory/page.tsx",
+      "apps/nexus/src/_migrated/back-office/external-loyalty/page.tsx",
+      "apps/nexus/src/_migrated/back-office/fees-donations/components/fee-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/fees-donations/components/fees-list.tsx",
+      "apps/nexus/src/_migrated/back-office/idscan/page.tsx",
+      "apps/nexus/src/_migrated/back-office/incidents/page.tsx",
+      "apps/nexus/src/_migrated/back-office/integrations-hub/page.tsx",
+      "apps/nexus/src/_migrated/back-office/iowa-dph/page.tsx",
+      "apps/nexus/src/_migrated/back-office/journal/components/journal-list.tsx",
+      "apps/nexus/src/_migrated/back-office/journal/page.tsx",
+      "apps/nexus/src/_migrated/back-office/manifests/components/manifest-detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/manifests/components/manifest-list.tsx",
+      "apps/nexus/src/_migrated/back-office/manifests/manifest-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/manifests/page.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/components/manufacturer-list.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/manufacturer-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/manufacturers/page.tsx",
+      "apps/nexus/src/_migrated/back-office/onfleet/page.tsx",
+      "apps/nexus/src/_migrated/back-office/pmp/page.tsx",
+      "apps/nexus/src/_migrated/back-office/receipts-and-tickets/page.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-configure/registers-configure-shell.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/bulk-actions/bulk-close-out-tab.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/bulk-actions/page.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/by-register-detail/components/register-ledger-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/by-register-detail/components/register-ledger-grid.test.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/by-register-detail/components/register-ledger-grid.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/by-register-detail/page.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/components/all-transactions.test.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/components/all-transactions.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/components/by-register-table.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/components/transaction-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/components/transaction-detail.tsx",
+      "apps/nexus/src/_migrated/back-office/registers-transactions/page.tsx",
+      "apps/nexus/src/_migrated/back-office/registers/overview/components/daily-activity.tsx",
+      "apps/nexus/src/_migrated/back-office/registers/overview/components/daily-totals-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/registers/overview/page.tsx",
+      "apps/nexus/src/_migrated/back-office/scan-diagnostics/page.tsx",
+      "apps/nexus/src/_migrated/back-office/sms-marketing/page.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/components/strain-form.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/components/strain-list.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/detail-page.test.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/page.tsx",
+      "apps/nexus/src/_migrated/back-office/strains/strain-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/time-clock/components/employee-clock-card.tsx",
+      "apps/nexus/src/_migrated/back-office/time-clock/page.tsx",
+      "apps/nexus/src/_migrated/back-office/vendors/components/vendor-columns.tsx",
+      "apps/nexus/src/_migrated/back-office/vendors/components/vendor-form.tsx",
+      "apps/nexus/src/_migrated/back-office/vendors/components/vendor-list.tsx",
+      "apps/nexus/src/_migrated/back-office/vendors/detail-page.tsx",
+      "apps/nexus/src/_migrated/back-office/vendors/page.tsx",
+      "apps/nexus/src/_migrated/back-office/weedmaps/page.tsx",
+      "apps/nexus/src/api/inventory/audits.ts",
+      "apps/nexus/src/api/pinned-pages.ts",
+      "apps/nexus/src/components/data-table/views/use-persisted-views.test.ts",
+      "apps/nexus/src/components/data-table/views/use-persisted-views.ts",
+      "apps/nexus/src/components/diff-grid/diff-grid.tsx",
+      "apps/nexus/src/components/layout/detail-layout.stories.tsx",
+      "apps/nexus/src/components/layout/hub-layout.test.tsx",
+      "apps/nexus/src/components/layout/hub-layout.tsx",
+      "apps/nexus/src/components/layout/page-tabs.test.tsx",
+      "apps/nexus/src/components/layout/page-tabs.tsx",
+      "apps/nexus/src/components/layout/segmented-tabs.tsx",
+      "apps/nexus/src/design-system/no-duplicate-exports.test.ts",
+      "apps/nexus/src/design-system/storybook-coverage.test.ts",
+      "apps/nexus/src/lib/download-csv.ts",
+      "apps/nexus/src/pages/command-center/page.tsx",
+      "apps/nexus/src/pages/competitions/components/standings-table.tsx"
+    ],
+    "fetchedAt": "2026-10-02T19:06:50.803Z"
+  },
+  "GetDutchie/dutchie-nexus#1862": {
+    "title": "eng(design system): semantic side nav colors",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/design-system/sidebar-color-tokens.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/design-system/colors.stories.tsx",
+      "apps/nexus/src/design-system/sidebar-color-tokens.test.ts",
+      "apps/nexus/src/pages/dex/workspace/dex-conversation-history.test.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-conversation-history.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-sidebar.test.tsx",
+      "apps/nexus/src/pages/dex/workspace/dex-sidebar.tsx",
+      "docs/design-system/components/side-nav.md",
+      "docs/design-system/tokens/colors.md",
+      "packages/nexus-ui/src/side-nav/side-nav-collapse-control.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav-menu-button.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav.stories.tsx",
+      "packages/nexus-ui/src/side-nav/side-nav.test.tsx",
+      "packages/theme/tokens.css"
+    ],
+    "fetchedAt": "2026-10-02T19:06:51.707Z"
+  },
+  "GetDutchie/dutchie-nexus#1861": {
+    "title": "eng(dex): tighten MF contracts",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/module-federation-contract.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/module-federation-contract.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "apps/nexus/src/module-federation-contract.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/nexus-agent-client/scripts/prepare-host-types.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      ".agents/skills/mf/reference/bridge-check.md",
+      ".agents/skills/mf/reference/integrate.md",
+      ".agents/skills/mf/reference/type-check.md",
+      "apps/nexus-agent-client/package.json",
+      "apps/nexus-agent-client/rsbuild.config.ts",
+      "apps/nexus-agent-client/scripts/prepare-host-types.mjs",
+      "apps/nexus-agent-client/scripts/prepare-host-types.test.ts",
+      "apps/nexus/rsbuild.config.ts",
+      "apps/nexus/src/module-federation-contract.test.ts",
+      "build-config/module-federation.ts",
+      "package.json",
+      "pnpm-lock.yaml"
+    ],
+    "fetchedAt": "2026-10-02T19:06:52.645Z"
+  },
+  "GetDutchie/dutchie-nexus#1858": {
+    "title": "eng(dex analyst): minimal analyst chat turn",
+    "qualityComments": [
+      {
+        "path": "apps/nexus-agent-server/src/analyst/agent.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-server/src/analyst/agent.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus-agent-server/src/analyst/agent.test.ts",
+      "apps/nexus-agent-server/src/analyst/agent.ts",
+      "apps/nexus-agent-server/src/analyst/prompt.test.ts",
+      "apps/nexus-agent-server/src/analyst/prompt.ts",
+      "apps/nexus-agent-server/src/analyst/turn-scope.test.ts",
+      "apps/nexus-agent-server/src/analyst/turn-scope.ts",
+      "apps/nexus-agent-server/src/attribution.ts",
+      "packages/nexus-analyst-contract/src/app-props.ts",
+      "packages/nexus-analyst-contract/src/index.ts"
+    ],
+    "fetchedAt": "2026-10-02T19:06:53.486Z"
+  },
+  "GetDutchie/dutchie-nexus#1865": {
+    "title": "eng(nexus): reset route errors without remounting pages",
+    "qualityComments": [
+      {
+        "path": "packages/nexus-ui/src/error-boundary.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "apps/connect-agent-client/package.json",
+      "apps/connect-agent-client/src/app/app.test.tsx",
+      "apps/connect-agent-client/src/app/app.tsx",
+      "apps/nexus-agent-client/src/app/app.test.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent-tool-error-rendering.test.tsx",
+      "apps/nexus-agent-client/src/main.tsx",
+      "apps/nexus-agent-client/src/standalone-app.test.tsx",
+      "apps/nexus-agent-client/src/standalone-app.tsx",
+      "apps/nexus/src/components/layout/page-tabs.tsx",
+      "apps/nexus/src/shell.tsx",
+      "packages/dex/dex-chat/package.json",
+      "packages/dex/dex-chat/src/dex-chat.test.tsx",
+      "packages/nexus-ui/src/error-boundary.test.tsx",
+      "packages/nexus-ui/src/error-boundary.tsx",
+      "pnpm-lock.yaml"
+    ],
+    "fetchedAt": "2026-10-02T19:06:54.371Z"
+  },
+  "GetDutchie/brands-portal#1103": {
+    "title": "fix: limit Link Desk to one skip reason BRAND-3822",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/link-desk/constants.ts",
+      "src/pages/link-desk/product-connect/action-bar.test.tsx",
+      "src/pages/link-desk/product-connect/action-bar.tsx",
+      "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+      "src/pages/link-desk/product-connect/index.test.tsx",
+      "src/pages/link-desk/product-connect/index.tsx",
+      "src/pages/link-desk/shared/skip-reason-modal/index.test.tsx",
+      "src/pages/link-desk/shared/skip-reason-modal/index.tsx",
+      "src/pages/link-desk/use-link-desk-shortcuts.ts"
+    ],
+    "fetchedAt": "2026-10-02T19:06:54.987Z"
+  },
+  "GetDutchie/brands-portal#1098": {
+    "title": "feat: compact Overview and rank states by net sales BRAND-3810",
+    "qualityComments": [
+      {
+        "path": "src/pages/overview/market-penetration-map/states-ranking.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/overview/market-penetration-map/market-penetration-map.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/overview/market-penetration-map/market-penetration-map.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/overview/market-penetration-map/market-penetration-map.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/overview/market-penetration-map/states-ranking.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/overview/market-penetration-map/market-penetration-map.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/overview/market-penetration-map/market-penetration-map.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/overview/market-penetration-map/get-tile-color.test.ts",
+      "src/pages/overview/market-penetration-map/market-penetration-map.test.tsx",
+      "src/pages/overview/market-penetration-map/market-penetration-map.tsx",
+      "src/pages/overview/market-penetration-map/states-ranking.tsx",
+      "src/pages/overview/market-penetration-map/styled.ts",
+      "src/pages/overview/market-penetration-map/use-market-penetration-map-data.test.ts",
+      "src/pages/overview/market-penetration-map/use-market-penetration-map-data.ts",
+      "src/pages/overview/sales-trend-chart/sales-trend-chart.test.tsx",
+      "src/pages/overview/sales-trend-chart/sales-trend-chart.tsx",
+      "src/pages/overview/sales-trend-chart/styled.ts"
+    ],
+    "fetchedAt": "2026-10-02T19:06:55.937Z"
+  },
+  "GetDutchie/brands-portal#1092": {
+    "title": "fix(menu): remove nested search border BRAND-3814",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/public-brand-menu/styled.ts"
+    ],
+    "fetchedAt": "2026-10-02T19:06:56.748Z"
+  },
+  "GetDutchie/alchemy#1196": {
+    "title": "fix(account-360, ui): pin the ACTION column to the table's right edge (PF-10221)",
+    "qualityComments": [
+      {
+        "path": "libs/ui/src/components/data-display/DataTable.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.tsx",
+      "libs/ui/src/components/data-display/DataTable.test.tsx",
+      "libs/ui/src/components/data-display/DataTable.tsx"
+    ],
+    "fetchedAt": "2026-10-02T19:06:57.635Z"
+  },
+  "GetDutchie/alchemy#1197": {
+    "title": "fix(gtm-account-360): match Support Tickets widget totals to the top tile (PF-9933)",
+    "qualityComments": [
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.helpers.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.helpers.test.ts",
+      "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.helpers.ts",
+      "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/SupportTicketsPanel.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/SupportTicketsSection.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/SupportTicketsSection.tsx"
+    ],
+    "fetchedAt": "2026-10-02T19:06:58.430Z"
   }
 }
