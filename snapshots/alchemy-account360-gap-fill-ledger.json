@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1790852545",
+  "last_processed_ts": "1790939008.562659",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -211,6 +211,17 @@
       "last_seen": "2026-09-24",
       "times_seen": 1,
       "last_notified": "2026-09-24T13:40:00Z"
+    },
+    "1196-apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.tsx": {
+      "classification": "e2e-out-of-scope",
+      "reason": "In scope (account-360, PR #1196's own sticky-ACTION-column change). [Low] gap, PF-10221 \u2014 the unit tests check the inline sticky/right:0 styles, but jsdom does no real layout, so nothing checks the column actually stays visible when the ~2525px table overflows a 1440px viewport. Confirmed account-360 still has no e2e suite today (`ls e2e/*.spec.ts` + grep: only api-auth/fga-scoped/guardian-oauth/persona-login-ui/rnd-* specs exist, none are account-360 UI-flow specs of its own). Genuinely layout-shaped (real viewport overflow + sticky positioning), not a value-computation gap a jsdom unit test could close.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 1196,
+      "first_seen": "2026-10-02",
+      "last_seen": "2026-10-02",
+      "times_seen": 1,
+      "last_notified": "2026-10-02T13:30:00Z"
     }
   }
 }
