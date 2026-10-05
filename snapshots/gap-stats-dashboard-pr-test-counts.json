@@ -222,7 +222,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:43.568Z"
+    "fetchedAt": "2026-10-05T19:04:14.361Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1028": {
     "project": "connect",
@@ -231,7 +231,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:43.941Z"
+    "fetchedAt": "2026-10-05T19:04:14.696Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1029": {
     "project": "connect",
@@ -240,7 +240,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:44.305Z"
+    "fetchedAt": "2026-10-05T19:04:15.096Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1030": {
     "project": "connect",
@@ -249,7 +249,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:44.630Z"
+    "fetchedAt": "2026-10-05T19:04:15.513Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1031": {
     "project": "connect",
@@ -258,7 +258,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:44.943Z"
+    "fetchedAt": "2026-10-05T19:04:15.894Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1060": {
     "project": "connect",
@@ -321,7 +321,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:45.262Z"
+    "fetchedAt": "2026-10-05T19:04:16.463Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1076": {
     "project": "connect",
@@ -348,7 +348,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:42.202Z"
+    "fetchedAt": "2026-10-05T19:04:12.836Z"
   },
   "https://github.com/GetDutchie/dutchie-nexus/pull/1849": {
     "project": "nexus",
@@ -357,7 +357,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:42.519Z"
+    "fetchedAt": "2026-10-05T19:04:13.268Z"
   },
   "https://github.com/GetDutchie/dutchie-nexus/pull/1850": {
     "project": "nexus",
@@ -366,7 +366,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:42.816Z"
+    "fetchedAt": "2026-10-05T19:04:13.608Z"
   },
   "https://github.com/GetDutchie/dutchie-nexus/pull/1851": {
     "project": "nexus",
@@ -375,7 +375,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:43.149Z"
+    "fetchedAt": "2026-10-05T19:04:13.961Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1089": {
     "project": "connect",
@@ -384,7 +384,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:45.599Z"
+    "fetchedAt": "2026-10-05T19:04:16.783Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1087": {
     "project": "connect",
@@ -393,7 +393,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:45.967Z"
+    "fetchedAt": "2026-10-05T19:04:17.189Z"
   },
   "https://github.com/GetDutchie/brands-portal/pull/1088": {
     "project": "connect",
@@ -402,7 +402,7 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:46.438Z"
+    "fetchedAt": "2026-10-05T19:04:17.605Z"
   },
   "https://github.com/GetDutchie/alchemy/pull/1219": {
     "project": "alchemy",
@@ -411,6 +411,33 @@
     "mergedAt": null,
     "testFilesChanged": 0,
     "testCasesAdded": 0,
-    "fetchedAt": "2026-10-02T19:06:46.821Z"
+    "fetchedAt": "2026-10-05T19:04:18.658Z"
+  },
+  "https://github.com/GetDutchie/brands-portal/pull/1126": {
+    "project": "connect",
+    "state": "OPEN",
+    "merged": false,
+    "mergedAt": null,
+    "testFilesChanged": 0,
+    "testCasesAdded": 0,
+    "fetchedAt": "2026-10-05T19:04:17.931Z"
+  },
+  "https://github.com/GetDutchie/brands-portal/pull/1127": {
+    "project": "connect",
+    "state": "OPEN",
+    "merged": false,
+    "mergedAt": null,
+    "testFilesChanged": 0,
+    "testCasesAdded": 0,
+    "fetchedAt": "2026-10-05T19:04:18.303Z"
+  },
+  "https://github.com/GetDutchie/alchemy/pull/1242": {
+    "project": "alchemy",
+    "state": "OPEN",
+    "merged": false,
+    "mergedAt": null,
+    "testFilesChanged": 0,
+    "testCasesAdded": 0,
+    "fetchedAt": "2026-10-05T19:04:19.033Z"
   }
 }

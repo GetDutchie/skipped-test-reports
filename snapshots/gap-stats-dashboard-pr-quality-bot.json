@@ -2817,5 +2817,142 @@
       "apps/gtm/account-360/web/src/features/account360/panels/SupportTicketsSection.tsx"
     ],
     "fetchedAt": "2026-10-02T19:06:58.430Z"
+  },
+  "GetDutchie/brands-portal#1097": {
+    "title": "eng(connect): federate brand settings behind a Phase 2 connect route",
+    "qualityComments": [
+      {
+        "path": "src/pages/connect-brands-route.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/connect-brands-route.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/routes/links.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      ".agents/skills/brands-design-system/SKILL.md",
+      ".agents/skills/brands-prototype/SKILL.md",
+      ".agents/skills/brands-refine/SKILL.md",
+      ".env.e2e",
+      "rsbuild.config.ts",
+      "src/App.test.tsx",
+      "src/App.tsx",
+      "src/connect-brands-remote-stub.test.tsx",
+      "src/connect-brands-remote-stub.tsx",
+      "src/connect-brands-remote.d.ts",
+      "src/pages/connect-brands-route.test.tsx",
+      "src/pages/connect-brands-route.tsx",
+      "src/preview/AGENTS.md",
+      "src/routes/index.ts",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/theme/nexus-theme/nav-chrome.ts"
+    ],
+    "fetchedAt": "2026-10-05T19:04:20.045Z"
+  },
+  "GetDutchie/brands-portal#1112": {
+    "title": "eng: add LaunchDarkly degradation telemetry BRAND-3784",
+    "qualityComments": [
+      {
+        "path": "src/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/services/launch-darkly/telemetry.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/services/launch-darkly/initialize-launch-darkly.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/index.tsx",
+      "src/services/launch-darkly/initialize-launch-darkly.test.tsx",
+      "src/services/launch-darkly/initialize-launch-darkly.tsx",
+      "src/services/launch-darkly/telemetry.test.ts",
+      "src/services/launch-darkly/telemetry.ts",
+      "src/services/launch-darkly/use-launch-darkly-user.test.tsx",
+      "src/services/launch-darkly/use-launch-darkly-user.ts"
+    ],
+    "fetchedAt": "2026-10-05T19:04:20.880Z"
+  },
+  "GetDutchie/brands-portal#1115": {
+    "title": "feat: integrate advisory AI product matches in Link Desk BRAND-3850",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/match-recommendation/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/brand-matches-column.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "jest.config.js",
+      "package.json",
+      "src/pages/link-desk/product-connect/brand-matches-column.test.tsx",
+      "src/pages/link-desk/product-connect/brand-matches-column.tsx",
+      "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+      "src/pages/link-desk/product-connect/index.tsx",
+      "src/pages/link-desk/product-connect/match-recommendation/index.tsx",
+      "src/pages/link-desk/product-connect/match-recommendation/styled.ts",
+      "src/pages/link-desk/product-connect/match-recommendation/test-fixtures.ts",
+      "src/pages/link-desk/product-connect/use-bucket-review.test.ts",
+      "src/pages/link-desk/product-connect/use-bucket-review.ts",
+      "src/pages/link-desk/product-connect/utils.test.ts",
+      "src/pages/link-desk/product-connect/utils.ts",
+      "src/pages/link-desk/types.ts"
+    ],
+    "fetchedAt": "2026-10-05T19:04:21.691Z"
+  },
+  "GetDutchie/brands-portal#1120": {
+    "title": "fix(catalog): improve Catalog Health empty state BRAND-3715",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/health/utils.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/health/components/grouped-participation.tsx",
+      "src/pages/catalog/health/index.test.tsx",
+      "src/pages/catalog/health/styled.ts",
+      "src/pages/catalog/health/utils.test.ts",
+      "src/pages/catalog/health/utils.ts"
+    ],
+    "fetchedAt": "2026-10-05T19:04:22.451Z"
+  },
+  "GetDutchie/alchemy#1240": {
+    "title": "feat(account-360): accept x-api-key credentials (the data-access shim's first app)",
+    "qualityComments": [
+      {
+        "path": "apps/gtm/account-360/api/src/index.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/api-core/src/boot-app-core.ts",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/api/src/index.ts",
+      "libs/api-core/src/boot-app-core.ts"
+    ],
+    "fetchedAt": "2026-10-05T19:04:23.375Z"
   }
 }
