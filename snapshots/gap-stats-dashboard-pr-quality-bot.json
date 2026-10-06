@@ -2954,5 +2954,125 @@
       "libs/api-core/src/boot-app-core.ts"
     ],
     "fetchedAt": "2026-10-05T19:04:23.375Z"
+  },
+  "GetDutchie/brands-portal#1130": {
+    "title": "fix: use shell brand selection for Default Contacts BRAND-3834",
+    "qualityComments": [
+      {
+        "path": "src/App.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/index.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/App.tsx",
+      "src/pages/settings/default-contacts/index.test.tsx",
+      "src/pages/settings/default-contacts/index.tsx",
+      "src/pages/settings/default-contacts/styled.ts",
+      "src/pages/settings/default-contacts/use-default-contacts.ts"
+    ],
+    "fetchedAt": "2026-10-06T19:07:06.685Z"
+  },
+  "GetDutchie/brands-portal#1121": {
+    "title": "feat: add Default Contacts settings BRAND-3834",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/default-contacts/contact-modal.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/use-default-contacts.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/use-default-contacts.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/route-guard.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/App.tsx",
+      "src/api/operations/mutations/default-contacts/delete-default-contact.gql",
+      "src/api/operations/mutations/default-contacts/upsert-default-contact.gql",
+      "src/api/operations/queries/default-contacts/get-default-contacts.gql",
+      "src/pages/settings/default-contacts/contact-modal.tsx",
+      "src/pages/settings/default-contacts/delete-contact-modal.tsx",
+      "src/pages/settings/default-contacts/feature-card.tsx",
+      "src/pages/settings/default-contacts/index.test.tsx",
+      "src/pages/settings/default-contacts/index.tsx",
+      "src/pages/settings/default-contacts/route-guard.test.tsx",
+      "src/pages/settings/default-contacts/route-guard.tsx",
+      "src/pages/settings/default-contacts/styled.ts",
+      "src/pages/settings/default-contacts/use-default-contacts.ts",
+      "src/routes/index.ts",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-is-default-contacts-enabled.test.ts",
+      "src/services/launch-darkly/use-is-default-contacts-enabled.ts",
+      "src/shell/index.tsx",
+      "src/theme/tokens.ts"
+    ],
+    "fetchedAt": "2026-10-06T19:07:07.534Z"
+  },
+  "GetDutchie/brands-portal#1128": {
+    "title": "fix: PO items table scroll, input, and substitution display issues BRAND-3845",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/detail/items-table/use-item-actions.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-columns.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/catalog-select-modal/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/create/use-columns.tsx",
+      "src/pages/orders/detail/catalog-select-modal/columns.tsx",
+      "src/pages/orders/detail/catalog-select-modal/index.test.tsx",
+      "src/pages/orders/detail/catalog-select-modal/index.tsx",
+      "src/pages/orders/detail/items-table/styled.ts",
+      "src/pages/orders/detail/items-table/use-columns.test.tsx",
+      "src/pages/orders/detail/items-table/use-columns.tsx",
+      "src/pages/orders/detail/items-table/use-item-actions.test.ts",
+      "src/pages/orders/detail/items-table/use-item-actions.ts",
+      "src/pages/orders/detail/items-table/utils/index.test.ts",
+      "src/pages/orders/detail/items-table/utils/rows.ts",
+      "src/pages/orders/detail/styled.ts",
+      "src/pages/orders/list/index.tsx",
+      "src/pages/orders/list/styled.ts"
+    ],
+    "fetchedAt": "2026-10-06T19:07:08.366Z"
+  },
+  "GetDutchie/brands-portal#1126": {
+    "title": "eng(connect): fill Connect test gap — /connect route is not preview-phase gated",
+    "qualityComments": [
+      {
+        "path": "src/App.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/App.test.tsx"
+    ],
+    "fetchedAt": "2026-10-06T19:07:09.120Z"
   }
 }
