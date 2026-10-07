@@ -3074,5 +3074,298 @@
       "src/App.test.tsx"
     ],
     "fetchedAt": "2026-10-06T19:07:09.120Z"
+  },
+  "GetDutchie/brands-portal#1131": {
+    "title": "feat: default BFD proposal contacts BRAND-3825",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/bfd-contact.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/bfd-contact.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/bfd-contact.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/promotions/bfd-contact-fields.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/promotions/bfd-contact-fields.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/use-bfd-contact-default.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/step-validators/details.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/build-create-discount-input.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/summary/details-card.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/bfd-contact.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/bfd-contact-fields.test.tsx",
+      "src/pages/promotions/bfd-contact-fields.tsx",
+      "src/pages/promotions/bfd-contact.test.ts",
+      "src/pages/promotions/bfd-contact.ts",
+      "src/pages/promotions/simple-wizard/api/build-create-discount-campaign-input.test.ts",
+      "src/pages/promotions/simple-wizard/api/build-create-discount-campaign-input.ts",
+      "src/pages/promotions/simple-wizard/details/index.test.tsx",
+      "src/pages/promotions/simple-wizard/details/index.tsx",
+      "src/pages/promotions/simple-wizard/index.test.tsx",
+      "src/pages/promotions/simple-wizard/index.tsx",
+      "src/pages/promotions/simple-wizard/state/details.test.ts",
+      "src/pages/promotions/simple-wizard/state/details.ts",
+      "src/pages/promotions/simple-wizard/step-validators/details.test.ts",
+      "src/pages/promotions/simple-wizard/step-validators/details.ts",
+      "src/pages/promotions/simple-wizard/summary/details-card.test.tsx",
+      "src/pages/promotions/simple-wizard/summary/details-card.tsx",
+      "src/pages/promotions/use-bfd-contact-default.test.ts",
+      "src/pages/promotions/use-bfd-contact-default.ts",
+      "src/pages/promotions/wizard/build-create-discount-input.test.ts",
+      "src/pages/promotions/wizard/build-create-discount-input.ts",
+      "src/pages/promotions/wizard/details/index.test.tsx",
+      "src/pages/promotions/wizard/details/index.tsx",
+      "src/pages/promotions/wizard/index.tsx",
+      "src/pages/promotions/wizard/state/details.test.ts",
+      "src/pages/promotions/wizard/state/details.ts",
+      "src/pages/promotions/wizard/step-validators/details.test.ts",
+      "src/pages/promotions/wizard/step-validators/details.ts",
+      "src/pages/promotions/wizard/summary/details-card.test.tsx",
+      "src/pages/promotions/wizard/summary/details-card.tsx",
+      "src/pages/settings/default-contacts/contact-modal.tsx",
+      "src/utils/is-valid-email.test.ts",
+      "src/utils/is-valid-email.ts"
+    ],
+    "fetchedAt": "2026-10-07T19:06:50.945Z"
+  },
+  "GetDutchie/brands-portal#1107": {
+    "title": "feat: show archived wholesale offers in a separate read-only tab BRAND-3808",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/offer-status.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/products/get-library-product.gql",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/delete-offer-confirm-modal.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/offer-status.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/styled.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+      "src/pages/catalog/product-details/product-form-helpers.test.ts",
+      "src/pages/catalog/product-details/product-form-helpers.ts",
+      "src/pages/catalog/product-details/types.ts",
+      "src/pages/catalog/product-details/use-edit-product-form.test.ts"
+    ],
+    "fetchedAt": "2026-10-07T19:06:51.771Z"
+  },
+  "GetDutchie/brands-portal#1133": {
+    "title": "fix(orders): PO drawer lifecycle, filters, and line item stability BRAND-3846",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/order-detail-drawer.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/list/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/additional-details-card.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/drawer-body.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/detail/additional-details-card.test.tsx",
+      "src/pages/orders/detail/additional-details-card.tsx",
+      "src/pages/orders/detail/drawer-body.test.tsx",
+      "src/pages/orders/detail/drawer-body.tsx",
+      "src/pages/orders/detail/items-table/rows.test.ts",
+      "src/pages/orders/detail/items-table/rows.ts",
+      "src/pages/orders/detail/items-table/styled.ts",
+      "src/pages/orders/detail/order-detail-drawer.test.tsx",
+      "src/pages/orders/detail/order-detail-drawer.tsx",
+      "src/pages/orders/detail/styled.ts",
+      "src/pages/orders/detail/use-order-submit.test.ts",
+      "src/pages/orders/detail/use-order-submit.ts",
+      "src/pages/orders/list/index.test.tsx",
+      "src/pages/orders/list/index.tsx",
+      "src/theme/nexus-mui-theme.tsx",
+      "src/theme/nexus-theme/controls.ts"
+    ],
+    "fetchedAt": "2026-10-07T19:06:52.565Z"
+  },
+  "GetDutchie/brands-portal#1136": {
+    "title": "feat: move BFD contact after region selection BRAND-3885",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/wizard/retailers/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/index.test.tsx",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/pages/promotions/wizard/retailers/index.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/bfd-contact.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/bfd-contact-fields.test.tsx",
+      "src/pages/promotions/bfd-contact-fields.tsx",
+      "src/pages/promotions/bfd-contact.test.ts",
+      "src/pages/promotions/bfd-contact.ts",
+      "src/pages/promotions/simple-wizard/details/index.tsx",
+      "src/pages/promotions/simple-wizard/retailers/index.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/index.tsx",
+      "src/pages/promotions/simple-wizard/step-validators/details.test.ts",
+      "src/pages/promotions/simple-wizard/step-validators/details.ts",
+      "src/pages/promotions/use-bfd-contact-default.test.ts",
+      "src/pages/promotions/use-bfd-contact-default.ts",
+      "src/pages/promotions/wizard/details/index.tsx",
+      "src/pages/promotions/wizard/retailers/index.test.tsx",
+      "src/pages/promotions/wizard/retailers/index.tsx",
+      "src/pages/promotions/wizard/step-validators/details.test.ts",
+      "src/pages/promotions/wizard/step-validators/details.ts"
+    ],
+    "fetchedAt": "2026-10-07T19:06:53.385Z"
+  },
+  "GetDutchie/brands-portal#1132": {
+    "title": "fix: Await archive catalog reconciliation BRAND-3848",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/active-products/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/active-products/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/active-products/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/active-products/archive-confirm-modal.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/active-products/index.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/health/components/grouped-participation.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/active-products/archive-confirm-modal.test.tsx",
+      "src/pages/catalog/active-products/archive-confirm-modal.tsx",
+      "src/pages/catalog/active-products/index.test.tsx",
+      "src/pages/catalog/active-products/index.tsx",
+      "src/pages/catalog/health/components/grouped-participation.test.tsx",
+      "src/pages/catalog/hooks/use-products-data.ts"
+    ],
+    "fetchedAt": "2026-10-07T19:06:54.310Z"
+  },
+  "GetDutchie/brands-portal#1086": {
+    "title": "fix: use selected brand for sandbox retailer pickers BRAND-3799",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/wizard/retailers/use-lsp-filter-options.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/retailers/use-lsp-filter-options.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/retailers/use-lsp-filter-options.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/retailers/use-lsp-filter-options.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/retailers/use-lsp-filter-options.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/promotions/get-lsps-by-iso-region-for-discounts.gql",
+      "src/pages/orders/create/use-create-order-form.test.ts",
+      "src/pages/orders/create/use-create-order-form.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-locs-by-lsp-accounts.test.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-locs-by-lsp-accounts.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.ts",
+      "src/pages/promotions/simple-wizard/state/retailers.ts",
+      "src/pages/promotions/wizard/retailers/use-locs-by-lsp-accounts.test.ts",
+      "src/pages/promotions/wizard/retailers/use-locs-by-lsp-accounts.ts",
+      "src/pages/promotions/wizard/retailers/use-lsp-filter-options.test.tsx",
+      "src/pages/promotions/wizard/retailers/use-lsp-filter-options.ts",
+      "src/pages/promotions/wizard/state/retailers.ts"
+    ],
+    "fetchedAt": "2026-10-07T19:06:55.160Z"
   }
 }
