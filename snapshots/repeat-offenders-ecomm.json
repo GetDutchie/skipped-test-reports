@@ -686,9 +686,23 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "expect.poll on getRetailerEnrollmentStatus never reached STATUS_ENROLLED within the 60000ms project default expect timeout (PayByBankService.createEnrolledDispensary, pay-by-bank.ts:92); passed on retry",
+      "failure_signature": "2026-10-07: checkout bounced to homepage with 'Please add items to your cart before visiting checkout' after a ~127s AeroSync enrollment flow (vs ~50s on the passing retry, fresh dispensary each attempt). DIFFERENT signature than the 2026-xx-xx prior entry (enrollment-status poll timeout) -- treated as a fresh investigation per Step 1.5.",
       "real_app_bug": null,
-      "attempts": []
+      "attempts": [],
+      "investigation_notes": "2026-10-07: Initial hypothesis (infra/backend-slow, slow AeroSync MFA sandbox) was challenged by falsification pass: subagent found the test's mock enrollment path (page-objects/marketplace/pages/pay/signup) doesn't actually exercise live AeroSync MFA (bankName param is unused/discarded), so the '127s MFA wait' framing may be wrong; subagent's own provisional read (low confidence) pointed at a cart-restoration/context-key mismatch in apps/marketplace/src/state/cart.ts / use-cart-controller.js (on-checkout-mount.js:11-27 routes home exactly when `!order.dispensary`), but could not prove which code path actually ran without the failing trace. DISAGREEMENT -> falsification gate (2i.5c): NOT CONFIRMED, returned to fresh investigation. No ticket filed, no code change. NEXT STEP: pull failing trace.zip network/console timeline to see the real elapsed time breakdown and whether `stored-cart` key/order.dispensary diverge between the embedded dispensary-ID cart and whatever is read at checkout-mount after enrollment returns."
+    },
+    "marketplace/kiosk-pro/kiosk-pro-brands.test.ts::[657444] Brands link shows and navigates to brands page": {
+      "test_name": "[657444] Brands link shows and navigates to brands page",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "kiosk-pro-nav-brands-link not visible within 60s expect timeout across 3 consecutive attempts (fresh dispensary+brand each time) on Marketplace Desktop Main; passed on a later Mobile Main attempt. Screenshots show Categories page rendered fine, no Brands nav item at all.",
+      "real_app_bug": null,
+      "attempts": [],
+      "investigation_notes": "2026-10-07: Original investigator hypothesis (real-app-bug) = production nav gates Brands link on `brands.length > 0` with no loading state (apps/marketplace/src/components/kiosk-pro/kiosk-pro-layout/navigation/index.tsx), the exact same race already fixed for Specials in the same file (ECOMM-11578) but never applied to Brands. Falsification pass (independent blind subagent) DISAGREED: test already retries for 60s (playwright.config.ts expect timeout), so a brief loading-window flicker shouldn't explain a full 60s absence; subagent flagged this as inconclusive pending the actual failing trace / MenuFiltersV2 response timing, and suggested a backend caching/eligibility angle (apps/api/src/graphql/resolvers/menu-filters/queries/menu-filters-v2.js, 15-min product cache group) as an alternate unproven path. Per falsification gate (2i.5c): disagreement = NOT CONFIRMED, returned to a fresh investigation. No ticket filed, no code change. NEXT STEP: pull the actual failing trace.zip (not just error-context.md) for a GraphQL network timeline of MenuFiltersV2 during one of the 3 Desktop-Main failures, to see whether the query was slow/erroring vs. returning an empty brands array quickly (which would argue for the backend-eligibility theory over the client loading-state theory)."
     }
   }
 }
