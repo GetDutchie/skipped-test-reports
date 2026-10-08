@@ -3367,5 +3367,16 @@
       "src/pages/promotions/wizard/state/retailers.ts"
     ],
     "fetchedAt": "2026-10-07T19:06:55.160Z"
+  },
+  "GetDutchie/brands-portal#1140": {
+    "title": "eng: default advertising to Post 8/1/26 tab BRAND-3888",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/advertising/campaign-insights/contexts/data-source-context.test.tsx",
+      "src/pages/advertising/campaign-insights/contexts/data-source-context.tsx",
+      "src/pages/advertising/campaign-insights/hooks/use-campaign-data.test.ts",
+      "src/pages/advertising/campaign-insights/hooks/use-campaign-data.tsx"
+    ],
+    "fetchedAt": "2026-10-08T19:07:14.797Z"
   }
 }
