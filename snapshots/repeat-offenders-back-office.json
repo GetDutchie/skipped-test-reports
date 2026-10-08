@@ -1008,6 +1008,62 @@
           "result": "red reproduced directly under 6-worker load with fix reverted (retire-plant.spec.ts got 1 row instead of expected 0); 20/20 Vape isolation \u2705 (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel, matching nightly's actual 9-shard/6-worker matrix, full plants-v2/actions dir, pos-e2e constellation, 3/3) \u2705"
         }
       ]
+    },
+    "tests/cultivation/plants-v2/detail/update-plant.spec.ts::[656965] Verify a user can update a plant on the details page and save successfully": {
+      "test_name": "[656965] Verify a user can update a plant on the details page and save successfully",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-08",
+          "jira_key": "QA-1123",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10528",
+          "outcome": "fixed",
+          "hypothesis": "cellWithTextInColumn() matches column-wide (not row-scoped); under nightly load, MUI DataGrid virtualization transiently renders duplicate cell DOM nodes for the single filtered row, producing a strict-mode violation (3 elements matched a unique serial number).",
+          "fix_applied": "Swapped to existing row-scoped helper getSingleResult() (data-grid.ts), already used elsewhere via expectSingleResult \u2014 no new helper/timeout introduced.",
+          "result": "Structural red (reverted fix passed 5/5 in single-worker isolation \u2014 race needs real multi-shard/6-worker contention to manifest, same documented limitation as PR#10012's retire-plant.spec.ts fix). 20/20 Vape isolation PASS. Load-realistic (6-worker parallel, plants-v2/detail dir, pos-e2e constellation, 3/3) PASS."
+        }
+      ]
+    },
+    "tests/products/inventory/create-packages.spec.ts::[544713] User should be able to create packages up to the max product quantity amount": {
+      "test_name": "[544713] User should be able to create packages up to the max product quantity amount",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-08",
+          "jira_key": "QA-1123",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10528",
+          "outcome": "fixed",
+          "hypothesis": "An arbitrary 2s sleep after search() let the Create Packages modal open before the grid/backend settled to the filtered product, racing eventual-consistency for that product's validity data (observed as Create/Generate buttons staying disabled past their 60s click timeout, alongside an adjacent 'Timeout waiting for endpoint: api/product-master/get-product-master' warning in the same shard).",
+          "fix_applied": "Replaced waitForTimeout(2000) with the condition-based toHaveCount(1) wait already used by the sibling [402501] test in the same file.",
+          "result": "Falsification gate initially DISAGREED (independent pass proposed a different test-code-bug mechanism: wrong-row click due to the same missing wait) -- both passes agreed classification was test-code-bug, just differed on exact mechanism; fresh investigation found the in-file sibling precedent reconciling both. 20/20 Vape isolation PASS. Load-realistic (6-worker parallel, create-packages.spec.ts, pos-e2e constellation, 3/3 PASS; one of the three runs incidentally executed against the pre-fix code and also passed, consistent with this being an intermittent/structural race)."
+        }
+      ]
+    },
+    "tests/customers/customers/edit-customer-keyset.spec.ts::[544706] Edit customer details (keyset pagination)": {
+      "test_name": "[544706] Edit customer details (keyset pagination)",
+      "suite": "back-office",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "Error: unable to find element (DataGrid.findCellsByText horizontal-scroll-hunt cap, data-grid.ts:206)",
+      "real_app_bug": null,
+      "attempts": []
     }
   }
 }
