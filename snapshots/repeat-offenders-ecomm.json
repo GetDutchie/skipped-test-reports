@@ -589,7 +589,8 @@
           "fix_applied": "Wrapped MultilocationPage.goto() in Promise.all with waitForResponse(gqlResponse('ConsumerDispensaries')).",
           "result": "Regressed under --repeat-each=8: test 1 failed consistently from the 2nd repeat onward with the URL stuck on the PREVIOUS repeat's dispensary (address-autocomplete/session bleed across repeats), a new and worse failure mode than the original single nightly flake. Reverted -- 1 of 3 attempts spent, root cause narrowed but fix not proven safe. Needs a human/deeper pass distinguishing the readiness race from repeat-each's own address-autocomplete caching interaction before a 2nd attempt."
         }
-      ]
+      ],
+      "investigation_notes": "2026-10-08: Recurred with the SAME failure_signature (reconfirmed from this run's own artifacts). No 2nd fix attempt made (attempt_count=1 < 2, below the 3.5 checkpoint; prior attempt's regression warranted caution). New evidence this run: reproduces even under --workers=1 (fully sequential, zero concurrency) across --repeat-each runs -- rules out pure parallel-load contention as the cause, confirms this is a within-worker state/cache bleed across repeated executions (consistent with prior attempt's address-autocomplete-caching finding). Next attempt should target that specific caching layer rather than query-readiness timing."
     },
     "admin/settings/ordering/delivery-zones-drawn.test.ts::[TODO] draws, saves, edits, and deletes a drawn delivery zone via the Mapbox editor": {
       "test_name": "[TODO] draws, saves, edits, and deletes a drawn delivery zone via the Mapbox editor",
@@ -699,10 +700,35 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "kiosk-pro-nav-brands-link not visible within 60s expect timeout across 3 consecutive attempts (fresh dispensary+brand each time) on Marketplace Desktop Main; passed on a later Mobile Main attempt. Screenshots show Categories page rendered fine, no Brands nav item at all.",
+      "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[].",
+      "real_app_bug": {
+        "ticket_key": "QA-1118",
+        "filed_at": "2026-10-08",
+        "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
+      },
+      "attempts": []
+    },
+    "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
+      "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "post-reload cart item text mismatch (case/line-break) due to CSS text-transform not yet applied when read immediately after toBeVisible()",
       "real_app_bug": null,
-      "attempts": [],
-      "investigation_notes": "2026-10-07: Original investigator hypothesis (real-app-bug) = production nav gates Brands link on `brands.length > 0` with no loading state (apps/marketplace/src/components/kiosk-pro/kiosk-pro-layout/navigation/index.tsx), the exact same race already fixed for Specials in the same file (ECOMM-11578) but never applied to Brands. Falsification pass (independent blind subagent) DISAGREED: test already retries for 60s (playwright.config.ts expect timeout), so a brief loading-window flicker shouldn't explain a full 60s absence; subagent flagged this as inconclusive pending the actual failing trace / MenuFiltersV2 response timing, and suggested a backend caching/eligibility angle (apps/api/src/graphql/resolvers/menu-filters/queries/menu-filters-v2.js, 15-min product cache group) as an alternate unproven path. Per falsification gate (2i.5c): disagreement = NOT CONFIRMED, returned to a fresh investigation. No ticket filed, no code change. NEXT STEP: pull the actual failing trace.zip (not just error-context.md) for a GraphQL network timeline of MenuFiltersV2 during one of the 3 Desktop-Main failures, to see whether the query was slow/erroring vs. returning an empty brands array quickly (which would argue for the backend-eligibility theory over the client loading-state theory)."
+      "attempts": [
+        {
+          "date": "2026-10-08",
+          "jira_key": "QA-1122",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "allInnerTexts() read immediately after toBeVisible() races post-reload CSS (uppercase text-transform) that hasn't painted yet.",
+          "fix_applied": "Replaced the one-shot read+toEqual with expect.poll(() => locator.allInnerTexts()).toEqual(...), using the framework's default timeout.",
+          "result": "red-green-revert-restore proven (reverted fix reproduced exact symptom 3/15 under --repeat-each=15); fix passed 15/15 and 10/10 in separate runs; 3 independent clean isolated single-runs (17-18s each); zero failures at the fixed assertion across 60+ executions. Load-lane 3-run attempt showed 2/3 runs with 1 failure each, but all failures were at a SEPARATE pre-existing step (addFirstFlowerProductToCart's cart-dropdown/category-page 404, unrelated to and never touching the fixed code) -- flagged as a new finding, not fixed under this ticket."
+        }
+      ]
     }
   }
 }
