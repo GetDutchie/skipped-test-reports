@@ -976,10 +976,10 @@
       "test_name": "User should be able to adjust balance",
       "suite": "back_office",
       "times_fixed": 2,
-      "last_flaked": "2026-09-25",
-      "recommendation": "ESCALATE",
+      "last_flaked": "2026-09-08",
+      "recommendation": "REDESIGN",
       "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8442",
+        "https://github.com/GetDutchie/back-office/pull/8394",
         "https://github.com/GetDutchie/back-office/pull/8747"
       ]
     },
@@ -988,10 +988,10 @@
       "test_name": "User should be able to deposit",
       "suite": "back_office",
       "times_fixed": 2,
-      "last_flaked": "2026-09-25",
-      "recommendation": "ESCALATE",
+      "last_flaked": "2026-09-08",
+      "recommendation": "REDESIGN",
       "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8442",
+        "https://github.com/GetDutchie/back-office/pull/8394",
         "https://github.com/GetDutchie/back-office/pull/8747"
       ]
     },
@@ -1000,10 +1000,10 @@
       "test_name": "User should be able to withdraw",
       "suite": "back_office",
       "times_fixed": 2,
-      "last_flaked": "2026-09-25",
-      "recommendation": "ESCALATE",
+      "last_flaked": "2026-09-08",
+      "recommendation": "REDESIGN",
       "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8442",
+        "https://github.com/GetDutchie/back-office/pull/8394",
         "https://github.com/GetDutchie/back-office/pull/8747"
       ]
     },
@@ -1012,7 +1012,7 @@
       "test_name": "Configured fields for package detail page are and save state pack template",
       "suite": "back_office",
       "times_fixed": 2,
-      "last_flaked": "2026-09-08",
+      "last_flaked": "2026-09-11",
       "recommendation": "REDESIGN",
       "pr_urls": [
         "https://github.com/GetDutchie/back-office/pull/8747",
