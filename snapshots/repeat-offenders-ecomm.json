@@ -706,7 +706,9 @@
         "filed_at": "2026-10-08",
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
-      "attempts": []
+      "attempts": [],
+      "last_reconfirmed": "2026-10-09",
+      "reconfirm_note": "2026-10-09 nightly: same failure_signature reconfirmed from CI artifacts (error-context.md shows Categories nav with no Brands link; 2 consecutive fails then pass on 3rd retry). Steady state per no-quarantine policy, QA-1118 remains open. No fresh Step 2 investigation."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
@@ -722,13 +724,15 @@
         {
           "date": "2026-10-08",
           "jira_key": "QA-1122",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/23761",
           "outcome": "fixed",
           "hypothesis": "allInnerTexts() read immediately after toBeVisible() races post-reload CSS (uppercase text-transform) that hasn't painted yet.",
           "fix_applied": "Replaced the one-shot read+toEqual with expect.poll(() => locator.allInnerTexts()).toEqual(...), using the framework's default timeout.",
           "result": "red-green-revert-restore proven (reverted fix reproduced exact symptom 3/15 under --repeat-each=15); fix passed 15/15 and 10/10 in separate runs; 3 independent clean isolated single-runs (17-18s each); zero failures at the fixed assertion across 60+ executions. Load-lane 3-run attempt showed 2/3 runs with 1 failure each, but all failures were at a SEPARATE pre-existing step (addFirstFlowerProductToCart's cart-dropdown/category-page 404, unrelated to and never touching the fixed code) -- flagged as a new finding, not fixed under this ticket."
         }
-      ]
+      ],
+      "last_reconfirmed": "2026-10-09",
+      "reconfirm_note": "2026-10-09 nightly: same pre-fix failure signature recurring on develop because PR #23761 (fix, approved+CI green) is still unmerged. No new attempt \u2014 not a relapse."
     }
   }
 }
