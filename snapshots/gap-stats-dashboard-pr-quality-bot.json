@@ -3378,5 +3378,84 @@
       "src/pages/advertising/campaign-insights/hooks/use-campaign-data.tsx"
     ],
     "fetchedAt": "2026-10-08T19:07:14.797Z"
+  },
+  "GetDutchie/brands-portal#1145": {
+    "title": "eng: route Link Desk Brand Ops calls through the dev server",
+    "qualityComments": [],
+    "changedPaths": [
+      "env.brands-portal.yaml",
+      "rsbuild.config.ts"
+    ],
+    "fetchedAt": "2026-10-09T19:05:57.776Z"
+  },
+  "GetDutchie/brands-portal#1062": {
+    "title": "fix: clarify interim and final campaign reports BRAND-3790",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/build-campaign-detail.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-header.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/services/launch-darkly/use-is-campaign-report-download-enabled.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-header.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-detail.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/discount-campaigns/get-discount-campaign.gql",
+      "src/pages/promotions/campaign-detail/build-campaign-detail.test.ts",
+      "src/pages/promotions/campaign-detail/build-campaign-detail.ts",
+      "src/pages/promotions/campaign-detail/components/campaign-header.test.tsx",
+      "src/pages/promotions/campaign-detail/components/campaign-header.tsx",
+      "src/pages/promotions/campaign-detail/index.tsx",
+      "src/pages/promotions/campaign-detail/styled.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-detail.test.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-detail.ts",
+      "src/services/launch-darkly/use-is-campaign-report-download-enabled.test.ts",
+      "src/services/launch-darkly/use-is-campaign-report-download-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-09T19:05:58.557Z"
+  },
+  "GetDutchie/brands-portal#1149": {
+    "title": "fix(link desk): split Size into dosage, weight, net weight and compare numerics BRAND-3909",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/attribute-diff.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/add-to-catalog-workspace/utils.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/mocks/buckets.ts",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/utils.test.ts",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/utils.ts",
+      "src/pages/link-desk/product-connect/attribute-diff.test.ts",
+      "src/pages/link-desk/product-connect/attribute-diff.ts",
+      "src/pages/link-desk/product-connect/catalog-search-modal/utils.test.ts",
+      "src/pages/link-desk/product-connect/catalog-search-modal/utils.ts",
+      "src/pages/link-desk/product-connect/constants.ts",
+      "src/pages/link-desk/product-connect/utils.test.ts",
+      "src/pages/link-desk/product-connect/utils.ts",
+      "src/pages/link-desk/types.ts"
+    ],
+    "fetchedAt": "2026-10-09T19:05:59.427Z"
   }
 }
