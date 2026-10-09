@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "last_processed_ts": "1791458023.427239",
+    "last_processed_ts": "1791544430.616129",
     "entries": {
         "862-src/auth/use-assume-role-exit.ts": {
             "classification": "e2e-out-of-scope",
@@ -45,7 +45,7 @@
             "first_seen": "2026-09-17",
             "last_seen": "2026-09-17",
             "times_seen": 1,
-            "last_notified": "2026-09-25"
+            "last_notified": "2026-10-09"
         },
         "907-src/constants/env.ts": {
             "classification": "needs-production-change",
@@ -63,7 +63,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "863-src/pages/settings/users/use-columns.tsx-e2e": {
             "classification": "e2e-out-of-scope",
@@ -72,7 +72,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "930-src/pages/catalog/product-details/product-form-helpers.ts": {
             "classification": "needs-production-change",
@@ -81,7 +81,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "923-src/pages/orders/list/use-columns.tsx-e2e": {
             "classification": "e2e-out-of-scope",
@@ -90,7 +90,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "863-src/pages/settings/users/index.tsx+use-columns.tsx-e2e": {
             "classification": "e2e-out-of-scope",
@@ -99,7 +99,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "914-src/pages/public-brand-menu/public-order-context.tsx": {
             "classification": "unclear",
@@ -108,7 +108,7 @@
             "first_seen": "2026-09-18",
             "last_seen": "2026-09-18",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "924-e2e/tests/orders/": {
             "classification": "e2e-out-of-scope",
@@ -117,7 +117,7 @@
             "first_seen": "2026-09-21",
             "last_seen": "2026-09-21",
             "times_seen": 1,
-            "last_notified": "2026-09-28"
+            "last_notified": "2026-10-09"
         },
         "931-e2e/tests/": {
             "classification": "e2e-out-of-scope",
@@ -126,7 +126,7 @@
             "first_seen": "2026-09-22",
             "last_seen": "2026-09-22",
             "times_seen": 1,
-            "last_notified": "2026-10-01"
+            "last_notified": "2026-10-09"
         },
         "927-src/pages/orders/create/price-cell.tsx": {
             "classification": "unclear",
@@ -135,7 +135,7 @@
             "first_seen": "2026-09-22",
             "last_seen": "2026-09-22",
             "times_seen": 1,
-            "last_notified": "2026-10-01"
+            "last_notified": "2026-10-09"
         },
         "939-src/pages/public-brand-menu/index.tsx": {
             "classification": "unclear",
@@ -144,7 +144,7 @@
             "first_seen": "2026-09-22",
             "last_seen": "2026-09-22",
             "times_seen": 1,
-            "last_notified": "2026-10-01"
+            "last_notified": "2026-10-09"
         },
         "1097-rsbuild.config.ts": {
             "classification": "unclear",
@@ -163,6 +163,15 @@
             "last_seen": "2026-10-08",
             "times_seen": 1,
             "last_notified": "2026-10-08"
+        },
+        "1145-rsbuild.config.ts": {
+            "classification": "unclear",
+            "description": "eng: route Link Desk Brand Ops calls through the dev server (#1145) \u2014 new /brand-ops-api and /api/v2/rest/brands_tool dev proxies in rsbuild.config.ts, and PUBLIC_BRAND_OPS_API_URL made relative in env.brands-portal.yaml. Config-only; nothing tests the proxy rules or env value, and a wrong pathRewrite/env value would break Link Desk auth/API calls locally without any test failing.",
+            "blocker": "Same root cause as this ledger's existing 888-rsbuild.config.ts and 1097-rsbuild.config.ts entries, reconfirmed live this run: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module (import.meta.url handling that Jest's SWC/CJS transform doesn't support). A real behavioral test of the proxy config isn't feasible without dedicated test-infra work (a transform/mock for @rsbuild/core), and env.brands-portal.yaml has no test harness either. Needs the same human call on test-infra investment as the 888/1097 entries.",
+            "first_seen": "2026-10-09",
+            "last_seen": "2026-10-09",
+            "times_seen": 1,
+            "last_notified": "2026-10-09"
         }
     }
 }
