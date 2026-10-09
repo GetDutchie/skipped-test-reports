@@ -968,6 +968,82 @@
         "commit": "6aecd0d",
         "run_timestamp": "2026-09-24T07:34:40.000Z"
       }
+    },
+    {
+      "date": "2026-09-29",
+      "back_office": {
+        "flaky": 14,
+        "failed": 4,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-09-29T06:30:47.000Z"
+      },
+      "pos": {
+        "flaky": 2,
+        "failed": 0,
+        "total": 405,
+        "branch": "develop",
+        "commit": "df7afb6",
+        "run_timestamp": "2026-09-29T07:38:56.000Z"
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "back_office": {
+        "flaky": 6,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-10-07T06:26:52.055609Z"
+      },
+      "pos": {
+        "flaky": 4,
+        "failed": 0,
+        "total": 405,
+        "branch": "develop",
+        "commit": "3009073",
+        "run_timestamp": "2026-10-07T07:39:57.839829Z"
+      }
+    },
+    {
+      "date": "2026-10-08",
+      "back_office": {
+        "flaky": 6,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-10-08T06:25:54.072919Z"
+      },
+      "pos": {
+        "flaky": 1,
+        "failed": 0,
+        "total": 405,
+        "branch": "develop",
+        "commit": "84c1cf0",
+        "run_timestamp": "2026-10-08T07:37:32.065369Z"
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "back_office": {
+        "flaky": 1,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-10-09T06:26:20.539039Z"
+      },
+      "pos": {
+        "flaky": 5,
+        "failed": 0,
+        "total": 405,
+        "branch": "develop",
+        "commit": "7740897",
+        "run_timestamp": "2026-10-09T07:38:35.177049Z"
+      }
     }
   ],
   "thrash_candidates": [
