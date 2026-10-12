@@ -1082,7 +1082,7 @@
         {
           "date": "2026-10-12",
           "jira_key": "QA-1130",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10662",
           "outcome": "fixed",
           "hypothesis": "BulkConfirmModal's requireReasonCode/hasAdjustments check reads the same cached package.quantity the DataGrid renders; getAuditPackages can momentarily lag the just-completed receive-inventory write, so the Confirm button reads a stale mismatch and stays permanently disabled (Promise.all's waitForGraphQLResponses then times out waiting on a mutation that never fires).",
           "fix_applied": "addCountToAllRows (shared by all 3 bulk-confirm tests) now polls each row's package.quantity column to settle to the actually-received quantity via the existing rowHasValidColumnText helper wrapped in expect().toPass({timeout:15000}), matching the file's existing toPass convention, before counting/selecting rows.",
@@ -1104,7 +1104,7 @@
         {
           "date": "2026-10-12",
           "jira_key": "QA-1130",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10662",
           "outcome": "fixed",
           "hypothesis": "Same root cause as 657190 (shared addCountToAllRows helper): the initial bulk-confirm click resolved to a disabled Confirm button because package.quantity hadn't settled yet, before the test's own intentional adjustInventory call ever ran.",
           "fix_applied": "Same fix as 657190 (shared helper, addCountToAllRows).",
