@@ -600,7 +600,7 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "Failure ~20.6s after the edit+publish step, with the success toast already showing and the zone still present -- the load-bearing expect(geometryAfterEdit).not.toEqual(geometryAfterDraw) fails.",
+      "failure_signature": "RECLASSIFIED 2026-10-12 (Step 3.5 forced checkpoint at attempt_count==2): test body was fully rewritten by PR #23547 (ECOMM-13542, 2026-10-02) which also shipped a real app-code fix (DrawHandleAwareMapController) for the old drag-mechanics bug these 2 prior attempts targeted -- the attempt-2 fix (waitForCanvasIdle) no longer exists in the current test. Tonight's failure: edit+publish succeeds (toast shown), but ring(geometryAfterEdit)[0] == originalRing[0] (vertex drag didn't register). Could not reproduce in 25 combined runs (this run's 16 + independent falsification subagent's 9, incl. --repeat-each up to 10, --workers up to 6, and deliberate CPU saturation to mimic nightly contention). No pinnable contaminant or code diff from the passing sibling test in the same file (short-edge vertex-move test, 0 failures across all runs).",
       "real_app_bug": null,
       "attempts": [
         {
@@ -621,7 +621,13 @@
           "fix_applied": "Added waitForCanvasIdle() (expect.poll on consecutive canvas-screenshot equality) and moved the drag's 'before' screenshot to after the selection click instead of before it, so the diff only reflects the drag gesture.",
           "result": "red-green-revert-restore proven (reverting fix reproduced exact CI assertion failure in 2/3 local runs; restoring passed 8/8 local); 20/20 Vape isolation \u2705 (verify:20x); load-realistic run (6-worker parallel, matching real GHA shard concurrency, dutchie-e2e constellation, tests/admin/settings/ordering/ whole directory, 3/3) \u2705"
         }
-      ]
+      ],
+      "investigation_notes": {
+        "date": "2026-10-12",
+        "classification": "isolation/false-positive",
+        "falsification": "CONFIRMED -- independent blind subagent (given only test name/file/conclusion) reached the same isolation/false-positive conclusion via its own investigation (code review of save/hydration seam + 9 of its own repro runs under CPU-saturated contention).",
+        "next_step_for_future_investigator": "If this recurs, the discriminating evidence is a trace.zip network capture at failure time: (a) publish mutation payload contains OLD geometry -> real-app-bug in the Delivery settings save/hydration seam (see ECOMM-12919 commits dcfcd28de9/477c3ff09b/81d2842756/82e281e13e, Oct 6-10, landed just before this test's rewrite -- same save seam, not yet ruled out as a contaminant class even though no direct mechanism was found this run); (b) payload has NEW geometry but persisted zone doesn't -> infra/backend-slow; (c) Draw's in-browser feature never actually changed -> test-code-bug in the drag/projection math. Recommend the test carry trace:'retain-on-failure' if the current global config doesn't already retain traces on first-attempt failures in CI."
+      }
     },
     "multi-app/delivery-city-eligibility-roundtrip.test.ts::[657918] A published city zone governs matching and nonmatching Consumer delivery addresses": {
       "test_name": "City / Town delivery eligibility round trip \u203a [657918] A published city zone governs matching and nonmatching Consumer delivery addresses",
@@ -707,8 +713,8 @@
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
       "attempts": [],
-      "last_reconfirmed": "2026-10-09",
-      "reconfirm_note": "2026-10-09 nightly: same failure_signature reconfirmed from CI artifacts (error-context.md shows Categories nav with no Brands link; 2 consecutive fails then pass on 3rd retry). Steady state per no-quarantine policy, QA-1118 remains open. No fresh Step 2 investigation."
+      "last_reconfirmed": "2026-10-12",
+      "reconfirm_note": "2026-10-12 nightly: same failure_signature reconfirmed from CI artifacts (error-context.md shows Categories nav with no Brands link; 1st attempt fails, passes on retry). Steady state per no-quarantine policy, QA-1118 remains open (Backlog, unassigned movement, 4 consecutive nights now). No fresh Step 2 investigation."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
