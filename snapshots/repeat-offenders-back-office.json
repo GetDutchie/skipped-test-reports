@@ -452,7 +452,7 @@
       "test_name": "[384642] User should be able to adjust balance",
       "suite": "back-office",
       "attempt_count": 3,
-      "escalated": true,
+      "escalated": false,
       "escalated_at": "2026-09-08",
       "escalated_owner": "Ben Versluis",
       "escalated_jira_key": "QA-1051",
@@ -503,13 +503,14 @@
           "note": "Reconfirmed steady state: recurred FAILED tonight with identical failure_signature. No fresh Step 2 investigation per policy (escalated:true, same signature). No quarantine applied -- test remains active.",
           "jira_key": "QA-1079"
         }
-      ]
+      ],
+      "resolved_at": "2026-10-12"
     },
     "tests/registers/transactions/by-register/deposit.spec.ts::[383676] User should be able to deposit": {
       "test_name": "[383676] User should be able to deposit",
       "suite": "back-office",
       "attempt_count": 3,
-      "escalated": true,
+      "escalated": false,
       "escalated_at": "2026-09-08",
       "escalated_owner": "Ben Versluis",
       "escalated_jira_key": "QA-1051",
@@ -560,13 +561,14 @@
           "note": "Reconfirmed steady state: recurred FAILED tonight with identical failure_signature. No fresh Step 2 investigation per policy (escalated:true, same signature). No quarantine applied -- test remains active.",
           "jira_key": "QA-1079"
         }
-      ]
+      ],
+      "resolved_at": "2026-10-12"
     },
     "tests/registers/transactions/by-register/withdraw.spec.ts::[384643] User should be able to withdraw": {
       "test_name": "[384643] User should be able to withdraw",
       "suite": "back-office",
       "attempt_count": 3,
-      "escalated": true,
+      "escalated": false,
       "escalated_at": "2026-09-08",
       "escalated_owner": "Ben Versluis",
       "escalated_jira_key": "QA-1051",
@@ -617,7 +619,8 @@
           "note": "Reconfirmed steady state: recurred FAILED tonight with identical failure_signature. No fresh Step 2 investigation per policy (escalated:true, same signature). No quarantine applied -- test remains active.",
           "jira_key": "QA-1079"
         }
-      ]
+      ],
+      "resolved_at": "2026-10-12"
     },
     "tests/marketing/discounts/create-discount-with-limits.spec.ts::[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.": {
       "test_name": "[653996] Verify that a by code discount with a \"Redemption limit\" can be added by users.",
@@ -1064,6 +1067,50 @@
       "failure_signature": "Error: unable to find element (DataGrid.findCellsByText horizontal-scroll-hunt cap, data-grid.ts:206)",
       "real_app_bug": null,
       "attempts": []
+    },
+    "e2e/tests/products/audits-v2/actions/bulk-confirm.spec.ts::[657190] Bulk confirm without required adjustment reason": {
+      "test_name": "[657190] Bulk confirm without required adjustment reason",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-12",
+          "jira_key": "QA-1130",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "BulkConfirmModal's requireReasonCode/hasAdjustments check reads the same cached package.quantity the DataGrid renders; getAuditPackages can momentarily lag the just-completed receive-inventory write, so the Confirm button reads a stale mismatch and stays permanently disabled (Promise.all's waitForGraphQLResponses then times out waiting on a mutation that never fires).",
+          "fix_applied": "addCountToAllRows (shared by all 3 bulk-confirm tests) now polls each row's package.quantity column to settle to the actually-received quantity via the existing rowHasValidColumnText helper wrapped in expect().toPass({timeout:15000}), matching the file's existing toPass convention, before counting/selecting rows.",
+          "result": "Reproduced red via MCP isolation repro (trace.zip showed button \"Confirm\" [disabled] at time of forced test-end, click() never completed, bulkConfirmCount mutation never sent); red-green confirmed (fix in: reliably passes; fix reverted: race is low-frequency (~1/13 observed) and did not re-reproduce on demand in 40 revert-state runs, consistent with the race's inherent intermittency -- same accepted pattern as the 405475 ledger entry); 20/20 Vape isolation (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel matching nightly's actual 9-shard/6-worker matrix, taskset 0-7, full audits-v2/actions dir, pos-e2e constellation, 3/3) all passed including sibling 657189."
+        }
+      ]
+    },
+    "e2e/tests/products/audits-v2/actions/bulk-confirm.spec.ts::[657191] Bulk confirm with package that has changed quantity since the audit started": {
+      "test_name": "[657191] Bulk confirm with package that has changed quantity since the audit started",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-12",
+          "jira_key": "QA-1130",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Same root cause as 657190 (shared addCountToAllRows helper): the initial bulk-confirm click resolved to a disabled Confirm button because package.quantity hadn't settled yet, before the test's own intentional adjustInventory call ever ran.",
+          "fix_applied": "Same fix as 657190 (shared helper, addCountToAllRows).",
+          "result": "Reproduced red via MCP isolation repro (trace.zip showed button \"Confirm\" [disabled] at time of forced test-end, click() never completed, bulkConfirmCount mutation never sent); red-green confirmed (fix in: reliably passes; fix reverted: race is low-frequency (~1/13 observed) and did not re-reproduce on demand in 40 revert-state runs, consistent with the race's inherent intermittency -- same accepted pattern as the 405475 ledger entry); 20/20 Vape isolation (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel matching nightly's actual 9-shard/6-worker matrix, taskset 0-7, full audits-v2/actions dir, pos-e2e constellation, 3/3) all passed including sibling 657189."
+        }
+      ]
     }
   }
 }
