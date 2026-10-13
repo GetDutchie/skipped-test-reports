@@ -1111,6 +1111,50 @@
           "result": "Reproduced red via MCP isolation repro (trace.zip showed button \"Confirm\" [disabled] at time of forced test-end, click() never completed, bulkConfirmCount mutation never sent); red-green confirmed (fix in: reliably passes; fix reverted: race is low-frequency (~1/13 observed) and did not re-reproduce on demand in 40 revert-state runs, consistent with the race's inherent intermittency -- same accepted pattern as the 405475 ledger entry); 20/20 Vape isolation (each test independently, --repeat-each=20, workers=1); load-realistic run (6-worker parallel matching nightly's actual 9-shard/6-worker matrix, taskset 0-7, full audits-v2/actions dir, pos-e2e constellation, 3/3) all passed including sibling 657189."
         }
       ]
+    },
+    "e2e/tests/products/inventory/create-packages.spec.ts::[402501], Verify the ability to create packages": {
+      "test_name": "[402501], Verify the ability to create packages",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-13",
+          "jira_key": "QA-1133",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10689",
+          "outcome": "fixed",
+          "hypothesis": "Create click asserted grid row count with no wait on CREATE_PACKAGE response and no grid refresh; grid does not auto-refresh on create, matching the inventory-v2 sibling's need for a manual refresh.",
+          "fix_applied": "create-packages.spec.ts: await create.click([endPoints.CREATE_PACKAGE]); poll a manual refreshButton.click() + toHaveCount(2) via expect().toPass(), matching inventory-v2/actions/create-packages.spec.ts's pattern for the same flow.",
+          "result": "red-on-revert not independently reproducible in isolation (load-dependent race, consistent with CI's own 15s toHaveCount stall); 20/20 Vape isolation \u2705; load-realistic (6-worker parallel, create-packages.spec.ts + inventory-v2 sibling, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
+    },
+    "e2e/tests/reports-v2/overview/products.spec.ts::[654366] Navigates to products overview tabbed page": {
+      "test_name": "[654366] Navigates to products overview tabbed page",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-13",
+          "jira_key": "QA-1133",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10689",
+          "outcome": "fixed",
+          "hypothesis": "createTransaction setup omitted the existing workerRegisterId fixture, checking into the shared default Register 88 and risking a collision with another concurrent worker's cart state machine (checkoutGuest timed out / AddRemoveItem).",
+          "fix_applied": "products.spec.ts: added workerRegisterId: [createWorkerRegister, {scope:'worker'}] to the fixture extend and passed registerId: workerRegisterId into createTransaction, matching transactions-navigation.spec.ts / registers/overview.spec.ts.",
+          "result": "20/20 Vape isolation \u2705; load-realistic (6-worker parallel, reports-v2/overview dir + 2 sibling fixture-consumer specs, pos-e2e constellation, 3/3) \u2705. One unrelated pre-existing flake ([657494] budtenders.spec.ts) observed once in the same directory, untouched by this diff, disclosed transparently."
+        }
+      ]
     }
   }
 }
