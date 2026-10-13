@@ -551,7 +551,7 @@
         {
           "date": "2026-10-13",
           "jira_key": "QA-1132",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2148",
           "outcome": "fixed",
           "hypothesis": "page.keyboard.type(packageId) with no per-keystroke delay occasionally misses the app's 75ms avg-interval scan-recognition window (hardware-library-manager.ts), so add-to-cart never fires and the cart-line assertion times out",
           "fix_applied": "added { delay: 20 } to both page.keyboard.type() calls in item-not-in-preorder-warning.test.ts, matching the already-established working pattern in sibling scan-item.test.ts",
