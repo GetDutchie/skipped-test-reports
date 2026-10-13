@@ -133,7 +133,7 @@
     "cart/loyalty-multipliers/loyalty-multiplier.test.ts::A loyalty multiplier is automatically applied to the cart and can be manually removed": {
       "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
       "suite": "pos",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -147,6 +147,15 @@
           "hypothesis": "AutomaticDiscountConfigsCache is keyed per-LSP and shared across all parallel e2e workers; concurrent discount create/delete expires the shared entry, and the backend's ~1s FusionCache soft-timeout can serve a stale snapshot instead of a fresh one, producing intermittent 0/1/2 multiplier-badge counts. Already traced to source (DiscountRepository.cs) by open draft PR #1619.",
           "fix_applied": "Cherry-picked commit 6038c9bc6 from PR #1619: adds expectLoyaltyEarningCount self-healing retry (page.reload() + toPass) to helpers.ts, applied to loyalty-multiplier.test.ts and loyalty-point-boost.test.ts.",
           "result": "20/20 Vape isolation \u2705 (both loyalty-multiplier and loyalty-point-boost tests) \u00b7 load-realistic run (8-worker parallel, both spec files sharing helpers.ts, 3/3) \u2705"
+        },
+        {
+          "date": "2026-10-09",
+          "jira_key": "QA-1129",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2145",
+          "outcome": "fixed",
+          "hypothesis": "Promise.all([waitForResponse(load_v2 ok), addDiscountProduct(products[1])]) can resolve on a stale/in-flight load_v2 response left over from product[0]'s add; the follow-up cartItems.first().waitFor() only proves SOME item rendered (satisfied by product[0]), masking product[1] never rendering.",
+          "fix_applied": "loyalty-multiplier.test.ts + loyalty-point-boost.test.ts: replaced cartItems.first().waitFor() with cartPage.cartSummary.getLineItemByProductName(products[1].productName).wrapper.waitFor() to confirm product[1]'s own line item rendered.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
         }
       ]
     },
@@ -467,6 +476,66 @@
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, register suite, 3 independent fresh pos-e2e instances, 3/3) \u2705"
         }
       ]
+    },
+    "cart/loyalty-multipliers/loyalty-point-boost.test.ts::A loyalty point boost is automatically applied to the cart and can be manually removed": {
+      "test_name": "[100863] A loyalty point boost is automatically applied to the cart and can be manually removed",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-09",
+          "jira_key": "QA-1129",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2145",
+          "outcome": "fixed",
+          "hypothesis": "Same mechanism as sibling loyalty-multiplier.test.ts [131370]: stale load_v2 response can resolve the Promise.all before product[1]'s own line item renders; cartItems.first().waitFor() masks this because product[0]'s item already satisfies it.",
+          "fix_applied": "Replaced cartItems.first().waitFor() with cartPage.cartSummary.getLineItemByProductName(products[1].productName).wrapper.waitFor() (sibling-pattern fix alongside loyalty-multiplier.test.ts, same PR).",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
+        }
+      ]
+    },
+    "preorder/existing-customer-fulfillment-pre-order.test.ts::[457085] Existing Customer - Create Pre-Order": {
+      "test_name": "[457085] Existing Customer - Create Pre-Order",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-09",
+          "jira_key": "QA-1129",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2145",
+          "outcome": "fixed",
+          "hypothesis": "Missing wait for the OrderDetailsPopup modal to render after clicking Fulfillment, before filling DOB; confirmed via passing sibling anonymous-fulfillment-pre-order.test.ts which already gates on this.",
+          "fix_applied": "existing-customer-fulfillment-pre-order.test.ts: added await expect(customerPage.modals.orderDetails.text.title).toBeVisible() before filling DOB.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, full preorder/ dir incl. fixture-sharing siblings, 3/3) \u2705"
+        }
+      ]
+    },
+    "cart/checkout-with-pay-by-bank.test.ts::[656679] checkout with pay by bank": {
+      "test_name": "[656679] checkout-with-pay-by-bank",
+      "suite": "pos",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "Microsoft.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_EmailMarketingLspTemplateAssignment'. Cannot insert duplicate key (error 2627) in EmailMarketingService.SeedPayByBankTemplatesIfNecessary -> EmailMarketingRepository.QueueForTemplateAssignmentIfNecessary:1109, from DutchiePayController.UpdateSettings:80",
+      "real_app_bug": {
+        "ticket_key": "POS-23509",
+        "filed_at": "2026-10-09",
+        "failure_signature": "SqlException PK_EmailMarketingLspTemplateAssignment duplicate key in SeedPayByBankTemplatesIfNecessary"
+      },
+      "attempts": []
     }
   }
 }

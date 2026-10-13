@@ -3457,5 +3457,202 @@
       "src/pages/link-desk/types.ts"
     ],
     "fetchedAt": "2026-10-09T19:05:59.427Z"
+  },
+  "GetDutchie/brands-portal#1155": {
+    "title": "feat: add retailer breakdown search BRAND-3921",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/analytics/components/quality-breakdown/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/analytics/components/quality-breakdown/index.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/analytics/components/quality-breakdown/build-quality-rows.test.ts",
+      "src/pages/promotions/analytics/components/quality-breakdown/build-quality-rows.ts",
+      "src/pages/promotions/analytics/components/quality-breakdown/index.tsx",
+      "src/pages/promotions/analytics/components/quality-breakdown/styled.ts",
+      "src/pages/promotions/analytics/index.test.tsx"
+    ],
+    "fetchedAt": "2026-10-12T19:08:04.801Z"
+  },
+  "GetDutchie/brands-portal#1156": {
+    "title": "fix: sort full retailer breakdown BRAND-3922",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/analytics/components/quality-breakdown/build-quality-rows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/analytics/components/quality-breakdown/build-quality-rows.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/analytics/components/quality-breakdown/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/analytics/components/quality-breakdown/index.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/pages/promotions/analytics/components/quality-breakdown/build-quality-rows.test.ts",
+      "src/pages/promotions/analytics/components/quality-breakdown/build-quality-rows.ts",
+      "src/pages/promotions/analytics/components/quality-breakdown/columns.tsx",
+      "src/pages/promotions/analytics/components/quality-breakdown/index.test.tsx",
+      "src/pages/promotions/analytics/components/quality-breakdown/index.tsx"
+    ],
+    "fetchedAt": "2026-10-12T19:08:05.608Z"
+  },
+  "GetDutchie/alchemy#1249": {
+    "title": "feat(account-360): per-location product status + \"data recorded on <parent>\" label",
+    "qualityComments": [
+      {
+        "path": "apps/gtm/account-360/api/src/routes/accounts.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/lib/legacy-group.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/panels/LegacyGroupBanner.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/panels/LegacyGroupBanner.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/api/src/lib/legacy-group.live.test.ts",
+      "apps/gtm/account-360/api/src/lib/legacy-group.ts",
+      "apps/gtm/account-360/api/src/routes/accounts.live.test.ts",
+      "apps/gtm/account-360/api/src/routes/accounts.ts",
+      "apps/gtm/account-360/web/src/features/account360/Account360View.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LegacyGroupBanner.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LegacyGroupBanner.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LocationsPanel.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LocationsPanel.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/types.ts",
+      "drizzle/gtm/0077_location_product_status.sql",
+      "drizzle/gtm/meta/0077_snapshot.json",
+      "drizzle/gtm/meta/_journal.json",
+      "libs/contracts/accounts/src/accounts.ts",
+      "libs/data-accounts/src/accounts.ts",
+      "libs/gtm-db/src/schema.ts",
+      "tools/pipeline/lib/snowflake/sources/locations.mjs",
+      "tools/pipeline/lib/snowflake/sources/locations.test.mjs"
+    ],
+    "fetchedAt": "2026-10-12T19:08:06.396Z"
+  },
+  "GetDutchie/alchemy#1248": {
+    "title": "fix(salesforce-sync,pipeline): one Legacy twin per Legacy Account — restore Snowflake data for shared Legacy ids",
+    "qualityComments": [
+      {
+        "path": "tools/pipeline/lib/stages/snowflake-sync.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/salesforce-sync/api/src/sfdc/legacy-roles.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/salesforce-sync/api/src/lib/sfdc.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/salesforce-sync/api/src/sfdc/legacy-twins.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "apps/gtm/account-360/api/src/routes/accounts.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "libs/contracts/accounts/src/accounts.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/api/src/lib/legacy-group.live.test.ts",
+      "apps/gtm/account-360/api/src/lib/legacy-group.ts",
+      "apps/gtm/account-360/api/src/routes/accounts.live.test.ts",
+      "apps/gtm/account-360/api/src/routes/accounts.test.ts",
+      "apps/gtm/account-360/api/src/routes/accounts.ts",
+      "apps/gtm/account-360/web/src/features/account360/Account360View.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LegacyGroupBanner.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LegacyGroupBanner.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LocationsPanel.test.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/LocationsPanel.tsx",
+      "apps/gtm/account-360/web/src/features/account360/panels/types.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/sf-id.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/sf-id.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/sfdc.test.ts",
+      "apps/gtm/salesforce-sync/api/src/lib/sfdc.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc-merge.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/legacy-roles.live.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/legacy-roles.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/legacy-roles.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/legacy-twins.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/legacy-twins.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/merge.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/ops.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/ops.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/upsert-account-contacts.live.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/upsert-accounts.live.test.ts",
+      "apps/gtm/salesforce-sync/api/src/sfdc/upsert-accounts.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/activities.cancellation.test.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/activities.ts",
+      "apps/gtm/salesforce-sync/api/src/temporal/workflows.ts",
+      "apps/gtm/salesforce-sync/web/src/features/sync/DataOpsView.test.tsx",
+      "apps/gtm/salesforce-sync/web/src/features/sync/DataOpsView.tsx",
+      "drizzle/gtm/0076_legacy_link_twins.sql",
+      "drizzle/gtm/0077_location_product_status.sql",
+      "drizzle/gtm/meta/0076_snapshot.json",
+      "drizzle/gtm/meta/0077_snapshot.json",
+      "drizzle/gtm/meta/_journal.json",
+      "libs/contracts/accounts/src/accounts.test.ts",
+      "libs/contracts/accounts/src/accounts.ts",
+      "libs/data-accounts/src/accounts.ts",
+      "libs/gtm-db/src/schema.ts",
+      "libs/warehouse-schema/src/gtm.ts",
+      "tools/pipeline/lib/gong-retention-audit.ts",
+      "tools/pipeline/lib/snowflake/sources/locations.mjs",
+      "tools/pipeline/lib/snowflake/sources/locations.test.mjs",
+      "tools/pipeline/lib/snowflake/sources/products.mjs",
+      "tools/pipeline/lib/snowflake/sources/source-definition.d.ts",
+      "tools/pipeline/lib/stages/snowflake-sync.test.mts",
+      "tools/pipeline/lib/stages/snowflake-sync.ts",
+      "tools/pipeline/lib/stages/voice-gong-sync.ts"
+    ],
+    "fetchedAt": "2026-10-12T19:08:07.383Z"
+  },
+  "GetDutchie/alchemy#1161": {
+    "title": "eng(account-360): fill test gap — focusLocationId deep-link effect coverage",
+    "qualityComments": [
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/Account360View.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/Account360View.test.tsx",
+        "category": "While you're here (optional)"
+      },
+      {
+        "path": "apps/gtm/account-360/web/src/features/account360/Account360View.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "apps/gtm/account-360/web/src/features/account360/Account360View.test.tsx"
+    ],
+    "fetchedAt": "2026-10-12T19:08:08.277Z"
   }
 }
