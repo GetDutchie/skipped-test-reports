@@ -693,10 +693,10 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "2026-10-07: checkout bounced to homepage with 'Please add items to your cart before visiting checkout' after a ~127s AeroSync enrollment flow (vs ~50s on the passing retry, fresh dispensary each attempt). DIFFERENT signature than the 2026-xx-xx prior entry (enrollment-status poll timeout) -- treated as a fresh investigation per Step 1.5.",
+      "failure_signature": "checkout bounces to homepage with 'Please add items to your cart before visiting checkout' after a long (~90-126s) logged-in enroll-and-checkout flow; logged-out siblings (~41-45s) never fail. Reconfirmed 2026-10-13 with identical signature.",
       "real_app_bug": null,
       "attempts": [],
-      "investigation_notes": "2026-10-07: Initial hypothesis (infra/backend-slow, slow AeroSync MFA sandbox) was challenged by falsification pass: subagent found the test's mock enrollment path (page-objects/marketplace/pages/pay/signup) doesn't actually exercise live AeroSync MFA (bankName param is unused/discarded), so the '127s MFA wait' framing may be wrong; subagent's own provisional read (low confidence) pointed at a cart-restoration/context-key mismatch in apps/marketplace/src/state/cart.ts / use-cart-controller.js (on-checkout-mount.js:11-27 routes home exactly when `!order.dispensary`), but could not prove which code path actually ran without the failing trace. DISAGREEMENT -> falsification gate (2i.5c): NOT CONFIRMED, returned to fresh investigation. No ticket filed, no code change. NEXT STEP: pull failing trace.zip network/console timeline to see the real elapsed time breakdown and whether `stored-cart` key/order.dispensary diverge between the embedded dispensary-ID cart and whatever is read at checkout-mount after enrollment returns."
+      "investigation_notes": "2026-10-13: Same failure_signature as 2026-10-07 (checkout bounces to homepage with 'Please add items to your cart before visiting checkout' after a long enroll-and-login flow; logged-in variants only, ~91-126s vs ~41-45s for logged-out siblings). NEW cross-test correlation: the sibling test [2991644] (legacy ToS variant, same file) failed with the IDENTICAL mechanism/pattern the same night -- both call checkoutPage.login(user) before enrollAndValidate, both bounce home; the 'logged out'/newUser:true variants in both describe blocks passed every time. Treated as one systemic finding, not two. Round-2 falsification: dispatched a blind subagent against my refined hypothesis ('on-checkout-mount.js's User.loggedIn-gated checkValidUser()+logout(null) wipes Cart.order.dispensary, and the same function's own `if (!order.dispensary)` check then fires the home-redirect'). DISAGREED and DISPROVED: the real apps/marketplace/src/state/user.ts UserStore has no `loggedIn` property and no `checkValidUser` method (only `isLoggedIn`/`exists`) -- on-checkout-mount.js:10's `if (User.loggedIn)` branch is dead code in the real app; the unit test only exercises it via mocks. That hypothesis is RULED OUT, not just unconfirmed. New candidate (not yet falsification-tested): apps/marketplace/src/hooks/use-cart-controller.js's useClearCart({Cart, dispensary, viewingDispensary}) (line ~64, wired at line ~699) clears the cart when Cart.dispensary's cName differs from the route-resolved viewingDispensary's cName -- this is the literal code path that would explain the symptom (onCheckoutMount's real, confirmed-live `if (!order.dispensary)` redirect-home-with-ernie-toast branch is genuine, just not reached via the disproven checkValidUser path). Have NOT yet proven viewingDispensary actually resolves to a mismatched cName during a real failure -- this is still a hypothesis, not a confirmed mechanism. Repro attempts tonight: solo run of [657428] passed clean (35.9s); --repeat-each=4 --workers=4 on the whole aerosync-enrollment.test.ts file (16 runs, all 4 tests) ALL PASSED -- same-file parallel load is NOT sufficient to reproduce; the real nightly contention (6 shards x 4 workers = 24 workers across ALL spec files hitting shared armageddon-web/dutchie-api) is likely required and wasn't replicated. NEXT STEP for whoever picks this up: (a) don't re-try the checkValidUser angle, it's disproven; (b) get a trace.zip from an ACTUAL failing attempt (first-attempt CI failures don't retain traces -- only the retry, which passed -- so add `trace: 'retain-on-failure'` to this spec/project or request it from whoever owns the Playwright config) and check the GraphQL response for the dispensary-by-cName query (consumerDispensaries) at the moment of failure: does viewingDispensary's cName actually diverge from the cart's stored dispensary cName? (c) if useClearCart is also ruled out, consider broader backend-side causes (e.g. Armageddon auth/session validation under real multi-shard load) -- this may ultimately be the AeroSync-specific analog of the same backend-contention class seen in kiosk-pro-brands (QA-1118) and category-page-ads (brand signature race) this same night, just with a different proximate trigger. Per falsification gate 2i.5d, a 3rd falsification pass is reserved for a LATER night, not tonight."
     },
     "marketplace/kiosk-pro/kiosk-pro-brands.test.ts::[657444] Brands link shows and navigates to brands page": {
       "test_name": "[657444] Brands link shows and navigates to brands page",
@@ -713,8 +713,8 @@
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
       "attempts": [],
-      "last_reconfirmed": "2026-10-12",
-      "reconfirm_note": "2026-10-12 nightly: same failure_signature reconfirmed from CI artifacts (error-context.md shows Categories nav with no Brands link; 1st attempt fails, passes on retry). Steady state per no-quarantine policy, QA-1118 remains open (Backlog, unassigned movement, 4 consecutive nights now). No fresh Step 2 investigation."
+      "last_reconfirmed": "2026-10-13",
+      "reconfirm_note": "2026-10-13 nightly: same failure_signature reconfirmed from CI artifacts (error-context.md shows Categories nav with no Brands link; 2 consecutive fails then pass on 3rd retry). Steady state per no-quarantine policy, QA-1118 remains open (still no visible movement from owning team). No fresh Step 2 investigation."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
@@ -739,6 +739,32 @@
       ],
       "last_reconfirmed": "2026-10-09",
       "reconfirm_note": "2026-10-09 nightly: same pre-fix failure signature recurring on develop because PR #23761 (fix, approved+CI green) is still unmerged. No new attempt \u2014 not a relapse."
+    },
+    "payments/ecomm-enrollment/aerosync-enrollment.test.ts::[2991644] logged in consumer can enroll and checkout using AeroSync (legacy checkbox ToS)": {
+      "test_name": "[2991644] logged in consumer can enroll and checkout using AeroSync (legacy checkbox ToS)",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "checkout bounces to homepage with 'Please add items to your cart before visiting checkout' after a long (~126s) logged-in enroll-and-checkout flow -- IDENTICAL mechanism/night to sibling test [657428] in the same file (see that test_id's investigation_notes for full details; this is one systemic finding, not a separate investigation).",
+      "real_app_bug": null,
+      "attempts": [],
+      "investigation_notes": "2026-10-13 (first-ever appearance in ledger): see payments/ecomm-enrollment/aerosync-enrollment.test.ts::[657428]'s investigation_notes -- same mechanism, same night, cross-test correlated, not investigated separately per Step 2h."
+    },
+    "marketplace/ads/category-page-ads.test.ts::[106684] Click tracker fires when sponsored product is clicked": {
+      "test_name": "[106684] Click tracker fires when sponsored product is clicked",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "fixtures/ads-fixture.ts's `brands` fixture createTestBrand -> createBrandV2 fails with 'Validation errors'/UNPROCESSABLE_ENTITY on first attempt (retry with fresh random names succeeds). Root cause (2026-10-13, confirmed via independent falsification pass): Armageddon's BrandMatchSignature.upsert_signature (app/models/brand_match_signature.rb) does a non-atomic find_or_initialize_by+save! keyed on the brand name's first letter; two concurrent brand creates for a first-letter signature_key with no existing row yet (fresh CI DB) race, and the loser's save! raises ActiveRecord::RecordInvalid -> 422. Already documented in playwright/tests/marketplace/ads/AGENTS.md's 'Brand creation fails with UniqueViolation' section and fixtures/ads-fixture.ts's own uniqueFirstLetterNames comment, which only mitigates collisions WITHIN one fixture's own 3 brands, not cross-worker/cross-test same-letter collisions.",
+      "real_app_bug": null,
+      "attempts": [],
+      "investigation_notes": "Classified infra/backend-slow (transient backend API failure sub-class), CONFIRMED via falsification gate 2i.5 (independent subagent agreed on classification, refined the exact ActiveRecord::RecordInvalid mechanism). Flagged by that pass as a possible cheap test-side mitigation for whoever wants to reduce nightly noise: retry createTestBrand on a 422 in fixtures/brands/create.ts, or pre-seed all 26 first-letter signature rows once in global setup so no first-use-of-a-letter race window exists. Not acted on this run (infra/backend-slow doesn't touch code per policy) -- a legitimate reliability improvement for a future PR, not a nightly-triage fix target."
     }
   }
 }
