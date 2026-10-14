@@ -793,8 +793,8 @@
       "attempts": [
         {
           "date": "2026-10-14",
-          "jira_key": null,
-          "pr_url": null,
+          "jira_key": "QA-1135",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/23905",
           "outcome": "fixed",
           "hypothesis": "enterAddress() unconditionally waits up to ~2s for the residence-verification modal even when the residential-check request never started (e.g. outside-delivery-area addresses short-circuit before reaching that check in checkAllAddressFlags) -- combined with the already-present ~3s residential-check fallback, this consumes most/all of the \"outside delivery area\" error ernie toast's short (~5s) visible lifetime before selectOrderType clicks Save and the caller's expectErnieWithMessage starts checking, so under nightly load the toast has already faded by the first poll and never reappears.",
           "fix_applied": "playwright/page-objects/marketplace/pages/checkout-page/components/order-type-section.ts enterAddress(): made the residence-verification-modal wait conditional on residentialCheckStarted (the modal is structurally impossible if that request never fired, since checkAllAddressFlags only reaches the residential check after the delivery-limits check passes) -- removes ~2s of guaranteed dead time for outside-delivery-area and any other non-residential-check address, with no timeout values changed or added.",
@@ -814,8 +814,8 @@
       "attempts": [
         {
           "date": "2026-10-14",
-          "jira_key": null,
-          "pr_url": null,
+          "jira_key": "QA-1135",
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/23905",
           "outcome": "fixed",
           "hypothesis": "enterAddress() unconditionally waits up to ~2s for the residence-verification modal even when the residential-check request never started (e.g. outside-delivery-area addresses short-circuit before reaching that check in checkAllAddressFlags) -- combined with the already-present ~3s residential-check fallback, this consumes most/all of the \"outside delivery area\" error ernie toast's short (~5s) visible lifetime before selectOrderType clicks Save and the caller's expectErnieWithMessage starts checking, so under nightly load the toast has already faded by the first poll and never reappears.",
           "fix_applied": "playwright/page-objects/marketplace/pages/checkout-page/components/order-type-section.ts enterAddress(): made the residence-verification-modal wait conditional on residentialCheckStarted (the modal is structurally impossible if that request never fired, since checkAllAddressFlags only reaches the residential check after the delivery-limits check passes) -- removes ~2s of guaranteed dead time for outside-delivery-area and any other non-residential-check address, with no timeout values changed or added.",
