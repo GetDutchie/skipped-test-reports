@@ -627,7 +627,9 @@
         "classification": "isolation/false-positive",
         "falsification": "CONFIRMED -- independent blind subagent (given only test name/file/conclusion) reached the same isolation/false-positive conclusion via its own investigation (code review of save/hydration seam + 9 of its own repro runs under CPU-saturated contention).",
         "next_step_for_future_investigator": "If this recurs, the discriminating evidence is a trace.zip network capture at failure time: (a) publish mutation payload contains OLD geometry -> real-app-bug in the Delivery settings save/hydration seam (see ECOMM-12919 commits dcfcd28de9/477c3ff09b/81d2842756/82e281e13e, Oct 6-10, landed just before this test's rewrite -- same save seam, not yet ruled out as a contaminant class even though no direct mechanism was found this run); (b) payload has NEW geometry but persisted zone doesn't -> infra/backend-slow; (c) Draw's in-browser feature never actually changed -> test-code-bug in the drag/projection math. Recommend the test carry trace:'retain-on-failure' if the current global config doesn't already retain traces on first-attempt failures in CI."
-      }
+      },
+      "last_reconfirmed": "2026-10-14",
+      "reconfirm_note": "2026-10-14 nightly: same symptom class reconfirmed (CI artifacts match the 2026-10-12 isolation/false-positive signature -- admin dispensary settings page, same mechanism). attempt_count stays at 2 (below 3.5 cap, no new fix attempted since classification is already isolation/false-positive, not test-code-bug). No fresh Step 2 investigation per steady-state treatment."
     },
     "multi-app/delivery-city-eligibility-roundtrip.test.ts::[657918] A published city zone governs matching and nonmatching Consumer delivery addresses": {
       "test_name": "City / Town delivery eligibility round trip \u203a [657918] A published city zone governs matching and nonmatching Consumer delivery addresses",
@@ -696,7 +698,7 @@
       "failure_signature": "checkout bounces to homepage with 'Please add items to your cart before visiting checkout' after a long (~90-126s) logged-in enroll-and-checkout flow; logged-out siblings (~41-45s) never fail. Reconfirmed 2026-10-13 with identical signature.",
       "real_app_bug": null,
       "attempts": [],
-      "investigation_notes": "2026-10-13: Same failure_signature as 2026-10-07 (checkout bounces to homepage with 'Please add items to your cart before visiting checkout' after a long enroll-and-login flow; logged-in variants only, ~91-126s vs ~41-45s for logged-out siblings). NEW cross-test correlation: the sibling test [2991644] (legacy ToS variant, same file) failed with the IDENTICAL mechanism/pattern the same night -- both call checkoutPage.login(user) before enrollAndValidate, both bounce home; the 'logged out'/newUser:true variants in both describe blocks passed every time. Treated as one systemic finding, not two. Round-2 falsification: dispatched a blind subagent against my refined hypothesis ('on-checkout-mount.js's User.loggedIn-gated checkValidUser()+logout(null) wipes Cart.order.dispensary, and the same function's own `if (!order.dispensary)` check then fires the home-redirect'). DISAGREED and DISPROVED: the real apps/marketplace/src/state/user.ts UserStore has no `loggedIn` property and no `checkValidUser` method (only `isLoggedIn`/`exists`) -- on-checkout-mount.js:10's `if (User.loggedIn)` branch is dead code in the real app; the unit test only exercises it via mocks. That hypothesis is RULED OUT, not just unconfirmed. New candidate (not yet falsification-tested): apps/marketplace/src/hooks/use-cart-controller.js's useClearCart({Cart, dispensary, viewingDispensary}) (line ~64, wired at line ~699) clears the cart when Cart.dispensary's cName differs from the route-resolved viewingDispensary's cName -- this is the literal code path that would explain the symptom (onCheckoutMount's real, confirmed-live `if (!order.dispensary)` redirect-home-with-ernie-toast branch is genuine, just not reached via the disproven checkValidUser path). Have NOT yet proven viewingDispensary actually resolves to a mismatched cName during a real failure -- this is still a hypothesis, not a confirmed mechanism. Repro attempts tonight: solo run of [657428] passed clean (35.9s); --repeat-each=4 --workers=4 on the whole aerosync-enrollment.test.ts file (16 runs, all 4 tests) ALL PASSED -- same-file parallel load is NOT sufficient to reproduce; the real nightly contention (6 shards x 4 workers = 24 workers across ALL spec files hitting shared armageddon-web/dutchie-api) is likely required and wasn't replicated. NEXT STEP for whoever picks this up: (a) don't re-try the checkValidUser angle, it's disproven; (b) get a trace.zip from an ACTUAL failing attempt (first-attempt CI failures don't retain traces -- only the retry, which passed -- so add `trace: 'retain-on-failure'` to this spec/project or request it from whoever owns the Playwright config) and check the GraphQL response for the dispensary-by-cName query (consumerDispensaries) at the moment of failure: does viewingDispensary's cName actually diverge from the cart's stored dispensary cName? (c) if useClearCart is also ruled out, consider broader backend-side causes (e.g. Armageddon auth/session validation under real multi-shard load) -- this may ultimately be the AeroSync-specific analog of the same backend-contention class seen in kiosk-pro-brands (QA-1118) and category-page-ads (brand signature race) this same night, just with a different proximate trigger. Per falsification gate 2i.5d, a 3rd falsification pass is reserved for a LATER night, not tonight."
+      "investigation_notes": "2026-10-14 (3rd investigation night, per 2i.5d recurrence-tier rule): dispatched a thorough independent pass (CPU-saturated 40 busy-loop procs + --repeat-each=6 --workers=6 on the logged-in variants, 12/12 PASSED, no repro). useClearCart hypothesis from night 2 WEAKENED but not disproven: useClearCart (use-cart-controller.js:64-78) only fires when isEmbedded AND both cNames truthy AND differ -- this test IS embedded but cart+viewing both derive from the same dispensary cName in the normal flow, so a mismatch would require viewingDispensary to resolve to a DIFFERENT dispensary, which nothing in the test setup suggests; weak support only. NEW leading theory (unproven): Cart.isReady is set true in useCartSaveLoad effect (use-cart-controller.js ~166-170) whenever a stored-cart key exists for the viewing dispensary, even if that stored cart is empty/missing -- after the long (~90-126s) logged-in enroll flow returns via full-page navigation from the mock-aggregator /pay/signup flow, if localStorage stored-cart was pruned/overwritten (save effect ~176, cleanup ~200 prunes entries beyond 5 keys) before rehydration, Cart.isReady=true with an empty cart would trip on-checkout-mount.js:18-25 (!order.dispensary) and produce the exact observed redirect+message, consistent with only the SLOW logged-in variants (not fast logged-out ones) being affected. Night-1 checkValidUser/User.loggedIn branch REMAINS ruled out (dead code, not re-investigated). STILL UNRESOLVED -- 3rd independent pass could not confirm or reproduce. Next-step evidence needed: force trace:on retention for this spec's first attempt (currently only retry has a trace), and temporarily log Cart.isReady / localStorage stored-cart keys / viewingDispensary cName inside on-checkout-mount.js at the moment of the !order.dispensary branch to catch the mismatch live on a future CI failure."
     },
     "marketplace/kiosk-pro/kiosk-pro-brands.test.ts::[657444] Brands link shows and navigates to brands page": {
       "test_name": "[657444] Brands link shows and navigates to brands page",
@@ -713,8 +715,8 @@
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
       "attempts": [],
-      "last_reconfirmed": "2026-10-13",
-      "reconfirm_note": "2026-10-13 nightly: same failure_signature reconfirmed from CI artifacts (error-context.md shows Categories nav with no Brands link; 2 consecutive fails then pass on 3rd retry). Steady state per no-quarantine policy, QA-1118 remains open (still no visible movement from owning team). No fresh Step 2 investigation."
+      "last_reconfirmed": "2026-10-14",
+      "reconfirm_note": "2026-10-14 nightly: same failure_signature reconfirmed from CI artifacts (Categories nav with no Brands link, 2 fails then pass on retry). QA-1118 still open, 6th consecutive night, zero visible movement from owning team. Steady state, no fresh Step 2 investigation."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
@@ -751,7 +753,7 @@
       "failure_signature": "checkout bounces to homepage with 'Please add items to your cart before visiting checkout' after a long (~126s) logged-in enroll-and-checkout flow -- IDENTICAL mechanism/night to sibling test [657428] in the same file (see that test_id's investigation_notes for full details; this is one systemic finding, not a separate investigation).",
       "real_app_bug": null,
       "attempts": [],
-      "investigation_notes": "2026-10-13 (first-ever appearance in ledger): see payments/ecomm-enrollment/aerosync-enrollment.test.ts::[657428]'s investigation_notes -- same mechanism, same night, cross-test correlated, not investigated separately per Step 2h."
+      "investigation_notes": "2026-10-14 (3rd investigation night, per 2i.5d recurrence-tier rule): dispatched a thorough independent pass (CPU-saturated 40 busy-loop procs + --repeat-each=6 --workers=6 on the logged-in variants, 12/12 PASSED, no repro). useClearCart hypothesis from night 2 WEAKENED but not disproven: useClearCart (use-cart-controller.js:64-78) only fires when isEmbedded AND both cNames truthy AND differ -- this test IS embedded but cart+viewing both derive from the same dispensary cName in the normal flow, so a mismatch would require viewingDispensary to resolve to a DIFFERENT dispensary, which nothing in the test setup suggests; weak support only. NEW leading theory (unproven): Cart.isReady is set true in useCartSaveLoad effect (use-cart-controller.js ~166-170) whenever a stored-cart key exists for the viewing dispensary, even if that stored cart is empty/missing -- after the long (~90-126s) logged-in enroll flow returns via full-page navigation from the mock-aggregator /pay/signup flow, if localStorage stored-cart was pruned/overwritten (save effect ~176, cleanup ~200 prunes entries beyond 5 keys) before rehydration, Cart.isReady=true with an empty cart would trip on-checkout-mount.js:18-25 (!order.dispensary) and produce the exact observed redirect+message, consistent with only the SLOW logged-in variants (not fast logged-out ones) being affected. Night-1 checkValidUser/User.loggedIn branch REMAINS ruled out (dead code, not re-investigated). STILL UNRESOLVED -- 3rd independent pass could not confirm or reproduce. Next-step evidence needed: force trace:on retention for this spec's first attempt (currently only retry has a trace), and temporarily log Cart.isReady / localStorage stored-cart keys / viewingDispensary cName inside on-checkout-mount.js at the moment of the !order.dispensary branch to catch the mismatch live on a future CI failure."
     },
     "marketplace/ads/category-page-ads.test.ts::[106684] Click tracker fires when sponsored product is clicked": {
       "test_name": "[106684] Click tracker fires when sponsored product is clicked",
@@ -765,6 +767,61 @@
       "real_app_bug": null,
       "attempts": [],
       "investigation_notes": "Classified infra/backend-slow (transient backend API failure sub-class), CONFIRMED via falsification gate 2i.5 (independent subagent agreed on classification, refined the exact ActiveRecord::RecordInvalid mechanism). Flagged by that pass as a possible cheap test-side mitigation for whoever wants to reduce nightly noise: retry createTestBrand on a 422 in fixtures/brands/create.ts, or pre-seed all 26 first-letter signature rows once in global setup so no first-use-of-a-letter race window exists. Not acted on this run (infra/backend-slow doesn't touch code per policy) -- a legitimate reliability improvement for a future PR, not a nightly-triage fix target."
+    },
+    "marketplace/checkout-page/nearest-store-routing.test.ts::[657912] Declining an eligible sibling offer preserves checkout and the origin cart": {
+      "test_name": "[657912] Declining an eligible sibling offer preserves checkout and the origin cart",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "orderType radiogroup shows both Pickup/Delivery unselected with a \"Please select an order type\" error after declining a nearest-store-routing sibling offer; expectErnieWithMessage times out waiting for the \"outside the delivery area\" ernie toast.",
+      "real_app_bug": null,
+      "attempts": [],
+      "investigation_notes": "2026-10-14 (first-ever ledger appearance): FLAKEY (failed attempt 1, passed retry 1). Two independent scout passes (one direct investigation, one blind falsification pass given only test name/file/conclusion) BOTH could not reproduce (6/6 and 8/8 clean locally) and BOTH independently converged on the same plausible mechanism: the test asserts checkoutPage.expectErnieWithMessage(OUTSIDE_DELIVERY_AREA_MSG) AFTER an offer-disclosure-modal interaction (several assertions + a decline click), by which point the transient ernie toast (whose own default visible lifetime appears to be ~5000ms, see packages/shared/constants/ernie.ts / ernie.jsx) may have already faded, since nothing re-raises it and expectErnieWithMessage's toPass retry (60s budget) cannot resurrect a toast that will never reappear. Classified isolation/false-positive for tonight (cannot reproduce, no code change) rather than test-code-bug, since neither pass could force a repro to prove the mechanism or safely design a fix without risking an unverified guess. SAME underlying toast-timing family as [21055]/checkout-page.test.ts (CONFIRMED and fixed tonight, PR pending) but a DIFFERENT proximate trigger (that fix only addressed enterAddress()'s own internal wait; this test's delay comes from the offer-disclosure-modal interaction itself, which [21055]'s fix does not touch). Next investigator: consider asserting on a durable signal (the persistent inline/banner error, or Checkout.getError state) instead of the transient ernie toast for this specific decline-flow assertion, or confirm/measure the ernie's actual effective lifetime via a forced trace."
+    },
+    "checkout-page/checkout-page.test.ts::[21055] chooses delivery address from outside delivery radius": {
+      "suite": "ecomm",
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "real_app_bug": null,
+      "test_name": "[21055] chooses delivery address from outside delivery radius",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "date": "2026-10-14",
+          "jira_key": null,
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "enterAddress() unconditionally waits up to ~2s for the residence-verification modal even when the residential-check request never started (e.g. outside-delivery-area addresses short-circuit before reaching that check in checkAllAddressFlags) -- combined with the already-present ~3s residential-check fallback, this consumes most/all of the \"outside delivery area\" error ernie toast's short (~5s) visible lifetime before selectOrderType clicks Save and the caller's expectErnieWithMessage starts checking, so under nightly load the toast has already faded by the first poll and never reappears.",
+          "fix_applied": "playwright/page-objects/marketplace/pages/checkout-page/components/order-type-section.ts enterAddress(): made the residence-verification-modal wait conditional on residentialCheckStarted (the modal is structurally impossible if that request never fired, since checkAllAddressFlags only reaches the residential check after the delivery-limits check passes) -- removes ~2s of guaranteed dead time for outside-delivery-area and any other non-residential-check address, with no timeout values changed or added.",
+          "result": "red-green-revert-restore proven (reverted fix reproduced the exact CI symptom in 3/6 local runs under --repeat-each=6 --workers=6; fix restored passed 6/6 and 48/48 again); 20/20 Vape isolation (--repeat-each=20 --workers=1) for both [21055] and [21053] (40/40 total) \u2705; load-realistic run (4-worker parallel matching real GHA shard concurrency -- playwright.config.ts workers:'50%' on an 8-vCPU runner, dutchie-e2e constellation, checkout-page.test.ts, 3/3) \u2705; sibling callers blocked-address.test.ts + delivery-city-eligibility-roundtrip.test.ts (same enterAddress()/expectSaveSuccess:false pattern) reverified under load with no regression."
+        }
+      ]
+    },
+    "checkout-page/checkout-page.test.ts::[21053] Changing order type to delivery when pickup is selected": {
+      "suite": "ecomm",
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "real_app_bug": null,
+      "test_name": "[21053] Changing order type to delivery when pickup is selected",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "date": "2026-10-14",
+          "jira_key": null,
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "enterAddress() unconditionally waits up to ~2s for the residence-verification modal even when the residential-check request never started (e.g. outside-delivery-area addresses short-circuit before reaching that check in checkAllAddressFlags) -- combined with the already-present ~3s residential-check fallback, this consumes most/all of the \"outside delivery area\" error ernie toast's short (~5s) visible lifetime before selectOrderType clicks Save and the caller's expectErnieWithMessage starts checking, so under nightly load the toast has already faded by the first poll and never reappears.",
+          "fix_applied": "playwright/page-objects/marketplace/pages/checkout-page/components/order-type-section.ts enterAddress(): made the residence-verification-modal wait conditional on residentialCheckStarted (the modal is structurally impossible if that request never fired, since checkAllAddressFlags only reaches the residential check after the delivery-limits check passes) -- removes ~2s of guaranteed dead time for outside-delivery-area and any other non-residential-check address, with no timeout values changed or added.",
+          "result": "red-green-revert-restore proven (reverted fix reproduced the exact CI symptom in 3/6 local runs under --repeat-each=6 --workers=6; fix restored passed 6/6 and 48/48 again); 20/20 Vape isolation (--repeat-each=20 --workers=1) for both [21055] and [21053] (40/40 total) \u2705; load-realistic run (4-worker parallel matching real GHA shard concurrency -- playwright.config.ts workers:'50%' on an 8-vCPU runner, dutchie-e2e constellation, checkout-page.test.ts, 3/3) \u2705; sibling callers blocked-address.test.ts + delivery-city-eligibility-roundtrip.test.ts (same enterAddress()/expectSaveSuccess:false pattern) reverified under load with no regression."
+        }
+      ]
     }
   }
 }
