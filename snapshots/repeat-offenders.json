@@ -536,6 +536,28 @@
         "failure_signature": "SqlException PK_EmailMarketingLspTemplateAssignment duplicate key in SeedPayByBankTemplatesIfNecessary"
       },
       "attempts": []
+    },
+    "cart/preorders/item-not-in-preorder-warning.test.ts::[657334] Shows a warning before adding an item not in the preorder": {
+      "test_name": "[657334] Shows a warning before adding an item not in the preorder",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-13",
+          "jira_key": "QA-1132",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2148",
+          "outcome": "fixed",
+          "hypothesis": "page.keyboard.type(packageId) with no per-keystroke delay occasionally misses the app's 75ms avg-interval scan-recognition window (hardware-library-manager.ts), so add-to-cart never fires and the cart-line assertion times out",
+          "fix_applied": "added { delay: 20 } to both page.keyboard.type() calls in item-not-in-preorder-warning.test.ts, matching the already-established working pattern in sibling scan-item.test.ts",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, e2e/tests/cart/preorders/+e2e/tests/preorder/, 3/3) \u2705. Revert-proof (10 reps, fix removed) did NOT reproduce the original race in this single-pod environment -- flake is CI-host-timing-dependent and may not trigger reliably outside real nightly shard contention; documented as a residual verification gap rather than claimed as a clean red-proof."
+        }
+      ]
     }
   }
 }
