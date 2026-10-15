@@ -837,7 +837,7 @@
         {
           "date": "2026-10-15",
           "jira_key": "QA-1137",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/23975",
           "outcome": "fixed",
           "hypothesis": "A prior unverified fix switched birthdayInput from fill() to pressSequentially() to dodge a suspected mask race; pressSequentially() itself drops keystrokes under real CPU contention, permanently leaving the field empty (confirmed via a 60s toHaveValue wait that never resolves once it happens) -- not a timing race that just needs a longer wait.",
           "fix_applied": "Reverted birthdayInput.pressSequentially(TEST_BIRTHDAY) to .fill(TEST_BIRTHDAY) (anti-flake doc's prescribed approach for a non-OTP single input; a passing sibling test on the identical FormFormattedInput component already uses fill() reliably) and added an explicit expect(birthdayInput).toHaveValue(TEST_BIRTHDAY_FORMATTED) to confirm the masked value committed before continuing.",
@@ -859,7 +859,7 @@
         {
           "date": "2026-10-15",
           "jira_key": "QA-1137",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/Dutchie/pull/23975",
           "outcome": "fixed",
           "hypothesis": "A prior unverified fix switched birthdayInput from fill() to pressSequentially() to dodge a suspected mask race; pressSequentially() itself drops keystrokes under real CPU contention, permanently leaving the field empty (confirmed via a 60s toHaveValue wait that never resolves once it happens) -- not a timing race that just needs a longer wait.",
           "fix_applied": "Reverted birthdayInput.pressSequentially(TEST_BIRTHDAY) to .fill(TEST_BIRTHDAY) (anti-flake doc's prescribed approach for a non-OTP single input; a passing sibling test on the identical FormFormattedInput component already uses fill() reliably) and added an explicit expect(birthdayInput).toHaveValue(TEST_BIRTHDAY_FORMATTED) to confirm the masked value committed before continuing.",
