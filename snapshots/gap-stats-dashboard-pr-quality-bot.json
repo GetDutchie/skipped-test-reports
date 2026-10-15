@@ -3654,5 +3654,261 @@
       "apps/gtm/account-360/web/src/features/account360/Account360View.test.tsx"
     ],
     "fetchedAt": "2026-10-12T19:08:08.277Z"
+  },
+  "GetDutchie/dutchie-nexus#2117": {
+    "title": "eng(dex): make first-send handoff idempotent and visible",
+    "qualityComments": [
+      {
+        "path": "apps/nexus-agent-server/src/agent/gate.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/dex/dex-chat/src/session/agent-session-gate.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/app/first-send/landing.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/app/first-send/use-first-send.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/app/app.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-server/src/agent/gate.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus-agent-client/src/app/app.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus-agent-client/src/app/app.test.tsx",
+      "apps/nexus-agent-client/src/app/app.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent.tsx",
+      "apps/nexus-agent-client/src/app/first-send/handoff-store.ts",
+      "apps/nexus-agent-client/src/app/first-send/landing.tsx",
+      "apps/nexus-agent-client/src/app/first-send/use-first-send.test.ts",
+      "apps/nexus-agent-client/src/app/first-send/use-first-send.ts",
+      "apps/nexus-agent-client/src/chats/chat-api.ts",
+      "apps/nexus-agent-client/src/dashboards/migration-gate.test.tsx",
+      "apps/nexus-agent-client/src/dashboards/use-dashboards.ts",
+      "apps/nexus-agent-server/src/agent/agent.ts",
+      "apps/nexus-agent-server/src/agent/gate.test.ts",
+      "apps/nexus-agent-server/src/agent/gate.ts",
+      "apps/nexus-agent-server/src/analyst/isolation.test.ts",
+      "apps/nexus-agent-server/src/chat-index/chat-index.test.ts",
+      "apps/nexus-agent-server/src/chat-index/chat-index.ts",
+      "apps/nexus-agent-server/src/chat-index/routes.test.ts",
+      "apps/nexus-agent-server/src/chat-index/routes.ts",
+      "packages/dex/dex-chat/src/session/agent-session-gate.tsx",
+      "packages/dex/dex-chat/src/session/close-handler.test.ts",
+      "packages/dex/dex-chat/src/session/close-handler.ts"
+    ],
+    "fetchedAt": "2026-10-15T19:07:04.866Z"
+  },
+  "GetDutchie/dutchie-nexus#1976": {
+    "title": "fix(discounts): the Discounts page saves engine-correct discounts NEXUS-693",
+    "qualityComments": [
+      {
+        "path": "packages/webapi-client/src/discount-mapping/apply-edits.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/webapi-client/src/discount-mapping/diagnose.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "apps/nexus/src/components/discounts/discount-panel.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/webapi-client/src/discount-mapping/from-discount-shape.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/discount-ui/src/buy-get-diagram.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/webapi-client/src/discount-mapping/from-discount-shape.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "packages/webapi-client/src/discount-mapping/to-discount-data.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/discount-ui/src/deal-structure.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/discount-ui/src/schedule-sentinel.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "packages/webapi-client/src/discount-mapping/apply-edits.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "packages/webapi-client/src/discount-mapping/apply-edits.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/components/discounts/discount-editor/use-working-discount.test.tsx",
+      "apps/nexus/src/components/discounts/discount-editor/use-working-discount.ts",
+      "apps/nexus/src/components/discounts/discount-panel.tsx",
+      "apps/nexus/src/components/discounts/use-discount-edits.test.ts",
+      "apps/nexus/src/pages/marketing/discounts/components/create-discount/create-discount-panel.tsx",
+      "apps/nexus/src/pages/marketing/discounts/components/create-discount/goals.test.ts",
+      "apps/nexus/src/pages/marketing/discounts/components/create-discount/goals.ts",
+      "packages/discount-ui/src/buy-get-diagram.tsx",
+      "packages/discount-ui/src/deal-structure.test.ts",
+      "packages/discount-ui/src/deal-structure.ts",
+      "packages/discount-ui/src/schedule-sentinel.ts",
+      "packages/discount-ui/src/structure-switcher.tsx",
+      "packages/webapi-client/src/discount-mapping/apply-edits.test.ts",
+      "packages/webapi-client/src/discount-mapping/apply-edits.ts",
+      "packages/webapi-client/src/discount-mapping/blank-discount.test.ts",
+      "packages/webapi-client/src/discount-mapping/blank-discount.ts",
+      "packages/webapi-client/src/discount-mapping/catalog-roundtrip.test.ts",
+      "packages/webapi-client/src/discount-mapping/diagnose.test.ts",
+      "packages/webapi-client/src/discount-mapping/diagnose.ts",
+      "packages/webapi-client/src/discount-mapping/discount-model.ts",
+      "packages/webapi-client/src/discount-mapping/from-discount-data.ts",
+      "packages/webapi-client/src/discount-mapping/from-discount-shape.test.ts",
+      "packages/webapi-client/src/discount-mapping/from-discount-shape.ts",
+      "packages/webapi-client/src/discount-mapping/index.ts",
+      "packages/webapi-client/src/discount-mapping/save-edits.test.ts",
+      "packages/webapi-client/src/discount-mapping/save-edits.ts",
+      "packages/webapi-client/src/discount-mapping/tier-edit.test.ts",
+      "packages/webapi-client/src/discount-mapping/tiers.test.ts",
+      "packages/webapi-client/src/discount-mapping/to-discount-data.test.ts",
+      "packages/webapi-client/src/discount-mapping/to-discount-data.ts"
+    ],
+    "fetchedAt": "2026-10-15T19:07:05.795Z"
+  },
+  "GetDutchie/brands-portal#1166": {
+    "title": "fix(catalog): make export toast link visible BRAND-3931",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/catalog/export-button/success-message.tsx"
+    ],
+    "fetchedAt": "2026-10-15T19:07:06.662Z"
+  },
+  "GetDutchie/brands-portal#1161": {
+    "title": "fix: widen PO item notes modal and fix column layout BRAND-3913",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/orders/detail/item-notes-modal.tsx"
+    ],
+    "fetchedAt": "2026-10-15T19:07:07.532Z"
+  },
+  "GetDutchie/brands-portal#1167": {
+    "title": "Release: v1.123.0",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/cache/pr.json",
+      "CHANGELOG.md",
+      "package.json"
+    ],
+    "fetchedAt": "2026-10-15T19:07:08.320Z"
+  },
+  "GetDutchie/brands-portal#1162": {
+    "title": null,
+    "qualityComments": [],
+    "error": "Command failed: gh pr view https://github.com/GetDutchie/brands-portal/pull/1162 --json title,files\nPost \"https://api.github.com/graphql\": read tcp 10.151.75.243:43306->140.82.114.5:443: read: connection reset by peer\n",
+    "fetchedAt": "2026-10-15T19:07:09.375Z"
+  },
+  "GetDutchie/brands-portal#1147": {
+    "title": "Release: v1.121.0",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/cache/pr.json",
+      "CHANGELOG.md",
+      "package.json"
+    ],
+    "fetchedAt": "2026-10-15T19:07:10.136Z"
+  },
+  "GetDutchie/brands-portal#1174": {
+    "title": "fix(promotions): default retailer carriage selection BRAND-3938",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/retailer-selection-card.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/retailers/retailer-selection-card.tsx",
+      "src/pages/promotions/simple-wizard/retailers/retailer-tree-flag.test.tsx",
+      "src/services/launch-darkly/use-retailer-expansion-teaser-enabled.test.ts",
+      "src/services/launch-darkly/use-retailer-expansion-teaser-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-15T19:07:10.895Z"
+  },
+  "GetDutchie/brands-portal#1168": {
+    "title": "eng(orders): fill Connect test gap — item notes modal",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/detail/item-notes-modal.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/detail/item-notes-modal.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/detail/item-notes-modal.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/detail/item-notes-modal.test.tsx"
+    ],
+    "fetchedAt": "2026-10-15T19:07:11.842Z"
+  },
+  "GetDutchie/brands-portal#1159": {
+    "title": "eng: add brand purchase order E2E BRAND-3901",
+    "qualityComments": [
+      {
+        "path": "e2e/utils/db.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "e2e/page-objects/order-detail-drawer.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "e2e/page-objects/order-detail-drawer.ts",
+      "e2e/page-objects/orders-page.ts",
+      "e2e/playwright.config.ts",
+      "e2e/tests/orders/purchase-orders.test.ts",
+      "e2e/utils/db.ts"
+    ],
+    "fetchedAt": "2026-10-15T19:07:12.523Z"
+  },
+  "GetDutchie/brands-portal#1173": {
+    "title": "fix(promotions): restore retailer location drilldown BRAND-3937",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/retailer-selection-card.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/retailers/retailer-selection-card.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/retailer-selection-card.tsx",
+      "src/pages/promotions/simple-wizard/retailers/retailer-tree-flag.test.tsx",
+      "src/services/launch-darkly/use-retailer-tree-enabled.test.ts",
+      "src/services/launch-darkly/use-retailer-tree-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-15T19:07:13.491Z"
   }
 }
