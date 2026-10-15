@@ -561,8 +561,8 @@
         },
         {
           "date": "2026-10-14",
-          "jira_key": "PENDING",
-          "pr_url": null,
+          "jira_key": "QA-1138",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2161",
           "outcome": "fixed",
           "hypothesis": "Attempt #1's delay-only fix never gated on a real readiness signal; the first scan's add-to-cart (add_item_to_shopping_cart) could still race the cart-line assertion under CI timing.",
           "fix_applied": "Added a set-then-act waitForResponse(add_item_to_shopping_cart) around the first keyboard.type() (item IS in preorder, endpoint fires immediately); left the second keyboard.type() as-is since the warning-modal visibility assertion is the only correct wait there (no network call fires until Save is clicked). NOTE: first attempt at this fix (scan_product endpoint) was disproven during TDD green-check -- that endpoint only fires when the product isn't already in the local react-query cache, so it's not a reliable signal; corrected to add_item_to_shopping_cart after tracing the actual app code path.",
