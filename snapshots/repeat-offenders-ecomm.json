@@ -822,6 +822,50 @@
           "result": "red-green-revert-restore proven (reverted fix reproduced the exact CI symptom in 3/6 local runs under --repeat-each=6 --workers=6; fix restored passed 6/6 and 48/48 again); 20/20 Vape isolation (--repeat-each=20 --workers=1) for both [21055] and [21053] (40/40 total) \u2705; load-realistic run (4-worker parallel matching real GHA shard concurrency -- playwright.config.ts workers:'50%' on an 8-vCPU runner, dutchie-e2e constellation, checkout-page.test.ts, 3/3) \u2705; sibling callers blocked-address.test.ts + delivery-city-eligibility-roundtrip.test.ts (same enterAddress()/expectSaveSuccess:false pattern) reverified under load with no regression. Reviewer (dutchie-reviewer bot) correctly flagged that residentialCheckStarted===false does not prove the modal cannot appear (a cache-first AddressResidentialCheck query can resolve the modal without the network request ever firing) -- added a zero-wait isVisible() check in that branch to still catch a cache-hit modal, re-verified 45/48 clean under --repeat-each=6 --workers=6 post-fix (3 unrelated failures, all the pre-existing documented cart-dropdown/addFirstFlowerProductToCart confound at checkout-page.test.ts:143, not ernie/modal related)."
         }
       ]
+    },
+    "marketplace/irl-event-page/irl-event-page.test.ts::[121839] Successful email signup routes to loyalty enrollment when opt-in is required": {
+      "test_name": "[121839] Successful email signup routes to loyalty enrollment when opt-in is required",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "birthdayInput (react-number-format masked field) ends up permanently empty after Act step; required-field validation blocks submit silently; final assert times out at 60s waiting for the next screen.",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-15",
+          "jira_key": "QA-1137",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "A prior unverified fix switched birthdayInput from fill() to pressSequentially() to dodge a suspected mask race; pressSequentially() itself drops keystrokes under real CPU contention, permanently leaving the field empty (confirmed via a 60s toHaveValue wait that never resolves once it happens) -- not a timing race that just needs a longer wait.",
+          "fix_applied": "Reverted birthdayInput.pressSequentially(TEST_BIRTHDAY) to .fill(TEST_BIRTHDAY) (anti-flake doc's prescribed approach for a non-OTP single input; a passing sibling test on the identical FormFormattedInput component already uses fill() reliably) and added an explicit expect(birthdayInput).toHaveValue(TEST_BIRTHDAY_FORMATTED) to confirm the masked value committed before continuing.",
+          "result": "Reproduced the exact CI symptom under artificial CPU-saturation contention with the old code (pressSequentially(): 3/25 and 4/50 failures). Fixed code passed 25/25 and 50/50 under identical contention (twice). 20/20 Vape isolation for both tests. Load-realistic verification (4-worker parallel matching nightly shard/worker count, whole irl-event-page/ directory) 3/3 for both."
+        }
+      ]
+    },
+    "marketplace/irl-event-page/irl-event-page.test.ts::[132222] Successful email signup routes to end screen when auto-enroll is enabled": {
+      "test_name": "[132222] Successful email signup routes to end screen when auto-enroll is enabled",
+      "suite": "ecomm",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "birthdayInput (react-number-format masked field) ends up permanently empty after Act step; required-field validation blocks submit silently; final assert times out at 60s waiting for the next screen.",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-15",
+          "jira_key": "QA-1137",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "A prior unverified fix switched birthdayInput from fill() to pressSequentially() to dodge a suspected mask race; pressSequentially() itself drops keystrokes under real CPU contention, permanently leaving the field empty (confirmed via a 60s toHaveValue wait that never resolves once it happens) -- not a timing race that just needs a longer wait.",
+          "fix_applied": "Reverted birthdayInput.pressSequentially(TEST_BIRTHDAY) to .fill(TEST_BIRTHDAY) (anti-flake doc's prescribed approach for a non-OTP single input; a passing sibling test on the identical FormFormattedInput component already uses fill() reliably) and added an explicit expect(birthdayInput).toHaveValue(TEST_BIRTHDAY_FORMATTED) to confirm the masked value committed before continuing.",
+          "result": "Reproduced the exact CI symptom under artificial CPU-saturation contention with the old code (pressSequentially(): 3/25 and 4/50 failures). Fixed code passed 25/25 and 50/50 under identical contention (twice). 20/20 Vape isolation for both tests. Load-realistic verification (4-worker parallel matching nightly shard/worker count, whole irl-event-page/ directory) 3/3 for both."
+        }
+      ]
     }
   }
 }
