@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1791983061.398659",
+  "last_processed_ts": "1792069623.067599",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -9,7 +9,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-10-07"
+      "last_notified": "2026-10-15"
     },
     "1583-analytics-semantic-view-descriptions": {
       "classification": "unclear",
@@ -18,7 +18,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-10-07"
+      "last_notified": "2026-10-15"
     },
     "1762-packages/webapi-client/src/rest/nexus/audit-count-conflict-error.ts": {
       "classification": "unclear",
@@ -46,6 +46,15 @@
       "last_seen": "2026-10-05",
       "times_seen": 1,
       "last_notified": "2026-10-13"
+    },
+    "1976-packages/discount-ui/src/buy-get-diagram.tsx": {
+      "classification": "needs-production-change",
+      "description": "Stale coverage risk (Medium) \u2014 PR #1976: buy-get-diagram.tsx added a rewardItemCap() helper (handles items-threshold exactly/between conditions plus an \"N-priced\" reward label) and a rewardCap chip meant to surface it in the same-pool Get row, but buy-get-diagram.test.tsx was never updated to exercise it.",
+      "blocker": "On inspection the rewardCap chip's render guard is `crossItem && cap !== undefined`, but the only place `{rewardCap}` is actually rendered is inside the same-pool branch, which is only reached when `crossItem` is false (the crossItem===true branch returns earlier and never references rewardCap at all). Confirmed by rendering BuyGetDiagram directly with `reward.maxItems` set and appliesTo left at its same-pool default: no cap chip appears in the DOM under any data this agent could construct. This means the new feature is unreachable dead code as currently wired \u2014 writing a test that exercises it as intended would fail by construction (the chip never renders), and a test that merely confirms current (likely unintended) behavior would be vacuous/not what the report is asking for. Needs a human to confirm intent: most likely the guard should be `!crossItem && cap !== undefined` (matching where it's rendered) or the chip needs to move into the crossItem branch instead \u2014 either way it's a production-code fix, out of scope for this agent.",
+      "first_seen": "2026-10-15",
+      "last_seen": "2026-10-15",
+      "times_seen": 1,
+      "last_notified": "2026-10-15"
     }
   }
 }
