@@ -160,7 +160,7 @@
         {
           "date": "2026-10-16",
           "jira_key": "QA-1142",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2167",
           "outcome": "fixed",
           "hypothesis": "repriceCart() in discounts/helpers.ts re-adds a cart item and waits only for a load_v2 response, which can resolve on a stale/in-flight response rather than confirming this add's own line item rendered - same TOCTOU class already fixed in the main test body (PR #2145) but missed in this different file.",
           "fix_applied": "helpers.ts: added a getLineItemByProductName(...).wrapper.waitFor() after repriceCart's re-add, mirroring the already-proven PR #2145 pattern. Also replaced expectLoyaltyEarningCount's hand-rolled for-loop retry counter (anti-flake gate violation) with toPass(), letting it inherit the test's own global timeout rather than a new guessed number.",
@@ -511,7 +511,7 @@
         {
           "date": "2026-10-16",
           "jira_key": "QA-1142",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2167",
           "outcome": "fixed",
           "hypothesis": "Same shared-helper TOCTOU fix as loyalty-multiplier.test.ts (shares repriceCart/expectLoyaltyEarningCount via discounts/helpers.ts).",
           "fix_applied": "Same helpers.ts fix as loyalty-multiplier.test.ts (shared helper, sibling-pattern fix in the same PR).",
@@ -602,7 +602,7 @@
         {
           "date": "2026-10-16",
           "jira_key": "QA-1142",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2167",
           "outcome": "fixed",
           "hypothesis": "EnableManualPayments is written to the backend by the logIn fixture's setLocationFeatures call, but the page already loaded with seed feature-flag defaults with nothing forcing a refetch after - Redux can hold a stale false for the whole test, so isCheckoutManual never flips and the manual-paid input never renders.",
           "fix_applied": "change-payment-type.test.ts: added the refreshAfterFeatureSetup auto-fixture (page.reload + wait for get_loc_settings) already used for this exact Redux-staleness pattern in anonymous-workflow/base-test.ts and id-scan.test.ts; this file had been missed.",
