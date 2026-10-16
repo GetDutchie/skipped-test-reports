@@ -3910,5 +3910,80 @@
       "src/services/launch-darkly/use-retailer-tree-enabled.ts"
     ],
     "fetchedAt": "2026-10-15T19:07:13.491Z"
+  },
+  "GetDutchie/dutchie-nexus#2197": {
+    "title": "eng(dex): refresh the host after any approved Dex write finishes, including errors",
+    "qualityComments": [],
+    "changedPaths": [
+      "apps/nexus-agent-client/AGENTS.md",
+      "apps/nexus-agent-client/src/app/app.tsx",
+      "apps/nexus-agent-client/src/app/connected-agent.tsx",
+      "apps/nexus/src/_migrated/back-office/components/customer-selector.tsx",
+      "apps/nexus/src/pages/dex/dex-remote-app.tsx",
+      "packages/dex/dex-chat/src/dex-chat.tsx",
+      "packages/dex/dex-chat/src/use-approved-tool-completions.test.ts",
+      "packages/dex/dex-chat/src/use-approved-tool-completions.ts",
+      "packages/nexus-agent-contract/AGENTS.md",
+      "packages/nexus-agent-contract/src/remote-messages.ts"
+    ],
+    "fetchedAt": "2026-10-16T19:05:53.744Z"
+  },
+  "GetDutchie/brands-portal#1184": {
+    "title": "fix: send location lookup over POST BRAND-3955",
+    "qualityComments": [
+      {
+        "path": "src/api/client.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/client.test.ts",
+      "src/api/client.ts"
+    ],
+    "fetchedAt": "2026-10-16T19:05:54.607Z"
+  },
+  "GetDutchie/brands-portal#1181": {
+    "title": "fix(catalog): restore product update audit columns BRAND-1691",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/active-products/index.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/products/search-library-products.gql",
+      "src/pages/catalog/active-products/index.test.tsx",
+      "src/pages/catalog/active-products/index.tsx",
+      "src/pages/catalog/hooks/use-products-data.test.ts",
+      "src/pages/catalog/utils/transform-products-for-data-grid.test.ts",
+      "src/pages/catalog/utils/transform-products-for-data-grid.ts"
+    ],
+    "fetchedAt": "2026-10-16T19:05:55.355Z"
+  },
+  "GetDutchie/brands-portal#1141": {
+    "title": "eng(promotions): add 90-day transaction report button",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaigns-list/use-transactions-report-download.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaigns-list/index.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/discount-campaigns/download-discount-campaign-transactions-report.gql",
+      "src/pages/promotions/campaign-detail/use-campaign-report-download.ts",
+      "src/pages/promotions/campaigns-list/index.test.tsx",
+      "src/pages/promotions/campaigns-list/index.tsx",
+      "src/pages/promotions/campaigns-list/use-can-download-transactions-report.test.ts",
+      "src/pages/promotions/campaigns-list/use-can-download-transactions-report.ts",
+      "src/pages/promotions/campaigns-list/use-transactions-report-download.test.ts",
+      "src/pages/promotions/campaigns-list/use-transactions-report-download.ts",
+      "src/pages/promotions/detail/use-report-download.ts",
+      "src/pages/promotions/use-presigned-report-download.ts"
+    ],
+    "fetchedAt": "2026-10-16T19:05:56.113Z"
   }
 }
