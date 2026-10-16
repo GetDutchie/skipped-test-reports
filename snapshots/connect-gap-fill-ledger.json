@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1791976414.127759",
+  "last_processed_ts": "1792062820.229229",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -172,6 +172,15 @@
       "last_seen": "2026-10-09",
       "times_seen": 1,
       "last_notified": "2026-10-09"
+    },
+    "1159-e2e/utils/db.ts": {
+      "classification": "e2e-out-of-scope",
+      "description": "[Low] eng: add brand purchase order E2E BRAND-3901 (#1159) \u2014 new seed states partiallyConfirmed, cancelled and draft were added to e2e/utils/db.ts, but no spec in e2e/tests/orders/purchase-orders.test.ts actually uses them, so those order states have no E2E check. Report's own Quality Bot flagged this in PR review but it wasn't implemented.",
+      "blocker": "Confirmed live this run: armageddon-web proc status is 'waiting' (on armageddon-vape-seed/armageddon-dev-accounts-seed/armageddon-search-indexes), and e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health. Downgraded from closeable per Step 2/3's rule: e2e-shaped gaps here are only closeable when the suite can actually execute in this environment.",
+      "first_seen": "2026-10-15",
+      "last_seen": "2026-10-15",
+      "times_seen": 1,
+      "last_notified": "2026-10-15"
     }
   }
 }

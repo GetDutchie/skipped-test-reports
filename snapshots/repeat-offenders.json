@@ -243,7 +243,7 @@
       "test_name": "[656698] Setting on - Starts a new cart after clicking done",
       "suite": "pos",
       "attempt_count": 3,
-      "escalated": true,
+      "escalated": false,
       "escalated_at": "2026-08-04",
       "escalated_owner": "Ben Versluis",
       "escalated_jira_key": "QA-911",
@@ -275,7 +275,9 @@
           "fix_applied": "cart-page.ts: added CartPage.clickDoneAndWaitForNewCart() that waits for the URL to settle back to bare /cart (waitForURL) before the toHaveText assertion in anonymous-cart-done-button.test.ts.",
           "result": "20/20 Vape isolation \u2705 (iPad mini landscape + Desktop). Load-realistic (8-worker, pos-e2e constellation) lane NOT clean 3/3 \u2014 surfaced a separate pre-existing test-isolation issue (StartNewCartAfterCheckout feature flag appears contaminated across concurrently-running workers sharing a location/LSP, also intermittently affecting unmodified sibling 656697). Flagged as follow-up, not caused by or fixable via this change."
         }
-      ]
+      ],
+      "resolved_at": "2026-10-14",
+      "resolution_note": "Absent from FAILED/FLAKEY across the 2026-10-14 nightly (passed clean, both Desktop and iPad mini landscape projects, no retry needed) after being present in all 4 of the 2026-10-10..10-13 backlog nights. Historical attempts/escalation data retained; a future recurrence is a fresh case, does not inherit attempt_count=3."
     },
     "552301": {
       "test_name": "[552301] Days Supply: Weight-based flower product",
@@ -540,7 +542,7 @@
     "cart/preorders/item-not-in-preorder-warning.test.ts::[657334] Shows a warning before adding an item not in the preorder": {
       "test_name": "[657334] Shows a warning before adding an item not in the preorder",
       "suite": "pos",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -556,6 +558,15 @@
           "hypothesis": "page.keyboard.type(packageId) with no per-keystroke delay occasionally misses the app's 75ms avg-interval scan-recognition window (hardware-library-manager.ts), so add-to-cart never fires and the cart-line assertion times out",
           "fix_applied": "added { delay: 20 } to both page.keyboard.type() calls in item-not-in-preorder-warning.test.ts, matching the already-established working pattern in sibling scan-item.test.ts",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, e2e/tests/cart/preorders/+e2e/tests/preorder/, 3/3) \u2705. Revert-proof (10 reps, fix removed) did NOT reproduce the original race in this single-pod environment -- flake is CI-host-timing-dependent and may not trigger reliably outside real nightly shard contention; documented as a residual verification gap rather than claimed as a clean red-proof."
+        },
+        {
+          "date": "2026-10-14",
+          "jira_key": "QA-1138",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2161",
+          "outcome": "fixed",
+          "hypothesis": "Attempt #1's delay-only fix never gated on a real readiness signal; the first scan's add-to-cart (add_item_to_shopping_cart) could still race the cart-line assertion under CI timing.",
+          "fix_applied": "Added a set-then-act waitForResponse(add_item_to_shopping_cart) around the first keyboard.type() (item IS in preorder, endpoint fires immediately); left the second keyboard.type() as-is since the warning-modal visibility assertion is the only correct wait there (no network call fires until Save is clicked). NOTE: first attempt at this fix (scan_product endpoint) was disproven during TDD green-check -- that endpoint only fires when the product isn't already in the local react-query cache, so it's not a reliable signal; corrected to add_item_to_shopping_cart after tracing the actual app code path.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, e2e/tests/cart/preorders/+e2e/tests/preorder/, 19 tests/run, 3/3) \u2705. Revert-proof (8 reps, fix removed) did not reproduce in this single-pod env -- documented honestly as inconclusive, flake is CI-host-timing-dependent."
         }
       ]
     }
