@@ -1155,6 +1155,72 @@
           "result": "20/20 Vape isolation \u2705; load-realistic (6-worker parallel, reports-v2/overview dir + 2 sibling fixture-consumer specs, pos-e2e constellation, 3/3) \u2705. One unrelated pre-existing flake ([657494] budtenders.spec.ts) observed once in the same directory, untouched by this diff, disclosed transparently."
         }
       ]
+    },
+    "e2e/tests/cultivation/plants-v2/actions/assign-room-and-subroom.spec.ts::[657203] Plants V2 list page assign room and subroom": {
+      "test_name": "[657203] Plants V2 list page assign room and subroom",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-19",
+          "jira_key": "PENDING",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "save.click() doesn't wait for the PlantUpdateRoom mutation before the grid check races ahead of it",
+          "fix_applied": "pass CultivationEndPoints.SET_PLANT_ROOM to save.click() to wait for the mutation response",
+          "result": "red-green-revert via 20s injected-delay repro; 20/20 Vape isolation; load-realistic 3/3 (6-worker, plants-v2/actions/)"
+        }
+      ]
+    },
+    "e2e/tests/products/inventory-v2/actions/move-subroom.spec.ts::[654203] Move amount to sub room": {
+      "test_name": "[654203] Move amount to sub room",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-19",
+          "jira_key": "PENDING",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "deprecated waitForLoadingToOccurAndComplete() can resolve against stale rows before the room-filter re-query lands",
+          "fix_applied": "replaced deprecated helper + bare toBeVisible with findCellsByText (same pattern already used by sibling specs)",
+          "result": "20/20 Vape isolation; load-realistic 3/3 (6-worker, inventory-v2/actions/); could not force a local red via injected network delay (likely a render/virtualization race, not pure network latency)"
+        }
+      ]
+    },
+    "e2e/tests/registers/overview.spec.ts::[654082] Go button loading state": {
+      "test_name": "[654082] Go button loading state",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-19",
+          "jira_key": "PENDING",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "test ends before its own delayed page.route handler resolves, racing teardown's unroute against the pending route.continue()",
+          "fix_applied": "await the DailyTotals response explicitly at the end of the test before it (and teardown) proceeds",
+          "result": "20/20 Vape isolation; load-realistic 3/3 (6-worker, tests/registers/); timing/teardown race not independently forceable as a local red"
+        }
+      ]
     }
   }
 }
