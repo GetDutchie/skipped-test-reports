@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1792062820.229229",
+  "last_processed_ts": "1792149259.728419",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -160,9 +160,9 @@
       "description": "[Low] eng: default advertising to Post 8/1/26 tab BRAND-3888 (#1140) \u2014 the new Kevel default / Moloco fallback logic is fully unit-tested (data-source-context.test.tsx, use-campaign-data.test.ts), but no Playwright spec under e2e/tests/ checks which tab the Campaign Insights page opens on by default. Report's own text flags this as \"Optional follow-up only.\" (Note: the report's Summary line said \"0 with gaps\" while the body still listed this one gap \u2014 a self-contradiction in the report's own text, not something this run resolved.)",
       "blocker": "Confirmed live this run: Armageddon's e2e seed endpoint (/__test_command__, config/routes.rb:1071) is gated on Rails.env.test?; this constellation runs development (armageddon-web proc status: 'waiting' on armageddon-search-indexes, not even up), so e2e/global-setup.ts's seed step would 404 before any spec could run, matching e2e/COVERAGE-GAPS.md's own documented blocker.",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-08",
-      "times_seen": 1,
-      "last_notified": "2026-10-08"
+      "last_seen": "2026-10-16",
+      "times_seen": 2,
+      "last_notified": "2026-10-16"
     },
     "1145-rsbuild.config.ts": {
       "classification": "unclear",

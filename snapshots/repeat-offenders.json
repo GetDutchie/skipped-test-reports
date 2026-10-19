@@ -133,7 +133,7 @@
     "cart/loyalty-multipliers/loyalty-multiplier.test.ts::A loyalty multiplier is automatically applied to the cart and can be manually removed": {
       "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
       "suite": "pos",
-      "attempt_count": 2,
+      "attempt_count": 3,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -155,6 +155,15 @@
           "outcome": "fixed",
           "hypothesis": "Promise.all([waitForResponse(load_v2 ok), addDiscountProduct(products[1])]) can resolve on a stale/in-flight load_v2 response left over from product[0]'s add; the follow-up cartItems.first().waitFor() only proves SOME item rendered (satisfied by product[0]), masking product[1] never rendering.",
           "fix_applied": "loyalty-multiplier.test.ts + loyalty-point-boost.test.ts: replaced cartItems.first().waitFor() with cartPage.cartSummary.getLineItemByProductName(products[1].productName).wrapper.waitFor() to confirm product[1]'s own line item rendered.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
+        },
+        {
+          "date": "2026-10-16",
+          "jira_key": "QA-1142",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2167",
+          "outcome": "fixed",
+          "hypothesis": "repriceCart() in discounts/helpers.ts re-adds a cart item and waits only for a load_v2 response, which can resolve on a stale/in-flight response rather than confirming this add's own line item rendered - same TOCTOU class already fixed in the main test body (PR #2145) but missed in this different file.",
+          "fix_applied": "helpers.ts: added a getLineItemByProductName(...).wrapper.waitFor() after repriceCart's re-add, mirroring the already-proven PR #2145 pattern. Also replaced expectLoyaltyEarningCount's hand-rolled for-loop retry counter (anti-flake gate violation) with toPass(), letting it inherit the test's own global timeout rather than a new guessed number.",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
         }
       ]
@@ -482,7 +491,7 @@
     "cart/loyalty-multipliers/loyalty-point-boost.test.ts::A loyalty point boost is automatically applied to the cart and can be manually removed": {
       "test_name": "[100863] A loyalty point boost is automatically applied to the cart and can be manually removed",
       "suite": "pos",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "escalated": false,
       "escalated_at": null,
       "escalated_owner": null,
@@ -497,6 +506,15 @@
           "outcome": "fixed",
           "hypothesis": "Same mechanism as sibling loyalty-multiplier.test.ts [131370]: stale load_v2 response can resolve the Promise.all before product[1]'s own line item renders; cartItems.first().waitFor() masks this because product[0]'s item already satisfies it.",
           "fix_applied": "Replaced cartItems.first().waitFor() with cartPage.cartSummary.getLineItemByProductName(products[1].productName).wrapper.waitFor() (sibling-pattern fix alongside loyalty-multiplier.test.ts, same PR).",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
+        },
+        {
+          "date": "2026-10-16",
+          "jira_key": "QA-1142",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2167",
+          "outcome": "fixed",
+          "hypothesis": "Same shared-helper TOCTOU fix as loyalty-multiplier.test.ts (shares repriceCart/expectLoyaltyEarningCount via discounts/helpers.ts).",
+          "fix_applied": "Same helpers.ts fix as loyalty-multiplier.test.ts (shared helper, sibling-pattern fix in the same PR).",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
         }
       ]
@@ -567,6 +585,28 @@
           "hypothesis": "Attempt #1's delay-only fix never gated on a real readiness signal; the first scan's add-to-cart (add_item_to_shopping_cart) could still race the cart-line assertion under CI timing.",
           "fix_applied": "Added a set-then-act waitForResponse(add_item_to_shopping_cart) around the first keyboard.type() (item IS in preorder, endpoint fires immediately); left the second keyboard.type() as-is since the warning-modal visibility assertion is the only correct wait there (no network call fires until Save is clicked). NOTE: first attempt at this fix (scan_product endpoint) was disproven during TDD green-check -- that endpoint only fires when the product isn't already in the local react-query cache, so it's not a reliable signal; corrected to add_item_to_shopping_cart after tracing the actual app code path.",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, e2e/tests/cart/preorders/+e2e/tests/preorder/, 19 tests/run, 3/3) \u2705. Revert-proof (8 reps, fix removed) did not reproduce in this single-pod env -- documented honestly as inconclusive, flake is CI-host-timing-dependent."
+        }
+      ]
+    },
+    "customer-checkout/change-payment-type.test.ts::[656954] starts with transaction paid in cash and finishes with manual payment via AeroPay": {
+      "test_name": "[656954] starts with transaction paid in cash and finishes with manual payment via AeroPay",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-16",
+          "jira_key": "QA-1142",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2167",
+          "outcome": "fixed",
+          "hypothesis": "EnableManualPayments is written to the backend by the logIn fixture's setLocationFeatures call, but the page already loaded with seed feature-flag defaults with nothing forcing a refetch after - Redux can hold a stale false for the whole test, so isCheckoutManual never flips and the manual-paid input never renders.",
+          "fix_applied": "change-payment-type.test.ts: added the refreshAfterFeatureSetup auto-fixture (page.reload + wait for get_loc_settings) already used for this exact Redux-staleness pattern in anonymous-workflow/base-test.ts and id-scan.test.ts; this file had been missed.",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, customer-checkout dir, 3/3) \u2705. Revert-proof (3 reps, fix removed) did not reproduce in this single-pod env - documented honestly as inconclusive, single-occurrence-to-date CI-timing-dependent flake."
         }
       ]
     }

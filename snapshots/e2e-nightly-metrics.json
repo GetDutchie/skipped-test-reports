@@ -1189,6 +1189,44 @@
         "https://github.com/GetDutchie/back-office/pull/8747",
         "https://github.com/GetDutchie/back-office/pull/9363"
       ]
+    },
+    {
+      "test_id": "131370",
+      "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-10-16",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1635",
+        "https://github.com/GetDutchie/dutchie-pos/pull/2145",
+        "https://github.com/GetDutchie/dutchie-pos/pull/2167"
+      ]
+    },
+    {
+      "test_id": "100863",
+      "test_name": "A loyalty point boost is automatically applied to the cart and can be manually removed",
+      "suite": "pos",
+      "times_fixed": 3,
+      "last_flaked": "2026-10-16",
+      "recommendation": "ESCALATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/1635",
+        "https://github.com/GetDutchie/dutchie-pos/pull/2145",
+        "https://github.com/GetDutchie/dutchie-pos/pull/2167"
+      ]
+    },
+    {
+      "test_id": "657334",
+      "test_name": "Shows a warning before adding an item not in the preorder",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-10-16",
+      "recommendation": "REDESIGN",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/2148",
+        "https://github.com/GetDutchie/dutchie-pos/pull/2161"
+      ]
     }
   ]
 }
