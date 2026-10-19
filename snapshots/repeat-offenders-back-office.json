@@ -1173,8 +1173,8 @@
           "pr_url": "https://github.com/GetDutchie/back-office/pull/10860",
           "outcome": "fixed",
           "hypothesis": "save.click() doesn't wait for the PlantUpdateRoom mutation before the grid check races ahead of it",
-          "fix_applied": "pass CultivationEndPoints.SET_PLANT_ROOM to save.click() to wait for the mutation response",
-          "result": "red-green-revert via 20s injected-delay repro; 20/20 Vape isolation; load-realistic 3/3 (6-worker, plants-v2/actions/)"
+          "fix_applied": "pass CultivationEndPoints.SET_PLANT_ROOM to save.click() to wait for the mutation response; follow-up review comment: also wait for the getPlantsV2 refetch triggered by plantKeys.all invalidation, not just the mutation",
+          "result": "red-green-revert via 20s injected-delay repro; 20/20 Vape isolation; load-realistic 3/3 (6-worker, plants-v2/actions/); re-verified 20/20 isolation + load 3/3 after the follow-up fix"
         }
       ]
     },
