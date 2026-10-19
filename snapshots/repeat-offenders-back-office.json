@@ -1169,7 +1169,7 @@
       "attempts": [
         {
           "date": "2026-10-19",
-          "jira_key": "PENDING",
+          "jira_key": "QA-1146",
           "pr_url": null,
           "outcome": "fixed",
           "hypothesis": "save.click() doesn't wait for the PlantUpdateRoom mutation before the grid check races ahead of it",
@@ -1191,7 +1191,7 @@
       "attempts": [
         {
           "date": "2026-10-19",
-          "jira_key": "PENDING",
+          "jira_key": "QA-1146",
           "pr_url": null,
           "outcome": "fixed",
           "hypothesis": "deprecated waitForLoadingToOccurAndComplete() can resolve against stale rows before the room-filter re-query lands",
@@ -1213,7 +1213,7 @@
       "attempts": [
         {
           "date": "2026-10-19",
-          "jira_key": "PENDING",
+          "jira_key": "QA-1146",
           "pr_url": null,
           "outcome": "fixed",
           "hypothesis": "test ends before its own delayed page.route handler resolves, racing teardown's unroute against the pending route.continue()",
