@@ -715,8 +715,8 @@
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
       "attempts": [],
-      "last_reconfirmed": "2026-10-19",
-      "reconfirm_note": "2026-10-19 nightly: same failure_signature reconfirmed from CI artifacts (Categories nav, no Brands link, 2 fails then pass on retry1/retry2). QA-1118 still open/Backlog, 11 consecutive days, zero visible movement from owning Ecommerce team. Steady state, no fresh Step 2 investigation. Reported in QA-1143."
+      "last_reconfirmed": "2026-10-20",
+      "reconfirm_note": "2026-10-20 nightly: same failure_signature reconfirmed from CI artifacts (Categories nav, no Brands link, FAILED on initial attempt AND all 3 retries this time -- first night it showed as a hard FAILED rather than just flaky/passed-on-retry, consistent with the no-quarantine model: still the same underlying real-app-bug, just an unlucky night where the retry also lost the apolloClient.clearStore() race). QA-1118 still open/Backlog, 12 consecutive nights, zero visible movement/comments from owning Ecommerce team (only the auto-filing comment). Steady state, no fresh Step 2 investigation. Reported in QA-1150."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
@@ -879,6 +879,20 @@
       "real_app_bug": null,
       "attempts": [],
       "investigation_notes": "2026-10-16 (first-ever appearance): classified isolation/false-positive, CONFIRMED via falsification gate (independent blind scout subagent agreed after its own repro attempts). Evidence: 5/5 isolation passes + 50/50 passes running the WHOLE admin/settings/ directory under --workers=4 with 20 concurrent CPU-saturating busy-loop processes (to simulate real CI shard contention) -- test itself passed in 48.1s, close to but under its wait thresholds. Independent scout pass separately ran the file at workers=1 (2/2 pass) and --repeat-each=3 under 12x CPU busy-loops (3/3 pass), checked git history (14d, no relevant changes to test/fixture/page-objects), and confirmed fixtures mint a fresh dispensary per test (no shared state with sibling [222616] or other tests) -- no pinnable contaminant. Both passes agree the blank-page-for-65s signature is a setup-phase infra stall (admin bundle not served / backend fixture API hang), not a deterministic app or test-code defect -- a real bug or bad locator would fail repeatably, and this didn't even under heavy artificial load. Single-sample (1 occurrence) -- reconsider as infra/backend-slow if it recurs, especially if a future recurrence pins the exact stalled step (navigateToSubPage's waitForResponse vs expectErnieWithMessage). No code change (classification does not touch code)."
+    },
+    "admin/settings/ordering/payment-options.test.ts::[85061] Payment options are correctly configured and populated in checkout (Delivery - all payment types)": {
+      "test_name": "[85061] Payment options are correctly configured and populated in checkout (Delivery - all payment types)",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "Checkout order-type accordion still shows collapsed \"Pickup / Change\" after admin disables In-Store Pickup and enables Delivery + publishes, even after reloadAndWaitForDispensaryData (CDP cache-disable + wait for ConsumerDispensaries response); expected accordion to auto-expand (no Pickup option remains). First-ever appearance for this test variant (file was reduced to just [85061] by FINTECH-4433 on 2026-08-28).",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-20",
+      "reconfirm_note": "2026-10-20 nightly: FLAKEY (failed attempt 1, passed retry1). Classified isolation/false-positive, CONFIRMED via falsification gate (independent blind scout subagent agreed after its own 19 repro attempts). My own repro: 1/1 solo, 8/8 sequential (--workers=1 --repeat-each=8), 4/4 under 4-worker parallel load + 28-process CPU saturation alongside other admin/settings/ordering specs -- 0 failures across 12 attempts. Falsification subagent: 19/19 across parallel repeat-each=12, 8-worker backend-contention run with delivery-zones-drawn.test.ts etc, and CPU-loaded serial run -- 0 failures. Combined 31/31 non-repro. LEADING UNCONFIRMED HYPOTHESIS for next time (not proven, no trace.zip exists for the actual failing attempt -- only the passing retry got one): apps/marketplace/src/hooks/use-cart-controller.js consumerDispensaries useQuery defaults to Apollo fetchPolicy=cache-first unless the pos.customers.aiq-sms-pin-trigger-setting.rollout LaunchDarkly flag is on (POS-21141, commit c28521f230, 2026-09-17) -- that commit's own code comment explicitly describes this exact symptom class (\"Cart.dispensary resistant to picking up a dispensary change for as long as the cart already had an item in it\") as a KNOWN bug being fixed via staged flag rollout, not yet universal. The test's own CDP Network.setCacheDisabled only defeats the browser HTTP cache, not Apollo's in-memory cache-first policy or a possible SSR-hydration-with-stale-data path. Next step if this recurs: check whether pos.customers.aiq-sms-pin-trigger-setting.rollout is enabled for this test env via ldcli (blocked this run -- no LD_ACCESS_TOKEN configured), and get a first-attempt trace.zip (consider adding trace:retain-on-failure to this spec, same ask as QA-1144 for aerosync-enrollment.test.ts) to check the raw ConsumerDispensaries response body for the failing attempt."
     }
   }
 }

@@ -3985,5 +3985,39 @@
       "src/pages/promotions/use-presigned-report-download.ts"
     ],
     "fetchedAt": "2026-10-16T19:05:56.113Z"
+  },
+  "GetDutchie/brands-portal#1182": {
+    "title": "eng(launch darkly): remove brands.enable-global-ids flag",
+    "qualityComments": [
+      {
+        "path": "src/pages/insights/inventory-details/use-location-data.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/insights/inventory-details/location-details.test.tsx",
+      "src/pages/insights/inventory-details/location-details.tsx",
+      "src/pages/insights/inventory-details/styled.ts",
+      "src/pages/insights/inventory-details/use-location-data.test.ts",
+      "src/pages/insights/inventory-details/use-location-data.ts",
+      "src/pages/insights/inventory-details/use-retailer-data.test.ts",
+      "src/pages/insights/inventory-details/use-retailer-data.ts",
+      "src/pages/promotions/campaigns-list/extract-filter-changes.ts",
+      "src/pages/promotions/campaigns-list/index.test.tsx",
+      "src/pages/promotions/campaigns-list/use-campaigns-filter-options.test.ts",
+      "src/pages/promotions/campaigns-list/use-campaigns-filter-options.ts",
+      "src/pages/promotions/campaigns-list/use-campaigns-filters.test.ts",
+      "src/services/launch-darkly/use-is-global-ids-enabled.test.ts",
+      "src/services/launch-darkly/use-is-global-ids-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-19T19:06:12.486Z"
+  },
+  "GetDutchie/brands-portal#1190": {
+    "title": "eng: stop cloning frozen Armageddon repo in E2E DEVX-4369",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/playwright-e2e.yml"
+    ],
+    "fetchedAt": "2026-10-19T19:06:13.263Z"
   }
 }
