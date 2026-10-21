@@ -4019,5 +4019,34 @@
       ".github/workflows/playwright-e2e.yml"
     ],
     "fetchedAt": "2026-10-19T19:06:13.263Z"
+  },
+  "GetDutchie/dutchie-nexus#2229": {
+    "title": "eng: close out batch 4 -- /customers/segments Phase 5 parity verification",
+    "qualityComments": [],
+    "changedPaths": [
+      "apps/nexus/src/_migrated/back-office/customers-segments/detail/segment-customize-badge-tab.tsx",
+      "docs/phase2-bo-migration/rollout-batches.md",
+      "docs/phase2-bo-migration/tracker.md"
+    ],
+    "fetchedAt": "2026-10-20T19:06:33.980Z"
+  },
+  "GetDutchie/brands-portal#1204": {
+    "title": "eng: remove growth.brands.updated-brand-agreement-links.rollout flag",
+    "qualityComments": [
+      {
+        "path": "src/components/brand-agreement-checkbox/index.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/components/brand-agreement-checkbox/index.test.tsx",
+      "src/components/brand-agreement-checkbox/index.tsx",
+      "src/components/brand-agreement-gate/index.test.tsx",
+      "src/components/brand-agreement-gate/index.tsx",
+      "src/constants/brand-agreement.ts",
+      "src/services/launch-darkly/use-updated-brand-agreement-links-enabled.test.ts",
+      "src/services/launch-darkly/use-updated-brand-agreement-links-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-20T19:06:34.710Z"
   }
 }

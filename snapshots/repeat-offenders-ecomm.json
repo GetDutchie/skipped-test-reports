@@ -715,8 +715,8 @@
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
       "attempts": [],
-      "last_reconfirmed": "2026-10-20",
-      "reconfirm_note": "2026-10-20 nightly: same failure_signature reconfirmed from CI artifacts (Categories nav, no Brands link, FAILED on initial attempt AND all 3 retries this time -- first night it showed as a hard FAILED rather than just flaky/passed-on-retry, consistent with the no-quarantine model: still the same underlying real-app-bug, just an unlucky night where the retry also lost the apolloClient.clearStore() race). QA-1118 still open/Backlog, 12 consecutive nights, zero visible movement/comments from owning Ecommerce team (only the auto-filing comment). Steady state, no fresh Step 2 investigation. Reported in QA-1150."
+      "last_reconfirmed": "2026-10-21",
+      "reconfirm_note": "2026-10-21 nightly: same failure_signature reconfirmed from CI artifacts (Categories nav visible, no Brands link, failed attempt 1 + retry1, passed retry2 -- flakey, not hard FAILED this time). QA-1118 still open/Backlog, 13 consecutive nights, zero visible movement/comments from owning Ecommerce team. Steady state, no fresh Step 2 investigation. Reported in QA-1159."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
