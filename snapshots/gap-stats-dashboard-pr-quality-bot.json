@@ -4048,5 +4048,166 @@
       "src/services/launch-darkly/use-updated-brand-agreement-links-enabled.ts"
     ],
     "fetchedAt": "2026-10-20T19:06:34.710Z"
+  },
+  "GetDutchie/brands-portal#1212": {
+    "title": "feat: assign existing users as default contacts BRAND-3969",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/default-contacts/use-contact-user-options.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/use-contact-user-options.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/mutations/default-contacts/upsert-default-contact.gql",
+      "src/api/operations/queries/default-contacts/get-default-contacts.gql",
+      "src/pages/settings/default-contacts/contact-modal.test.ts",
+      "src/pages/settings/default-contacts/contact-modal.tsx",
+      "src/pages/settings/default-contacts/index.test.tsx",
+      "src/pages/settings/default-contacts/index.tsx",
+      "src/pages/settings/default-contacts/use-contact-user-options.test.ts",
+      "src/pages/settings/default-contacts/use-contact-user-options.ts",
+      "src/pages/settings/default-contacts/use-default-contacts.ts"
+    ],
+    "fetchedAt": "2026-10-21T19:06:00.348Z"
+  },
+  "GetDutchie/brands-portal#1165": {
+    "title": "eng(lsp audit log): add super-admin create setting modal",
+    "qualityComments": [
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/searchable-select/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/components/searchable-select/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/searchable-select/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/searchable-select/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/searchable-select/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/searchable-select/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/searchable-select/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/components/searchable-select/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/components/searchable-select/index.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/lsp-audit-log/create-modal/use-create-setting.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/mutations/create-brand-lsp-setting.gql",
+      "src/components/searchable-select/index.test.tsx",
+      "src/components/searchable-select/index.tsx",
+      "src/components/searchable-select/styled.ts",
+      "src/pages/lsp-audit-log/create-modal/index.test.tsx",
+      "src/pages/lsp-audit-log/create-modal/index.tsx",
+      "src/pages/lsp-audit-log/create-modal/styled.ts",
+      "src/pages/lsp-audit-log/create-modal/use-create-setting.test.ts",
+      "src/pages/lsp-audit-log/create-modal/use-create-setting.ts",
+      "src/pages/lsp-audit-log/index.test.tsx",
+      "src/pages/lsp-audit-log/index.tsx",
+      "src/pages/lsp-audit-log/styled.ts",
+      "src/pages/lsp-audit-log/use-audit-log-data.test.ts",
+      "src/pages/lsp-audit-log/use-audit-log-data.ts"
+    ],
+    "fetchedAt": "2026-10-21T19:06:01.323Z"
+  },
+  "GetDutchie/brands-portal#1206": {
+    "title": "feat: add live Catalog Menu preview BRAND-3985",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/components/product-form.test.tsx",
+      "src/pages/catalog/product-details/components/product-form.tsx",
+      "src/pages/catalog/product-details/styled.ts",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.test.tsx",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.tsx",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/styled.ts"
+    ],
+    "fetchedAt": "2026-10-21T19:06:02.229Z"
   }
 }
