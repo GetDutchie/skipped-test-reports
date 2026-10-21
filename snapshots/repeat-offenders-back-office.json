@@ -1221,6 +1221,28 @@
           "result": "20/20 Vape isolation; load-realistic 3/3 (6-worker, tests/registers/); timing/teardown race not independently forceable as a local red"
         }
       ]
+    },
+    "e2e/tests/registers/transactions/bulk-actions/close-out/bulk-close-out.spec.ts::[544724] User should be able to close out registers via bulk closeout": {
+      "test_name": "[544724] User should be able to close out registers via bulk closeout",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-21",
+          "jira_key": "QA-1161",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/10913",
+          "outcome": "fixed",
+          "hypothesis": "A different bug than the 2026-09-22 attempt (PR #9916, notification-toast dedup): pressSequentially() can drop a keystroke on this MUI-controlled number input under load, leaving only the last typed character as the final value.",
+          "fix_applied": "fillCashCountedInput/fillNewBalanceInput now wrap click+type in expect(...).toPass({timeout:15000}) with an inner toHaveValue(value,{timeout:2000}) check, retyping on mismatch.",
+          "result": "Red-green-revert via forced prototype-level mock reproducing the exact drop (confirmed on git-stashed original code and restored fix); 20/20 Vape isolation \u2705; load-realistic run (6-worker parallel, full e2e/tests/registers/transactions/ dir, pos-e2e constellation, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
