@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": 1792581272.769179,
+  "last_processed_ts": 1792667626.142809,
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -36,7 +36,7 @@
       "first_seen": "2026-09-15",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-14"
+      "last_notified": "2026-10-22"
     },
     "912-e2e/tests/": {
       "classification": "e2e-out-of-scope",
@@ -54,7 +54,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-14"
+      "last_notified": "2026-10-22"
     },
     "914-src/pages/public-brand-menu/public-order-submission.ts": {
       "classification": "e2e-out-of-scope",
@@ -153,7 +153,7 @@
       "first_seen": "2026-10-05",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-14"
+      "last_notified": "2026-10-22"
     },
     "1140-src/pages/advertising/campaign-insights/contexts/data-source-context.tsx": {
       "classification": "e2e-out-of-scope",
