@@ -1085,8 +1085,12 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": null,
-      "real_app_bug": null,
+      "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)",
+      "real_app_bug": {
+        "ticket_key": "POS-23877",
+        "filed_at": "2026-10-22",
+        "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)"
+      },
       "attempts": [
         {
           "date": "2026-10-12",
@@ -1107,8 +1111,12 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": null,
-      "real_app_bug": null,
+      "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)",
+      "real_app_bug": {
+        "ticket_key": "POS-23877",
+        "filed_at": "2026-10-22",
+        "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)"
+      },
       "attempts": [
         {
           "date": "2026-10-12",
