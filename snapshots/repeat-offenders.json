@@ -624,7 +624,7 @@
         {
           "date": "2026-10-22",
           "jira_key": "QA-1163",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2200",
           "outcome": "fixed",
           "hypothesis": "simulateScan typed a 2D AAMVA barcode via 12 sequential page.keyboard.type() calls interleaved with 11 separate page.evaluate() CDP round-trips; a >250ms gap between any two round-trips under worker contention fires ReactBarcodeReader timeBeforeScanTest=250 idle timer mid-payload, splitting one scan into two garbage partial scans (confirmed via webapi.log: first partial threw GuestEntryInvalidIdException, second partial missing the AAMVA header was misparsed as a 1D scan with empty FullName, matching the observed empty edit-customer-page-name assertion).",
           "fix_applied": "id-scan.test.ts: rewrote simulateScan to dispatch the entire payload keypress-by-keypress in one synchronous in-page page.evaluate loop instead of per-segment CDP round-trips, eliminating any inter-dispatch gap that could exceed the 250ms idle timer.",
