@@ -4209,5 +4209,141 @@
       "src/pages/link-desk/product-connect/add-to-catalog-workspace/styled.ts"
     ],
     "fetchedAt": "2026-10-21T19:06:02.229Z"
+  },
+  "GetDutchie/dutchie-nexus#2260": {
+    "title": "feat(audits): add inventory movement wire contract NEXUS-652",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/scan-history-section.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/api/inventory/audits-types.ts",
+      "apps/nexus/src/api/inventory/audits.test.tsx",
+      "apps/nexus/src/api/inventory/audits.ts",
+      "apps/nexus/src/pages/inventory/audits/detail/hooks/use-audit-row-actions.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/quick-entry/quick-entry-grid.test.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/scan-history-section.tsx",
+      "packages/webapi-client/src/rest/nexus/audits.test.ts",
+      "packages/webapi-client/src/rest/nexus/audits.ts"
+    ],
+    "fetchedAt": "2026-10-22T19:06:52.869Z"
+  },
+  "GetDutchie/brands-portal#1223": {
+    "title": "fix: remove Link Desk price field BRAND-3982",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/components/product-form.test.tsx",
+      "src/pages/catalog/product-details/components/product-form.tsx",
+      "src/pages/catalog/product-details/types.ts",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.test.tsx",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/index.tsx",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/utils.test.ts",
+      "src/pages/link-desk/product-connect/add-to-catalog-workspace/utils.ts",
+      "src/pages/link-desk/product-connect/index.test.tsx"
+    ],
+    "fetchedAt": "2026-10-22T19:06:53.660Z"
+  },
+  "GetDutchie/brands-portal#1227": {
+    "title": "fix: move report reminder into tooltip BRAND-4016",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-header.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/components/campaign-header.test.tsx",
+      "src/pages/promotions/campaign-detail/components/campaign-header.tsx"
+    ],
+    "fetchedAt": "2026-10-22T19:06:54.420Z"
+  },
+  "GetDutchie/brands-portal#1228": {
+    "title": "eng: add REST proxy rollout foundation",
+    "qualityComments": [
+      {
+        "path": "src/api/rest-proxy-rollout.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/rest-proxy-rollout.test.ts",
+      "src/api/rest-proxy-rollout.ts",
+      "src/services/launch-darkly/use-is-rest-proxy-enabled.test.ts",
+      "src/services/launch-darkly/use-is-rest-proxy-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-22T19:06:55.290Z"
+  },
+  "GetDutchie/brands-portal#1222": {
+    "title": "fix: scroll retailer review panel BRAND-4029",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/retailer-product-column.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/product-connect/constants.ts",
+      "src/pages/link-desk/product-connect/index.test.tsx",
+      "src/pages/link-desk/product-connect/index.tsx",
+      "src/pages/link-desk/product-connect/retailer-product-column.test.tsx",
+      "src/pages/link-desk/product-connect/retailer-product-column.tsx",
+      "src/pages/link-desk/product-connect/styled.ts"
+    ],
+    "fetchedAt": "2026-10-22T19:06:56.341Z"
+  },
+  "GetDutchie/brands-portal#1224": {
+    "title": "eng: isolate Product Connect test styles and async queries",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/index.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "package.json",
+      "pnpm-lock.yaml",
+      "src/pages/link-desk/product-connect/index.test.tsx"
+    ],
+    "fetchedAt": "2026-10-22T19:06:57.122Z"
+  },
+  "GetDutchie/brands-portal#1207": {
+    "title": "eng: remove growth.catalog.brand-tags LD flag",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/catalog/active-products/index.test.tsx",
+      "src/pages/catalog/active-products/index.tsx",
+      "src/pages/catalog/brand-tags/index.test.tsx",
+      "src/pages/catalog/brand-tags/index.tsx",
+      "src/pages/catalog/hooks/use-products-data.test.ts",
+      "src/pages/catalog/hooks/use-products-data.ts",
+      "src/pages/catalog/product-details/components/product-form.test.tsx",
+      "src/pages/catalog/product-details/components/product-form.tsx",
+      "src/pages/catalog/utils/transform-products-for-data-grid.ts",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-brand-tag-flavors-enabled.test.ts",
+      "src/services/launch-darkly/use-brand-tag-flavors-enabled.ts",
+      "src/services/launch-darkly/use-brand-tags-enabled.test.ts",
+      "src/services/launch-darkly/use-brand-tags-enabled.ts",
+      "src/services/launch-darkly/with-brand-tags-flag.test.tsx",
+      "src/services/launch-darkly/with-brand-tags-flag.tsx",
+      "src/shell/index.tsx"
+    ],
+    "fetchedAt": "2026-10-22T19:06:57.943Z"
   }
 }
