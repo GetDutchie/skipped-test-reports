@@ -643,8 +643,8 @@
       "attempts": [
         {
           "date": "2026-10-23",
-          "jira_key": "PENDING",
-          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/PENDING",
+          "jira_key": "QA-1168",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2206",
           "outcome": "fixed",
           "hypothesis": "Promise.all([waitForResponse(load_v2 && r.ok()), confirm.click()]) can resolve on a stale/earlier load_v2 response rather than the one reflecting this removal, leaving itemCount stuck at a stale value even though the set-then-act timing looked correct architecturally.",
           "fix_applied": "remove-weight-item.test.ts: replaced the Promise.all/load_v2 wait with confirm.click() followed by cartItem.wrapper.waitFor({ state: \"detached\" }), mirroring the already-proven detached-wait idiom from line-item-quantity.test.ts/update-product-quantity.test.ts and the loyalty-multiplier getLineItemByProductName(...).wrapper.waitFor() pattern.",
