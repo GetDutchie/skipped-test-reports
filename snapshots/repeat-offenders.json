@@ -651,6 +651,26 @@
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, remove-weight-item.test.ts + remove-quantity-item.test.ts, 3/3) \u2705"
         }
       ]
+    },
+    "cart/remove-weight-item.test.ts::[654502] User should be able to remove a weight based line item from cart via ellipsis": {
+      "test_name": "[654502] User should be able to remove a weight based line item from cart via ellipsis",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-10-23",
+          "jira_key": "QA-1168",
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2206",
+          "outcome": "fixed",
+          "hypothesis": "Identical stale-load_v2 TOCTOU as sibling [654503] in the same file \u2014 did not flake this run, fixed proactively as a sibling-pattern catch (flagged by dutchie-reviewer Quality Bot, which I should have caught myself in the same grep pass).",
+          "fix_applied": "remove-weight-item.test.ts: same replacement as [654503] \u2014 confirm.click() then cartItem.wrapper.waitFor({state:\"detached\"}) instead of Promise.all(load_v2).",
+          "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, remove-weight-item.test.ts + remove-quantity-item.test.ts, 3/3) \u2705"
+        }
+      ]
     }
   }
 }
