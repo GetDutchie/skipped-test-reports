@@ -4345,5 +4345,135 @@
       "src/shell/index.tsx"
     ],
     "fetchedAt": "2026-10-22T19:06:57.943Z"
+  },
+  "GetDutchie/brands-portal#1221": {
+    "title": "fix: restore THC/CBD potency fields for Edibles BRAND-4028",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/components/fields/potency-field.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/fields/potency-field.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/fields/potency-field.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/fields/potency-field.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/product-form.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/product-form.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/components/fields/potency-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/potency-field.tsx",
+      "src/pages/catalog/product-details/components/preview/item-score-section.tsx",
+      "src/pages/catalog/product-details/components/product-form.test.tsx",
+      "src/pages/catalog/product-details/components/product-form.tsx",
+      "src/pages/catalog/product-details/product-form-schema.ts"
+    ],
+    "fetchedAt": "2026-10-26T19:06:40.442Z"
+  },
+  "GetDutchie/brands-portal#1245": {
+    "title": "eng: migrate requirement lookups to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/wizard/requirements/use-requirements-filter-data.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/requirements/use-discount-subcategories.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/wizard/requirements/use-discount-categories.test.tsx",
+      "src/pages/promotions/wizard/requirements/use-discount-categories.ts",
+      "src/pages/promotions/wizard/requirements/use-discount-subcategories.test.tsx",
+      "src/pages/promotions/wizard/requirements/use-discount-subcategories.ts",
+      "src/pages/promotions/wizard/requirements/use-requirements-filter-data.ts"
+    ],
+    "fetchedAt": "2026-10-26T19:06:41.246Z"
+  },
+  "GetDutchie/brands-portal#1248": {
+    "title": "fix: restore Previous after confirming matches BRAND-4044",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/use-bucket-review.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/product-connect/index.test.tsx",
+      "src/pages/link-desk/product-connect/use-bucket-review.test.ts",
+      "src/pages/link-desk/product-connect/use-bucket-review.ts"
+    ],
+    "fetchedAt": "2026-10-26T19:06:42.074Z"
+  },
+  "GetDutchie/brands-portal#1249": {
+    "title": "fix: retire Link Desk rollout flag BRAND-4045",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/health/index.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/health/components/catalog-actions.tsx",
+      "src/pages/catalog/health/index.test.tsx",
+      "src/pages/catalog/health/index.tsx",
+      "src/pages/link-desk/brand-connect/index.test.tsx",
+      "src/pages/link-desk/docs/PLAN.md",
+      "src/pages/link-desk/index.test.tsx",
+      "src/pages/link-desk/link-desk-route-guard.test.tsx",
+      "src/pages/link-desk/link-desk-route-guard.tsx",
+      "src/pages/link-desk/product-connect/index.test.tsx",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-is-link-desk-enabled.test.ts",
+      "src/services/launch-darkly/use-is-link-desk-enabled.ts",
+      "src/shell/index.tsx"
+    ],
+    "fetchedAt": "2026-10-26T19:06:43.002Z"
+  },
+  "GetDutchie/brands-portal#1243": {
+    "title": "feat: display categorical match confidence BRAND-4046",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/match-recommendation/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/match-recommendation/index.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/product-connect/match-recommendation/constants.ts",
+      "src/pages/link-desk/product-connect/match-recommendation/index.test.tsx",
+      "src/pages/link-desk/product-connect/match-recommendation/index.tsx",
+      "src/pages/link-desk/product-connect/match-recommendation/styled.ts",
+      "src/pages/link-desk/product-connect/match-recommendation/utils.ts",
+      "src/theme/tokens.ts"
+    ],
+    "fetchedAt": "2026-10-26T19:06:44.042Z"
   }
 }
