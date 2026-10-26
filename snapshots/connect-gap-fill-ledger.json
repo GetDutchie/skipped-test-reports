@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": 1792754024.415689,
+  "last_processed_ts": 1793013296.731889,
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -162,7 +162,7 @@
       "first_seen": "2026-10-08",
       "last_seen": "2026-10-16",
       "times_seen": 2,
-      "last_notified": "2026-10-16"
+      "last_notified": "2026-10-26"
     },
     "1145-rsbuild.config.ts": {
       "classification": "unclear",
@@ -189,6 +189,15 @@
       "last_notified": "2026-10-21",
       "times_seen": 2,
       "description": "lspErrorMessage is derived directly from lspError (isSearching ? lspSearchError : lspListError) without fencing by isLspListCurrent, the way lspOptions already is. Confirmed live: immediately after selectBrand(brandB) following a failed request for brandA (before brandB's own request resolves), lspErrorMessage reads \"Could not load retailers for Boulder Botanicals.\" (brandA's stale error, misattributed to the just-selected brandB) while lspsLoading is true. Fix: fence lspErrorMessage the same way lspOptions is (isLspListCurrent ? lspError ... : null during the in-flight window), or equivalent. Discovered during Quality Bot tending of PR #1219 (eng(lsp audit log): fill Connect test gap \u2014 error clearing and footnote boundary) \u2014 not implemented there since it requires a production-code change, out of scope for this test-only agent."
+    },
+    "1243-src/pages/link-desk/product-connect/match-recommendation/utils.ts-prototype-key-lookup": {
+      "classification": "needs-production-change",
+      "description": "matchConfidencePresentation looks up CONFIDENCE_LEVEL_PRESENTATION[confidenceLevel] via a plain object index. Confirmed live with disposable tests against unmodified production code: when advice.confidence_level is a string matching an inherited Object.prototype key name ('toString', 'constructor', '__proto__'), the lookup returns the inherited function/object instead of undefined, instead of safely falling through.",
+      "blocker": "Fixing this requires an own-property-only lookup (e.g. Object.prototype.hasOwnProperty.call(...) or a Map instead of a plain object) in src/pages/link-desk/product-connect/match-recommendation/utils.ts -- a production-code change, out of scope for this agent's test-file-only PRs.",
+      "first_seen": "2026-10-26",
+      "last_seen": "2026-10-26",
+      "times_seen": 1,
+      "last_notified": "2026-10-26"
     }
   }
 }
