@@ -4475,5 +4475,79 @@
       "src/theme/tokens.ts"
     ],
     "fetchedAt": "2026-10-26T19:06:44.042Z"
+  },
+  "GetDutchie/brands-portal#1265": {
+    "title": "fix: prepare searched Link Desk matches BRAND-4083",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/product-connect/catalog-search-modal/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/import-history/detail/constants.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-columns.test.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-row-data.test.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-row-data.ts",
+      "src/pages/link-desk/product-connect/catalog-search-modal/index.test.tsx",
+      "src/pages/link-desk/product-connect/catalog-search-modal/index.tsx",
+      "src/pages/link-desk/product-connect/index.hydration.test.tsx",
+      "src/pages/link-desk/product-connect/index.tsx"
+    ],
+    "fetchedAt": "2026-10-27T19:06:02.362Z"
+  },
+  "GetDutchie/brands-portal#1255": {
+    "title": "feat: sort Link Desk product tables BRAND-4035",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/bucket-detail/bucket-products-section.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/bucket-detail/bucket-products-section.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/link-desk/bucket-detail/bucket-products-section.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/api/bucket-products.test.ts",
+      "src/pages/link-desk/api/bucket-products.ts",
+      "src/pages/link-desk/api/utils.test.ts",
+      "src/pages/link-desk/api/utils.ts",
+      "src/pages/link-desk/bucket-detail/bucket-products-section.test.tsx",
+      "src/pages/link-desk/bucket-detail/bucket-products-section.tsx"
+    ],
+    "fetchedAt": "2026-10-27T19:06:03.317Z"
+  },
+  "GetDutchie/brands-portal#1266": {
+    "title": "eng: support expanded import row statuses",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/import-history/detail/hooks/use-columns.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/import-history/detail/constants.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-columns.test.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-row-data.test.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-row-data.ts"
+    ],
+    "fetchedAt": "2026-10-27T19:06:04.302Z"
   }
 }
