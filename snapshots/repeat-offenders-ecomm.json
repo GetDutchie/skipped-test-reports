@@ -717,8 +717,8 @@
         "failure_signature": "Brands nav link never renders under concurrent/loaded execution: kiosk session teardown's apolloClient.clearStore() cancels the in-flight MenuFiltersV2 query; custom one-shot useQuery hook's hasRun flag is never cleared on cancellation, so the query is never retried, permanently leaving brands:[]."
       },
       "attempts": [],
-      "last_reconfirmed": "2026-10-23",
-      "reconfirm_note": "2026-10-23 nightly: same failure_signature reconfirmed from CI artifacts (Categories nav visible, no Brands link; failed attempt1+retry1, passed retry2). QA-1118 still open/Backlog, 15 consecutive nights, zero visible movement/comments from owning Ecommerce team beyond the auto-filing comment. Steady state, no fresh Step 2 investigation. Reported in QA-1166 (this run's ticket)."
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "2026-10-28 nightly: same failure_signature reconfirmed from CI job logs (toBeVisible timeout on kiosk-pro-nav-brands-link, 60s, failed original+retry1+retry2, passed retry3 -- Categories nav visible, Brands link never rendered). QA-1118 still open/Backlog, now 17 consecutive nights open, zero visible movement from the owning Ecommerce team. Steady state, no fresh Step 2 investigation. Reported in this run's ticket (QA-11xx, see PR/ticket for exact number)."
     },
     "marketplace/checkout-page/cart-retained-on-refresh.test.ts::[144129] Items in cart are retained upon page refresh when in incognito mode": {
       "test_name": "[144129] Items in cart are retained upon page refresh when in incognito mode",
@@ -905,11 +905,110 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "Redirected to consumer homepage with 'Please add items to your cart before visiting checkout.' after a long (~119s) logged-in enroll+checkout flow via enrollAndValidate(); matches the aerosync-enrollment.test.ts [657428]/[2991644] systemic finding exactly (same checkoutPage.login()+enrollAndValidate() shared flow, different payment method fixture).",
+      "failure_signature": "CORRECTED 2026-10-28 (see investigation_notes): tonight's actual failures do NOT match the 'redirected to homepage, cart cleared' signature previously assumed to be shared with aerosync-enrollment.test.ts [657428]. Original attempt: TimeoutError waiting 30s for CreateOrder GraphQL response inside placeOrderFromCheckout (utils/payments.ts:58, waitForResponses). Retry #1: TimeoutError clicking pickup-in-store-option (order-type-section.ts:101) -- 'element was detached from the DOM, retrying', 30s timeout -- i.e. the order-type-section appears to remount/re-render repeatedly while the test is mid-click, inside placeOrderFromCheckout, AFTER enrollment completes and checkout page is re-shown. This is a DIFFERENT proximate mechanism than the historic aerosync theory and should not be assumed to share a root cause without new matching evidence.",
       "real_app_bug": null,
       "attempts": [],
-      "last_reconfirmed": "2026-10-23",
-      "reconfirm_note": "First-ever appearance, 2026-10-23 nightly. See the aerosync [657428] ledger entry's investigation_notes for the full systemic cross-test investigation -- treated as one combined finding, not filed/escalated separately. Still inconclusive overall."
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "First-ever appearance, 2026-10-23 nightly. See the aerosync [657428] ledger entry's investigation_notes for the full systemic cross-test investigation -- treated as one combined finding, not filed/escalated separately. Still inconclusive overall.",
+      "investigation_notes": " | 2026-10-28 (5th appearance, correction night): pulled and examined the FIRST EVER trace.zip from an actual FAILING attempt (retry #1, this test does not have trace:'retain-on-failure' set unlike aerosync-enrollment.test.ts which got that fix via QA-1144/PR#24390 -- plaid-enrollment.test.ts was NOT included in that fix's scope, worth revisiting). Trace shows: cart product data (order.cart.details.products) was FULLY POPULATED with correct prices through the LAST PersistCheckoutV2 call before the failure (3 calls total: 06:27:17.868, 06:27:32.530, 06:27:35.274, all with 2 full line items at correct prices) -- this DIRECTLY CONTRADICTS the old 'Cart.isReady with an empty cart after stored-cart pruning' hypothesis from 2026-10-14, at least for this specific occurrence: the cart was NOT empty in what was sent to the backend. The actual failure (per job logs, not inferred) is a locator-detach race on the order-type-section radio button and a CreateOrder response timeout, both INSIDE placeOrderFromCheckout -- i.e. AFTER the enrollment+checkout-remount sequence completes successfully, not a 'bounced to homepage because cart was empty' symptom at all. RECOMMENDATION for next investigator: (1) add trace:'retain-on-failure' to plaid-enrollment.test.ts too (cheap, same pattern as QA-1144); (2) investigate whether something in the post-enrollment checkout page remount causes order-type-section to re-render in a loop (check for an unstable useEffect dependency or a repeating serverSideCalculations poll) rather than continuing to treat this as the same bug as aerosync [657428]. Do NOT keep lumping [657408] and [657428]/[2991644] into one 'systemic' bucket without a matching error signature -- tonight's evidence suggests they may be different bugs that merely share a generically long/complex enrollment+checkout flow."
+    },
+    "marketplace/ads/category-page-ads.test.ts::[125943] Impression tracker fires when sponsored product is in viewport": {
+      "test_name": "[125943] Impression tracker fires when sponsored product is in viewport",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "TestCommand: create failed with status: 500 from fixtures/ads-fixture.ts's adsSetup fixture (playwright/utils/db/index.ts sendCommand). CONFIRMED root cause (2026-10-28, falsification-agreed): Mongo E11000 duplicate key on dispensaries index profile.cName_1 'california' -- apps/armageddon/spec/factories/library_product_factory.rb's shared/global CA state-library FactoryBot default does a non-atomic find-or-create (apps/armageddon/app/models/dispensary.rb:115-121); two parallel workers racing to create the FIRST California library-product dispensary on a fresh CI DB collide. test_command_controller.rb converts any StandardError (including this one) to a generic 500. Classification: infra/backend-slow (cross-test data contamination / shared-fixture race subclass).",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "2026-10-28 nightly: first-ever appearance for this specific test id, part of a 6-test flaky cluster all in category-page-ads.test.ts tonight. Classified infra/backend-slow -- see failure_signature for the specific confirmed-vs-unresolved mechanism. Falsification gate run (independent blind scout pass) -- AGREED these are backend-500-driven, not test-code-bug or real-app-bug, but explicitly flagged the two mechanisms (fixture-setup E11000 vs ads-resolver Internal Server Error) as distinct and NOT provably the same root cause -- do not merge them in a future investigation without new evidence. No code change (infra/backend-slow does not touch code per policy)."
+    },
+    "marketplace/ads/category-page-ads.test.ts::[107739] Banner and item click trackers fire on quick-add": {
+      "test_name": "[107739] Banner and item click trackers fire on quick-add",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "GraphQL 'Internal Server Error' (500) on GetSponsoredBrand or getSponsoredProducts resolvers (apps/api/src/graphql/resolvers/ads/resolvers/get-sponsored-brand.js, get-sponsored-products.ts), caught by playwright/utils/ads/graphql-helpers.ts's expectNoGraphQLErrors. Classification: infra/backend-slow (transient backend API failure subclass) -- CONFIRMED as a genuine backend 500 (not a test-code-bug, not evidence of a real-app regression), but the EXACT backend root cause is UNRESOLVED as of 2026-10-28: a falsification pass explicitly found this is a SEPARATE, unproven mechanism from the library_product_factory/E11000 race above (different resolvers, Node apps/api not Armageddon Ruby) and recommended NOT conflating the two. Needs timestamp-correlated apps/api and Armageddon service logs / trace IDs on a future occurrence to pin the exact cause.",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "2026-10-28 nightly: first-ever appearance for this specific test id, part of a 6-test flaky cluster all in category-page-ads.test.ts tonight. Classified infra/backend-slow -- see failure_signature for the specific confirmed-vs-unresolved mechanism. Falsification gate run (independent blind scout pass) -- AGREED these are backend-500-driven, not test-code-bug or real-app-bug, but explicitly flagged the two mechanisms (fixture-setup E11000 vs ads-resolver Internal Server Error) as distinct and NOT provably the same root cause -- do not merge them in a future investigation without new evidence. No code change (infra/backend-slow does not touch code per policy)."
+    },
+    "marketplace/ads/category-page-ads.test.ts::[131803] Click tracker fires when sponsored product card is clicked": {
+      "test_name": "[131803] Click tracker fires when sponsored product card is clicked",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "GraphQL 'Internal Server Error' (500) on GetSponsoredBrand or getSponsoredProducts resolvers (apps/api/src/graphql/resolvers/ads/resolvers/get-sponsored-brand.js, get-sponsored-products.ts), caught by playwright/utils/ads/graphql-helpers.ts's expectNoGraphQLErrors. Classification: infra/backend-slow (transient backend API failure subclass) -- CONFIRMED as a genuine backend 500 (not a test-code-bug, not evidence of a real-app regression), but the EXACT backend root cause is UNRESOLVED as of 2026-10-28: a falsification pass explicitly found this is a SEPARATE, unproven mechanism from the library_product_factory/E11000 race above (different resolvers, Node apps/api not Armageddon Ruby) and recommended NOT conflating the two. Needs timestamp-correlated apps/api and Armageddon service logs / trace IDs on a future occurrence to pin the exact cause.",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "2026-10-28 nightly: first-ever appearance for this specific test id, part of a 6-test flaky cluster all in category-page-ads.test.ts tonight. Classified infra/backend-slow -- see failure_signature for the specific confirmed-vs-unresolved mechanism. Falsification gate run (independent blind scout pass) -- AGREED these are backend-500-driven, not test-code-bug or real-app-bug, but explicitly flagged the two mechanisms (fixture-setup E11000 vs ads-resolver Internal Server Error) as distinct and NOT provably the same root cause -- do not merge them in a future investigation without new evidence. No code change (infra/backend-slow does not touch code per policy)."
+    },
+    "marketplace/ads/category-page-ads.test.ts::[117053] getSponsoredProducts query fires and products render on page": {
+      "test_name": "[117053] getSponsoredProducts query fires and products render on page",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "TestCommand: create failed with status: 500 from fixtures/ads-fixture.ts's adsSetup fixture (playwright/utils/db/index.ts sendCommand). CONFIRMED root cause (2026-10-28, falsification-agreed): Mongo E11000 duplicate key on dispensaries index profile.cName_1 'california' -- apps/armageddon/spec/factories/library_product_factory.rb's shared/global CA state-library FactoryBot default does a non-atomic find-or-create (apps/armageddon/app/models/dispensary.rb:115-121); two parallel workers racing to create the FIRST California library-product dispensary on a fresh CI DB collide. test_command_controller.rb converts any StandardError (including this one) to a generic 500. Classification: infra/backend-slow (cross-test data contamination / shared-fixture race subclass).",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "2026-10-28 nightly: first-ever appearance for this specific test id, part of a 6-test flaky cluster all in category-page-ads.test.ts tonight. Classified infra/backend-slow -- see failure_signature for the specific confirmed-vs-unresolved mechanism. Falsification gate run (independent blind scout pass) -- AGREED these are backend-500-driven, not test-code-bug or real-app-bug, but explicitly flagged the two mechanisms (fixture-setup E11000 vs ads-resolver Internal Server Error) as distinct and NOT provably the same root cause -- do not merge them in a future investigation without new evidence. No code change (infra/backend-slow does not touch code per policy)."
+    },
+    "marketplace/ads/category-page-ads.test.ts::[2991682] addedProductToCart event fires when sponsored product is quick-added": {
+      "test_name": "[2991682] addedProductToCart event fires when sponsored product is quick-added",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "GraphQL 'Internal Server Error' (500) on GetSponsoredBrand or getSponsoredProducts resolvers (apps/api/src/graphql/resolvers/ads/resolvers/get-sponsored-brand.js, get-sponsored-products.ts), caught by playwright/utils/ads/graphql-helpers.ts's expectNoGraphQLErrors. Classification: infra/backend-slow (transient backend API failure subclass) -- CONFIRMED as a genuine backend 500 (not a test-code-bug, not evidence of a real-app regression), but the EXACT backend root cause is UNRESOLVED as of 2026-10-28: a falsification pass explicitly found this is a SEPARATE, unproven mechanism from the library_product_factory/E11000 race above (different resolvers, Node apps/api not Armageddon Ruby) and recommended NOT conflating the two. Needs timestamp-correlated apps/api and Armageddon service logs / trace IDs on a future occurrence to pin the exact cause.",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "reconfirm_note": "2026-10-28 nightly: first-ever appearance for this specific test id, part of a 6-test flaky cluster all in category-page-ads.test.ts tonight. Classified infra/backend-slow -- see failure_signature for the specific confirmed-vs-unresolved mechanism. Falsification gate run (independent blind scout pass) -- AGREED these are backend-500-driven, not test-code-bug or real-app-bug, but explicitly flagged the two mechanisms (fixture-setup E11000 vs ads-resolver Internal Server Error) as distinct and NOT provably the same root cause -- do not merge them in a future investigation without new evidence. No code change (infra/backend-slow does not touch code per policy)."
+    },
+    "marketplace/order-history/reorder.test.ts::[142850] Buy it again / Reorder repopulates cart with past order items at active pricing": {
+      "test_name": "[142850] Buy it again / Reorder repopulates cart with past order items at active pricing",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(subtotal).toBe(testProduct.Prices[0]) failed: Expected 30, Received 0, at reorder.test.ts:129. subtotal() read via cart-drawer.ts's shared helper after reorderBtn.click().",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "investigation_notes": "2026-10-28, first-ever appearance, classified isolation/false-positive, CONFIRMED via falsification gate (independent blind scout agreed). Hypothesis explored (unproven): cart-drawer.ts's subtotal() helper treats '$0.00' the same as any other stable price reading (3 consecutive matching reads, ~200-300ms), so a transient $0.00 placeholder right after the reorder mutation populates the cart -- before the real price calculation finishes -- could in principle be read as 'stable' and returned prematurely. NOT REPRODUCED: 30/30 (mine, --repeat-each=15 --workers=4) + 30/30 (scout, --repeat-each=15 --workers=6) all passed, both zero failures. App code (cart-dropdown-v2/header, cart-dropdown.jsx, use-cart-controller.js) DOES explicitly show a 'Calculating' state during price recalculation, which the helper DOES correctly wait out -- counterevidence against the hypothesis being the actual mechanism. No code change. NOTE for future reference: 3 other callers of cartDrawer.subtotal() (shopping-cart.test.ts, carousel-quick-add.test.ts x2) use the same bare subtotal()+expect().toBe() pattern as this test, while quick-add-specials.test.ts (added 2026-10-15, PR#23967) already wraps it in expect.poll(() => cartDrawer.subtotal()).toBe(x) -- if this test (or a sibling) flakes again with the same $0/wrong-value signature, that's the established fix pattern to reach for, but it was NOT applied tonight since the hypothesis could not be confirmed with a reproducible red."
+    },
+    "admin/dispensary-admin/promote-page.test.ts::[30007] Edit links next to steps open appropriate step and progress you through full flow": {
+      "test_name": "[30007] Edit links next to steps open appropriate step and progress you through full flow",
+      "suite": "ecomm",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toBeVisible() failed, Expected visible, Received hidden, Timeout 60000ms, at promote-page.test.ts:187 (confirmationStep.component visibility check after one of the 4 sequential edit-cycle continueButton clicks). Screenshot at failure showed UI still on the Products step with its own Continue button visible, one step behind expectation.",
+      "real_app_bug": null,
+      "attempts": [],
+      "last_reconfirmed": "2026-10-28",
+      "investigation_notes": "2026-10-28, first-ever appearance, classified isolation/false-positive (provisional disposition), CONFIRMED via falsification gate (independent blind scout agreed). NOT REPRODUCED: 15/15 (mine, --repeat-each=15 --workers=4) + 20/20 (scout, --repeat-each=20 --workers=6) all passed. No recent (10-day) git history on the test file or promote page-object directory. Scout flagged a residual diagnostic risk worth remembering: the test has 4 sequential edit-confirm cycles and CI's reported line 187 may map to a different cycle (3rd vs 4th) than assumed without the actual CI trace/commit -- no trace.zip was available for this failure (first-attempt only, no retain-on-failure config on this spec). If this recurs, get a trace before hypothesizing which specific edit-cycle's transition is racing."
     }
   }
 }
