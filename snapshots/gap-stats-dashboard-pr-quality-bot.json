@@ -4549,5 +4549,80 @@
       "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-row-data.ts"
     ],
     "fetchedAt": "2026-10-27T19:06:04.302Z"
+  },
+  "GetDutchie/dutchie-nexus#2488": {
+    "title": "fix(inventory audits): color variance green/red NEXUS-854",
+    "qualityComments": [
+      {
+        "path": "apps/nexus/src/pages/inventory/audits/detail/count-summary.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "apps/nexus/src/pages/inventory/audits/detail/components/closed-audit-discrepancies-tab.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/count-summary.tsx",
+      "apps/nexus/src/pages/inventory/audits/detail/packages-tab.tsx"
+    ],
+    "fetchedAt": "2026-10-28T19:06:16.071Z"
+  },
+  "GetDutchie/dutchie-nexus#2515": {
+    "title": "feat(command center): rename Home nav to Command Center and Pulse tile to Vitals NEXUS-907",
+    "qualityComments": [],
+    "changedPaths": [
+      "apps/nexus/e2e/page-objects/command-center-page.ts",
+      "apps/nexus/e2e/tests/command-center.spec.ts",
+      "apps/nexus/src/components/guide-panel/guide-panel.test.tsx",
+      "apps/nexus/src/components/guide-panel/guide-panel.tsx",
+      "apps/nexus/src/components/nav-config.test.tsx",
+      "apps/nexus/src/components/nav-config.tsx",
+      "apps/nexus/src/components/side-nav/app-sidebar.test.tsx",
+      "apps/nexus/src/pages/command-center/registry.ts",
+      "apps/nexus/src/pages/command-center/tiles/pulse.tile.tsx",
+      "packages/help-content/src/areas.ts"
+    ],
+    "fetchedAt": "2026-10-28T19:06:16.976Z"
+  },
+  "GetDutchie/dutchie-nexus#2526": {
+    "title": "feat(command center): rename Vitals tile to Headline NEXUS-914",
+    "qualityComments": [],
+    "changedPaths": [
+      "apps/nexus/e2e/page-objects/command-center-page.ts",
+      "apps/nexus/e2e/tests/command-center.spec.ts",
+      "apps/nexus/src/pages/command-center/registry.ts",
+      "apps/nexus/src/pages/command-center/tiles/pulse.tile.test.tsx",
+      "apps/nexus/src/pages/command-center/tiles/pulse.tile.tsx"
+    ],
+    "fetchedAt": "2026-10-28T19:06:17.916Z"
+  },
+  "GetDutchie/brands-portal#1256": {
+    "title": "eng(link desk): fill Connect test gap - match confidence presentation edge cases",
+    "qualityComments": [
+      {
+        "path": "src/pages/link-desk/product-connect/match-recommendation/utils.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/link-desk/product-connect/match-recommendation/utils.test.ts"
+    ],
+    "fetchedAt": "2026-10-28T19:06:18.796Z"
+  },
+  "GetDutchie/brands-portal#1259": {
+    "title": "eng(promotions): fill Connect test gap - requirements filter data hook and filter modal",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/wizard/shared/filter-modal.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/shared/filter-modal.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/wizard/requirements/use-requirements-filter-data.test.ts",
+      "src/pages/promotions/wizard/shared/filter-modal.test.tsx"
+    ],
+    "fetchedAt": "2026-10-28T19:06:19.584Z"
   }
 }
