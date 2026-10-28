@@ -1252,8 +1252,8 @@
       "attempts": [
         {
           "date": "2026-10-28",
-          "jira_key": "PENDING",
-          "pr_url": "https://github.com/GetDutchie/back-office/pull/PENDING",
+          "jira_key": "QA-1180",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/11115",
           "outcome": "fixed",
           "hypothesis": "loadPageAndFindCreatedStatusCard retries via a full goto() every iteration (expensive), so the 60s budget only fits ~1-2 attempts; a repro trace showed the create-status fixture's data landing in the get-pos-statuses response at ~66s, just past the old 60s window.",
           "fix_applied": "Bumped the shared helper's toPass timeout from 60000 to 90000ms, citing the observed ~66s landing time; no custom retry loop, reused the existing toPass wrapper.",
@@ -1274,8 +1274,8 @@
       "attempts": [
         {
           "date": "2026-10-28",
-          "jira_key": "PENDING",
-          "pr_url": "https://github.com/GetDutchie/back-office/pull/PENDING",
+          "jira_key": "QA-1180",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/11115",
           "outcome": "fixed",
           "hypothesis": "Button.click() only waited for the COMPLETE_ORDER/REOPEN_MANIFEST mutation, not the subsequent GET_MANIFESTS list refetch that repaints the row's status before the next navigation click -- same class of gap already fixed in the sibling reopen-wholesale-multi-stop-manifest.spec.ts.",
           "fix_applied": "Added endPoints.GET_MANIFESTS to both the completeOrder-confirm and reopen Button.click() endpoint arrays, mirroring the proven sibling pattern (no new helper, gate 13).",
