@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": 1793099678.031169,
+  "last_processed_ts": 1793185845.429769,
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -9,7 +9,7 @@
       "first_seen": "2026-09-16",
       "last_seen": "2026-09-16",
       "times_seen": 1,
-      "last_notified": "2026-10-20"
+      "last_notified": "2026-10-28"
     },
     "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
       "classification": "e2e-out-of-scope",
@@ -18,7 +18,7 @@
       "first_seen": "2026-09-15",
       "last_seen": "2026-09-15",
       "times_seen": 1,
-      "last_notified": "2026-10-20"
+      "last_notified": "2026-10-28"
     },
     "847-src/pages/ad-exclusions/index.tsx": {
       "classification": "e2e-out-of-scope",
@@ -27,7 +27,7 @@
       "first_seen": "2026-09-15",
       "last_seen": "2026-09-15",
       "times_seen": 1,
-      "last_notified": "2026-10-20"
+      "last_notified": "2026-10-28"
     },
     "888-rsbuild.config.ts": {
       "classification": "unclear",
@@ -195,8 +195,8 @@
       "description": "matchConfidencePresentation looks up CONFIDENCE_LEVEL_PRESENTATION[confidenceLevel] via a plain object index. Confirmed live with disposable tests against unmodified production code: when advice.confidence_level is a string matching an inherited Object.prototype key name ('toString', 'constructor', '__proto__'), the lookup returns the inherited function/object instead of undefined, instead of safely falling through.",
       "blocker": "Fixing this requires an own-property-only lookup (e.g. Object.prototype.hasOwnProperty.call(...) or a Map instead of a plain object) in src/pages/link-desk/product-connect/match-recommendation/utils.ts -- a production-code change, out of scope for this agent's test-file-only PRs.",
       "first_seen": "2026-10-26",
-      "last_seen": "2026-10-26",
-      "times_seen": 1,
+      "last_seen": "2026-10-28",
+      "times_seen": 2,
       "last_notified": "2026-10-26"
     }
   }
