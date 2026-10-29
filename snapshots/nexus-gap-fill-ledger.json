@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793192747.636829",
+  "last_processed_ts": "1793279382.808509",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -36,7 +36,7 @@
       "first_seen": "2026-10-05",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-21"
+      "last_notified": "2026-10-29"
     },
     "1863-_migrated-16-unnamed-files-stale": {
       "classification": "unclear",
@@ -45,7 +45,7 @@
       "first_seen": "2026-10-05",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-21"
+      "last_notified": "2026-10-29"
     },
     "1976-packages/discount-ui/src/buy-get-diagram.tsx": {
       "classification": "needs-production-change",
