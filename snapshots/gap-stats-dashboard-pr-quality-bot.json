@@ -4624,5 +4624,63 @@
       "src/pages/promotions/wizard/shared/filter-modal.test.tsx"
     ],
     "fetchedAt": "2026-10-28T19:06:19.584Z"
+  },
+  "GetDutchie/brands-portal#1276": {
+    "title": "feat: surface catalog attribution on products BRAND-4098",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/catalog-attribution.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/catalog-list.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/health/index.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/health/components/catalog-verification.tsx",
+        "category": "Pyramid"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/fragments/catalog-verification.gql",
+      "src/api/operations/queries/catalog/get-brand-catalog-health.gql",
+      "src/api/operations/queries/catalog/get-brand-catalog-verification.gql",
+      "src/pages/catalog/catalog-attribution.test.tsx",
+      "src/pages/catalog/catalog-attribution.tsx",
+      "src/pages/catalog/catalog-list.test.tsx",
+      "src/pages/catalog/catalog-list.tsx",
+      "src/pages/catalog/health/components/catalog-verification.tsx",
+      "src/pages/catalog/health/components/verification-summary.test.tsx",
+      "src/pages/catalog/health/components/verification-summary.tsx",
+      "src/pages/catalog/health/hooks/use-reverify-catalog.test.ts",
+      "src/pages/catalog/health/hooks/use-reverify-catalog.ts",
+      "src/pages/catalog/health/index.test.tsx",
+      "src/pages/catalog/health/index.tsx",
+      "src/services/launch-darkly/use-is-catalog-attribution-enabled.test.ts",
+      "src/services/launch-darkly/use-is-catalog-attribution-enabled.ts"
+    ],
+    "fetchedAt": "2026-10-29T19:05:50.549Z"
+  },
+  "GetDutchie/alchemy-pipeline#69": {
+    "title": "feat(internal): renewal-opportunities resource for the renewals caller",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/app.ts",
+      "api/src/data/renewal-opportunities.test.ts",
+      "api/src/data/renewal-opportunities.ts"
+    ],
+    "fetchedAt": "2026-10-29T19:05:51.471Z"
+  },
+  "GetDutchie/alchemy-pipeline#70": {
+    "title": "Add test-coverage-audit workflow",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/test-coverage-audit.yml"
+    ],
+    "fetchedAt": "2026-10-29T19:05:52.161Z"
   }
 }
