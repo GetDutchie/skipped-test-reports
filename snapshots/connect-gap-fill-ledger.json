@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": 1793185845.429769,
+  "last_processed_ts": 1793272187.640659,
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -186,7 +186,7 @@
       "classification": "needs-production-change",
       "first_seen": "2026-10-21",
       "last_seen": "2026-10-23",
-      "last_notified": "2026-10-21",
+      "last_notified": "2026-10-29",
       "times_seen": 2,
       "description": "lspErrorMessage is derived directly from lspError (isSearching ? lspSearchError : lspListError) without fencing by isLspListCurrent, the way lspOptions already is. Confirmed live: immediately after selectBrand(brandB) following a failed request for brandA (before brandB's own request resolves), lspErrorMessage reads \"Could not load retailers for Boulder Botanicals.\" (brandA's stale error, misattributed to the just-selected brandB) while lspsLoading is true. Fix: fence lspErrorMessage the same way lspOptions is (isLspListCurrent ? lspError ... : null during the in-flight window), or equivalent. Discovered during Quality Bot tending of PR #1219 (eng(lsp audit log): fill Connect test gap \u2014 error clearing and footnote boundary) \u2014 not implemented there since it requires a production-code change, out of scope for this test-only agent."
     },
