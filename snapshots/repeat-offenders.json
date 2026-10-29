@@ -134,10 +134,10 @@
       "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
       "suite": "pos",
       "attempt_count": 3,
-      "escalated": false,
-      "escalated_at": null,
-      "escalated_owner": null,
-      "escalated_jira_key": null,
+      "escalated": true,
+      "escalated_at": "2026-10-29",
+      "escalated_owner": "Ben Versluis",
+      "escalated_jira_key": "QA-1207",
       "attempts": [
         {
           "date": "2026-07-24",
@@ -166,7 +166,8 @@
           "fix_applied": "helpers.ts: added a getLineItemByProductName(...).wrapper.waitFor() after repriceCart's re-add, mirroring the already-proven PR #2145 pattern. Also replaced expectLoyaltyEarningCount's hand-rolled for-loop retry counter (anti-flake gate violation) with toPass(), letting it inherit the test's own global timeout rather than a new guessed number.",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, pos-e2e constellation, loyalty-multipliers dir, 3/3) \u2705"
         }
-      ]
+      ],
+      "failure_signature": "Same generic/stale load_v2 TOCTOU bug class recurring in a 4th code location after 3 prior fixes (PR #1635, #2145, #2167) -- assessed as architecture/design concern, not a new isolated hypothesis"
     },
     "cart/discounts/manual-discount.test.ts::[656956] unable to enter a decimal-based percent discount amount": {
       "test_name": "[656956] unable to enter a decimal-based percent discount amount",
@@ -561,11 +562,11 @@
       "test_name": "[657334] Shows a warning before adding an item not in the preorder",
       "suite": "pos",
       "attempt_count": 2,
-      "escalated": false,
-      "escalated_at": null,
-      "escalated_owner": null,
-      "escalated_jira_key": null,
-      "failure_signature": null,
+      "escalated": true,
+      "escalated_at": "2026-10-29",
+      "escalated_owner": "Ben Versluis",
+      "escalated_jira_key": "QA-1207",
+      "failure_signature": "TimeoutError: page.waitForResponse: Timeout 60000ms exceeded (varies by attempt -- scan_product/add_item_to_shopping_cart/delay-only signal all tried and recurred)",
       "real_app_bug": null,
       "attempts": [
         {
@@ -669,6 +670,50 @@
           "hypothesis": "Identical stale-load_v2 TOCTOU as sibling [654503] in the same file \u2014 did not flake this run, fixed proactively as a sibling-pattern catch (flagged by dutchie-reviewer Quality Bot, which I should have caught myself in the same grep pass).",
           "fix_applied": "remove-weight-item.test.ts: same replacement as [654503] \u2014 confirm.click() then cartItem.wrapper.waitFor({state:\"detached\"}) instead of Promise.all(load_v2).",
           "result": "20/20 Vape isolation \u2705 \u00b7 load-realistic run (4-worker parallel, remove-weight-item.test.ts + remove-quantity-item.test.ts, 3/3) \u2705"
+        }
+      ]
+    },
+    "cart/remove-quantity-item.test.ts::[656707] User should be able to remove a quantity based line item from cart via ellipsis": {
+      "test_name": "[656707] User should be able to remove a quantity based line item from cart via ellipsis",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-29",
+          "jira_key": "QA-1207",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "No wait between confirm.click() and the itemCount assertion; same TOCTOU class as 656708 in the same file -- a prior/stale load_v2 can satisfy an unrelated signal and let the assertion check a cart that hasn't actually updated yet.",
+          "fix_applied": "Added cartItem.wrapper.waitFor({state:'detached'}) after confirm.click(), mirroring the already-proven fix in sibling file remove-weight-item.test.ts (PR #2206).",
+          "result": "TDD: green with fix 2/2, red-revert 8 reps did not reproduce in this single-pod isolation env (documented honestly, consistent with other TOCTOU-class races in this suite needing real parallel load). 20/20 Vape isolation in progress."
+        }
+      ]
+    },
+    "cart/remove-quantity-item.test.ts::[656708] User should be able to remove a quantity based line item from cart via trash icon": {
+      "test_name": "[656708] User should be able to remove a quantity based line item from cart via trash icon",
+      "suite": "pos",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toHaveText(expected) failed -- Expected 0, Received 1 on cart_cart-summary_item-count after confirm.click()",
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-29",
+          "jira_key": "QA-1207",
+          "pr_url": null,
+          "outcome": "fixed",
+          "hypothesis": "Promise.all([waitForResponse(load_v2 ok), confirm.click()]) can resolve on a stale/earlier load_v2 response (e.g. an optimistic decrement from the quantityMinus click itself) instead of the one reflecting the completed removal, so the itemCount assertion races a cart that still shows the old item (observed: count stuck at '1' on 2026-10-28, shard3).",
+          "fix_applied": "Replaced the generic load_v2 Promise.all wait with cartItem.wrapper.waitFor({state:'detached'}), the already-proven fix pattern from sibling file remove-weight-item.test.ts (PR #2206, [654502]/[654503]).",
+          "result": "TDD: green with fix 2/2, red-revert 8 reps did not reproduce in this single-pod isolation env (documented honestly). 20/20 Vape isolation in progress."
         }
       ]
     }
