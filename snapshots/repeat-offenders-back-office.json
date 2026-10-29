@@ -1282,6 +1282,26 @@
           "result": "20/20 Vape isolation \u2705 (workers=1, repeat-each); load-realistic run (6-worker parallel, full e2e/tests/products/manifests/ dir, pos-e2e constellation, 3/3) \u2705 (1 unrelated pre-existing test, [405594] in the sibling multi-stop spec, failed under load on run 3/3 -- out of scope this cycle, noted for a future cycle, not touched)."
         }
       ]
+    },
+    "e2e/tests/app/launch-darkly/launch-darkly.spec.ts::[654468] should be visible for email contains string": {
+      "test_name": "[654468] should be visible for email contains string",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "attempts": [
+        {
+          "date": "2026-10-29",
+          "jira_key": "QA-1183",
+          "pr_url": null,
+          "outcome": "blocked-vape-infra",
+          "hypothesis": "E2EPage.goto()'s toPass({timeout:60000}) outer retry budget doesn't comfortably fit 2 full predicate-attempt cycles: trace evidence from the nightly failure shows attempt 1 alone (nav ~1.1s + waitForSelector ~1.9s + header-check up to its own 30000ms default) can consume ~33s of the 60s budget, leaving too little room for the toPass retry that this goto() method exists specifically to provide against the documented LD-identify-lag race. Per CI trace: attempt1 ran 28.31s-61.4s (mostly burned on a 30.1s header-check failure), attempt2 started at 62.48s and was still running its own header-check at 65.86s when the outer 60000ms toPass deadline (since t=28.31, i.e. t=88.31) should still have had room -- the error capture cut off before resolving, consistent with the budget being thin rather than exhausted outright.",
+          "fix_applied": "Attempted: capped the inner expectPageHeaderToContain() call at {timeout: 10000} (below repo's 15000ms expect.timeout default, using the anti-flake doc's explicit 'short per-attempt timeout inside a toPass retry loop' exception) so a failed attempt fails fast and the existing 60000ms outer toPass budget can fit ~4-6 retries instead of ~1.5. Did NOT raise any timeout above its existing value -- this is a budget-reallocation, not a widening.",
+          "result": "BLOCKED, NOT VERIFIED: this Vape pos-e2e instance's leaflogix-webapi LaunchDarkly client never leaves 'client initialized; data store unavailable, returning default value' (confirmed via get_proc_logs) and the LD relay's /status endpoint does not list the LaunchDarklyClientKey (641dbdf7735a7f13626f390e) env this flag's client-side evaluation needs among its configured environments -- the flag evaluates to its default (off) on every request, which 100% reproduces the redirect-home/blank-page failure on ALL 4 tests in this file (654468/654469/654470/654471), with or without the fix, confirmed via get_proc_logs/curl against the relay's /status endpoint and 4 consecutive repro runs. This is a deterministic Vape-instance-local LD-relay misconfiguration, NOT the intermittent real race the nightly CI artifact shows (CI trace confirms app-container renders fine, consistent with LD client working there; only the header-check itself timed out) -- the fix was reverted unshipped rather than merged unverified. Retry verification on a future run once pos-e2e's LD relay proxies this flag's environment, or escalate the relay gap to infra separately."
+        }
+      ]
     }
   }
 }
