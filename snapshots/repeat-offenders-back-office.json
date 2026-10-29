@@ -1238,6 +1238,50 @@
           "result": "20/20 Vape isolation; load-realistic 3/3 (6-worker, tests/registers/); timing/teardown race not independently forceable as a local red"
         }
       ]
+    },
+    "tests/registers/configure/guestlist-status.spec.ts::[251974] Edit a \"Guestlist Status\" Color Coding": {
+      "test_name": "[251974] Edit a \"Guestlist Status\" Color Coding",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-28",
+          "jira_key": "QA-1180",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/11115",
+          "outcome": "fixed",
+          "hypothesis": "loadPageAndFindCreatedStatusCard retries via a full goto() every iteration (expensive), so the 60s budget only fits ~1-2 attempts; a repro trace showed the create-status fixture's data landing in the get-pos-statuses response at ~66s, just past the old 60s window.",
+          "fix_applied": "Bumped the shared helper's toPass timeout from 60000 to 90000ms, citing the observed ~66s landing time; no custom retry loop, reused the existing toPass wrapper.",
+          "result": "Reproduced red in isolation (1/8 reps failed with zero external contention, confirmed via trace network log showing the correct data arriving just past the old timeout); fix applied and 20/20 Vape isolation \u2705 (each independently, workers=1); load-realistic run (6-worker parallel, full e2e/tests/registers/configure/ dir, pos-e2e constellation, 3/3) \u2705 (2 unrelated pre-existing tests in that dir failed under load each run -- [120853] and [355833] -- out of scope this cycle, not touched)."
+        }
+      ]
+    },
+    "e2e/tests/products/manifests/reopen-sold-manifest.spec.ts::[405581] Verify that it is possible to re open a sold manifest.": {
+      "test_name": "[405581] Verify that it is possible to re open a sold manifest.",
+      "suite": "back-office",
+      "attempt_count": 1,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": null,
+      "real_app_bug": null,
+      "attempts": [
+        {
+          "date": "2026-10-28",
+          "jira_key": "QA-1180",
+          "pr_url": "https://github.com/GetDutchie/back-office/pull/11115",
+          "outcome": "fixed",
+          "hypothesis": "Button.click() only waited for the COMPLETE_ORDER/REOPEN_MANIFEST mutation, not the subsequent GET_MANIFESTS list refetch that repaints the row's status before the next navigation click -- same class of gap already fixed in the sibling reopen-wholesale-multi-stop-manifest.spec.ts.",
+          "fix_applied": "Added endPoints.GET_MANIFESTS to both the completeOrder-confirm and reopen Button.click() endpoint arrays, mirroring the proven sibling pattern (no new helper, gate 13).",
+          "result": "20/20 Vape isolation \u2705 (workers=1, repeat-each); load-realistic run (6-worker parallel, full e2e/tests/products/manifests/ dir, pos-e2e constellation, 3/3) \u2705 (1 unrelated pre-existing test, [405594] in the sibling multi-stop spec, failed under load on run 3/3 -- out of scope this cycle, noted for a future cycle, not touched)."
+        }
+      ]
     }
   }
 }
