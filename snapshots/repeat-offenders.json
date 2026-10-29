@@ -687,7 +687,7 @@
         {
           "date": "2026-10-29",
           "jira_key": "QA-1207",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2239",
           "outcome": "fixed",
           "hypothesis": "No wait between confirm.click() and the itemCount assertion; same TOCTOU class as 656708 in the same file -- a prior/stale load_v2 can satisfy an unrelated signal and let the assertion check a cart that hasn't actually updated yet.",
           "fix_applied": "Added cartItem.wrapper.waitFor({state:'detached'}) after confirm.click(), mirroring the already-proven fix in sibling file remove-weight-item.test.ts (PR #2206).",
@@ -709,7 +709,7 @@
         {
           "date": "2026-10-29",
           "jira_key": "QA-1207",
-          "pr_url": null,
+          "pr_url": "https://github.com/GetDutchie/dutchie-pos/pull/2239",
           "outcome": "fixed",
           "hypothesis": "Promise.all([waitForResponse(load_v2 ok), confirm.click()]) can resolve on a stale/earlier load_v2 response (e.g. an optimistic decrement from the quantityMinus click itself) instead of the one reflecting the completed removal, so the itemCount assertion races a cart that still shows the old item (observed: count stuck at '1' on 2026-10-28, shard3).",
           "fix_applied": "Replaced the generic load_v2 Promise.all wait with cartItem.wrapper.waitFor({state:'detached'}), the already-proven fix pattern from sibling file remove-weight-item.test.ts (PR #2206, [654502]/[654503]).",
