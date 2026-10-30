@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793279382.808509",
+  "last_processed_ts": "1793365691.620019",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -27,7 +27,7 @@
       "first_seen": "2026-09-25",
       "last_seen": "2026-09-25",
       "times_seen": 1,
-      "last_notified": "2026-10-22"
+      "last_notified": "2026-10-30"
     },
     "1863-_migrated-7-unnamed-files-gap": {
       "classification": "unclear",
@@ -55,6 +55,60 @@
       "last_seen": "2026-10-15",
       "times_seen": 1,
       "last_notified": "2026-10-27"
+    },
+    "2546-apps/nexus/src/pages/studio/components/responsive-dialog.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "Gap (Medium, prototype-only) — PR #2546: Studio component-level micro-interaction coverage (responsive-dialog.tsx mobile variant, folder-tree.tsx create/cancel, derive-dialog.tsx crop-save, sms-landing-preview.tsx SMS journey). Confirmed genuinely closeable by code-level recon (clear test-file-only seams, established mobile-mock precedent in wizard-shell.mobile.test.tsx), but this run hit an environment instability (a parallel-worktree subagent fan-out whose bash tool lost its working directory mid-task) while attempting it and ran out of session budget to redo it serially. Not a genuine volume-cap cut; a real candidate carried forward.",
+      "blocker": "No code-level blocker — closeable with test-file-only changes. Blocked this cycle by a run-time environment issue (worktree/subagent instability), not by the gap's own difficulty. Safe to pick up fresh next run.",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "2546-apps/nexus/src/pages/studio/assets/page.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "Gap (Medium, prototype-only) — PR #2546: Studio page-level mobile-viewport wiring (assets/page.tsx, templates/page.tsx, brand/detail/page.tsx mobile variants). Confirmed genuinely closeable by code-level recon. Same environment-instability blocker as the sibling component-level candidate above; not a volume-cap cut.",
+      "blocker": "No code-level blocker — closeable with test-file-only changes. Blocked this cycle by a run-time environment issue, not difficulty. Safe to pick up fresh next run.",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "2612-packages/help-content/src/cli.ts": {
+      "classification": "deferred-for-volume",
+      "description": "Stale coverage risk (Medium) — PR #2612: help-content cli.ts / agent/apply/apply.ts / import/apply.ts forward search metadata into validation; untouched cli.test.ts / agent/apply/apply.test.ts / import/import.test.ts have no invalid-search fixtures. Confirmed genuinely closeable by code-level recon (test-support.ts fixture helpers exist, exact rejection shapes identified per entrypoint). Not attempted this cycle due to this run's time/turn budget after the environment instability consumed a large share of it; a real candidate carried forward, not a cap cut.",
+      "blocker": "No code-level blocker — closeable with test-file-only changes across 3 entrypoint test files. Deferred purely on this run's remaining time budget.",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "2617-apps/nexus/src/pages/help/help-pages.test.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "Stale coverage risk (Medium) — PR #2617: help-center-page.tsx / help-topic-page.tsx forward answer metadata; help-pages.test.tsx has no answer-bearing fixtures. Confirmed genuinely closeable by code-level recon (real-route render harness + stubHelpApi helper already support this). Not attempted this cycle due to remaining time/turn budget; a real candidate carried forward, not a cap cut.",
+      "blocker": "No code-level blocker — closeable with test-file-only changes. Deferred purely on this run's remaining time budget.",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "2631-apps/nexus/src/api/inventory/audits.ts-subroom": {
+      "classification": "deferred-for-volume",
+      "description": "Stale coverage risk (Low/Medium) — PR #2631: audits.ts + count-summary.tsx + packages-tab.tsx consume a 'subroom' field, but no fixture asserts a non-null subroom. Confirmed closeable (one new test file, count-summary.test.tsx, plus two extended ones) by code-level recon. Deliberately held back as the lowest-ranked of today's 10 PR-candidates under the 8-PR/run volume cap (lowest severity tag, highest source-PR# among same-severity stale entries).",
+      "blocker": "No code-level blocker. Held back purely by this run's volume cap / deterministic tie-break, not difficulty.",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "2546-apps/nexus/src/routes.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "Stale coverage risk (Low) — PR #2546: routes.tsx adds 9 Studio routes with no corresponding routes.test.tsx wiring assertions. Confirmed closeable by code-level recon (established route-wiring test pattern in the same file, e.g. the /reports precedent). Deliberately held back as the lowest-ranked of today's 10 PR-candidates under the 8-PR/run volume cap (lowest severity of the whole report).",
+      "blocker": "No code-level blocker. Held back purely by this run's volume cap / deterministic tie-break, not difficulty.",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-10-30",
+      "times_seen": 1,
+      "last_notified": null
     }
   }
 }
