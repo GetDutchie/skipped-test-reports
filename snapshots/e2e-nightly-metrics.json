@@ -1276,75 +1276,13 @@
   ],
   "thrash_candidates": [
     {
-      "test_id": "384642",
-      "test_name": "User should be able to adjust balance",
-      "suite": "back_office",
-      "times_fixed": 2,
-      "last_flaked": "2026-09-08",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8394",
-        "https://github.com/GetDutchie/back-office/pull/8747"
-      ]
-    },
-    {
-      "test_id": "383676",
-      "test_name": "User should be able to deposit",
-      "suite": "back_office",
-      "times_fixed": 2,
-      "last_flaked": "2026-09-08",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8394",
-        "https://github.com/GetDutchie/back-office/pull/8747"
-      ]
-    },
-    {
-      "test_id": "384643",
-      "test_name": "User should be able to withdraw",
-      "suite": "back_office",
-      "times_fixed": 2,
-      "last_flaked": "2026-09-08",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8394",
-        "https://github.com/GetDutchie/back-office/pull/8747"
-      ]
-    },
-    {
-      "test_id": "654118",
-      "test_name": "Configured fields for package detail page are and save state pack template",
-      "suite": "back_office",
-      "times_fixed": 2,
-      "last_flaked": "2026-09-11",
-      "recommendation": "REDESIGN",
-      "pr_urls": [
-        "https://github.com/GetDutchie/back-office/pull/8747",
-        "https://github.com/GetDutchie/back-office/pull/9363"
-      ]
-    },
-    {
       "test_id": "131370",
       "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
       "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-10-16",
+      "times_fixed": 2,
+      "last_flaked": "2026-10-27",
       "recommendation": "ESCALATE",
       "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1635",
-        "https://github.com/GetDutchie/dutchie-pos/pull/2145",
-        "https://github.com/GetDutchie/dutchie-pos/pull/2167"
-      ]
-    },
-    {
-      "test_id": "100863",
-      "test_name": "A loyalty point boost is automatically applied to the cart and can be manually removed",
-      "suite": "pos",
-      "times_fixed": 3,
-      "last_flaked": "2026-10-16",
-      "recommendation": "ESCALATE",
-      "pr_urls": [
-        "https://github.com/GetDutchie/dutchie-pos/pull/1635",
         "https://github.com/GetDutchie/dutchie-pos/pull/2145",
         "https://github.com/GetDutchie/dutchie-pos/pull/2167"
       ]
@@ -1354,11 +1292,23 @@
       "test_name": "Shows a warning before adding an item not in the preorder",
       "suite": "pos",
       "times_fixed": 2,
-      "last_flaked": "2026-10-16",
-      "recommendation": "REDESIGN",
+      "last_flaked": "2026-10-28",
+      "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/2148",
         "https://github.com/GetDutchie/dutchie-pos/pull/2161"
+      ]
+    },
+    {
+      "test_id": "100863",
+      "test_name": "A loyalty point boost is automatically applied to the cart and can be manually removed",
+      "suite": "pos",
+      "times_fixed": 2,
+      "last_flaked": "2026-10-22",
+      "recommendation": "INVESTIGATE",
+      "pr_urls": [
+        "https://github.com/GetDutchie/dutchie-pos/pull/2145",
+        "https://github.com/GetDutchie/dutchie-pos/pull/2167"
       ]
     }
   ]
