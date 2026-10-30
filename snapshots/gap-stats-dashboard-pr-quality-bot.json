@@ -4682,5 +4682,131 @@
       ".github/workflows/test-coverage-audit.yml"
     ],
     "fetchedAt": "2026-10-29T19:05:52.161Z"
+  },
+  "GetDutchie/brands-portal#1285": {
+    "title": "eng(catalog): scope active-tab columns and add read-only wholesale availability indicator",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/active-products/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/utils/transform-products-for-data-grid.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/active-products/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/active-products/index.test.tsx",
+      "src/pages/catalog/active-products/index.tsx",
+      "src/pages/catalog/active-products/styled.ts",
+      "src/pages/catalog/active-products/wholesale-availability-cell.test.tsx",
+      "src/pages/catalog/active-products/wholesale-availability-cell.tsx",
+      "src/pages/catalog/hooks/use-products-data.test.ts",
+      "src/pages/catalog/utils/transform-products-for-data-grid.test.ts",
+      "src/pages/catalog/utils/transform-products-for-data-grid.ts"
+    ],
+    "fetchedAt": "2026-10-30T19:06:09.497Z"
+  },
+  "GetDutchie/brands-portal#1284": {
+    "title": "eng(connect agent): pass authenticated portal identity to Dex",
+    "qualityComments": [
+      {
+        "path": "src/pages/dex-route.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/dex-route.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/dex-route.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/dex-route.test.tsx",
+      "src/pages/dex-route.tsx"
+    ],
+    "fetchedAt": "2026-10-30T19:06:10.593Z"
+  },
+  "GetDutchie/brands-portal#1286": {
+    "title": "eng(connect agent): render Dex inside the Brands Portal shell",
+    "qualityComments": [
+      {
+        "path": "src/shell/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/dex-route.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/shell/nexus-sidebar/nexus-sidebar.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/App.test.tsx",
+      "src/App.tsx",
+      "src/assets/nexus-connect-logo.tsx",
+      "src/assets/nexus-swirl.tsx",
+      "src/pages/dex-route.test.tsx",
+      "src/pages/dex-route.tsx",
+      "src/preview/AGENTS.md",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/with-dex-flag.test.tsx",
+      "src/services/launch-darkly/with-dex-flag.tsx",
+      "src/shell/index.test.tsx",
+      "src/shell/index.tsx",
+      "src/shell/nexus-sidebar/nexus-sidebar.test.tsx",
+      "src/shell/nexus-sidebar/nexus-sidebar.tsx",
+      "src/shell/nexus-sidebar/styled.ts",
+      "src/storage.ts"
+    ],
+    "fetchedAt": "2026-10-30T19:06:11.590Z"
+  },
+  "GetDutchie/alchemy-account-360#167": {
+    "title": "GreenPath retirement: stop pulling from GreenPath + Legacy-direct location/product status + account cleanup",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/lib/sfdc.test.ts",
+      "api/src/lib/sfdc.ts",
+      "api/src/sfdc/cleanup-greenpath-only-accounts.test.ts",
+      "api/src/sfdc/cleanup-greenpath-only-accounts.ts",
+      "api/src/sfdc/legacy-product-status.test.ts",
+      "api/src/sfdc/legacy-product-status.ts",
+      "api/src/sfdc/upsert-legacy-location-status.test.ts",
+      "api/src/sfdc/upsert-legacy-location-status.ts",
+      "api/src/temporal/activities.org-capability.test.ts",
+      "api/src/temporal/activities.ts",
+      "api/src/temporal/runtime-config.test.ts",
+      "api/src/temporal/runtime-config.ts",
+      "api/src/temporal/worker-e2e.live.test.ts",
+      "api/src/temporal/workflows.test.ts",
+      "api/src/temporal/workflows.ts",
+      "docs/salesforce-data-model.md",
+      "docs/snowflake-data-model.md",
+      "scripts/dev-fleet-up.sh",
+      "web/src/features/account360/explainability/registry.test.ts",
+      "web/src/features/account360/explainability/registry.ts",
+      "web/src/features/account360/panels/RevenueByProductPanel.tsx",
+      "web/src/features/account360/panels/deriveAccountMetrics.ts"
+    ],
+    "fetchedAt": "2026-10-30T19:06:12.700Z"
+  },
+  "GetDutchie/alchemy-account-360#172": {
+    "title": "chore(deps): adopt the 1.72.1 platform line — audit 0.5.1 override (no aws-sdk), api-core 3.0.6, complete the coherent set",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "package-lock.json",
+      "package.json"
+    ],
+    "fetchedAt": "2026-10-30T19:06:13.569Z"
   }
 }
