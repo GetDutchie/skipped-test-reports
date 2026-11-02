@@ -4808,5 +4808,181 @@
       "package.json"
     ],
     "fetchedAt": "2026-10-30T19:06:13.569Z"
+  },
+  "GetDutchie/brands-portal#1301": {
+    "title": "eng: migrate retailer preview to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/use-not-carried-retailer-preview.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/use-not-carried-retailer-preview.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/retailers/use-not-carried-retailer-preview.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-not-carried-retailer-preview.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:52.922Z"
+  },
+  "GetDutchie/brands-portal#1310": {
+    "title": "eng: migrate wizard product lists to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-qualified-products.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/hooks/use-qualified-products.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/hooks/use-qualified-products.test.tsx",
+      "src/pages/promotions/hooks/use-qualified-products.ts",
+      "src/pages/promotions/wizard/requirements/use-qualified-products-list.test.ts",
+      "src/pages/promotions/wizard/requirements/use-qualified-products-list.ts",
+      "src/pages/promotions/wizard/rewards/use-reward-products-list.test.ts",
+      "src/pages/promotions/wizard/rewards/use-reward-products-list.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:54.080Z"
+  },
+  "GetDutchie/brands-portal#1306": {
+    "title": "eng: migrate campaign retailer filter to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-discount-campaign-retailers.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaigns-list/index.test.tsx",
+      "src/pages/promotions/campaigns-list/use-campaigns-filter-options.test.ts",
+      "src/pages/promotions/campaigns-list/use-campaigns-filter-options.ts",
+      "src/pages/promotions/campaigns-list/use-campaigns-filters.test.ts",
+      "src/pages/promotions/hooks/use-discount-campaign-retailers.test.tsx",
+      "src/pages/promotions/hooks/use-discount-campaign-retailers.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:54.944Z"
+  },
+  "GetDutchie/brands-portal#1307": {
+    "title": "eng: migrate campaign detail to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-discount-campaign.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/analytics/use-campaign-options.test.tsx",
+      "src/pages/promotions/analytics/use-campaign-options.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-detail.test.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-detail.ts",
+      "src/pages/promotions/hooks/use-discount-campaign.test.tsx",
+      "src/pages/promotions/hooks/use-discount-campaign.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:55.806Z"
+  },
+  "GetDutchie/brands-portal#1313": {
+    "title": "eng: migrate promotion detail products to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-qualified-products.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/hooks/use-qualified-products.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/detail/included-products-tab.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/detail/included-products-tab.test.tsx",
+      "src/pages/promotions/detail/reward-products-tab.test.tsx",
+      "src/pages/promotions/detail/use-included-products.ts",
+      "src/pages/promotions/detail/use-reward-products.ts",
+      "src/pages/promotions/hooks/use-qualified-products.test.tsx",
+      "src/pages/promotions/hooks/use-qualified-products.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:56.747Z"
+  },
+  "GetDutchie/brands-portal#1312": {
+    "title": "eng: migrate product filter options to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/configuration/use-qualifying-filter-data.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/configuration/use-qualifying-filter-data.test.ts",
+      "src/pages/promotions/simple-wizard/configuration/use-qualifying-filter-data.ts",
+      "src/pages/promotions/wizard/requirements/use-requirements-filter-data.test.ts",
+      "src/pages/promotions/wizard/requirements/use-requirements-filter-data.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:57.675Z"
+  },
+  "GetDutchie/brands-portal#1309": {
+    "title": "eng: migrate default contacts lookup to REST",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/promotions/hooks/use-brand-portal-default-contacts.test.tsx",
+      "src/pages/promotions/hooks/use-brand-portal-default-contacts.ts",
+      "src/pages/promotions/use-bfd-contact-default.test.ts",
+      "src/pages/promotions/use-bfd-contact-default.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:05:58.454Z"
+  },
+  "GetDutchie/brands-portal#1290": {
+    "title": "fix(import history): surface import-level failures in the detail view BRAND-2555",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-data.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-data.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/catalog/get-brand-import-history-detail.gql",
+      "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-data.test.tsx",
+      "src/pages/catalog/import-history/detail/hooks/use-import-history-detail-data.ts",
+      "src/pages/catalog/import-history/detail/import-details.test.tsx",
+      "src/pages/catalog/import-history/detail/import-details.tsx"
+    ],
+    "fetchedAt": "2026-11-02T20:05:59.383Z"
+  },
+  "GetDutchie/alchemy-pipeline#71": {
+    "title": "feat(data): filter renewal opportunities by modification time",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/data/renewal-opportunities.test.ts",
+      "api/src/data/renewal-opportunities.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:06:00.223Z"
+  },
+  "GetDutchie/alchemy-pipeline#74": {
+    "title": "chore(deps): adopt the 1.72.1 platform line — audit 0.5.1 via core; @aws-sdk/client-sqs removed entirely; adapt tests to api-core 3.x cross-app caller enforcement",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "AGENTS.md",
+      "api/src/app.audit.test.ts",
+      "api/src/app.surface.test.ts",
+      "docs/api-versioning-and-urls.md",
+      "docs/ci-and-datadog.md",
+      "package-lock.json",
+      "package.json",
+      "packages/data-pipeline/src/pipeline.test.tsx",
+      "packages/data-pipeline/src/pipeline.ts"
+    ],
+    "fetchedAt": "2026-11-02T20:06:01.069Z"
   }
 }
