@@ -1085,12 +1085,18 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)",
+      "failure_signature": "expectNoAdjustmentReasonRequired: Confirm disabled for 15000ms; screenshot requires Reason despite equal counts (stale grid URL write drops tab=uncounted)",
       "real_app_bug": {
+        "ticket_key": "POS-24160",
+        "filed_at": "2026-11-02",
+        "failure_signature": "expectNoAdjustmentReasonRequired: Confirm disabled for 15000ms; screenshot requires Reason despite equal counts (stale grid URL write drops tab=uncounted)"
+      },
+      "previous_real_app_bug": {
         "ticket_key": "POS-23877",
         "filed_at": "2026-10-22",
         "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)"
       },
+      "reclassification_note": "2026-11-02 QA-1217: parent and fresh-context blind investigator agree real-app-bug; prior draft-overwrite fix #11146 is in nightly head. Distinct stale-URL defect already has open product fix #10969. No new test-code attempt. CI run 41397983507: initial fail, retry passes. Datadog auto-quarantine still executes this test; no quarantine added by this agent.",
       "attempts": [
         {
           "date": "2026-10-12",
@@ -1111,12 +1117,16 @@
       "escalated_at": null,
       "escalated_owner": null,
       "escalated_jira_key": null,
-      "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)",
-      "real_app_bug": {
+      "failure_signature": null,
+      "real_app_bug": null,
+      "previous_real_app_bug": {
         "ticket_key": "POS-23877",
         "filed_at": "2026-10-22",
         "failure_signature": "Confirm button stuck disabled / hasAdjustments mismatch after getAuditPackages refetch overwrites unsaved typed count (use-editable-fields.ts addPackagesToState)"
       },
+      "resolved_at": "2026-11-02",
+      "resolved_state": "real_app_bug",
+      "resolution_note": "QA-1217: passed in nightly 41397983507 (24.3s), absent from FAILED/FLAKEY. Clear active marker per resolution check, preserve historical attempt_count=attempts.length; any future recurrence requires a fresh case after this resolution date. This single pass is not proof the shared stale-URL defect is fixed; sibling 657190 still flakes under POS-24160 / open PR #10969.",
       "attempts": [
         {
           "date": "2026-10-12",
