@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793617843.338979",
+  "last_processed_ts": "1793704210.730969",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -162,7 +162,9 @@
       "first_seen": "2026-10-08",
       "last_seen": "2026-10-16",
       "times_seen": 2,
-      "last_notified": "2026-10-26"
+      "last_notified": "2026-11-03",
+      "likelySeverity": "P3",
+      "severityReasoning": "Only which Campaign Insights tab opens by default; unit tests cover the selection logic and users can switch tabs (cosmetic, workaround exists)."
     },
     "1145-rsbuild.config.ts": {
       "classification": "unclear",
@@ -199,7 +201,20 @@
       "first_seen": "2026-10-26",
       "last_seen": "2026-10-28",
       "times_seen": 2,
-      "last_notified": "2026-10-26"
+      "last_notified": "2026-11-03",
+      "likelySeverity": "P3",
+      "severityReasoning": "Mis-rendered match-confidence label only if the backend sends a prototype-key string as confidence_level; single-brand Link Desk display issue, no revenue/compliance path."
+    },
+    "1324-src/pages/catalog/hooks/use-products-data.test.ts": {
+      "classification": "needs-production-change",
+      "description": "[Low] eng(catalog): make the Subcategory column sortable (#1324) - the new sort test asserts a raw 'subcategory' string against a mocked enum, so it cannot catch the backend rejecting the sort key.",
+      "blocker": "Test-only fix written (brands-portal#1333, asserts against the real generated LibraryProductSortByEnum.Subcategory) but CI Verify fails: PR checks and the production build generate types from Dutchie main, where LibraryProductSortByEnum has no subcategory member (added only on Dutchie develop via GetDutchie/Dutchie#24919, merged 2026-11-03). #1324 is queued in pending Release v1.134.0 (#1325); if it ships before Dutchie#24919 reaches production, sorting Subcategory sends a sort key the API rejects. Needs release ordering confirmed (or #1324 gated); reopen #1333 once Dutchie main has the member.",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "likelySeverity": "P2",
+      "severityReasoning": "If released before the backend enum, the catalog grid query fails for every brand that sorts by Subcategory (multi-account scope); clearing the sort is a workaround, no revenue/compliance path."
     }
   }
 }
