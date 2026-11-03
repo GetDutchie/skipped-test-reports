@@ -4984,5 +4984,117 @@
       "packages/data-pipeline/src/pipeline.ts"
     ],
     "fetchedAt": "2026-11-02T20:06:01.069Z"
+  },
+  "GetDutchie/brands-portal#1326": {
+    "title": "eng: migrate campaign report lookup to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-report-download.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/use-campaign-report-download.test.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-report-download.test.tsx",
+      "src/pages/promotions/campaign-detail/use-campaign-report-download.ts"
+    ],
+    "fetchedAt": "2026-11-03T20:06:58.606Z"
+  },
+  "GetDutchie/brands-portal#1323": {
+    "title": "eng: migrate promotion brand options to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-reporting-brands.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/wizard/requirements/use-requirements-filter-data.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/hooks/use-reporting-brands.test.tsx",
+      "src/pages/promotions/hooks/use-reporting-brands.ts",
+      "src/pages/promotions/simple-wizard/configuration/use-qualifying-filter-data.test.ts",
+      "src/pages/promotions/simple-wizard/configuration/use-qualifying-filter-data.ts",
+      "src/pages/promotions/wizard/requirements/use-requirements-filter-data.test.ts",
+      "src/pages/promotions/wizard/requirements/use-requirements-filter-data.ts"
+    ],
+    "fetchedAt": "2026-11-03T20:06:59.410Z"
+  },
+  "GetDutchie/brands-portal#1328": {
+    "title": "eng: migrate promotion report lookup to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/detail/use-report-download.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/detail/index.test.tsx",
+      "src/pages/promotions/detail/use-report-download.test.ts",
+      "src/pages/promotions/detail/use-report-download.ts"
+    ],
+    "fetchedAt": "2026-11-03T20:07:00.243Z"
+  },
+  "GetDutchie/brands-portal#1324": {
+    "title": "eng(catalog): make the Subcategory column sortable",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/hooks/use-products-data.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/active-products/index.test.tsx",
+      "src/pages/catalog/active-products/index.tsx",
+      "src/pages/catalog/hooks/use-products-data.test.ts"
+    ],
+    "fetchedAt": "2026-11-03T20:07:01.215Z"
+  },
+  "GetDutchie/alchemy-account-360#182": {
+    "title": "feat(manifest): activate sandbox deployment — flip spec.deployed + add the required observability.datadog block",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/sandbox.yaml"
+    ],
+    "fetchedAt": "2026-11-03T20:07:02.045Z"
+  },
+  "GetDutchie/alchemy-account-360#183": {
+    "title": "fix(manifest): restore the app-authored surface the app-sync mirror stripped (dependsOn, legacy env, sync worker, acceptedCallers)",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/sandbox.yaml"
+    ],
+    "fetchedAt": "2026-11-03T20:07:02.775Z"
+  },
+  "GetDutchie/alchemy-account-360#185": {
+    "title": "fix(manifest): restore apiFeatures + readinessPath/liveness regressed by the app-sync mirror",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/sandbox.yaml"
+    ],
+    "fetchedAt": "2026-11-03T20:07:03.517Z"
+  },
+  "GetDutchie/alchemy-account-360#181": {
+    "title": "chore(ci): grant packages: write for app-ci's opt-in publish lanes",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "web/index.html"
+    ],
+    "fetchedAt": "2026-11-03T20:07:04.521Z"
+  },
+  "GetDutchie/alchemy-pipeline#76": {
+    "title": "fix(manifest): restore the app-authored surface the app-sync mirror strips — disarm the cascade bomb",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "alchemy/sandbox.yaml",
+      "docs/internal-delegated-reads.md",
+      "docs/internal-implementation-opportunity-lookup.md",
+      "web/index.html"
+    ],
+    "fetchedAt": "2026-11-03T20:07:05.694Z"
   }
 }
