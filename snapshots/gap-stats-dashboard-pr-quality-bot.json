@@ -5096,5 +5096,298 @@
       "web/index.html"
     ],
     "fetchedAt": "2026-11-03T20:07:05.694Z"
+  },
+  "GetDutchie/brands-portal#1340": {
+    "title": "eng: migrate campaign representative reads to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-brand-funded-discounts.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/use-campaign-discount-summary.test.ts",
+      "src/pages/promotions/campaign-detail/use-campaign-discount-summary.ts",
+      "src/pages/promotions/detail/use-evict-promotions-list.test.ts",
+      "src/pages/promotions/detail/use-evict-promotions-list.ts",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.test.tsx",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:07:56.771Z"
+  },
+  "GetDutchie/brands-portal#1339": {
+    "title": "eng: migrate promotion detail read to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-brand-funded-discount.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/hooks/use-brand-funded-discount.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/detail/use-promotion-detail.test.ts",
+      "src/pages/promotions/detail/use-promotion-detail.ts",
+      "src/pages/promotions/hooks/use-brand-funded-discount.test.tsx",
+      "src/pages/promotions/hooks/use-brand-funded-discount.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:07:57.635Z"
+  },
+  "GetDutchie/brands-portal#1329": {
+    "title": "eng: migrate transactions report lookup to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaigns-list/use-transactions-report-download.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaigns-list/use-transactions-report-download.test.ts",
+      "src/pages/promotions/campaigns-list/use-transactions-report-download.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:07:58.412Z"
+  },
+  "GetDutchie/brands-portal#1335": {
+    "title": "eng: migrate settings default contacts read to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/default-contacts/use-default-contacts.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/index.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/default-contacts/index.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/hooks/use-brand-portal-default-contacts.test.tsx",
+      "src/pages/promotions/hooks/use-brand-portal-default-contacts.ts",
+      "src/pages/promotions/use-bfd-contact-default.test.ts",
+      "src/pages/settings/default-contacts/index.test.tsx",
+      "src/pages/settings/default-contacts/use-default-contacts.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:07:59.201Z"
+  },
+  "GetDutchie/brands-portal#1327": {
+    "title": "feat: PO discount display BRAND-4008",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/utils.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/orders/detail/order-summary-card.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/discounted-price.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-columns.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/utils.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/mutations/orders/save-draft-purchase-order.gql",
+      "src/api/operations/queries/orders/get-purchase-order.gql",
+      "src/api/operations/queries/orders/list-purchase-orders.gql",
+      "src/pages/orders/create/price-cell.test.tsx",
+      "src/pages/orders/create/price-cell.tsx",
+      "src/pages/orders/create/types.ts",
+      "src/pages/orders/create/use-columns.tsx",
+      "src/pages/orders/detail/items-table/use-columns.test.tsx",
+      "src/pages/orders/detail/items-table/use-columns.tsx",
+      "src/pages/orders/detail/order-detail-drawer.test.tsx",
+      "src/pages/orders/detail/order-summary-card.test.tsx",
+      "src/pages/orders/detail/order-summary-card.tsx",
+      "src/pages/orders/discounted-price.test.tsx",
+      "src/pages/orders/discounted-price.tsx",
+      "src/pages/orders/list/use-columns.test.ts",
+      "src/pages/orders/list/use-columns.tsx",
+      "src/pages/orders/styled.ts",
+      "src/pages/orders/utils.test.ts",
+      "src/pages/orders/utils.ts",
+      "src/services/launch-darkly/use-is-po-discounts-enabled.test.ts",
+      "src/services/launch-darkly/use-is-po-discounts-enabled.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:08:00.066Z"
+  },
+  "GetDutchie/brands-portal#1305": {
+    "title": "eng(nexus alpha): mount the Nexus redesign as an additive alpha at /nexus",
+    "qualityComments": [
+      {
+        "path": "src/nexus/host-events.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/brand-picker.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/components/authenticated-shell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/nexus/nexus-alpha-shell.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/nexus/nexus-alpha-shell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/nexus/use-nexus-alpha-enabled.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/nexus/nexus-brands-route.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/App.test.tsx",
+      "src/App.tsx",
+      "src/components/authenticated-shell.test.tsx",
+      "src/components/authenticated-shell.tsx",
+      "src/components/brand-picker.test.tsx",
+      "src/components/brand-picker.tsx",
+      "src/constants/env.ts",
+      "src/nexus/host-events.test.ts",
+      "src/nexus/host-events.ts",
+      "src/nexus/host-flags.test.ts",
+      "src/nexus/host-flags.ts",
+      "src/nexus/nexus-alpha-entry.test.tsx",
+      "src/nexus/nexus-alpha-entry.tsx",
+      "src/nexus/nexus-alpha-shell.test.tsx",
+      "src/nexus/nexus-alpha-shell.tsx",
+      "src/nexus/nexus-brands-route.test.tsx",
+      "src/nexus/nexus-brands-route.tsx",
+      "src/nexus/nexus-dex-route.test.tsx",
+      "src/nexus/nexus-dex-route.tsx",
+      "src/nexus/nexus-nav.test.ts",
+      "src/nexus/nexus-nav.ts",
+      "src/nexus/nexus-page-guard.test.tsx",
+      "src/nexus/nexus-page-guard.tsx",
+      "src/nexus/nexus-paths.test.ts",
+      "src/nexus/nexus-paths.ts",
+      "src/nexus/remote-states.tsx",
+      "src/nexus/routes.tsx",
+      "src/nexus/styled.ts",
+      "src/nexus/use-nexus-alpha-enabled.test.ts",
+      "src/nexus/use-nexus-alpha-enabled.ts",
+      "src/nexus/use-nexus-dirty-guard.test.tsx",
+      "src/nexus/use-nexus-dirty-guard.ts",
+      "src/nexus/use-nexus-host-context.test.ts",
+      "src/nexus/use-nexus-host-context.ts",
+      "src/nexus/use-nexus-host-events.test.tsx",
+      "src/nexus/use-nexus-host-events.ts",
+      "src/routes/index.ts",
+      "src/shell/index.test.tsx",
+      "src/shell/index.tsx"
+    ],
+    "fetchedAt": "2026-11-04T20:08:00.980Z"
+  },
+  "GetDutchie/brands-portal#1314": {
+    "title": "eng(campaign insights): always report the rolling past 90 days",
+    "qualityComments": [
+      {
+        "path": "src/pages/advertising/campaign-insights/utils/resolve-initial-date-range.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/advertising/campaign-insights/utils/resolve-initial-date-range.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/advertising/campaign-insights/hooks/use-campaign-data.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/advertising/campaign-insights/campaign-header/campaign-header.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/advertising/campaign-insights/utils/resolve-initial-date-range.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/advertising/campaign-insights/campaign-header/campaign-header.test.tsx",
+      "src/pages/advertising/campaign-insights/campaign-header/campaign-header.tsx",
+      "src/pages/advertising/campaign-insights/campaign-header/styled.ts",
+      "src/pages/advertising/campaign-insights/contexts/data-source-context.test.tsx",
+      "src/pages/advertising/campaign-insights/contexts/data-source-context.tsx",
+      "src/pages/advertising/campaign-insights/contexts/date-range-context.test.tsx",
+      "src/pages/advertising/campaign-insights/contexts/date-range-context.tsx",
+      "src/pages/advertising/campaign-insights/hooks/use-campaign-data.test.ts",
+      "src/pages/advertising/campaign-insights/hooks/use-campaign-data.tsx",
+      "src/pages/advertising/campaign-insights/index.tsx",
+      "src/pages/advertising/campaign-insights/utils/resolve-initial-date-range.test.ts",
+      "src/pages/advertising/campaign-insights/utils/resolve-initial-date-range.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:08:01.948Z"
+  },
+  "GetDutchie/alchemy-account-360#196": {
+    "title": "feat(playbook): recent Gong calls (both orgs) on playbook-account-context",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/data/playbook.test.ts",
+      "api/src/data/playbook.ts",
+      "docs/playbook-contributions.md"
+    ],
+    "fetchedAt": "2026-11-04T20:08:02.771Z"
+  },
+  "GetDutchie/alchemy-account-360#187": {
+    "title": "fix(sfdc): remove phantom pf_tickets FK from greenpath cleanup delete list",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/sfdc/cleanup-greenpath-only-accounts.test.ts",
+      "api/src/sfdc/cleanup-greenpath-only-accounts.ts",
+      "packages/core-schema/src/gtm-tables.ts",
+      "packages/gtm-db/src/schema.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:08:03.636Z"
+  },
+  "GetDutchie/alchemy-account-360#198": {
+    "title": "feat(playbook): QBR metrics on playbook-account-context",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/data/playbook-qbr.live.test.ts",
+      "api/src/data/playbook-qbr.ts",
+      "api/src/data/playbook.test.ts",
+      "api/src/data/playbook.ts",
+      "docs/playbook-contributions.md"
+    ],
+    "fetchedAt": "2026-11-04T20:08:04.666Z"
+  },
+  "GetDutchie/alchemy-pipeline#77": {
+    "title": "ADR-054 flat cutover: flatten manifests + base path (held for alchemy-platform #1000)",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "README.md",
+      "alchemy/sandbox.yaml",
+      "api/src/app.audit.test.ts",
+      "api/src/app.surface.test.ts",
+      "docs/api-versioning-and-urls.md",
+      "package-lock.json",
+      "package.json",
+      "packages/data-pipeline/src/pipeline.test.tsx",
+      "packages/data-pipeline/src/pipeline.ts",
+      "web/vite-config.test.ts",
+      "web/vite.config.ts"
+    ],
+    "fetchedAt": "2026-11-04T20:08:05.649Z"
   }
 }
