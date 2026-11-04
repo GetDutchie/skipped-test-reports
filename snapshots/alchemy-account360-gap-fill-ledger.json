@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "2026-10-27T11:02:41Z",
+  "last_processed_ts": "1793703818.041309",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -210,7 +210,8 @@
       "first_seen": "2026-09-24",
       "last_seen": "2026-09-24",
       "times_seen": 1,
-      "last_notified": "2026-10-12T13:30:00Z"
+      "last_notified": "2026-11-03",
+      "split_repo_note": "Still applicable after the repo split: same file now at web/src/main.tsx in GetDutchie/alchemy-account-360 (verified 2026-11-03: Account360Route still an inline closure in main.tsx; still no e2e suite)."
     },
     "1196-apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.tsx": {
       "classification": "e2e-out-of-scope",
@@ -221,7 +222,97 @@
       "first_seen": "2026-10-02",
       "last_seen": "2026-10-02",
       "times_seen": 1,
-      "last_notified": "2026-10-12T13:30:00Z"
+      "last_notified": "2026-11-03",
+      "split_repo_note": "Still applicable after the repo split: same file now at web/src/features/account360/AccountEnhancedTable.tsx in GetDutchie/alchemy-account-360 (verified 2026-11-03: Account360Route still an inline closure in main.tsx; still no e2e suite)."
+    },
+    "182-alchemy/sandbox.yaml": {
+      "classification": "unclear",
+      "source_pr": [
+        182,
+        183,
+        185
+      ],
+      "severity": "Low",
+      "entry_type": "gap+stale",
+      "description": "alchemy/sandbox.yaml regressed 3 ways in one day (#182 datadog block, #183 app-sync mirror stripped acceptedCallers/dependsOn/env/worker, #185 apiFeatures/probes); report suggests a repo-local manifest-shape + datadog-digest pin test.",
+      "reason": "Test-only is technically possible, but whether this repo should pin manifest shape is a human/platform-ownership decision: the manifest is rewritten by the platform app-sync mirror, datadog digests are re-pinned by the platform datadog-sync lane, and #186 (ADR-054 flat cutover) just restructured the manifest (held for alchemy-platform #1000). A local pin could fight those owners. Needs a human to decide whether a repo-local guard is wanted or whether platform-side validation (tenant-prefix-routing.test.ts already caught #185) is the right home.",
+      "likelySeverity": "N/A (forced-analogy: P2)",
+      "severityReasoning": "manifest regressions crashed a sandbox canary (#183) \u2014 internal-tool availability, not a customer SLO case",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "repo": "GetDutchie/alchemy-account-360"
+    },
+    "177-api/src/temporal/activities.ts::locations-synth-tail": {
+      "classification": "deferred-for-volume",
+      "source_pr": 177,
+      "severity": "Medium",
+      "description": "[Medium] new source==='locations' tail step calling synthesizeLocationAccounts (+ cancellation check) untested at activity level (synth fn itself has live/FGA coverage)",
+      "reason": "Closeable-looking but deferred: Step 6 per-run cap of 8 PRs reached (8 opened: #188-#195). Pick up next run.",
+      "likelySeverity": "N/A (forced-analogy: P2)",
+      "severityReasoning": "internal-tool data/UX correctness; not a customer SLO case",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "repo": "GetDutchie/alchemy-account-360"
+    },
+    "162-api/src/data/implementation.ts::delivery-source-lifecycle-byIds": {
+      "classification": "deferred-for-volume",
+      "source_pr": 162,
+      "severity": "Low",
+      "description": "[Low] delivery-source-lifecycle byIds parses sourceOrg:objectType and drops malformed ids; malformed-id handling not clearly tested",
+      "reason": "Closeable-looking but deferred: Step 6 per-run cap of 8 PRs reached (8 opened: #188-#195). Pick up next run.",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "internal-tool data/UX correctness; not a customer SLO case",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "repo": "GetDutchie/alchemy-account-360"
+    },
+    "173-packages/data-accounts/src/accounts.ts::useAccountEvidence": {
+      "classification": "deferred-for-volume",
+      "source_pr": 173,
+      "severity": "Low",
+      "description": "[Low] useAccountEvidence hook + accountEvidence query keys untested (PlaybookEvidencePanel.test mocks the hook); stale-risk twins for accounts.ts/query-keys.ts folded in",
+      "reason": "Closeable-looking but deferred: Step 6 per-run cap of 8 PRs reached (8 opened: #188-#195). Pick up next run.",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "internal-tool data/UX correctness; not a customer SLO case",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "repo": "GetDutchie/alchemy-account-360"
+    },
+    "175-api/src/lib/playbook-contributions-store.ts::rowToObservation-stale": {
+      "classification": "deferred-for-volume",
+      "source_pr": 175,
+      "severity": "Stale",
+      "description": "[Stale] rowToObservation now passes through relationship/category instead of hardcoding incumbent/pos; playbook-contributions-store.test.ts may still assume the old shape",
+      "reason": "Closeable-looking but deferred: Step 6 per-run cap of 8 PRs reached (8 opened: #188-#195). Pick up next run.",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "internal-tool data/UX correctness; not a customer SLO case",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "repo": "GetDutchie/alchemy-account-360"
+    },
+    "162-api/src/sync/stages/snowflake-sync.ts::SOURCES-registry-stale": {
+      "classification": "deferred-for-volume",
+      "source_pr": 162,
+      "severity": "Stale",
+      "description": "[Stale] SOURCES registry gained salesforce-contracts/sage-billing-contracts; registry-shape test in snowflake-sync.test.mts may not assert them (table-dispatch half of this entry is already-covered by table-snapshot.test.ts)",
+      "reason": "Closeable-looking but deferred: Step 6 per-run cap of 8 PRs reached (8 opened: #188-#195). Pick up next run.",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "internal-tool data/UX correctness; not a customer SLO case",
+      "first_seen": "2026-11-03",
+      "last_seen": "2026-11-03",
+      "times_seen": 1,
+      "last_notified": "2026-11-03",
+      "repo": "GetDutchie/alchemy-account-360"
     }
   }
 }
