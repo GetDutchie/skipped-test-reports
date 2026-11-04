@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793704210.730969",
+  "last_processed_ts": "1793790661.794939",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -45,7 +45,9 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P2",
+      "severityReasoning": "public-menu purchase path, revenue-adjacent"
     },
     "907-src/constants/env.ts": {
       "classification": "needs-production-change",
@@ -63,7 +65,9 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P2",
+      "severityReasoning": "public PO write path"
     },
     "863-src/pages/settings/users/use-columns.tsx-e2e": {
       "classification": "e2e-out-of-scope",
@@ -72,7 +76,9 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "internal admin assume-role tool"
     },
     "930-src/pages/catalog/product-details/product-form-helpers.ts": {
       "classification": "needs-production-change",
@@ -81,7 +87,9 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "dead code, no runtime caller"
     },
     "923-src/pages/orders/list/use-columns.tsx-e2e": {
       "classification": "e2e-out-of-scope",
@@ -90,7 +98,9 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "column display only"
     },
     "863-src/pages/settings/users/index.tsx+use-columns.tsx-e2e": {
       "classification": "e2e-out-of-scope",
@@ -99,7 +109,9 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "internal admin assume-role tool"
     },
     "914-src/pages/public-brand-menu/public-order-context.tsx": {
       "classification": "unclear",
@@ -108,7 +120,9 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P2, bordering P3",
+      "severityReasoning": "cart state on public order flow"
     },
     "924-e2e/tests/orders/": {
       "classification": "e2e-out-of-scope",
@@ -117,7 +131,9 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "display-only read-only PO detail"
     },
     "931-e2e/tests/": {
       "classification": "e2e-out-of-scope",
@@ -126,16 +142,21 @@
       "first_seen": "2026-09-22",
       "last_seen": "2026-09-22",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P2",
+      "severityReasoning": "public ordering flow"
     },
     "927-src/pages/orders/create/price-cell.tsx": {
       "classification": "unclear",
       "description": "Stale coverage risk: price-cell.tsx's unit-label source was swapped from uomLabel to the variant-aware getItemUnitLabel helper in #927; price-cell.test.tsx never asserts the rendered per-unit label text, only cents formatting/parsing.",
       "blocker": "Not a real blocker on the gap itself \u2014 confirmed closeable (render PriceCell with two row shapes producing different getItemUnitLabel outputs and assert the rendered label). This run's fan-out worker for this candidate ran out of its 1-hour budget before opening a PR (a workflow-orchestration limit, not a repo/test-infra blocker). Safe for the next run (or a human) to pick up directly; no open PR exists for it yet, so Step 3.5's collision check will not find it.",
       "first_seen": "2026-09-22",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "resolved": "2026-11-04 \u2014 closed by test-only brands-portal#1357 (ship-show, CI green)",
+      "likelySeverity": "P2, bordering P3",
+      "severityReasoning": "per-unit label on PO pricing"
     },
     "939-src/pages/public-brand-menu/index.tsx": {
       "classification": "unclear",
@@ -144,7 +165,9 @@
       "first_seen": "2026-09-22",
       "last_seen": "2026-09-22",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "guidance gate on public menu"
     },
     "1097-rsbuild.config.ts": {
       "classification": "unclear",
@@ -160,11 +183,12 @@
       "description": "[Low] eng: default advertising to Post 8/1/26 tab BRAND-3888 (#1140) \u2014 the new Kevel default / Moloco fallback logic is fully unit-tested (data-source-context.test.tsx, use-campaign-data.test.ts), but no Playwright spec under e2e/tests/ checks which tab the Campaign Insights page opens on by default. Report's own text flags this as \"Optional follow-up only.\" (Note: the report's Summary line said \"0 with gaps\" while the body still listed this one gap \u2014 a self-contradiction in the report's own text, not something this run resolved.)",
       "blocker": "Confirmed live this run: Armageddon's e2e seed endpoint (/__test_command__, config/routes.rb:1071) is gated on Rails.env.test?; this constellation runs development (armageddon-web proc status: 'waiting' on armageddon-search-indexes, not even up), so e2e/global-setup.ts's seed step would 404 before any spec could run, matching e2e/COVERAGE-GAPS.md's own documented blocker.",
       "first_seen": "2026-10-08",
-      "last_seen": "2026-10-16",
+      "last_seen": "2026-11-04",
       "times_seen": 2,
-      "last_notified": "2026-11-03",
+      "last_notified": "2026-11-04",
       "likelySeverity": "P3",
-      "severityReasoning": "Only which Campaign Insights tab opens by default; unit tests cover the selection logic and users can switch tabs (cosmetic, workaround exists)."
+      "severityReasoning": "Only which Campaign Insights tab opens by default; unit tests cover the selection logic and users can switch tabs (cosmetic, workaround exists).",
+      "resolved": "2026-11-04 \u2014 obsolete: data-source-context.tsx deleted by brands-portal#1314 (Moloco/Kevel data-source provider removed)"
     },
     "1145-rsbuild.config.ts": {
       "classification": "unclear",
@@ -173,7 +197,9 @@
       "first_seen": "2026-10-09",
       "last_seen": "2026-10-09",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-04",
+      "likelySeverity": "P3",
+      "severityReasoning": "dev-only proxy config"
     },
     "1159-e2e/utils/db.ts": {
       "classification": "e2e-out-of-scope",
@@ -210,11 +236,12 @@
       "description": "[Low] eng(catalog): make the Subcategory column sortable (#1324) - the new sort test asserts a raw 'subcategory' string against a mocked enum, so it cannot catch the backend rejecting the sort key.",
       "blocker": "Test-only fix written (brands-portal#1333, asserts against the real generated LibraryProductSortByEnum.Subcategory) but CI Verify fails: PR checks and the production build generate types from Dutchie main, where LibraryProductSortByEnum has no subcategory member (added only on Dutchie develop via GetDutchie/Dutchie#24919, merged 2026-11-03). #1324 is queued in pending Release v1.134.0 (#1325); if it ships before Dutchie#24919 reaches production, sorting Subcategory sends a sort key the API rejects. Needs release ordering confirmed (or #1324 gated); reopen #1333 once Dutchie main has the member.",
       "first_seen": "2026-11-03",
-      "last_seen": "2026-11-03",
+      "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-11-03",
+      "last_notified": "2026-11-04",
       "likelySeverity": "P2",
-      "severityReasoning": "If released before the backend enum, the catalog grid query fails for every brand that sorts by Subcategory (multi-account scope); clearing the sort is a workaround, no revenue/compliance path."
+      "severityReasoning": "If released before the backend enum, the catalog grid query fails for every brand that sorts by Subcategory (multi-account scope); clearing the sort is a workaround, no revenue/compliance path.",
+      "resolved": "2026-11-04 \u2014 blocker cleared (Dutchie main now has LibraryProductSortByEnum.subcategory); brands-portal#1333 reopened with main merged in, ship-show + CI green"
     }
   }
 }
