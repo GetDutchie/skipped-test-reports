@@ -5389,5 +5389,188 @@
       "web/vite.config.ts"
     ],
     "fetchedAt": "2026-11-04T20:08:05.649Z"
+  },
+  "GetDutchie/brands-portal#1334": {
+    "title": "feat(catalog): show wholesale offer counts and detail link BRAND-4120",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/active-products/index.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/utils/transform-products-for-data-grid.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/active-products/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/products/search-library-products.gql",
+      "src/pages/catalog/active-products/index.test.tsx",
+      "src/pages/catalog/active-products/index.tsx",
+      "src/pages/catalog/active-products/product-status-chip.test.tsx",
+      "src/pages/catalog/active-products/product-status-chip.tsx",
+      "src/pages/catalog/active-products/styled.ts",
+      "src/pages/catalog/active-products/wholesale-availability-cell.test.tsx",
+      "src/pages/catalog/active-products/wholesale-availability-cell.tsx",
+      "src/pages/catalog/active-products/wholesale-offers-link.tsx",
+      "src/pages/catalog/hooks/use-products-data-wholesale-counts.test.tsx",
+      "src/pages/catalog/hooks/use-products-data.test.ts",
+      "src/pages/catalog/hooks/use-products-data.ts",
+      "src/pages/catalog/product-details/use-edit-product-form.test.ts",
+      "src/pages/catalog/product-details/use-edit-product-form.ts",
+      "src/pages/catalog/utils/transform-products-for-data-grid.test.ts",
+      "src/pages/catalog/utils/transform-products-for-data-grid.ts"
+    ],
+    "fetchedAt": "2026-11-05T20:07:13.463Z"
+  },
+  "GetDutchie/brands-portal#1361": {
+    "title": "feat: PO line discounts on the create page BRAND-4009",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/create/price-cell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/price-cell.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/item-updates.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/create/price-cell.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/create/create-products-card.tsx",
+      "src/pages/orders/create/index.tsx",
+      "src/pages/orders/create/item-updates.test.ts",
+      "src/pages/orders/create/item-updates.ts",
+      "src/pages/orders/create/price-cell.test.tsx",
+      "src/pages/orders/create/price-cell.tsx",
+      "src/pages/orders/create/use-columns.test.tsx",
+      "src/pages/orders/create/use-columns.tsx"
+    ],
+    "fetchedAt": "2026-11-05T20:07:14.322Z"
+  },
+  "GetDutchie/brands-portal#1360": {
+    "title": "feat: PO line discounts on the items table BRAND-4009",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/detail/items-table/use-item-actions.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/index.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-item-actions.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-columns.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/rows.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/detail/items-table/use-item-actions.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/detail/items-table/index.tsx",
+      "src/pages/orders/detail/items-table/rows.test.ts",
+      "src/pages/orders/detail/items-table/rows.ts",
+      "src/pages/orders/detail/items-table/use-columns.test.tsx",
+      "src/pages/orders/detail/items-table/use-columns.tsx",
+      "src/pages/orders/detail/items-table/use-item-actions.test.ts",
+      "src/pages/orders/detail/items-table/use-item-actions.ts",
+      "src/pages/orders/utils.test.ts",
+      "src/pages/orders/utils.ts"
+    ],
+    "fetchedAt": "2026-11-05T20:07:15.388Z"
+  },
+  "GetDutchie/brands-portal#1366": {
+    "title": "eng: migrate LSP sharing audit read to REST",
+    "qualityComments": [
+      {
+        "path": "src/hooks/use-lsp-settings-audit-log.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/hooks/use-lsp-settings-audit-log.test.tsx",
+      "src/hooks/use-lsp-settings-audit-log.ts",
+      "src/pages/lsp-audit-log/use-audit-log-data.test.ts",
+      "src/pages/lsp-audit-log/use-audit-log-data.ts"
+    ],
+    "fetchedAt": "2026-11-05T20:07:16.232Z"
+  },
+  "GetDutchie/brands-portal#1346": {
+    "title": "eng: migrate campaign retailer breakdown read to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/hooks/use-brand-funded-discounts.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/components/retailer-breakdown/use-retailer-breakdown-data.test.ts",
+      "src/pages/promotions/campaign-detail/components/retailer-breakdown/use-retailer-breakdown-data.ts",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.test.tsx",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.ts"
+    ],
+    "fetchedAt": "2026-11-05T20:07:17.221Z"
+  },
+  "GetDutchie/brands-portal#1363": {
+    "title": "feat(catalog): mark the default wholesale offer and add Make default BRAND-4126",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/sortable-wholesale-offer-tile.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/styled.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx"
+    ],
+    "fetchedAt": "2026-11-05T20:07:18.204Z"
+  },
+  "GetDutchie/alchemy-pipeline#78": {
+    "title": "fix(web): merge the chrome-boot shell globals instead of clobbering them",
+    "qualityComments": [],
+    "changedPaths": [
+      "web/index.html"
+    ],
+    "fetchedAt": "2026-11-05T20:07:19.097Z"
   }
 }
