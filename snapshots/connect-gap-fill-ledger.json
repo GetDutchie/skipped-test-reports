@@ -1,33 +1,39 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793790661.794939",
+  "last_processed_ts": "1793877025.055819",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
       "description": "Assume-role banner/exit flow has thorough unit coverage (397-line use-assume-role-exit.test.ts: token swap + apolloClient.clearStore(), fail-closed on missing/expired/unparseable expiresAt, re-entrant exit() guard, countdown/auto-exit timers), but the real token swap + window.location.href redirect has no Playwright spec; e2e/tests/settings/users.test.ts was not extended.",
       "blocker": "Same e2e-execution blocker as the #888/#847 entries below \u2014 confirmed again this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed'), and e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
       "first_seen": "2026-09-16",
-      "last_seen": "2026-09-16",
-      "times_seen": 1,
-      "last_notified": "2026-10-28"
+      "last_seen": "2026-11-05",
+      "times_seen": 2,
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P3",
+      "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
     "888-src/pages/public-brand-menu/use-public-brand-menu-admission.ts": {
       "classification": "e2e-out-of-scope",
       "description": "Capability-session write path (invite exchange \u2192 cookie \u2192 menu fetch) is unit-tested via index.test.tsx (confirmed: StrictMode dedup, no re-exchange on refetch, unauthorized/unavailable states all covered), but has no e2e spec exercising the real cross-origin credentials:'include' contract.",
       "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live again this run, matches e2e/COVERAGE-GAPS.md's own documented blocker). armageddon-web was also still in 'waiting' proc status at run time.",
       "first_seen": "2026-09-15",
-      "last_seen": "2026-09-15",
-      "times_seen": 1,
-      "last_notified": "2026-10-28"
+      "last_seen": "2026-11-05",
+      "times_seen": 2,
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P3",
+      "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
     "847-src/pages/ad-exclusions/index.tsx": {
       "classification": "e2e-out-of-scope",
       "description": "New Ad Exclusions list page has solid unit coverage (index.test.tsx, use-ad-exclusions-data.test.ts, use-columns.test.tsx) but no e2e spec or page object.",
       "blocker": "Same e2e-execution blocker as the #888 entry above \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
       "first_seen": "2026-09-15",
-      "last_seen": "2026-09-15",
-      "times_seen": 1,
-      "last_notified": "2026-10-28"
+      "last_seen": "2026-11-05",
+      "times_seen": 2,
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P3",
+      "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
     "888-rsbuild.config.ts": {
       "classification": "unclear",
@@ -163,11 +169,12 @@
       "description": "Stale coverage risk: PublicBrandMenuAdmission (index.tsx) now owns guidanceAccepted state and passes an acceptGuidance/guidanceAccepted outletContext memo to PublicRetailerCommerceShell in #939; index.test.tsx never asserts the accept\u2192persist transition (starts false, flips true via acceptGuidance(), stays true across nested route renders).",
       "blocker": "Not a real blocker on the gap itself \u2014 confirmed closeable (render PublicBrandMenuRoute with nested probe routes reading useOutletContext() and assert the transition). This run's fan-out worker for this candidate ran out of its 1-hour budget before opening a PR (a workflow-orchestration limit, not a repo/test-infra blocker). Safe for the next run (or a human) to pick up directly; no open PR exists for it yet, so Step 3.5's collision check will not find it.",
       "first_seen": "2026-09-22",
-      "last_seen": "2026-09-22",
+      "last_seen": "2026-11-05",
       "times_seen": 1,
       "last_notified": "2026-11-04",
       "likelySeverity": "P3",
-      "severityReasoning": "guidance gate on public menu"
+      "severityReasoning": "guidance gate on public menu",
+      "resolved": "2026-11-05 \u2014 closed by test-only brands-portal#1383 (ship-show, CI green)"
     },
     "1097-rsbuild.config.ts": {
       "classification": "unclear",
