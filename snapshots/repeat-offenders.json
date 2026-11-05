@@ -134,7 +134,9 @@
       "test_name": "A loyalty multiplier is automatically applied to the cart and can be manually removed",
       "suite": "pos",
       "attempt_count": 3,
-      "escalated": true,
+      "escalated": false,
+      "resolved_at": "2026-11-02",
+      "resolution_note": "QA-1216: [131370] passed first attempt (Desktop, shard 3) in CI run 41404545317. Historical attempts retained; future recurrence starts a fresh case and must not inherit attempt_count=3. This single nightly pass is not proof of a durable fix.",
       "escalated_at": "2026-10-29",
       "escalated_owner": "Ben Versluis",
       "escalated_jira_key": "QA-1207",
@@ -551,7 +553,10 @@
       "escalated_owner": null,
       "escalated_jira_key": null,
       "failure_signature": "Microsoft.Data.SqlClient.SqlException: Violation of PRIMARY KEY constraint 'PK_EmailMarketingLspTemplateAssignment'. Cannot insert duplicate key (error 2627) in EmailMarketingService.SeedPayByBankTemplatesIfNecessary -> EmailMarketingRepository.QueueForTemplateAssignmentIfNecessary:1109, from DutchiePayController.UpdateSettings:80",
-      "real_app_bug": {
+      "real_app_bug": null,
+      "resolved_at": "2026-11-02",
+      "resolution_note": "QA-1216: [656679] passed first attempt (Desktop, shard 5) in CI run 41404545317. Clear recurring-test marker per Step 1.5, not the product ticket: POS-23509 remains Ready for Release. Actual CI path is checkout/checkout-with-pay-by-bank.test.ts; stale ledger key retained, not silently renamed. Future recurrence starts a fresh case.",
+      "resolved_real_app_bug": {
         "ticket_key": "POS-23509",
         "filed_at": "2026-10-09",
         "failure_signature": "SqlException PK_EmailMarketingLspTemplateAssignment duplicate key in SeedPayByBankTemplatesIfNecessary"
