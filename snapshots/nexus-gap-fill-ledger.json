@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793628119.804699",
+  "last_processed_ts": "1793887881.567359",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -9,7 +9,9 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-10-27",
       "times_seen": 2,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P2",
+      "severityReasoning": "Audit create/schedule form for a single location; audits are recoverable but a broken sheet blocks creating audits"
     },
     "1583-analytics-semantic-view-descriptions": {
       "classification": "unclear",
@@ -18,7 +20,9 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P3",
+      "severityReasoning": "Prose-only change; no FE behavior at risk"
     },
     "1762-packages/webapi-client/src/rest/nexus/audit-count-conflict-error.ts": {
       "classification": "unclear",
@@ -54,7 +58,9 @@
       "first_seen": "2026-10-15",
       "last_seen": "2026-10-15",
       "times_seen": 1,
-      "last_notified": "2026-10-27"
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P2",
+      "severityReasoning": "Discount diagram never shows the reward cap chip; display-only in the editor, bordering P3"
     },
     "2546-apps/nexus/src/pages/studio/components/responsive-dialog.tsx": {
       "classification": "deferred-for-volume",
@@ -109,6 +115,39 @@
       "last_seen": "2026-10-30",
       "times_seen": 1,
       "last_notified": null
+    },
+    "2708-apps/connect-brands/src/pages/catalog/product-editor/sections/wholesale-section.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "PR #2708 Gap (Medium): wholesale-section.tsx has no control-to-save tests for cents conversion, unfinished edits or hide/delete (mappers/schema are tested).",
+      "blocker": "No code-level blocker identified; not attempted 2026-11-05 — a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "times_seen": 1,
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P2",
+      "severityReasoning": "Brand-facing catalog/promotion save path in Connect; regressions affect saving offers/uploads for a brand with partial workarounds."
+    },
+    "2708-apps/connect-brands/src/pages/catalog/product-editor/sections/media-section.tsx + promotions/builder/sections/online-section.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "PR #2708 Gap (Medium): upload contracts in media-section/online-section are stubbed by parent tests, never exercised (upload/retry).",
+      "blocker": "No code-level blocker identified; not attempted 2026-11-05 — a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "times_seen": 1,
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P2",
+      "severityReasoning": "Brand-facing catalog/promotion save path in Connect; regressions affect saving offers/uploads for a brand with partial workarounds."
+    },
+    "2708-apps/connect-brands/src/pages/promotions/builder/sections/advanced-offer-section.tsx": {
+      "classification": "deferred-for-volume",
+      "description": "PR #2708 Gap (Medium): no authorized advanced-create submission test through advanced-offer-section/page orchestration.",
+      "blocker": "No code-level blocker identified; not attempted 2026-11-05 — a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-05",
+      "times_seen": 1,
+      "last_notified": "2026-11-05",
+      "likelySeverity": "P2",
+      "severityReasoning": "Brand-facing catalog/promotion save path in Connect; regressions affect saving offers/uploads for a brand with partial workarounds."
     }
   }
 }
