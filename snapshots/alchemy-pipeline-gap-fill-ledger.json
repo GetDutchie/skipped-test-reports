@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "last_processed_ts": "1793791183.405439",
+  "entries": {
+    "77-alchemy/sandbox.yaml": {
+      "classification": "needs-production-change",
+      "entry_type": "stale-coverage-risk",
+      "source_pr": 77,
+      "description": "alchemy/sandbox.yaml's endpoints comment says 'feedback' stays mounted in-process at /pipeline/api/feedback, but api/src/app.ts (JSON NOT_FOUND guard), api/src/feedback-route.test.ts and docs/api-versioning-and-urls.md all say the tenant feedback route is retired.",
+      "blocker": "No test gap: the code, test and docs agree that the route is retired, and the existing test already covers that behavior. Only the manifest's YAML comment (alchemy/sandbox.yaml lines ~74-77) is wrong. Fixing it edits a non-test file, which this agent can't do. The file is also a pin-only mirror of alchemy-platform manifests/pipeline/sandbox.yaml, so the comment may need correcting in both places.",
+      "first_seen": "2026-11-04",
+      "last_seen": "2026-11-04",
+      "times_seen": 1,
+      "last_notified": "2026-11-04",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "Misleading manifest comment only; runtime behavior is correct and tested. The closest analogy is internal-tooling doc drift (P3)."
+    }
+  }
+}
