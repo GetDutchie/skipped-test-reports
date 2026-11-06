@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793877025.055819",
+  "last_processed_ts": "1793963471.695349",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -40,7 +40,7 @@
       "description": "New /api/v2/rest/public proxy rule in rsbuild.config.ts is config-only and unverified by any test.",
       "blocker": "rsbuild.config.ts cannot be imported under Jest at all \u2014 confirmed live: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module, because its internals rely on import.meta.url handling that Jest's CJS transform doesn't support. A real behavioral test isn't feasible without larger test-infra work (e.g. a dedicated transform/mock for @rsbuild/core), and a text/regex-based assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment.",
       "first_seen": "2026-09-15",
-      "last_seen": "2026-10-05",
+      "last_seen": "2026-11-06",
       "times_seen": 1,
       "last_notified": "2026-10-30"
     },
@@ -181,7 +181,7 @@
       "description": "Gap + stale-coverage-risk (same underlying issue, PR #1097): the connect/brands remote enable/disable switch in rsbuild.config.ts (REMOTE_CONNECT_BRANDS_URL set or not, DISABLE_DEX_REMOTE) has no test; it only shows up at build or deploy time.",
       "blocker": "Confirmed live this run (identical root cause to this ledger's existing 888-rsbuild.config.ts entry): `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module (import.meta.url handling that Jest's CJS/SWC transform doesn't support). A real behavioral test of the MF remote-enable switch isn't feasible without larger test-infra work (a dedicated transform/mock for @rsbuild/core), and a text/regex assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment -- same open question as the 888 entry.",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-05",
+      "last_seen": "2026-11-06",
       "times_seen": 1,
       "last_notified": "2026-10-30"
     },
@@ -202,7 +202,7 @@
       "description": "eng: route Link Desk Brand Ops calls through the dev server (#1145) \u2014 new /brand-ops-api and /api/v2/rest/brands_tool dev proxies in rsbuild.config.ts, and PUBLIC_BRAND_OPS_API_URL made relative in env.brands-portal.yaml. Config-only; nothing tests the proxy rules or env value, and a wrong pathRewrite/env value would break Link Desk auth/API calls locally without any test failing.",
       "blocker": "Same root cause as this ledger's existing 888-rsbuild.config.ts and 1097-rsbuild.config.ts entries, reconfirmed live this run: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module (import.meta.url handling that Jest's SWC/CJS transform doesn't support). A real behavioral test of the proxy config isn't feasible without dedicated test-infra work (a transform/mock for @rsbuild/core), and env.brands-portal.yaml has no test harness either. Needs the same human call on test-infra investment as the 888/1097 entries.",
       "first_seen": "2026-10-09",
-      "last_seen": "2026-10-09",
+      "last_seen": "2026-11-06",
       "times_seen": 1,
       "last_notified": "2026-11-04",
       "likelySeverity": "P3",
@@ -223,7 +223,7 @@
       "classification": "needs-production-change",
       "first_seen": "2026-10-21",
       "last_seen": "2026-10-23",
-      "last_notified": "2026-10-29",
+      "last_notified": "2026-11-06",
       "times_seen": 2,
       "description": "lspErrorMessage is derived directly from lspError (isSearching ? lspSearchError : lspListError) without fencing by isLspListCurrent, the way lspOptions already is. Confirmed live: immediately after selectBrand(brandB) following a failed request for brandA (before brandB's own request resolves), lspErrorMessage reads \"Could not load retailers for Boulder Botanicals.\" (brandA's stale error, misattributed to the just-selected brandB) while lspsLoading is true. Fix: fence lspErrorMessage the same way lspOptions is (isLspListCurrent ? lspError ... : null during the in-flight window), or equivalent. Discovered during Quality Bot tending of PR #1219 (eng(lsp audit log): fill Connect test gap \u2014 error clearing and footnote boundary) \u2014 not implemented there since it requires a production-code change, out of scope for this test-only agent."
     },
@@ -249,6 +249,17 @@
       "likelySeverity": "P2",
       "severityReasoning": "If released before the backend enum, the catalog grid query fails for every brand that sorts by Subcategory (multi-account scope); clearing the sort is a workaround, no revenue/compliance path.",
       "resolved": "2026-11-04 \u2014 blocker cleared (Dutchie main now has LibraryProductSortByEnum.subcategory); brands-portal#1333 reopened with main merged in, ship-show + CI green"
+    },
+    "1391-rsbuild.config.ts": {
+      "classification": "unclear",
+      "description": "feat: show the active quick discount and edit it from a toolbar BRAND-4023 (#1391) \u2014 new dev-server proxy route for /api/v2/rest/brand_portal in rsbuild.config.ts. Dev config only; no test.",
+      "blocker": "Same root cause as 888/1097/1145 rsbuild.config.ts entries: importing rsbuild.config under Jest throws TypeError (@rsbuild/core import.meta.url handling). Needs a human call on test-infra investment.",
+      "first_seen": "2026-11-06",
+      "last_seen": "2026-11-06",
+      "times_seen": 1,
+      "last_notified": "2026-11-06",
+      "likelySeverity": "P3",
+      "severityReasoning": "dev-only proxy config; only breaks local dev calls"
     }
   }
 }
