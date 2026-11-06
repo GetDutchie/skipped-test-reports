@@ -5572,5 +5572,280 @@
       "web/index.html"
     ],
     "fetchedAt": "2026-11-05T20:07:19.097Z"
+  },
+  "GetDutchie/brands-portal#1393": {
+    "title": "eng: migrate notification settings read to REST",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/notifications/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/hooks/use-brand-notification-settings.test.tsx",
+      "src/hooks/use-brand-notification-settings.ts",
+      "src/pages/settings/notifications/index.test.tsx",
+      "src/pages/settings/notifications/index.tsx"
+    ],
+    "fetchedAt": "2026-11-06T20:06:00.099Z"
+  },
+  "GetDutchie/brands-portal#1365": {
+    "title": "feat(catalog): add a list view for wholesale offers with drag to reorder BRAND-4127",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "e2e/page-objects/product-details-page.ts",
+      "e2e/tests/catalog/wholesale-offers.test.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/offer-actions-menu.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/offer-uom-badge.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/reorder-handle-icon.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/reorder-handle.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/sortable-wholesale-offer-row.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/styled.ts",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-row.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offer-tile.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.keyboard.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.test.tsx",
+      "src/pages/catalog/product-details/components/wholesale-offers-grid/wholesale-offers-grid.tsx"
+    ],
+    "fetchedAt": "2026-11-06T20:06:00.937Z"
+  },
+  "GetDutchie/brands-portal#1372": {
+    "title": "eng: quick discount preview and apply layer BRAND-4022",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/quick-discount/preview-summary.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/preview-summary.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/lines.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/use-quick-discount-preview.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/use-line-categories.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/utils.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/scope.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/preview-summary.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/orders/search-library-product-categories.gql",
+      "src/pages/orders/create/catalog-select-modal/use-catalog-data.ts",
+      "src/pages/orders/quick-discount/apply-result-message.test.ts",
+      "src/pages/orders/quick-discount/apply-result-message.ts",
+      "src/pages/orders/quick-discount/lines.test.ts",
+      "src/pages/orders/quick-discount/lines.ts",
+      "src/pages/orders/quick-discount/preview-summary.test.ts",
+      "src/pages/orders/quick-discount/preview-summary.ts",
+      "src/pages/orders/quick-discount/quick-discount-api.test.ts",
+      "src/pages/orders/quick-discount/quick-discount-api.ts",
+      "src/pages/orders/quick-discount/scope.test.ts",
+      "src/pages/orders/quick-discount/scope.ts",
+      "src/pages/orders/quick-discount/types.ts",
+      "src/pages/orders/quick-discount/use-apply-quick-discount.test.tsx",
+      "src/pages/orders/quick-discount/use-apply-quick-discount.ts",
+      "src/pages/orders/quick-discount/use-apply-result-toast.ts",
+      "src/pages/orders/quick-discount/use-debounced-value.ts",
+      "src/pages/orders/quick-discount/use-evict-order-caches.ts",
+      "src/pages/orders/quick-discount/use-line-categories.test.tsx",
+      "src/pages/orders/quick-discount/use-line-categories.ts",
+      "src/pages/orders/quick-discount/use-quick-discount-preview.test.tsx",
+      "src/pages/orders/quick-discount/use-quick-discount-preview.ts",
+      "src/pages/orders/utils.test.ts",
+      "src/pages/orders/utils.ts"
+    ],
+    "fetchedAt": "2026-11-06T20:06:01.821Z"
+  },
+  "GetDutchie/brands-portal#1389": {
+    "title": "feat: clearer quick discount preview and line discount trigger BRAND-4023",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/quick-discount/apply-discount-modal.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/lines.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/create/price-cell.tsx",
+      "src/pages/orders/detail/items-table/use-columns.tsx",
+      "src/pages/orders/discounted-price.test.tsx",
+      "src/pages/orders/discounted-price.tsx",
+      "src/pages/orders/line-discount-editor/styled.ts",
+      "src/pages/orders/quick-discount/apply-discount-modal.test.tsx",
+      "src/pages/orders/quick-discount/apply-discount-modal.tsx",
+      "src/pages/orders/quick-discount/lines.test.ts",
+      "src/pages/orders/quick-discount/lines.ts",
+      "src/pages/orders/quick-discount/preview-summary.test.ts",
+      "src/pages/orders/quick-discount/preview-summary.ts",
+      "src/pages/orders/quick-discount/styled.ts",
+      "src/pages/orders/styled.ts",
+      "src/pages/orders/utils.test.ts",
+      "src/pages/orders/utils.ts"
+    ],
+    "fetchedAt": "2026-11-06T20:06:02.638Z"
+  },
+  "GetDutchie/brands-portal#1391": {
+    "title": "feat: show the active quick discount and edit it from a toolbar BRAND-4023",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/quick-discount/apply-discount-modal.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/lines.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/use-line-categories.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/rule-highlight.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/orders/create/create-products-card.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "rsbuild.config.ts",
+      "src/api/operations/queries/orders/get-purchase-order.gql",
+      "src/pages/orders/create/create-products-card-quick-discount.test.tsx",
+      "src/pages/orders/create/create-products-card.test.tsx",
+      "src/pages/orders/create/create-products-card.tsx",
+      "src/pages/orders/detail/items-table/index.test.tsx",
+      "src/pages/orders/detail/items-table/index.tsx",
+      "src/pages/orders/detail/items-table/styled.ts",
+      "src/pages/orders/detail/order-detail-drawer.test.tsx",
+      "src/pages/orders/detail/order-detail-drawer.tsx",
+      "src/pages/orders/quick-discount/active-discount-toolbar.test.tsx",
+      "src/pages/orders/quick-discount/active-discount-toolbar.tsx",
+      "src/pages/orders/quick-discount/apply-discount-modal.test.tsx",
+      "src/pages/orders/quick-discount/apply-discount-modal.tsx",
+      "src/pages/orders/quick-discount/lines.test.ts",
+      "src/pages/orders/quick-discount/lines.ts",
+      "src/pages/orders/quick-discount/rule-highlight.test.ts",
+      "src/pages/orders/quick-discount/rule-highlight.ts",
+      "src/pages/orders/quick-discount/styled.ts",
+      "src/pages/orders/quick-discount/types.ts",
+      "src/pages/orders/quick-discount/use-line-categories.test.tsx",
+      "src/pages/orders/quick-discount/use-line-categories.ts",
+      "src/pages/orders/quick-discount/use-rule-highlighted-lines.test.tsx",
+      "src/pages/orders/quick-discount/use-rule-highlighted-lines.ts"
+    ],
+    "fetchedAt": "2026-11-06T20:06:04.588Z"
+  },
+  "GetDutchie/alchemy-account-360#216": {
+    "title": "[openapi-major] ALCH-667: Churn Risks section reads only the Risk Board; auto entries become Risk signals; retire old /risks board",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/lib/risk-board-client.test.ts",
+      "api/src/lib/risk-board-client.ts",
+      "api/src/routes/accounts.test.ts",
+      "api/src/routes/accounts.ts",
+      "api/src/routes/risks.test.ts",
+      "api/src/routes/risks.ts",
+      "packages/contracts/accounts/src/accounts.ts",
+      "packages/data-accounts/src/accounts.test.tsx",
+      "packages/data-accounts/src/accounts.ts",
+      "web/src/features/account360/Account360View.test.tsx",
+      "web/src/features/account360/Account360View.tsx",
+      "web/src/features/account360/explainability/registry.ts",
+      "web/src/features/account360/panels/AccountHeader.test.tsx",
+      "web/src/features/account360/panels/AccountHeader.tsx",
+      "web/src/features/account360/panels/AccountHeaderRevenuePanelConsistency.test.tsx",
+      "web/src/features/account360/panels/ChurnRiskPill.tsx",
+      "web/src/features/account360/panels/ChurnRisksPanel.test.tsx",
+      "web/src/features/account360/panels/ChurnRisksPanel.tsx",
+      "web/src/features/account360/panels/RiskSignalsPanel.helpers.test.ts",
+      "web/src/features/account360/panels/RiskSignalsPanel.helpers.ts",
+      "web/src/features/account360/panels/RiskSignalsPanel.test.tsx",
+      "web/src/features/account360/panels/RiskSignalsPanel.tsx",
+      "web/src/features/account360/panels/types.ts",
+      "web/src/features/account360/panels/useChurnRiskLookup.ts",
+      "web/src/features/risks/MobileRiskFeed.helpers.test.ts",
+      "web/src/features/risks/MobileRiskFeed.helpers.ts",
+      "web/src/features/risks/MobileRiskFeed.test.tsx",
+      "web/src/features/risks/MobileRiskFeed.tsx",
+      "web/src/features/risks/RiskBoardView.helpers.test.ts",
+      "web/src/features/risks/RiskBoardView.helpers.ts",
+      "web/src/features/risks/RiskBoardView.test.tsx",
+      "web/src/features/risks/RiskBoardView.tsx",
+      "web/src/features/risks/RiskCreateModal.helpers.test.ts",
+      "web/src/features/risks/RiskCreateModal.helpers.ts",
+      "web/src/features/risks/RiskCreateModal.test.tsx",
+      "web/src/features/risks/RiskCreateModal.tsx",
+      "web/src/features/risks/RiskDetailPanel.helpers.ts",
+      "web/src/features/risks/RiskDetailPanel.test.tsx",
+      "web/src/features/risks/RiskDetailPanel.tsx",
+      "web/src/main.tsx"
+    ],
+    "fetchedAt": "2026-11-06T20:06:05.405Z"
+  },
+  "GetDutchie/alchemy-account-360#223": {
+    "title": "Gong: keep exact account matches confident within legacy groups",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/sync/gong-exact-account.test.ts",
+      "api/src/sync/gong-retention-policy.ts",
+      "api/src/sync/stages/voice-gong-sync.ts"
+    ],
+    "fetchedAt": "2026-11-06T20:06:06.191Z"
+  },
+  "GetDutchie/alchemy-account-360#224": {
+    "title": "fix: align account list page's location display with the detail page (Finding D)",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/lib/family-members.test.ts",
+      "api/src/lib/family-members.ts",
+      "api/src/routes/accounts.live.test.ts",
+      "api/src/routes/accounts.test.ts",
+      "api/src/routes/accounts.ts",
+      "drizzle/own/0030_mute_shape.sql",
+      "drizzle/own/0031_clean_post.sql",
+      "drizzle/own/meta/0030_snapshot.json",
+      "drizzle/own/meta/0031_snapshot.json",
+      "drizzle/own/meta/_journal.json",
+      "packages/contracts/accounts/src/accounts.ts",
+      "packages/core-schema/src/warehouse-gtm.ts",
+      "packages/data-accounts/src/accounts.ts",
+      "packages/gtm-db/src/family-rollup.live.test.ts",
+      "packages/gtm-db/src/family-rollup.ts",
+      "packages/gtm-db/src/index.ts",
+      "web/src/features/account360/AccountEnhancedTable.test.tsx",
+      "web/src/features/account360/AccountEnhancedTable.tsx",
+      "web/src/features/account360/explainability/registry.ts"
+    ],
+    "fetchedAt": "2026-11-06T20:06:07.089Z"
   }
 }
