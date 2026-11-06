@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793887881.567359",
+  "last_processed_ts": "1793974278.549179",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
-      "description": "HIGH — PR #1646 + PR #1647: both create/extend audit-form-sheet.tsx, a new 660-line shared sheet driving both the Create Audit flow and the Create/Edit Schedule flow. Zero unit tests across either PR; report itself frames this as a new user-facing flow with no coverage and recommends a JIRA follow-up. RECURRING (2026-10-27): PR #2345 (always-show Count method/Require approval/Blind & pre-fill) added more settings wiring into this same file (now 1011 lines, up from 660) with no sheet-level integration test verifying it — same underlying gap, not a new one; the file still has zero test coverage of any kind.",
-      "blocker": "Multi-step form-sheet component driving two distinct user flows (Create Audit / Create-Edit Schedule) with no existing test scaffolding; Nexus has no e2e/Playwright CI hook to fall back on, and meaningful unit coverage at this scale is out of proportion for one one-gap-one-PR candidate. Needs human prioritization (report's own suggestion: file a JIRA ticket) rather than an automated gap-fill attempt. Still true as of 2026-10-27 — the file has grown (660 → 1011 lines) and accumulated a 3rd uncovered PR (#2345) without ever getting a seam for a sheet-level test.",
+      "description": "HIGH \u2014 PR #1646 + PR #1647: both create/extend audit-form-sheet.tsx, a new 660-line shared sheet driving both the Create Audit flow and the Create/Edit Schedule flow. Zero unit tests across either PR; report itself frames this as a new user-facing flow with no coverage and recommends a JIRA follow-up. RECURRING (2026-10-27): PR #2345 (always-show Count method/Require approval/Blind & pre-fill) added more settings wiring into this same file (now 1011 lines, up from 660) with no sheet-level integration test verifying it \u2014 same underlying gap, not a new one; the file still has zero test coverage of any kind.",
+      "blocker": "Multi-step form-sheet component driving two distinct user flows (Create Audit / Create-Edit Schedule) with no existing test scaffolding; Nexus has no e2e/Playwright CI hook to fall back on, and meaningful unit coverage at this scale is out of proportion for one one-gap-one-PR candidate. Needs human prioritization (report's own suggestion: file a JIRA ticket) rather than an automated gap-fill attempt. Still true as of 2026-10-27 \u2014 the file has grown (660 \u2192 1011 lines) and accumulated a 3rd uncovered PR (#2345) without ever getting a seam for a sheet-level test.",
       "first_seen": "2026-09-17",
       "last_seen": "2026-10-27",
       "times_seen": 2,
@@ -15,8 +15,8 @@
     },
     "1583-analytics-semantic-view-descriptions": {
       "classification": "unclear",
-      "description": "Stale coverage risk — PR #1583: describe-semantic-view.ts, run-semantic-query.ts, and webapi-client/rest/nexus/semantic.ts all have existing *.test.ts files that weren't updated when sv_applied_discount was onboarded as the 4th semantic view. Report: \"worth confirming the new view name is actually asserted somewhere, not just described in prose.\"",
-      "blocker": "On inspection, every changed line across all 3 files is Zod .describe()/doc-comment prose only — no FE-side logic or hardcoded view-name allowlist exists to assert against. The actual acceptance of sv_applied_discount as a valid view name is validated server-side (webapi/leaflogix C# allowlist, a different repo), which this repo's Vitest suite can't exercise. Writing a test that merely re-asserts the changed prose string would be vacuous (fails the red-green-revert bar). Needs a human call: either accept as already-covered (no FE behavior changed) or file a cross-repo integration-test follow-up against webapi/leaflogix.",
+      "description": "Stale coverage risk \u2014 PR #1583: describe-semantic-view.ts, run-semantic-query.ts, and webapi-client/rest/nexus/semantic.ts all have existing *.test.ts files that weren't updated when sv_applied_discount was onboarded as the 4th semantic view. Report: \"worth confirming the new view name is actually asserted somewhere, not just described in prose.\"",
+      "blocker": "On inspection, every changed line across all 3 files is Zod .describe()/doc-comment prose only \u2014 no FE-side logic or hardcoded view-name allowlist exists to assert against. The actual acceptance of sv_applied_discount as a valid view name is validated server-side (webapi/leaflogix C# allowlist, a different repo), which this repo's Vitest suite can't exercise. Writing a test that merely re-asserts the changed prose string would be vacuous (fails the red-green-revert bar). Needs a human call: either accept as already-covered (no FE behavior changed) or file a cross-repo integration-test follow-up against webapi/leaflogix.",
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
@@ -26,35 +26,35 @@
     },
     "1762-packages/webapi-client/src/rest/nexus/audit-count-conflict-error.ts": {
       "classification": "unclear",
-      "description": "Gap (Medium) — PR #1762 added `audit-count-conflict-error.ts` (AuditCountConflictError, a typed 409 for stale-version count submissions) with no test file.",
-      "blocker": "On inspection this file DOES NOT EXIST on current origin/main, and `AuditCountConflictError` is not referenced anywhere in the repo at all — not as a class, not as an import. `git show` confirms PR #1762's merge commit (98193ddb) added the file, but a later merge to main, PR #1724 (\"add Counted item details panel\", 35ab370f), landed changes to the SAME directory (packages/webapi-client/src/rest/nexus/) that appear to have dropped it — there is no explicit deletion commit for the file's path, which suggests a rebase/merge artifact rather than a deliberate removal. This is not a test-coverage gap this agent can close (there is nothing to test); it looks like an accidental code-loss/regression that needs a human engineer to confirm intent and, if unintended, restore the class and its consumers. Flagged prominently in this cycle's Slack report per the operator's discrepancy-reporting instruction.",
+      "description": "Gap (Medium) \u2014 PR #1762 added `audit-count-conflict-error.ts` (AuditCountConflictError, a typed 409 for stale-version count submissions) with no test file.",
+      "blocker": "On inspection this file DOES NOT EXIST on current origin/main, and `AuditCountConflictError` is not referenced anywhere in the repo at all \u2014 not as a class, not as an import. `git show` confirms PR #1762's merge commit (98193ddb) added the file, but a later merge to main, PR #1724 (\"add Counted item details panel\", 35ab370f), landed changes to the SAME directory (packages/webapi-client/src/rest/nexus/) that appear to have dropped it \u2014 there is no explicit deletion commit for the file's path, which suggests a rebase/merge artifact rather than a deliberate removal. This is not a test-coverage gap this agent can close (there is nothing to test); it looks like an accidental code-loss/regression that needs a human engineer to confirm intent and, if unintended, restore the class and its consumers. Flagged prominently in this cycle's Slack report per the operator's discrepancy-reporting instruction.",
       "first_seen": "2026-09-25",
       "last_seen": "2026-09-25",
       "times_seen": 1,
-      "last_notified": "2026-10-30"
+      "last_notified": "2026-11-06"
     },
     "1863-_migrated-7-unnamed-files-gap": {
       "classification": "unclear",
-      "description": "Gap (Low) — PR #1863 (promote DataTable/HubLayout/PageTabs into nexus-ui): report bullet names '7 legacy `_migrated/back-office/*` files got small (2-3 line) prop/import updates from the refactor with no matching test touched' but does not name the files, only says 'worth a spot-check'.",
-      "blocker": "Report gives no file list for this remainder (unlike other bullets that name every file) — cannot enumerate or act on a gap without the actual paths; guessing at _migrated file names would violate Step 1's own guidance. Needs a human either to pull the PR #1863 diff for the exact 7 paths, or confirm this is low-risk enough to skip (report's own tone: 'likely still passing, but worth a spot-check').",
+      "description": "Gap (Low) \u2014 PR #1863 (promote DataTable/HubLayout/PageTabs into nexus-ui): report bullet names '7 legacy `_migrated/back-office/*` files got small (2-3 line) prop/import updates from the refactor with no matching test touched' but does not name the files, only says 'worth a spot-check'.",
+      "blocker": "Report gives no file list for this remainder (unlike other bullets that name every file) \u2014 cannot enumerate or act on a gap without the actual paths; guessing at _migrated file names would violate Step 1's own guidance. Needs a human either to pull the PR #1863 diff for the exact 7 paths, or confirm this is low-risk enough to skip (report's own tone: 'likely still passing, but worth a spot-check').",
       "first_seen": "2026-10-05",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-29"
+      "last_notified": "2026-11-06"
     },
     "1863-_migrated-16-unnamed-files-stale": {
       "classification": "unclear",
-      "description": "Stale coverage risk (Low) — PR #1863: '16 legacy `_migrated/*` files with 2-4 line diffs, existing tests not updated — same mechanical refactor pattern as the gaps above, low risk.' No file list given.",
+      "description": "Stale coverage risk (Low) \u2014 PR #1863: '16 legacy `_migrated/*` files with 2-4 line diffs, existing tests not updated \u2014 same mechanical refactor pattern as the gaps above, low risk.' No file list given.",
       "blocker": "Same as the sibling gap-cluster entry above: report names a count (16) but not the files, so there's nothing concrete for this agent to act on. Report itself calls it low risk (mechanical refactor). Needs a human to decide whether a follow-up is warranted at all.",
       "first_seen": "2026-10-05",
       "last_seen": "2026-10-05",
       "times_seen": 1,
-      "last_notified": "2026-10-29"
+      "last_notified": "2026-11-06"
     },
     "1976-packages/discount-ui/src/buy-get-diagram.tsx": {
       "classification": "needs-production-change",
-      "description": "Stale coverage risk (Medium) — PR #1976: buy-get-diagram.tsx added a rewardItemCap() helper (handles items-threshold exactly/between conditions plus an \"N-priced\" reward label) and a rewardCap chip meant to surface it in the same-pool Get row, but buy-get-diagram.test.tsx was never updated to exercise it.",
-      "blocker": "On inspection the rewardCap chip's render guard is `crossItem && cap !== undefined`, but the only place `{rewardCap}` is actually rendered is inside the same-pool branch, which is only reached when `crossItem` is false (the crossItem===true branch returns earlier and never references rewardCap at all). Confirmed by rendering BuyGetDiagram directly with `reward.maxItems` set and appliesTo left at its same-pool default: no cap chip appears in the DOM under any data this agent could construct. This means the new feature is unreachable dead code as currently wired — writing a test that exercises it as intended would fail by construction (the chip never renders), and a test that merely confirms current (likely unintended) behavior would be vacuous/not what the report is asking for. Needs a human to confirm intent: most likely the guard should be `!crossItem && cap !== undefined` (matching where it's rendered) or the chip needs to move into the crossItem branch instead — either way it's a production-code fix, out of scope for this agent.",
+      "description": "Stale coverage risk (Medium) \u2014 PR #1976: buy-get-diagram.tsx added a rewardItemCap() helper (handles items-threshold exactly/between conditions plus an \"N-priced\" reward label) and a rewardCap chip meant to surface it in the same-pool Get row, but buy-get-diagram.test.tsx was never updated to exercise it.",
+      "blocker": "On inspection the rewardCap chip's render guard is `crossItem && cap !== undefined`, but the only place `{rewardCap}` is actually rendered is inside the same-pool branch, which is only reached when `crossItem` is false (the crossItem===true branch returns earlier and never references rewardCap at all). Confirmed by rendering BuyGetDiagram directly with `reward.maxItems` set and appliesTo left at its same-pool default: no cap chip appears in the DOM under any data this agent could construct. This means the new feature is unreachable dead code as currently wired \u2014 writing a test that exercises it as intended would fail by construction (the chip never renders), and a test that merely confirms current (likely unintended) behavior would be vacuous/not what the report is asking for. Needs a human to confirm intent: most likely the guard should be `!crossItem && cap !== undefined` (matching where it's rendered) or the chip needs to move into the crossItem branch instead \u2014 either way it's a production-code fix, out of scope for this agent.",
       "first_seen": "2026-10-15",
       "last_seen": "2026-10-15",
       "times_seen": 1,
@@ -64,8 +64,8 @@
     },
     "2546-apps/nexus/src/pages/studio/components/responsive-dialog.tsx": {
       "classification": "deferred-for-volume",
-      "description": "Gap (Medium, prototype-only) — PR #2546: Studio component-level micro-interaction coverage (responsive-dialog.tsx mobile variant, folder-tree.tsx create/cancel, derive-dialog.tsx crop-save, sms-landing-preview.tsx SMS journey). Confirmed genuinely closeable by code-level recon (clear test-file-only seams, established mobile-mock precedent in wizard-shell.mobile.test.tsx), but this run hit an environment instability (a parallel-worktree subagent fan-out whose bash tool lost its working directory mid-task) while attempting it and ran out of session budget to redo it serially. Not a genuine volume-cap cut; a real candidate carried forward.",
-      "blocker": "No code-level blocker — closeable with test-file-only changes. Blocked this cycle by a run-time environment issue (worktree/subagent instability), not by the gap's own difficulty. Safe to pick up fresh next run.",
+      "description": "Gap (Medium, prototype-only) \u2014 PR #2546: Studio component-level micro-interaction coverage (responsive-dialog.tsx mobile variant, folder-tree.tsx create/cancel, derive-dialog.tsx crop-save, sms-landing-preview.tsx SMS journey). Confirmed genuinely closeable by code-level recon (clear test-file-only seams, established mobile-mock precedent in wizard-shell.mobile.test.tsx), but this run hit an environment instability (a parallel-worktree subagent fan-out whose bash tool lost its working directory mid-task) while attempting it and ran out of session budget to redo it serially. Not a genuine volume-cap cut; a real candidate carried forward.",
+      "blocker": "No code-level blocker \u2014 closeable with test-file-only changes. Blocked this cycle by a run-time environment issue (worktree/subagent instability), not by the gap's own difficulty. Safe to pick up fresh next run.",
       "first_seen": "2026-10-30",
       "last_seen": "2026-10-30",
       "times_seen": 1,
@@ -73,8 +73,8 @@
     },
     "2546-apps/nexus/src/pages/studio/assets/page.tsx": {
       "classification": "deferred-for-volume",
-      "description": "Gap (Medium, prototype-only) — PR #2546: Studio page-level mobile-viewport wiring (assets/page.tsx, templates/page.tsx, brand/detail/page.tsx mobile variants). Confirmed genuinely closeable by code-level recon. Same environment-instability blocker as the sibling component-level candidate above; not a volume-cap cut.",
-      "blocker": "No code-level blocker — closeable with test-file-only changes. Blocked this cycle by a run-time environment issue, not difficulty. Safe to pick up fresh next run.",
+      "description": "Gap (Medium, prototype-only) \u2014 PR #2546: Studio page-level mobile-viewport wiring (assets/page.tsx, templates/page.tsx, brand/detail/page.tsx mobile variants). Confirmed genuinely closeable by code-level recon. Same environment-instability blocker as the sibling component-level candidate above; not a volume-cap cut.",
+      "blocker": "No code-level blocker \u2014 closeable with test-file-only changes. Blocked this cycle by a run-time environment issue, not difficulty. Safe to pick up fresh next run.",
       "first_seen": "2026-10-30",
       "last_seen": "2026-10-30",
       "times_seen": 1,
@@ -82,8 +82,8 @@
     },
     "2612-packages/help-content/src/cli.ts": {
       "classification": "deferred-for-volume",
-      "description": "Stale coverage risk (Medium) — PR #2612: help-content cli.ts / agent/apply/apply.ts / import/apply.ts forward search metadata into validation; untouched cli.test.ts / agent/apply/apply.test.ts / import/import.test.ts have no invalid-search fixtures. Confirmed genuinely closeable by code-level recon (test-support.ts fixture helpers exist, exact rejection shapes identified per entrypoint). Not attempted this cycle due to this run's time/turn budget after the environment instability consumed a large share of it; a real candidate carried forward, not a cap cut.",
-      "blocker": "No code-level blocker — closeable with test-file-only changes across 3 entrypoint test files. Deferred purely on this run's remaining time budget.",
+      "description": "Stale coverage risk (Medium) \u2014 PR #2612: help-content cli.ts / agent/apply/apply.ts / import/apply.ts forward search metadata into validation; untouched cli.test.ts / agent/apply/apply.test.ts / import/import.test.ts have no invalid-search fixtures. Confirmed genuinely closeable by code-level recon (test-support.ts fixture helpers exist, exact rejection shapes identified per entrypoint). Not attempted this cycle due to this run's time/turn budget after the environment instability consumed a large share of it; a real candidate carried forward, not a cap cut.",
+      "blocker": "No code-level blocker \u2014 closeable with test-file-only changes across 3 entrypoint test files. Deferred purely on this run's remaining time budget.",
       "first_seen": "2026-10-30",
       "last_seen": "2026-10-30",
       "times_seen": 1,
@@ -91,8 +91,8 @@
     },
     "2617-apps/nexus/src/pages/help/help-pages.test.tsx": {
       "classification": "deferred-for-volume",
-      "description": "Stale coverage risk (Medium) — PR #2617: help-center-page.tsx / help-topic-page.tsx forward answer metadata; help-pages.test.tsx has no answer-bearing fixtures. Confirmed genuinely closeable by code-level recon (real-route render harness + stubHelpApi helper already support this). Not attempted this cycle due to remaining time/turn budget; a real candidate carried forward, not a cap cut.",
-      "blocker": "No code-level blocker — closeable with test-file-only changes. Deferred purely on this run's remaining time budget.",
+      "description": "Stale coverage risk (Medium) \u2014 PR #2617: help-center-page.tsx / help-topic-page.tsx forward answer metadata; help-pages.test.tsx has no answer-bearing fixtures. Confirmed genuinely closeable by code-level recon (real-route render harness + stubHelpApi helper already support this). Not attempted this cycle due to remaining time/turn budget; a real candidate carried forward, not a cap cut.",
+      "blocker": "No code-level blocker \u2014 closeable with test-file-only changes. Deferred purely on this run's remaining time budget.",
       "first_seen": "2026-10-30",
       "last_seen": "2026-10-30",
       "times_seen": 1,
@@ -100,7 +100,7 @@
     },
     "2631-apps/nexus/src/api/inventory/audits.ts-subroom": {
       "classification": "deferred-for-volume",
-      "description": "Stale coverage risk (Low/Medium) — PR #2631: audits.ts + count-summary.tsx + packages-tab.tsx consume a 'subroom' field, but no fixture asserts a non-null subroom. Confirmed closeable (one new test file, count-summary.test.tsx, plus two extended ones) by code-level recon. Deliberately held back as the lowest-ranked of today's 10 PR-candidates under the 8-PR/run volume cap (lowest severity tag, highest source-PR# among same-severity stale entries).",
+      "description": "Stale coverage risk (Low/Medium) \u2014 PR #2631: audits.ts + count-summary.tsx + packages-tab.tsx consume a 'subroom' field, but no fixture asserts a non-null subroom. Confirmed closeable (one new test file, count-summary.test.tsx, plus two extended ones) by code-level recon. Deliberately held back as the lowest-ranked of today's 10 PR-candidates under the 8-PR/run volume cap (lowest severity tag, highest source-PR# among same-severity stale entries).",
       "blocker": "No code-level blocker. Held back purely by this run's volume cap / deterministic tie-break, not difficulty.",
       "first_seen": "2026-10-30",
       "last_seen": "2026-10-30",
@@ -109,7 +109,7 @@
     },
     "2546-apps/nexus/src/routes.tsx": {
       "classification": "deferred-for-volume",
-      "description": "Stale coverage risk (Low) — PR #2546: routes.tsx adds 9 Studio routes with no corresponding routes.test.tsx wiring assertions. Confirmed closeable by code-level recon (established route-wiring test pattern in the same file, e.g. the /reports precedent). Deliberately held back as the lowest-ranked of today's 10 PR-candidates under the 8-PR/run volume cap (lowest severity of the whole report).",
+      "description": "Stale coverage risk (Low) \u2014 PR #2546: routes.tsx adds 9 Studio routes with no corresponding routes.test.tsx wiring assertions. Confirmed closeable by code-level recon (established route-wiring test pattern in the same file, e.g. the /reports precedent). Deliberately held back as the lowest-ranked of today's 10 PR-candidates under the 8-PR/run volume cap (lowest severity of the whole report).",
       "blocker": "No code-level blocker. Held back purely by this run's volume cap / deterministic tie-break, not difficulty.",
       "first_seen": "2026-10-30",
       "last_seen": "2026-10-30",
@@ -119,7 +119,7 @@
     "2708-apps/connect-brands/src/pages/catalog/product-editor/sections/wholesale-section.tsx": {
       "classification": "deferred-for-volume",
       "description": "PR #2708 Gap (Medium): wholesale-section.tsx has no control-to-save tests for cents conversion, unfinished edits or hide/delete (mappers/schema are tested).",
-      "blocker": "No code-level blocker identified; not attempted 2026-11-05 — a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
+      "blocker": "No code-level blocker identified; not attempted 2026-11-05 \u2014 a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
       "first_seen": "2026-11-05",
       "last_seen": "2026-11-05",
       "times_seen": 1,
@@ -130,7 +130,7 @@
     "2708-apps/connect-brands/src/pages/catalog/product-editor/sections/media-section.tsx + promotions/builder/sections/online-section.tsx": {
       "classification": "deferred-for-volume",
       "description": "PR #2708 Gap (Medium): upload contracts in media-section/online-section are stubbed by parent tests, never exercised (upload/retry).",
-      "blocker": "No code-level blocker identified; not attempted 2026-11-05 — a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
+      "blocker": "No code-level blocker identified; not attempted 2026-11-05 \u2014 a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
       "first_seen": "2026-11-05",
       "last_seen": "2026-11-05",
       "times_seen": 1,
@@ -141,13 +141,24 @@
     "2708-apps/connect-brands/src/pages/promotions/builder/sections/advanced-offer-section.tsx": {
       "classification": "deferred-for-volume",
       "description": "PR #2708 Gap (Medium): no authorized advanced-create submission test through advanced-offer-section/page orchestration.",
-      "blocker": "No code-level blocker identified; not attempted 2026-11-05 — a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
+      "blocker": "No code-level blocker identified; not attempted 2026-11-05 \u2014 a large (300-650 line) multi-flow form section needing form-integration test scaffolding, deprioritized after 6 smaller PRs this cycle. Pick up next cycle (already named in the report, so recon is just reading the section).",
       "first_seen": "2026-11-05",
       "last_seen": "2026-11-05",
       "times_seen": 1,
       "last_notified": "2026-11-05",
       "likelySeverity": "P2",
       "severityReasoning": "Brand-facing catalog/promotion save path in Connect; regressions affect saving offers/uploads for a brand with partial workarounds."
+    },
+    "2864-packages/dex/dex-chat/src/chat/use-turn-feedback-timing.ts": {
+      "classification": "needs-production-change",
+      "description": "useTurnFeedbackTiming reports first_tool for a search_tools-only prelude, which assistant-message.tsx hides while the status line speaks for it; a test asserting no tool-row event before something is visible fails against current code",
+      "blocker": "Confirmed with a scratch test: a reply with only a tool-search_tools part fires first_feedback and first_tool. Fix needs hook to ignore search_tools parts (as showsContent/isToolSearchPart does) in `tool`/hasRenderedPart.",
+      "first_seen": "2026-11-06",
+      "last_seen": "2026-11-06",
+      "times_seen": 1,
+      "last_notified": "2026-11-06",
+      "likelySeverity": "P3",
+      "severityReasoning": "Telemetry-only skew in first-tool timing; no user-facing, revenue or compliance impact."
     }
   }
 }
