@@ -1376,7 +1376,7 @@
       "suite": "pos",
       "times_fixed": 2,
       "last_flaked": "2026-10-27",
-      "recommendation": "ESCALATE",
+      "recommendation": "INVESTIGATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/2145",
         "https://github.com/GetDutchie/dutchie-pos/pull/2167"
@@ -1387,7 +1387,7 @@
       "test_name": "Shows a warning before adding an item not in the preorder",
       "suite": "pos",
       "times_fixed": 2,
-      "last_flaked": "2026-10-28",
+      "last_flaked": "2026-11-02",
       "recommendation": "ESCALATE",
       "pr_urls": [
         "https://github.com/GetDutchie/dutchie-pos/pull/2148",
