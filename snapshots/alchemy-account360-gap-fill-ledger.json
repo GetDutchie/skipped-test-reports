@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793876663.847699",
+  "last_processed_ts": "1793963079.265339",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -288,6 +288,17 @@
       "times_seen": 1,
       "last_notified": "2026-11-04",
       "repo": "GetDutchie/alchemy-account-360"
+    },
+    "216-web/src/main.tsx": {
+      "classification": "needs-production-change",
+      "reason": "RisksRoute (window.location.assign('/risk-board/')) is a non-exported closure in main.tsx, which calls createRoot().render() on import; same blocker as entry 1057. Needs RisksRoute exported/extracted. tenant-prefix-migration.test.ts only lists /risks as a deep link.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 216,
+      "first_seen": "2026-11-06",
+      "last_seen": "2026-11-06",
+      "times_seen": 1,
+      "last_notified": "2026-11-06T14:19:41Z"
     }
   }
 }
