@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793963079.265339",
+  "last_processed_ts": "1794222335.399229",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -299,6 +299,72 @@
       "last_seen": "2026-11-06",
       "times_seen": 1,
       "last_notified": "2026-11-06T14:19:41Z"
+    },
+    "238-api/src/lib/mission-control-hydration-contract.ts": {
+      "classification": "needs-production-change",
+      "reason": "MissionControlHydrationAccountSliceV1.coverage.requestedAccountSfIds is .length(1), but #238's multi-id accounts stage/capture a slice with 2+ ids (captureOne parse + stageRecord parse). Verified: parse fails 'expected array to have exactly 1 items', so multi-id accounts always land as source_capture_failed. A test cannot pass without changing the schema.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 238,
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09T14:30:00Z"
+    },
+    "238-api/src/temporal/mission-control-ownership-worker.ts+hydration-worker.ts": {
+      "classification": "unclear",
+      "reason": "Neither worker has a test file; ~450-480 lines each of DB+Salesforce orchestration. Not closed this run (8-PR cap not hit but time-boxed); needs a worker-level harness. Deferred.",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 238,
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09T14:30:00Z"
+    },
+    "238-api/src/lib/amc.ts": {
+      "classification": "unclear",
+      "reason": "Low: amc__Account__r.Legacy_Link__c SOQL field + mapping only has a fixture field. Deferred.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 238,
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09T14:30:00Z"
+    },
+    "237-api/src/temporal/activities.ts": {
+      "classification": "unclear",
+      "reason": "Low: overrun watch started from startSyncRun / stopped from finalizeRun not tested. Deferred.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 237,
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09T14:30:00Z"
+    },
+    "233-stale-coverage-bundle": {
+      "classification": "unclear",
+      "reason": "Stale-coverage entries not yet addressed: user-roles.ts (always empty GP list), upsert-accounts.rollup.live.test (deleted upsertQuoteLineItemProducts), implementation-project-upsert tests, hydration-projection live test. Deferred.",
+      "severity": "Low",
+      "entry_type": "stale",
+      "source_pr": 233,
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09T14:30:00Z"
+    },
+    "235-scripts/verify-identity-blanket-cutover.mjs": {
+      "classification": "needs-production-change",
+      "reason": "Script keeps its own copy of MAX_IDENTITY_HOLDERS (can drift from identity-blanket-cutover-verify.ts); a drift test needs the constant exported/shared, i.e. a production change.",
+      "severity": "Low",
+      "entry_type": "stale",
+      "source_pr": 235,
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09T14:30:00Z"
     }
   }
 }
