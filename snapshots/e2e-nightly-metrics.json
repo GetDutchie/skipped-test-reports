@@ -1367,6 +1367,25 @@
         "commit": "f2f7371",
         "run_timestamp": "2026-11-06T07:24:03.849439Z"
       }
+    },
+    {
+      "date": "2026-11-09",
+      "back_office": {
+        "flaky": 1,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-11-09T06:23:36.153529Z"
+      },
+      "pos": {
+        "flaky": 7,
+        "failed": 0,
+        "total": 405,
+        "branch": "develop",
+        "commit": "f4a57c8",
+        "run_timestamp": "2026-11-09T07:26:06.760289Z"
+      }
     }
   ],
   "thrash_candidates": [
