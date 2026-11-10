@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794234386.661169",
+  "last_processed_ts": "1794320171.236079",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -203,6 +203,28 @@
       "last_notified": "2026-11-09",
       "likelySeverity": "P2",
       "severityReasoning": "Mislabelled potency units shown in Dex product table; display-only, bordering P3"
+    },
+    "3079-apps/connect-brands/src/pages/settings/notifications/page.tsx": {
+      "classification": "needs-production-change",
+      "description": "Notification preference edits made while a save/refetch is pending are discarded by setOverrides({}) in refreshAfterWrite",
+      "blocker": "Verified with a scratch test: checkboxes stay editable during save and an edit to a second setting is reset after the refetch lands. Needs production fix (block edits while saving, or clear only the saved keys) before a test can assert the intended behavior.",
+      "first_seen": "2026-11-10",
+      "last_seen": "2026-11-10",
+      "times_seen": 1,
+      "last_notified": "2026-11-10",
+      "likelySeverity": "P3",
+      "severityReasoning": "A user's notification preference edit made during an in-flight save silently reverts; no revenue/compliance impact and re-editing works."
+    },
+    "3063-apps/connect-brands/src/pages/catalog/product-editor/page.tsx (undo refusal with unsaved edits)": {
+      "classification": "needs-production-change",
+      "description": "Undo refusal when newer unsaved edits exist never fires: undoSave reads form.formState.isDirty from useForm's return (unsubscribed; the page subscribes via useFormState), so Undo overwrites the unsaved edit",
+      "blocker": "Verified by test: Undo after a dirty edit sends a second update and resets the field. Fix needs production change (pass isDirty from useFormState / use form.getFieldState or control._formState).",
+      "first_seen": "2026-11-10",
+      "last_seen": "2026-11-10",
+      "times_seen": 1,
+      "last_notified": "2026-11-10",
+      "likelySeverity": "P2",
+      "severityReasoning": "Undo overwrites a user's unsaved catalog edit and writes the previous product values to the server; single brand/product, user-initiated, recoverable by re-entering."
     }
   }
 }
