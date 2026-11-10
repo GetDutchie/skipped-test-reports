@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793963471.695349",
+  "last_processed_ts": "1794222663.538449",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -40,9 +40,10 @@
       "description": "New /api/v2/rest/public proxy rule in rsbuild.config.ts is config-only and unverified by any test.",
       "blocker": "rsbuild.config.ts cannot be imported under Jest at all \u2014 confirmed live: `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module, because its internals rely on import.meta.url handling that Jest's CJS transform doesn't support. A real behavioral test isn't feasible without larger test-infra work (e.g. a dedicated transform/mock for @rsbuild/core), and a text/regex-based assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment.",
       "first_seen": "2026-09-15",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-10-30"
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3"
     },
     "912-e2e/tests/": {
       "classification": "e2e-out-of-scope",
@@ -60,9 +61,10 @@
       "description": "New PUBLIC_BRAND_OPS_API_URL plus the requiredEnvVars validation path (throws on any missing required var) has no env.test.ts anywhere in src/constants/, so a missing-var failure is unasserted.",
       "blocker": "src/constants/env.ts reads import.meta.env directly and is unconditionally jest.mock()'d in jest/jest.setup.ts (`jest.mock('../src/constants/env', () => require('./mocks/env'))`) specifically to dodge this: confirmed live that unmocking and requiring the real module under Jest throws `SyntaxError: Cannot use 'import.meta' outside a module` from inside @swc/jest's CommonJS transform (same root cause as this ledger's existing 888-rsbuild.config.ts entry). Testing the real requiredEnvVars validation path needs either a Jest/SWC transform capable of handling import.meta syntax, or refactoring env.ts to accept an injectable env source \u2014 both are production/test-infra changes out of scope for a test-file-only PR.",
       "first_seen": "2026-09-17",
-      "last_seen": "2026-10-05",
+      "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-10-30"
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3"
     },
     "914-src/pages/public-brand-menu/public-order-submission.ts": {
       "classification": "e2e-out-of-scope",
@@ -181,9 +183,10 @@
       "description": "Gap + stale-coverage-risk (same underlying issue, PR #1097): the connect/brands remote enable/disable switch in rsbuild.config.ts (REMOTE_CONNECT_BRANDS_URL set or not, DISABLE_DEX_REMOTE) has no test; it only shows up at build or deploy time.",
       "blocker": "Confirmed live this run (identical root cause to this ledger's existing 888-rsbuild.config.ts entry): `import config from '../rsbuild.config'` inside a Jest test throws `TypeError: The argument 'filename' must be a file URL object...` from inside @rsbuild/core's own module (import.meta.url handling that Jest's CJS/SWC transform doesn't support). A real behavioral test of the MF remote-enable switch isn't feasible without larger test-infra work (a dedicated transform/mock for @rsbuild/core), and a text/regex assertion against the raw file would be too weak to satisfy the mutation-proof gate meaningfully. Needs a human call on whether this is worth dedicated test-infra investment -- same open question as the 888 entry.",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-10-30"
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3"
     },
     "1140-src/pages/advertising/campaign-insights/contexts/data-source-context.tsx": {
       "classification": "e2e-out-of-scope",
@@ -260,6 +263,61 @@
       "last_notified": "2026-11-06",
       "likelySeverity": "P3",
       "severityReasoning": "dev-only proxy config; only breaks local dev calls"
+    },
+    "1405-src/pages/orders/create/use-purchase-order-contact.test.ts": {
+      "classification": "closeable",
+      "status": "deferred-for-volume",
+      "description": "\"successful refresh\" test never runs a real refetch",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3",
+      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09"
+    },
+    "1414-src/hooks/use-brand-sales-trend-weeks.ts": {
+      "classification": "closeable",
+      "status": "deferred-for-volume",
+      "description": "GraphQL fallback failure + error seeding untested",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3",
+      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09"
+    },
+    "1415-src/hooks/use-brand-market-states.ts": {
+      "classification": "closeable",
+      "status": "deferred-for-volume",
+      "description": "GraphQL fallback request failure untested",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3",
+      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09"
+    },
+    "1416-src/hooks/use-brand-retailer-identities.ts": {
+      "classification": "closeable",
+      "status": "deferred-for-volume",
+      "description": "REST disabled-proxy 404 then GraphQL fallback failure untested",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3",
+      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09"
+    },
+    "1417-src/hooks/use-brand-location-identities.ts": {
+      "classification": "closeable",
+      "status": "deferred-for-volume",
+      "description": "Apollo fallback failure untested",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3",
+      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09"
     }
   }
 }

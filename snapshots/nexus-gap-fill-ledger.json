@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1793974278.549179",
+  "last_processed_ts": "1794234386.661169",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -159,6 +159,50 @@
       "last_notified": "2026-11-06",
       "likelySeverity": "P3",
       "severityReasoning": "Telemetry-only skew in first-tool timing; no user-facing, revenue or compliance impact."
+    },
+    "3005-apps/connect-brands/src/pages/transfer/page.tsx (assumed session)": {
+      "classification": "needs-production-change",
+      "description": "Transfer sign-in from an existing assumed-role session",
+      "blocker": "TransferPage only calls setAccessToken (localStorage); getAccessToken() prefers sessionStorage assumed token, so the old identity stays effective. Scratch test confirmed (effective token stayed 'assumed'). Needs production fix (clear assumed token on transfer) before a test can assert correct behavior. Ordinary-session half covered by PR #3056.",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P1",
+      "severityReasoning": "Stale identity after transfer = data shown to wrong user; limited to users transferring while assuming a role; bordering P0/P1"
+    },
+    "2942-apps/connect-brands/src/routes.tsx (brand switch isolation)": {
+      "classification": "unclear",
+      "description": "Brand A->B switch with late A response: only B-scoped data visible (PRs #2941/#2942)",
+      "blocker": "No concrete production surface to drive: routes.tsx only keys ConnectBrandsApp; Apollo/Query providers live in main.tsx. Test would require a synthetic consumer (vacuous) or the full app; needs human decision on which real hook/page to pin.",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P2",
+      "severityReasoning": "Cross-brand data exposure would be critical, but no reproduced leak; query keys are brand-scoped by design"
+    },
+    "2970-apps/connect-brands/src/pages/settings/cultivation-links/use-data.ts": {
+      "classification": "needs-production-change",
+      "description": "URL-derived pagination/status normalization (PR #2970)",
+      "blocker": "No normalization/rejection policy exists in use-data.ts; report asks to 'define' one. A test would pin undefined behavior.",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P3",
+      "severityReasoning": "Bad URL params only affect a settings list read"
+    },
+    "2919-apps/nexus-agent-client/src/ui/cards/product-table.tsx": {
+      "classification": "needs-production-change",
+      "description": "ProductTable appends % to all THC/CBD values; paired-unit potency (mg, mg/g, non-detect) from PR #2919 not shown correctly",
+      "blocker": "ProductTable's row type only has thcPercent/cbdPercent (no unit data); correct display needs production change to hook/types. A percent-only assertion would pin the wrong display.",
+      "first_seen": "2026-11-09",
+      "last_seen": "2026-11-09",
+      "times_seen": 1,
+      "last_notified": "2026-11-09",
+      "likelySeverity": "P2",
+      "severityReasoning": "Mislabelled potency units shown in Dex product table; display-only, bordering P3"
     }
   }
 }
