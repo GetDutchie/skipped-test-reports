@@ -5847,5 +5847,201 @@
       "web/src/features/account360/explainability/registry.ts"
     ],
     "fetchedAt": "2026-11-06T20:06:07.089Z"
+  },
+  "GetDutchie/brands-portal#1418": {
+    "title": "eng: migrate Overview key metrics to REST",
+    "qualityComments": [
+      {
+        "path": "src/hooks/use-brand-key-metrics-reports.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/overview/hooks/queries/use-brand-key-metrics.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/hooks/use-brand-key-metrics-reports.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/hooks/use-brand-key-metrics-reports.consumers.test.tsx",
+      "src/hooks/use-brand-key-metrics-reports.test.tsx",
+      "src/hooks/use-brand-key-metrics-reports.ts",
+      "src/pages/overview/hooks/queries/use-brand-key-metrics.test.ts",
+      "src/pages/overview/hooks/queries/use-brand-key-metrics.ts"
+    ],
+    "fetchedAt": "2026-11-10T20:06:11.420Z"
+  },
+  "GetDutchie/brands-portal#1410": {
+    "title": "fix(catalog): say which fields are blocking Save on product details BRAND-4192",
+    "qualityComments": [
+      {
+        "path": "src/pages/catalog/product-details/components/product-details-footer.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/save-blocked-notice.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/catalog/product-details/components/save-blocked-notice.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/catalog/product-details/components/fields/__tests__/state-field.test.tsx",
+      "src/pages/catalog/product-details/components/fields/state-field.tsx",
+      "src/pages/catalog/product-details/components/product-details-footer.test.tsx",
+      "src/pages/catalog/product-details/components/product-details-footer.tsx",
+      "src/pages/catalog/product-details/components/save-blocked-notice.test.tsx",
+      "src/pages/catalog/product-details/components/save-blocked-notice.tsx",
+      "src/pages/catalog/product-details/components/styled.ts",
+      "src/pages/catalog/product-details/product-details.test.tsx",
+      "src/pages/catalog/product-details/product-details.tsx"
+    ],
+    "fetchedAt": "2026-11-10T20:06:12.386Z"
+  },
+  "GetDutchie/brands-portal#1395": {
+    "title": "eng: manage ad exclusions on top-level global brands BRAND-4024",
+    "qualityComments": [
+      {
+        "path": "src/pages/ad-exclusions/use-columns.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/ad-exclusions/create-modal/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/ad-exclusions/use-columns.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/ad-exclusions/inherited-status.integration.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/queries/ad-exclusion-parent-settings.gql",
+      "src/api/operations/queries/list-brand-enterprise-settings.gql",
+      "src/api/operations/queries/products/search-brands.gql",
+      "src/pages/ad-exclusions/brand-management.ts",
+      "src/pages/ad-exclusions/create-modal/index.test.tsx",
+      "src/pages/ad-exclusions/create-modal/index.tsx",
+      "src/pages/ad-exclusions/index.test.tsx",
+      "src/pages/ad-exclusions/index.tsx",
+      "src/pages/ad-exclusions/inherited-status.integration.test.tsx",
+      "src/pages/ad-exclusions/search-query.ts",
+      "src/pages/ad-exclusions/styled.ts",
+      "src/pages/ad-exclusions/use-ad-exclusions-data.integration.test.tsx",
+      "src/pages/ad-exclusions/use-ad-exclusions-data.test.ts",
+      "src/pages/ad-exclusions/use-ad-exclusions-data.ts",
+      "src/pages/ad-exclusions/use-columns.test.tsx",
+      "src/pages/ad-exclusions/use-columns.tsx",
+      "src/pages/ad-exclusions/use-toggle-ad-exclusion.test.ts",
+      "src/pages/ad-exclusions/use-toggle-ad-exclusion.ts"
+    ],
+    "fetchedAt": "2026-11-10T20:06:13.396Z"
+  },
+  "GetDutchie/brands-portal#1388": {
+    "title": "eng: manage vertical-only brand relationships",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/mutations/create-brand-enterprise-settings.gql",
+      "src/api/operations/mutations/update-brand-enterprise-setting.gql",
+      "src/api/operations/queries/brands/get-brand.gql",
+      "src/api/operations/queries/list-brand-enterprise-settings.gql",
+      "src/api/operations/queries/products/search-brands.gql",
+      "src/components/searchable-select/index.test.tsx",
+      "src/components/searchable-select/index.tsx",
+      "src/hooks/use-debounced-value.ts",
+      "src/pages/ad-exclusions/index.test.tsx",
+      "src/pages/ad-exclusions/search-query.ts",
+      "src/pages/ad-exclusions/use-ad-exclusions-data.integration.test.tsx",
+      "src/pages/ad-exclusions/use-ad-exclusions-data.test.ts",
+      "src/pages/ad-exclusions/use-columns.test.tsx",
+      "src/pages/ad-exclusions/use-toggle-ad-exclusion.test.ts",
+      "src/pages/orders/quick-discount/apply-discount-modal.test.tsx",
+      "src/pages/orders/quick-discount/use-quick-discount-preview.ts",
+      "src/pages/settings/brands/edit/index.test.tsx",
+      "src/pages/settings/brands/edit/index.tsx",
+      "src/pages/settings/brands/edit/query-lifecycle.test.tsx",
+      "src/pages/settings/brands/edit/styled.ts",
+      "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+      "src/pages/settings/brands/use-columns.test.tsx",
+      "src/pages/settings/brands/use-columns.tsx",
+      "src/pages/settings/brands/vertical-only-status.test.ts",
+      "src/pages/settings/brands/vertical-only-status.ts"
+    ],
+    "fetchedAt": "2026-11-10T20:06:14.313Z"
+  },
+  "GetDutchie/brands-portal#1432": {
+    "title": "fix: treat legacy null vertical-only status as false BRAND-4196",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/pages/settings/brands/edit/index.test.tsx",
+      "src/pages/settings/brands/edit/index.tsx",
+      "src/pages/settings/brands/edit/query-lifecycle.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+      "src/pages/settings/brands/use-columns.test.tsx",
+      "src/pages/settings/brands/vertical-only-status.test.ts",
+      "src/pages/settings/brands/vertical-only-status.ts"
+    ],
+    "fetchedAt": "2026-11-10T20:06:15.061Z"
+  },
+  "GetDutchie/alchemy-account-360#243": {
+    "title": "fix(worker): surface scheduled run failures ALCH-683",
+    "qualityComments": [],
+    "changedPaths": [
+      "CLAUDE.md",
+      "alchemy/datadog/monitors.json",
+      "api/src/temporal/playbook-qbr-extracts.test.ts",
+      "api/src/temporal/playbook-qbr-extracts.ts",
+      "api/src/temporal/workflows.test.ts",
+      "api/src/temporal/workflows.ts",
+      "api/src/worker.ts",
+      "package.json"
+    ],
+    "fetchedAt": "2026-11-10T20:06:16.022Z"
   }
 }
