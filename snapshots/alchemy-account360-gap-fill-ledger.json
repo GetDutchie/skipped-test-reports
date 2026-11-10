@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794222335.399229",
+  "last_processed_ts": "1794308622.438669",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -365,6 +365,17 @@
       "last_seen": "2026-11-09",
       "times_seen": 1,
       "last_notified": "2026-11-09T14:30:00Z"
+    },
+    "243-alchemy/datadog/monitors.json": {
+      "classification": "unclear",
+      "reason": "Report's own assessment: config-only (5 new heartbeat log monitors), not unit-testable; needs a check against live sandbox logs, not a test-file-closeable gap. Not e2e either (no user-facing flow).",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 243,
+      "first_seen": "2026-11-10",
+      "last_seen": "2026-11-10",
+      "times_seen": 1,
+      "last_notified": "2026-11-10T14:00:00Z"
     }
   }
 }
