@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794308622.438669",
+  "last_processed_ts": "1794395070.142719",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -376,6 +376,28 @@
       "last_seen": "2026-11-10",
       "times_seen": 1,
       "last_notified": "2026-11-10T14:00:00Z"
+    },
+    "246-api/src/temporal/workflows.ts (patched marker)": {
+      "classification": "needs-production-change",
+      "reason": "renewal-date workflow step added without a patched() marker (unlike lsp-rollup-step-v1); in-flight replay safety needs a production change first, then a replay test",
+      "severity": "Medium",
+      "entry_type": "gap",
+      "source_pr": 246,
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11T14:20:00Z"
+    },
+    "247-web/src/index.css": {
+      "classification": "unclear",
+      "reason": "styling-scope rewrite; no meaningful unit assertion beyond cursor-contract.test.ts, which was already updated",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 247,
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11T14:20:00Z"
     }
   }
 }
