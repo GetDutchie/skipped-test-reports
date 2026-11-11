@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794308187.000000",
+  "last_processed_ts": "1794407482.716529",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -14,6 +14,45 @@
       "last_notified": "2026-11-04",
       "likelySeverity": "N/A (forced-analogy: P3)",
       "severityReasoning": "Misleading manifest comment only; runtime behavior is correct and tested. The closest analogy is internal-tooling doc drift (P3)."
+    },
+    "82-src/ui/standalone.tsx": {
+      "classification": "unclear",
+      "entry_type": "gap",
+      "source_pr": 82,
+      "description": "StandaloneHost mount lifecycle untested",
+      "blocker": "StrictMode/effect-ordering vacuous-test trap; not attempted",
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "internal tool; closest analogy"
+    },
+    "82-api/src/lib/serving.ts": {
+      "classification": "closeable",
+      "entry_type": "gap",
+      "source_pr": 82,
+      "description": "non-module ALCHEMY_UI_MODE modes untested",
+      "blocker": "deferred this cycle (Low)",
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11",
+      "likelySeverity": "N/A (forced-analogy: P3)",
+      "severityReasoning": "internal tool; closest analogy"
+    },
+    "82-shell-env-globals": {
+      "classification": "unclear",
+      "entry_type": "gap",
+      "source_pr": 82,
+      "description": "DD_ENV/LD_CLIENT_ID/SHOW_POC globals no longer injected after shell-env deletion",
+      "blocker": "needs verifying in platform chrome; not a pipeline test",
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11",
+      "likelySeverity": "N/A (forced-analogy: P2)",
+      "severityReasoning": "internal tool; closest analogy"
     }
   }
 }
