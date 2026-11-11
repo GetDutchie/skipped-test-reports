@@ -6043,5 +6043,173 @@
       "package.json"
     ],
     "fetchedAt": "2026-11-10T20:06:16.022Z"
+  },
+  "GetDutchie/brands-portal#1445": {
+    "title": "fix: gate vertical-only rollout and clarify indexed status BRAND-4196",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/lines.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/quick-discount/lines.test.ts",
+      "src/pages/orders/quick-discount/lines.ts",
+      "src/pages/settings/brands/edit/index.test.tsx",
+      "src/pages/settings/brands/edit/index.tsx",
+      "src/pages/settings/brands/edit/query-lifecycle.test.tsx",
+      "src/pages/settings/brands/edit/styled.ts",
+      "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+      "src/pages/settings/brands/use-columns.test.tsx",
+      "src/pages/settings/brands/use-columns.tsx",
+      "src/services/launch-darkly/use-is-vertical-only-enabled.test.ts",
+      "src/services/launch-darkly/use-is-vertical-only-enabled.ts"
+    ],
+    "fetchedAt": "2026-11-11T20:07:07.444Z"
+  },
+  "GetDutchie/brands-portal#1446": {
+    "title": "fix: reset brand editor from confirmed saved values BRAND-4196",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/fragments/brand-editable-fields.gql",
+      "src/api/operations/mutations/update-brand.gql",
+      "src/api/operations/queries/brands/get-brand.gql",
+      "src/pages/settings/brands/edit/index.apollo.test.tsx",
+      "src/pages/settings/brands/edit/index.test.tsx",
+      "src/pages/settings/brands/edit/index.tsx"
+    ],
+    "fetchedAt": "2026-11-11T20:07:08.345Z"
+  },
+  "GetDutchie/brands-portal#1444": {
+    "title": "fix: show lines returning to full price in apply discount preview BRAND-4188",
+    "qualityComments": [
+      {
+        "path": "src/pages/orders/quick-discount/preview-summary.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/preview-summary.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/orders/quick-discount/lines.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/orders/quick-discount/apply-discount-modal.test.tsx",
+      "src/pages/orders/quick-discount/apply-discount-modal.tsx",
+      "src/pages/orders/quick-discount/lines.test.ts",
+      "src/pages/orders/quick-discount/lines.ts",
+      "src/pages/orders/quick-discount/preview-summary.test.ts",
+      "src/pages/orders/quick-discount/preview-summary.ts",
+      "src/pages/orders/quick-discount/styled.ts"
+    ],
+    "fetchedAt": "2026-11-11T20:07:09.165Z"
+  },
+  "GetDutchie/alchemy-pipeline#82": {
+    "title": "feat(pipeline): mount in the platform chrome — entry module, standalone page, no index.html",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/claude-review.yaml",
+      "AGENTS.md",
+      "Dockerfile",
+      "README.md",
+      "api/src/app.ts",
+      "api/src/dockerfile-closure.test.ts",
+      "api/src/lib/serving.request-id.test.ts",
+      "api/src/lib/serving.shell-env.test.ts",
+      "api/src/lib/serving.ts",
+      "api/src/lib/shell-env.ts",
+      "api/src/lib/web-index-shell.test.ts",
+      "api/src/observability.test.ts",
+      "api/src/observability.ts",
+      "api/src/server.ts",
+      "api/src/ui-serving.test.ts",
+      "dist-migrate/migrate-own-db.mjs",
+      "docs/api-versioning-and-urls.md",
+      "docs/boot-cutover.md",
+      "docs/observability-adoption.md",
+      "docs/platform-dependency-closure.md",
+      "package-lock.json",
+      "package.json",
+      "scripts/assert-override-literals.mjs",
+      "src/ui/entry.test.tsx",
+      "src/ui/entry.tsx",
+      "src/ui/features/pipeline/DealDetailPanel.helpers.test.ts",
+      "src/ui/features/pipeline/DealDetailPanel.helpers.ts",
+      "src/ui/features/pipeline/DealDetailPanel.test.tsx",
+      "src/ui/features/pipeline/DealDetailPanel.tsx",
+      "src/ui/features/pipeline/PipelineView.helpers.test.ts",
+      "src/ui/features/pipeline/PipelineView.helpers.ts",
+      "src/ui/features/pipeline/PipelineView.test.tsx",
+      "src/ui/features/pipeline/PipelineView.tsx",
+      "src/ui/features/pipeline/StageHealthTable.test.tsx",
+      "src/ui/features/pipeline/StageHealthTable.tsx",
+      "src/ui/features/pipeline/TodaysFocus.test.tsx",
+      "src/ui/features/pipeline/TodaysFocus.tsx",
+      "src/ui/features/pipeline/aiScoreMathLines.cross-check.test.ts",
+      "src/ui/features/pipeline/explainability/FieldExplain.test.tsx",
+      "src/ui/features/pipeline/explainability/FieldExplain.tsx",
+      "src/ui/features/pipeline/explainability/registry.test.ts",
+      "src/ui/features/pipeline/explainability/registry.ts",
+      "src/ui/features/pipeline/types.ts",
+      "src/ui/index.css",
+      "src/ui/lib/gtm-domain.ts",
+      "src/ui/render-smoke.test.tsx",
+      "src/ui/routes.tsx",
+      "src/ui/standalone.html",
+      "src/ui/standalone.tsx",
+      "tsconfig.ui.json",
+      "vite-config.test.ts",
+      "vite.config.ts",
+      "web/index.html",
+      "web/src/index.css",
+      "web/src/main.tsx",
+      "web/tsconfig.json",
+      "web/vite.config.ts"
+    ],
+    "fetchedAt": "2026-11-11T20:07:09.935Z"
+  },
+  "GetDutchie/alchemy-pipeline#84": {
+    "title": "fix(datadog): scope the pod readiness monitor by cluster, not env",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/datadog/dashboard-infra.json",
+      "alchemy/datadog/monitors.json"
+    ],
+    "fetchedAt": "2026-11-11T20:07:10.728Z"
+  },
+  "GetDutchie/alchemy-pipeline#83": {
+    "title": "build: stop tracking generated migration bundle",
+    "qualityComments": [],
+    "changedPaths": [
+      ".gitignore",
+      "dist-migrate/migrate-own-db.mjs"
+    ],
+    "fetchedAt": "2026-11-11T20:07:11.448Z"
+  },
+  "GetDutchie/alchemy-pipeline#80": {
+    "title": "eng(pipeline): fill test gap — pin web/index.html shell-globals merge",
+    "qualityComments": [],
+    "changedPaths": [
+      "api/src/lib/web-index-shell.test.ts"
+    ],
+    "fetchedAt": "2026-11-11T20:07:12.341Z"
   }
 }
