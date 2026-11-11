@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794320171.236079",
+  "last_processed_ts": "1794406250.347319",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -225,6 +225,28 @@
       "last_notified": "2026-11-10",
       "likelySeverity": "P2",
       "severityReasoning": "Undo overwrites a user's unsaved catalog edit and writes the previous product values to the server; single brand/product, user-initiated, recoverable by re-entering."
+    },
+    "3157-apps/connect-brands/src/pages/catalog/import/import-dialog.tsx": {
+      "classification": "needs-production-change",
+      "description": "CSV import preparation: File.text() awaited outside try; repeated Upload clicks before mutation loading",
+      "blocker": "Scratch test confirmed rejected File.text() gives unhandled rejection, no toast, no mutation; Upload not disabled during file read so double-click can start two mutations. Needs production fix (try/catch + local pending guard).",
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11",
+      "likelySeverity": "P2",
+      "severityReasoning": "Duplicate catalog imports / silent failure for brand users; workaround exists, bordering P3."
+    },
+    "3106-apps/connect-brands/src/hooks/use-server-table.ts": {
+      "classification": "needs-production-change",
+      "description": "Pending column-width resize dropped on unmount (timer cleared without flush)",
+      "blocker": "Intended flush-vs-drop policy is undecided; a test would pin a probable bug or fail.",
+      "first_seen": "2026-11-11",
+      "last_seen": "2026-11-11",
+      "times_seen": 1,
+      "last_notified": "2026-11-11",
+      "likelySeverity": "P3",
+      "severityReasoning": "Cosmetic preference loss, no revenue/compliance impact."
     }
   }
 }
