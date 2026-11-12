@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794407482.716529",
+  "last_processed_ts": "1794828984.000000",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -53,6 +53,27 @@
       "last_notified": "2026-11-11",
       "likelySeverity": "N/A (forced-analogy: P2)",
       "severityReasoning": "internal tool; closest analogy"
+    },
+    "103-src/api/routes/pipeline/deals-reads.ts": {
+      "classification": "closeable",
+      "note": "GET /:id/products no-authUser -> [] branch; needs route-level harness; PR #109 closed the deals.helpers.ts sibling",
+      "last_seen": "2026-11-12",
+      "times_seen": 1,
+      "last_notified": "2026-11-12"
+    },
+    "101-src/integrations/account-360/gong.ts": {
+      "classification": "closeable",
+      "note": "Low: createLogger->console.warn, no test",
+      "last_seen": "2026-11-12",
+      "times_seen": 1,
+      "last_notified": "2026-11-12"
+    },
+    "102-src/integrations/account-360/service-accounts.ts": {
+      "classification": "already-covered",
+      "note": "Low: one-line import fix; typecheck + existing test",
+      "last_seen": "2026-11-12",
+      "times_seen": 1,
+      "last_notified": "2026-11-12"
     }
   }
 }
