@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794395358.871179",
+  "last_processed_ts": "1794481760.792799",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -52,7 +52,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P2",
       "severityReasoning": "public-menu purchase path, revenue-adjacent"
     },
@@ -73,7 +73,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P2",
       "severityReasoning": "public PO write path"
     },
@@ -84,7 +84,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "internal admin assume-role tool"
     },
@@ -95,7 +95,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "dead code, no runtime caller"
     },
@@ -106,7 +106,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "column display only"
     },
@@ -117,7 +117,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "internal admin assume-role tool"
     },
@@ -128,7 +128,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P2, bordering P3",
       "severityReasoning": "cart state on public order flow"
     },
@@ -139,7 +139,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "display-only read-only PO detail"
     },
@@ -150,7 +150,7 @@
       "first_seen": "2026-09-22",
       "last_seen": "2026-09-22",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P2",
       "severityReasoning": "public ordering flow"
     },
@@ -207,7 +207,7 @@
       "first_seen": "2026-10-09",
       "last_seen": "2026-11-06",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "dev-only proxy config"
     },
