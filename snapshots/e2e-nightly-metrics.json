@@ -1424,6 +1424,25 @@
         "commit": "de08920",
         "run_timestamp": "2026-11-11T07:26:34.011529Z"
       }
+    },
+    {
+      "date": "2026-11-12",
+      "back_office": {
+        "flaky": 3,
+        "failed": 0,
+        "total": null,
+        "branch": null,
+        "commit": null,
+        "run_timestamp": "2026-11-12T06:22:38.895599Z"
+      },
+      "pos": {
+        "flaky": 3,
+        "failed": 0,
+        "total": 405,
+        "branch": "develop",
+        "commit": "2485aa7",
+        "run_timestamp": "2026-11-12T07:25:33.417289Z"
+      }
     }
   ],
   "thrash_candidates": [
