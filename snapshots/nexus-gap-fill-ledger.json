@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794406250.347319",
+  "last_processed_ts": "1794492979.490369",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -247,6 +247,17 @@
       "last_notified": "2026-11-11",
       "likelySeverity": "P3",
       "severityReasoning": "Cosmetic preference loss, no revenue/compliance impact."
+    },
+    "3196-apps/nexus/src/pages/customer-portal/tickets/route.tsx (autopay support route with tickets off)": {
+      "classification": "needs-production-change",
+      "description": "AutoPay 'Contact us' links to /customer-portal/tickets; with the tickets rollout off the destination is a dead-end 'not available yet' notice, with no support fallback",
+      "blocker": "Product decision needed (fallback destination or hide the AutoPay contact action when tickets are off); a test now would pin a probable dead-end as intended",
+      "first_seen": "2026-11-12",
+      "last_seen": "2026-11-12",
+      "times_seen": 1,
+      "last_notified": "2026-11-12",
+      "likelySeverity": "P3",
+      "severityReasoning": "Support entry point from a rollout-gated billing card dead-ends; contact is possible via other channels, no revenue/compliance impact"
     }
   }
 }
