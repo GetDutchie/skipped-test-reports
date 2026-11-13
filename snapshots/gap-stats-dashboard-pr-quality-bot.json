@@ -6559,5 +6559,66 @@
       "src/integrations/account-360/accounts.ts"
     ],
     "fetchedAt": "2026-11-12T20:05:29.865Z"
+  },
+  "GetDutchie/brands-portal#1464": {
+    "title": "fix: correct BFD Summary locations count for un-narrowed retailers BRAND-4267",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/summary/retailers-card.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/summary/retailers-card.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.ts",
+      "src/pages/promotions/simple-wizard/state/retailers.ts",
+      "src/pages/promotions/simple-wizard/summary/retailers-card.test.tsx",
+      "src/pages/promotions/simple-wizard/summary/retailers-card.tsx"
+    ],
+    "fetchedAt": "2026-11-13T20:07:14.426Z"
+  },
+  "GetDutchie/brands-portal#1303": {
+    "title": "eng: migrate region selection to REST",
+    "qualityComments": [
+      {
+        "path": "src/hooks/use-brand-overview-lsps.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/hooks/use-brand-overview-lsps.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/hooks/use-brand-overview-lsps.test.tsx",
+      "src/hooks/use-brand-overview-lsps.ts",
+      "src/pages/orders/create/use-create-order-form.test.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.ts"
+    ],
+    "fetchedAt": "2026-11-13T20:07:15.232Z"
+  },
+  "GetDutchie/alchemy-pipeline#110": {
+    "title": "feat(stable): author pipeline's stable manifest — dark first landing",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/sandbox.yaml",
+      "alchemy/stable.yaml"
+    ],
+    "fetchedAt": "2026-11-13T20:07:16.286Z"
   }
 }
