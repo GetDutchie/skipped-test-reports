@@ -1,6 +1,22 @@
 {
   "schema_version": 1,
   "tests": {
+    "cart/taxes-on-manual-fees.test.ts::[653970] Taxes associated with manual fees are correctly applied to carts when manual fee is applied": {
+      "test_name": "[653970] Taxes associated with manual fees are correctly applied to carts when manual fee is applied",
+      "suite": "pos",
+      "attempt_count": 0,
+      "escalated": false,
+      "escalated_at": null,
+      "escalated_owner": null,
+      "escalated_jira_key": null,
+      "failure_signature": "expect(locator).toHaveText(expected) failed: total-breakdown-drawer-fees-and-donations-amount expected $3.00; element(s) not found",
+      "real_app_bug": {
+        "ticket_key": "POS-24542",
+        "filed_at": "2026-11-13",
+        "failure_signature": "expect(locator).toHaveText(expected) failed: total-breakdown-drawer-fees-and-donations-amount expected $3.00; element(s) not found"
+      },
+      "attempts": []
+    },
     "656955": {
       "test_name": "[656955] can enter a decimal-based percent discount amount",
       "suite": "pos",
