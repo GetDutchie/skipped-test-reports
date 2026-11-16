@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794481760.792799",
+  "last_processed_ts": "1794827401.661139",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
       "description": "Assume-role banner/exit flow has thorough unit coverage (397-line use-assume-role-exit.test.ts: token swap + apolloClient.clearStore(), fail-closed on missing/expired/unparseable expiresAt, re-entrant exit() guard, countdown/auto-exit timers), but the real token swap + window.location.href redirect has no Playwright spec; e2e/tests/settings/users.test.ts was not extended.",
       "blocker": "Same e2e-execution blocker as the #888/#847 entries below \u2014 confirmed again this run: armageddon-web proc status is 'failed' (statusReason: 'Skipped: dependency armageddon-search-indexes failed'), and e2e/global-setup.ts's seed step is RAILS_ENV=test-gated per e2e/COVERAGE-GAPS.md's own documented blocker, which this constellation (development mode) does not satisfy regardless of proc health.",
       "first_seen": "2026-09-16",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-16",
       "times_seen": 2,
-      "last_notified": "2026-11-05",
+      "last_notified": "2026-11-16",
       "likelySeverity": "P3",
       "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
@@ -18,9 +18,9 @@
       "description": "Capability-session write path (invite exchange \u2192 cookie \u2192 menu fetch) is unit-tested via index.test.tsx (confirmed: StrictMode dedup, no re-exchange on refetch, unauthorized/unavailable states all covered), but has no e2e spec exercising the real cross-origin credentials:'include' contract.",
       "blocker": "e2e/global-setup.ts seeds through Armageddon's /__test_command__, gated on RAILS_ENV=test; this constellation runs development, so global setup 404s before any spec can run (confirmed live again this run, matches e2e/COVERAGE-GAPS.md's own documented blocker). armageddon-web was also still in 'waiting' proc status at run time.",
       "first_seen": "2026-09-15",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-16",
       "times_seen": 2,
-      "last_notified": "2026-11-05",
+      "last_notified": "2026-11-16",
       "likelySeverity": "P3",
       "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
@@ -29,9 +29,9 @@
       "description": "New Ad Exclusions list page has solid unit coverage (index.test.tsx, use-ad-exclusions-data.test.ts, use-columns.test.tsx) but no e2e spec or page object.",
       "blocker": "Same e2e-execution blocker as the #888 entry above \u2014 RAILS_ENV=test-gated seed endpoint 404s in this constellation's development mode.",
       "first_seen": "2026-09-15",
-      "last_seen": "2026-11-05",
+      "last_seen": "2026-11-16",
       "times_seen": 2,
-      "last_notified": "2026-11-05",
+      "last_notified": "2026-11-16",
       "likelySeverity": "P3",
       "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
@@ -225,10 +225,12 @@
     "1219-src/pages/lsp-audit-log/create-modal/use-create-setting.ts-mid-flight-error-misattribution": {
       "classification": "needs-production-change",
       "first_seen": "2026-10-21",
-      "last_seen": "2026-10-23",
-      "last_notified": "2026-11-06",
+      "last_seen": "2026-11-16",
+      "last_notified": "2026-11-16",
       "times_seen": 2,
-      "description": "lspErrorMessage is derived directly from lspError (isSearching ? lspSearchError : lspListError) without fencing by isLspListCurrent, the way lspOptions already is. Confirmed live: immediately after selectBrand(brandB) following a failed request for brandA (before brandB's own request resolves), lspErrorMessage reads \"Could not load retailers for Boulder Botanicals.\" (brandA's stale error, misattributed to the just-selected brandB) while lspsLoading is true. Fix: fence lspErrorMessage the same way lspOptions is (isLspListCurrent ? lspError ... : null during the in-flight window), or equivalent. Discovered during Quality Bot tending of PR #1219 (eng(lsp audit log): fill Connect test gap \u2014 error clearing and footnote boundary) \u2014 not implemented there since it requires a production-code change, out of scope for this test-only agent."
+      "description": "lspErrorMessage is derived directly from lspError (isSearching ? lspSearchError : lspListError) without fencing by isLspListCurrent, the way lspOptions already is. Confirmed live: immediately after selectBrand(brandB) following a failed request for brandA (before brandB's own request resolves), lspErrorMessage reads \"Could not load retailers for Boulder Botanicals.\" (brandA's stale error, misattributed to the just-selected brandB) while lspsLoading is true. Fix: fence lspErrorMessage the same way lspOptions is (isLspListCurrent ? lspError ... : null during the in-flight window), or equivalent. Discovered during Quality Bot tending of PR #1219 (eng(lsp audit log): fill Connect test gap \u2014 error clearing and footnote boundary) \u2014 not implemented there since it requires a production-code change, out of scope for this test-only agent.",
+      "likelySeverity": "P3",
+      "severityReasoning": "backfilled: test-infra gap"
     },
     "1243-src/pages/link-desk/product-connect/match-recommendation/utils.ts-prototype-key-lookup": {
       "classification": "needs-production-change",
@@ -258,9 +260,9 @@
       "description": "feat: show the active quick discount and edit it from a toolbar BRAND-4023 (#1391) \u2014 new dev-server proxy route for /api/v2/rest/brand_portal in rsbuild.config.ts. Dev config only; no test.",
       "blocker": "Same root cause as 888/1097/1145 rsbuild.config.ts entries: importing rsbuild.config under Jest throws TypeError (@rsbuild/core import.meta.url handling). Needs a human call on test-infra investment.",
       "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-16",
       "times_seen": 1,
-      "last_notified": "2026-11-06",
+      "last_notified": "2026-11-16",
       "likelySeverity": "P3",
       "severityReasoning": "dev-only proxy config; only breaks local dev calls"
     },
