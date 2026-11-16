@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794492979.490369",
+  "last_processed_ts": "1794579423.071669",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -9,7 +9,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-10-27",
       "times_seen": 2,
-      "last_notified": "2026-11-05",
+      "last_notified": "2026-11-13",
       "likelySeverity": "P2",
       "severityReasoning": "Audit create/schedule form for a single location; audits are recoverable but a broken sheet blocks creating audits"
     },
@@ -20,7 +20,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-05",
+      "last_notified": "2026-11-13",
       "likelySeverity": "P3",
       "severityReasoning": "Prose-only change; no FE behavior at risk"
     },
@@ -58,7 +58,7 @@
       "first_seen": "2026-10-15",
       "last_seen": "2026-10-15",
       "times_seen": 1,
-      "last_notified": "2026-11-05",
+      "last_notified": "2026-11-13",
       "likelySeverity": "P2",
       "severityReasoning": "Discount diagram never shows the reward cap chip; display-only in the editor, bordering P3"
     },
@@ -258,6 +258,17 @@
       "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "Support entry point from a rollout-gated billing card dead-ends; contact is possible via other channels, no revenue/compliance impact"
+    },
+    "3290-apps/nexus-agent-server/src/agents/analyst/agent.ts": {
+      "classification": "needs-production-change",
+      "description": "Dex Analyst ignores the DEX_ACCESS worker kill switch (NexusAnalystAgent.onChatMessage never calls checkDexEntitlement); only RetailersAgent refuses when the flag is explicitly false",
+      "blocker": "A test asserting refusal would fail today: agents/analyst/agent.ts must call the entitlement/DEX_ACCESS check before catalog/model/stream creation",
+      "first_seen": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "times_seen": 1,
+      "last_notified": "2026-11-13",
+      "likelySeverity": "P2",
+      "severityReasoning": "Kill switch silently bypassed for Analyst (read-only analytics, still org/store-scoped); borders P1 only if the switch is needed in an incident"
     }
   }
 }
