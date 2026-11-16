@@ -6620,5 +6620,163 @@
       "alchemy/stable.yaml"
     ],
     "fetchedAt": "2026-11-13T20:07:16.286Z"
+  },
+  "GetDutchie/brands-portal#1239": {
+    "title": "eng: add super-admin brand app-access editor",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/brands/edit/app-access/permissions.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/app-access/brand-app-access.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/app-access/brand-app-access.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/app-access/brand-app-access.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/child-brands-list.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/graphql-errors.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/index.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/mutations/update-brand.gql",
+      "src/api/operations/queries/brands/get-brand-app-access.gql",
+      "src/pages/settings/brands/brand-form-fields.test.tsx",
+      "src/pages/settings/brands/brand-form-fields.tsx",
+      "src/pages/settings/brands/edit/app-access/brand-app-access.test.tsx",
+      "src/pages/settings/brands/edit/app-access/brand-app-access.tsx",
+      "src/pages/settings/brands/edit/app-access/permissions.test.ts",
+      "src/pages/settings/brands/edit/app-access/permissions.ts",
+      "src/pages/settings/brands/edit/app-access/styled.ts",
+      "src/pages/settings/brands/edit/app-access/use-brand-app-access.ts",
+      "src/pages/settings/brands/edit/child-brands-list.tsx",
+      "src/pages/settings/brands/edit/graphql-errors.test.ts",
+      "src/pages/settings/brands/edit/graphql-errors.ts",
+      "src/pages/settings/brands/edit/index.apollo.test.tsx",
+      "src/pages/settings/brands/edit/index.test.tsx",
+      "src/pages/settings/brands/edit/index.tsx",
+      "src/pages/settings/brands/edit/query-lifecycle.test.tsx",
+      "src/pages/settings/brands/edit/save-changes.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+      "src/pages/settings/brands/styled.ts"
+    ],
+    "fetchedAt": "2026-11-16T20:05:13.452Z"
+  },
+  "GetDutchie/brands-portal#1467": {
+    "title": "eng(nexus connect): link super admins to the production standalone app",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/deploy-production.yml"
+    ],
+    "fetchedAt": "2026-11-16T20:05:14.150Z"
+  },
+  "GetDutchie/alchemy-pipeline#125": {
+    "title": "feat: read the manifest through the platform loader; upgrade the kit to service 0.29.0",
+    "qualityComments": [
+      {
+        "path": "src/api/manifest.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "Dockerfile",
+      "README.md",
+      "docs/ci-and-datadog.md",
+      "docs/conventions-and-gotchas.md",
+      "drizzle.config.ts",
+      "package-lock.json",
+      "package.json",
+      "src/__tests__/AGENTS.md",
+      "src/__tests__/api/identity-principals.integration.test.ts",
+      "src/__tests__/api/implementation-intake.unit.test.ts",
+      "src/__tests__/api/internal-account-360.contract.integration.test.ts",
+      "src/__tests__/api/internal-gate-deployed.contract.integration.test.ts",
+      "src/__tests__/api/manifest-load.unit.test.ts",
+      "src/__tests__/api/manifest.unit.test.ts",
+      "src/__tests__/datadog/monitors.unit.test.ts",
+      "src/__tests__/db/migrations.unit.test.ts",
+      "src/__tests__/helpers/fake-platform.ts",
+      "src/__tests__/helpers/pipeline-app.ts",
+      "src/__tests__/helpers/test-db.ts",
+      "src/api/AGENTS.md",
+      "src/api/app.ts",
+      "src/api/manifest.ts",
+      "vite.config.ts",
+      "vitest.config.ts"
+    ],
+    "fetchedAt": "2026-11-16T20:05:15.226Z"
+  },
+  "GetDutchie/alchemy-pipeline#123": {
+    "title": "docs(datadog): the monitors note states the pool metric reports again",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/datadog/monitors.json"
+    ],
+    "fetchedAt": "2026-11-16T20:05:15.890Z"
+  },
+  "GetDutchie/alchemy-pipeline#124": {
+    "title": "test: stop testing the contents of the authored manifest",
+    "qualityComments": [
+      {
+        "path": "src/__tests__/api/dockerfile-closure.unit.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "AGENTS.md",
+      "src/__tests__/AGENTS.md",
+      "src/__tests__/api/dockerfile-closure.unit.test.ts",
+      "src/__tests__/api/manifest-flat-shape.unit.test.ts",
+      "src/__tests__/api/manifest.contract.unit.test.ts",
+      "src/__tests__/datadog/monitors.unit.test.ts",
+      "src/__tests__/db/migrations.unit.test.ts",
+      "src/__tests__/workers/worker-command.unit.test.ts"
+    ],
+    "fetchedAt": "2026-11-16T20:05:16.915Z"
   }
 }
