@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794567842.580299",
+  "last_processed_ts": "1794827107.204929",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -420,6 +420,28 @@
       "last_seen": "2026-11-13",
       "times_seen": 1,
       "last_notified": "2026-11-13T14:30:00Z"
+    },
+    "304-tools/app/generate-intelligence.ts": {
+      "classification": "unclear",
+      "reason": "Top-level CLI script runs on import (env/DB); no harness to test --role handling without a production refactor. Helper + routes already tested.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 304,
+      "first_seen": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "times_seen": 1,
+      "last_notified": "2026-11-16T14:35:00Z"
+    },
+    "305-api/src/lib/ui.ts": {
+      "classification": "unclear",
+      "reason": "ACCOUNT_360_PUBLIC_BASE_PATH vs manifest publicBasePath pairing now convention-only; test removed deliberately under new AGENTS.md rule, not re-added.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 305,
+      "first_seen": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "times_seen": 1,
+      "last_notified": "2026-11-16T14:35:00Z"
     }
   }
 }
