@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794579423.071669",
+  "last_processed_ts": "1794838502.159929",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -29,38 +29,27 @@
       "description": "Gap (Medium) \u2014 PR #1762 added `audit-count-conflict-error.ts` (AuditCountConflictError, a typed 409 for stale-version count submissions) with no test file.",
       "blocker": "On inspection this file DOES NOT EXIST on current origin/main, and `AuditCountConflictError` is not referenced anywhere in the repo at all \u2014 not as a class, not as an import. `git show` confirms PR #1762's merge commit (98193ddb) added the file, but a later merge to main, PR #1724 (\"add Counted item details panel\", 35ab370f), landed changes to the SAME directory (packages/webapi-client/src/rest/nexus/) that appear to have dropped it \u2014 there is no explicit deletion commit for the file's path, which suggests a rebase/merge artifact rather than a deliberate removal. This is not a test-coverage gap this agent can close (there is nothing to test); it looks like an accidental code-loss/regression that needs a human engineer to confirm intent and, if unintended, restore the class and its consumers. Flagged prominently in this cycle's Slack report per the operator's discrepancy-reporting instruction.",
       "first_seen": "2026-09-25",
-      "last_seen": "2026-09-25",
+      "last_seen": "2026-11-16",
       "times_seen": 1,
-      "last_notified": "2026-11-06"
+      "last_notified": "2026-11-16"
     },
     "1863-_migrated-7-unnamed-files-gap": {
       "classification": "unclear",
       "description": "Gap (Low) \u2014 PR #1863 (promote DataTable/HubLayout/PageTabs into nexus-ui): report bullet names '7 legacy `_migrated/back-office/*` files got small (2-3 line) prop/import updates from the refactor with no matching test touched' but does not name the files, only says 'worth a spot-check'.",
       "blocker": "Report gives no file list for this remainder (unlike other bullets that name every file) \u2014 cannot enumerate or act on a gap without the actual paths; guessing at _migrated file names would violate Step 1's own guidance. Needs a human either to pull the PR #1863 diff for the exact 7 paths, or confirm this is low-risk enough to skip (report's own tone: 'likely still passing, but worth a spot-check').",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-05",
+      "last_seen": "2026-11-16",
       "times_seen": 1,
-      "last_notified": "2026-11-06"
+      "last_notified": "2026-11-16"
     },
     "1863-_migrated-16-unnamed-files-stale": {
       "classification": "unclear",
       "description": "Stale coverage risk (Low) \u2014 PR #1863: '16 legacy `_migrated/*` files with 2-4 line diffs, existing tests not updated \u2014 same mechanical refactor pattern as the gaps above, low risk.' No file list given.",
       "blocker": "Same as the sibling gap-cluster entry above: report names a count (16) but not the files, so there's nothing concrete for this agent to act on. Report itself calls it low risk (mechanical refactor). Needs a human to decide whether a follow-up is warranted at all.",
       "first_seen": "2026-10-05",
-      "last_seen": "2026-10-05",
+      "last_seen": "2026-11-16",
       "times_seen": 1,
-      "last_notified": "2026-11-06"
-    },
-    "1976-packages/discount-ui/src/buy-get-diagram.tsx": {
-      "classification": "needs-production-change",
-      "description": "Stale coverage risk (Medium) \u2014 PR #1976: buy-get-diagram.tsx added a rewardItemCap() helper (handles items-threshold exactly/between conditions plus an \"N-priced\" reward label) and a rewardCap chip meant to surface it in the same-pool Get row, but buy-get-diagram.test.tsx was never updated to exercise it.",
-      "blocker": "On inspection the rewardCap chip's render guard is `crossItem && cap !== undefined`, but the only place `{rewardCap}` is actually rendered is inside the same-pool branch, which is only reached when `crossItem` is false (the crossItem===true branch returns earlier and never references rewardCap at all). Confirmed by rendering BuyGetDiagram directly with `reward.maxItems` set and appliesTo left at its same-pool default: no cap chip appears in the DOM under any data this agent could construct. This means the new feature is unreachable dead code as currently wired \u2014 writing a test that exercises it as intended would fail by construction (the chip never renders), and a test that merely confirms current (likely unintended) behavior would be vacuous/not what the report is asking for. Needs a human to confirm intent: most likely the guard should be `!crossItem && cap !== undefined` (matching where it's rendered) or the chip needs to move into the crossItem branch instead \u2014 either way it's a production-code fix, out of scope for this agent.",
-      "first_seen": "2026-10-15",
-      "last_seen": "2026-10-15",
-      "times_seen": 1,
-      "last_notified": "2026-11-13",
-      "likelySeverity": "P2",
-      "severityReasoning": "Discount diagram never shows the reward cap chip; display-only in the editor, bordering P3"
+      "last_notified": "2026-11-16"
     },
     "2546-apps/nexus/src/pages/studio/components/responsive-dialog.tsx": {
       "classification": "deferred-for-volume",
@@ -154,9 +143,9 @@
       "description": "useTurnFeedbackTiming reports first_tool for a search_tools-only prelude, which assistant-message.tsx hides while the status line speaks for it; a test asserting no tool-row event before something is visible fails against current code",
       "blocker": "Confirmed with a scratch test: a reply with only a tool-search_tools part fires first_feedback and first_tool. Fix needs hook to ignore search_tools parts (as showsContent/isToolSearchPart does) in `tool`/hasRenderedPart.",
       "first_seen": "2026-11-06",
-      "last_seen": "2026-11-06",
+      "last_seen": "2026-11-16",
       "times_seen": 1,
-      "last_notified": "2026-11-06",
+      "last_notified": "2026-11-16",
       "likelySeverity": "P3",
       "severityReasoning": "Telemetry-only skew in first-tool timing; no user-facing, revenue or compliance impact."
     },
@@ -258,17 +247,6 @@
       "last_notified": "2026-11-12",
       "likelySeverity": "P3",
       "severityReasoning": "Support entry point from a rollout-gated billing card dead-ends; contact is possible via other channels, no revenue/compliance impact"
-    },
-    "3290-apps/nexus-agent-server/src/agents/analyst/agent.ts": {
-      "classification": "needs-production-change",
-      "description": "Dex Analyst ignores the DEX_ACCESS worker kill switch (NexusAnalystAgent.onChatMessage never calls checkDexEntitlement); only RetailersAgent refuses when the flag is explicitly false",
-      "blocker": "A test asserting refusal would fail today: agents/analyst/agent.ts must call the entitlement/DEX_ACCESS check before catalog/model/stream creation",
-      "first_seen": "2026-11-13",
-      "last_seen": "2026-11-13",
-      "times_seen": 1,
-      "last_notified": "2026-11-13",
-      "likelySeverity": "P2",
-      "severityReasoning": "Kill switch silently bypassed for Analyst (read-only analytics, still org/store-scoped); borders P1 only if the switch is needed in an incident"
     }
   }
 }
