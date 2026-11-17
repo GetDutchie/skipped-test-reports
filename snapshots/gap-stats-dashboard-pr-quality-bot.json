@@ -6778,5 +6778,173 @@
       "src/__tests__/workers/worker-command.unit.test.ts"
     ],
     "fetchedAt": "2026-11-16T20:05:16.915Z"
+  },
+  "GetDutchie/brands-portal#1469": {
+    "title": "feat: add retailers to existing campaigns BRAND-4291",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/add-retailers/retailer-selector.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/add-retailers/selection.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/add-retailers/send-error.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/state/index.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/add-retailers/dialog.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/api/operations/mutations/add-discount-campaign-retailers.gql",
+      "src/api/operations/queries/discount-campaigns/get-campaign-membership.gql",
+      "src/hooks/use-brand-overview-lsps.test.tsx",
+      "src/hooks/use-brand-overview-lsps.ts",
+      "src/pages/orders/create/use-create-order-form.test.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/add-retailers-action.test.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/add-retailers-action.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/dialog.test.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/dialog.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/eligibility.test.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/eligibility.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/error-notice.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/retailer-selector.test.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/retailer-selector.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/selection.test.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/selection.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/send-error.test.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/send-error.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/styled.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/use-campaign-members-hook.test.tsx",
+      "src/pages/promotions/campaign-detail/add-retailers/use-campaign-members.test.ts",
+      "src/pages/promotions/campaign-detail/add-retailers/use-campaign-members.ts",
+      "src/pages/promotions/campaign-detail/components/retailer-breakdown/index.tsx",
+      "src/pages/promotions/campaign-detail/components/retailer-breakdown/styled.ts",
+      "src/pages/promotions/campaign-detail/index.tsx",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.apollo.test.tsx",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.test.tsx",
+      "src/pages/promotions/hooks/use-brand-funded-discounts.ts",
+      "src/pages/promotions/promotions-tab/use-promotions-query.test.ts",
+      "src/pages/promotions/ribfd-inbox/use-ribfd-inbox-query.test.ts",
+      "src/pages/promotions/simple-wizard/retailers/shared/use-retailer-page.ts",
+      "src/pages/promotions/simple-wizard/retailers/tree/retailer-tree-table.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/tree/retailer-tree-table.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-locs-by-lsp-accounts.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/use-lsp-filter-options.ts",
+      "src/pages/promotions/simple-wizard/retailers/use-materialize-selected-locs.test.tsx",
+      "src/pages/promotions/simple-wizard/state/index.tsx"
+    ],
+    "fetchedAt": "2026-11-17T20:05:30.264Z"
+  },
+  "GetDutchie/brands-portal#1470": {
+    "title": "fix(overview): promo depth tooltip review follow-ups BRAND-4197",
+    "qualityComments": [
+      {
+        "path": "src/pages/overview/card/card-header.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/overview/card/card-header.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/overview/card/card-header.test.tsx",
+      "src/pages/overview/card/card-header.tsx",
+      "src/pages/overview/card/metric-tooltip-content.test.tsx"
+    ],
+    "fetchedAt": "2026-11-17T20:05:31.145Z"
+  },
+  "GetDutchie/brands-portal#1465": {
+    "title": "fix: flag uncertain BFD summary location totals, test entire-region locationCount BRAND-4267",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/summary/retailers-card.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/retailers/use-select-entire-region.test.tsx",
+      "src/pages/promotions/simple-wizard/summary/retailers-card.test.tsx",
+      "src/pages/promotions/simple-wizard/summary/retailers-card.tsx"
+    ],
+    "fetchedAt": "2026-11-17T20:05:31.965Z"
+  },
+  "GetDutchie/brands-portal#1398": {
+    "title": "eng: remove growth.brands.default-contacts.rollout flag",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/use-bfd-contact-default.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/orders/create/use-create-order-form.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/hooks/use-default-contact-consumers.test.tsx",
+      "src/nexus/host-flags.test.ts",
+      "src/nexus/host-flags.ts",
+      "src/pages/catalog/health/hooks/use-catalog-contact.test.ts",
+      "src/pages/catalog/health/hooks/use-catalog-contact.ts",
+      "src/pages/catalog/health/index.test.tsx",
+      "src/pages/catalog/health/index.tsx",
+      "src/pages/orders/create/use-create-order-form.test.ts",
+      "src/pages/orders/create/use-purchase-order-contact.test.ts",
+      "src/pages/orders/create/use-purchase-order-contact.ts",
+      "src/pages/orders/detail/order-detail-drawer.test.tsx",
+      "src/pages/orders/detail/order-detail-drawer.tsx",
+      "src/pages/promotions/bfd-contact-fields.test.tsx",
+      "src/pages/promotions/bfd-contact-fields.tsx",
+      "src/pages/promotions/simple-wizard/retailers/index.test.tsx",
+      "src/pages/promotions/simple-wizard/retailers/index.tsx",
+      "src/pages/promotions/simple-wizard/summary/details-card.test.tsx",
+      "src/pages/promotions/simple-wizard/summary/details-card.tsx",
+      "src/pages/promotions/use-bfd-contact-default.test.ts",
+      "src/pages/promotions/use-bfd-contact-default.ts",
+      "src/pages/promotions/wizard/retailers/index.test.tsx",
+      "src/pages/promotions/wizard/retailers/index.tsx",
+      "src/pages/promotions/wizard/summary/details-card.test.tsx",
+      "src/pages/promotions/wizard/summary/details-card.tsx",
+      "src/pages/settings/default-contacts/route-guard.test.tsx",
+      "src/pages/settings/default-contacts/route-guard.tsx",
+      "src/routes/links.test.ts",
+      "src/routes/links.ts",
+      "src/services/launch-darkly/use-is-default-contacts-enabled.test.ts",
+      "src/services/launch-darkly/use-is-default-contacts-enabled.ts",
+      "src/shell/index.tsx"
+    ],
+    "fetchedAt": "2026-11-17T20:05:33.004Z"
+  },
+  "GetDutchie/brands-portal#1150": {
+    "title": "eng(promotions): fill Connect test gap — campaign report refresh wiring",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/index.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/index.test.tsx"
+    ],
+    "fetchedAt": "2026-11-17T20:05:33.978Z"
+  },
+  "GetDutchie/alchemy-pipeline#128": {
+    "title": "feat(datadog): linked runbooks for the 5 default-template alerts",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/datadog/monitors.json"
+    ],
+    "fetchedAt": "2026-11-17T20:05:34.892Z"
   }
 }
