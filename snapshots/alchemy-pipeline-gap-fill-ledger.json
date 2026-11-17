@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794839911.215279",
+  "last_processed_ts": 1794926512.993549,
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -29,7 +29,7 @@
       "severityReasoning": "internal tool; closest analogy"
     },
     "82-api/src/lib/serving.ts": {
-      "classification": "closeable",
+      "classification": "already-covered",
       "entry_type": "gap",
       "source_pr": 82,
       "description": "non-module ALCHEMY_UI_MODE modes untested",
@@ -39,7 +39,8 @@
       "times_seen": 1,
       "last_notified": "2026-11-11",
       "likelySeverity": "N/A (forced-analogy: P3)",
-      "severityReasoning": "internal tool; closest analogy"
+      "severityReasoning": "internal tool; closest analogy",
+      "note": "file no longer exists; ui-serving.integration.test.ts covers unknown mode; resolveUiMode lives in platform pkg"
     },
     "82-shell-env-globals": {
       "classification": "unclear",
@@ -55,15 +56,15 @@
       "severityReasoning": "internal tool; closest analogy"
     },
     "103-src/api/routes/pipeline/deals-reads.ts": {
-      "classification": "closeable",
-      "note": "GET /:id/products no-authUser -> [] branch; needs route-level harness; PR #109 closed the deals.helpers.ts sibling",
+      "classification": "closed",
+      "note": "PR #130 (no-account branch, real-PG integration). no-authUser branch unreachable via real app.",
       "last_seen": "2026-11-12",
       "times_seen": 1,
       "last_notified": "2026-11-12"
     },
     "101-src/integrations/account-360/gong.ts": {
-      "classification": "closeable",
-      "note": "Low: createLogger->console.warn, no test",
+      "classification": "already-covered",
+      "note": "gong-competitors.unit.test.ts exists",
       "last_seen": "2026-11-12",
       "times_seen": 1,
       "last_notified": "2026-11-12"
