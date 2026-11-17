@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794827107.204929",
+  "last_processed_ts": "1794913441.178159",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -442,6 +442,17 @@
       "last_seen": "2026-11-16",
       "times_seen": 1,
       "last_notified": "2026-11-16T14:35:00Z"
+    },
+    "313-alchemy/datadog/monitors.json": {
+      "classification": "unclear",
+      "reason": "313 (Low): runbook-link edit dropped {{__SLACK_CHANNEL__}} from 2 monitors' is_warning blocks (fixed in #317). Repo convention is not to unit-test monitors.json; suggested fix is a CI render check (infra change, not test-only).",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 313,
+      "first_seen": "2026-11-17",
+      "last_seen": "2026-11-17",
+      "times_seen": 1,
+      "last_notified": "2026-11-17T14:30:00Z"
     }
   }
 }
