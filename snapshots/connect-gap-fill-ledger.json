@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794913763.201959",
+  "last_processed_ts": "1795000141.761839",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -161,7 +161,7 @@
       "first_seen": "2026-09-22",
       "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-18",
       "resolved": "2026-11-04 \u2014 closed by test-only brands-portal#1357 (ship-show, CI green)",
       "likelySeverity": "P2, bordering P3",
       "severityReasoning": "per-unit label on PO pricing"
@@ -173,7 +173,7 @@
       "first_seen": "2026-09-22",
       "last_seen": "2026-11-05",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "guidance gate on public menu",
       "resolved": "2026-11-05 \u2014 closed by test-only brands-portal#1383 (ship-show, CI green)"
@@ -195,7 +195,7 @@
       "first_seen": "2026-10-08",
       "last_seen": "2026-11-04",
       "times_seen": 2,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Only which Campaign Insights tab opens by default; unit tests cover the selection logic and users can switch tabs (cosmetic, workaround exists).",
       "resolved": "2026-11-04 \u2014 obsolete: data-source-context.tsx deleted by brands-portal#1314 (Moloco/Kevel data-source provider removed)"
@@ -218,7 +218,7 @@
       "first_seen": "2026-10-15",
       "last_seen": "2026-11-10",
       "times_seen": 2,
-      "last_notified": "2026-11-10",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Missing E2E check on purchase-order status rendering for a single brand; unit tests (orders/utils.test.ts, use-orders-data.test.ts) already cover these states."
     },
@@ -239,7 +239,7 @@
       "first_seen": "2026-10-26",
       "last_seen": "2026-10-28",
       "times_seen": 2,
-      "last_notified": "2026-11-11",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Mis-rendered match-confidence label only if the backend sends a prototype-key string as confidence_level; single-brand Link Desk display issue, no revenue/compliance path."
     },
@@ -250,7 +250,7 @@
       "first_seen": "2026-11-03",
       "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P2",
       "severityReasoning": "If released before the backend enum, the catalog grid query fails for every brand that sorts by Subcategory (multi-account scope); clearing the sort is a workaround, no revenue/compliance path.",
       "resolved": "2026-11-04 \u2014 blocker cleared (Dutchie main now has LibraryProductSortByEnum.subcategory); brands-portal#1333 reopened with main merged in, ship-show + CI green"
@@ -273,7 +273,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-09",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
       "resolved": "2026-11-10 \u2014 PR #1441 opened"
@@ -285,7 +285,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-09",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
       "resolved": "2026-11-10 \u2014 PR #1442 opened"
@@ -297,7 +297,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-09",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
       "resolved": "2026-11-10 \u2014 PR #1442 opened"
@@ -309,7 +309,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-09",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
       "resolved": "2026-11-10 \u2014 PR #1442 opened"
@@ -321,7 +321,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-09",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
       "resolved": "2026-11-10 \u2014 PR #1442 opened"
@@ -333,7 +333,7 @@
       "first_seen": "2026-11-10",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-10",
+      "last_notified": "2026-11-18",
       "likelySeverity": "P3",
       "severityReasoning": "a flaky/ambiguous e2e wait, not a product defect; masks an update-mutation regression in one admin flow"
     },
@@ -347,6 +347,17 @@
       "last_notified": "2026-11-17",
       "likelySeverity": "P3",
       "severityReasoning": "dead flag plumbing, no user-visible behavior"
+    },
+    "1458-e2e/tests/promotions/campaign-details-export.test.ts": {
+      "classification": "e2e-out-of-scope",
+      "description": "Export button locators not in campaign-detail-page page object; new e2e tests lack [C\u2026]/[TODO] test-case ID",
+      "blocker": "e2e suite cannot execute here: armageddon /__test_command__ seed gated on Rails.env.test?",
+      "first_seen": "2026-11-18",
+      "last_seen": "2026-11-18",
+      "times_seen": 1,
+      "last_notified": "2026-11-18",
+      "likelySeverity": "P3",
+      "severityReasoning": "test-hygiene only; super-admin-only export"
     }
   }
 }
