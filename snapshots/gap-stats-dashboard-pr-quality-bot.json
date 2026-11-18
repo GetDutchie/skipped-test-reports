@@ -6946,5 +6946,88 @@
       "alchemy/datadog/monitors.json"
     ],
     "fetchedAt": "2026-11-17T20:05:34.892Z"
+  },
+  "GetDutchie/brands-portal#1458": {
+    "title": "eng(promotions): add super-admin campaign details CSV export",
+    "qualityComments": [
+      {
+        "path": "e2e/tests/promotions/campaign-details-export.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "e2e/tests/promotions/campaign-details-export.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "e2e/tests/promotions/campaign-details-export.test.ts",
+        "category": "Pyramid"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-details-export.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-details-export.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-details-export.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-details-export-action.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-details-export-action.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "e2e/playwright.config.ts",
+      "e2e/tests/promotions/campaign-details-export.test.ts",
+      "src/api/operations/mutations/request-discount-campaign-details-export.gql",
+      "src/api/operations/queries/discount-campaigns/discount-campaign-details-export.gql",
+      "src/api/operations/queries/discount-campaigns/download-discount-campaign-details-export.gql",
+      "src/pages/promotions/campaign-detail/components/campaign-details-export-action.test.tsx",
+      "src/pages/promotions/campaign-detail/components/campaign-details-export-action.tsx",
+      "src/pages/promotions/campaign-detail/components/campaign-header.test.tsx",
+      "src/pages/promotions/campaign-detail/components/campaign-header.tsx",
+      "src/pages/promotions/campaign-detail/use-campaign-details-export.test.tsx",
+      "src/pages/promotions/campaign-detail/use-campaign-details-export.ts"
+    ],
+    "fetchedAt": "2026-11-18T20:05:18.928Z"
+  },
+  "GetDutchie/alchemy-account-360#319": {
+    "title": "feat: sync Salesforce Legacy License Validated onto locations",
+    "qualityComments": [
+      {
+        "path": "api/src/data/implementation.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "api/src/data/implementation.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "api/src/data/implementation-location-context.test.ts",
+      "api/src/data/implementation.live.test.ts",
+      "api/src/data/implementation.ts",
+      "api/src/lib/sfdc.test.ts",
+      "api/src/lib/sfdc.ts",
+      "api/src/sfdc/upsert-accounts.ts",
+      "docs/for-consumers.md",
+      "docs/salesforce-data-model.md",
+      "drizzle/own/0043_old_expediter.sql",
+      "drizzle/own/meta/0043_snapshot.json",
+      "drizzle/own/meta/_journal.json",
+      "packages/contracts/accounts/src/accounts.ts",
+      "packages/core-schema/src/gtm-tables.ts",
+      "web/src/features/account360/panels/LocationsPanel.test.tsx",
+      "web/src/features/account360/panels/LocationsPanel.tsx",
+      "web/src/features/account360/panels/types.ts"
+    ],
+    "fetchedAt": "2026-11-18T20:05:19.828Z"
   }
 }
