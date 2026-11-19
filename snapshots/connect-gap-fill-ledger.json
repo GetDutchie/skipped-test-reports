@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795000141.761839",
+  "last_processed_ts": "1795086538.017299",
   "entries": {
     "862-src/auth/use-assume-role-exit.ts": {
       "classification": "e2e-out-of-scope",
@@ -265,66 +265,6 @@
       "last_notified": "2026-11-16",
       "likelySeverity": "P3",
       "severityReasoning": "dev-only proxy config; only breaks local dev calls"
-    },
-    "1405-src/pages/orders/create/use-purchase-order-contact.test.ts": {
-      "classification": "closeable",
-      "status": "resolved",
-      "description": "\"successful refresh\" test never runs a real refetch",
-      "first_seen": "2026-11-09",
-      "last_seen": "2026-11-10",
-      "times_seen": 1,
-      "last_notified": "2026-11-18",
-      "likelySeverity": "P3",
-      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
-      "resolved": "2026-11-10 \u2014 PR #1441 opened"
-    },
-    "1414-src/hooks/use-brand-sales-trend-weeks.ts": {
-      "classification": "closeable",
-      "status": "resolved",
-      "description": "GraphQL fallback failure + error seeding untested",
-      "first_seen": "2026-11-09",
-      "last_seen": "2026-11-10",
-      "times_seen": 1,
-      "last_notified": "2026-11-18",
-      "likelySeverity": "P3",
-      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
-      "resolved": "2026-11-10 \u2014 PR #1442 opened"
-    },
-    "1415-src/hooks/use-brand-market-states.ts": {
-      "classification": "closeable",
-      "status": "resolved",
-      "description": "GraphQL fallback request failure untested",
-      "first_seen": "2026-11-09",
-      "last_seen": "2026-11-10",
-      "times_seen": 1,
-      "last_notified": "2026-11-18",
-      "likelySeverity": "P3",
-      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
-      "resolved": "2026-11-10 \u2014 PR #1442 opened"
-    },
-    "1416-src/hooks/use-brand-retailer-identities.ts": {
-      "classification": "closeable",
-      "status": "resolved",
-      "description": "REST disabled-proxy 404 then GraphQL fallback failure untested",
-      "first_seen": "2026-11-09",
-      "last_seen": "2026-11-10",
-      "times_seen": 1,
-      "last_notified": "2026-11-18",
-      "likelySeverity": "P3",
-      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
-      "resolved": "2026-11-10 \u2014 PR #1442 opened"
-    },
-    "1417-src/hooks/use-brand-location-identities.ts": {
-      "classification": "closeable",
-      "status": "resolved",
-      "description": "Apollo fallback failure untested",
-      "first_seen": "2026-11-09",
-      "last_seen": "2026-11-10",
-      "times_seen": 1,
-      "last_notified": "2026-11-18",
-      "likelySeverity": "P3",
-      "severityReasoning": "Low-severity report entry; deferred by 8-PR cap on 2026-11-09",
-      "resolved": "2026-11-10 \u2014 PR #1442 opened"
     },
     "1388-e2e/tests/settings/brands.test.ts": {
       "classification": "e2e-out-of-scope",
