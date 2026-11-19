@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": 1795011708.657429,
+  "last_processed_ts": "1795098584.089999",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -75,6 +75,21 @@
       "last_seen": "2026-11-12",
       "times_seen": 1,
       "last_notified": "2026-11-12"
+    },
+    "131-alchemy/datadog/monitors.json": {
+      "classification": "unclear",
+      "reason": "pinning monitor config risks AGENTS.md no-manifest-pin rule; human decision",
+      "first_seen": "2026-11-19",
+      "last_seen": "2026-11-19",
+      "times_seen": 1,
+      "last_notified": "2026-11-19"
+    },
+    "132-src/integrations/salesforce/client.ts": {
+      "classification": "closed",
+      "pr": 134,
+      "last_seen": "2026-11-19",
+      "times_seen": 1,
+      "last_notified": "2026-11-19"
     }
   }
 }
