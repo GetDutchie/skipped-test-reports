@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1794999829.973679",
+  "last_processed_ts": "1795086238.920159",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -453,6 +453,28 @@
       "last_seen": "2026-11-17",
       "times_seen": 1,
       "last_notified": "2026-11-17T14:30:00Z"
+    },
+    "328-alchemy/datadog/monitors.json": {
+      "classification": "unclear",
+      "reason": "Datadog monitor config only; by design not unit-tested (same as 313/243 entries). Needs live sandbox check.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 328,
+      "first_seen": "2026-11-19",
+      "last_seen": "2026-11-19",
+      "times_seen": 1,
+      "last_notified": "2026-11-19T14:30:00Z"
+    },
+    "325-package.json+.npmrc+.github/workflows/ci.yml": {
+      "classification": "unclear",
+      "reason": "npm engines pin / registry config only; CI install is the test. Nothing unit-testable.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 325,
+      "first_seen": "2026-11-19",
+      "last_seen": "2026-11-19",
+      "times_seen": 1,
+      "last_notified": "2026-11-19T14:30:00Z"
     }
   }
 }
