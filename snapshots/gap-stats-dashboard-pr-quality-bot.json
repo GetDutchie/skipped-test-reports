@@ -7029,5 +7029,168 @@
       "web/src/features/account360/panels/types.ts"
     ],
     "fetchedAt": "2026-11-18T20:05:19.828Z"
+  },
+  "GetDutchie/brands-portal#1493": {
+    "title": "eng: allow child-brand vertical-only configuration BRAND-4196",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/settings/brands/edit/index.tsx",
+      "src/pages/settings/brands/edit/query-lifecycle.test.tsx",
+      "src/pages/settings/brands/edit/use-vertical-only-relationships.test.tsx",
+      "src/pages/settings/brands/edit/use-vertical-only-relationships.ts",
+      "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+      "src/pages/settings/brands/edit/vertical-only-relationships.tsx",
+      "src/pages/settings/brands/edit/vertical-only-visibility.test.tsx",
+      "src/pages/settings/brands/use-columns.test.tsx",
+      "src/pages/settings/brands/use-columns.tsx"
+    ],
+    "fetchedAt": "2026-11-19T20:06:12.974Z"
+  },
+  "GetDutchie/alchemy-pipeline#131": {
+    "title": "fix(datadog): fleet-level pod signal restructure (mirror platform PR #1392)",
+    "qualityComments": [
+      {
+        "path": "alchemy/datadog/monitors.json",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "alchemy/datadog/monitors.json",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "alchemy/datadog/monitors.json",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "alchemy/datadog/monitors.json"
+    ],
+    "fetchedAt": "2026-11-19T20:06:13.843Z"
+  },
+  "GetDutchie/alchemy-pipeline#132": {
+    "title": "feat(observability): instrument Salesforce API calls for the shared cross-app metric",
+    "qualityComments": [
+      {
+        "path": "src/integrations/salesforce/client.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/workers/delta-metrics-reader.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/workers/worker.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/__tests__/workers/observability.unit.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/__tests__/integrations/observability.unit.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/__tests__/api/manifest-stable.unit.test.ts",
+        "category": "Test convention"
+      },
+      {
+        "path": "src/workers/worker.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/__tests__/workers/delta-metrics-reader.unit.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "package.json",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/__tests__/workers/worker.unit.test.ts",
+        "category": "Other Quality note"
+      },
+      {
+        "path": "src/integrations/salesforce/client.ts",
+        "category": "Test convention"
+      },
+      {
+        "path": "src/__tests__/workers/worker.unit.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/workers/worker.ts",
+        "category": "Test convention"
+      },
+      {
+        "path": "src/__tests__/workers/worker.unit.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/__tests__/workers/worker.unit.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "AGENTS.md",
+      "docs/conventions-and-gotchas.md",
+      "docs/observability.md",
+      "package-lock.json",
+      "package.json",
+      "src/__tests__/api/deals.helpers.enrich.unit.test.ts",
+      "src/__tests__/api/manifest-stable.unit.test.ts",
+      "src/__tests__/integrations/observability.unit.test.ts",
+      "src/__tests__/integrations/sfdc.opportunities.unit.test.ts",
+      "src/__tests__/workers/delta-metrics-reader.unit.test.ts",
+      "src/__tests__/workers/worker.unit.test.ts",
+      "src/integrations/salesforce/client.ts",
+      "src/integrations/salesforce/observability.ts",
+      "src/workers/delta-metrics-reader.ts",
+      "src/workers/worker.ts"
+    ],
+    "fetchedAt": "2026-11-19T20:06:14.920Z"
+  },
+  "GetDutchie/alchemy-pipeline#109": {
+    "title": "eng(pipeline): fill test gap — pin fetchEnrichedOpps productSkus degrade",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/__tests__/api/deals.helpers.enrich.test.ts"
+    ],
+    "fetchedAt": "2026-11-19T20:06:15.660Z"
+  },
+  "GetDutchie/alchemy-pipeline#133": {
+    "title": "fix(tests): repair main's red CI — lane naming, dead import, and the manifest-test rule",
+    "qualityComments": [
+      {
+        "path": "src/__tests__/api/manifest-stable.unit.test.ts",
+        "category": "Test convention"
+      },
+      {
+        "path": "src/__tests__/api/manifest-stable.unit.test.ts",
+        "category": "Test convention"
+      }
+    ],
+    "changedPaths": [
+      "src/__tests__/api/deals.helpers.enrich.unit.test.ts",
+      "src/__tests__/api/manifest-stable.unit.test.ts"
+    ],
+    "fetchedAt": "2026-11-19T20:06:16.410Z"
+  },
+  "GetDutchie/alchemy-pipeline#116": {
+    "title": "eng(pipeline): fill test gap — pin stable manifest parity with sandbox",
+    "qualityComments": [],
+    "changedPaths": [
+      "src/__tests__/api/manifest-stable.unit.test.ts"
+    ],
+    "fetchedAt": "2026-11-19T20:06:17.172Z"
   }
 }
