@@ -7192,5 +7192,73 @@
       "src/__tests__/api/manifest-stable.unit.test.ts"
     ],
     "fetchedAt": "2026-11-19T20:06:17.172Z"
+  },
+  "GetDutchie/brands-portal#1509": {
+    "title": "fix(launchdarkly): improve Brands Portal flag recovery BRAND-3784",
+    "qualityComments": [
+      {
+        "path": "src/services/launch-darkly/use-launch-darkly-user.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/services/launch-darkly/use-launch-darkly-user.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/services/launch-darkly/config.test.tsx",
+      "src/services/launch-darkly/config.ts",
+      "src/services/launch-darkly/use-launch-darkly-user.test.tsx",
+      "src/services/launch-darkly/use-launch-darkly-user.ts"
+    ],
+    "fetchedAt": "2026-11-20T20:05:13.134Z"
+  },
+  "GetDutchie/alchemy-pipeline#136": {
+    "title": "feat(pipeline): first Alchemist agent (opportunities resource, pipeline stats)",
+    "qualityComments": [
+      {
+        "path": "src/api/resources/opportunities.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "AGENTS.md",
+      "alchemy/sandbox.yaml",
+      "docs/for-consumers.md",
+      "docs/internal-delegated-reads.md",
+      "src/__tests__/AGENTS.md",
+      "src/__tests__/api/agent-describe.contract.integration.test.ts",
+      "src/__tests__/api/agent-stable-boot.integration.test.ts",
+      "src/__tests__/api/alchemist-actions.contract.integration.test.ts",
+      "src/__tests__/api/internal-gate-deployed.contract.integration.test.ts",
+      "src/__tests__/api/opportunities-resource.contract.integration.test.ts",
+      "src/__tests__/db/deals-readable.integration.test.ts",
+      "src/__tests__/helpers/fake-account-360.ts",
+      "src/__tests__/helpers/fga.ts",
+      "src/__tests__/helpers/pipeline-app.ts",
+      "src/__tests__/lib/opportunity-scope.unit.test.ts",
+      "src/api/AGENTS.md",
+      "src/api/agent.ts",
+      "src/api/app.ts",
+      "src/api/handlers/deals-reads.ts",
+      "src/api/handlers/deals.helpers.ts",
+      "src/api/resources/opportunities.ts",
+      "src/api/routes.ts",
+      "src/db/AGENTS.md",
+      "src/db/deals.ts",
+      "src/db/opportunities.ts",
+      "src/lib/AGENTS.md",
+      "src/lib/deals/helpers.ts",
+      "src/lib/fga/opportunity-scope.ts"
+    ],
+    "fetchedAt": "2026-11-20T20:05:13.965Z"
+  },
+  "GetDutchie/alchemy-pipeline#135": {
+    "title": "fix(datadog): add timeout_h to grouped multi-alert monitors that can get stuck forever",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/datadog/monitors.json"
+    ],
+    "fetchedAt": "2026-11-20T20:05:14.815Z"
   }
 }
