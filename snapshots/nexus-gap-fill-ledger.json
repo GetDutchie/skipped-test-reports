@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795097996.745569",
+  "last_processed_ts": "1795184505.477059",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -399,6 +399,100 @@
       "last_notified": "2026-11-19",
       "likelySeverity": "P3",
       "severityReasoning": "needs Connect browser spec; no unit seam"
+    },
+    "3700-apps/nexus/src/pages/marketing/events/components/events-workspace.tsx (company-switch isolation)": {
+      "classification": "needs-production-change",
+      "description": "Events company switch keeps open editor/draft state",
+      "blocker": "EventsWorkspace is rendered without a scope key, so open editor/draft survives a lsp/loc change; fix needs key={lspId:locId} (confirmed by scratch test: editor still open after scope switch)",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P1",
+      "severityReasoning": "Draft authored under company A stays open and could be saved under company B (cross-company write); workaround: reload.",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed"
+    },
+    "3700-apps/connect-brands/src/pages/orders/detail/catalog-select-dialog.tsx (lookup failure)": {
+      "classification": "needs-production-change",
+      "description": "Failed catalog lookup renders 'No products found'",
+      "blocker": "useCatalogRows ignores the query error; no failure/retry UI (confirmed by scratch test with error result)",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P2",
+      "severityReasoning": "Brand sees empty catalog instead of an error when lookup fails; can't add items, retry by reopening.",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed"
+    },
+    "3700-apps/nexus/src/_migrated/back-office/strains/components/strain-list.tsx (revoked permission at confirm)": {
+      "classification": "needs-production-change",
+      "description": "Archive/Unarchive confirm doesn't recheck canEdit/isReadOnly",
+      "blocker": "handleStatusChangeConfirmed dispatches mutate without rechecking live gate (confirmed by scratch test: mutate called after permission revoked)",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P3",
+      "severityReasoning": "Client dispatch after revocation; backend still authorizes, so low impact.",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed"
+    },
+    "3700-package-counting-workspace Quick Entry print scope": {
+      "classification": "unclear",
+      "description": "Quick Entry print ignores grid-internal search",
+      "blocker": "Code comment says Quick Entry deliberately prints all products; report expects print to follow Quick Entry search - contract ambiguous, needs product decision",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P3",
+      "severityReasoning": "Print shows more rows than searched; cosmetic/operational."
+    },
+    "3700-package-trace-sync retry negative paths": {
+      "classification": "deferred-for-volume",
+      "description": "Package trace retry denied/rejected/unmatched-ID UI assertions",
+      "blocker": "Not attempted this run; also -1 bucket contract needs decision",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P2",
+      "severityReasoning": "Trace sync failures could be hidden from auditors."
+    },
+    "3700-connect-order mutations / persisted-draft negatives": {
+      "classification": "deferred-for-volume",
+      "description": "SaveDraft/Submit PO real-client harness; draft header lock negatives",
+      "blocker": "Not attempted this run (integration-heavy)",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P2",
+      "severityReasoning": "Order save/submit regressions could slip past mocked hooks."
+    },
+    "3700-CMS contract/admission + help-content-deploy workflow": {
+      "classification": "unclear",
+      "description": "CMS root/rootProps integration; workflow YAML decision tests",
+      "blocker": "Needs worker integration harness / workflow test infra; not unit-closeable",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P3",
+      "severityReasoning": "CI/deploy decisions or CMS proposals regress."
+    },
+    "3700-package-product-side-panel permission revoke": {
+      "classification": "deferred-for-volume",
+      "description": "Open\u2192revoke\u2192Save for package-product-side-panel",
+      "blocker": "Not attempted this run",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P3",
+      "severityReasoning": "Client dispatch after revoke."
     }
   }
 }
