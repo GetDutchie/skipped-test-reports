@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795098584.089999",
+  "last_processed_ts": "1795185230.369299",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -82,7 +82,8 @@
       "first_seen": "2026-11-19",
       "last_seen": "2026-11-19",
       "times_seen": 1,
-      "last_notified": "2026-11-19"
+      "last_notified": "2026-11-19",
+      "note": "superseded by PR #140"
     },
     "132-src/integrations/salesforce/client.ts": {
       "classification": "closed",
@@ -90,6 +91,34 @@
       "last_seen": "2026-11-19",
       "times_seen": 1,
       "last_notified": "2026-11-19"
+    },
+    "136-src/lib/deals/helpers.ts": {
+      "classification": "closed",
+      "pr": 139,
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20"
+    },
+    "135-alchemy/datadog/monitors.json": {
+      "classification": "closed",
+      "pr": 140,
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20"
+    },
+    "136-src/api/handlers/deals-reads.ts": {
+      "classification": "needs-production-change",
+      "entry_type": "gap",
+      "source_pr": 136,
+      "description": "GET /api/v1/pipeline list reads search raw (c.req.query) so padded search is not trimmed; /stats uses parsed trimmed query",
+      "blocker": "production fix in deals-reads.ts listDeals",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-20",
+      "likelySeverity": "P3"
     }
   }
 }
