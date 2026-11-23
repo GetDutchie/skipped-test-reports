@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795086238.920159",
+  "last_processed_ts": "1795431833.437989",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -11,7 +11,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1091-libs/contracts/pipeline/src/pipeline.ts": {
       "classification": "unclear",
@@ -22,7 +22,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1094-apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx": {
       "classification": "unclear",
@@ -33,7 +33,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1094-apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts": {
       "classification": "unclear",
@@ -44,7 +44,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1094-libs/contracts/accounts/src/accounts.ts": {
       "classification": "unclear",
@@ -55,7 +55,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1095-apps/gtm/account-360/api/src/routes/accounts.ts::similarAccounts": {
       "classification": "unclear",
@@ -67,7 +67,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-18",
       "times_seen": 2,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1107-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts::expansion-candidates": {
       "classification": "unclear",
@@ -78,7 +78,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1107-cross-app-view-as-e2e-flow": {
       "classification": "unclear",
@@ -89,7 +89,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1107-apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts": {
       "classification": "unclear",
@@ -100,7 +100,7 @@
       "first_seen": "2026-09-18",
       "last_seen": "2026-09-18",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1113-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -111,7 +111,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1113-apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx": {
       "classification": "unclear",
@@ -122,7 +122,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1113-apps/gtm/pipeline/api/src/routes/pipeline/deals.helpers.ts": {
       "classification": "unclear",
@@ -133,7 +133,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1113-apps/gtm/pipeline/api/smoke.json": {
       "classification": "unclear",
@@ -144,7 +144,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1113-apps/gtm/pipeline/web/src/features/pipeline/DealDetailPanel.tsx": {
       "classification": "unclear",
@@ -155,7 +155,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1113-libs/contracts/pipeline/src/pipeline.ts": {
       "classification": "unclear",
@@ -166,7 +166,7 @@
       "first_seen": "2026-09-21",
       "last_seen": "2026-09-21",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "875-libs/ui/src/components/data-display/useAccountTableColumnOrder-round-trip": {
       "classification": "unclear",
@@ -177,7 +177,7 @@
       "first_seen": "2026-09-23",
       "last_seen": "2026-09-23",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "875-libs/ui/src/components/data-display/DataTable-groupBy-columnOrder-hazard": {
       "classification": "unclear",
@@ -188,7 +188,7 @@
       "first_seen": "2026-09-23",
       "last_seen": "2026-09-23",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1158-apps/gtm/pipeline/web/src/features/pipeline/PipelineView.tsx": {
       "classification": "unclear",
@@ -199,7 +199,7 @@
       "first_seen": "2026-09-24",
       "last_seen": "2026-09-24",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "1057-apps/gtm/account-360/web/src/main.tsx": {
       "classification": "needs-production-change",
@@ -210,7 +210,7 @@
       "first_seen": "2026-09-24",
       "last_seen": "2026-09-24",
       "times_seen": 1,
-      "last_notified": "2026-11-04T14:00:00Z",
+      "last_notified": "2026-11-23T14:30:00Z",
       "split_repo_note": "Still applicable after the repo split: same file now at web/src/main.tsx in GetDutchie/alchemy-account-360 (verified 2026-11-03: Account360Route still an inline closure in main.tsx; still no e2e suite)."
     },
     "1196-apps/gtm/account-360/web/src/features/account360/AccountEnhancedTable.tsx": {
@@ -222,7 +222,7 @@
       "first_seen": "2026-10-02",
       "last_seen": "2026-10-02",
       "times_seen": 1,
-      "last_notified": "2026-11-03",
+      "last_notified": "2026-11-23T14:30:00Z",
       "split_repo_note": "Still applicable after the repo split: same file now at web/src/features/account360/AccountEnhancedTable.tsx in GetDutchie/alchemy-account-360 (verified 2026-11-03: Account360Route still an inline closure in main.tsx; still no e2e suite)."
     },
     "182-alchemy/sandbox.yaml": {
@@ -241,7 +241,7 @@
       "first_seen": "2026-11-03",
       "last_seen": "2026-11-03",
       "times_seen": 1,
-      "last_notified": "2026-11-03",
+      "last_notified": "2026-11-23T14:30:00Z",
       "repo": "GetDutchie/alchemy-account-360"
     },
     "196-api/src/data/playbook.ts::canSeeCalls-rubicon-read": {
@@ -255,7 +255,7 @@
       "first_seen": "2026-11-04",
       "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-23T14:30:00Z",
       "repo": "GetDutchie/alchemy-account-360"
     },
     "196-api/src/data/__fixtures__/playbook-contract-v1.json::recentCalls-qbr": {
@@ -272,7 +272,7 @@
       "first_seen": "2026-11-04",
       "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-23T14:30:00Z",
       "repo": "GetDutchie/alchemy-account-360"
     },
     "187-api/src/sfdc/cleanup-greenpath-only-accounts.ts::starred_accounts-missing-cascade-fk": {
@@ -286,7 +286,7 @@
       "first_seen": "2026-11-04",
       "last_seen": "2026-11-04",
       "times_seen": 1,
-      "last_notified": "2026-11-04",
+      "last_notified": "2026-11-23T14:30:00Z",
       "repo": "GetDutchie/alchemy-account-360"
     },
     "216-web/src/main.tsx": {
@@ -298,7 +298,7 @@
       "first_seen": "2026-11-06",
       "last_seen": "2026-11-06",
       "times_seen": 1,
-      "last_notified": "2026-11-06T14:19:41Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "238-api/src/lib/mission-control-hydration-contract.ts": {
       "classification": "needs-production-change",
@@ -309,7 +309,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-11-09T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "238-api/src/temporal/mission-control-ownership-worker.ts+hydration-worker.ts": {
       "classification": "unclear",
@@ -320,7 +320,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-11-09T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "238-api/src/lib/amc.ts": {
       "classification": "unclear",
@@ -331,7 +331,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-11-09T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "237-api/src/temporal/activities.ts": {
       "classification": "unclear",
@@ -342,7 +342,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-11-09T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "233-stale-coverage-bundle": {
       "classification": "unclear",
@@ -353,7 +353,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-11-09T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "235-scripts/verify-identity-blanket-cutover.mjs": {
       "classification": "needs-production-change",
@@ -364,7 +364,7 @@
       "first_seen": "2026-11-09",
       "last_seen": "2026-11-09",
       "times_seen": 1,
-      "last_notified": "2026-11-09T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "243-alchemy/datadog/monitors.json": {
       "classification": "unclear",
@@ -375,7 +375,7 @@
       "first_seen": "2026-11-10",
       "last_seen": "2026-11-10",
       "times_seen": 1,
-      "last_notified": "2026-11-10T14:00:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "246-api/src/temporal/workflows.ts (patched marker)": {
       "classification": "needs-production-change",
@@ -386,7 +386,7 @@
       "first_seen": "2026-11-11",
       "last_seen": "2026-11-11",
       "times_seen": 1,
-      "last_notified": "2026-11-11T14:20:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "247-web/src/index.css": {
       "classification": "unclear",
@@ -397,7 +397,7 @@
       "first_seen": "2026-11-11",
       "last_seen": "2026-11-11",
       "times_seen": 1,
-      "last_notified": "2026-11-11T14:20:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "279-api/src/lib/playbook-leaderboard-sql.ts": {
       "classification": "unclear",
@@ -408,7 +408,7 @@
       "first_seen": "2026-11-13",
       "last_seen": "2026-11-13",
       "times_seen": 1,
-      "last_notified": "2026-11-13T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "286-drizzle/own/0040_legacy_intake_projection_watermark_reset.sql": {
       "classification": "unclear",
@@ -419,7 +419,7 @@
       "first_seen": "2026-11-13",
       "last_seen": "2026-11-13",
       "times_seen": 1,
-      "last_notified": "2026-11-13T14:30:00Z"
+      "last_notified": "2026-11-23T14:30:00Z"
     },
     "304-tools/app/generate-intelligence.ts": {
       "classification": "unclear",
@@ -475,6 +475,17 @@
       "last_seen": "2026-11-19",
       "times_seen": 1,
       "last_notified": "2026-11-19T14:30:00Z"
+    },
+    "331-alchemy/datadog/monitors.json": {
+      "classification": "unclear",
+      "reason": "Datadog monitor config only (timeout_h on grouped monitors); by design not unit-tested. Needs live Datadog check.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 331,
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "times_seen": 1,
+      "last_notified": "2026-11-23T14:30:00Z"
     }
   }
 }
