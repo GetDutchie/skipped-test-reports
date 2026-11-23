@@ -7260,5 +7260,166 @@
       "alchemy/datadog/monitors.json"
     ],
     "fetchedAt": "2026-11-20T20:05:14.815Z"
+  },
+  "GetDutchie/brands-portal#1508": {
+    "title": "eng(settings): fill Connect test gap — child-brand vertical-only hint and parent status",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/settings/brands/edit/vertical-only-relationships.test.tsx"
+    ],
+    "fetchedAt": "2026-11-23T20:05:50.255Z"
+  },
+  "GetDutchie/brands-portal#1510": {
+    "title": "eng(launchdarkly): fill Connect test gap — reconnect retry and listener cleanup",
+    "qualityComments": [
+      {
+        "path": "src/services/launch-darkly/use-launch-darkly-user.test.tsx",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/services/launch-darkly/use-launch-darkly-user.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/services/launch-darkly/use-launch-darkly-user.test.tsx"
+    ],
+    "fetchedAt": "2026-11-23T20:05:51.284Z"
+  },
+  "GetDutchie/brands-portal#1503": {
+    "title": "eng(promotions): fill Connect test gap — campaign details export stale tooltip copy",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-details-export-action.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/components/campaign-details-export-action.test.tsx",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/components/campaign-details-export-action.test.tsx"
+    ],
+    "fetchedAt": "2026-11-23T20:05:52.069Z"
+  },
+  "GetDutchie/brands-portal#1502": {
+    "title": "eng(promotions): fill Connect test gap — campaign details export hook error and race branches",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-details-export.test.tsx",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/pages/promotions/campaign-detail/use-campaign-details-export.test.tsx",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/use-campaign-details-export.test.tsx"
+    ],
+    "fetchedAt": "2026-11-23T20:05:53.111Z"
+  },
+  "GetDutchie/brands-portal#1484": {
+    "title": "eng(promotions): fill Connect test gap — wizard initial selection seeding",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/simple-wizard/state/index.test.tsx",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/promotions/simple-wizard/state/index.test.tsx",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/simple-wizard/state/index.test.tsx"
+    ],
+    "fetchedAt": "2026-11-23T20:05:53.872Z"
+  },
+  "GetDutchie/brands-portal#1483": {
+    "title": "eng(promotions): fill Connect test gap — add-retailers send error message",
+    "qualityComments": [
+      {
+        "path": "src/pages/promotions/campaign-detail/add-retailers/send-error.test.ts",
+        "category": "While you're here (optional)"
+      }
+    ],
+    "changedPaths": [
+      "src/pages/promotions/campaign-detail/add-retailers/send-error.test.ts"
+    ],
+    "fetchedAt": "2026-11-23T20:05:54.830Z"
+  },
+  "GetDutchie/alchemy-pipeline#137": {
+    "title": "Salesforce delete-detection for Opportunity sync",
+    "qualityComments": [
+      {
+        "path": "src/workers/temporal/activities.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/__tests__/db/opportunities-sync.integration.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/db/opportunities-sync.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/db/opportunities-sync.ts",
+        "category": "Other Quality note"
+      }
+    ],
+    "changedPaths": [
+      "scripts/backfill-opportunities-delete-classify.mts",
+      "scripts/backfill-opportunities-deletes.mts",
+      "src/__tests__/db/backfill-opportunities-delete-classify.unit.test.ts",
+      "src/__tests__/db/opportunities-sync.integration.test.ts",
+      "src/__tests__/helpers/fake-salesforce.ts",
+      "src/__tests__/integrations/sfdc.opportunities.unit.test.ts",
+      "src/__tests__/lib/owner-tuples.unit.test.ts",
+      "src/__tests__/workers/activities.integration.test.ts",
+      "src/__tests__/workers/workflows.unit.test.ts",
+      "src/db/opportunities-sync.ts",
+      "src/integrations/salesforce/client.ts",
+      "src/lib/fga/owner-tuples.ts",
+      "src/workers/temporal/activities.ts"
+    ],
+    "fetchedAt": "2026-11-23T20:05:55.837Z"
+  },
+  "GetDutchie/alchemy-pipeline#141": {
+    "title": "fix(datadog): add timeout_h to presence monitors (matches platform template #1449)",
+    "qualityComments": [
+      {
+        "path": "alchemy/datadog/monitors.json",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "alchemy/datadog/monitors.json"
+    ],
+    "fetchedAt": "2026-11-23T20:05:56.715Z"
+  },
+  "GetDutchie/alchemy-pipeline#140": {
+    "title": "eng(pipeline): fill test gap — pin timeout_h on grouped monitors",
+    "qualityComments": [
+      {
+        "path": "src/__tests__/datadog/monitors.unit.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      "src/__tests__/datadog/monitors.unit.test.ts"
+    ],
+    "fetchedAt": "2026-11-23T20:05:57.643Z"
   }
 }
