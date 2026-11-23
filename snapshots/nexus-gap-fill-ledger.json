@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795184505.477059",
+  "last_processed_ts": "1795443426.479659",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -9,7 +9,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-10-27",
       "times_seen": 2,
-      "last_notified": "2026-11-13",
+      "last_notified": "2026-11-23",
       "likelySeverity": "P2",
       "severityReasoning": "Audit create/schedule form for a single location; audits are recoverable but a broken sheet blocks creating audits"
     },
@@ -20,7 +20,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-09-17",
       "times_seen": 1,
-      "last_notified": "2026-11-13",
+      "last_notified": "2026-11-23",
       "likelySeverity": "P3",
       "severityReasoning": "Prose-only change; no FE behavior at risk"
     },
@@ -244,7 +244,7 @@
       "first_seen": "2026-11-12",
       "last_seen": "2026-11-12",
       "times_seen": 1,
-      "last_notified": "2026-11-12",
+      "last_notified": "2026-11-23",
       "likelySeverity": "P3",
       "severityReasoning": "Support entry point from a rollout-gated billing card dead-ends; contact is possible via other channels, no revenue/compliance impact"
     },
@@ -493,6 +493,62 @@
       "last_notified": "2026-11-20",
       "likelySeverity": "P3",
       "severityReasoning": "Client dispatch after revoke."
+    },
+    "3784-packages/rules-builder-ui/src/field-picker.tsx": {
+      "classification": "needs-production-change",
+      "description": "Searchable field picker keeps search text/category after an option is picked (close via setOpen(false) bypasses onOpenChange reset)",
+      "blocker": "Reset query/category when selecting an option (production change in field-picker.tsx)",
+      "likelySeverity": "P3",
+      "severityReasoning": "Stale search on reopen is a UI annoyance; no write path",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": "2026-11-23"
+    },
+    "3700-apps/connect-brands/src/pages/orders/detail/draft-order-detail.tsx": {
+      "classification": "needs-production-change",
+      "description": "Header Save draft / Submit to retailer stay enabled while a quick-discount removal is in flight",
+      "blocker": "Disable header actions on removingDiscount (draft-order-detail.tsx / use-draft-order.ts)",
+      "likelySeverity": "P2",
+      "severityReasoning": "Competing draft writes could lose or conflict staged edits; user can avoid by waiting",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": "2026-11-23"
+    },
+    "3700-connect quick-discount.ts partial/failed Undo": {
+      "classification": "deferred-for-volume",
+      "description": "Partial-revert messages and rejected-revert retention not covered",
+      "likelySeverity": "P3",
+      "severityReasoning": "Not attempted this run",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3784-use-package-detail-save final eligibility recheck": {
+      "classification": "deferred-for-volume",
+      "description": "Flag/date-setting flip between Confirm and write not covered",
+      "likelySeverity": "P3",
+      "severityReasoning": "Not attempted this run",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3784-wallet-pass geofence preview interactions": {
+      "classification": "deferred-for-volume",
+      "description": "Low prototype-only preview selection tests",
+      "likelySeverity": "P3",
+      "severityReasoning": "Not attempted this run",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": null
     }
   }
 }
