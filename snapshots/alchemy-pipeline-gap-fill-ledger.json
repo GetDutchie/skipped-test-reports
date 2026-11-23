@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795185230.369299",
+  "last_processed_ts": "run-45163724416-2026-11-23",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -119,6 +119,30 @@
       "times_seen": 1,
       "last_notified": "2026-11-20",
       "likelySeverity": "P3"
+    },
+    "137-src/workers/temporal/activities.ts": {
+      "classification": "closed",
+      "pr": 144,
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": "2026-11-23"
+    },
+    "137-scripts/backfill-opportunities-deletes.mts": {
+      "classification": "unclear",
+      "reason": "Low; one-off script, PR describes manual acceptance check by design; classifier already unit-tested",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": "2026-11-23"
+    },
+    "141-alchemy/datadog/monitors.json": {
+      "classification": "unclear",
+      "reason": "Low; ungrouped monitors got timeout_h:2 but intent of the pin (vs grouped-only rule in #140) is a human call; file is pinned by monitors.unit",
+      "first_seen": "2026-11-23",
+      "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": "2026-11-23",
+      "likelySeverity": "N/A (forced-analogy: P3)"
     }
   }
 }
