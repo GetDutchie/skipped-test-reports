@@ -9,7 +9,7 @@
       "first_seen": "2026-09-16",
       "last_seen": "2026-11-16",
       "times_seen": 2,
-      "last_notified": "2026-11-16",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3",
       "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
@@ -20,7 +20,7 @@
       "first_seen": "2026-09-15",
       "last_seen": "2026-11-16",
       "times_seen": 2,
-      "last_notified": "2026-11-16",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3",
       "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
@@ -31,7 +31,7 @@
       "first_seen": "2026-09-15",
       "last_seen": "2026-11-16",
       "times_seen": 2,
-      "last_notified": "2026-11-16",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3",
       "severityReasoning": "backfilled: low-impact test-infra/e2e gap, no direct revenue path shown"
     },
@@ -42,7 +42,7 @@
       "first_seen": "2026-09-15",
       "last_seen": "2026-11-17",
       "times_seen": 1,
-      "last_notified": "2026-11-17",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3"
     },
     "912-e2e/tests/": {
@@ -63,7 +63,7 @@
       "first_seen": "2026-09-17",
       "last_seen": "2026-11-17",
       "times_seen": 1,
-      "last_notified": "2026-11-17",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3"
     },
     "914-src/pages/public-brand-menu/public-order-submission.ts": {
@@ -185,7 +185,7 @@
       "first_seen": "2026-10-05",
       "last_seen": "2026-11-17",
       "times_seen": 1,
-      "last_notified": "2026-11-17",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3"
     },
     "1140-src/pages/advertising/campaign-insights/contexts/data-source-context.tsx": {
@@ -226,7 +226,7 @@
       "classification": "needs-production-change",
       "first_seen": "2026-10-21",
       "last_seen": "2026-11-16",
-      "last_notified": "2026-11-16",
+      "last_notified": "2026-11-24",
       "times_seen": 2,
       "description": "lspErrorMessage is derived directly from lspError (isSearching ? lspSearchError : lspListError) without fencing by isLspListCurrent, the way lspOptions already is. Confirmed live: immediately after selectBrand(brandB) following a failed request for brandA (before brandB's own request resolves), lspErrorMessage reads \"Could not load retailers for Boulder Botanicals.\" (brandA's stale error, misattributed to the just-selected brandB) while lspsLoading is true. Fix: fence lspErrorMessage the same way lspOptions is (isLspListCurrent ? lspError ... : null during the in-flight window), or equivalent. Discovered during Quality Bot tending of PR #1219 (eng(lsp audit log): fill Connect test gap \u2014 error clearing and footnote boundary) \u2014 not implemented there since it requires a production-code change, out of scope for this test-only agent.",
       "likelySeverity": "P3",
@@ -262,7 +262,7 @@
       "first_seen": "2026-11-06",
       "last_seen": "2026-11-16",
       "times_seen": 1,
-      "last_notified": "2026-11-16",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3",
       "severityReasoning": "dev-only proxy config; only breaks local dev calls"
     },
@@ -284,7 +284,7 @@
       "first_seen": "2026-11-17",
       "last_seen": "2026-11-17",
       "times_seen": 1,
-      "last_notified": "2026-11-17",
+      "last_notified": "2026-11-24",
       "likelySeverity": "P3",
       "severityReasoning": "dead flag plumbing, no user-visible behavior"
     },
