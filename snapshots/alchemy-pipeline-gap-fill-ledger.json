@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "run-45163724416-2026-11-23",
+  "last_processed_ts": "run-45382795666-2026-11-24",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -143,6 +143,32 @@
       "times_seen": 1,
       "last_notified": "2026-11-23",
       "likelySeverity": "N/A (forced-analogy: P3)"
+    },
+    "147-src/api/agent.ts": {
+      "classification": "unclear",
+      "entry_type": "gap",
+      "reason": "Low; prompt wording change (hourly->15 min). Pinning prose prompt text is brittle, no behavior to assert; human call",
+      "first_seen": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "times_seen": 1,
+      "last_notified": "2026-11-24",
+      "likelySeverity": "N/A (forced-analogy: P3)"
+    },
+    "142-vitest.config.ts": {
+      "classification": "already-covered",
+      "entry_type": "stale-coverage-risk",
+      "note": "vitest 4 upgrade; config uses only v4-valid options (pool forks, isolate, retry), whole suite runs green under v4 in CI. No test to add.",
+      "first_seen": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "times_seen": 1,
+      "last_notified": "2026-11-24"
+    },
+    "142-package.json": {
+      "classification": "already-covered",
+      "note": "dep bump exercised by whole suite",
+      "last_seen": "2026-11-24",
+      "times_seen": 1,
+      "last_notified": "2026-11-24"
     }
   }
 }
