@@ -7562,5 +7562,29 @@
       "package.json"
     ],
     "fetchedAt": "2026-11-24T20:05:39.672Z"
+  },
+  "GetDutchie/alchemy-pipeline#148": {
+    "title": "fix(datadog): repair dead migration-Job queries (succeeded/failed, migrate*, factory-* scoping)",
+    "qualityComments": [
+      {
+        "path": "alchemy/datadog/monitors.json",
+        "category": "Test convention"
+      }
+    ],
+    "changedPaths": [
+      "alchemy/datadog/dashboard-infra.json",
+      "alchemy/datadog/monitors.json",
+      "src/__tests__/datadog/monitors.unit.test.ts"
+    ],
+    "fetchedAt": "2026-11-25T20:06:51.911Z"
+  },
+  "GetDutchie/alchemy-pipeline#149": {
+    "title": "fix(datadog): default the env template variable to * (all environments) instead of sandbox",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/datadog/dashboard-infra.json",
+      "alchemy/datadog/dashboard.json"
+    ],
+    "fetchedAt": "2026-11-25T20:06:52.607Z"
   }
 }
