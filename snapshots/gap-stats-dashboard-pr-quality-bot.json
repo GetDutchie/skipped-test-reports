@@ -7421,5 +7421,146 @@
       "src/__tests__/datadog/monitors.unit.test.ts"
     ],
     "fetchedAt": "2026-11-23T20:05:57.643Z"
+  },
+  "GetDutchie/brands-portal#1496": {
+    "title": "fix: respect brand app availability in user editors BRAND-4404",
+    "qualityComments": [
+      {
+        "path": "src/pages/settings/users/use-user-app-access.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/pages/settings/users/user-role-permissions.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/hooks/use-brand-app-permission-catalog.test.tsx",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [],
+    "fetchedAt": "2026-11-24T20:05:37.799Z"
+  },
+  "GetDutchie/alchemy-pipeline#147": {
+    "title": "feat(intake): add commit-safe sequence change feed, delete detection, and 15m sync cadence",
+    "qualityComments": [
+      {
+        "path": "src/workers/temporal/activities.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/api/resources/implementation-intake.ts",
+        "category": "Test convention"
+      },
+      {
+        "path": "src/db/intake-change-feed.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/db/legacy-intake.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/__tests__/api/implementation-intake.unit.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/__tests__/api/implementation-intake.unit.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/__tests__/integrations/sfdc.opportunities.unit.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/__tests__/db/migrations.integration.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/__tests__/db/intake-change-feed.integration.test.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/api/resources/implementation-intake.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/__tests__/api/data-resources.contract.integration.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/workers/temporal/activities.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/workers/temporal/activities.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/__tests__/workers/activities.integration.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/__tests__/api/data-resources.contract.integration.test.ts",
+        "category": "Best practice"
+      },
+      {
+        "path": "src/__tests__/db/intake-change-feed.integration.test.ts",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/__tests__/workers/activities.integration.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "AGENTS.md",
+      "README.md",
+      "alchemy/datadog/monitors.json",
+      "docs/ci-and-datadog.md",
+      "docs/for-consumers.md",
+      "docs/migrations.md",
+      "docs/own-database.md",
+      "docs/salesforce-opportunities-sync.md",
+      "src/__tests__/api/data-resources.contract.integration.test.ts",
+      "src/__tests__/api/implementation-intake.unit.test.ts",
+      "src/__tests__/datadog/monitors.unit.test.ts",
+      "src/__tests__/db/intake-change-feed.integration.test.ts",
+      "src/__tests__/db/intake-change-feed.unit.test.ts",
+      "src/__tests__/db/migrations.integration.test.ts",
+      "src/__tests__/db/migrations.unit.test.ts",
+      "src/__tests__/db/upsert-legacy-opportunity-intake.integration.test.ts",
+      "src/__tests__/helpers/fake-salesforce.ts",
+      "src/__tests__/helpers/fake-temporal.ts",
+      "src/__tests__/integrations/sfdc.opportunities.unit.test.ts",
+      "src/__tests__/workers/activities.integration.test.ts",
+      "src/__tests__/workers/definition.unit.test.ts",
+      "src/api/agent.ts",
+      "src/api/app.ts",
+      "src/api/resources/implementation-intake.ts",
+      "src/db/AGENTS.md",
+      "src/db/drizzle/0008_legacy_intake_change_feed.sql",
+      "src/db/drizzle/meta/_journal.json",
+      "src/db/intake-change-feed.ts",
+      "src/db/legacy-intake.ts",
+      "src/db/schema/index.ts",
+      "src/db/schema/legacy-opportunity-intake-change-feed-meta.ts",
+      "src/db/schema/legacy-opportunity-intake-changes.ts",
+      "src/integrations/salesforce/client.ts",
+      "src/workers/AGENTS.md",
+      "src/workers/definition.ts",
+      "src/workers/temporal/activities.ts"
+    ],
+    "fetchedAt": "2026-11-24T20:05:38.855Z"
+  },
+  "GetDutchie/alchemy-pipeline#142": {
+    "title": "chore(deps): vitest 4.1.12",
+    "qualityComments": [],
+    "changedPaths": [
+      "package-lock.json",
+      "package.json"
+    ],
+    "fetchedAt": "2026-11-24T20:05:39.672Z"
   }
 }
