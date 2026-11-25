@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795518245.063649",
+  "last_processed_ts": "1795604642.502499",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -486,6 +486,17 @@
       "last_seen": "2026-11-20",
       "times_seen": 1,
       "last_notified": "2026-11-23T14:30:00Z"
+    },
+    "375-alchemy/datadog/dashboard-infra.json": {
+      "classification": "unclear",
+      "reason": "Datadog dashboard JSON (#375 query fixes, #377 template-var default); by design not unit-tested; needs a manual check of widgets in sandbox.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 375,
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": "2026-11-25T14:30:00Z"
     }
   }
 }
