@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795604642.502499",
+  "last_processed_ts": "1795691040.471539",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -497,6 +497,14 @@
       "last_seen": "2026-11-25",
       "times_seen": 1,
       "last_notified": "2026-11-25T14:30:00Z"
+    },
+    "385-docs/for-consumers.md": {
+      "classification": "needs-production-change",
+      "reason": "docs/for-consumers.md ~line 193 still says 'max 100 per call' for implementation-account-context by-ids; cap is now 500. Docs edit, not a test file.",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "times_seen": 1,
+      "last_notified": "2026-11-26T14:30:00Z"
     }
   }
 }
