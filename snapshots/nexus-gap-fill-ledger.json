@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795529229.549399",
+  "last_processed_ts": "1795617453.623129",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -547,6 +547,114 @@
       "severityReasoning": "Not attempted this run",
       "first_seen": "2026-11-23",
       "last_seen": "2026-11-23",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3959-apps/nexus/src/_migrated/back-office/leafly/page.tsx (SURO Save/Sync)": {
+      "classification": "needs-production-change",
+      "description": "Leafly Save/Sync not gated on read-only super user; playbook requires live SURO checks on every migrated write",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": "2026-11-25",
+      "blocker": "Page/form must read useSuperUserReadOnly and disable + re-check Save/Sync. Scratch page test with isReadOnly=true still passes canEdit=true to the form (confirmed, deleted).",
+      "likelySeverity": "P2",
+      "severityReasoning": "Write-path integration settings editable by a read-only super user; single account, workaround is to not use SURO",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed"
+    },
+    "3977-3978-taxes-and-compliance purchase-limits-tab / flower-equivalency-tab (template create under SURO)": {
+      "classification": "needs-production-change",
+      "description": "Template creation launchers omit read-only super-user checks; existing purchase-limits test expects launcher enabled under SURO",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": "2026-11-25",
+      "blocker": "Needs a human to confirm whether the SURO exception is approved; otherwise production gating is required",
+      "likelySeverity": "P2",
+      "severityReasoning": "Compliance purchase-limit templates writable by read-only super user; ambiguous intent (existing test asserts enabled), bordering P3",
+      "surfaced_bug": true,
+      "bugEvidence": "suspected"
+    },
+    "3935-apps/nexus/src/_migrated/back-office/location/components/sync/frequency-modal.tsx (clear date input)": {
+      "classification": "needs-production-change",
+      "description": "Clearing the one-off datetime-local input throws RangeError (new Date('').toISOString()) in onChange",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": "2026-11-25",
+      "blocker": "Production handler must guard empty/invalid input; scratch test showed React reports 'RangeError: Invalid time value' (confirmed, deleted)",
+      "likelySeverity": "P3",
+      "severityReasoning": "Admin sync scheduling form errors when the date is cleared; operator can retype a date",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed"
+    },
+    "3928-apps/nexus/src/api/settings/labels/labels.ts (register label caches after delete)": {
+      "classification": "needs-production-change",
+      "description": "refreshAfterLabelDelete does not invalidate/evict devices label list or registers caches although DeleteLabel clears register assignments",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": "2026-11-25",
+      "blocker": "Production refresh must also cover devicesLabelsQuery (1h stale) and registersQuery; scratch test showed ['settings','devices','labels',lsp,loc] not invalidated after performDeleteLabel (confirmed, deleted)",
+      "likelySeverity": "P2",
+      "severityReasoning": "A deleted label stays selectable/seeds the register form for up to an hour, which can re-save a dangling default label",
+      "surfaced_bug": true,
+      "bugEvidence": "confirmed"
+    },
+    "3978-flower-equivalency-tab late Apply permission loss": {
+      "classification": "deferred-for-volume",
+      "description": "Late Apply loses product grant: no test that neither grant loss permits recalculation",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3949-N/pages/connect/discounts/create local-discount-editor (embedded BFD host leave)": {
+      "classification": "deferred-for-volume",
+      "description": "Real BFD + host leave bridge -> Keep editing -> discard integration case",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3955-N/api/marketing/discounts.ts Online Specials invalidation": {
+      "classification": "deferred-for-volume",
+      "description": "Seed real Online Specials key and assert browser invalidator makes it stale",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3955-N/record-editor-kits/template/template-form.tsx (Enter from portalled name)": {
+      "classification": "deferred-for-volume",
+      "description": "Header Enter saves via real portal",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3955-N/pages/customers/segments/detail segment associations destination": {
+      "classification": "deferred-for-volume",
+      "description": "Real row gated Nexus ID/navigation + flag-off BO fallback",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3955-N/record-kits/brand-kit/preview-view.tsx live Preview": {
+      "classification": "deferred-for-volume",
+      "description": "Unsaved tokens update sample storefront",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "times_seen": 1,
+      "last_notified": null
+    },
+    "3933-M/labels/components/common/image-rotation.ts real rotation": {
+      "classification": "deferred-for-volume",
+      "description": "Needs real canvas pixels; jsdom has no canvas - likely needs a canvas shim",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
       "times_seen": 1,
       "last_notified": null
     }
