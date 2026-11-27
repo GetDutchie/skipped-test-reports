@@ -7650,5 +7650,51 @@
       "src/workers/temporal/activities.ts"
     ],
     "fetchedAt": "2026-11-26T20:05:22.058Z"
+  },
+  "GetDutchie/alchemy-account-360#393": {
+    "title": "chore(deps): SDK train 2026-11-27 (run 45938407766)",
+    "qualityComments": [],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "package-lock.json",
+      "package.json"
+    ],
+    "fetchedAt": "2026-11-27T20:05:59.420Z"
+  },
+  "GetDutchie/alchemy-account-360#388": {
+    "title": "feat(datadog): redesign both dashboards in the platform bento style",
+    "qualityComments": [],
+    "changedPaths": [
+      "alchemy/datadog/dashboard-infra.json",
+      "alchemy/datadog/dashboard.json"
+    ],
+    "fetchedAt": "2026-11-27T20:06:00.191Z"
+  },
+  "GetDutchie/alchemy-pipeline#151": {
+    "title": "chore(deps): bump all dependencies to the 7-day supply-chain limit",
+    "qualityComments": [],
+    "changedPaths": [
+      "package-lock.json",
+      "package.json"
+    ],
+    "fetchedAt": "2026-11-27T20:06:01.187Z"
+  },
+  "GetDutchie/alchemy-pipeline#155": {
+    "title": "chore(deps): SDK train 2026-11-27 fork (replaces #153)",
+    "qualityComments": [
+      {
+        "path": "src/__tests__/workers/worker.unit.test.ts",
+        "category": "Needs your judgment"
+      }
+    ],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "docs/observability.md",
+      "package-lock.json",
+      "package.json",
+      "src/__tests__/api/internal-account-360.contract.integration.test.ts",
+      "src/__tests__/workers/worker.unit.test.ts"
+    ],
+    "fetchedAt": "2026-11-27T20:06:02.067Z"
   }
 }
