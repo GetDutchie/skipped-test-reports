@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795703396.817599",
+  "last_processed_ts": "1795788854.312049",
   "entries": {
     "1646-apps/nexus/src/pages/inventory/audits/audit-form-sheet.tsx": {
       "classification": "e2e-out-of-scope",
@@ -222,7 +222,7 @@
       "first_seen": "2026-11-11",
       "last_seen": "2026-11-11",
       "times_seen": 1,
-      "last_notified": "2026-11-19",
+      "last_notified": "2026-11-27",
       "likelySeverity": "P2",
       "severityReasoning": "Duplicate catalog imports / silent failure for brand users; workaround exists, bordering P3."
     },
@@ -233,7 +233,7 @@
       "first_seen": "2026-11-11",
       "last_seen": "2026-11-11",
       "times_seen": 1,
-      "last_notified": "2026-11-19",
+      "last_notified": "2026-11-27",
       "likelySeverity": "P3",
       "severityReasoning": "Cosmetic preference loss, no revenue/compliance impact."
     },
@@ -322,7 +322,7 @@
       "first_seen": "2026-11-19",
       "last_seen": "2026-11-19",
       "times_seen": 1,
-      "last_notified": "2026-11-19",
+      "last_notified": "2026-11-27",
       "likelySeverity": "P3",
       "severityReasoning": "UI guard only; backend authorization not verified, single-location, needs permission revoked mid-dialog",
       "blocker": "ConfirmDialog onConfirm has no canEdit guard; production fix needed",
@@ -396,7 +396,7 @@
       "first_seen": "2026-11-19",
       "last_seen": "2026-11-19",
       "times_seen": 1,
-      "last_notified": "2026-11-19",
+      "last_notified": "2026-11-27",
       "likelySeverity": "P3",
       "severityReasoning": "needs Connect browser spec; no unit seam"
     },
@@ -730,6 +730,30 @@
       "last_notified": "2026-11-26",
       "likelySeverity": "P3",
       "severityReasoning": "Integration-sized; deferred this cycle, hypothetical regression impact limited to one back-office screen."
+    },
+    "4118-suro-read-only-denial-sso-biotrack": {
+      "classification": "needs-production-change",
+      "description": "HIGH (#4118+#3957): SSO IDP/SCIM/delete/federation handlers and BioTrack Settings/template/destruction gates lack live useSuperUserReadOnly guards; no denial/expiry tests",
+      "blocker": "Production guard missing (page.tsx notes SURO intentionally omitted per older cross-cutting decision vs current playbook:961-971) \u2014 human must confirm intended exception before tests can assert denial",
+      "likelySeverity": "P2",
+      "severityReasoning": "Read-only superuser could trigger writes (SSO config, BioTrack destruction); contract conflict, backend authorization not shown bypassed",
+      "first_seen": "2026-11-27",
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27"
+    },
+    "3957-biotrack/components/destructions-v2-tab.tsx": {
+      "classification": "needs-production-change",
+      "description": "HIGH: Destroy/Undestroy can be submitted for retained placeholder rows while a page/filter change is pending",
+      "blocker": "Tab does not guard selection/actions on isPlaceholderData; a test asserting no submission would fail against current code",
+      "likelySeverity": "P2",
+      "severityReasoning": "Stale-page rows of same store could be destroyed while user believes new filter is shown; compliance-adjacent, single store, undo exists",
+      "surfaced_bug": true,
+      "bugEvidence": "suspected",
+      "first_seen": "2026-11-27",
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27"
     }
   }
 }
