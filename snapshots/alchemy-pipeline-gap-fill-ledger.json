@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "run-45809167574-2026-11-26",
+  "last_processed_ts": "run-45989234158-2026-11-27",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -117,7 +117,7 @@
       "first_seen": "2026-11-20",
       "last_seen": "2026-11-20",
       "times_seen": 1,
-      "last_notified": "2026-11-20",
+      "last_notified": "2026-11-27",
       "likelySeverity": "P3"
     },
     "137-src/workers/temporal/activities.ts": {
@@ -197,6 +197,25 @@
       "likelySeverity": null,
       "severityReasoning": null,
       "note": "behaviour-equivalent to client nulling; unobservable"
+    },
+    "155-src/__tests__/workers/activities.integration.test.ts": {
+      "classification": "closed",
+      "pr": 156,
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27"
+    },
+    "151-package.json": {
+      "classification": "already-covered",
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27"
+    },
+    "155-docs/observability.md": {
+      "classification": "already-covered",
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27"
     }
   }
 }
