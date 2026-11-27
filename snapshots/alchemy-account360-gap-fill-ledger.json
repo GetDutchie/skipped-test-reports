@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "1795691040.471539",
+  "last_processed_ts": "1795777414.261709",
   "entries": {
     "1095-apps/gtm/pipeline/api/src/routes/pipeline/deals-reads.ts": {
       "classification": "unclear",
@@ -505,6 +505,28 @@
       "last_seen": "2026-11-26",
       "times_seen": 1,
       "last_notified": "2026-11-26T14:30:00Z"
+    },
+    "388-alchemy/datadog/dashboard.json": {
+      "classification": "unclear",
+      "reason": "Datadog dashboard JSON redesign (dashboard.json + dashboard-infra.json); by design not unit-tested, CI sync step checks it. Same class as 375.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 388,
+      "first_seen": "2026-11-27",
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27T14:30:00Z"
+    },
+    "393-.github/workflows/ci.yml": {
+      "classification": "unclear",
+      "reason": "SDK train dependency pins + bus-contract version bump 3.12.0->3.29.0 in ci.yml/package.json; CI config, exercised by existing unit suite + cross-app contract check; no test-file-closeable gap.",
+      "severity": "Low",
+      "entry_type": "gap",
+      "source_pr": 393,
+      "first_seen": "2026-11-27",
+      "last_seen": "2026-11-27",
+      "times_seen": 1,
+      "last_notified": "2026-11-27T14:30:00Z"
     }
   }
 }
