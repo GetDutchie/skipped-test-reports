@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_processed_ts": "run-45603035149-2026-11-25",
+  "last_processed_ts": "run-45809167574-2026-11-26",
   "entries": {
     "77-alchemy/sandbox.yaml": {
       "classification": "needs-production-change",
@@ -11,7 +11,7 @@
       "first_seen": "2026-11-04",
       "last_seen": "2026-11-18",
       "times_seen": 1,
-      "last_notified": "2026-11-18",
+      "last_notified": "2026-11-26",
       "likelySeverity": "N/A (forced-analogy: P3)",
       "severityReasoning": "Misleading manifest comment only; runtime behavior is correct and tested. The closest analogy is internal-tooling doc drift (P3)."
     },
@@ -24,7 +24,7 @@
       "first_seen": "2026-11-11",
       "last_seen": "2026-11-18",
       "times_seen": 1,
-      "last_notified": "2026-11-18",
+      "last_notified": "2026-11-26",
       "likelySeverity": "N/A (forced-analogy: P3)",
       "severityReasoning": "internal tool; closest analogy"
     },
@@ -51,7 +51,7 @@
       "first_seen": "2026-11-11",
       "last_seen": "2026-11-18",
       "times_seen": 1,
-      "last_notified": "2026-11-18",
+      "last_notified": "2026-11-26",
       "likelySeverity": "N/A (forced-analogy: P2)",
       "severityReasoning": "internal tool; closest analogy"
     },
@@ -82,7 +82,7 @@
       "first_seen": "2026-11-19",
       "last_seen": "2026-11-19",
       "times_seen": 1,
-      "last_notified": "2026-11-19",
+      "last_notified": "2026-11-26",
       "note": "superseded by PR #140"
     },
     "132-src/integrations/salesforce/client.ts": {
@@ -141,7 +141,7 @@
       "first_seen": "2026-11-23",
       "last_seen": "2026-11-23",
       "times_seen": 1,
-      "last_notified": "2026-11-23",
+      "last_notified": "2026-11-26",
       "likelySeverity": "N/A (forced-analogy: P3)"
     },
     "147-src/api/agent.ts": {
@@ -169,6 +169,34 @@
       "last_seen": "2026-11-24",
       "times_seen": 1,
       "last_notified": "2026-11-24"
+    },
+    "150-src/workers/temporal/activities.ts": {
+      "classification": "closed",
+      "entry_type": null,
+      "source_pr": null,
+      "description": null,
+      "blocker": null,
+      "first_seen": null,
+      "last_seen": "2026-11-26",
+      "times_seen": 1,
+      "last_notified": "2026-11-26",
+      "likelySeverity": null,
+      "severityReasoning": null,
+      "note": "PR #152 opened; strip + degraded|| unobservable"
+    },
+    "150-activities-isDeletedConfirmed-strip": {
+      "classification": "unclear",
+      "entry_type": null,
+      "source_pr": null,
+      "description": null,
+      "blocker": null,
+      "first_seen": null,
+      "last_seen": "2026-11-26",
+      "times_seen": 1,
+      "last_notified": "2026-11-26",
+      "likelySeverity": null,
+      "severityReasoning": null,
+      "note": "behaviour-equivalent to client nulling; unobservable"
     }
   }
 }

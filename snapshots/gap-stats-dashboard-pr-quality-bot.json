@@ -7586,5 +7586,69 @@
       "alchemy/datadog/dashboard.json"
     ],
     "fetchedAt": "2026-11-25T20:06:52.607Z"
+  },
+  "GetDutchie/alchemy-account-360#385": {
+    "title": "feat(implementation-account-context): accept 500 account ids per by-ids call",
+    "qualityComments": [
+      {
+        "path": "api/src/data/implementation-account-context.test.ts",
+        "category": "Tests for your changes"
+      }
+    ],
+    "changedPaths": [
+      "api/src/data/implementation-account-context.test.ts",
+      "api/src/data/implementation-account-context.ts"
+    ],
+    "fetchedAt": "2026-11-26T20:05:21.215Z"
+  },
+  "GetDutchie/alchemy-pipeline#150": {
+    "title": "feat(pipeline): expose exact Legacy intake contact observations",
+    "qualityComments": [
+      {
+        "path": "src/workers/temporal/activities.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/db/legacy-intake.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/api/handlers/implementation-csat-contacts.ts",
+        "category": "Tests for your changes"
+      },
+      {
+        "path": "src/db/drizzle/meta/_journal.json",
+        "category": "Needs your judgment"
+      },
+      {
+        "path": "src/__tests__/db/migrations.integration.test.ts",
+        "category": "Best practice"
+      }
+    ],
+    "changedPaths": [
+      ".github/workflows/ci.yml",
+      "docs/for-consumers.md",
+      "docs/migrations.md",
+      "docs/salesforce-opportunities-sync.md",
+      "src/__tests__/api/implementation-csat-contacts.unit.test.ts",
+      "src/__tests__/api/internal-implementation-csat-contacts.contract.integration.test.ts",
+      "src/__tests__/api/openapi.unit.test.ts",
+      "src/__tests__/db/migrations.integration.test.ts",
+      "src/__tests__/db/migrations.unit.test.ts",
+      "src/__tests__/db/upsert-legacy-opportunity-intake.integration.test.ts",
+      "src/__tests__/integrations/sfdc.opportunities.unit.test.ts",
+      "src/__tests__/workers/activities.integration.test.ts",
+      "src/api/AGENTS.md",
+      "src/api/handlers/implementation-csat-contacts.ts",
+      "src/api/routes.ts",
+      "src/db/AGENTS.md",
+      "src/db/drizzle/0009_legacy_intake_contact_observation.sql",
+      "src/db/drizzle/meta/_journal.json",
+      "src/db/legacy-intake.ts",
+      "src/db/schema/legacy-opportunity-intake.ts",
+      "src/integrations/salesforce/client.ts",
+      "src/workers/temporal/activities.ts"
+    ],
+    "fetchedAt": "2026-11-26T20:05:22.058Z"
   }
 }
